@@ -1,0 +1,109 @@
+/* src/App.css */
+
+body {
+  background-color: black;
+  margin: 0;
+  overflow: hidden; /* Prevent scrolling */
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Align to the top but leave space for the navbar */
+  width: 100vw;
+  height: 100vh;
+  background-image: url('./assets/app-background.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  margin: 0;
+  padding-top: 60px; /* Add padding to move content down, accommodating the navbar */
+}
+
+.top-center-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.top-center-container h1 {
+  margin: 0;
+  font-size: 1.8em;
+  color: black;
+}
+
+.top-center-container label {
+  margin-top: 10px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input[type="number"] {
+  margin-top: 5px;
+  padding: 3px 5px;
+  font-size: 0.9em;
+  border-radius: 5px;
+  border: none;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+.luck-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+
+.deck-container {
+  position: relative; /* Added relative positioning */
+  margin-top: 0px; /* Adjusted to move the deck lower */
+  margin-left: -100px; /* Adjusted to move the deck to the right */
+  cursor: pointer;
+}
+
+
+.deck-image {
+  width: 90px; /* Make the deck images smaller */
+  height: auto;
+  transition: transform 0.2s ease;
+}
+
+.deck-image:hover {
+  transform: scale(1.1);
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Reduce gap between cards */
+  margin-top: 30px;
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 300px; /* Reduce minimum height */
+}
+
+.card {
+  width: 100px; /* Make cards smaller */
+  height: 150px; /* Adjust card height */
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.fade-away {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease-out;
+}
