@@ -1431,7 +1431,7 @@ const BoostArts = () => {
                     {activeTier === 'ManaChannellingF' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the weapon's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 1:</strong>Sacrifice Spell Slot to reduce cooldown of all other cooldowns in the area</p>
                                 <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the weapon's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
                                 <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the weapon's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
                             </td>
@@ -1655,6 +1655,7 @@ const BoostArts = () => {
                     <tr>
                         <td>Ogre Spirit</td>
                         <td>Charisma S/Strength S</td>
+                        <th>Constitution 15+/Charisma 13+</th>
                         <td className="art-tier-buttons">
                             <span
                                 onClick={() => toggleArtDetails('OgreSpiritF')}
@@ -1790,6 +1791,7 @@ const BoostArts = () => {
                 <tbody>
                     <tr>
                         <td>Purifying Wind</td>
+                        <td>Charisma A</td>
                         <td>Charisma A</td>
                         <td className="art-tier-buttons">
                             <span

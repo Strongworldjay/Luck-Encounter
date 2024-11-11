@@ -1392,6 +1392,143 @@ const PassiveArts = () => {
                 </tbody>
                 <tbody>
                     <tr>
+                        <td>Mental Resistance</td>
+                        <td>S Charisma/S Strength</td>
+                        <th>Dexterity 16+</th>
+                        <td className="art-tier-buttons">
+                            <span
+                                onClick={() => toggleArtDetails('MentalResistanceF')}
+                                className={`tier-text black ${activeTier === 'MentalResistanceF' ? 'active-tier' : ''}`}
+                            >
+                                F Tier
+                            </span>
+                            <span
+                                onClick={() => toggleArtDetails('MentalResistanceE')}
+                                className={`tier-text white ${activeTier === 'MentalResistanceE' ? 'active-tier' : ''}`}
+                            >
+                                E Tier
+                            </span>
+                            <span
+                                onClick={() => toggleArtDetails('MentalResistanceD')}
+                                className={`tier-text green ${activeTier === 'MentalResistanceD' ? 'active-tier' : ''}`}
+                            >
+                                D Tier
+                            </span>
+                            <span
+                                onClick={() => toggleArtDetails('MentalResistanceC')}
+                                className={`tier-text blue ${activeTier === 'MentalResistanceC' ? 'active-tier' : ''}`}
+                            >
+                                C Tier
+                            </span>
+                            <span
+                                onClick={() => toggleArtDetails('MentalResistanceB')}
+                                className={`tier-text purple ${activeTier === 'MentalResistanceB' ? 'active-tier' : ''}`}
+                            >
+                                B Tier
+                            </span>
+                            <span
+                                onClick={() => toggleArtDetails('MentalResistanceA')}
+                                className={`tier-text orange ${activeTier === 'MentalResistanceA' ? 'active-tier' : ''}`}
+                            >
+                                A Tier
+                            </span>
+                            <span
+                                onClick={() => toggleArtDetails('MentalResistanceS')}
+                                className={`tier-text red ${activeTier === 'MentalResistanceS' ? 'active-tier' : ''}`}
+                            >
+                                S Tier
+                            </span>
+                        </td>
+                    </tr>
+                    {activeTier === 'MentalResistanceF' && (
+                        <tr>
+                            <td colSpan="2" className="art-levels">
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the weapon's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the weapon's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the weapon's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                            </td>
+                        </tr>
+                    )}
+                    {activeTier === 'MentalResistanceE' && (
+                        <tr>
+                            <td colSpan="2" className="art-levels">
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the weapon's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the weapon's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the weapon's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the weapon's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the weapon's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                            </td>
+                        </tr>
+                    )}
+                    {activeTier === 'MentalResistance' && (
+                        <tr>
+                            <td colSpan="2" className="art-levels">
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the weapon's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the weapon's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the weapon's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the weapon's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the weapon's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the weapon's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the weapon's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                            </td>
+                        </tr>
+                    )}
+                    {activeTier === 'MentalResistanceC' && (
+                        <tr>
+                            <td colSpan="2" className="art-levels">
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the weapon's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the weapon's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the weapon's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the weapon's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the weapon's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 6:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the weapon's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 7:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the weapon's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 8:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the weapon's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 9:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the weapon's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 10:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the weapon's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                            </td>
+                        </tr>
+                    )}
+                    {activeTier === 'MentalResistanceB' && (
+                        <tr>
+                            <td colSpan="2" className="art-levels">
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the weapon's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the weapon's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the weapon's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the weapon's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the weapon's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the weapon's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the weapon's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                {/* Add levels 8-10 as needed */}
+                            </td>
+                        </tr>
+                    )}
+                    {activeTier === 'MentalResistanceA' && (
+                        <tr>
+                            <td colSpan="2" className="art-levels">
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the weapon's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the weapon's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the weapon's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the weapon's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the weapon's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+
+                                {/* Add levels 8-10 as needed */}
+                            </td>
+                        </tr>
+                    )}
+                    {activeTier === 'MentalResistanceS' && (
+                        <tr>
+                            <td colSpan="2" className="art-levels">
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the weapon's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the weapon's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the weapon's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                {/* Add levels 8-10 as needed */}
+                            </td>
+                        </tr>
+                    )}
+                </tbody>
+                <tbody>
+                    <tr>
                         <td>Necrotic Resistance</td>
                         <td>S Charisma/S Strength</td>
                         <th>Dexterity 16+</th>

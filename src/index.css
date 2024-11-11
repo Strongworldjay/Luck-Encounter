@@ -1,24 +1,25 @@
 /* src/App.css */
 
+/* General styles (unchanged) */
 body {
   background-color: black;
   margin: 0;
+  overflow: hidden;
 }
 
 .app-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
-  background-image: url('./assets/app-background.jpeg');
+  justify-content: flex-start;
+  width: 100vw;
+  height: 100vh;
   background-size: cover;
   background-position: center;
-  background-color: black;
-  padding: 10px;
   color: #fff;
+  padding-top: 60px;
 }
 
-/* Top-center container for title and luck input */
 .top-center-container {
   display: flex;
   flex-direction: column;
@@ -30,18 +31,17 @@ body {
 .top-center-container h1 {
   margin: 0;
   font-size: 1.8em;
-  color: purple;
+  color: black;
 }
 
 .top-center-container label {
   margin-top: 10px;
-  color: gold;
+  color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Style the input box */
 input[type="number"] {
   margin-top: 5px;
   padding: 3px 5px;
@@ -53,52 +53,53 @@ input[type="number"] {
   text-align: center;
 }
 
-/* Deck container styling */
+.luck-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
+}
+
 .deck-container {
-  margin: 20px;
+  position: absolute;
   cursor: pointer;
 }
 
 .deck-image {
-  width: 120px;
+  width: 90px;
   height: auto;
   transition: transform 0.2s ease;
 }
 
 .deck-image:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 .card-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px;
-  margin-top: 20px;
+  gap: 20px;
+  margin-top: 30px;
   flex-wrap: wrap;
   width: 100%;
-  min-height: 400px;
+  min-height: 300px;
 }
 
-/* Fading effect for non-selected cards */
+.card {
+  width: 100px;
+  height: 150px;
+  transition: opacity 1s;
+  backface-visibility: hidden;
+}
+
+.card.flip {
+  opacity: 1;
+}
+
 .fade-away {
   opacity: 0;
-  pointer-events: none; /* Disables click events */
-  transition: opacity 1s ease-out; /* Smooth fade-out effect */
-}
-
-/* Congratulatory message styling */
-.congrats-message {
-  font-size: 1.5em;
-  margin-bottom: 20px;
-  text-align: center;
-  opacity: 0;
-  animation: fadeInSlow 2s forwards;
-  color: inherit; /* Default color, will be overridden inline in App.jsx */
-}
-
-/* Slower fade-in animation for the congratulatory message */
-@keyframes fadeInSlow {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  pointer-events: none;
+  transition: opacity 1s ease-out;
 }

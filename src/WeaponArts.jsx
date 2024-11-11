@@ -434,6 +434,280 @@ const WeaponArts = () => {
                 </tbody>
                 <tbody>
                     <tr>
+                        <td>Counter Strike</td>
+                        <td>Versatile Passive User/S Strength</td>
+                        <th>Strength 15+</th>
+                        <td className="art-tier-buttons">
+                            <span
+                                onClick={() => toggleArtDetails('CounterStrikeF')}
+                                className={`tier-text black ${activeTier === 'CounterStrikeF' ? 'active-tier' : ''}`}
+                            >
+                                F Tier
+                            </span>
+                            <span
+                                onClick={() => toggleArtDetails('CounterStrikeE')}
+                                className={`tier-text white ${activeTier === 'CounterStrikeE' ? 'active-tier' : ''}`}
+                            >
+                                E Tier
+                            </span>
+                            <span
+                                onClick={() => toggleArtDetails('CounterStrikeD')}
+                                className={`tier-text green ${activeTier === 'CounterStrikeD' ? 'active-tier' : ''}`}
+                            >
+                                D Tier
+                            </span>
+                            <span
+                                onClick={() => toggleArtDetails('CounterStrikeC')}
+                                className={`tier-text blue ${activeTier === 'CounterStrikeC' ? 'active-tier' : ''}`}
+                            >
+                                C Tier
+                            </span>
+                            <span
+                                onClick={() => toggleArtDetails('CounterStrikeB')}
+                                className={`tier-text purple ${activeTier === 'CounterStrikeB' ? 'active-tier' : ''}`}
+                            >
+                                B Tier
+                            </span>
+                            <span
+                                onClick={() => toggleArtDetails('CounterStrikeA')}
+                                className={`tier-text orange ${activeTier === 'CounterStrikeA' ? 'active-tier' : ''}`}
+                            >
+                                A Tier
+                            </span>
+                            <span
+                                onClick={() => toggleArtDetails('CounterStrikeS')}
+                                className={`tier-text red ${activeTier === 'CounterStrikeS' ? 'active-tier' : ''}`}
+                            >
+                                S Tier
+                            </span>
+                        </td>
+                    </tr>
+                    {activeTier === 'CounterStrikeF' && (
+                        <tr>
+                            <td colSpan="2" className="art-levels">
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                            </td>
+                        </tr>
+                    )}
+                    {activeTier === 'CounterStrikeE' && (
+                        <tr>
+                            <td colSpan="2" className="art-levels">
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                            </td>
+                        </tr>
+                    )}
+                    {activeTier === 'CounterStrikeD' && (
+                        <tr>
+                            <td colSpan="2" className="art-levels">
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                            </td>
+                        </tr>
+                    )}
+                    {activeTier === 'CounterStrikeC' && (
+                        <tr>
+                            <td colSpan="2" className="art-levels">
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 6:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 7:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 8:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 9:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 10:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                            </td>
+                        </tr>
+                    )}
+                    {activeTier === 'CounterStrikeB' && (
+                        <tr>
+                            <td colSpan="2" className="art-levels">
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                {/* Add levels 8-10 as needed */}
+                            </td>
+                        </tr>
+                    )}
+                    {activeTier === 'CounterStrikeA' && (
+                        <tr>
+                            <td colSpan="2" className="art-levels">
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+
+                                {/* Add levels 8-10 as needed */}
+                            </td>
+                        </tr>
+                    )}
+                    {activeTier === 'CounterStrikeS' && (
+                        <tr>
+                            <td colSpan="2" className="art-levels">
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                {/* Add levels 8-10 as needed */}
+                            </td>
+                        </tr>
+                    )}
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>Parry</td>
+                        <td>Versatile Passive User/S Strength</td>
+                        <th>Strength 15+</th>
+                        <td className="art-tier-buttons">
+                            <span
+                                onClick={() => toggleArtDetails('ParryF')}
+                                className={`tier-text black ${activeTier === 'ParryF' ? 'active-tier' : ''}`}
+                            >
+                                F Tier
+                            </span>
+                            <span
+                                onClick={() => toggleArtDetails('ParryE')}
+                                className={`tier-text white ${activeTier === 'ParryE' ? 'active-tier' : ''}`}
+                            >
+                                E Tier
+                            </span>
+                            <span
+                                onClick={() => toggleArtDetails('ParryD')}
+                                className={`tier-text green ${activeTier === 'ParryD' ? 'active-tier' : ''}`}
+                            >
+                                D Tier
+                            </span>
+                            <span
+                                onClick={() => toggleArtDetails('ParryC')}
+                                className={`tier-text blue ${activeTier === 'ParryC' ? 'active-tier' : ''}`}
+                            >
+                                C Tier
+                            </span>
+                            <span
+                                onClick={() => toggleArtDetails('ParryB')}
+                                className={`tier-text purple ${activeTier === 'ParryB' ? 'active-tier' : ''}`}
+                            >
+                                B Tier
+                            </span>
+                            <span
+                                onClick={() => toggleArtDetails('ParryA')}
+                                className={`tier-text orange ${activeTier === 'ParryA' ? 'active-tier' : ''}`}
+                            >
+                                A Tier
+                            </span>
+                            <span
+                                onClick={() => toggleArtDetails('ParryS')}
+                                className={`tier-text red ${activeTier === 'ParryS' ? 'active-tier' : ''}`}
+                            >
+                                S Tier
+                            </span>
+                        </td>
+                    </tr>
+                    {activeTier === 'ParryF' && (
+                        <tr>
+                            <td colSpan="2" className="art-levels">
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                            </td>
+                        </tr>
+                    )}
+                    {activeTier === 'ParryE' && (
+                        <tr>
+                            <td colSpan="2" className="art-levels">
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                            </td>
+                        </tr>
+                    )}
+                    {activeTier === 'ParryD' && (
+                        <tr>
+                            <td colSpan="2" className="art-levels">
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                            </td>
+                        </tr>
+                    )}
+                    {activeTier === 'ParryC' && (
+                        <tr>
+                            <td colSpan="2" className="art-levels">
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 6:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 7:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 8:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 9:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 10:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                            </td>
+                        </tr>
+                    )}
+                    {activeTier === 'ParryB' && (
+                        <tr>
+                            <td colSpan="2" className="art-levels">
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                {/* Add levels 8-10 as needed */}
+                            </td>
+                        </tr>
+                    )}
+                    {activeTier === 'ParryA' && (
+                        <tr>
+                            <td colSpan="2" className="art-levels">
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+
+                                {/* Add levels 8-10 as needed */}
+                            </td>
+                        </tr>
+                    )}
+                    {activeTier === 'ParryS' && (
+                        <tr>
+                            <td colSpan="2" className="art-levels">
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                {/* Add levels 8-10 as needed */}
+                            </td>
+                        </tr>
+                    )}
+                </tbody>
+                <tbody>
+                    <tr>
                         <td>Shield Swing</td>
                         <td>Charisma A</td>
                         <td>Wielding a shield</td>

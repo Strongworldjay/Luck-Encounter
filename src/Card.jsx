@@ -6,9 +6,13 @@ import blueCard from './assets/blue-card.webp';
 import purpleBlackCard from './assets/purple-card.jpg';
 import orangeCard from './assets/orange-card.avif';
 import redCard from './assets/red-card.avif';
-import cardBack from './assets/card-design.png';
+import cardBack from './assets/card-design.jpg';
 
 // Import overlay images
+import lightArmorSymbol from './assets/light-armor.webp'
+import mediumArmorSymbol from './assets/medium-armor.png'
+import robeSymbol from './assets/robe.webp'
+import ringSymbol from './assets/ring.webp'
 import magicSymbol from './assets/magic-symbol.png';
 import magicSkillSymbol from './assets/magic-skill.png';
 import helmetSymbol from './assets/helmet-symbol.png';
@@ -71,10 +75,18 @@ const Card = ({ card, onClick }) => {
         return gauntletSymbol;
       case 'Helmet':
         return helmetSymbol;
-      case 'Armor':
+      case 'HeavyArmor':
         return armorSymbol;
+      case 'LightArmor':
+        return lightArmorSymbol;
+      case 'MediumArmor':
+        return mediumArmorSymbol;
       case 'Boots':
         return bootsSymbol;
+      case 'Ring':
+        return ringSymbol;
+      case 'Robe':
+        return robeSymbol;
       case 'Necklace':
         return necklaceSymbol;
       case 'Cloak':
@@ -98,17 +110,17 @@ const Card = ({ card, onClick }) => {
         return scrollSymbol;
       case 'WondrousItem':
         return magicSymbol;
-      case 'MagicSkill':
+      case 'MagicArt':
         return magicSkillSymbol;
-      case 'WeaponSkill':
+      case 'WeaponArt':
         return attackSkillSymbol;
       case 'SkillPoints':
         return skillPointsSymbol;
       case 'ExperiencePoints':
         return expSymbol;
-      case 'PassiveSkill':
+      case 'PassiveArt':
         return fantasySkillSymbol;
-      case 'StatusSkill':
+      case 'BoostArt':
         return skillSymbol; // Overlay for StatusSkill
       default:
         console.warn(`No overlay image found for itemType: ${itemType}`);
@@ -116,10 +128,17 @@ const Card = ({ card, onClick }) => {
     }
   };
 
+  const getRarityClass = (rarity) => {
+    return rarity.name.toLowerCase().replace(' ', '-'); // Converts 'Very Rare' to 'very-rare'
+  };
+
   const overlayImage = getOverlayImage(card.itemType);
 
   return (
-    <div className={`card ${card.revealed ? 'revealed' : ''}`} onClick={onClick}>
+    <div
+      className={`card ${card.revealed ? 'revealed' : ''} ${getRarityClass(card.rarity)}`}
+      onClick={onClick}
+    >
       <div
         className="card-face card-front"
         style={{

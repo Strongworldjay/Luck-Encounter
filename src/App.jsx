@@ -6,11 +6,11 @@ import Navbar from './Navbar';
 import WeaponArts from './WeaponArts';
 import MagicArts from './MagicArts';
 import PassiveArts from './PassiveArts';
-import BoostArts from './BoostArts'; // Added import for BoostArts
+import BoostArts from './BoostArts';
 import SkillPointUsage from './SkillPointUsage';
 import './App.css';
 import appBackground from './assets/app-background.jpg';
-import deckImage from './assets/card-design.png';
+import deckImage from './assets/card-design.jpg';
 import { getRandomItem } from './ItemGenerator';
 
 const rarities = [
@@ -18,15 +18,16 @@ const rarities = [
   { name: 'Uncommon', color: 'green', range: [51, 70] },
   { name: 'Rare', color: 'blue', range: [71, 81] },
   { name: 'Very Rare', color: 'purple', range: [82, 90] },
-  { name: 'Legendary', color: 'orange', range: [91, 98] },
-  { name: 'Unique', color: 'red', range: [99, 200] },
+  { name: 'Legendary', color: 'orange', range: [91, 99] },
+  { name: 'Unique', color: 'red', range: [100, 200] },
 ];
 
 const itemTypes = [
-  'Helmet', 'Armor', 'Gauntlet', 'Boots', 'Necklace', 'Cloak', 'Potion',
-  'Sword', 'Bow', 'Hammer', 'Glaive', 'Dagger', 'Staff', 'Rod', 'Wand',
-  'Grimoire', 'SpellScroll', 'PermanentSpell', 'WeaponSkill', 'MagicSkill',
-  'PassiveSkill', 'StatusSkill', 'SkillPoints', 'ExperiencePoints'
+  'Helmet', 'HeavyArmor', 'Gauntlet', 'Boots', 'Necklace', 'Cloak', 'Potion',
+  'Sword', 'Bow', 'Axe', 'Hammer', 'Glaive', 'Dagger', 'Staff', 'Rod', 'Wand',
+  'Grimoire', 'Spell Scroll', 'PermanentSpell', 'WeaponArt', 'MagicArt',
+  'PassiveArt', 'BoostArt', 'SkillPoints', 'ExperiencePoints', 'Robe', 'Ring', 'LightArmor',
+  'MediumArmor', 'WondrousItem'
 ];
 
 const App = () => {
@@ -60,7 +61,7 @@ const App = () => {
       const rarity = rarities.find((r) => totalRoll >= r.range[0] && totalRoll <= r.range[1]) || rarities[0];
       const itemType = itemTypes[Math.floor(Math.random() * itemTypes.length)];
       const itemName = getRandomItem(itemType, null, rarity.name.replace(' ', ''));
-      return { id: index, rarity, itemType, item: itemName, revealed: false };
+      return { id: index, rarity, itemType, item: itemName, revealed: false, fadeAway: false };
     });
 
     setCards(newCards);
@@ -70,7 +71,11 @@ const App = () => {
   const revealCard = (index) => {
     setSelectedCard(cards[index]);
     setCards((prevCards) =>
-      prevCards.map((card, i) => (i === index ? { ...card, revealed: true } : card))
+      prevCards.map((card, i) => 
+        i === index 
+          ? { ...card, revealed: true } 
+          : { ...card, fadeAway: true }
+      )
     );
   };
 
@@ -126,7 +131,7 @@ const App = () => {
                 key={card.id}
                 card={card}
                 onClick={() => revealCard(index)}
-                className={selectedCard && selectedCard.id !== card.id ? 'fade-away' : ''}
+                className={`card ${card.revealed ? 'revealed' : ''} ${card.fadeAway ? 'fade-away' : ''}`}
                 ref={(el) => (cardRefs.current[index] = el)}
               />
             ))}
@@ -136,7 +141,7 @@ const App = () => {
       {currentSection === 'WeaponArts' && <WeaponArts />}
       {currentSection === 'MagicArts' && <MagicArts />}
       {currentSection === 'PassiveArts' && <PassiveArts />}
-      {currentSection === 'BoostArts' && <BoostArts />} {/* Fixed BoostArts import and rendering */}
+      {currentSection === 'BoostArts' && <BoostArts />}
       {currentSection === 'SkillPointUsage' && <SkillPointUsage />}
     </div>
   );
