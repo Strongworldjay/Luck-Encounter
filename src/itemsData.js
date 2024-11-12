@@ -130,15 +130,26 @@ export const itemNames = {
             "Phoenix Fan", "Portable Hole", "Porting Hole", "Power Collar", "Powergem Pommel 2 Slots", "Prehistoric Figurine of Wondrous Power (Kyanite Pteranodon)", "Prized Pet Protector (Rare)", "Professor Orb",
             "Purse Piglet", "Quaal's Feather Token (Bird)", "Quaal's Feather Token (Swan Boat)", "Quaal's Feather Token (Whip)", "Ready Gunk", "Red Chromatic Rose", "Reveler's Concertina", "Ryhtm-Maker's Drum, +2",
             "Rope of Entanglement", "Sands of War", "Saint Virtuvio's Phylactery", "Sash of Sorcerous Synergy", "Scaled Ornament (Stirring)", "Scarf of Snow's Sanctum", "Scissors of Shadow Snipping", "Shadow Tag",
-             "Shadowfell Shard", "Shard of Xeluan", "Shrieking Greaves", "Skysail", "Snugglebeast Dragon", "Soul Lamp", "Soul Pendant", "Sovereignseed Satchel",
-              "Spellforge Scabbard", "Steward's Seal", "Stone of Controlling Earth Elementals", "Thalamus Thread", "Tick Tock (Dormant)", "Voyage Collar", "War Horn of Valor", "Warhorn of the Bronze Dragon",
-               "Weird tank", "White Chromatic Rose", "Wind-Up Merchant", "Wings of Flying", "Wisplight Lantern", "Wraps of Unarmed Power, +2", "Wyrmling Wristlet", "Zafu of the Wandering Mind"
+            "Shadowfell Shard", "Shard of Xeluan", "Shrieking Greaves", "Skysail", "Snugglebeast Dragon", "Soul Lamp", "Soul Pendant", "Sovereignseed Satchel",
+            "Spellforge Scabbard", "Steward's Seal", "Stone of Controlling Earth Elementals", "Thalamus Thread", "Tick Tock (Dormant)", "Voyage Collar", "War Horn of Valor", "Warhorn of the Bronze Dragon",
+            "Weird tank", "White Chromatic Rose", "Wind-Up Merchant", "Wings of Flying", "Wisplight Lantern", "Wraps of Unarmed Power, +2", "Wyrmling Wristlet", "Zafu of the Wandering Mind"
 
         ],
-        VeryRare: ["Blazeblood Signet", "Gateway Ring", "Horned Ring", "Ring of Amity", "Ring of Ice",
-            "Ring of Lunar Might", "Ring of Red Fury", "Ring of Regneration", "Ring of Shooting Stars", "Ring of Telekinesis",
-            "Ring of the Split Mind", "Sage's Signet (Bear)", "Sage's Signet (Hart)", "Sage's Signet (Lion)", "Sage's Signet (Wolf)",
-            "Signet Rings of the Fey Court", "Sun Eater's Mind", "Sun Eater's Soul"
+        VeryRare: ["Abracadabrus", "All-Purpose Tool, +3", "Amethyst Lodestone", "Archivist's Key", "Bag of Devouring",
+            "Bag of Eyes", "Battle Charm, +3", "Battle Standard of Infernal Power", "Battlechef's Splendid Saucepan", "Belt of Fire Giant Strength",
+            "Belt of Frost Giant Strength", "Belt of Returning", "Belt of of Stone Giant Strength", "Bloodwell Vial, +3", "Bobbing Lily Pad",
+            "Brambleheart Quiver", "Camilla's Quicksilver Mirror", "Candle of Invocation", "Carpet of Flying (3 ft. x 5 ft.)", "Carpet of Flying (4 ft. x 6 ft.", "Carpet of Flying (5 ft. x 7 ft.)",
+            "Carpet of Flying (6 ft. x 9 ft.)", "Cauldron of Rebirth", "Chronal Sphere", "Chronolometer", "Cloche of Surprise Treats", "Coldfire Anvil (Very Rare)", "Collar of the Crysal Veil", "Conch of Teleportation",
+            "Crystal Ball", "Crystalline Chronicle", "Deck of Dimensions", "Deck of Wild Cards", "Devastation Orb", "Dimensional Loop", "Dimensional Quiver", "Dispelling Stone",
+            "Draconic Visage", "Dragon Horn Pauldron", "Dragon Turtle Barding", "Dragon Vessel (Wakened)", "Efreeti Bottle", "Druidic Shape Charms", "Dragonhide Belt, +3", "Dragon-Touched Focus (Wakened)",
+            "Far Gear", "Fate Dealer's Deck, +2", "Figurine of Wondrous Power (Obsidian Steed)", "Fish Suit", "Fool's Lamp", "Fragment of Elder Starlight", "Grand Wolf's Hide", "Hoarder's Haul (Very Rare)",
+            "Horn of Valhalla (Bronze)", "Horn of the Wild Hunt", "Horseshoues of a Zephyr", "Hourglass of Slumber", "Hydra Charm", "Illusionit's Bookmark", "Instrument of Roses and Thorns", "Jade Foo-Lion Vestment",
+            "Lady Phantasma's Material Anchor", "Kyrzin's Ooze", "Lord's Ensemble", "Magebind Shackles", "Lucky Kobold's Klaw, +3", "Matron's Mug", "Mindmaster's Monocle", "Mirror of Infinite Transpondence",
+            "Mirror of Life Trapping", "Mirror of Reflected Pasts", "Mudslick Tower", "Muralist's Mark", "Navigation Orb", "Nimbus Coronet", "Nolzur's Marvelous Pigments", "Null Chalk",
+            "Ogramau's Graveyard", "Orb of the Veil", "Ornithopter of Flying", "Powergem Pommel 3 Slots", "Prehistoric Figurine of Wondrous Power (Carnelian Triceratops)", "Raven's Slumber", "Reincarnation Dust", "Rythm-Maker's Drum, +3",
+            "Seeing Glass", "Snugglebeast Tarrasque", "Speaking Stone", "Spirit Board", "Sundial Rin", "Deck of Wonder", "Domclavis Key", "Dragon Vessel (Slumbering)",
+            "Charging Bugle", "Cuff of Captions", "Decanter of Endless Water", "Deck of Illusions", "Deck of Miscellany", "Deck of Wonder", "Domclavis Key", "Dragon Vessel (Slumbering)",
+            "Charging Bugle", "Cuff of Captions", "Decanter of Endless Water", "Deck of Illusions", "Deck of Miscellany", "Deck of Wonder", "Domclavis Key", "Dragon Vessel (Slumbering)"
         ],
         Legendary: ["Puzzle Ring of Vitality, Life, and Power", "Ring of Air Elemental Command", "Ring of Djinii Summoning", "Ring of Earth Elemental Command", "Ring of Elemental Command (Air)",
             "Ring of Elemental Command (Earth)", "Ring of Elemental Command (Fire)", "Ring of Elemental Command (Water)", "Ring of Fire Elemental Command", "Ring of Invisibility", "Ring of Spell Turning",
