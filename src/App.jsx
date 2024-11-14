@@ -25,7 +25,7 @@ const rarities = [
 const itemTypes = [
   'Helmet', 'HeavyArmor', 'Gauntlet', 'Boots', 'Necklace', 'Cloak', 'Potion',
   'Sword', 'Bow', 'Axe', 'Hammer', 'Glaive', 'Dagger', 'Staff', 'Rod', 'Wand',
-  'Grimoire', 'Spell Scroll', 'PermanentSpell', 'WeaponArt', 'MagicArt',
+  'Grimoire', 'SpellScroll', 'PermanentSpell', 'WeaponArt', 'MagicArt',
   'PassiveArt', 'BoostArt', 'SkillPoints', 'ExperiencePoints', 'Robe', 'Ring', 'LightArmor',
   'MediumArmor', 'WondrousItem'
 ];
@@ -37,6 +37,7 @@ const App = () => {
   const [selectedCard, setSelectedCard] = useState(null);
   const [isDrawing, setIsDrawing] = useState(false);
   const [currentSection, setCurrentSection] = useState('DungeonCompletion');
+  const [showModal, setShowModal] = useState(false);
   const cardRefs = useRef([]);
 
   useEffect(() => {
@@ -69,14 +70,31 @@ const App = () => {
   };
 
   const revealCard = (index) => {
-    setSelectedCard(cards[index]);
+    const selected = cards[index];
+    setSelectedCard(selected);
     setCards((prevCards) =>
-      prevCards.map((card, i) => 
-        i === index 
-          ? { ...card, revealed: true } 
+      prevCards.map((card, i) =>
+        i === index
+          ? { ...card, revealed: true }
           : { ...card, fadeAway: true }
       )
     );
+
+    // Delay the modal display by 2 seconds
+    setTimeout(() => {
+      setShowModal(true);
+    }, 2000);
+  };
+
+  const handleModalResponse = (accept) => {
+    setShowModal(false);
+    if (accept) {
+      // Logic if the user accepts the reward
+      alert(`You have accepted the ${selectedCard.rarity.name} ${selectedCard.itemType}: ${selectedCard.item}`);
+    } else {
+      // Logic if the user declines the reward
+      alert(`You have declined the ${selectedCard.rarity.name} ${selectedCard.itemType}: ${selectedCard.item}`);
+    }
   };
 
   const handleNavClick = (section) => {
@@ -136,6 +154,22 @@ const App = () => {
               />
             ))}
           </div>
+          {showModal && selectedCard && (
+            <div className="modal-overlay">
+              <div className="modal">
+                <p className="modal-text">
+                  Congratulations! You have obtained the{' '}
+                  <span style={{ color: selectedCard.rarity.color }}>{selectedCard.rarity.name}</span>{' '}
+                  <span style={{ color: selectedCard.rarity.color }}>{selectedCard.itemType}</span>:{' '}
+                  <span style={{ color: selectedCard.rarity.color }}>{selectedCard.item}</span>!
+                  <br />
+                  Do you accept this reward?
+                </p>
+                <button className="modal-button yes" onClick={() => handleModalResponse(true)}>Yes</button>
+                <button className="modal-button no" onClick={() => handleModalResponse(false)}>No</button>
+              </div>
+            </div>
+          )}
         </div>
       )}
       {currentSection === 'WeaponArts' && <WeaponArts />}

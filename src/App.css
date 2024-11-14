@@ -104,3 +104,64 @@ input[type="number"] {
   pointer-events: none;
   transition: opacity 1s ease-out;
 }
+
+/* src/App.css */
+
+/* Modal overlay to darken the background */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal styling */
+.modal {
+  background-color: #222;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  max-width: 400px;
+  width: 80%;
+}
+
+.modal-text {
+  font-family: 'Fantasy', cursive;
+  color: #fff;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.rarity {
+  color: #ffd700;
+}
+
+.item-name {
+  font-weight: bold;
+}
+
+.modal-button {
+  font-size: 1em;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.modal-button.yes {
+  background-color: green;
+  color: white;
+}
+
+.modal-button.no {
+  background-color: red;
+  color: white;
+}

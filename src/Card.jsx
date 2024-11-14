@@ -17,7 +17,7 @@ import magicSymbol from './assets/magic-symbol.png';
 import magicSkillSymbol from './assets/magic-skill.png';
 import helmetSymbol from './assets/helmet-symbol.png';
 import armorSymbol from './assets/armor-symbol.png';
-import attackSkillSymbol from './assets/attack-skill.png';
+import attackSkillSymbol from './assets/attack-skill.avif';
 import bootsSymbol from './assets/boots-symbol.png';
 import bowSymbol from './assets/bow-symbol.webp';
 import axeSymbol from './assets/axe-symbol.webp';
@@ -106,6 +106,7 @@ const Card = ({ card, onClick }) => {
       case 'Glaive':
         return glaiveSymbol;
       case 'SpellScroll':
+        return scrollSymbol;
       case 'PermanentSpell':
         return scrollSymbol;
       case 'WondrousItem':
