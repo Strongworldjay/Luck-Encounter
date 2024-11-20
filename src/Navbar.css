@@ -1,32 +1,39 @@
-/* src/Navbar.css */
 .navbar {
-    width: 100%;
-    background-color: #333;
-    color: white;
-    padding: 5px; /* Reduce padding to make the navbar slimmer */
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    z-index: 1000;
-  }
-  
-  .nav-list {
-    list-style-type: none;
-    display: flex;
-    gap: 15px; /* Reduce the gap between items */
-    font-size: 0.9em; /* Make the text smaller */
-  }
-  
-  .nav-item {
-    cursor: pointer;
-    padding: 3px 7px; /* Reduce padding for each item */
-    transition: background-color 0.3s;
-  }
-  
-  .nav-item:hover {
-    background-color: #555;
-    border-radius: 5px;
-  }
-  
+  width: 100%;
+  background-color: #333;
+  color: white;
+  padding: 5px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.nav-list {
+  list-style-type: none;
+  display: flex;
+  gap: 15px;
+  font-size: 0.9em;
+}
+
+.nav-item {
+  cursor: pointer;
+  padding: 3px 7px;
+  transition: background-color 0.3s;
+}
+
+.nav-item:hover {
+  background-color: #555;
+  border-radius: 5px;
+}
+
+/* Active class for the highlighted element */
+.nav-item.active {
+  background-color: #555;
+  color: #fff;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: underline;
+}

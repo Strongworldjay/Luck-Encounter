@@ -61,7 +61,7 @@ const Card = ({ card, onClick }) => {
 
   const getOverlayImage = (itemType) => {
     const [mainType, subtype] = itemType.split(" ");
-    
+
     switch (subtype || mainType) {
       case 'Sword':
         return swordSymbol;
@@ -137,8 +137,8 @@ const Card = ({ card, onClick }) => {
 
   return (
     <div
-      className={`card ${card.revealed ? 'revealed' : ''} ${getRarityClass(card.rarity)}`}
-      onClick={onClick}
+      className={`card ${card.revealed ? 'revealed' : ''} ${card.fadeAway ? 'fade-away' : ''}`}
+      onClick={!card.fadeAway && !card.revealed ? onClick : undefined}
     >
       <div
         className="card-face card-front"
@@ -158,7 +158,7 @@ const Card = ({ card, onClick }) => {
           <div className="item-name">{card.item}</div>
         </div>
       </div>
-      
+
       <div
         className="card-face card-back"
         style={{

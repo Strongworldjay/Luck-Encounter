@@ -1,4 +1,3 @@
-// src/App.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import Card from './Card';
 import LoadingScreen from './LoadingScreen';
@@ -37,7 +36,6 @@ const App = () => {
   const [selectedCard, setSelectedCard] = useState(null);
   const [isDrawing, setIsDrawing] = useState(false);
   const [currentSection, setCurrentSection] = useState('DungeonCompletion');
-  const [showModal, setShowModal] = useState(false);
   const cardRefs = useRef([]);
 
   useEffect(() => {
@@ -80,21 +78,10 @@ const App = () => {
       )
     );
 
-    // Delay the modal display by 2 seconds
-    setTimeout(() => {
-      setShowModal(true);
-    }, 2000);
-  };
-
-  const handleModalResponse = (accept) => {
-    setShowModal(false);
-    if (accept) {
-      // Logic if the user accepts the reward
-      alert(`You have accepted the ${selectedCard.rarity.name} ${selectedCard.itemType}: ${selectedCard.item}`);
-    } else {
-      // Logic if the user declines the reward
-      alert(`You have declined the ${selectedCard.rarity.name} ${selectedCard.itemType}: ${selectedCard.item}`);
-    }
+    // Log card details for now
+    console.log(
+      `You have obtained the ${selected.rarity.name} ${selected.itemType}: ${selected.item}`
+    );
   };
 
   const handleNavClick = (section) => {
@@ -107,7 +94,7 @@ const App = () => {
 
   return (
     <div className="app-container" style={{ backgroundImage: `url(${appBackground})` }}>
-      <Navbar onNavClick={handleNavClick} />
+      <Navbar onNavClick={handleNavClick} currentSection={currentSection} />
       {currentSection === 'DungeonCompletion' && (
         <div>
           <div className="top-center-container">
@@ -154,22 +141,6 @@ const App = () => {
               />
             ))}
           </div>
-          {showModal && selectedCard && (
-            <div className="modal-overlay">
-              <div className="modal">
-                <p className="modal-text">
-                  Congratulations! You have obtained the{' '}
-                  <span style={{ color: selectedCard.rarity.color }}>{selectedCard.rarity.name}</span>{' '}
-                  <span style={{ color: selectedCard.rarity.color }}>{selectedCard.itemType}</span>:{' '}
-                  <span style={{ color: selectedCard.rarity.color }}>{selectedCard.item}</span>!
-                  <br />
-                  Do you accept this reward?
-                </p>
-                <button className="modal-button yes" onClick={() => handleModalResponse(true)}>Yes</button>
-                <button className="modal-button no" onClick={() => handleModalResponse(false)}>No</button>
-              </div>
-            </div>
-          )}
         </div>
       )}
       {currentSection === 'WeaponArts' && <WeaponArts />}
