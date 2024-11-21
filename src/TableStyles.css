@@ -1,4 +1,4 @@
-#h2 {
+h2 {
   color: black;
 }
 
@@ -9,24 +9,38 @@
   overflow-y: scroll;
   /* Enable vertical scrolling */
   text-align: left;
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer */
+}
+
+.table-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Webkit browsers */
 }
 
 .arts-table {
   width: 100%;
   border-collapse: collapse;
-  background-color: #2c2c2c;
-  color: #fff;
+  background-color: #ffffff; /* Set table background to white */
+  color: #000; /* Set text color to black */
 }
 
 .arts-table th,
 .arts-table td {
-  border: 1px solid #2c2c2c;
+  border: 1px solid #ccc; /* Light grey border */
   padding: 8px;
 }
 
 .arts-table th {
-  background-color: #333;
-  color: white;
+  background-color: #f2f2f2; /* Light grey background for headers */
+  color: #000; /* Black text for headers */
+}
+
+.arts-table tr:nth-child(even) {
+  background-color: #f9f9f9; /* Slightly darker light grey for alternating rows */
+}
+
+.arts-table tr:nth-child(odd) {
+  background-color: #ffffff; /* White for alternating rows */
 }
 
 .art-tier-buttons span {
@@ -45,7 +59,7 @@
 }
 
 .tier-text.white {
-  color: white;
+  color: gray;
 }
 
 .tier-text.green {
@@ -75,7 +89,7 @@
 
 .art-levels {
   padding: 10px;
-  background-color: #2c2c2c;
-  color: #fff;
+  background-color: #f2f2f2; /* Light grey background */
+  color: #000; /* Black text */
   line-height: 1.5;
 }

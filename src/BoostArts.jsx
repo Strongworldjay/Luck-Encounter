@@ -16,6 +16,7 @@ const BoostArts = () => {
                     <tr>
                         <th>Art Name</th>
                         <th>Art Specialty</th>
+                        <th>Requirements</th>
                         <th>Art Tiers</th>
                     </tr>
                 </thead>
@@ -23,6 +24,7 @@ const BoostArts = () => {
                     <tr>
                         <td>Agony</td>
                         <td>S Charisma</td>
+                        <th>Dexterity 16+</th>
                         <td className="art-tier-buttons">
                             <span
                                 onClick={() => toggleArtDetails('AgonyF')}
@@ -159,6 +161,7 @@ const BoostArts = () => {
                     <tr>
                         <td>Anchor Howl</td>
                         <td>S Constitution/A Charisma</td>
+                        <th>Dexterity 16+</th>
                         <td className="art-tier-buttons">
                             <span
                                 onClick={() => toggleArtDetails('AnchorHowlF')}
@@ -295,6 +298,7 @@ const BoostArts = () => {
                     <tr>
                         <td>Castle Of Stone</td>
                         <td>Charisma A</td>
+                        <th>Dexterity 16+</th>
                         <td className="art-tier-buttons">
                             <span
                                 onClick={() => toggleArtDetails('CastleOfStoneF')}
@@ -431,6 +435,7 @@ const BoostArts = () => {
                     <tr>
                         <td>Castling</td>
                         <td>Charisma A</td>
+                        <th>Dexterity 16+</th>
                         <td className="art-tier-buttons">
                             <span
                                 onClick={() => toggleArtDetails('CastlingF')}
@@ -567,6 +572,7 @@ const BoostArts = () => {
                     <tr>
                         <td>Clairvoyance</td>
                         <td>Charisma A</td>
+                        <th>Dexterity 16+</th>
                         <td className="art-tier-buttons">
                             <span
                                 onClick={() => toggleArtDetails('ClairvoyanceF')}
@@ -703,6 +709,7 @@ const BoostArts = () => {
                     <tr>
                         <td>Coward's Retreat</td>
                         <td>Charisma A</td>
+                        <th>Dexterity 16+</th>
                         <td className="art-tier-buttons">
                             <span
                                 onClick={() => toggleArtDetails('CowardsRetreatF')}
@@ -839,6 +846,7 @@ const BoostArts = () => {
                     <tr>
                         <td>Demoralize</td>
                         <td>S Charisma/S Constitution</td>
+                        <th>Dexterity 16+</th>
                         <td className="art-tier-buttons">
                             <span
                                 onClick={() => toggleArtDetails('DemoralizeF')}
@@ -975,6 +983,7 @@ const BoostArts = () => {
                     <tr>
                         <td>Diminish</td>
                         <td>Charisma A</td>
+                        <th>Dexterity 16+</th>
                         <td className="art-tier-buttons">
                             <span
                                 onClick={() => toggleArtDetails('DiminishF')}
@@ -1111,6 +1120,7 @@ const BoostArts = () => {
                     <tr>
                         <td>Focus</td>
                         <td>S Wisdom/S Dexterity</td>
+                        <th>Dexterity 16+</th>
                         <td className="art-tier-buttons">
                             <span
                                 onClick={() => toggleArtDetails('FocusF')}
@@ -1247,6 +1257,7 @@ const BoostArts = () => {
                     <tr>
                         <td>Lanius Capture</td>
                         <td>Charisma A</td>
+                        <th>Dexterity 16+</th>
                         <td className="art-tier-buttons">
                             <span
                                 onClick={() => toggleArtDetails('LaniusCaptureF')}
@@ -1383,6 +1394,7 @@ const BoostArts = () => {
                     <tr>
                         <td>Mana Channelling</td>
                         <td>Charisma A</td>
+                        <th>Dexterity 16+</th>
                         <td className="art-tier-buttons">
                             <span
                                 onClick={() => toggleArtDetails('ManaChannellingF')}
@@ -1519,6 +1531,7 @@ const BoostArts = () => {
                     <tr>
                         <td>Negative Pressure</td>
                         <td>S Charisma/S Strength</td>
+                        <th>Dexterity 16+</th>
                         <td className="art-tier-buttons">
                             <span
                                 onClick={() => toggleArtDetails('NegativePressureF')}
@@ -1792,7 +1805,7 @@ const BoostArts = () => {
                     <tr>
                         <td>Purifying Wind</td>
                         <td>Charisma A</td>
-                        <td>Charisma A</td>
+                        <th>Dexterity 16+</th>
                         <td className="art-tier-buttons">
                             <span
                                 onClick={() => toggleArtDetails('PurifyingWindF')}
@@ -1929,6 +1942,7 @@ const BoostArts = () => {
                     <tr>
                         <td>Stalwart</td>
                         <td>Charisma A</td>
+                        <th>Dexterity 16+</th>
                         <td className="art-tier-buttons">
                             <span
                                 onClick={() => toggleArtDetails('StalwartF')}

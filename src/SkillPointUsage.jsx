@@ -5,8 +5,8 @@ import './TableStyles.css';
 const SkillPointUsage = () => {
   return (
     <div className="table-container">
-      <td>Skill Point Usage</td>
-      <table className="skill-points-table">
+      <h2 id="h2">Skill Point Usage</h2>
+      <table className="arts-table">
         <thead>
           <tr>
             <th>Action</th>
