@@ -31,8 +31,6 @@
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-
-/* Glow effect with delay */
 .card.revealed::before {
   content: '';
   position: absolute;
@@ -40,11 +38,10 @@
   height: 100%;
   border-radius: 20px;
   box-shadow: 0 0 15px 5px var(--glow-color);
-  opacity: 0;
+  opacity: 0; /* Initially invisible */
   z-index: -1;
-  transition: opacity 0.6s ease, box-shadow 0.6s ease;
-  transition-delay: 1s;
-  /* Delay the glow by 1 second */
+  transition: opacity 0.8s ease, box-shadow 0.8s ease;
+  transition-delay: 0.6s; /* Delay to match the flipping transition */
 }
 
 .card.revealed {
@@ -52,10 +49,9 @@
 }
 
 .card.revealed::before {
-  opacity: 0.8;
+  opacity: 0.8; /* Glow becomes visible after the delay */
 }
 
-/* Default glow color */
 :root {
   --glow-color: white;
 }

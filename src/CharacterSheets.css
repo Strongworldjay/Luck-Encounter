@@ -1,0 +1,97 @@
+.character-sheets-container {
+    display: flex;
+    gap: 10px; /* Reduce gap between the cards and backstory */
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to the top */
+    padding: 20px;
+    position: relative;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    flex: 2;
+}
+
+.character-card {
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    color: black;
+    background-color: white;
+    transition: transform 1s ease, opacity 1s ease;
+    cursor: pointer;
+}
+
+/* Assign unique background colors to cards */
+.character-card:nth-child(1) {
+    background-color: plum; /* Background color for card 1 */
+}
+
+.character-card:nth-child(2) {
+    background-color: burlywood; /* Background color for card 2 */
+}
+
+.character-card:nth-child(3) {
+    background-color: darkcyan; /* Background color for card 3 */
+}
+
+.character-card:nth-child(4) {
+    background-color: indianred; /* Background color for card 4 */
+}
+
+.character-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: block;
+    object-fit: cover;
+}
+
+.character-card:hover {
+    transform: scale(1.1);
+}
+
+.character-card.focused {
+    position: relative;
+    transform: translate(0, 0) scale(1); /* Remove translation and scaling adjustments */
+    z-index: 100;
+    width: 350px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Enhance focus shadow */
+    transition: transform 1.5s ease, z-index 1.5s ease;
+    order: -1; /* Ensure the focused card appears first in the layout */
+}
+
+.character-card.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.character-stats p {
+    margin: 2px 0; /* Reduce vertical spacing between paragraphs */
+    font-size: 0.9em;
+    line-height: 1.2; /* Adjust line height for tighter spacing */
+}
+
+.character-card p {
+    margin: 2px 0; /* Apply the same reduction for other paragraphs in the card */
+    line-height: 1.2; /* Ensure consistent line height */
+}
+
+.backstory-container {
+    flex: 1;
+    padding: 20px;
+    background-color: rgb(148, 138, 138);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); 
+    border-radius: 10px;
+    color: black;
+    max-width: 300px;
+    align-self: flex-start; /* Ensure the backstory aligns with the top of the screen */
+    margin-left: -250px;
+    margin-right: 300px; /* Further reduce the margin to move it closer to the cards */
+}

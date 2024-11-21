@@ -7,6 +7,7 @@ import MagicArts from './MagicArts';
 import PassiveArts from './PassiveArts';
 import BoostArts from './BoostArts';
 import SkillPointUsage from './SkillPointUsage';
+import CharacterSheets from './CharacterSheets'; // Import the new CharacterSheets component
 import './App.css';
 import appBackground from './assets/app-background.jpg';
 import deckImage from './assets/card-design.jpg';
@@ -78,7 +79,6 @@ const App = () => {
       )
     );
 
-    // Log card details for now
     console.log(
       `You have obtained the ${selected.rarity.name} ${selected.itemType}: ${selected.item}`
     );
@@ -148,6 +148,7 @@ const App = () => {
       {currentSection === 'PassiveArts' && <PassiveArts />}
       {currentSection === 'BoostArts' && <BoostArts />}
       {currentSection === 'SkillPointUsage' && <SkillPointUsage />}
+      {currentSection === 'CharacterSheets' && <CharacterSheets />}
     </div>
   );
 };

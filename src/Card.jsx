@@ -137,7 +137,7 @@ const Card = ({ card, onClick }) => {
 
   return (
     <div
-      className={`card ${card.revealed ? 'revealed' : ''} ${card.fadeAway ? 'fade-away' : ''}`}
+      className={`card ${card.revealed ? 'revealed' : ''} ${card.fadeAway ? 'fade-away' : ''} ${getRarityClass(card.rarity)}`}
       onClick={!card.fadeAway && !card.revealed ? onClick : undefined}
     >
       <div
