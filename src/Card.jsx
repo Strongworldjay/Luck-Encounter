@@ -38,6 +38,8 @@ import skillPointsSymbol from './assets/arrow.png';
 import fantasySkillSymbol from './assets/fantasy-skill.png';
 import glaiveSymbol from './assets/glaive-symbol.webp';
 import skillSymbol from './assets/skill-symbol.png'; // Skill symbol for StatusSkill
+import shieldSymbol from './assets/shield.png';
+
 
 const Card = ({ card, onClick }) => {
   const getFrontImage = (rarity) => {
@@ -107,7 +109,7 @@ const Card = ({ card, onClick }) => {
         return glaiveSymbol;
       case 'SpellScroll':
         return scrollSymbol;
-      case 'PermanentSpell':
+      case 'Gems':
         return scrollSymbol;
       case 'WondrousItem':
         return magicSymbol;
@@ -119,6 +121,8 @@ const Card = ({ card, onClick }) => {
         return skillPointsSymbol;
       case 'ExperiencePoints':
         return expSymbol;
+        case 'Shield':
+        return shieldSymbol;
       case 'PassiveArt':
         return fantasySkillSymbol;
       case 'BoostArt':

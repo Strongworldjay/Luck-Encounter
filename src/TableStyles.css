@@ -2,47 +2,63 @@ h2 {
   color: black;
 }
 
+/* Base styles for the table container */
 .table-container {
   padding: 20px;
   max-height: 80vh;
-  /* Set a max height to allow scrolling */
   overflow-y: scroll;
-  /* Enable vertical scrolling */
   text-align: left;
   scrollbar-width: none; /* For Firefox */
   -ms-overflow-style: none; /* For Internet Explorer */
+  color: black;
 }
 
 .table-container::-webkit-scrollbar {
   display: none; /* Hide scrollbar for Webkit browsers */
 }
 
+/* Table styles */
 .arts-table {
   width: 100%;
   border-collapse: collapse;
-  background-color: #ffffff; /* Set table background to white */
-  color: #000; /* Set text color to black */
 }
 
 .arts-table th,
 .arts-table td {
-  border: 1px solid #ccc; /* Light grey border */
+  border: 1px solid #0b0707; /* Light grey border */
   padding: 8px;
+  text-align: left;
 }
 
 .arts-table th {
-  background-color: #f2f2f2; /* Light grey background for headers */
-  color: #000; /* Black text for headers */
+  background-color: #d3d3c4; /* Light grey for headers */
+  color: black;
 }
 
-.arts-table tr:nth-child(even) {
-  background-color: #f9f9f9; /* Slightly darker light grey for alternating rows */
+/* Skill-specific row colors */
+.row-1 {
+  background-color: #d1a969; /* Beige */
 }
 
-.arts-table tr:nth-child(odd) {
-  background-color: #ffffff; /* White for alternating rows */
+.row-2 {
+  background-color: #f4c6b2; /* Light cyan */
 }
 
+.row-3 {
+  background-color: #fffef2; /* Light pink */
+}
+
+.row-4 {
+  background-color: #a4b9c4; /* Honeydew */
+}
+
+/* Hover effect for skill rows */
+.skill-row:hover {
+  background-color: #d3d3d3; /* Light grey for hover */
+  transition: background-color 0.3s ease;
+}
+
+/* Tier button styles */
 .art-tier-buttons span {
   display: inline-block;
   margin: 5px;
@@ -50,10 +66,7 @@ h2 {
   font-weight: bold;
 }
 
-.tier-text {
-  transition: color 0.3s;
-}
-
+/* Color-coded tiers */
 .tier-text.black {
   color: black;
 }
@@ -82,14 +95,16 @@ h2 {
   color: red;
 }
 
+/* Active tier highlight */
 .active-tier {
   text-decoration: underline;
-  /* Highlight active tier */
 }
 
+/* Art levels section */
 .art-levels {
   padding: 10px;
   background-color: #f2f2f2; /* Light grey background */
-  color: #000; /* Black text */
+  color: black;
   line-height: 1.5;
+  font-size: 0.9rem;
 }

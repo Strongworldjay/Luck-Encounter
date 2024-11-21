@@ -25,9 +25,9 @@ const rarities = [
 const itemTypes = [
   'Helmet', 'HeavyArmor', 'Gauntlet', 'Boots', 'Necklace', 'Cloak', 'Potion',
   'Sword', 'Bow', 'Axe', 'Hammer', 'Glaive', 'Dagger', 'Staff', 'Rod', 'Wand',
-  'Grimoire', 'SpellScroll', 'PermanentSpell', 'WeaponArt', 'MagicArt',
+  'Grimoire', 'SpellScroll', 'Gems', 'WeaponArt', 'MagicArt',
   'PassiveArt', 'BoostArt', 'SkillPoints', 'ExperiencePoints', 'Robe', 'Ring', 'LightArmor',
-  'MediumArmor', 'WondrousItem'
+  'MediumArmor', 'WondrousItem', 'Shield'
 ];
 
 const App = () => {

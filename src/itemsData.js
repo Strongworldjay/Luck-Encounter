@@ -8,21 +8,35 @@ export const itemNames = {
         Unique: ["Heart of the Peaks", "Inferno’s Gaze", "Mask of the Void", "Sentinel’s Watch", "Verdant Crown"]
     },
     Robe: {
-        Common: ["Plate", "Leather", "Studded Leather", "Hide", "Half Plate", "Chain Mail", "Scale Mail", "Padded Leather"],
-        Uncommon: ["Frosted Mail", "Ember-Gleam Vest", "Warden’s Embrace", "Spellwoven Cloak", "Starbound Tunic"],
-        Rare: ["Celestial Mail", "Shadow Ward", "Flameguard Plate", "Tempest Carapace", "Ironwood Brigandine"],
-        VeryRare: ["Dawnbringer Armor", "Dragonhide Plate", "Windbound Cloak", "Emberforged Plate", "Midnight Shroud"],
-        Legendary: ["Armor of the Eternal Flame", "Aegis of the Ancients", "Celestial Guard", "Stormforged Plate", "Radiant Vanguard"],
-        Unique: ["Heart of the Mountain", "Inferno’s Embrace", "Mantle of the Void", "The Sentinel’s Resolve", "Verdant Guardian"]
+        Common: ["Robe"],
+        Uncommon: ["Robe of Serpents", "Robe of Useful Items", "Robe of the Altruist", "Rocborne Robe", "Spellwoven Robes"],
+        Rare: ["Aurumplate Robes", "Gi of Shifting Seasons", "Master Spellwoven Robes", "Polaris Magistrate Robe", "Robe of Cunning", "Robe of Eyes", "Robe of Summer", "Robe of the Forlorn"],
+        VeryRare: ["Aurumplate Robes, +1", "Robe of Scintillating Colors", "Robe of Stars"],
+        Legendary: ["Robe of The Scriber", "Robe of the Archmagi", "The Walking Church"],
+        Unique: ["????"]
     },
 
     HeavyArmor: {
-        Common: ["Plate", "Leather", "Studded Leather", "Hide", "Half Plate", "Chain Mail", "Scale Mail", "Padded Leather"],
-        Uncommon: ["Frosted Mail", "Ember-Gleam Vest", "Warden’s Embrace", "Spellwoven Cloak", "Starbound Tunic"],
-        Rare: ["Celestial Mail", "Shadow Ward", "Flameguard Plate", "Tempest Carapace", "Ironwood Brigandine"],
-        VeryRare: ["Dawnbringer Armor", "Dragonhide Plate", "Windbound Cloak", "Emberforged Plate", "Midnight Shroud"],
-        Legendary: ["Armor of the Eternal Flame", "Aegis of the Ancients", "Celestial Guard", "Stormforged Plate", "Radiant Vanguard"],
-        Unique: ["Heart of the Mountain", "Inferno’s Embrace", "Mantle of the Void", "The Sentinel’s Resolve", "Verdant Guardian"]
+        Common: ["Smoldering Armor, Plate", "Smoldering Armor, Half Plate", "Smoldering Armor, Chain Mail", "Smoldering Armor, Ring Mail", "Smoldering Armor, Splint"],
+        Uncommon: ["Adamantine Breastplate", "Adamantine Plate", "Adamantine Ring Mail", "Adamantine Splint", "Armor of Weightlessness, Plate",
+            "Armor of Weightlessness, Chain Mail", "Armor of the Fallen, Plate", "Armor of the Fallen, Splint", "Armor of the Fallen, Ring Mail", "Armor of the Fallen, Chain Mail",
+            "Fey-Touched Chain Mail", "Fey-Touched Plate", "Fey-Touched Ring Mail", "Fey-Touched Splint", "Mariner's Plate Armor",
+            "Mariner's Splint", "Mariner's Ring Mail", "Mithral Plate", "Mithral Ring Mail", "Mithral Splint",
+            "Plate of Knight's Fellowship", "Scorpio Plate Armor"],
+        Rare: ["Armor of Vulnerability (Bludgeoning)", "Armor of Vulnerability (Slashing)", "Armor of Vulnerability (Piercing)", "Bastion Chain", "Chain Mail of Vulnerability (Bludgeoning)",
+            "Chain Mail of Vulnerability (Piercing)", "Chain Mail of Vulnerability (Slashing)", "Chain Mail Acolyte Robes", "Chain Mail, +1", "Elven Chain Mail", "Feywrought Armor, Chain Mail", "Feywrought Armor, Plate", "Feywrought Armor, Splint", "Feywrought Armor, Ring Mail",
+            "Gloomwrought Armor, Chain Mail", "Gloomwrought Armor, Plate", "Gloomwrought Armor, Ring Mail", "Gloomwrought Armor, Splint", "Heavy Golem Armor", "Lionguard Chain Mail", "Mizzium Armor, Splint", "Molten Bronze Skin, Plate",
+            "Nightstalker's Plate Armor of the Northeastern Wind", "Plate, +1", "Ring Mail of Vulnerability (Bludgeoning)", "Ring Mail of Vulnerability (Slashing)", "Ring Mail of Vulnerability (Piercing)", "Scorpion Armor", "Splint Armor of Vulnerability (Bludgeoning)",
+            "Splint Armor of Vulnerability (Piercing)", "Splint Armor of Vulnerability (Slashing)", "Splint, +1", "Splinterguard", "Vainglorious Ring Mail Armor", "Warden's Chain Mail Armor", "Warden's Ring Mail Armor", "Warden's Splint Armor"
+        ],
+        VeryRare: ["Antimagic Armor, Chain Mail", "Antimagic Armor, Splint", "Antimagic Armor, Plate", "Antimagic Armor, Ring Mail", "Armor of Safeguarding, Chain Mail", "Armor of Safeguarding, Ring Mail", "Armor of Safeguarding, Splint", "Armor of Safeguarding, Plate",
+            "Brazen Armor", "Chain Mail, +2", "Demon Chain Mail", "Demon Plate Armor", "Demon Ring Mail", "Demon Splint Armor", "Hazewalker Plate", "Impact Plate", "Iron Maiden Plate", "Ironleaf Plate", "Last Stand Armor, Chain Mail", "Last Stand Armor, Plate", "Last Stand Armor, Splint",
+            "Living Armor, Chain Mail", "Living Armor, Plate", "Living Armor, Ring Mail", "Living Armor, Splint", "Novanite Chain Mail Armor", "Novanite Plate Armor", "Novanite Ring Mail Armor", "Novanite Splint Armor", "Plate, +2", "Ring Mail. +2", "Solacesteel Plate", "Splint, +2"
+        ],
+        Legendary: ["Armor of Invulnerability", "Armor of the Sun & Stars", "Forgeplate of the Eternal Smith", "Obsidian Flint Dragon Plate", "Plate Armor of Etherealness",
+            "Plate, +3", "Powered Armor", "Ring Mail, +3", "Splint, +3", "Tarrasque Plate"
+        ],
+        Unique: ["Plate of the Dawnmartyr (Dormant)"]
     },
     LightArmor: {
         Common: ["Plate", "Leather", "Studded Leather", "Hide", "Half Plate", "Chain Mail", "Scale Mail", "Padded Leather"],
@@ -159,14 +173,14 @@ export const itemNames = {
     },
 
     Ring: {
-        Common: ["Band of Loyalty", "Pair of Bands of the Found and Lost", "Pair of Tiny Violin Rings", "Ring of Gestures", "Ring of Roses", "Ring of the Fowl Sentinel", "Ring of the Printless"],
-        Uncommon: ["Band of the Dryad", "Brawler's Ring", "Hushed Ring", "Medusan Signet", "Ring of Eight Eyes",
+        Common: ["Doodle Ring", "Band of Loyalty", "Pair of Bands of the Found and Lost", "Pair of Tiny Violin Rings", "Ring of Gestures", "Ring of Roses", "Ring of the Fowl Sentinel", "Ring of the Printless", "Ring of Perching"],
+        Uncommon: ["Ring of the Soul Harvest", "Band of the Dryad", "Brawler's Ring", "Hushed Ring", "Medusan Signet", "Ring of Eight Eyes",
             "Ring of Healer's Heroism", "Ring of Hidden Desire", "Ring of Jumping", "Ring of Mind Shielding", "Ring of Obscuring",
             "Ring of Puzzler's Wit", "Ring of Rituals", "Ring of Seething", "Ring of Stolen Alacrity", "Ring of Swimming",
             "Ring of Truth Telling", "Ring of Volleys", "Ring of Warmth", "Ring of Wind", "Ring of the Mute Mage",
             "Band of the Orator", "Ring of the Sandskimmer", "Rings of Shared Suffering", "Wailing Ring",
         ],
-        Rare: ["Contingency Band", "Iron Ring", "Mageplate Ring", "Minor Ring of Invisibility", "Netherse Ring of Protection",
+        Rare: ["Enchantment Breaker Ring", "Shared Burden Rings", "Contingency Band", "Iron Ring", "Mageplate Ring", "Minor Ring of Invisibility", "Netherse Ring of Protection",
             "Quick Change Ring", "Ring of Acid Resistance", "Ring of Anchoring", "Ring of Animal Influence", "Ring of Changing Shapess",
             "Ring of Cold Resistance", "Ring of Eldritch Ire", "Ring of Evasion", "Ring of Feather Falling", "Ring of Fire",
             "Ring of Fire Resistance", "Ring of Force Resistance", "Ring of Free Action", "Ring of Honor", "Ring of Lightning Resistance",
@@ -175,7 +189,7 @@ export const itemNames = {
             "Ring of X-ray Vision", "Ring of the Arcane Berserker", "Ring of the Ram", "Ring of the True Companions", "Sage's Signet (Serpent)",
             "Sage's Signet (Songbird)", "Signet Ring of Blindness", "Signet Ring of Deafness", "Signet Ring of Silence", "Starmetal Ring", "Companion's Band"
         ],
-        VeryRare: ["Blazeblood Signet", "Gateway Ring", "Horned Ring", "Ring of Amity", "Ring of Ice",
+        VeryRare: ["Ramp Ring", "Ring of Scarlet Shadows", "Septum Ring of the Great Minotaur", "Blazeblood Signet", "Gateway Ring", "Horned Ring", "Ring of Amity", "Ring of Ice",
             "Ring of Lunar Might", "Ring of Red Fury", "Ring of Regneration", "Ring of Shooting Stars", "Ring of Telekinesis",
             "Ring of the Split Mind", "Sage's Signet (Bear)", "Sage's Signet (Hart)", "Sage's Signet (Lion)", "Sage's Signet (Wolf)",
             "Signet Rings of the Fey Court", "Sun Eater's Mind", "Sun Eater's Soul"
@@ -188,13 +202,19 @@ export const itemNames = {
     },
 
     Necklace: {
-        Common: ["Iron Gauntlet", "Leather Gloves", "Chain Handwraps", "Guard’s Grip", "Hide Gloves"],
-        Uncommon: ["Frosted Grips", "Ember-Gleam Fist", "Warden’s Clutch", "Spellwoven Gloves", "Starbound Handguards"],
-        Rare: ["Celestial Gauntlet", "Shadow Claws", "Flameguard Grips", "Tempest Fistguards", "Ironwood Gauntlet"],
-        VeryRare: ["Dawnbringer Grips", "Dragonhide Gloves", "Windbound Mitts", "Emberforged Gauntlets", "Midnight Talons"],
-        Legendary: ["Fists of the Eternal Flame", "Ancient’s Claw", "Celestial Hands", "Stormforged Gauntlets", "Radiant Fists"],
-        Unique: ["Grasp of the Mountain", "Inferno’s Claws", "Hand of the Void", "Sentinel’s Embrace", "Verdant Grips"]
+        Common: ["Catnip Amulet", "Clockwork Amulet", "Chain Handwraps", "Guard’s Grip", "Hide Gloves"],
+        Uncommon: ["Amulet of Buoyancy", "Amulet of Equilibrium", "Amulet of proof against Detection and Location", "Amulet of the Devout, +1", "Amulet of the Drunkard",
+            "Bloodhound Amulet", "Bowstring Amulet", "Hagstones Amulet", "Kobold Diviner's Amulet", "Necklace of Adaptation", "Necklace of the Drunk", "Servitude Choker Necklace", "Medallion of Thoughts"],
+        Rare: ["Necklace of Fireballs", "Necklace of Ice Spikes", "Necklace of Nine Lives", "Necklace of Prayer Beads", "Necklace of Thunderbolts", "Amulet of Divine Protection", "Boreal Pendant", "Soul Pendant", "Amulet of Protection from Turning", "Amulet of the Devout, +2",
+            "Amulet of the Lycanthrope", "Amulet of the Sentinel", "Meta Medallion"
+        ],
+        VeryRare: ["Amulet of the Black Skull", "Amulet of the Coldfire Phoenix", "Amulet of the Devout, +3", "Amulet of the Planes", "Amulet of the Spirit Naga", "Blood Pact Pendants",
+            "Heartless Cage Pendant", "Pendant of Grave Regeneration", "Pendant of the Tempered Fury"
+        ],
+        Legendary: ["???"],
+        Unique: ["????"]
     },
+
     Cloak: {
         Common: ["Iron Gauntlet", "Leather Gloves", "Chain Handwraps", "Guard’s Grip", "Hide Gloves"],
         Uncommon: ["Frosted Grips", "Ember-Gleam Fist", "Warden’s Clutch", "Spellwoven Gloves", "Starbound Handguards"],
@@ -202,15 +222,6 @@ export const itemNames = {
         VeryRare: ["Dawnbringer Grips", "Dragonhide Gloves", "Windbound Mitts", "Emberforged Gauntlets", "Midnight Talons"],
         Legendary: ["Fists of the Eternal Flame", "Ancient’s Claw", "Celestial Hands", "Stormforged Gauntlets", "Radiant Fists"],
         Unique: ["Grasp of the Mountain", "Inferno’s Claws", "Hand of the Void", "Sentinel’s Embrace", "Verdant Grips"]
-    },
-
-    Robe: {
-        Common: ["Plate", "Leather", "Studded Leather", "Hide", "Half Plate", "Chain Mail", "Scale Mail", "Padded Leather"],
-        Uncommon: ["Frosted Mail", "Ember-Gleam Vest", "Warden’s Embrace", "Spellwoven Cloak", "Starbound Tunic"],
-        Rare: ["Celestial Mail", "Shadow Ward", "Flameguard Plate", "Tempest Carapace", "Ironwood Brigandine"],
-        VeryRare: ["Dawnbringer Armor", "Dragonhide Plate", "Windbound Cloak", "Emberforged Plate", "Midnight Shroud"],
-        Legendary: ["Armor of the Eternal Flame", "Aegis of the Ancients", "Celestial Guard", "Stormforged Plate", "Radiant Vanguard"],
-        Unique: ["Heart of the Mountain", "Inferno’s Embrace", "Mantle of the Void", "The Sentinel’s Resolve", "Verdant Guardian"]
     },
 
     Potion: {
@@ -363,10 +374,10 @@ export const itemNames = {
     },
     Grimoire: {
         Common: ["Patch of the Tome", "Book of Instant Copying"],
-        Uncommon: ["Tome of Dreams", "Arcane Grimoire, +1", "Book of Clothier's Croquis"],
-        Rare: ["Bright Idea Tome", "Insatiable Tome", "Tome of the Dragon's Hoard", "Tome of the Ethereal", "Arcane Grimoire, +2"],
+        Uncommon: ["Tome of Dreams", "Arcane Grimoire, +1", "Book of Clothier's Croquis", "Detective's Notebook", "Lorehold Primer", "Prismari Primer", "Quandrix Primer", "Silverquill Primer", "Witherbloom Primer", "Heart Weaver's Primer"],
+        Rare: ["Bright Idea Tome", "Insatiable Tome", "Tome of the Dragon's Hoard", "Tome of the Ethereal", "Arcane Grimoire, +2", "Atlas of Endless Horizons", "Protective Verses", "Duplicitous Manuscript"],
         VeryRare: ["Tome of Advanced Fighting Styles", "Tome of Clear Thought", "Tome of Leadership and Influence", "Tome of Understanding", "Arcane Grimoire, +3", "Edible Book of Recipes"],
-        Legendary: ["Tome of Lost Knowledge", "Tome of The Emperors Vault", "Tome of the Stilled Tongue", "Grimoire Infinitus"],
+        Legendary: ["Tome of Lost Knowledge", "Tome of The Emperors Vault", "Tome of the Stilled Tongue", "Grimoire Infinitus", "Manual of Bodily Health", "Manual of Clay Golems", "Manual of Flesh Golems", "Manual of Gainful Exercise", "Manual of Iron Golems", "Manual of Quickness of Action","Manual of Stone Golems"],
         Unique: ["Book of Exalted Deeds", "Book of Vile Darkness"]
     },
     SpellScroll: {
@@ -395,13 +406,36 @@ export const itemNames = {
         Legendary: ["Fists of the Eternal Flame", "Ancient’s Claw", "Celestial Hands", "Stormforged Gauntlets", "Radiant Fists"],
         Unique: ["Grasp of the Mountain", "Inferno’s Claws", "Hand of the Void", "Sentinel’s Embrace", "Verdant Grips"]
     },
-    PermanentSpell: {
+    Gems: {
         Common: ["Iron Gauntlet", "Leather Gloves", "Chain Handwraps", "Guard’s Grip", "Hide Gloves"],
-        Uncommon: ["Frosted Grips", "Ember-Gleam Fist", "Warden’s Clutch", "Spellwoven Gloves", "Starbound Handguards"],
-        Rare: ["Celestial Gauntlet", "Shadow Claws", "Flameguard Grips", "Tempest Fistguards", "Ironwood Gauntlet"],
-        VeryRare: ["Dawnbringer Grips", "Dragonhide Gloves", "Windbound Mitts", "Emberforged Gauntlets", "Midnight Talons"],
-        Legendary: ["Fists of the Eternal Flame", "Ancient’s Claw", "Celestial Hands", "Stormforged Gauntlets", "Radiant Fists"],
-        Unique: ["Grasp of the Mountain", "Inferno’s Claws", "Hand of the Void", "Sentinel’s Embrace", "Verdant Grips"]
+        Uncommon: ["Elemental Gem (Blue Sapphire)", "Elemental Gem (Emerald)", "Elemental Gem (Red Corundum)", "Elemental Gem (Yellow Diamond)", "Fabulist Gem", "Gem of Brightness", "Spell Gem (Lapis Lazuli",
+            "Spell Gem (Obsidian)"
+        ],
+        Rare: ["Gem of Seeing", "Spell Gem (Bloodstone)", "Spell Gem (Quartz)", "Ioun Stone of Awareness", "Ioun Stone of Historical Knowledge", "Ioun Stone of Language Knowledge", "Ioun Stone of Natural Knowledge", "Ioun Stone of Protection",
+            "Ioun Stone of Religious Knowledge", "Ioun Stone of Reserve", "Ioun Stone of Self-Preservation", "Ioun Stone of Supreme Intellect", "Ioun Stone of Sustenance"
+        ],
+        VeryRare: ["Spell Gem (Amber)", "Spell Gem (Jade)", "Spell Gem (Topaz)", "Ioun Stone of Absorption", "Ioun Stone of Agility", "Ioun Stone of Fortitude", "Ioun Stone of Insight", "Ioun Stone of Intellect", "Ioun Stone of Leadership", "Ioun Stone of Strength", "Ioun Stone of Vitality"],
+        Legendary: ["Mastery Gem", "Ruby Weave Gem", "Spell Gem (Diamond)", "Spell Gem (Ruby)", "Spell Gem (Star Ruby)", "Ioun Stone of Greater Absorption", "Ioun Stone of Mastery", "Ioun Stone of Regeneration"],
+        Unique: ["?????"]
+    },
+
+    Shield: {
+        Common: ["Shield of Expression", "Sun and Moon Shield"],
+        Uncommon: ["Bane Shield", "Barricade Shield", "Boomerang Shield", "Couatl Herald's Guard", "Feywatch Shield",
+            "Ironleaf Oaken Shield", "Jo'Catian Rebuker", "Over Shield", "Pisces Shield", "Retaliating Shield of Ink",
+            "Sentinel Shield", "Shield of the Great Badger", "Shield of the Tortoise", "Shield, +1", "Sir Varion's Shield", "Skymetal Shield",
+            "Bulette Bulwark", "Relentless Bulwark"
+        ],
+        Rare: ["Arrow-Catching Shield", "Battering Shield", "Dragon Turtle Shield", "Forgework Dragon Shield", "Gloom Shield",
+            "Helmsman's Shelter Shield", "Monster Tamer's Shield", "Old Guard Shield (Dormant)", "Pariah's Shield", "Retaliating Bloom Shield",
+            "Shield of Far Sight", "Shield of Missile Attraction", "Shield of Shadow Form", "Shield of the Justicars", "Shield, +2",
+            "Skyglider Shield", "Storm's Eye Shield", "The Shield of Sacred Flame", "Aberrant Aegis", "Aegis of Radiance"
+        ],
+        VeryRare: ["Animated Shield", "Arborguard Shield", "Infernal Aegis Shield", "Oathkeeper's Resolve",
+            "Shield of Yggdrasil", "Shield of the Cavalier", "Shield of the Everfighter", "Shield of the Uven Rune", "Shield, +3", "Spellguard Shield", "Infernal Aegis Shield"
+        ],
+        Legendary: ["Shield of the Blazing Dreadought", "Shield of the Hidden Lord", "Starmetal Shield", "Euryale's Aegis"],
+        Unique: ["???"]
     },
 
     WeaponArt: {
