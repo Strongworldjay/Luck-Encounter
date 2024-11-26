@@ -39,7 +39,7 @@ import fantasySkillSymbol from './assets/fantasy-skill.png';
 import glaiveSymbol from './assets/glaive-symbol.webp';
 import skillSymbol from './assets/skill-symbol.png'; // Skill symbol for StatusSkill
 import shieldSymbol from './assets/shield.png';
-
+import gemSymbol from './assets/gem.png';
 
 const Card = ({ card, onClick }) => {
   const getFrontImage = (rarity) => {
@@ -110,7 +110,7 @@ const Card = ({ card, onClick }) => {
       case 'SpellScroll':
         return scrollSymbol;
       case 'Gems':
-        return scrollSymbol;
+        return gemSymbol;
       case 'WondrousItem':
         return magicSymbol;
       case 'MagicArt':

@@ -17,7 +17,7 @@ export const itemNames = {
     },
 
     HeavyArmor: {
-        Common: ["Smoldering Armor, Plate", "Smoldering Armor, Half Plate", "Smoldering Armor, Chain Mail", "Smoldering Armor, Ring Mail", "Smoldering Armor, Splint"],
+        Common: ["Smoldering Armor, Plate", "Smoldering Armor, Chain Mail", "Smoldering Armor, Ring Mail", "Smoldering Armor, Splint"],
         Uncommon: ["Adamantine Breastplate", "Adamantine Plate", "Adamantine Ring Mail", "Adamantine Splint", "Armor of Weightlessness, Plate",
             "Armor of Weightlessness, Chain Mail", "Armor of the Fallen, Plate", "Armor of the Fallen, Splint", "Armor of the Fallen, Ring Mail", "Armor of the Fallen, Chain Mail",
             "Fey-Touched Chain Mail", "Fey-Touched Plate", "Fey-Touched Ring Mail", "Fey-Touched Splint", "Mariner's Plate Armor",
@@ -39,19 +39,35 @@ export const itemNames = {
         Unique: ["Plate of the Dawnmartyr (Dormant)"]
     },
     LightArmor: {
-        Common: ["Plate", "Leather", "Studded Leather", "Hide", "Half Plate", "Chain Mail", "Scale Mail", "Padded Leather"],
-        Uncommon: ["Frosted Mail", "Ember-Gleam Vest", "Warden’s Embrace", "Spellwoven Cloak", "Starbound Tunic"],
-        Rare: ["Celestial Mail", "Shadow Ward", "Flameguard Plate", "Tempest Carapace", "Ironwood Brigandine"],
-        VeryRare: ["Dawnbringer Armor", "Dragonhide Plate", "Windbound Cloak", "Emberforged Plate", "Midnight Shroud"],
-        Legendary: ["Armor of the Eternal Flame", "Aegis of the Ancients", "Celestial Guard", "Stormforged Plate", "Radiant Vanguard"],
+        Common: ["Freerunner's Leather Armor", "Freerunner's Studded Leather Armor", "Smoldering Armor, Leather", "Smoldering Armor, Studded Leather"],
+        Uncommon: ["Fey-Touched Leather", "Fey-Touched Studded Leather", "Mariner's Leather Armor", "Mariner's Studded Leather Armor", "Owlbear Leather Armor",
+            "Sagittarian Leather Vestments", "Sagittarian Studded Leather Vestments", "Venombane Leather Armor"
+        ],
+        Rare: ["Captain's Pride Leather", "Captain's Pride Studded Leather", "Feywrought Armor, Leather", "Feywrought Armor, Studded Leather", "Glamoured Studded Leather", "Gloomwrought Armor, Leather",
+            "Gloomwrought Armor, Studded Leather", "Leather Armor of Vulnerability (Bludgeoning)", "Leather Armor of Vulnerability (Piercing)", "Leather Armor of Vulnerability (Slashing)", "Leather Golem Armor",
+            "Leather, +1", "Mistwalker Leather Armor", "Moonswaddled Leather Armor", "Moonswaddled Padded Leather Armor", "Moonswaddled Studded Leather Armor", "Myceliaweave Leather Armor", "Myceliaweave Studded Leather Armor",
+            "Poison Leather Armor of Amphibios", "Poison Padded Leather Armor of Amphibios", "Poison Studded Leather armor of Amphibios", "Tundra Titan Leather", "Zephyr Armor, Leather", "Zephyr Armor, Studded Leather", "Studded Leather, +1"
+        ],
+        VeryRare: ["Antimagic Armor, Leather", "Antimagic Armor, Studded Leather", "Dark Fathom Studded Leather Armor", "Demon Leather Armor", "Demon Studded Leather",
+            "Last Stand Armor, Leather", "Last Stand Armor, Studded Leather", "Studded Leather, +2", "Yellow Harbinger's Path Leather", "Yellow Harbinger's Path Studded Leather"
+        ],
+        Legendary: ["Leather, +3", "Studded Leather, +3"],
         Unique: ["Heart of the Mountain", "Inferno’s Embrace", "Mantle of the Void", "The Sentinel’s Resolve", "Verdant Guardian"]
     },
     MediumArmor: {
-        Common: ["Plate", "Leather", "Studded Leather", "Hide", "Half Plate", "Chain Mail", "Scale Mail", "Padded Leather"],
-        Uncommon: ["Frosted Mail", "Ember-Gleam Vest", "Warden’s Embrace", "Spellwoven Cloak", "Starbound Tunic"],
-        Rare: ["Celestial Mail", "Shadow Ward", "Flameguard Plate", "Tempest Carapace", "Ironwood Brigandine"],
-        VeryRare: ["Dawnbringer Armor", "Dragonhide Plate", "Windbound Cloak", "Emberforged Plate", "Midnight Shroud"],
-        Legendary: ["Armor of the Eternal Flame", "Aegis of the Ancients", "Celestial Guard", "Stormforged Plate", "Radiant Vanguard"],
+        Common: ["Smoldering Armor, Half Plate", "Smoldering Armor, Hide", "Studded Leather", "Hide", "Half Plate", "Chain Mail", "Scale Mail", "Padded Leather"],
+        Uncommon: ["Armor of Fungal Spores, Hide", "Armor of Weightlessness, Hide", "Armor fo the Fallen, Hide", "Beast Hide Manticore Armor", "Fey-Touched Hide", "Mariner's Hide", "Sagittarian Hide Vestments", "Wildskin Hide Armor",
+ "Adamantine Half Plate", "Armor of Fungal Spores, Half Plate", "Armor of Weightlessness, Half Plate", "Armor of the Fallen, Half Plate", "Fey-Touched Half Plate", "Fey-Touched Half Plate", "Mariner's Half Plate Armor", "Mithral Half Plate", "Sagittarian Half Plate Vestments", "Scorpio Half Plate Armor",
+
+        ],
+        Rare: ["Feywrought Armor, Hide", "Fused Chimeric Hide", "Gloomwrought Armor, Hide", "Hide Armor of Vulnerability (Bludgeoning)", "Hide Armor of Vulnerability (Piercing)",
+            "Hide Armor of Vulnerability (Slashing)", "Hide, +1", "Myceliaweave Hide Armor", "Tundra Titan Hide", "Feywrought Armor, Half Plate", "Gloomwrought Armor, Half Plate", "Half Plate Armor of Vulnerability (Bludgeoning)", "Half Plate Armor of Vulnerability (Piercing)", "Half Plate Armor of Vulnerability (Slashing)", 
+            "Half Plate, +1", "Mithral Half Plate, +1", "Mizzium Armor, Half Plate", "Molten Bronze Skin, Half Plate", "Windswept Wyvern Half Plate"
+        ],
+        VeryRare: ["Antimagic Armor, Hide", "Cloudkept Hide Armor", "Demon Hide Armor", "Grand Wolf's Hide", "Hide, +2", "Last Stand Armor, Hide", "Living Armor, Hide", "Yellow Harbinger's Path Hide",
+            "Antimagic Armor, Half Plate", "Blue Vanguard's Glory Half Plate", "Demon Half Plate Armor", "Dwarven Half Plate", "Half Plate, +2", "Last Stand Armor, Half Plate", "Living Armor, Half Plate", "Novanite Half Plate Armor", "Yellow Harbinger's Path Half Plate"
+        ],
+        Legendary: ["Hide, +3", "Hide of the Feral Guardian (Dormant)", "Elegant-Resilience Half Plate", "Half Plate Armor of Etherealness", "Half Plate of the Blind Martyr", "Half Plate, +3", "Mourningsteel Half Plate", "Starmetal Nova Half Plate Armor"],
         Unique: ["Heart of the Mountain", "Inferno’s Embrace", "Mantle of the Void", "The Sentinel’s Resolve", "Verdant Guardian"]
     },
 
@@ -76,10 +92,15 @@ export const itemNames = {
     },
 
     Boots: {
-        Common: ["Iron Gauntlet", "Leather Gloves", "Chain Handwraps", "Guard’s Grip", "Hide Gloves"],
-        Uncommon: ["Frosted Grips", "Ember-Gleam Fist", "Warden’s Clutch", "Spellwoven Gloves", "Starbound Handguards"],
-        Rare: ["Celestial Gauntlet", "Shadow Claws", "Flameguard Grips", "Tempest Fistguards", "Ironwood Gauntlet"],
-        VeryRare: ["Dawnbringer Grips", "Dragonhide Gloves", "Windbound Mitts", "Emberforged Gauntlets", "Midnight Talons"],
+        Common: ["Boots of False Tracks"],
+        Uncommon: ["Boots of Elvenkind", "Boots of Striding and Springing", "Boots of The Cloud Jumping", "Boots of Webwalking", "Boots of the Vigilant",
+            "Boots of the Winterlands", "Funeral Marcher Boots", "Ironshod Trotter Boots", "Knocking Boots", "Mammoth Boots", "Phantom Walkers", "Winger Boots", "Dramus' Dancing Shoes", 
+            "Arctic Big Cat Slippers", "Jungle Big Cat Slippers", "Slippers of Spider Climbing"
+        ],
+        Rare: ["Boots of Levitation", "Boots of Speed", "Boots of the Raptor", "Homeward Boots", "Lightscreen Hover Boots", "Stormrider Boots",
+            "Volcanic Boots", "Wayfarer's Boots", "Wind Rider Boots", "Xorn-Sole Boots"
+        ],
+        VeryRare: ["Boots of Dendallen", "Boots of Haste", "Pathfinder's Boots", "Emberforged Gauntlets", "Midnight Talons"],
         Legendary: ["Fists of the Eternal Flame", "Ancient’s Claw", "Celestial Hands", "Stormforged Gauntlets", "Radiant Fists"],
         Unique: ["Grasp of the Mountain", "Inferno’s Claws", "Hand of the Void", "Sentinel’s Embrace", "Verdant Grips"]
     },
@@ -216,11 +237,18 @@ export const itemNames = {
     },
 
     Cloak: {
-        Common: ["Iron Gauntlet", "Leather Gloves", "Chain Handwraps", "Guard’s Grip", "Hide Gloves"],
-        Uncommon: ["Frosted Grips", "Ember-Gleam Fist", "Warden’s Clutch", "Spellwoven Gloves", "Starbound Handguards"],
-        Rare: ["Celestial Gauntlet", "Shadow Claws", "Flameguard Grips", "Tempest Fistguards", "Ironwood Gauntlet"],
-        VeryRare: ["Dawnbringer Grips", "Dragonhide Gloves", "Windbound Mitts", "Emberforged Gauntlets", "Midnight Talons"],
-        Legendary: ["Fists of the Eternal Flame", "Ancient’s Claw", "Celestial Hands", "Stormforged Gauntlets", "Radiant Fists"],
+        Common: ["Cloak of Billowing", "Cloak of Many Fashions", "Forecaster's Cloak", "Guard’s Grip", "Hide Gloves"],
+        Uncommon: ["Cloak of Daggers", "Cloak of Elvenkind", "Cloak of Protection", "Cloak of the Manta Ray", "Oragami Cloak", "Otyugh Cloak", "Seer's Starlight Cloak", "Wisp Cloak",
+            "Alpine Mantle", "Couatl Herald's Mantle", "Dark Mantle", "Mantle of the Lightbender", "Nature's Mantle", "Sir Varion's Mantle", "Luna Moth Cape", "Great Owl's Shroud"
+        ],
+        Rare: ["Cloak of Displacement", "Cloak of The Depths", "Cloak of the Bat", "Cloak of the Boundless Spirit", "Cloak of the Djinni", "Cloak of the Protector's Charge", "Cloak of the Riverstalker",
+            "Cloak of the Stygian Bat", "Fire Dervish Cloak", "Frostfell Cloak", "Hell Hound Cloak", "Fool's Mantle", "Mantle of Adaptivity", "Mantle of Security", "Mantle of Spell Resistance", "Mantle of the Pack Lord", "Monarch Mantle", "Rogue's Mantle", "Sharkrazor Mantle", "Timeshifter's Mantle",
+            "Cape of the Mountebank", "Knifewing Cape", "Kagonesti Forest Shroud", "Carrion Shroud"
+        ],
+        VeryRare: ["Cloak of Archnida", "Dune Duster Cloak", "H'rethi Cloak of Shielding", "Shadow Ward Cloak", "Visionary's Cloak", "Dream Mantle", "Mistral Mantle", "Omenbringer's Mantle",
+            "Cape of Enlargement", "Tempest Griffon Feather Cape"
+        ],
+        Legendary: ["Cloak of Invisibility", "Meta Mantle", "Celestial Hands", "Stormforged Gauntlets", "Radiant Fists"],
         Unique: ["Grasp of the Mountain", "Inferno’s Claws", "Hand of the Void", "Sentinel’s Embrace", "Verdant Grips"]
     },
 
