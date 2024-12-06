@@ -31,25 +31,25 @@ h2 {
 }
 
 .arts-table th {
-  background-color: #d3d3c4; /* Light grey for headers */
+  background-color: #a4b9c4; /* Honeydew */
   color: black;
 }
 
 /* Skill-specific row colors */
 .row-1 {
-  background-color: #d1a969; /* Beige */
+  background-color: #d3d3c4; /* Light grey for headers */
 }
 
 .row-2 {
-  background-color: #f4c6b2; /* Light cyan */
+  background-color: #d3d3c4; /* Light grey for headers */
 }
 
 .row-3 {
-  background-color: #fffef2; /* Light pink */
+  background-color: #d3d3c4; /* Light grey for headers *//
 }
 
 .row-4 {
-  background-color: #a4b9c4; /* Honeydew */
+  background-color:  #d3d3c4; /* Light grey for headers *//
 }
 
 /* Hover effect for skill rows */

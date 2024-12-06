@@ -21,11 +21,11 @@ const MagicArts = () => {
                         <th>Art Tiers</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody className="row-1">
                     <tr>
                         <td>Assassinate</td>
-                        <td>S Charisma/S Strength</td>
-                        <th>Dexterity 16+</th>
+                        <td>S Charisma/S Strengtd</td>
+                        <td>Dexterity 16+</td>
                         <td className="art-tier-buttons">
                             <span
                                 onClick={() => toggleArtDetails('AssassinateF')}
@@ -74,62 +74,62 @@ const MagicArts = () => {
                     {activeTier === 'AssassinateF' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'AssassinateE' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'Assassinate' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'AssassinateC' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 6:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 7:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 8:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 9:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 10:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 6:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 7:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 8:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 9:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 10:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'AssassinateB' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
                                 {/* Add levels 8-10 as needed */}
                             </td>
                         </tr>
@@ -137,11 +137,11 @@ const MagicArts = () => {
                     {activeTier === 'AssassinateA' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
 
                                 {/* Add levels 8-10 as needed */}
                             </td>
@@ -150,19 +150,19 @@ const MagicArts = () => {
                     {activeTier === 'AssassinateS' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
                                 {/* Add levels 8-10 as needed */}
                             </td>
                         </tr>
                     )}
                 </tbody>
-                <tbody>
+                <tbody className="row-1">
                     <tr>
                         <td>Break Trigger</td>
                         <td>Charisma A</td>
-                        <td>Ability to cause debuffs without items</td>
+                        <td>Ability to cause debuffs witdout items</td>
                         <td className="art-tier-buttons">
                             <span
                                 onClick={() => toggleArtDetails('BreakTriggerF')}
@@ -211,62 +211,62 @@ const MagicArts = () => {
                     {activeTier === 'BreakTriggerF' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'BreakTriggerE' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'BreakTriggerD' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'BreakTriggerC' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 6:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 7:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 8:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 9:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 10:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 6:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 7:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 8:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 9:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 10:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'BreakTriggerB' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
                                 {/* Add levels 8-10 as needed */}
                             </td>
                         </tr>
@@ -274,11 +274,11 @@ const MagicArts = () => {
                     {activeTier === 'BreakTriggerA' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
 
                                 {/* Add levels 8-10 as needed */}
                             </td>
@@ -287,19 +287,19 @@ const MagicArts = () => {
                     {activeTier === 'BreakTriggerS' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
                                 {/* Add levels 8-10 as needed */}
                             </td>
                         </tr>
                     )}
                 </tbody>
-                <tbody>
+                <tbody className="row-1">
                     <tr>
                         <td>Cleave</td>
-                        <td>Heavy Magic Users/S Strength</td>
-                        <th>Strength 13+</th>
+                        <td>Heavy Magic Users/S Strengtd</td>
+                        <td>Strengtd 13+</td>
                         <td className="art-tier-buttons">
                             <span
                                 onClick={() => toggleArtDetails('CleaveF')}
@@ -348,62 +348,62 @@ const MagicArts = () => {
                     {activeTier === 'CleaveF' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'CleaveE' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'CleaveD' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'CleaveC' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 6:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 7:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 8:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 9:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 10:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 6:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 7:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 8:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 9:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 10:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'CleaveB' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
                                 {/* Add levels 8-10 as needed */}
                             </td>
                         </tr>
@@ -411,11 +411,11 @@ const MagicArts = () => {
                     {activeTier === 'CleaveA' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
 
                                 {/* Add levels 8-10 as needed */}
                             </td>
@@ -424,19 +424,19 @@ const MagicArts = () => {
                     {activeTier === 'CleaveS' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
                                 {/* Add levels 8-10 as needed */}
                             </td>
                         </tr>
                     )}
                 </tbody>
-                <tbody>
+                <tbody className="row-1">
                     <tr>
                         <td>Counter Strike</td>
-                        <td>Versatile Passive User/S Strength</td>
-                        <th>Strength 15+</th>
+                        <td>Versatile Passive User/S Strengtd</td>
+                        <td>Strengtd 15+</td>
                         <td className="art-tier-buttons">
                             <span
                                 onClick={() => toggleArtDetails('CounterStrikeF')}
@@ -485,62 +485,62 @@ const MagicArts = () => {
                     {activeTier === 'CounterStrikeF' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'CounterStrikeE' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'CounterStrikeD' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'CounterStrikeC' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 6:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 7:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 8:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 9:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 10:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 6:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 7:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 8:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 9:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 10:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'CounterStrikeB' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
                                 {/* Add levels 8-10 as needed */}
                             </td>
                         </tr>
@@ -548,11 +548,11 @@ const MagicArts = () => {
                     {activeTier === 'CounterStrikeA' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
 
                                 {/* Add levels 8-10 as needed */}
                             </td>
@@ -561,19 +561,19 @@ const MagicArts = () => {
                     {activeTier === 'CounterStrikeS' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
                                 {/* Add levels 8-10 as needed */}
                             </td>
                         </tr>
                     )}
                 </tbody>
-                <tbody>
+                <tbody className="row-1">
                     <tr>
                         <td>Parry</td>
-                        <td>Versatile Passive User/S Strength</td>
-                        <th>Strength 15+</th>
+                        <td>Versatile Passive User/S Strengtd</td>
+                        <td>Strengtd 15+</td>
                         <td className="art-tier-buttons">
                             <span
                                 onClick={() => toggleArtDetails('ParryF')}
@@ -622,62 +622,62 @@ const MagicArts = () => {
                     {activeTier === 'ParryF' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'ParryE' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'ParryD' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'ParryC' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 6:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 7:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 8:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 9:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 10:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 6:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 7:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 8:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 9:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 10:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'ParryB' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
                                 {/* Add levels 8-10 as needed */}
                             </td>
                         </tr>
@@ -685,11 +685,11 @@ const MagicArts = () => {
                     {activeTier === 'ParryA' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
 
                                 {/* Add levels 8-10 as needed */}
                             </td>
@@ -698,15 +698,15 @@ const MagicArts = () => {
                     {activeTier === 'ParryS' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Passive's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Passive's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
                                 {/* Add levels 8-10 as needed */}
                             </td>
                         </tr>
                     )}
                 </tbody>
-                <tbody>
+                <tbody className="row-1">
                     <tr>
                         <td>Shield Swing</td>
                         <td>Charisma A</td>
@@ -759,62 +759,62 @@ const MagicArts = () => {
                     {activeTier === 'ShieldSwingF' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'ShieldSwingE' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'ShieldSwingD' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'ShieldSwingC' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 6:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 7:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 8:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 9:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 10:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 6:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 7:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 8:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 9:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 10:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'ShieldSwingB' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
                                 {/* Add levels 8-10 as needed */}
                             </td>
                         </tr>
@@ -822,11 +822,11 @@ const MagicArts = () => {
                     {activeTier === 'ShieldSwingA' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
 
                                 {/* Add levels 8-10 as needed */}
                             </td>
@@ -835,19 +835,19 @@ const MagicArts = () => {
                     {activeTier === 'ShieldSwingS' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
                                 {/* Add levels 8-10 as needed */}
                             </td>
                         </tr>
                     )}
                 </tbody>
-                <tbody>
+                <tbody className="row-1">
                     <tr>
                         <td>Smash</td>
-                        <td>Heavy Magic Users/S Strength</td>
-                        <th>Strength 13+</th>
+                        <td>Heavy Magic Users/S Strengtd</td>
+                        <td>Strengtd 13+</td>
                         <td className="art-tier-buttons">
                             <span
                                 onClick={() => toggleArtDetails('SmashF')}
@@ -896,62 +896,62 @@ const MagicArts = () => {
                     {activeTier === 'SmashF' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'SmashE' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'SmashD' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'SmashC' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 6:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 7:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 8:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 9:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 10:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 6:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 7:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 8:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 9:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 10:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'SmashB' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
                                 {/* Add levels 8-10 as needed */}
                             </td>
                         </tr>
@@ -959,11 +959,11 @@ const MagicArts = () => {
                     {activeTier === 'SmashA' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
 
                                 {/* Add levels 8-10 as needed */}
                             </td>
@@ -972,19 +972,19 @@ const MagicArts = () => {
                     {activeTier === 'SmashS' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
                                 {/* Add levels 8-10 as needed */}
                             </td>
                         </tr>
                     )}
                 </tbody>
-                <tbody>
+                <tbody className="row-1">
                     <tr>
                         <td>Sword Clash</td>
-                        <td>Versatile Magic User/S Strength</td>
-                        <th>Strength 15+</th>
+                        <td>Versatile Magic User/S Strengtd</td>
+                        <td>Strengtd 15+</td>
                         <td className="art-tier-buttons">
                             <span
                                 onClick={() => toggleArtDetails('SwordclashF')}
@@ -1033,62 +1033,62 @@ const MagicArts = () => {
                     {activeTier === 'SwordclashF' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'SwordclashE' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'SwordclashD' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'SwordclashC' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 6:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 7:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 8:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 9:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 10:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 6:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 7:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 8:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 9:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 10:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'SwordclashB' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
                                 {/* Add levels 8-10 as needed */}
                             </td>
                         </tr>
@@ -1096,11 +1096,11 @@ const MagicArts = () => {
                     {activeTier === 'SwordclashA' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
 
                                 {/* Add levels 8-10 as needed */}
                             </td>
@@ -1109,19 +1109,19 @@ const MagicArts = () => {
                     {activeTier === 'SwordclashS' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
                                 {/* Add levels 8-10 as needed */}
                             </td>
                         </tr>
                     )}
                 </tbody>
-                <tbody>
+                <tbody className="row-1">
                     <tr>
                         <td>Tiger Echo Fist</td>
-                        <td>Charisma S/Strength S</td>
-                        <th>Unarmed Damage Die</th>
+                        <td>Charisma S/Strengtd S</td>
+                        <td>Unarmed Damage Die</td>
                         <td className="art-tier-buttons">
                             <span
                                 onClick={() => toggleArtDetails('TigerEchoFistF')}
@@ -1170,62 +1170,62 @@ const MagicArts = () => {
                     {activeTier === 'TigerEchoFistF' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'TigerEchoFistE' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'TigerEchoFistD' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'TigerEchoFistC' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 6:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 7:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 8:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 9:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 10:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 6:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 7:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 8:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 9:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 10:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'TigerEchoFistB' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
                                 {/* Add levels 8-10 as needed */}
                             </td>
                         </tr>
@@ -1233,11 +1233,11 @@ const MagicArts = () => {
                     {activeTier === 'TigerEchoFistA' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
 
                                 {/* Add levels 8-10 as needed */}
                             </td>
@@ -1246,19 +1246,19 @@ const MagicArts = () => {
                     {activeTier === 'TigerEchoFistS' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
                                 {/* Add levels 8-10 as needed */}
                             </td>
                         </tr>
                     )}
                 </tbody>
-                <tbody>
+                <tbody className="row-1">
                     <tr>
                         <td>Venom Strike</td>
-                        <td>S Charisma/S Strength</td>
-                        <th>Dexterity 15+/Intelligence 13+</th>
+                        <td>S Charisma/S Strengtd</td>
+                        <td>Dexterity 15+/Intelligence 13+</td>
                         <td className="art-tier-buttons">
                             <span
                                 onClick={() => toggleArtDetails('VenomStrikeF')}
@@ -1307,62 +1307,62 @@ const MagicArts = () => {
                     {activeTier === 'VenomStrikeF' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'VenomStrikeE' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'VenomStrike' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'VenomStrikeC' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 6:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 7:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 8:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 9:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 10:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 6:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 7:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 8:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 9:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 10:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'VenomStrikeB' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
                                 {/* Add levels 8-10 as needed */}
                             </td>
                         </tr>
@@ -1370,11 +1370,11 @@ const MagicArts = () => {
                     {activeTier === 'VenomStrikeA' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
 
                                 {/* Add levels 8-10 as needed */}
                             </td>
@@ -1383,19 +1383,19 @@ const MagicArts = () => {
                     {activeTier === 'VenomStrikeS' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
                                 {/* Add levels 8-10 as needed */}
                             </td>
                         </tr>
                     )}
                 </tbody>
-                <tbody>
+                <tbody className="row-1">
                     <tr>
                         <td>Viper Strike</td>
-                        <td>Charisma S/Strength S</td>
-                        <th>Dexterity 17+/Intelligence 13+</th>
+                        <td>Charisma S/Strengtd S</td>
+                        <td>Dexterity 17+/Intelligence 13+</td>
                         <td className="art-tier-buttons">
                             <span
                                 onClick={() => toggleArtDetails('ViperStrikeF')}
@@ -1444,62 +1444,62 @@ const MagicArts = () => {
                     {activeTier === 'ViperStrikeF' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'ViperStrikeE' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'ViperStrikeD' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'ViperStrikeC' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 6:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 7:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 8:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 9:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 10:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 6:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 7:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 8:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 9:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 10:</strong> As an action, all creatures in a 15-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
                             </td>
                         </tr>
                     )}
                     {activeTier === 'ViperStrikeB' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
-                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take twice the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 6:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
+                                <p><strong>Level 7:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take twice tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 12 seconds.</p>
                                 {/* Add levels 8-10 as needed */}
                             </td>
                         </tr>
@@ -1507,11 +1507,11 @@ const MagicArts = () => {
                     {activeTier === 'ViperStrikeA' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
-                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 4:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
+                                <p><strong>Level 5:</strong> As an action, all creatures in a 10-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 18 seconds.</p>
 
                                 {/* Add levels 8-10 as needed */}
                             </td>
@@ -1520,9 +1520,9 @@ const MagicArts = () => {
                     {activeTier === 'ViperStrikeS' && (
                         <tr>
                             <td colSpan="2" className="art-levels">
-                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
-                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
-                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving throw equal to your Art DC or take the Magic's damage dice plus your Strength modifier, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 1:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 30 seconds.</p>
+                                <p><strong>Level 2:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice, or half as much on a success. Cooldown: 24 seconds.</p>
+                                <p><strong>Level 3:</strong> As an action, all creatures in a 5-foot cone must succeed a Dexterity saving tdrow equal to your Art DC or take tde Magic's damage dice plus your Strengtd modifier, or half as much on a success. Cooldown: 24 seconds.</p>
                                 {/* Add levels 8-10 as needed */}
                             </td>
                         </tr>

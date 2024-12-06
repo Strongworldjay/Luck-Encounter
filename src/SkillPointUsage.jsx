@@ -13,7 +13,7 @@ const SkillPointUsage = () => {
             <th>Skill Points Required</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="row-1">
           <tr>
             <td>Increase D Tier Art Level</td>
             <td>3 Skill Points</td>
