@@ -42,6 +42,13 @@ const Navbar = ({ onNavClick, currentSection }) => {
           Skill Point Usage
         </li>
         <li
+          className={`nav-item ${currentSection === 'UniqueSkill' ? 'active' : ''}`}
+          onClick={() => onNavClick('UniqueSkill')}
+        >
+          Unique Skill
+        </li>
+
+        <li
           className={`nav-item ${currentSection === 'CharacterSheets' ? 'active' : ''}`}
           onClick={() => onNavClick('CharacterSheets')}
         >

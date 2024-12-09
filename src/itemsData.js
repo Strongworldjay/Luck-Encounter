@@ -514,6 +514,10 @@ export const itemNames = {
         VeryRare: [1250, 1500, 1750, 2000],
         Legendary: [2500, 3250, 4000],
         Unique: [10000]
+    },
+
+    UniqueSkills: {
+        Unique: ["monkey", "Bonkue", "Dragg", "Temu", "powderpuff"]
     }
 
 };

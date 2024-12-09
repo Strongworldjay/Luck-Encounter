@@ -8,6 +8,7 @@ import PassiveArts from './PassiveArts';
 import BoostArts from './BoostArts';
 import SkillPointUsage from './SkillPointUsage';
 import CharacterSheets from './CharacterSheets'; // Import the new CharacterSheets component
+import UniqueSkill from './UniqueSkill';
 import './App.css';
 import appBackground from './assets/app-background.jpg';
 import deckImage from './assets/card-design.jpg';
@@ -149,6 +150,7 @@ const App = () => {
       {currentSection === 'BoostArts' && <BoostArts />}
       {currentSection === 'SkillPointUsage' && <SkillPointUsage />}
       {currentSection === 'CharacterSheets' && <CharacterSheets />}
+      {currentSection === 'UniqueSkill' && <UniqueSkill />}
     </div>
   );
 };
