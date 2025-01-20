@@ -40,8 +40,9 @@
   box-shadow: 0 0 15px 5px var(--glow-color);
   opacity: 0; /* Initially invisible */
   z-index: -1;
-  transition: opacity 1.2s ease, box-shadow 1.2s ease;
-  transition-delay: 2s; /* Delay to match the flipping transition */
+  transition: opacity 1.5s ease !important; 
+  box-shadow: 1.5s ease !important; /* Ensuring proper transition timing */
+  transition-delay: 1.5s !important; /* Ensuring delay after click */
 }
 
 .card.revealed {
@@ -49,7 +50,7 @@
 }
 
 .card.revealed::before {
-  opacity: 1.8; /* Glow becomes visible after the delay */
+  opacity: 1 !important; /* Ensure glow appears after the delay */
 }
 
 :root {
@@ -59,26 +60,32 @@
 /* Update glow color based on rarity */
 .card.revealed.common {
   --glow-color: white;
+  transition-delay: 1.2s;
 }
 
 .card.revealed.uncommon {
   --glow-color: green;
+  transition-delay: 1.2s;
 }
 
 .card.revealed.rare {
   --glow-color: blue;
+  transition-delay: 1.2s;
 }
 
 .card.revealed.very-rare {
   --glow-color: purple;
+  transition-delay: 1.2s;
 }
 
 .card.revealed.legendary {
   --glow-color: orange;
+  transition-delay: 1.2s;
 }
 
 .card.revealed.unique {
   --glow-color: red;
+  transition-delay: 1.2s;
 }
 
 .card-face {
@@ -118,6 +125,7 @@
 
 .card.revealed .card-front {
   transform: rotateY(0deg);
+  transition: transform 1.2s ease !important; /* Flip animation timing */
 }
 
 .card.revealed .card-back {

@@ -18,10 +18,10 @@ const Navbar = ({ onNavClick, currentSection }) => {
           Weapon Arts
         </li>
         <li
-          className={`nav-item ${currentSection === 'MagicArts' ? 'active' : ''}`}
-          onClick={() => onNavClick('MagicArts')}
+          className={`nav-item ${currentSection === 'SacredArts' ? 'active' : ''}`}
+          onClick={() => onNavClick('SacredArts')}
         >
-          Magic Arts
+          Sacred Arts
         </li>
         <li
           className={`nav-item ${currentSection === 'PassiveArts' ? 'active' : ''}`}

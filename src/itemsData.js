@@ -1,11 +1,61 @@
 export const itemNames = {
     Helmet: {
-        Common: ["Vox Helm", "Dread Helm", "Candleflame Helm"],
-        Uncommon: ["Frosted Helm", "Ember-Gleam Hood", "Warden’s Visor", "Spellwoven Hood", "Starbound Helmet"],
-        Rare: ["Celestial Helm", "Shadow Crown", "Flameguard Helm", "Tempest Helm", "Ironwood Mask"],
-        VeryRare: ["Dawnbringer Helmet", "Dragonhide Helm", "Windbound Hood", "Emberforged Helm", "Midnight Veil"],
-        Legendary: ["Helm of the Eternal Flame", "Ancient’s Guard", "Celestial Crown", "Stormforged Helm", "Radiant Helm"],
-        Unique: ["Heart of the Peaks", "Inferno’s Gaze", "Mask of the Void", "Sentinel’s Watch", "Verdant Crown"]
+        Common: [
+            "Dread Helm", "Masks of the Sacred Beasts (Crocodile)", "Profane Mask",
+            "Shapeshifter's Circlet", "Stylist's Circlet", "Vox Helm"
+        ],
+        Uncommon: [
+            "Dusk Mask", "Kukulthan Cultist Mask", "Lupine Mask",
+            "Mask of the Beast", "Mask of the Mimic", "Mask of the Pact Bearer",
+            "Masks of the Sacred Beasts (Lion)",
+            "Scarab Mask", "Bismuth Crown", "Circlet of Blasting",
+            "Crown of the Forest", "Rat King Crown", "Circlet of Human Perfection",
+            "Focus Circlet",
+            "Barge Helm", "Hellfire Mace", "Hellfire Maul",
+            "Hellfire Morningstar", "Hellfire Musket", "Helm of Comprehending Languages",
+            "Helm of Telepathy",
+            "Helm of Underwater Action", "Helm of the Deep Sea Knight",
+            "Propeller Helm", "Scorch Helm (Uncommon)", "Sir Varion's Helm"
+        ],
+        Rare: [
+            "Dead Ringer Mask", "Dissimortuum's Cursed Mask", "Festerwood Vizard (Mask)",
+            "Gemini Mask", "Haunted Mask", "Masks of the Sacred Beasts (Hawk)",
+            "Nightstalker's Mask",
+            "Plaguebane Mask", "Aastrika's Crown", "Bismuth Crown",
+            "Crown of the Mindmaster Matriarch", "Crown of the Wrath Bringer",
+            "Avian Circlet", "Focus Circlet (Rare)",
+            "Clangor Helmet", "Head of The Lion Medallion", "Helm of Heroes",
+            "Helm of Patron Saints", "Helm of Sending", "Helm of Teleportation",
+            "Helm of the Gods",
+            "Helmsman's Shelter Shield", "Scorch Helm (Rare)", "Spelljamming Helm",
+            "Vancian Helm"
+        ],
+        VeryRare: [
+            "Mask of Dendallen", "Masks of the Sacred Beasts (Mule)", "Peregrine Mask",
+            "Bismuth Crown", "Crown of Deep Winter", "Crown of Majesty",
+            "Crown of Stars Spell Scroll",
+            "Crown of Whirling Comets", "Mindguard Crown", "Celestial Circlet",
+            "Circlet of the Huntsman's Third Eye", "Circlet of the Sharpened Mind",
+            "Ceratopper Helmet", "Flying Citadel Helm",
+            "Helm of Brilliance", "Helm of Devil Command", "Helm of The Chromatic Dragon",
+            "Helm of the Broken Dragon", "Helm of the Lichfiend", "Helm of the Platinum Dragon",
+            "Helm of the Ruby Dragon",
+            "Scorch Helm (Very Rare)", "Skull Helm", "Watchful Helm",
+            "Deathly Diadem", "Unicorn Diadem"
+        ],
+        Legendary: [
+            "Black Dragon Mask", "Blue Dragon Mask", "Green Dragon Mask",
+            "Iron Maiden Mask", "Jester's Mask", "Mask of the Bloodshot Marauder",
+            "Mask of the Pied Piper",
+            "Masks of the Sacred Beasts (Jackal)", "Red Dragon Mask", "White Dragon Mask",
+            "Belashyrra's Beholder Crown", "Crown of Storms", "Crown of Westemär",
+            "Lost Crown of Besilmer",
+            "Circlet of Barbed Vision (Dormant)", "Helm of Disjunction", "Helm of the Justicars",
+            "Helm of the Scavenger"
+        ],
+        Unique: [
+            "Mask of the Dragon Queen", "Helm of Perfect Potential"
+        ]
     },
     Robe: {
         Common: ["Robe"],
@@ -56,12 +106,12 @@ export const itemNames = {
     },
     MediumArmor: {
         Common: ["Smoldering Armor, Half Plate", "Smoldering Armor, Hide", "Studded Leather", "Hide", "Half Plate", "Chain Mail", "Scale Mail", "Padded Leather"],
-        Uncommon: ["Armor of Fungal Spores, Hide", "Armor of Weightlessness, Hide", "Armor fo the Fallen, Hide", "Beast Hide Manticore Armor", "Fey-Touched Hide", "Mariner's Hide", "Sagittarian Hide Vestments", "Wildskin Hide Armor",
- "Adamantine Half Plate", "Armor of Fungal Spores, Half Plate", "Armor of Weightlessness, Half Plate", "Armor of the Fallen, Half Plate", "Fey-Touched Half Plate", "Fey-Touched Half Plate", "Mariner's Half Plate Armor", "Mithral Half Plate", "Sagittarian Half Plate Vestments", "Scorpio Half Plate Armor",
+        Uncommon: ["Armor of Fungal Spores, Hide", "Armor of Weightlessness, Hide", "Armor of the Fallen, Hide", "Beast Hide Manticore Armor", "Fey-Touched Hide", "Mariner's Hide", "Sagittarian Hide Vestments", "Wildskin Hide Armor",
+            "Adamantine Half Plate", "Armor of Fungal Spores, Half Plate", "Armor of Weightlessness, Half Plate", "Armor of the Fallen, Half Plate", "Fey-Touched Half Plate", "Fey-Touched Half Plate", "Mariner's Half Plate Armor", "Mithral Half Plate", "Sagittarian Half Plate Vestments", "Scorpio Half Plate Armor",
 
         ],
         Rare: ["Feywrought Armor, Hide", "Fused Chimeric Hide", "Gloomwrought Armor, Hide", "Hide Armor of Vulnerability (Bludgeoning)", "Hide Armor of Vulnerability (Piercing)",
-            "Hide Armor of Vulnerability (Slashing)", "Hide, +1", "Myceliaweave Hide Armor", "Tundra Titan Hide", "Feywrought Armor, Half Plate", "Gloomwrought Armor, Half Plate", "Half Plate Armor of Vulnerability (Bludgeoning)", "Half Plate Armor of Vulnerability (Piercing)", "Half Plate Armor of Vulnerability (Slashing)", 
+            "Hide Armor of Vulnerability (Slashing)", "Hide, +1", "Myceliaweave Hide Armor", "Tundra Titan Hide", "Feywrought Armor, Half Plate", "Gloomwrought Armor, Half Plate", "Half Plate Armor of Vulnerability (Bludgeoning)", "Half Plate Armor of Vulnerability (Piercing)", "Half Plate Armor of Vulnerability (Slashing)",
             "Half Plate, +1", "Mithral Half Plate, +1", "Mizzium Armor, Half Plate", "Molten Bronze Skin, Half Plate", "Windswept Wyvern Half Plate"
         ],
         VeryRare: ["Antimagic Armor, Hide", "Cloudkept Hide Armor", "Demon Hide Armor", "Grand Wolf's Hide", "Hide, +2", "Last Stand Armor, Hide", "Living Armor, Hide", "Yellow Harbinger's Path Hide",
@@ -80,29 +130,40 @@ export const itemNames = {
             "Living Gloves, Horn", "Living Gloves, Jeweler's Tools", "Living Gloves, Leatherworker's Tools", "Living Gloves, Lute", "Living Gloves, Lyre", "Living Gloves, Mason's Tools",
             "Living Gloves, Painter's Supplies", "Living Gloves, Pan Flute", "Living Gloves, Potter's Tools", "Living Gloves, Shawm", "Living Gloves, Sleight of Hand", "Living Gloves, Smith's Tools",
             "Living Gloves, Thieve's Tools", "Living Gloves, Tinker's tools", "Living Gloves, Viol", "Living Gloves, Weaver's Tools", "Living Gloves, Woodcarver's Tools",
-            "Alchemist Gauntlet", "Gauntlets of Deliverance", "Gauntlets of Ogre Power", "Abjurer's Bangle", "Battlechef Pulverizer", "Bug Smashers"
+            "Alchemist Gauntlet", "Gauntlets of Deliverance", "Gauntlets of Ogre Power", "Abjurer's Bangle", "Battlechef Pulverizer", "Bug Smashers",
+            "Wraps of Unarmed Power, +1", "Beetle Bracers", "Bracers of Archery", "Mete-ore Bracers", "Viper Bracers"
         ],
         Rare: ["Chain Devil Gloves", "Gloves of the Aegis", "Glove of the Grim Fandango", "Glove of the Melting Hand", "Gloves of Healing",
             "Arcanist Gauntlets", "Force Gauntlet", "Gauntlets of Acidic Atrocity", "Gauntlets of Eldritch Ferocity", "Gauntlets of Flaming Fury", "Gauntlets of Freezing Ferocity", "Gauntlets of Poisonous Pain", "Gauntlets of Shocking Sparks",
-            "Salamander Flame Gauntlets", "Traitor's Gauntlet", "Volt Gauntlets"
+            "Salamander Flame Gauntlets", "Traitor's Gauntlet", "Volt Gauntlets", "Wraps of Unarmed Power, +2", "Bracer of Flying Daggers", "Bracers of Celerity", "Bracers of Defense",
+            "Bracers of the Iron Octopus", "Mete-ore Bracers", "Moonstone Bracers",
+            "Stormbrewer Bracers", "Tempest Griffon Bracers",
+            "Bracelet of the Shattered Aegis"
         ],
-        VeryRare: ["Gloves of Mimicry", "Gloves of The Pugilist", "Freezing Gauntlets ", "Mourningsteel Demi-Gauntlets", "Wyrmreaver Gauntlets"],
-        Legendary: ["Gloves of Soul Catching", "Indigo Stray's Conviction", "Godsteel War Gauntlets"],
-        Unique: ["Tectonic Gauntlets"]
+        VeryRare: ["Gloves of Mimicry", "Wraps of The Pugilist", "Freezing Gauntlets ", "Mourningsteel Demi-Gauntlets", "Wyrmreaver Gauntlets",
+            "Wraps of Unarmed Power, +3", "Wraps of the Restless", "Astral Bracelet of Energy", "Astral Bracelet of Heavens",
+            "Astral Bracelet of Hells", "Astral Bracelet of Knowledge",
+            "Astral Bracelet of Omniscience", "Astral Bracelet of Planebending",
+            "Bracelet of Rock Magic", "Bracers of Spell Reflection",
+            "Bracers of the Spellbreaker", "Firebrand Bracers", "Fourarm Bracers",
+            "Green Knight’s Vow Bracers", "Illusionist's Bracers", "Mete-ore Bracers"
+        ],
+        Legendary: ["Gloves of Soul Catching", "Indigo Stray's Conviction", "Godsteel War Gauntlets", "Wraps of Akhenaton", "Wraps of Dyamak"],
+        Unique: ["Tectonic Gauntlets", "Bigby's Beneficent Bracelet"]
     },
 
     Boots: {
         Common: ["Boots of False Tracks"],
         Uncommon: ["Boots of Elvenkind", "Boots of Striding and Springing", "Boots of The Cloud Jumping", "Boots of Webwalking", "Boots of the Vigilant",
-            "Boots of the Winterlands", "Funeral Marcher Boots", "Ironshod Trotter Boots", "Knocking Boots", "Mammoth Boots", "Phantom Walkers", "Winger Boots", "Dramus' Dancing Shoes", 
-            "Arctic Big Cat Slippers", "Jungle Big Cat Slippers", "Slippers of Spider Climbing"
+            "Boots of the Winterlands", "Funeral Marcher Boots", "Ironshod Trotter Boots", "Knocking Boots", "Mammoth Boots", "Phantom Walkers", "Winger Boots", "Dramus' Dancing Shoes",
+            "Arctic Big Cat Slippers", "Jungle Big Cat Slippers", "Slippers of Spider Climbing", "Titan Cricket Greaves"
         ],
         Rare: ["Boots of Levitation", "Boots of Speed", "Boots of the Raptor", "Homeward Boots", "Lightscreen Hover Boots", "Stormrider Boots",
-            "Volcanic Boots", "Wayfarer's Boots", "Wind Rider Boots", "Xorn-Sole Boots"
+            "Volcanic Boots", "Wayfarer's Boots", "Wind Rider Boots", "Xorn-Sole Boots", "Shrieking Greaves"
         ],
-        VeryRare: ["Boots of Dendallen", "Boots of Haste", "Pathfinder's Boots", "Emberforged Gauntlets", "Midnight Talons"],
-        Legendary: ["Fists of the Eternal Flame", "Ancient’s Claw", "Celestial Hands", "Stormforged Gauntlets", "Radiant Fists"],
-        Unique: ["Grasp of the Mountain", "Inferno’s Claws", "Hand of the Void", "Sentinel’s Embrace", "Verdant Grips"]
+        VeryRare: ["Boots of Dendallen", "Boots of Haste", "Pathfinder's Boots"],
+        Legendary: ["Skylit Greaves"],
+        Unique: ["???"]
     },
 
     WondrousItem: {
@@ -182,15 +243,19 @@ export const itemNames = {
             "Lady Phantasma's Material Anchor", "Kyrzin's Ooze", "Lord's Ensemble", "Magebind Shackles", "Lucky Kobold's Klaw, +3", "Matron's Mug", "Mindmaster's Monocle", "Mirror of Infinite Transpondence",
             "Mirror of Life Trapping", "Mirror of Reflected Pasts", "Mudslick Tower", "Muralist's Mark", "Navigation Orb", "Nimbus Coronet", "Nolzur's Marvelous Pigments", "Null Chalk",
             "Ogramau's Graveyard", "Orb of the Veil", "Ornithopter of Flying", "Powergem Pommel 3 Slots", "Prehistoric Figurine of Wondrous Power (Carnelian Triceratops)", "Raven's Slumber", "Reincarnation Dust", "Rythm-Maker's Drum, +3",
-            "Seeing Glass", "Snugglebeast Tarrasque", "Speaking Stone", "Spirit Board", "Sundial Rin", "Deck of Wonder", "Domclavis Key", "Dragon Vessel (Slumbering)",
-            "Charging Bugle", "Cuff of Captions", "Decanter of Endless Water", "Deck of Illusions", "Deck of Miscellany", "Deck of Wonder", "Domclavis Key", "Dragon Vessel (Slumbering)",
+            "Seeing Glass", "Snugglebeast Tarrasque", "Speaking Stone", "Spirit Board", "The Closing Argument", "Timepiece of Travel", "War Standard of Battlecries", "Wheel of Stars",
+            "Xaantikorijek's Looking Glass", "Cuff of Captions", "Decanter of Endless Water", "Deck of Illusions", "Deck of Miscellany", "Deck of Wonder", "Domclavis Key", "Dragon Vessel (Slumbering)",
             "Charging Bugle", "Cuff of Captions", "Decanter of Endless Water", "Deck of Illusions", "Deck of Miscellany", "Deck of Wonder", "Domclavis Key", "Dragon Vessel (Slumbering)"
         ],
-        Legendary: ["Puzzle Ring of Vitality, Life, and Power", "Ring of Air Elemental Command", "Ring of Djinii Summoning", "Ring of Earth Elemental Command", "Ring of Elemental Command (Air)",
-            "Ring of Elemental Command (Earth)", "Ring of Elemental Command (Fire)", "Ring of Elemental Command (Water)", "Ring of Fire Elemental Command", "Ring of Invisibility", "Ring of Spell Turning",
-            "Ring of Three Wishes", "Ring of Water Elemental Command", "Ring of the Assassin Lord", "Rings of Spell Sharing"
+        Legendary: ["Belt of Cloud Giant Strength", "Belt of Storm Giant Strength", "Black Crystal Tablet", "Bloodscryer Oculus", "Crystal Ball of Mind Reading",
+            "Deck of Many Things", "Deck of Many More Things", "Danoth's Visor (Dormant)", "Gate Key", "Crystal Ball of True Seeing", "Crystal Ball of Telepathy",
+            "Deck of Several Thingss", "Fate Dealer's Deck, +3", "Fell-Rider Chariot", "Gold Canary Figurine of Wondrous Power", "Gorget of the Holy Soldier", "Guardian's Reliquary",
+            "Harp of Gilded Plenty", "Heart of Damned Intervention", "Horn of Beckoning Death", "Horn of Valhalla (Iron)", "Infernal Tack", "Infiltrator's Key (Dormant)",
+            "Iron Flask", "Lava Crucible", "Life Turner", "Ollamh Harp", "Orb of Skoraeus", "Platinum Scarf", "Quiver of Elemental Chaos", "Seed of Rebirth",
+            "Sovereign Glue", "Spell Bottle", "Spell Binding Shackles (Legendary)", "Stormgirdle (Dormant)", "Tablet of Reawakening", "Universal Solvent",
+            "Witchlight Watch", "Prehistoric Figurine of Wondrous Power (Jasper Tyrannosaurus Rex)"
         ],
-        Unique: ["Ring of Winter"]
+        Unique: ["Luba's Tarokka of Souls", "Skeleton Key", "Teeth of Dahlver-Nar"]
     },
 
     Ring: {
@@ -223,21 +288,35 @@ export const itemNames = {
     },
 
     Necklace: {
-        Common: ["Catnip Amulet", "Clockwork Amulet", "Chain Handwraps", "Guard’s Grip", "Hide Gloves"],
-        Uncommon: ["Amulet of Buoyancy", "Amulet of Equilibrium", "Amulet of proof against Detection and Location", "Amulet of the Devout, +1", "Amulet of the Drunkard",
-            "Bloodhound Amulet", "Bowstring Amulet", "Hagstones Amulet", "Kobold Diviner's Amulet", "Necklace of Adaptation", "Necklace of the Drunk", "Servitude Choker Necklace", "Medallion of Thoughts"],
-        Rare: ["Necklace of Fireballs", "Necklace of Ice Spikes", "Necklace of Nine Lives", "Necklace of Prayer Beads", "Necklace of Thunderbolts", "Amulet of Divine Protection", "Boreal Pendant", "Soul Pendant", "Amulet of Protection from Turning", "Amulet of the Devout, +2",
-            "Amulet of the Lycanthrope", "Amulet of the Sentinel", "Meta Medallion"
+        Common: ["Catnip Amulet", "Clockwork Amulet", "Dark Shard Amulet"],
+        Uncommon: ["Necklace of Adaptation", "Necklace of the Drunk", "Servitude Choker",
+            "Amulet of Buoyancy", "Amulet of Equilibrium",
+            "Amulet of Proof against Detection and Location", "Amulet of the Devout, +1",
+            "Amulet of the Drunkard", "Bloodhound Amulet", "Bowstring Amulet",
+            "Hagstones Amulet", "Kobold Diviner’s Amulet",
+            "Pendant of Thieves' Sight", "Medallion of Thoughts"],
+        Rare: ["Meta Medallion", "Necklace of Fireballs", "Necklace of Ice Spikes",
+            "Necklace of Nine Lives", "Necklace of Prayer Beads", "Necklace of Thunderbolts",
+            "Amulet of Divine Protection", "Amulet of Health",
+            "Amulet of Immutability", "Amulet of Protection from Turning",
+            "Amulet of the Devout, +2", "Amulet of the Lycanthrope",
+            "Amulet of the Sentinel", "Master's Amulet",
+            "Shield Guardian Amulet", "Boreal Pendant", "Soul Pendant"
         ],
-        VeryRare: ["Amulet of the Black Skull", "Amulet of the Coldfire Phoenix", "Amulet of the Devout, +3", "Amulet of the Planes", "Amulet of the Spirit Naga", "Blood Pact Pendants",
-            "Heartless Cage Pendant", "Pendant of Grave Regeneration", "Pendant of the Tempered Fury"
+        VeryRare: ["Blood Pact Pendants", "Heartless Cage Pendant",
+            "Pendant of Grave Regeneration", "Pendant of the Tempered Fury",
+            "Amulet of the Black Skull", "Amulet of the Coldfire Phoenix",
+            "Amulet of the Devout, +3", "Amulet of the Planes",
+            "Amulet of the Spirit Naga", "Madam Moody’s Amulet", "Sanctum Amulet"
         ],
-        Legendary: ["???"],
+        Legendary: ["Death's Shadow", "Kiss of the Changebringer (Dormant)", "Talarith", "Talisman of Pure Good",
+            "Talisman of Ultimate Evil", "Talisman of the Sphere", "Wreath of the Prism (Dormant)"
+        ],
         Unique: ["????"]
     },
 
     Cloak: {
-        Common: ["Cloak of Billowing", "Cloak of Many Fashions", "Forecaster's Cloak", "Guard’s Grip", "Hide Gloves"],
+        Common: ["Cloak of Billowing", "Cloak of Many Fashions", "Forecaster's Cloak"],
         Uncommon: ["Cloak of Daggers", "Cloak of Elvenkind", "Cloak of Protection", "Cloak of the Manta Ray", "Oragami Cloak", "Otyugh Cloak", "Seer's Starlight Cloak", "Wisp Cloak",
             "Alpine Mantle", "Couatl Herald's Mantle", "Dark Mantle", "Mantle of the Lightbender", "Nature's Mantle", "Sir Varion's Mantle", "Luna Moth Cape", "Great Owl's Shroud"
         ],
@@ -246,10 +325,10 @@ export const itemNames = {
             "Cape of the Mountebank", "Knifewing Cape", "Kagonesti Forest Shroud", "Carrion Shroud"
         ],
         VeryRare: ["Cloak of Archnida", "Dune Duster Cloak", "H'rethi Cloak of Shielding", "Shadow Ward Cloak", "Visionary's Cloak", "Dream Mantle", "Mistral Mantle", "Omenbringer's Mantle",
-            "Cape of Enlargement", "Tempest Griffon Feather Cape"
+            "Cape of Enlargement", "Tempest Griffon Feather Cape", "Echo of the Oni"
         ],
-        Legendary: ["Cloak of Invisibility", "Meta Mantle", "Celestial Hands", "Stormforged Gauntlets", "Radiant Fists"],
-        Unique: ["Grasp of the Mountain", "Inferno’s Claws", "Hand of the Void", "Sentinel’s Embrace", "Verdant Grips"]
+        Legendary: ["Cloak of Invisibility", "Meta Mantle", "Cabal's Ruin (Dormant)", "Verminshroud (Dormant)"],
+        Unique: ["???"]
     },
 
     Potion: {
@@ -266,39 +345,243 @@ export const itemNames = {
             "Potion of Dragon's Breath (Rare)", "Potion of Fire Giant Strength", "Potion of Frost Giant Strength", "Potion of Gaseous Form", "Potion of Heroism",
             "Potion of Invisibility", "Potion of Invulnerability", "Potion of Maximum Power", "Potion of Mind Control (Beast)", "Potion of Mind Control (Humanoid)",
             "Potion of Mind Reading", "Potion of Spell Recovery", "Potion of Stone Giant Strength", "Potion of Superior Healing", "Powder Bomb of Mental Purity",
-            "Rejuvinating Draft (Rare)"
+            "Rejuvinating Draft (Rare)", "EXP Flask"
         ],
         VeryRare: ["Bottled Abyss", "Lindwyrm Venom", "Magebane Poison", "Oil of Sharpness", "Potion of Cloud Giant Strength",
             "Potion of Dragon's Breath (Very Rare)", "Potion of Flying", "Potion of Greater Invsibility", "Potion of Longevity", "Potion of Mind Control (Monster)",
-            "Potion of Possibility", "Potion of Speed", "Potion of Spell Recovery (Very Rare)", "Potion of Supreme Healing", "Potion of Vitality", "Rejuvenating Draft (Very Rare)"
+            "Potion of Possibility", "Dungeon Essence Flask", "Skill Point Flask", "Potion of Speed", "Potion of Spell Recovery (Very Rare)", "Potion of Supreme Healing", "Potion of Vitality", "Rejuvenating Draft (Very Rare)"
         ],
         Legendary: ["Coldfire Phoenix Draft", "Potion of Dragon's Majesty", "Potion of Giant Size", "Potion of Storm Giant Strength", "Potion of the Unwavering Warrior", "Rejuvenating Draft (Legendary)"],
         Unique: ["Elixir of Divine Renewal"]
     },
 
     Sword: {
-        Common: ["Longsword", "Shortsword", "Rapier", "Greatsword", "Katana"],
-        Uncommon: ["Frosted Grips", "Ember-Gleam Fist", "Warden’s Clutch", "Spellwoven Gloves", "Starbound Handguards"],
-        Rare: ["Celestial Gauntlet", "Shadow Claws", "Flameguard Grips", "Tempest Fistguards", "Ironwood Gauntlet"],
-        VeryRare: ["Dawnbringer Grips", "Dragonhide Gloves", "Windbound Mitts", "Emberforged Gauntlets", "Midnight Talons"],
-        Legendary: ["Fists of the Eternal Flame", "Ancient’s Claw", "Celestial Hands", "Stormforged Gauntlets", "Radiant Fists"],
-        Unique: ["Grasp of the Mountain", "Inferno’s Claws", "Hand of the Void", "Sentinel’s Embrace", "Verdant Grips"]
+        Common: ["Longsword of Showmanship", "Moon-Touched Sword, Longsword", "Silvered Longsword",
+            "Moon-Touched Sword, Shortsword", "Shortsword of Showmanship", "Silvered Shortsword", "Sylvan Talon Shortsword",
+            "Moon-Touched, Rapier", "Silvered Rapier", "Sylvan Talon Rapier",
+            "Greatsword of Showmanship", "Moon-Touched Sword, Greatsword",
+            "Silvered Greatsword"],
+        Uncommon: ["Adamantine Longsword", "Brutal Macuahuitl ( Longsword )", "Hellfire Longsword",
+            "Jo'Catian Denier Longsword", "Longsword of Blind Faith", "Longsword of Spite",
+            "Longsword of Vengeance", "Longsword of Verdict", "Longsword of Warning",
+            "Longsword of the Pack Leader", "Longsword, +1", "Runegold Conduit Longsword", "Adamantine Shortsword", "Crusader's Shortsword", "Hellfire Shortsword",
+            "Jo'Catian Denier Shortsword", "Mockingblade Shortsword", "Runegold Conduit Shortsword",
+            "Shortsword of Blind Faith", "Shortsword of Spite", "Shortsword of Vengeance",
+            "Shortsword of Verdict", "Shortsword of Warning", "Shortsword of the Pack Leader",
+            "Shortsword, +1", "True Name Shortsword", "Young Dragon Edge Shortsword",
+            "True Name Longsword", "Young Dragon Edge Longsword", "Adamantine Rapier", "Hellfire Rapier", "Marlin Lunger ( Rapier )",
+            "Rapier of Blind Faith", "Rapier of Spite", "Rapier of Vengeance",
+            "Rapier of Verdict", "Rapier of Warning", "Rapier, +1",
+            "Rat King Rapier", "Runegold Conduit Rapier", "True Name Rapier",
+            "Young Dragon Edge Rapier", "Adamantine Greatsword", "Greatsword of Blind Faith", "Greatsword of Spite",
+            "Greatsword of Vengeance", "Katana, +1", "Greatsword of Verdict", "Greatsword of Warning",
+            "Greatsword of the Pack Leader", "Greatsword, +1", "Hellfire Greatsword",
+            "Orichalum Greatsword, +1", "Runegold Conduit Greatsword", "Silver Eagle Greatsword",
+            "True Name Greatsword"],
+        Rare: ["Acheron Blade, Longsword", "Adult Dragon Edge Longsword", "Coldfire Longsword",
+            "Corpse Slayer, Longsword", "Couatl Herald's Fang Longsword", "Crystal Longsword",
+            "Delerium-Forged Longsword", "Katana, +2", "Riptide Katana", "Dragon Slayer Longsword", "Dragonkin Longsword +1",
+            "Flame Tongue Longsword", "Gambler's Blade, Longsword", "Gentleman’s Saber ( Longsword )",
+            "Giant Slayer Longsword", "Jishin, Earth Render Longsword (Rare)", "Longsword of Life Stealing",
+            "Longsword of Mooring", "Longsword of Resonance", "Longsword of Wounding",
+            "Longsword, +2", "Lycan Longsword", "Lycan Slayer Longsword", "Mind Blade Longsword",
+            "Monster Tamer's Longsword", "Runegold Conduit Longsword", "Solacesteel Mitigator Longsword",
+            "True Name Longsword, +1", "Verax Longsword", "Vicious Longsword", "Voltedge Longsword",
+            "Warding Longsword", "Weapon of Certain Death, Longsword", "Whirling Longsword",
+            "Acheron Blade, Shortsword", "Adult Dragon Edge Shortsword", "Coldfire Shortsword",
+            "Corpse Slayer, Shortsword", "Couatl Herald's Fang Shortsword", "Crystal Shortsword",
+            "Delerium-Forged Shortsword", "Dragon Slayer Shortsword", "Dragonkin Shortsword +1",
+            "Flame Tongue Shortsword", "Gambler's Blade, Shortsword", "Giant Slayer Shortsword",
+            "Jishin, Earth Render Shortsword (Rare)", "Lycan Shortsword", "Mind Blade Shortsword",
+            "Monster Tamer's Shortsword", "Rift Sheath Shortswords (Requires Riff Sheath Quarterstaff)",
+            "Runegold Conduit Shortsword", "Shortsword of Life Stealing", "Shortsword of Wounding",
+            "Shortsword, +2", "Solacesteel Mitigator Shortsword", "Spatha, The Shortsword of Martial Mystery",
+            "True Name Shortsword, +1", "Verax Shortsword", "Vicious Shortsword",
+            "Voltedge Shortsword", "Warding Shortsword", "Weapon of Certain Death, Shortsword",
+            "Whirling Shortsword", "Wyvernblade Shortsword", "Sun Blade", "Acheron Blade, Rapier", "Adult Dragon Edge Rapier", "Blood Rose Rapier",
+            "Cinnabar Rapier", "Coldfire Rapier", "Corpse Slayer, Rapier",
+            "Couatl Herald's Fang Rapier", "Crystal Rapier", "Delerium-Forged Rapier",
+            "Dragon Slayer Rapier", "Dragonkin Rapier +1", "Flame Tongue Rapier",
+            "Gambler's Blade, Rapier", "Giant Slayer Rapier", "Grieving Garden Rapier",
+            "Lunar Rapier", "Lycan Rapier", "Mind Blade Rapier",
+            "Monster Tamer's Rapier", "Rapier of Life Stealing", "Rapier of Wounding",
+            "Rapier, +2", "Relentless Stinger ( Rapier )", "Runegold Conduit Rapier",
+            "Solacesteel Mitigator Rapier", "Tooth Rapier", "True Name Rapier, +1",
+            "Verax Rapier", "Vicious Rapier", "Vicious Rapier, +1",
+            "Voltedge Rapier", "Warding Rapier", "Weapon of Certain Death, Rapier",
+            "Whirling Rapier", "Wyvernblade Rapier", "Acheron Blade, Greatsword", "Blood Rose Greatsword", "Carnivora Carnival Greatsword",
+            "Coldfire Greatsword", "Corpse Slayer, Greatsword", "Couatl Herald's Fang Greatsword",
+            "Crystal Greatsword", "Delerium-Forged Greatsword", "Dragon Slayer Greatsword",
+            "Dragonkin Greatsword +1", "Flame Tongue Greatsword", "Gambler's Blade, Greatsword",
+            "Giant Slayer Greatsword", "Gracious Glacier Greatsword", "Greatsword of Life Stealing",
+            "Greatsword of Wounding", "Greatsword, +2", "Jishin, Earth Render Greatsword (Rare)",
+            "Lycan Greatsword", "Mind Blade Greatsword", "Monster Tamer's Greatsword",
+            "Runegold Conduit Greatsword", "Seadevil’s Fang Greatsword", "Solacesteel Mitigator Greatsword",
+            "True Name Greatsword, +1", "Verax Greatsword", "Vicious Greatsword",
+            "Voltedge Greatsword", "Warding Greatsword", "Weapon of Certain Death, Greatsword",
+            "Wyvernwing Greatsword"],
+        VeryRare: ["Ancient Dragon Edge Longsword", "Angel Wing Longsword", "Blade of the Medusa, Longsword",
+            "Blood Moon Blade ( Longsword )", "Bloodshed Longsword", "Dancing Longsword",
+            "Dragonkin Longsword +2", "Firebrand Longsword", "Fool's Longsword", "Foresight Longsword",
+            "Frost Brand Longsword", "Frostburn Blade Longsword", "Ghostly Blade ( Longsword )",
+            "Ioun Blade Longsword", "Jishin, Earth Render Longsword (Very Rare)", "Longsword of Judgement",
+            "Longsword of Sanctuary", "Longsword of Sharpness", "Longsword of Throne's Command",
+            "Longsword, +3", "Mage Slayer Longsword", "Molten Maw ( Longsword )", "Nine Lives Stealer Longsword",
+            "Polymorph Blade, Longsword", "Pseudo Slashing Longsword", "Quadrimium Longsword",
+            "Ruidium Longsword", "Blade of the Spelldrinker", "Runegold Conduit Longsword", "Spell Scriber Longsword",
+            "Thousand-Cuts Longsword", "True Name Longsword, +2", "Xibalban Blade Longsword",
+            "Ancient Dragon Edge Shortsword", "Blade of the Medusa, Shortsword", "Bloodshed Shortsword",
+            "Dancing Shortsword", "Dragonkin Shortsword +2", "Fool's Shortsword",
+            "Foresight Shortsword", "Frost Brand Shortsword", "Frostburn Blade Shortsword",
+            "Gleaming Gehena Shortsword", "Hour and Minute ( Shortsword and Dagger )",
+            "Ioun Blade Shortsword", "Jishin, Earth Render Shortsword (Very Rare)", "Ki Blade ( Shortsword )",
+            "Nine Lives Stealer Shortsword", "Polymorph Blade, Shortsword", "Ruidium Shortsword",
+            "Runegold Conduit Shortsword", "Shortsword of Throne's Command", "Shortsword, +3",
+            "True Name Shortsword, +2", "Ancient Dragon Edge Rapier", "Blade of the Medusa, Rapier", "Bloodshed Rapier",
+            "Charged Rapier", "Dancing Rapier", "Dragonkin Rapier +2",
+            "Elegant Egoist Rapier", "Fool's Rapier", "Foresight Rapier",
+            "Frost Brand Rapier", "Frostburn Blade Rapier", "Ioun Blade Rapier",
+            "Nine Lives Stealer Rapier", "Ouroboros Rapier", "Planar Rapier",
+            "Polymorph Blade, Rapier", "Rapier of Throne's Command", "Rapier, +3",
+            "Royal Blade of Amphibios ( Rapier )", "Ruidium Rapier", "Runegold Conduit Rapier",
+            "Spiral Spark Rapier", "The Rose Basket Rapier", "Timepiercer Rapier",
+            "True Name Rapier, +2", "Avant Garde Greatsword", "Baku’s Quadrimium Greatsword", "Blade of the Medusa, Greatsword",
+            "Bloodshed Greatsword", "Dancing Greatsword", "Dragonkin Greatsword +2",
+            "Electro-Immolator Greatsword", "Fool's Greatsword", "Foresight Greatsword",
+            "Frost Brand Greatsword", "Frostburn Blade Greatsword", "Greatsword of Sanctuary",
+            "Greatsword of Sharpness", "Greatsword of Throne's Command", "Greatsword, +3",
+            "Impact ( Greatsword )", "Ioun Blade Greatsword", "Nine Lives Stealer Greatsword",
+            "Polymorph Blade, Greatsword", "Quadrimium Greatsword", "Royal Cerulean Crest Greatsword",
+            "Ruidium Greatsword", "Runegold Conduit Greatsword", "Thousand-Cuts Greatsword",
+            "Titan's Tooth Claymore ( Greatsword )", "True Name Greatsword, +2"],
+        Legendary: ["Aberrant Nail ( Longsword )", "Ao Hai's Fang ( Longsword )", "Blade of the Unbroken Circle ( Longsword )",
+            "Defender Longsword", "Dragon-Kindled Edge Longsword", "Dragonkin Longsword +3",
+            "Eternal Slayer Longsword", "Godsteel Worldcarver Longsword", "Greedy Gladius Longsword",
+            "Holy Avenger Longsword", "Infernal Ichor Longsword", "Jishin, Earth Render Longsword (Legendary)",
+            "Longsword of the Planes", "Longsword of the Spelldrinker", "Luck Blade Longsword",
+            "Memento of the Shapeless Longsword", "Moonblade Longsword", "True Name Longsword, +3",
+            "Vorpal Longsword", "Windrazor Longsword", "Brilliance ( Shortsword )", "Defender Shortsword", "Dragonkin Shortsword +3",
+            "Eternal Slayer Shortsword", "Gladius of the Everfighter ( Shortsword )",
+            "Cymrith Rapier", "Defender Rapier", "Dragonkin Rapier +3", "Defender Greatsword", "Dragonkin Greatsword +3", "Eternal Slayer Greatsword",
+            "Fallen Star Greatswords", "Godsteel Worldcarver Greatsword", "Greater Silver Sword",
+            "Greatsword of the Planes", "Holy Avenger Greatsword", "Kin-Rin Greatsword - Series 7",
+            "Liar’s Lament Greatsword", "Luck Blade Greatsword", "Moonblade Greatsword", "Bolide Blade Katana",
+            "The Crimson Claymore ( Greatsword )", "True Name Greatsword, +3", "Vorpal Greatsword",
+            "Eternal Slayer Rapier", "Holy Avenger Rapier", "Howl ( Rapier )",
+            "Luck Blade Rapier", "Maestro’s Conductive Rapier", "Memento of the Shapeless Rapier",
+            "Moonblade Rapier", "Octavius' Saber ( Rapier )", "Pride and Prejudice ( Rapier )",
+            "Rapier of the Planes", "True Name Rapier, +3", "Violet King's Promise ( Rapier )",
+            "Holy Avenger Shortsword", "Luck Blade Shortsword", "Memento of the Shapeless Shortsword", "Sun Blade Lorkor",
+            "Moonblade Shortsword", "Shortsword of the Planes", "True Name Shortsword, +3", "Blade of Forlorn Hope"],
+        Unique: ["Dominion Authority", "Paradoxical Paradigm Longsword", "Silverwind, The Cleansing Breeze ( Longsword )", "Blade of Avernus", "Void Blade", "Solaris ( Longsword )"]
     },
     Bow: {
-        Common: ["Iron Gauntlet", "Leather Gloves", "Chain Handwraps", "Guard’s Grip", "Hide Gloves"],
-        Uncommon: ["Frosted Grips", "Ember-Gleam Fist", "Warden’s Clutch", "Spellwoven Gloves", "Starbound Handguards"],
-        Rare: ["Celestial Gauntlet", "Shadow Claws", "Flameguard Grips", "Tempest Fistguards", "Ironwood Gauntlet"],
-        VeryRare: ["Dawnbringer Grips", "Dragonhide Gloves", "Windbound Mitts", "Emberforged Gauntlets", "Midnight Talons"],
-        Legendary: ["Fists of the Eternal Flame", "Ancient’s Claw", "Celestial Hands", "Stormforged Gauntlets", "Radiant Fists"],
-        Unique: ["Grasp of the Mountain", "Inferno’s Claws", "Hand of the Void", "Sentinel’s Embrace", "Verdant Grips"]
+        Common: ["Longbow of Showmanship", "Silvered Longbow", "Silvered Shortbow",
+            "Silvered Sling", "Sling of Showmanship", "Shortbow of Showmanship"],
+        Uncommon: ["Battlement Longbow", "Candleflame Longbow", "Hellfire Longbow",
+            "Longbow of Warning", "Longbow, +1", "True Name Longbow", "Battlement Shortbow", "Candleflame Shortbow", "Hellfire Shortbow",
+            "Shortbow of Warning", "Shortbow, +1", "True Name Shortbow",
+            "Hellfire Sling", "Sling of Giant Felling",
+            "Sling of Warning", "Sling, +1", "Torchbearer’s Sling",
+            "True Name Sling"],
+        Rare: ["Corpse Slayer, Longbow", "Couatl Herald's Reach Longbow", "Dragon Slayer Longbow",
+            "Dragon Wing Longbow", "Giant Slayer Longbow", "Glimmering Moonbow, Longbow", "Bow of the Eldritch Archer",
+            "Killskull Longbow of Dread", "Longbow of Conflagration", "Longbow of the Cobra", "Brass Wyrmshide Bow",
+            "Longbow of the Twilight Valkyrie", "Longbow, +2", "Lycan Longbow", "Blue Wyrmshide Bow", "Bow of Mind Thievery",
+            "Mirrorlight Stinger Longbow", "Oceanic Longbow", "Redeemer's Regards ( Longbow )",
+            "Screaming Longbow", "Starcrossed Longbow", "True Name Longbow, +1", "Air Render ( Shortbow )", "Corpse Slayer, Shortbow", "Couatl Herald's Reach Shortbow",
+            "Dragon Slayer Shortbow", "Dragon Wing Shortbow", "Giant Slayer Shortbow", "Bronze Wyrmshide Bow", "Copper Wyrmshide Bow",
+            "Glimmering Moonbow, Shortbow", "Lycan Shortbow", "Mirrorlight Stinger Shortbow", "Gold Wyrmshide Bow", "Red Wyrmshide Bow",
+            "Oceanic Shortbow", "Shortbow of Conflagration", "Shortbow of the Cobra", "Black Wyrmshide Bow",
+            "Shortbow of the Twilight Valkyrie", "Shortbow, +2", "Splintershot Shortbow", "Silver Wyrmshide Bow", "White Wyrmshide Bow",
+            "Starcrossed Shortbow", "True Name Shortbow, +1", "Vicious Shortbow",
+            "Weapon of Certain Death, Shortbow", "Webgrip Shortbow", "Blazing Bowstring",
+            "Vicious Longbow", "Weapon of Certain Death, Longbow", "Webgrip Longbow",
+            "Corpse Slayer, Sling", "Dragon Slayer Sling", "Giant Slayer Sling",
+            "Lycan Sling", "Oceanic Sling", "Pennypuncher Slingshot",
+            "Sling of the Tiny Giant", "Sling, +2",
+            "True Name Sling, +1", "Two-Birds Sling", "Vicious Sling",
+            "Weapon of Certain Death, Sling"],
+        VeryRare: ["Arc of the Alicorn ( Longbow )", "Arkano Longbow", "Energy Longbow",
+            "Foresight Longbow", "Longbow of Melodies", "Longbow of Throne's Command",
+            "Longbow of the Spelldrinker", "Longbow, +3", "Nine Lives Stealer Longbow",
+            "Oathbow Longbow", "Phasing Longbow", "Ruidium Longbow",
+            "Shooting Star Longbow", "True Name Longbow, +2", "Energy Shortbow", "Foresight Shortbow", "Harp of Valor Shortbow",
+            "Nine Lives Stealer Shortbow", "Oath Shortbow", "Phasing Shortbow", "Bow of Four",
+            "Ruidium Shortbow", "Shortbow of Melodies", "Shortbow of the Spelldrinker",
+            "Shortbow, +3", "True Name Shortbow, +2", "Forcebreaker Sling", "Foresight Sling", "Nine Lives Stealer Sling",
+            "Ruidium Sling",
+            "Sling, +3", "True Name Sling, +2"],
+        Legendary: ["Holy Avenger Longbow", "Longbow of the Healing Hearth", "Slaying Longbow",
+            "Spellfire Longbow", "True Name Longbow, +3", "Holy Avenger Shortbow", "True Name Shortbow, +3"],
+        Unique: ["Ionbreaker, the Tempest's Reach Longbow", "Cupid's Bow", "Ephixis, Bow of Nylea"]
     },
     Hammer: {
-        Common: ["Light Hammer", "Light Hammer of Showmanship", "Redsmith Light Hammer", "Warhammer of Showmanship", "Warhammer", "Maul", "Maul of Showmanship"],
-        Uncommon: ["Frosted Grips", "Ember-Gleam Fist", "Warden’s Clutch", "Spellwoven Gloves", "Starbound Handguards"],
-        Rare: ["Celestial Gauntlet", "Shadow Claws", "Flameguard Grips", "Tempest Fistguards", "Ironwood Gauntlet"],
-        VeryRare: ["Dawnbringer Grips", "Dragonhide Gloves", "Windbound Mitts", "Emberforged Gauntlets", "Midnight Talons"],
-        Legendary: ["Fists of the Eternal Flame", "Ancient’s Claw", "Celestial Hands", "Stormforged Gauntlets", "Radiant Fists"],
-        Unique: ["Grasp of the Mountain", "Inferno’s Claws", "Hand of the Void", "Sentinel’s Embrace", "Verdant Grips"]
+        Common: ["Silvered Warhammer", "Warhammer of Showmanship", 
+        "Maul of Showmanship", "Silvered Maul", 
+        "Light Hammer of Showmanship", "Redsmith Light Hammer", 
+        "Silvered Light Hammer"],
+        Uncommon: ["Adamantine Warhammer", "Hellfire Warhammer", "True Name Warhammer", 
+        "Warhammer of Blind Faith", "Warhammer of Spite", 
+        "Warhammer of Verdict", "Warhammer of Warning", 
+        "Warhammer, +1", "Adamantine Maul", "Hellfire Maul", 
+        "Maul of Blind Faith", "Maul of Spite", "Maul of Verdict", 
+        "Maul of Warning", "Maul, +1", "Ol' Stumpy", 
+        "Silver Eagle Maul", "True Name Maul", "Adamantine Light Hammer", 
+        "Hellfire Light Hammer", "Light Hammer of Blind Faith", 
+        "Light Hammer of Spite", "Light Hammer of Verdict", 
+        "Light Hammer of Warning", "Light Hammer of Whispers", 
+        "Light Hammer, +1", "True Name Light Hammer"],
+        Rare: [ "Coldfire Warhammer", "Corpse Slayer, Warhammer", 
+            "Dragon Slayer Warhammer", "Dragonkin Warhammer +1", 
+            "Flame Tongue Warhammer", "Giant Slayer Warhammer", 
+            "Lycan Warhammer", "True Name Warhammer, +1", 
+            "Verax Warhammer", "Vicious Warhammer", 
+            "Warding Warhammer", "Warhammer of Eruptions", 
+            "Warhammer of Mooring", "Warhammer, +2", 
+            "Weapon of Certain Death, Warhammer", "Whirling Warhammer", 
+            "Battlebrew Maul", "Coldfire Maul", "Corpse Slayer, Maul", 
+            "Dragon Slayer Maul", "Dragonkin Maul +1", "FireBrand Maul", 
+            "Flame Tongue Maul", "Focus Breaker Maul", 
+            "Gelatinous Maul", "Giant Slayer Maul", 
+            "Ironleaf Maul of Entanglement", "Lycan Maul", 
+            "Maul of the Guiding Star", "Maul, +2", 
+            "Radiant Defender Maul", "True Name Maul, +1", 
+            "Verax Maul", "Vicious Maul", "Warding Maul", 
+            "Weapon of Certain Death, Maul", "Coldfire Light Hammer", 
+            "Corpse Slayer, Light Hammer", "Dragon Slayer Light Hammer", 
+            "Dragonkin Light Hammer +1", "Flame Tongue Light Hammer", 
+            "Giant Slayer Light Hammer", "Light Hammer, +2", 
+            "Lycan Light Hammer", "Master Machinist's Marvelous Mallet", 
+            "Oceanic Light Hammer", "Quake Light Hammer", 
+            "Starmetal Striker Light Hammer", "True Name Light Hammer, +1", 
+            "Verax Light Hammer", "Vicious Light Hammer", 
+            "Warding Light Hammer", "Weapon of Certain Death, Light Hammer", 
+            "Whirling Light Hammer"],
+        VeryRare: ["Comet Smasher Warhammer", "Dragonkin Warhammer +2", 
+        "Festerwood Masher Warhammer", "Forcebreaker Warhammer", 
+        "Foresight Warhammer", "Nine Lives Stealer Warhammer", 
+        "Ruidium Warhammer", "True Name Warhammer, +2", 
+        "Warhammer of Throne's Command", "Warhammer, +3", 
+        "Comet Smasher Maul", "Dragonkin Maul +2", 
+        "Festerwood Masher Maul", "Forcebreaker Maul", 
+        "Foresight Maul", "Maul of Throne's Command", 
+        "Maul, +3", "Molten Hammer", "Nine Lives Stealer Maul", 
+        "Quagmire Maul", "Ruidium Maul", "True Name Maul, +2", 
+        "Comet Smasher Light Hammer", "Dragonkin Light Hammer +2", 
+        "Forcebreaker Light Hammer", "Foresight Light Hammer", 
+        "Light Hammer, +3", "Nine Lives Stealer Light Hammer", 
+        "Ruidium Light Hammer", "True Name Light Hammer, +2", 
+        "Hammer of Runic Focus"],
+        Legendary: [ "Defender Warhammer", "Dragonkin Warhammer +3", 
+            "Emberheart Warhammer", "Forgemaster's Might Warhammer", 
+            "Holy Avenger Warhammer", "Memento of the Shapeless Warhammer", 
+            "True Name Warhammer, +3", "Defender Maul", 
+            "Dragonkin Maul +3", "Forgemaster's Might Maul", 
+            "Heaven's Gavel Maul", "Holy Avenger Maul", 
+            "True Name Maul, +3", "Dragonkin Light Hammer +3", 
+            "Holy Avenger Light Hammer", "True Name Light Hammer, +3"],
+        Unique: [ "Akmon, Hammer of Purphoros"]
     },
     Axe: {
         Common: ["Battleaxe of Showmanship", "Silvered Batleaxe", "Handaxe of Showmanship", "Silvered Handaxe", "Greataxe of Showmanship", "Silvered Greataxe", "Yester Hill Axe"],
@@ -330,21 +613,68 @@ export const itemNames = {
         Unique: ["Hatred, the Wrathful Edge", "Axe of the Dwarvish Lords"]
     },
     Glaive: {
-        Common: ["Iron Gauntlet", "Leather Gloves", "Chain Handwraps", "Guard’s Grip", "Hide Gloves"],
-        Uncommon: ["Frosted Grips", "Ember-Gleam Fist", "Warden’s Clutch", "Spellwoven Gloves", "Starbound Handguards"],
-        Rare: ["Celestial Gauntlet", "Shadow Claws", "Flameguard Grips", "Tempest Fistguards", "Ironwood Gauntlet"],
-        VeryRare: ["Dawnbringer Grips", "Dragonhide Gloves", "Windbound Mitts", "Emberforged Gauntlets", "Midnight Talons"],
-        Legendary: ["Fists of the Eternal Flame", "Ancient’s Claw", "Celestial Hands", "Stormforged Gauntlets", "Radiant Fists"],
-        Unique: ["Grasp of the Mountain", "Inferno’s Claws", "Hand of the Void", "Sentinel’s Embrace", "Verdant Grips"]
+        Common: ["Silvered Glaive", "Moon-Touched, Glaive"],
+        Uncommon: ["Adamantine Glaive", "Glaive of Blind Faith", "Glaive of Spite", "Glaive of Vengeance", "Glaive of Warning",
+            "Glaive, +1", "Hellfire Glaive", "True Name Glaive"
+        ],
+        Rare: ["Coldfire Glaive", "Corpse Slayer, Glaive", "Dragon Slayer Glaive", "Flame Tongue Glaive", "Giant Slayer Glaive",
+            "Glaive of Life Stealing", "Glaive of Wounding", "Glaive of the Forest Guardian", "Glaive, +2", "Knight's Standard of Virtue Glaive",
+            "Lycan Glaive", "Rime of the Justicars Glaive", "True Name Glaive, +1", "Vicious Glaive", "Warding Glaive", "Wavebender's Leiomano Glaive",
+            "Weapon of Certain Death, Glaive", "Covolt Scythe"
+        ],
+        VeryRare: ["Dragonkin Glaive, +2", "Firebrand Glaive", "Foresight Glaive", "Frost Brand Glaive", "Glaive of Sharpness",
+            "Glaive of Throne's Command", "Glaive, +3", "Nine Lives Stealer Glaive", "Aciurgist’s Blade", "Ruidium Glaive", "True Name Glaive, +2",
+            "Snuff Scythe"
+        ],
+        Legendary: ["Crypt Keeper Glaive", "Defender Glaive", "Dragonkin Glaive, +3", "Glaive of the Revenant King", "Holy Avenger Glaive",
+            "Luck Blade Glaive", "Red Queen's Burden", "True Name Glaive, +3", "Vorpal Glaive", "Mage Eater Scythe", "Scythe of the Foreboding Reaper"
+        ],
+        Unique: ["????"]
     },
 
     Dagger: {
-        Common: ["Iron Gauntlet", "Leather Gloves", "Chain Handwraps", "Guard’s Grip", "Hide Gloves"],
-        Uncommon: ["Frosted Grips", "Ember-Gleam Fist", "Warden’s Clutch", "Spellwoven Gloves", "Starbound Handguards"],
-        Rare: ["Celestial Gauntlet", "Shadow Claws", "Flameguard Grips", "Tempest Fistguards", "Ironwood Gauntlet"],
-        VeryRare: ["Dawnbringer Grips", "Dragonhide Gloves", "Windbound Mitts", "Emberforged Gauntlets", "Midnight Talons"],
-        Legendary: ["Fists of the Eternal Flame", "Ancient’s Claw", "Celestial Hands", "Stormforged Gauntlets", "Radiant Fists"],
-        Unique: ["Grasp of the Mountain", "Inferno’s Claws", "Hand of the Void", "Sentinel’s Embrace", "Verdant Grips"]
+        Common: ["Dagger of Showmanship", "Silvered Dagger", "Sylvan Talon Dagger", "Sickle of Showmanship", "Silvered Sickle", "Sylvan Talon Sickle"],
+        Uncommon: ["Adamantine Dagger", "Bloodthirsty Bistoury ( Dagger )", "Courtesan's Fanblade ( Dagger )",
+            "Covolt Dagger", "Dagger of Blind Faith", "Dagger of First Light",
+            "Dagger of Spite", "Dagger of Vengeance", "Dagger of Verdict",
+            "Dagger of Warning", "Dagger, +1", "Dusk Dagger (Uncommon)",
+            "Frozen Dagger", "Galepierce Dagger", "Glass Carver ( Dagger )",
+            "Hellfire Dagger", "Kukulthan Cultist Dagger", "Riff's Dimensional Ripper ( Dagger )",
+            "True Name Dagger", "Young Dragon Edge Dagger", "Adamantine Sickle", "Harvest Sickle", "Hellfire Sickle",
+            "Ice Sickle", "Moon Sickle, +1", "Sickle of Blind Faith",
+            "Sickle of Spite", "Sickle of Verdict", "Sickle of Warning",
+            "Sickle, +1", "True Name Sickle", "Young Dragon Edge Sickle"
+        ],
+        Rare: ["Adult Dragon Edge Dagger", "Bandolier of the Elements ( Daggers )", "Basilisk Dagger",
+            "Coldfire Dagger", "Corpse Slayer, Dagger", "Couatl Herald's Fang Dagger",
+            "Dagger of Blindsight", "Dagger of Denial", "Dagger of Venom",
+            "Dagger, +2", "Dauntless Devotion Dagger",
+            "Dragon Slayer Dagger", "Dragonkin Dagger +1", "Dragontooth Dagger",
+            "Dusk Dagger (Rare)", "Faithful Feathers Daggers", "Feather Dagger",
+            "Flame Tongue Dagger", "Giant Slayer Dagger", "Lamian Facestealer ( Dagger )",
+            "Lycan Dagger", "Obsidian Star Dagger", "Oceanic Dagger",
+            "Pick and Pocket ( Dagger )", "Seraphim's Stiletto ( Dagger )", "Spiderbite Daggers",
+            "True Name Dagger, +1", "Verax Dagger", "Vicious Dagger",
+            "Voltedge Dagger", "Wandblade Dagger", "Warding Dagger",
+            "Weapon of Certain Death, Dagger", "Whirling Dagger", "Adult Dragon Edge Sickle", "Coldfire Sickle", "Corpse Slayer, Sickle",
+            "Dragonkin Sickle +1", "Flame Tongue Sickle", "Giant Slayer Sickle",
+            "Lycan Sickle", "Moon Sickle, +2", "Sickle of Cunning",
+            "Sickle, +2", "Storm Sickle", "True Name Sickle, +1",
+            "Verax Sickle", "Vicious Sickle", "Warding Sickle",
+            "Weapon of Certain Death, Sickle", "Whirling Sickle"],
+        VeryRare: ["Ancient Dragon Edge Dagger", "Assassin’s Dagger", "Bloodmage Dagger",
+            "Corecut Dagger", "Dagger, +3", "Dragonkin Dagger +2",
+            "Dusk Dagger (Very Rare)", "Foresight Dagger", "Grass Whistle Dagger",
+            "Ioun Blade Dagger", "Nine Lives Stealer Dagger", "Purging Dagger",
+            "Ruidium Dagger", "Shadow Drinker Dagger", "Shattered Fragment ( Dagger )",
+            "Starmetal Sliver Dagger", "True Name Dagger, +2", "Arcane Scalpel", "Ancient Dragon Edge Sickle", "Dragonkin Sickle +2", "Foresight Sickle",
+            "Ioun Blade Sickle", "Moon Sickle, +3", "Nine Lives Stealer Sickle",
+            "Ruidium Sickle", "Sickle, +3", "True Name Sickle, +2"],
+        Legendary: ["Defender Dagger", "Dragonkin Dagger +3", "Heaven's Edge ( Dagger )",
+            "Holy Avenger Dagger", "Memento of the Shapeless Dagger", "Spirit Cleaver ( Dagger )",
+            "True Name Dagger, +3", "Defender Sickle", "Dragonkin Sickle +3", "Holy Avenger Sickle",
+            "Luck Blade Sickle", "True Name Sickle, +3"],
+        Unique: ["Blade of Broken Mirrors"]
     },
 
     Staff: {
@@ -362,7 +692,7 @@ export const itemNames = {
         Legendary: ["Blackstaff", "Dragonstaff of Ahghairon", "Hither-Tither Staff", "Inscrutable Staff", "Staff of Conflux (Dormant)",
             "Staff of Contaminated Power", "Staff of the Magi"
         ],
-        Unique: ["Staff of the Forgotten One"]
+        Unique: ["Staff of the Forgotten One", "Crook of Rao", "Precipit, the Formless"]
     },
     Rod: {
         Common: ["Periscope Rod", "Rod of Endless Light"],
@@ -405,45 +735,26 @@ export const itemNames = {
         Uncommon: ["Tome of Dreams", "Arcane Grimoire, +1", "Book of Clothier's Croquis", "Detective's Notebook", "Lorehold Primer", "Prismari Primer", "Quandrix Primer", "Silverquill Primer", "Witherbloom Primer", "Heart Weaver's Primer"],
         Rare: ["Bright Idea Tome", "Insatiable Tome", "Tome of the Dragon's Hoard", "Tome of the Ethereal", "Arcane Grimoire, +2", "Atlas of Endless Horizons", "Protective Verses", "Duplicitous Manuscript"],
         VeryRare: ["Tome of Advanced Fighting Styles", "Tome of Clear Thought", "Tome of Leadership and Influence", "Tome of Understanding", "Arcane Grimoire, +3", "Edible Book of Recipes"],
-        Legendary: ["Tome of Lost Knowledge", "Tome of The Emperors Vault", "Tome of the Stilled Tongue", "Grimoire Infinitus", "Manual of Bodily Health", "Manual of Clay Golems", "Manual of Flesh Golems", "Manual of Gainful Exercise", "Manual of Iron Golems", "Manual of Quickness of Action","Manual of Stone Golems"],
+        Legendary: ["Tome of Lost Knowledge", "Tome of The Emperors Vault", "Tome of the Stilled Tongue", "Grimoire Infinitus", "Manual of Bodily Health", "Manual of Clay Golems", "Manual of Flesh Golems",
+            "Manual of Gainful Exercise", "Manual of Iron Golems", "Manual of Quickness of Action", "Manual of Stone Golems"],
         Unique: ["Book of Exalted Deeds", "Book of Vile Darkness"]
     },
-    SpellScroll: {
-        Common: ["Absorb Elements", "Acid Splash", "Alarm", "Animal Friendship", "Animal Shapes", "Arcane Ablation", "Arcane Weapon", "Arctic Breathe", "Armor of Agathys", "Arms of Hadar",
-            "Awaken Rope", "Bad Blood", "Bane", "Beast Bond", "Blade Ward", "Bless", "Booming Blade",
-            "Bramble Binding", "Burn", "Burning Hands", "Catapult", "Cause Fear", "Ceremony",
-            "Chaos Bolt", "Charm Person", "Chill Touch", "Chromatic Orb", "Color Spray", "Command",
-            "Compelled Duel", "Comprehend Languages", "Control Flames", "Cure Wounds", "Dancing Lights", "Detect Evil and Good", "Detect Magic",
-            "Detect Poison and Disease", "Disguise Self", "Dissonant Whispers", "Distort Value", "Divine Favor", "Druidcraft", "Earth Tremor",
-            "Electrify", "Encode Thoughts", "Ensnaring Strike", "Entangle", "Entomb", "Expeditious Retreat", "Faerie Fire",
-            "False Life", "Feather Fall", "Find Familiar", "Fire Bolt", "Fists of Fire", "Floating Disk", "Fog Cloud",
-            "Freeze", "Friends", "Frost Fingers", "Frostbite", "Gale Bolt", "Gift of Alacrity", "Goodberry",
-            "Grasping Roots", "Grease", "Guiding Bolt", "Hail of Thorns", "Healing Word", "Hellish Rebuke", "Heroism",
-            "Hex", "Hideous Laughter", "Hunter's Mark", "Ice Knife", "Identify", "Illusory Script", "Induce Headache",
-            "Inflict Wounds", "Jump", "Karmic Reflection", "Lightning Lure", "Lightning Tendril", "Longstrider", "Mage Armor",
-            "Mage Hand", "Magic Missiles", "Magic Stone", "Mending", "Message", "Minor Illusion", "Multishot",
-            "Poison Spray", "Purify Food and Drink", "Protection from Evil and Good", "Ray of Frost", "Ray of Sickness", "Sanctuary", "Searing Smite",
-            "Seeking Projectile", "Shield", "Shield of Faith", "Shillelagh", "Shocking Grasp", "Silent Image", "Silvery Barbs",
-            "Sleep", "Snare", "Spare the Dying", "Speak with Animals", "Stone Fist", "Summon Ooze", "Thorn Whip", "Thunder Note",
-            "Thunder Punch", "Thunderclap", "Thunderous Smite", "Thunderwave", "Unburden", "Water Blast", "Witch Bolt",
-            "Holy Word", "Wrathful Smite", "Zephyr Strike"
-        ],
-        Uncommon: ["Frosted Grips", "Ember-Gleam Fist", "Warden’s Clutch", "Spellwoven Gloves", "Starbound Handguards"],
-        Rare: ["Celestial Gauntlet", "Shadow Claws", "Flameguard Grips", "Tempest Fistguards", "Ironwood Gauntlet"],
-        VeryRare: ["Dawnbringer Grips", "Dragonhide Gloves", "Windbound Mitts", "Emberforged Gauntlets", "Midnight Talons"],
-        Legendary: ["Fists of the Eternal Flame", "Ancient’s Claw", "Celestial Hands", "Stormforged Gauntlets", "Radiant Fists"],
-        Unique: ["Grasp of the Mountain", "Inferno’s Claws", "Hand of the Void", "Sentinel’s Embrace", "Verdant Grips"]
-    },
+    
     Gems: {
-        Common: ["Iron Gauntlet", "Leather Gloves", "Chain Handwraps", "Guard’s Grip", "Hide Gloves"],
+        Common: ["High-Quality Diamond (300 GP)", "High-Quality Diamond (500 GP)", "Chain Handwraps", ],
         Uncommon: ["Elemental Gem (Blue Sapphire)", "Elemental Gem (Emerald)", "Elemental Gem (Red Corundum)", "Elemental Gem (Yellow Diamond)", "Fabulist Gem", "Gem of Brightness", "Spell Gem (Lapis Lazuli",
-            "Spell Gem (Obsidian)"
+            "Spell Gem (Obsidian)", "Exquisite Diamond (1000 GP)"
         ],
         Rare: ["Gem of Seeing", "Spell Gem (Bloodstone)", "Spell Gem (Quartz)", "Ioun Stone of Awareness", "Ioun Stone of Historical Knowledge", "Ioun Stone of Language Knowledge", "Ioun Stone of Natural Knowledge", "Ioun Stone of Protection",
             "Ioun Stone of Religious Knowledge", "Ioun Stone of Reserve", "Ioun Stone of Self-Preservation", "Ioun Stone of Supreme Intellect", "Ioun Stone of Sustenance"
         ],
-        VeryRare: ["Spell Gem (Amber)", "Spell Gem (Jade)", "Spell Gem (Topaz)", "Ioun Stone of Absorption", "Ioun Stone of Agility", "Ioun Stone of Fortitude", "Ioun Stone of Insight", "Ioun Stone of Intellect", "Ioun Stone of Leadership", "Ioun Stone of Strength", "Ioun Stone of Vitality"],
-        Legendary: ["Mastery Gem", "Ruby Weave Gem", "Spell Gem (Diamond)", "Spell Gem (Ruby)", "Spell Gem (Star Ruby)", "Ioun Stone of Greater Absorption", "Ioun Stone of Mastery", "Ioun Stone of Regeneration"],
+        VeryRare: ["Spell Gem (Amber)", "Spell Gem (Jade)", "Spell Gem (Topaz)", "Ioun Stone of Absorption", "Ioun Stone of Agility", "Ioun Stone of Fortitude", "Ioun Stone of Insight", "Ioun Stone of Intellect", "Ioun Stone of Leadership", "Ioun Stone of Strength", "Ioun Stone of Vitality",
+            "Amethyst Lodestone", "Fragment of Elder Starlight"
+        ],
+        Legendary: ["Mastery Gem", "Flawless Diamond (25,000 GP)", "Ruby Weave Gem", "Spell Gem (Diamond)", "Spell Gem (Ruby)", "Spell Gem (Star Ruby)", "Ioun Stone of Greater Absorption", "Ioun Stone of Mastery", "Ioun Stone of Regeneration",
+            "Jewel of Three Prayers (Dormant)", "Nightfall Pearl", "Scaled Ornament (Ascendant)", "Shard Solitaire (Black Sapphire)", "Shard Solitaire (Diamond)",
+            "Shard Solitaire (Jacinth)", "Shard Solitaire (Rainbow Peral)", "Shard Solitaire (Ruby)", "Shard Solitaire (Black Sapphire)"
+        ],
         Unique: ["?????"]
     },
 
@@ -467,36 +778,101 @@ export const itemNames = {
     },
 
     WeaponArt: {
-        Common: ["Inspiring Presence F", "Inspiring Presence E", "Fortitude F", "Fortitude E", "Energizing Burst F", "Energizing Burst E", "Battlefield Clarity F", "Battlefield Clarity E"],
-        Uncommon: ["Frosted Grips", "Ember-Gleam Fist", "Warden’s Clutch", "Spellwoven Gloves", "Starbound Handguards"],
-        Rare: ["Celestial Gauntlet", "Shadow Claws", "Flameguard Grips", "Tempest Fistguards", "Ironwood Gauntlet"],
-        VeryRare: ["Dawnbringer Grips", "Dragonhide Gloves", "Windbound Mitts", "Emberforged Gauntlets", "Midnight Talons"],
-        Legendary: ["Fists of the Eternal Flame", "Ancient’s Claw", "Celestial Hands", "Stormforged Gauntlets", "Radiant Fists"],
-        Unique: ["Grasp of the Mountain", "Inferno’s Claws", "Hand of the Void", "Sentinel’s Embrace", "Verdant Grips"]
+        Common: ["Folkvangr F", "Gjöll F", "Mystletainn F", "Instant Sword F", "Dazed Strike F", "Anger F", "Grand Finale F", "A Thousand Cuts F",
+            "Titan Slayer F", "Bellringer F", "Sandfort Spade F", "Echo F", "Vorpal Strike F", "Blood for Blood F", "Durandal F", "Killing Edge F",
+            "Backstab F", "Twin Strike F", "Heavy Blade F", "Armor Smasher F", "Hand of Greed F", "Steadfast Sword F", "Fortitude F", "Folkvangr F",
+            "Folkvangr F", "Folkvangr F", "Fortitude F", "Folkvangr F", "Folkvangr F", "Folkvangr F", "Fortitude F", "Folkvangr F",
+        ],
+        Uncommon: ["Folkvangr D", "Gjöll D", "Mystletainn D", "Instant Sword D", "Dazed Strike D", "Anger D", "Grand Finale D", "A Thousand Cuts D",
+            "Titan Slayer D", "Bellringer D", "Sandfort Spade D", "Echo D", "Vorpal Strike D", "Blood for Blood D", "Durandal D", "Folkvangr D", "Killing Edge D",
+            "Backstab D", "Twin Strike D", "Heavy Blade D", "Armor Smasher D", "Hand of Greed D", "Steadfast Sword D", "Folkvangr D",
+            "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D",],
+
+        Rare: ["Folkvangr C", "Gjöll C", "Mystletainn C", "Instant Sword C", "Dazed Strike C", "Anger C", "Grand Finale C", "A Thousand Cuts C",
+            "Titan Slayer C", "Bellringer C", "Sandfort Spade C", "Echo C", "Vorpal Strike C", "Blood for Blood C", "Durandal C", "Killing Edge C",
+            "Backstab C", "Twin Strike C", "Heavy Blade C", "Armor Smasher C", "Hand of Greed C", "Steadfast Sword C", "Folkvangr C", "Folkvangr C",
+            "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C",
+        ],
+        VeryRare: ["Folkvangr B", "Gjöll B", "Mystletainn B", "Instant Sword B", "Dazed Strike B", "Anger B", "Grand Finale B", "A Thousand Cuts B",
+            "Titan Slayer B", "Bellringer B", "Sandfort Spade B", "Echo B", "Vorpal Strike B", "Blood for Blood B", "Durandal B", "Killing Edge B",
+            "Backstab B", "Twin Strike  B", "Heavy Blade B", "Armor Smasher B", "Hand of Greed B", "Steadfast Sword B", "Folkvangr B", "Folkvangr B",
+            "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B",
+        ],
+        Legendary: ["Folkvangr A", "Gjöll A", "Mystletainn A", "Instant Sword A", "Dazed Strike A", "Anger A", "Grand Finale A", "A Thousand Cuts A",
+            "Titan Slayer A", "Bellringer A", "Sandfort Spade A", "Echo A", "Vorpal Strike A", "Blood for Blood A", "Durandal A", "Killing Edge A",
+            "Backstab A", "Twin Strike A", "Heavy Blade A", "Armor Smasher A", "Hand of Greed A", "Steadfast Sword A", "Folkvangr A", "Folkvangr A",
+            "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A",
+        ],
+        Unique: ["Folkvangr S", "Gjöll S", "Mystletainn S", "Instant Sword S", "Dazed Strike S", "Anger S", "Grand Finale S", "A Thousand Cuts S",
+            "Titan Slayer S", "Bellringer S", "Sandfort Spade S", "Echo S", "Vorpal StrikeS", "Blood for Blood S", "Durandal S", "Killing Edge S",
+            "Backstab S", "Twin Strike S", "Heavy Blade S", "Armor Smasher S", "Hand of Greed S", "Steadfast Sword S", "Folkvangr S", "Folkvangr S",
+            "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S",
+        ]
     },
-    MagicArt: {
-        Common: ["Inspiring Presence F", "Inspiring Presence E", "Fortitude F", "Fortitude E", "Energizing Burst F", "Energizing Burst E", "Battlefield Clarity F", "Battlefield Clarity E"],
-        Uncommon: ["Frosted Grips", "Ember-Gleam Fist", "Warden’s Clutch", "Spellwoven Gloves", "Starbound Handguards"],
-        Rare: ["Celestial Gauntlet", "Shadow Claws", "Flameguard Grips", "Tempest Fistguards", "Ironwood Gauntlet"],
-        VeryRare: ["Dawnbringer Grips", "Dragonhide Gloves", "Windbound Mitts", "Emberforged Gauntlets", "Midnight Talons"],
-        Legendary: ["Fists of the Eternal Flame", "Ancient’s Claw", "Celestial Hands", "Stormforged Gauntlets", "Radiant Fists"],
-        Unique: ["Grasp of the Mountain", "Inferno’s Claws", "Hand of the Void", "Sentinel’s Embrace", "Verdant Grips"]
-    },
+
     PassiveArt: {
-        Common: ["Inspiring Presence F", "Inspiring Presence E", "Fortitude F", "Fortitude E", "Energizing Burst F", "Energizing Burst E", "Battlefield Clarity F", "Battlefield Clarity E"],
-        Uncommon: ["Frosted Grips", "Ember-Gleam Fist", "Warden’s Clutch", "Spellwoven Gloves", "Starbound Handguards"],
-        Rare: ["Celestial Gauntlet", "Shadow Claws", "Flameguard Grips", "Tempest Fistguards", "Ironwood Gauntlet"],
-        VeryRare: ["Dawnbringer Grips", "Dragonhide Gloves", "Windbound Mitts", "Emberforged Gauntlets", "Midnight Talons"],
-        Legendary: ["Fists of the Eternal Flame", "Ancient’s Claw", "Celestial Hands", "Stormforged Gauntlets", "Radiant Fists"],
-        Unique: ["Grasp of the Mountain", "Inferno’s Claws", "Hand of the Void", "Sentinel’s Embrace", "Verdant Grips"]
+        Common: ["Blood Bump F", "Dark Embrace F", "Blazing Blood F", "Unbound Instrument F", "Red Skull F", "Fire Resistance F", "Acid Resistance F", "Cold Resistance F",
+            "Bludgeoning Resistance F", "Piercing Resistance F", "Poison Resistance F", "Slashing Resistance F", "Thunder Resistance F", "Lightning Resistance F", "Necrotic Resistance F", "Radiant Resistance F",
+            "Disease Resistance F", "Fortitude F", "Grit F", "Fleetfoot F", "Endurance F", "Folkvangr F", "Fortitude F", "Folkvangr F",
+            "Folkvangr F", "Folkvangr F", "Fortitude F", "Folkvangr F", "Folkvangr F", "Folkvangr F", "Fortitude F", "Folkvangr F",
+        ],
+        Uncommon: ["Blood Bump D", "Dark Embrace D", "Blazing Blood D", "Unbound Instrument D", "Red Skull D", "Fire Resistance D", "Acid Resistance D", "Cold Resistance D",
+            "Bludgeoning Resistance D", "Piercing Resistance D", "Poison Resistance D", "Slashing Resistance D", "Thunder Resistance D", "Lightning Resistance D", "Necrotic Resistance D", "Radiant Resistance D", "Fortitude D",
+            "Disease Resistance D", "Grit D", "FleetfootD", "Endurance D", "Folkvangr D", "Folkvangr D", "Folkvangr D",
+            "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D",],
+
+        Rare: ["Blood Bump C", "Dark Embrace C", "Blazing Blood C", "Unbound Instrument C", "Red Skull C", "Fire Resistance C", "Acid Resistance C", "Cold Resistance C",
+            "Bludgeoning Resistance C", "Piercing Resistance C", "Poison Resistance C", "Slashing Resistance C", "Thunder Resistance C", "Lightning Resistance C", "Necrotic Resistance C", "Radiant Resistance C",
+            "Disease Resistance C", "Fortitude C", "Grit C", "Fleetfoot C", "Endurance C", "Folkvangr C", "Folkvangr C", "Folkvangr C",
+            "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C",
+        ],
+        VeryRare: ["Blood Bump B", "Dark Embrace B", "Blazing Blood B", "Unbound Instrument B", "Red Skull B", "Fire Resistance B", "Acid Resistance B", "Cold Resistance B",
+            "Bludgeoning Resistance B", "Piercing Resistance B", "Poison Resistance B", "Slashing Resistance B", "Thunder Resistance B", "Lightning Resistance B", "Necrotic Resistance B", "Radiant Resistance B",
+            "Disease Resistance B", "Fortitude B", "Grit B", "Fleetfoot B", "Endurance B", "Folkvangr B", "Folkvangr B", "Folkvangr B",
+            "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B",
+        ],
+        Legendary: ["Blood Bump A", "Dark Embrace A", "Blazing Blood A", "Unbound Instrument A", "Red Skull A", "Fire Resistance A", "Acid Resistance A", "Cold Resistance A",
+            "Bludgeoning Resistance A", "Piercing Resistance A", "Poison Resistance A", "Slashing Resistance A", "Thunder Resistance A", "Lightning Resistance A", "Necrotic Resistance A", "Radiant Resistance A",
+            "Disease Resistance A", "Fortitude A", "Grit A", "Fleetfoot A", "Endurance A", "Folkvangr A", "Folkvangr A", "Folkvangr A",
+            "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A",
+        ],
+        Unique: ["Blood Bump S", "Dark Embrace S", "Blazing Blood S", "Unbound Instrument S", "Red Skull S", "Fire Resistance S", "Acid Resistance S", "Cold Resistance S",
+            "Bludgeoning Resistance S", "Piercing Resistance S", "Poison Resistance S", "Slashing Resistance S", "Thunder Resistance S", "Lightning Resistance S", "Necrotic Resistance S", "Radiant Resistance S",
+            "Disease Resistance S", "Fortitude S", "Grit S", "Fleetfoot S", "Endurance S", "Folkvangr S", "Folkvangr S", "Folkvangr S",
+            "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S",
+        ]
     },
     BoostArt: {
-        Common: ["Inspiring Presence F", "Inspiring Presence E", "Fortitude F", "Fortitude E", "Energizing Burst F", "Energizing Burst E", "Battlefield Clarity F", "Battlefield Clarity E"],
-        Uncommon: ["Frosted Grips", "Ember-Gleam Fist", "Warden’s Clutch", "Spellwoven Gloves", "Starbound Handguards"],
-        Rare: ["Celestial Gauntlet", "Shadow Claws", "Flameguard Grips", "Tempest Fistguards", "Ironwood Gauntlet"],
-        VeryRare: ["Dawnbringer Grips", "Dragonhide Gloves", "Windbound Mitts", "Emberforged Gauntlets", "Midnight Talons"],
-        Legendary: ["Fists of the Eternal Flame", "Ancient’s Claw", "Celestial Hands", "Stormforged Gauntlets", "Radiant Fists"],
-        Unique: ["Grasp of the Mountain", "Inferno’s Claws", "Hand of the Void", "Sentinel’s Embrace", "Verdant Grips"]
+        Common: ["Skuld F", "Warcry F", "Envenom F", "Predator F", "Flash Step F", "Rampage F", "Dream Catcher F", "Folkvangr F",
+            "Folkvangr F", "Folkvangr F", "Fortitude F", "Folkvangr F", "Folkvangr F", "Folkvangr F", "Fortitude F", "Folkvangr F",
+            "Folkvangr F", "Folkvangr F", "Fortitude F", "Folkvangr F", "Folkvangr F", "Folkvangr F", "Fortitude F", "Folkvangr F",
+            "Folkvangr F", "Folkvangr F", "Fortitude F", "Folkvangr F", "Folkvangr F", "Folkvangr F", "Fortitude F", "Folkvangr F",
+        ],
+        Uncommon: ["Skuld D", "Warcry D", "Envenom D", "Predator D", "Flash Step D", "Rampage D", "Dream Catcher D", "Folkvangr D",
+            "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D",
+            "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D",
+            "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D",],
+
+        Rare: ["Skuld C", "Warcry C", "Envenom C", "Predator C", "Flash Step C", "Rampage C", "Dream Catcher C", "Folkvangr C",
+            "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C",
+            "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C",
+            "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C",
+        ],
+        VeryRare: ["Skuld B", "Warcry B", "Envenom B", "Predator B", "Flash Step B", "Rampage B", "Dream Catcher B", "Folkvangr B",
+            "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B",
+            "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B",
+            "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B",
+        ],
+        Legendary: ["Skuld A", "Warcry A", "Envenom A", "Predator A", "Flash Step A", "Rampage A", "Dream Catcher A", "Folkvangr A",
+            "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A",
+            "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A",
+            "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A",
+        ],
+        Unique: ["Skuld S", "Warcry S", "Envenom S", "Predator S", "Flash Step S", "Rampage S", "Dream Catcher S", "Folkvangr S",
+            "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S",
+            "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S",
+            "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S",
+        ]
     },
     SkillPoints: {
         Common: [1, 2, 3],
@@ -516,8 +892,380 @@ export const itemNames = {
         Unique: [10000]
     },
 
-    UniqueSkills: {
+    Crossbow: {
+        Common: [
+            "Hand Crossbow of Showmanship", "Heavy Crossbow of Showmanship", "Light Crossbow of Showmanship",
+            "Rope Caster Hand Crossbow", "Silvered Hand Crossbow", "Silvered Heavy Crossbow",
+            "Silvered Light Crossbow"
+        ],
+        Uncommon: [
+            "Candleflame Hand Crossbow", "Candleflame Heavy Crossbow", "Candleflame Light Crossbow",
+            "Crossbow Bolts, +1", "Crossbow of the Flying Fist", "Crossbow, Hand of Warning",
+            "Crossbow, Hand, +1", "Crossbow, Heavy of Warning", "Crossbow, Heavy, +1",
+            "Crossbow, Light of Warning", "Crossbow, Light, +1", "Dried Leech, Crossbow Bolts",
+            "Hand Crossbow of Warning", "Heavy Crossbow of Warning", "Hellfire Crossbow, Hand",
+            "Hellfire Crossbow, Heavy", "Hellfire Crossbow, Light", "Light Crossbow of Warning",
+            "Orner's Venomous Crossbow", "Trampling Crossbow", "True Name Hand Crossbow",
+            "True Name Heavy Crossbow", "True Name Light Crossbow", "Winged Crossbow Bolts"
+        ],
+        Rare: [
+            "Bloodletter’s Hand Crossbow", "Bloodletter’s Heavy Crossbow", "Bloodletter’s Light Crossbow",
+            "Comet Ballista Crossbow", "Corpse Slayer, Crossbow, Hand", "Corpse Slayer, Crossbow, Heavy",
+            "Corpse Slayer, Crossbow, Light", "Crossbow Bolts, +2", "Crossbow, Hand, +2",
+            "Crossbow, Heavy, +2", "Crossbow, Light, +2", "Dragon Slayer Hand Crossbow",
+            "Dragon Slayer Heavy Crossbow", "Dragon Slayer Light Crossbow", "Dragon Wing Hand Crossbow",
+            "Dragon Wing Heavy Crossbow", "Dragon Wing Light Crossbow", "Fire, Fire! Crossbow",
+            "Giant Slayer Hand Crossbow", "Giant Slayer Heavy Crossbow", "Giant Slayer Light Crossbow",
+            "Lycan Hand Crossbow", "Lycan Heavy Crossbow", "Lycan Light Crossbow",
+            "Medzo's Crossbow", "Oceanic Hand Crossbow", "Oceanic Heavy Crossbow",
+            "Oceanic Light Crossbow", "Quickdraw Hand Crossbow", "Reap and Sew Light Crossbow",
+            "Riptide Crossbow", "Starcrossed Hand Crossbow", "Starcrossed Heavy Crossbow",
+            "Starcrossed Light Crossbow", "Starshot Hand Crossbow", "Starshot Heavy Crossbow",
+            "Starshot Light Crossbow", "True Name Hand Crossbow, +1", "True Name Heavy Crossbow, +1",
+            "True Name Light Crossbow, +1", "Vicious Crossbow, Hand", "Vicious Crossbow, Heavy",
+            "Vicious Crossbow, Light", "Vicious Hand Crossbow", "Vicious Heavy Crossbow",
+            "Vicious Light Crossbow", "Vigilus Crossbow", "Weapon of Certain Death, Crossbow, Hand",
+            "Weapon of Certain Death, Crossbow, Heavy", "Weapon of Certain Death, Crossbow, Light"
+        ],
+        VeryRare: [
+            "Bloodseeker Crossbow Bolts", "Bolt Crossbow", "Crossbow Bolts, +3",
+            "Crossbow, Hand, +3", "Crossbow, Heavy, +3", "Crossbow, Light, +3",
+            "Foresight Hand Crossbow", "Foresight Heavy Crossbow", "Foresight Light Crossbow",
+            "Hand Crossbow of Throne's Command", "Heavy Crossbow of Throne's Command", "Nine Lives Stealer Hand Crossbow",
+            "Nine Lives Stealer Heavy Crossbow", "Nine Lives Stealer Light Crossbow", "Rocborne Hand Ballista ( Crossbow, Heavy)",
+            "Ruidium Hand Crossbow", "Ruidium Heavy Crossbow", "Ruidium Light Crossbow",
+            "True Name Hand Crossbow, +2", "True Name Heavy Crossbow, +2", "True Name Light Crossbow, +2"
+        ],
+        Legendary: [
+            "Holy Avenger Hand Crossbow", "Holy Avenger Heavy Crossbow", "Holy Avenger Light Crossbow",
+            "True Name Hand Crossbow, +3", "True Name Heavy Crossbow, +3", "True Name Light Crossbow, +3"
+        ],
         Unique: ["monkey", "Bonkue", "Dragg", "Temu", "powderpuff"]
-    }
+    },
 
+    Spear: {
+        Common: [
+            "Silverd Spear", "Spear of Showmanship", "Sylvan Talon Spear", "Silvered Trident", "Trident of Showmanship",
+            "Javelin of Showmanship", "Silvered Javelin"
+        ],
+        Uncommon: [
+            "Adamantine Spear", "Blood Spear", "Eclipse Spear",
+            "Galepierce Spear", "Gilded Spear", "Hellfire Spear",
+            "Spear of Blind Faith", "Spear of Spite", "Spear of Warning",
+            "Spear, +1", "Sunsplitter Spear (Uncommon)", "True Name Spear",
+            "Young Dragon Edge Spear", "Adamantine Trident", "Galepierce Trident", "Hellfire Trident",
+            "Trident of Blind Faith", "Trident of Fish Command", "Trident of Spite",
+            "Trident of Warning", "Trident of the Dryad", "Trident, +1",
+            "True Name Trident", "Young Dragon Edge Trident", "Adult Dragon Edge Trident", "Bloodshard Trident", "Coldfire Trident",
+            "Corpse Slayer, Trident", "Dragon Slayer Trident", "Dragonkin Trident +1",
+            "Flame Tongue Trident", "Frost Giant Trident Fork", "Giant Slayer Trident",
+            "Lycan Trident", "Oceanic Trident", "Trident of Returning",
+            "Trident of the Hydra", "Trident, +2", "True Name Trident, +1",
+            "Verax Trident", "Vicious Trident", "Warding Trident",
+            "Weapon of Certain Death, Trident", "Whirling Trident",  "Adamantine Javelin", "Galepierce Javelin", "Hellfire Javelin", 
+            "Javelin of Blind Faith", "Javelin of Lightning", "Javelin of Warning", 
+            "Javelin, +1", "Prismatic Javelin", "True Name Javelin", 
+            "Young Dragon Edge Javelin"
+        ],
+        Rare: [
+            "Adult Dragon Edge Spear", "Blackthorn Spear of the Moonless Hunter", "Coldfire Spear",
+            "Corpse Slayer, Spear", "Dragon Slayer Spear", "Dragonkin Spear +1",
+            "Failed Purity Spear *", "Flame Tongue Spear", "Giant Slayer Spear",
+            "Ironleaf Impaler Spear", "Lycan Spear", "Oceanic Spear",
+            "Peregrine Spear", "Sky Anchor ( Spear )", "Spear, +2",
+            "Starmetal Shard Spear", "Steam Harpoon ( Spear )", "Sunsplitter Spear (Rare)",
+            "True Name Spear, +1", "Vicious Spear", "Wardancer's Spear",
+            "Warding Spear", "Weapon of Certain Death, Spear", "Whirling Spear", "Adult Dragon Edge Javelin", "Coldfire Javelin", "Corpse Slayer, Javelin", 
+        "Dragon Slayer Javelin", "Dragonkin Javelin +1", "Flame Tongue Javelin", 
+        "Giant Slayer Javelin", "Ironleaf Impaler Javelin", "Javelin, +2", 
+        "Lycan Javelin", "Meteoric Javelin", "Oceanic Javelin", 
+        "True Name Javelin, +1", "Verax Javelin", "Vicious Javelin", 
+        "Weapon of Certain Death, Javelin", "Whirling Javelin"
+        ],
+        VeryRare: [
+            "Ancient Dragon Edge Spear", "Dragonkin Spear +2", "Ether Spear",
+            "Foresight Spear", "Frostburn Spear", "Gilded Spear of the Fey",
+            "Mirrorlight Piercer Spear", "Nine Lives Stealer Spear", "Ruidium Spear",
+            "Sanguine Spear", "Spear of Backbiting", "Spear, +3",
+            "Stalaga Spear", "Sunsplitter Spear (Very Rare)", "True Name Spear, +2", "Ancient Dragon Edge Trident", "Dragonkin Trident +2", "Foresight Trident",
+            "Hellfire Pitchfork Trident", "Nine Lives Stealer Trident", "Ruidium Trident",
+            "Tidecaller Trident", "Trident of Throne's Command", "Trident, +3",
+            "True Name Trident, +2",  "Ancient Dragon Edge Javelin", "Bulette Javelin Torpedo", 
+            "Dragonkin Javelin +2", "Foresight Javelin", "Javelin of Backbiting", 
+            "Javelin, +3", "Nine Lives Stealer Javelin", "Ruidium Javelin", 
+            "True Name Javelin, +2"
+        ],
+        Legendary: [
+            "Defender Spear", "Dragonkin Spear +3", "Holy Avenger Spear",
+            "Purity Spear", "Shard Solitaire (Rainbow Pearl)", "Spear of Gael Wode",
+            "True Name Spear, +3", "Vicious Vortex Spear", "Davy Jones' Key (Trident)", "Defender Trident", "Dragonkin Trident +3",
+            "Holy Avenger Trident", "Memento of the Shapeless Trident", "True Name Trident, +3",  "Dragonkin Javelin +3", "Holy Avenger Javelin", 
+        "True Name Javelin, +3"
+        ],
+        Unique: [
+            "Khrusor, Spear of Heliod"
+        ]
+    },
+
+    Halberd: {
+        Common: [
+            "Halberd of Showmanship", "Silvered Halberd"
+        ],
+        Uncommon: [
+            "Adamantine Halberd", "Halberd of Blind Faith", "Halberd of Spite",
+            "Halberd of Verdict", "Halberd of Warning", "Halberd, +1",
+            "Hellfire Halberd", "True Name Halberd"
+        ],
+        Rare: [
+            "Coldfire Halberd", "Corpse Slayer, Halberd", "Death Knell Halberd",
+            "Dragon Slayer Halberd", "Dragonkin Halberd +1", "Flame Tongue Halberd",
+            "Giant Slayer Halberd", "Halberd of the Peacock", "Halberd, +2",
+            "Knight's Standard of Valor Halberd", "Lycan Halberd", "Prototype Thunderberd ( Halberd )",
+            "True Name Halberd, +1", "Verax Halberd", "Vicious Halberd",
+            "Warding Halberd", "Weapon of Certain Death, Halberd"
+        ],
+        VeryRare: [
+            "Dragonkin Halberd +2", "Executioner's Halberd", "Foresight Halberd",
+            "Halberd of Throne's Command", "Halberd, +3", "Nine Lives Stealer Halberd",
+            "Ruidium Halberd", "Splitter Halberd", "True Name Halberd, +2"
+        ],
+        Legendary: [
+            "Defender Halberd", "Dragonkin Halberd +3", "Halberd of the Forsaken Pact *",
+            "Holy Avenger Halberd", "True Name Halberd, +3", "Soul-Searing Scythe"
+        ]
+    },
+
+    Club: {
+        Common: [
+            "Greatclub of Showmanship", "Silvered Greatclub", "Club of Showmanship",
+            "Silvered Club"
+        ],
+        Uncommon: [
+            "Adamantine Greatclub", "Greatclub of Blind Faith", "Greatclub of Spite",
+            "Greatclub of Verdict", "Greatclub of Warning", "Greatclub, +1",
+            "Hellfire Greatclub", "Squasher Greatclub", "True Name Greatclub",
+            "Adamantine Club", "Club of Blind Faith", "Club of Dancing",
+            "Club of Spite", "Club of Verdict", "Club of Warning",
+            "Club of the Forest Drake", "Club of the Rook", "Club, +1",
+            "Hellfire Club", "True Name Club"
+        ],
+        Rare: [
+            "Blazeball Greatclub", "Coldfire Greatclub", "Corpse Slayer, Greatclub",
+            "Dragon Slayer Greatclub", "Dragonkin Greatclub +1", "Flame Tongue Greatclub",
+            "Forest Dwellers Greatclub", "Giant Slayer Greatclub", "Greatclub, +2",
+            "Lycan Greatclub", "Stalagmight Geode ( Greatclub )", "True Name Greatclub, +1",
+            "Vicious Greatclub", "Warding Greatclub", "Weapon of Certain Death, Greatclub",
+            "Blazeball Club", "Club, +2", "Coldfire Club",
+            "Corpse Slayer, Club", "Dragon Slayer Club", "Dragonkin Club +1",
+            "Druidic Throwing Club", "Flame Tongue Club", "Giant Slayer Club",
+            "Lycan Club", "True Name Club, +1", "Vicious Club",
+            "Warding Club", "Weapon of Certain Death, Club", "Whirling Club"
+        ],
+        VeryRare: [
+            "Blistering Beheader Greatclub", "Comet Smasher Greatclub", "Dragonkin Greatclub +2",
+            "Forcebreaker Greatclub", "Foresight Greatclub", "Greatclub, +3",
+            "Nine Lives Stealer Greatclub", "Ruidium Greatclub", "Thunderous Greatclub",
+            "True Name Greatclub, +2", "Club, +3", "Comet Smasher Club",
+            "Dragonkin Club +2", "Forcebreaker Club", "Foresight Club",
+            "Nine Lives Stealer Club", "Ruidium Club", "True Name Club, +2"
+        ],
+        Legendary: [
+            "Dragonkin Greatclub +3", "Holy Avenger Greatclub", "True Name Greatclub +3",
+            "Defender Club", "Dragonkin Club +3", "Holy Avenger Club",
+            "Memento of the Shapeless Club", "True Name Club, +3"
+        ]
+    },
+
+    Mace: {
+        Common: [
+            "Camper’s Crutch", "Mace of Showmanship", "Silvered Mace", "Morningstar of Showmanship", "Silvered Morningstar",
+            "Flail of Showmanship", "Silvered Flail"
+        ],
+        Uncommon: [
+            "Adamantine Mace", "Cactus Mace", "Consecrated Mace",
+            "Hellfire Mace", "Mace of Blind Faith", "Mace of Spite",
+            "Mace of Verdict", "Mace of Warning", "Mace of the Priest",
+            "Mace of the Pumpkin King", "Mace, +1", "Prying Mace",
+            "True Name Mace", "Adamantine Morningstar", "Hellfire Morningstar", "Morningstar of Blind Faith",
+            "Morningstar of Spite", "Morningstar of Verdict", "Morningstar of Warning",
+            "Morningstar, +1", "True Name Morningstar", "Young Dragon Edge Morningstar",
+            "Adamantine Flail", "Attack-In-The-Box Flail", "Explosive Flail",
+            "Flail of Blind Faith", "Flail of Spite", "Flail of Verdict",
+            "Flail of Warning", "Flail, +1", "Hellfire Flail", "True Name Flail"
+        ],
+        Rare: [
+            "Coldfire Mace", "Consecrated Mace", "Corpse Slayer, Mace",
+            "Dragon Slayer Mace", "Dragonkin Mace +1", "Flame Tongue Mace",
+            "Giant Slayer Mace", "Lycan Mace", "Mace of Disruption",
+            "Mace of Smiting", "Mace of Terror", "Mace of Vampire Slaying",
+            "Mace, +2", "Many-Eyed Mace", "True Name Mace, +1",
+            "Verax Mace", "Vicious Mace", "Warding Mace",
+            "Weapon of Certain Death, Mace", "Whirling Mace", "Adult Dragon Edge Morningstar", "Coldfire Morningstar", "Corpse Slayer, Morningstar",
+            "Dragon Slayer Morningstar", "Dragonkin Morningstar +1", "Flame Tongue Morningstar",
+            "Giant Slayer Morningstar", "Lycan Morningstar", "Morningstar, +2", "Starbreaker Morningstar",
+            "True Name Morningstar, +1", "Verax Morningstar", "Vicious Morningstar",
+            "Warding Morningstar", "Weapon of Certain Death, Morningstar", "Whirling Morningstar",
+            "Caduceus Flail", "Coldfire Flail", "Corpse Slayer, Flail", "Dragon Slayer Flail",
+            "Dragonkin Flail +1", "Flail, +2", "Flame Tongue Flail", "Giant Slayer Flail",
+            "Harbinger's Flail", "Hydra Flail", "Lycan Flail", "Ruinous Flail",
+            "Thunderous Flail", "True Name Flail, +1", "Verax Flail", "Vicious Flail",
+            "Warding Flail", "Weapon of Certain Death, Flail", "Whirling Flail"
+        ],
+        VeryRare: [
+            "Comet Smasher Mace", "Consecrated Mace, +1", "Dragonkin Mace +2",
+            "Fable's End Mace", "Forcebreaker Mace", "Foresight Mace",
+            "Mace, +3", "Niko's Mace", "Nine Lives Stealer Mace",
+            "Ruidium Mace", "True Name Mace, +2", "Ancient Dragon Edge Morningstar", "Dragonkin Morningstar +2", "Foresight Morningstar",
+            "Massive Morningstar Shotgun", "Morningstar of Throne's Command", "Morningstar, +3",
+            "Nine Lives Stealer Morningstar", "Ruidium Morningstar", "True Name Morningstar, +2",
+            "Comet Smasher Flail", "Dragonkin Flail +2", "Flail of Throne's Command",
+            "Flail, +3", "Forcebreaker Flail", "Foresight Flail", "Furious Flail",
+            "Hcor'uk the Colossal's Portable Handheld Flail of Walloping",
+            "Infernal Chain ( Flail )", "Nine Lives Stealer Flail", "Ruidium Flail",
+            "True Name Flail, +2"
+        ],
+        Legendary: [
+            "Defender Mace", "Dragonkin Mace +3", "Holy Avenger Mace", "True Name Mace, +3", "Defender Morningstar", "Dragonkin Morningstar +3", "Holy Avenger Morningstar",
+            "True Name Morningstar, +3", "Defender Flail", "Dragonkin Flail +3",
+            "Flail of Tiamat", "Holy Avenger Flail", "True Name Flail, +3"
+        ],
+        Unique: [
+            "Mace of the Black Crown (Dormant)"
+        ]
+    },
+    Whip: {
+        Common: [
+            "Silverd Whip", "Whip of Showmanship"
+        ],
+        Uncommon: [
+            "Adamantine Whip", "Gelatinous Whip", "Hedonic Motivator (Whip)",
+            "Hellfire Whip", "Kraken's Whip", "Roaring Whip",
+            "Scorpion Lasher (Whip)", "Tasha's Mind Whip Spell Scroll", "Torchbearer's Reach Whip",
+            "True Name Whip", "Whip of Blind Faith", "Whip of Spite",
+            "Whip of Verdict", "Whip of Warning", "Whip of the Copper Eel",
+            "Whip, +1"
+        ],
+        Rare: [
+            "Beast Tamer’s Whip", "Coldfire Whip", "Coldsnap Whip",
+            "Corpse Slayer, Whip", "Couatl Herald's Lash Whip", "Dragon Slayer Whip",
+            "Dragonkin Whip +1", "Flame Tongue Whip", "Giant Slayer Whip",
+            "Grasping Whip", "Lash of the Spelldrinker (Whip)", "Lycan Whip",
+            "Scarlet Scourge Whip", "Task Master Whip", "True Name Whip, +1",
+            "Vicious Whip", "Warding Whip", "Weapon of Certain Death, Whip",
+            "Whip, +2", "Whirling War Pick", "Whirling Whip"
+        ],
+        VeryRare: [
+            "Dragonkin Whip +2", "Dyrrn's Tentacle Whip", "Foresight Whip",
+            "Monsterbane Whip Lasher", "Nine Lives Stealer Whip", "Ruidium Whip",
+            "True Name Whip, +2", "Whip of Throne's Command", "Whip, +3"
+        ],
+        Legendary: [
+            "Defender Whip", "Dragonkin Whip +3", "Holy Avenger Whip",
+            "True Name Whip, +3"
+        ],
+        Unique: [
+            "Mastix, Whip of Erebos"
+        ]
+    },
+
+    Pike: {
+        Common: [
+            "Pike of Showmanship", 
+            "Silvered Pike"
+        ],
+        Uncommon: [
+            "Adamantine Pike", "Hellfire Pike", "Pike of Blind Faith", 
+            "Pike of Spite", "Pike of Verdict", "Pike of Warning", 
+            "Pike, +1", "True Name Pike"
+        ],
+        Rare: [
+            "Coldfire Pike", "Corpse Slayer, Pike", "Dragon Slayer Pike", 
+            "Dragonkin Pike +1", "Flame Tongue Pike", "Giant Slayer Pike", 
+            "Knight's Standard of Vigor Pike", "Lycan Pike", "Pike, +2", 
+            "Solacesteel Requiem", "Spirit Pike", "True Name Pike, +1", 
+            "Verax Pike", "Vicious Pike", "Warding Pike", 
+            "Weapon of Certain Death, Pike"
+        ],
+        VeryRare: [
+            "Dragonkin Pike +2", "Foresight Pike", 
+            "Nine Lives Stealer Pike", "Pike of Throne's Command", 
+            "Pike, +3", "Ruidium Pike", "True Name Pike, +2"
+        ],
+        Legendary: [
+            "Chillspike", "Defender Pike", "Dragonkin Pike +3", 
+            "Holy Avenger Pike", "Pike of the Forgotten Legion", 
+            "True Name Pike, +3"
+        ]
+    },
+
+    Lance: {
+        Common: [
+            "Lance of Showmanship", 
+            "Silvered Lance"
+        ],
+        Uncommon: [
+            "Adamantine Lance", "Aether Lance Spell Scroll", "Flame Lance", 
+            "Hellfire Lance", "Lance of Blind Faith", "Lance of Spite", 
+            "Lance of Verdict", "Lance of Warning", "Lance, +1", 
+            "Silver Eagle Lance", "Sir Varion's Lance", 
+            "Telescoping Blade-Lance", "True Name Lance"
+        ],
+        Rare: [
+            "Coldfire Lance", "Corpse Slayer, Lance", "Dragon Slayer Lance", 
+            "Dragonkin Lance +1", "Echoing Lance Spell Scroll", 
+            "Flame Tongue Lance", "Giant Slayer Lance", "Lance, +2", 
+            "Lycan Lance", "Raulothim's Psychic Lance Spell Scroll", 
+            "True Name Lance, +1", "Verax Lance", "Vicious Lance", 
+            "Warding Lance", "Weapon of Certain Death, Lance"
+        ],
+        VeryRare: [
+            "Dragonkin Lance +2", "Foresight Lance", "Hurricane Lance", 
+            "Lance of Throne's Command", "Lance of the Hungering Dead", 
+            "Lance of the Statuemaker", "Lance, +3", "Nine Lives Stealer Lance", 
+            "Ruidium Lance", "True Name Lance, +2"
+        ],
+        Legendary: [
+            "Defender Lance", "Dragon Tamer Lance", "Dragonkin Lance +3", 
+            "Holy Avenger Lance", "True Name Lance, +3"
+        ]
+    },
+
+    Warpick: {
+        Common: [
+            "Silvered War Pick",
+            "War Pick of Showmanship"
+        ],
+        Uncommon: [
+            "Adamantine War Pick", "Hellfire War Pick", "Spellbreaker War Pick", 
+            "True Name War Pick", "War Pick of Blind Faith", "War Pick of Spite", 
+            "War Pick of Verdict", "War Pick of Warning", "War Pick, +1", 
+            "Young Dragon Edge War Pick"
+        ],
+        Rare: [
+            "Adult Dragon Edge War Pick", "Coldfire War Pick", 
+            "Corpse Slayer, War Pick", "Direstone Dwarven Warpick", 
+            "Dragon Slayer War Pick", "Dragonkin War Pick +1", 
+            "Flame Tongue War Pick", "Giant Slayer War Pick", "Gorgon War Pick", 
+            "Luminous War Pick", "Lycan War Pick", "Magma War Pick", 
+            "Shipwrecker War Pick", "Spellbreaker War Pick", 
+            "True Name War Pick, +1", "Verax War Pick", "Vicious War Pick", 
+            "War Pick, +2", "Warding Pike", "Warding War Pick", 
+            "Weapon of Certain Death, War Pick", "Whirling War Pick"
+        ],
+        VeryRare: [
+            "Ancient Dragon Edge War Pick", "Architect's Disdain War Pick", 
+            "Dragonkin War Pick +2", "Foresight War Pick", 
+            "Nine Lives Stealer War Pick", "Radiant War Pick", 
+            "Ruidium War Pick", "Spellbreaker War Pick", 
+            "Stonemaker War Pick", "True Name War Pick, +2", 
+            "War Pick of Throne's Command", "War Pick, +3"
+        ],
+        Legendary: [
+            "Astral Sea Piercer War Pick", "Defender War Pick", 
+            "Dragonkin War Pick +3", "Holy Avenger War Pick", 
+            "True Name War Pick, +3"
+        ]
+    }
+    
+    
 };

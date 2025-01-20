@@ -3,7 +3,7 @@ import Card from './Card';
 import LoadingScreen from './LoadingScreen';
 import Navbar from './Navbar';
 import WeaponArts from './WeaponArts';
-import MagicArts from './MagicArts';
+import SacredArts from './SacredArts';
 import PassiveArts from './PassiveArts';
 import BoostArts from './BoostArts';
 import SkillPointUsage from './SkillPointUsage';
@@ -26,9 +26,10 @@ const rarities = [
 const itemTypes = [
   'Helmet', 'HeavyArmor', 'Gauntlet', 'Boots', 'Necklace', 'Cloak', 'Potion',
   'Sword', 'Bow', 'Axe', 'Hammer', 'Glaive', 'Dagger', 'Staff', 'Rod', 'Wand',
-  'Grimoire', 'SpellScroll', 'Gems', 'WeaponArt', 'MagicArt',
+  'Grimoire', 'Gems', 'WeaponArt',
   'PassiveArt', 'BoostArt', 'SkillPoints', 'ExperiencePoints', 'Robe', 'Ring', 'LightArmor',
-  'MediumArmor', 'WondrousItem', 'Shield'
+  'MediumArmor', 'WondrousItem', 'Shield', "Crossbow", "Spear", "Halberd", "Club", "Whip", "Mace",
+  "Warpick", "Lance", "Pike"
 ];
 
 const App = () => {
@@ -145,7 +146,7 @@ const App = () => {
         </div>
       )}
       {currentSection === 'WeaponArts' && <WeaponArts />}
-      {currentSection === 'MagicArts' && <MagicArts />}
+      {currentSection === 'SacredArts' && <SacredArts />}
       {currentSection === 'PassiveArts' && <PassiveArts />}
       {currentSection === 'BoostArts' && <BoostArts />}
       {currentSection === 'SkillPointUsage' && <SkillPointUsage />}
