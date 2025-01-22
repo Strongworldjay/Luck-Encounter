@@ -1,0 +1,94 @@
+
+  
+  .skill-point-container {
+    padding: 20px;
+    color: black;
+    text-align: center;
+    overflow-y: auto; /* Ensure container scrolls if content overflows */
+  }
+  
+  /* Hide scrollbar for Webkit browsers */
+  .skill-point-container::-webkit-scrollbar {
+    width: 0; /* Set the scrollbar width to 0 */
+    height: 0; /* For horizontal scrolling */
+  }
+  
+  /* Hide scrollbar for Firefox */
+  .skill-point-container {
+    scrollbar-width: none; /* Hides the scrollbar in Firefox */
+  }
+  
+  /* Ensure content still scrolls when scrollbar is hidden */
+  .skill-point-container:hover {
+    overflow-y: scroll; /* Optional: Show scrolling when hovering if needed */
+  }
+  
+  .header-title {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .table-section {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping if space is insufficient */
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+  }
+  
+  .table-wrapper {
+    flex: 1;
+    max-width: 30%; /* Allow tables to take up to 30% of the width */
+  }
+  
+  .table-title {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #444;
+  }
+  
+  .custom-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .custom-table th,
+  .custom-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .custom-table th {
+    background-color: #a9d5c8; /* Light green for header */
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .custom-table td {
+    background-color: #f4f4f4; /* Light grey for cells */
+    color: #333;
+  }
+  
+  .custom-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Slightly lighter grey for even rows */
+  }
+  
+  .custom-table tbody tr:hover {
+    background-color: #f1f1f1; /* Light grey for hover effect */
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .table-section {
+      flex-direction: column; /* Stack tables vertically on smaller screens */
+      gap: 15px;
+    }
+  
+    .table-wrapper {
+      max-width: 100%; /* Full width for smaller screens */
+    }
+  }
+  

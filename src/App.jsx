@@ -7,11 +7,12 @@ import SacredArts from './SacredArts';
 import PassiveArts from './PassiveArts';
 import BoostArts from './BoostArts';
 import SkillPointUsage from './SkillPointUsage';
-import CharacterSheets from './CharacterSheets'; // Import the new CharacterSheets component
+import CharacterSheets from './CharacterSheets';
 import UniqueSkill from './UniqueSkill';
 import './App.css';
 import appBackground from './assets/app-background.jpg';
 import deckImage from './assets/card-design.jpg';
+import voidImage from './assets/void.webp'; // Importing the new image
 import { getRandomItem } from './ItemGenerator';
 
 const rarities = [
@@ -28,14 +29,17 @@ const itemTypes = [
   'Sword', 'Bow', 'Axe', 'Hammer', 'Glaive', 'Dagger', 'Staff', 'Rod', 'Wand',
   'Grimoire', 'Gems', 'WeaponArt',
   'PassiveArt', 'BoostArt', 'SkillPoints', 'ExperiencePoints', 'Robe', 'Ring', 'LightArmor',
-  'MediumArmor', 'WondrousItem', 'Shield', "Crossbow", "Spear", "Halberd", "Club", "Whip", "Mace",
-  "Warpick", "Lance", "Pike"
+  'MediumArmor', 'WondrousItem', 'Shield', 'Crossbow', 'Spear', 'Halberd', 'Club', 'Whip', 'Mace',
+  'Warpick', 'Lance', 'Pike',
 ];
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [cards, setCards] = useState([]);
-  const [luck, setLuck] = useState(0);
+  const [resetDeck, setResetDeck] = useState(false); // State for the second deck reset
+  const [characterLuck, setCharacterLuck] = useState(0); // Character's Luck
+  const [dungeonLuck, setDungeonLuck] = useState(0); // Dungeon Difficulty Luck
+  const [selectedDungeon, setSelectedDungeon] = useState(null); // Track selected button
   const [selectedCard, setSelectedCard] = useState(null);
   const [isDrawing, setIsDrawing] = useState(false);
   const [currentSection, setCurrentSection] = useState('DungeonCompletion');
@@ -48,9 +52,7 @@ const App = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const adjustLuck = (value) => {
-    setLuck(luck + value);
-  };
+  const totalLuck = characterLuck + dungeonLuck; // Combine the luck values
 
   const generateCards = () => {
     if (isDrawing) return;
@@ -59,7 +61,7 @@ const App = () => {
 
     const newCards = Array.from({ length: 3 }, (_, index) => {
       const baseRoll = Math.floor(Math.random() * 100) + 1;
-      const totalRoll = baseRoll + luck;
+      const totalRoll = baseRoll + totalLuck;
       const rarity = rarities.find((r) => totalRoll >= r.range[0] && totalRoll <= r.range[1]) || rarities[0];
       const itemType = itemTypes[Math.floor(Math.random() * itemTypes.length)];
       const itemName = getRandomItem(itemType, null, rarity.name.replace(' ', ''));
@@ -86,6 +88,20 @@ const App = () => {
     );
   };
 
+  const resetCards = () => {
+    // Apply the fade-away class to all cards
+    setCards((prevCards) =>
+      prevCards.map((card) => ({ ...card, fadeAway: true }))
+    );
+
+    // Delay clearing the cards to allow animation to finish
+    setTimeout(() => {
+      setCards([]);
+      setSelectedCard(null);
+      setResetDeck((prev) => !prev); // Toggle resetDeck to trigger state change
+    }, 500); // Match the animation duration
+  };
+
   const handleNavClick = (section) => {
     setCurrentSection(section);
   };
@@ -101,26 +117,104 @@ const App = () => {
         <div>
           <div className="top-center-container">
             <h1>Why Not Test Your Luck?</h1>
-            <label>
-              Total Luck:
-              <input
-                type="number"
-                value={luck}
-                onChange={(e) => setLuck(parseInt(e.target.value) || 0)}
-                placeholder="Enter luck modifier"
-              />
-            </label>
-            <div className="luck-buttons">
-              <button onClick={() => adjustLuck(-50)}>Rudimentary</button>
-              <button onClick={() => adjustLuck(-25)}>Simple</button>
-              <button onClick={() => adjustLuck(0)}>Standard</button>
-              <button onClick={() => adjustLuck(3)}>Adept</button>
-              <button onClick={() => adjustLuck(5)}>Intermediate</button>
-              <button onClick={() => adjustLuck(10)}>Expert</button>
-              <button onClick={() => adjustLuck(20)}>Master</button>
-              <button onClick={() => adjustLuck(30)}>Legendary</button>
+            <div className="luck-section">
+              {/* Character's Luck Input and Total Luck in the same row */}
+              <div className="luck-row">
+                <div className="luck-input">
+                  <label>
+                    Character's Luck:
+                    <input
+                      type="number"
+                      value={characterLuck}
+                      onChange={(e) => setCharacterLuck(parseInt(e.target.value) || 0)}
+                      placeholder="Enter character's luck"
+                    />
+                  </label>
+                </div>
+                {/* Display Total Luck */}
+                <div className="total-luck">
+                  <h3>Total Luck: {totalLuck}</h3>
+                </div>
+              </div>
+
+              {/* Dungeon Difficulty Buttons */}
+              <div className="dungeon-difficulty">
+                <button
+                  onClick={() => {
+                    setDungeonLuck(-50);
+                    setSelectedDungeon('Rudimentary');
+                  }}
+                  className={selectedDungeon === 'Rudimentary' ? 'selected' : ''}
+                >
+                  Rudimentary
+                </button>
+                <button
+                  onClick={() => {
+                    setDungeonLuck(-25);
+                    setSelectedDungeon('Simple');
+                  }}
+                  className={selectedDungeon === 'Simple' ? 'selected' : ''}
+                >
+                  Simple
+                </button>
+                <button
+                  onClick={() => {
+                    setDungeonLuck(0);
+                    setSelectedDungeon('Standard');
+                  }}
+                  className={selectedDungeon === 'Standard' ? 'selected' : ''}
+                >
+                  Standard
+                </button>
+                <button
+                  onClick={() => {
+                    setDungeonLuck(10);
+                    setSelectedDungeon('Adept');
+                  }}
+                  className={selectedDungeon === 'Adept' ? 'selected' : ''}
+                >
+                  Adept
+                </button>
+                <button
+                  onClick={() => {
+                    setDungeonLuck(20);
+                    setSelectedDungeon('Intermediate');
+                  }}
+                  className={selectedDungeon === 'Intermediate' ? 'selected' : ''}
+                >
+                  Intermediate
+                </button>
+                <button
+                  onClick={() => {
+                    setDungeonLuck(40);
+                    setSelectedDungeon('Expert');
+                  }}
+                  className={selectedDungeon === 'Expert' ? 'selected' : ''}
+                >
+                  Expert
+                </button>
+                <button
+                  onClick={() => {
+                    setDungeonLuck(60);
+                    setSelectedDungeon('Master');
+                  }}
+                  className={selectedDungeon === 'Master' ? 'selected' : ''}
+                >
+                  Master
+                </button>
+                <button
+                  onClick={() => {
+                    setDungeonLuck(100);
+                    setSelectedDungeon('Legendary');
+                  }}
+                  className={selectedDungeon === 'Legendary' ? 'selected' : ''}
+                >
+                  Legendary
+                </button>
+              </div>
             </div>
           </div>
+          {/* First Deck */}
           <div className="deck-container" onClick={generateCards}>
             {[...Array(5)].map((_, i) => (
               <img
@@ -142,6 +236,15 @@ const App = () => {
                 ref={(el) => (cardRefs.current[index] = el)}
               />
             ))}
+          </div>
+
+          {/* Second Deck */}
+          <div className="deck-container second-deck" onClick={resetCards}>
+            <img
+              src={voidImage}
+              alt="Void Deck"
+              className="deck-image"
+            />
           </div>
         </div>
       )}
