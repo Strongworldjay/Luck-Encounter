@@ -105,7 +105,7 @@ export const itemNames = {
         Unique: ["Heart of the Mountain", "Inferno’s Embrace", "Mantle of the Void", "The Sentinel’s Resolve", "Verdant Guardian"]
     },
     MediumArmor: {
-        Common: ["Smoldering Armor, Half Plate", "Smoldering Armor, Hide", "Studded Leather", "Hide", "Half Plate", "Chain Mail", "Scale Mail", "Padded Leather"],
+        Common: ["Smoldering Armor, Half Plate", "Smoldering Armor, Hide"],
         Uncommon: ["Armor of Fungal Spores, Hide", "Armor of Weightlessness, Hide", "Armor of the Fallen, Hide", "Beast Hide Manticore Armor", "Fey-Touched Hide", "Mariner's Hide", "Sagittarian Hide Vestments", "Wildskin Hide Armor",
             "Adamantine Half Plate", "Armor of Fungal Spores, Half Plate", "Armor of Weightlessness, Half Plate", "Armor of the Fallen, Half Plate", "Fey-Touched Half Plate", "Fey-Touched Half Plate", "Mariner's Half Plate Armor", "Mithral Half Plate", "Sagittarian Half Plate Vestments", "Scorpio Half Plate Armor",
 
@@ -760,7 +760,7 @@ export const itemNames = {
     },
 
     Gems: {
-        Common: ["High-Quality Diamond (300 GP)", "High-Quality Diamond (500 GP)", "Chain Handwraps",],
+        Common: ["High-Quality Diamond (300 GP)", "High-Quality Diamond (500 GP)",],
         Uncommon: ["Elemental Gem (Blue Sapphire)", "Elemental Gem (Emerald)", "Elemental Gem (Red Corundum)", "Elemental Gem (Yellow Diamond)", "Fabulist Gem", "Gem of Brightness", "Spell Gem (Lapis Lazuli",
             "Spell Gem (Obsidian)", "Exquisite Diamond (1000 GP)"
         ],
@@ -955,18 +955,18 @@ export const itemNames = {
         ],
         Uncommon: [
             "Candleflame Hand Crossbow", "Candleflame Heavy Crossbow", "Candleflame Light Crossbow",
-            "Crossbow Bolts, +1", "Crossbow of the Flying Fist", "Crossbow, Hand of Warning",
+            "Crossbow of the Flying Fist", "Crossbow, Hand of Warning",
             "Crossbow, Hand, +1", "Crossbow, Heavy of Warning", "Crossbow, Heavy, +1",
-            "Crossbow, Light of Warning", "Crossbow, Light, +1", "Dried Leech, Crossbow Bolts",
+            "Crossbow, Light of Warning", "Crossbow, Light, +1",
             "Hand Crossbow of Warning", "Heavy Crossbow of Warning", "Hellfire Crossbow, Hand",
             "Hellfire Crossbow, Heavy", "Hellfire Crossbow, Light", "Light Crossbow of Warning",
             "Orner's Venomous Crossbow", "Trampling Crossbow", "True Name Hand Crossbow",
-            "True Name Heavy Crossbow", "True Name Light Crossbow", "Winged Crossbow Bolts"
+            "True Name Heavy Crossbow", "True Name Light Crossbow", 
         ],
         Rare: [
             "Bloodletter’s Hand Crossbow", "Bloodletter’s Heavy Crossbow", "Bloodletter’s Light Crossbow",
             "Comet Ballista Crossbow", "Corpse Slayer, Crossbow, Hand", "Corpse Slayer, Crossbow, Heavy",
-            "Corpse Slayer, Crossbow, Light", "Crossbow Bolts, +2", "Crossbow, Hand, +2",
+            "Corpse Slayer, Crossbow, Light",  "Crossbow, Hand, +2",
             "Crossbow, Heavy, +2", "Crossbow, Light, +2", "Dragon Slayer Hand Crossbow",
             "Dragon Slayer Heavy Crossbow", "Dragon Slayer Light Crossbow", "Dragon Wing Hand Crossbow",
             "Dragon Wing Heavy Crossbow", "Dragon Wing Light Crossbow", "Fire, Fire! Crossbow",
@@ -983,7 +983,7 @@ export const itemNames = {
             "Weapon of Certain Death, Crossbow, Heavy", "Weapon of Certain Death, Crossbow, Light"
         ],
         VeryRare: [
-            "Bloodseeker Crossbow Bolts", "Bolt Crossbow", "Crossbow Bolts, +3",
+            "Bolt Crossbow",
             "Crossbow, Hand, +3", "Crossbow, Heavy, +3", "Crossbow, Light, +3",
             "Foresight Hand Crossbow", "Foresight Heavy Crossbow", "Foresight Light Crossbow",
             "Hand Crossbow of Throne's Command", "Heavy Crossbow of Throne's Command", "Nine Lives Stealer Hand Crossbow",
