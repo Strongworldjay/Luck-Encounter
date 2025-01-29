@@ -1087,6 +1087,9 @@ export const itemNames = {
         Legendary: [
             "Defender Halberd", "Dragonkin Halberd +3", "Halberd of the Forsaken Pact *",
             "Holy Avenger Halberd", "True Name Halberd, +3", "Soul-Searing Scythe"
+        ],
+        Unique: [
+            "?????"
         ]
     },
 
@@ -1128,6 +1131,9 @@ export const itemNames = {
             "Dragonkin Greatclub +3", "Holy Avenger Greatclub", "True Name Greatclub +3",
             "Defender Club", "Dragonkin Club +3", "Holy Avenger Club",
             "Memento of the Shapeless Club", "True Name Club, +3"
+        ],
+        Unique: [
+            "?????"
         ]
     },
 
@@ -1250,6 +1256,9 @@ export const itemNames = {
             "Chillspike", "Defender Pike", "Dragonkin Pike +3",
             "Holy Avenger Pike", "Pike of the Forgotten Legion",
             "True Name Pike, +3"
+        ],
+        Unique: [
+            "?????"
         ]
     },
 
@@ -1282,6 +1291,9 @@ export const itemNames = {
         Legendary: [
             "Defender Lance", "Dragon Tamer Lance", "Dragonkin Lance +3",
             "Holy Avenger Lance", "True Name Lance, +3"
+        ],
+        Unique: [
+            "?????"
         ]
     },
 
@@ -1319,8 +1331,9 @@ export const itemNames = {
             "Astral Sea Piercer War Pick", "Defender War Pick",
             "Dragonkin War Pick +3", "Holy Avenger War Pick",
             "True Name War Pick, +3"
+        ],
+        Unique: [
+            "?????"
         ]
     }
-
-
 };
