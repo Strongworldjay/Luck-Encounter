@@ -101,24 +101,46 @@ export const itemNames = {
         VeryRare: ["Antimagic Armor, Leather", "Antimagic Armor, Studded Leather", "Dark Fathom Studded Leather Armor", "Demon Leather Armor", "Demon Studded Leather",
             "Last Stand Armor, Leather", "Last Stand Armor, Studded Leather", "Studded Leather, +2", "Yellow Harbinger's Path Leather", "Yellow Harbinger's Path Studded Leather"
         ],
-        Legendary: ["Leather, +3", "Studded Leather, +3"],
-        Unique: ["Heart of the Mountain", "Inferno’s Embrace", "Mantle of the Void", "The Sentinel’s Resolve", "Verdant Guardian"]
+        Legendary: ["Deathwalker's Ward (Dormant)", "Leather, +3", "Studded Leather, +3"],
+        Unique: []
     },
     MediumArmor: {
-        Common: ["Smoldering Armor, Half Plate", "Smoldering Armor, Hide"],
-        Uncommon: ["Armor of Fungal Spores, Hide", "Armor of Weightlessness, Hide", "Armor of the Fallen, Hide", "Beast Hide Manticore Armor", "Fey-Touched Hide", "Mariner's Hide", "Sagittarian Hide Vestments", "Wildskin Hide Armor",
+        Common: ["Cast-Off Half Plate Armor", "Breastplate Armor of Gleaming", "Cast-Off Breastplate", "Smoldering Armor, Half Plate", "Smoldering Armor, Hide"],
+        Uncommon: ["Adamantine Breastplate", "Armor of Fungal Spores, Breastplate", "Armor of Weightlessness, Breastplate",
+            "Armor of the Fallen, Breastplate", "Fey-Touched Breastplate",
+            "Mariner's Breastplate", "Mariner's Breastplate", "Mithral Breastplate",
+            "Sagittarian Breastplate Vestments", "Armor of Fungal Spores, Hide", "Armor of Weightlessness, Hide", "Armor of the Fallen, Hide", "Beast Hide Manticore Armor", "Fey-Touched Hide", "Mariner's Hide", "Sagittarian Hide Vestments", "Wildskin Hide Armor",
             "Adamantine Half Plate", "Armor of Fungal Spores, Half Plate", "Armor of Weightlessness, Half Plate", "Armor of the Fallen, Half Plate", "Fey-Touched Half Plate", "Fey-Touched Half Plate", "Mariner's Half Plate Armor", "Mithral Half Plate", "Sagittarian Half Plate Vestments", "Scorpio Half Plate Armor",
 
         ],
-        Rare: ["Feywrought Armor, Hide", "Fused Chimeric Hide", "Gloomwrought Armor, Hide", "Hide Armor of Vulnerability (Bludgeoning)", "Hide Armor of Vulnerability (Piercing)",
+        Rare: ["Armor of Acid Resistance, Breastplate", "Armor of Cold Resistance, Breastplate",
+            "Armor of Acid Resistance, Half Plate", "Armor of Cold Resistance, Half Plate", "Armor of Fire Resistance, Half Plate", "Armor of Force Resistance, Half Plate", "Armor of Lightning Resistance, Half Plate",
+      "Armor of Necrotic Resistance, Half Plate", "Armor of Poison Resistance, Half Plate", "Armor of Psychic Resistance, Half Plate", "Armor of Radiant Resistance, Half Plate", "Armor of Thunder Resistance, Half Plate",
+      "Armor of Fire Resistance, Breastplate", "Armor of Force Resistance, Breastplate",
+            "Armor of Lightning Resistance, Breastplate",
+            "Armor of Necrotic Resistance, Breastplate", "Armor of Poison Resistance, Breastplate",
+            "Armor of Psychic Resistance, Breastplate", "Armor of Radiant Resistance, Breastplate",
+            "Armor of Thunder Resistance, Breastplate",
+            "Breastplate of Balance", "Breastplate of Vulnerability (Bludgeoning)",
+            "Breastplate of Vulnerability (Piercing)", "Breastplate of Vulnerability (Slashing)",
+            "Breastplate of the Morning Light",
+            "Breastplate, +1", "Feywrought Armor, Breastplate", "Gloomwrought Armor, Breastplate",
+            "Mizzium Armor, Breastplate", "Molten Bronze Skin, Breastplate",
+            "Scorned Heart Breastplate", "Spiritwalker Breastplate", "Feywrought Armor, Hide", "Fused Chimeric Hide", "Gloomwrought Armor, Hide", "Hide Armor of Vulnerability (Bludgeoning)", "Hide Armor of Vulnerability (Piercing)",
             "Hide Armor of Vulnerability (Slashing)", "Hide, +1", "Myceliaweave Hide Armor", "Tundra Titan Hide", "Feywrought Armor, Half Plate", "Gloomwrought Armor, Half Plate", "Half Plate Armor of Vulnerability (Bludgeoning)", "Half Plate Armor of Vulnerability (Piercing)", "Half Plate Armor of Vulnerability (Slashing)",
             "Half Plate, +1", "Mithral Half Plate, +1", "Mizzium Armor, Half Plate", "Molten Bronze Skin, Half Plate", "Windswept Wyvern Half Plate"
         ],
-        VeryRare: ["Antimagic Armor, Hide", "Cloudkept Hide Armor", "Demon Hide Armor", "Grand Wolf's Hide", "Hide, +2", "Last Stand Armor, Hide", "Living Armor, Hide", "Yellow Harbinger's Path Hide",
+        VeryRare: ["Antimagic Armor, Breastplate", "Blue Vanguard’s Glory Breastplate",
+            "Breastplate, +2", "Demon Breastplate", "Last Stand Armor, Breastplate",
+            "Living Armor, Breastplate", "Novanite Breastplate Armor", "Phoenix Breastplate",
+            "Ruidium Breastplate", "Time Warden Breastplate",
+            "Winter's Embrace Breastplate", "Yellow Harbinger’s Path Breastplate", "Antimagic Armor, Hide", "Cloudkept Hide Armor", "Demon Hide Armor", "Grand Wolf's Hide", "Hide, +2", "Last Stand Armor, Hide", "Living Armor, Hide", "Yellow Harbinger's Path Hide",
             "Antimagic Armor, Half Plate", "Blue Vanguard's Glory Half Plate", "Demon Half Plate Armor", "Dwarven Half Plate", "Half Plate, +2", "Last Stand Armor, Half Plate", "Living Armor, Half Plate", "Novanite Half Plate Armor", "Yellow Harbinger's Path Half Plate"
         ],
-        Legendary: ["Hide, +3", "Hide of the Feral Guardian (Dormant)", "Elegant-Resilience Half Plate", "Half Plate Armor of Etherealness", "Half Plate of the Blind Martyr", "Half Plate, +3", "Mourningsteel Half Plate", "Starmetal Nova Half Plate Armor"],
-        Unique: ["Heart of the Mountain", "Inferno’s Embrace", "Mantle of the Void", "The Sentinel’s Resolve", "Verdant Guardian"]
+        Legendary: ["Breastplate, +3", "Stonebreaker's Breastplate", "Hide of the Feral Guardian (Dormant)", "Armor of the Valiant Soul (Dormant)", "Hide, +3", "Elegant-Resilience Half Plate", "Half Plate Armor of Etherealness", "Half Plate of the Blind Martyr", "Half Plate, +3", "Mourningsteel Half Plate", "Starmetal Nova Half Plate Armor",
+
+        ],
+        Unique: []
     },
 
     Gauntlet: {
@@ -173,13 +195,13 @@ export const itemNames = {
             "Kobold Diviner's Hand", "Lock of Trickery", "Magnificent Pocket Vanity", "Mystery Key", "Masque Charm", "Orator's Quill", "Orb of Time",
             "Perfume of Bewitching", "Pipe of Rememberance", "Pipe of Smoke Monsters", "Pot of Awakening", "Rope of Mending", "Seat Belt", "Silver Coin of Durva",
             "Singing Stein", "Sleepytime Sheep Stuffy", "Snugglebeast Owlbear", "Statuette of Augury", "Tankard of Plenty", "Thermal Cube", "Widemouth Bucket",
-             "Aurora Dust", "Bag of Bellstones", "Bard-in-a-box", "Bead of Nourishment x3", "Bead of Refreshment x10", "Bird of a Feather (Common)", "Bullfrog Totem"
+            "Aurora Dust", "Bag of Bellstones", "Bard-in-a-box", "Bead of Nourishment x3", "Bead of Refreshment x10", "Bird of a Feather (Common)", "Bullfrog Totem"
         ],
         Uncommon: ["Abjurer's Glider", "Acorn Charm", "Alchemist's Potion Belt", "Alchemy Jug", "Angler's Worldly Fisher",
             "Arcanist's Magnificent Magnifier", "Augurer's Coin", "Baba Yaga's Dancing Broom", "Badge of the Abjurant Savant", "Badge of the Conjuration Savant",
             "Badge of the Divination Savant", "Badge of the Enchantment Savant", "Badge of the Evocation Savant", "Badge of the Illusion savant", "Badge of the Necromancy Savant",
             "Badge of the Transmutation Savant", "Bag of Goodberry Gummy Fish", "Bag of Holding", "Bag of Sundrops", "Bag of Tricks",
-            "Gate Key (D Tier)","Balance of Harmony", "Battle Charm, +1", "Beard Cannon", "Bell of Alarm", "Bird of a Feather (Uncommon)", "Bloodmire Phiale",
+            "Gate Key (D Tier)", "Balance of Harmony", "Battle Charm, +1", "Beard Cannon", "Bell of Alarm", "Bird of a Feather (Uncommon)", "Bloodmire Phiale",
             "Bloodwell Vial, +1", "Bonfire Charm", "Bramble Token Cuff", "Brooch of Shielding", "Bullfrog Bugle", "Candle of Anti-Light", "Chapel Lantern",
             "Dragon's Call", "Dragon-Touched Focus (Slumbering)", "Dragonhide Belt, +1", "Driftglobe", "", "Deck of Wonder", "Domclavis Key", "Dragon Vessel (Slumbering)",
             "Charging Bugle", "Cuff of Captions", "Decanter of Endless Water", "Deck of Illusions", "Deck of Miscellany", "Dust of Corrosion", "Dust of Deliciousness", "Dust of Dryness",
@@ -207,7 +229,7 @@ export const itemNames = {
             "Badge of the Wayfarer", "Bag of Beans", "Bag of Magic Blocks", "Banner of the Krig Rune", "Barternder's Armistice",
             "Basco's Handy Bangle", "Battle Charm, +2", "Bead of Force", "Bead of Meditation", "Bell Branch",
             "Belt of Dwarvenkind", "Belt of Hill Giant Strength", "Belt of Orion", "Belt of The Hell Hound", "Belt of the Raid Leader",
-            "Gate Key (C Tier)","Bismuth Crown", "Black Chromatic Rose", "Blizzard Sphere", "Blod Stone", "Bloodwell Vial, +2",
+            "Gate Key (C Tier)", "Bismuth Crown", "Black Chromatic Rose", "Blizzard Sphere", "Blod Stone", "Bloodwell Vial, +2",
             "Blue Chromatic Rose", "Boog's Ball", "Bottled Comet", "Bounder's Ball", "Bowl of Commanding Water Elementals",
             "Brazier of Commanding Fire elementals", "Bridle of Capturing", "Cauldron of Plenty", "Butcher's Bib", "Canaith Mandolin",
             "Censor of Controlling Air Elementals", "Chain of Returning", "Chancellor's Crest", "Charm of Plant Command", "Chime of Opening", "Chimeric Collar", "Chromatic Quiver", "Cli Lyre",
@@ -255,7 +277,7 @@ export const itemNames = {
             "Sovereign Glue", "Spell Bottle", "Spell Binding Shackles (Legendary)", "Stormgirdle (Dormant)", "Tablet of Reawakening", "Universal Solvent",
             "Witchlight Watch", "Prehistoric Figurine of Wondrous Power (Jasper Tyrannosaurus Rex)"
         ],
-        Unique: ["Gate Key (S Tier)","Luba's Tarokka of Souls", "Skeleton Key", "Teeth of Dahlver-Nar"]
+        Unique: ["Gate Key (S Tier)", "Luba's Tarokka of Souls", "Skeleton Key", "Teeth of Dahlver-Nar"]
     },
 
     Ring: {
@@ -762,7 +784,7 @@ export const itemNames = {
     Gems: {
         Common: ["High-Quality Diamond (300 GP)", "High-Quality Diamond (500 GP)",],
         Uncommon: ["Elemental Gem (Blue Sapphire)", "Elemental Gem (Emerald)", "Elemental Gem (Red Corundum)", "Elemental Gem (Yellow Diamond)", "Fabulist Gem", "Gem of Brightness", "Spell Gem (Lapis Lazuli",
-            "Spell Gem (Obsidian)", "Exquisite Diamond (1000 GP)", 
+            "Spell Gem (Obsidian)", "Exquisite Diamond (1000 GP)",
         ],
         Rare: ["Gem of Seeing", "Spell Gem (Bloodstone)", "Spell Gem (Quartz)", "Ioun Stone of Awareness", "Ioun Stone of Historical Knowledge", "Ioun Stone of Language Knowledge", "Ioun Stone of Natural Knowledge", "Ioun Stone of Protection",
             "Ioun Stone of Religious Knowledge", "Ioun Stone of Reserve", "Ioun Stone of Self-Preservation", "Ioun Stone of Supreme Intellect", "Ioun Stone of Sustenance", "Warp Crystal"
@@ -961,12 +983,12 @@ export const itemNames = {
             "Hand Crossbow of Warning", "Heavy Crossbow of Warning", "Hellfire Crossbow, Hand",
             "Hellfire Crossbow, Heavy", "Hellfire Crossbow, Light", "Light Crossbow of Warning",
             "Orner's Venomous Crossbow", "Trampling Crossbow", "True Name Hand Crossbow",
-            "True Name Heavy Crossbow", "True Name Light Crossbow", 
+            "True Name Heavy Crossbow", "True Name Light Crossbow",
         ],
         Rare: [
             "Bloodletter’s Hand Crossbow", "Bloodletter’s Heavy Crossbow", "Bloodletter’s Light Crossbow",
             "Comet Ballista Crossbow", "Corpse Slayer, Crossbow, Hand", "Corpse Slayer, Crossbow, Heavy",
-            "Corpse Slayer, Crossbow, Light",  "Crossbow, Hand, +2",
+            "Corpse Slayer, Crossbow, Light", "Crossbow, Hand, +2",
             "Crossbow, Heavy, +2", "Crossbow, Light, +2", "Dragon Slayer Hand Crossbow",
             "Dragon Slayer Heavy Crossbow", "Dragon Slayer Light Crossbow", "Dragon Wing Hand Crossbow",
             "Dragon Wing Heavy Crossbow", "Dragon Wing Light Crossbow", "Fire, Fire! Crossbow",

@@ -19,7 +19,7 @@ import helmetSymbol from './assets/helmet-symbol.png';
 import armorSymbol from './assets/armor-symbol.png';
 import attackSkillSymbol from './assets/swordart.png';
 import bootsSymbol from './assets/boots-symbol.png';
-import bowSymbol from './assets/bow-symbol.webp';
+import bowSymbol from './assets/bow-symbol.png';
 import axeSymbol from './assets/axe.png';
 import daggerSymbol from './assets/dagger-symbol.png';
 import gauntletSymbol from './assets/gauntlet-symbol.png';
