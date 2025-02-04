@@ -58,7 +58,7 @@ export const itemNames = {
         ]
     },
     Robe: {
-        Common: ["Robe"],
+        Common: ["Robe of Subtle Whispers"],
         Uncommon: ["Robe of Serpents", "Robe of Useful Items", "Robe of the Altruist", "Rocborne Robe", "Spellwoven Robes"],
         Rare: ["Aurumplate Robes", "Gi of Shifting Seasons", "Master Spellwoven Robes", "Polaris Magistrate Robe", "Robe of Cunning", "Robe of Eyes", "Robe of Summer", "Robe of the Forlorn"],
         VeryRare: ["Aurumplate Robes, +1", "Robe of Scintillating Colors", "Robe of Stars"],
@@ -173,13 +173,13 @@ export const itemNames = {
             "Kobold Diviner's Hand", "Lock of Trickery", "Magnificent Pocket Vanity", "Mystery Key", "Masque Charm", "Orator's Quill", "Orb of Time",
             "Perfume of Bewitching", "Pipe of Rememberance", "Pipe of Smoke Monsters", "Pot of Awakening", "Rope of Mending", "Seat Belt", "Silver Coin of Durva",
             "Singing Stein", "Sleepytime Sheep Stuffy", "Snugglebeast Owlbear", "Statuette of Augury", "Tankard of Plenty", "Thermal Cube", "Widemouth Bucket",
-            "Aurora Dust", "Bag of Bellstones", "Bard-in-a-box", "Bead of Nourishment x3", "Bead of Refreshment x10", "Bird of a Feather (Common)", "Bullfrog Totem"
+             "Aurora Dust", "Bag of Bellstones", "Bard-in-a-box", "Bead of Nourishment x3", "Bead of Refreshment x10", "Bird of a Feather (Common)", "Bullfrog Totem"
         ],
         Uncommon: ["Abjurer's Glider", "Acorn Charm", "Alchemist's Potion Belt", "Alchemy Jug", "Angler's Worldly Fisher",
             "Arcanist's Magnificent Magnifier", "Augurer's Coin", "Baba Yaga's Dancing Broom", "Badge of the Abjurant Savant", "Badge of the Conjuration Savant",
             "Badge of the Divination Savant", "Badge of the Enchantment Savant", "Badge of the Evocation Savant", "Badge of the Illusion savant", "Badge of the Necromancy Savant",
             "Badge of the Transmutation Savant", "Bag of Goodberry Gummy Fish", "Bag of Holding", "Bag of Sundrops", "Bag of Tricks",
-            "Balance of Harmony", "Battle Charm, +1", "Beard Cannon", "Bell of Alarm", "Bird of a Feather (Uncommon)", "Bloodmire Phiale",
+            "Gate Key (D Tier)","Balance of Harmony", "Battle Charm, +1", "Beard Cannon", "Bell of Alarm", "Bird of a Feather (Uncommon)", "Bloodmire Phiale",
             "Bloodwell Vial, +1", "Bonfire Charm", "Bramble Token Cuff", "Brooch of Shielding", "Bullfrog Bugle", "Candle of Anti-Light", "Chapel Lantern",
             "Dragon's Call", "Dragon-Touched Focus (Slumbering)", "Dragonhide Belt, +1", "Driftglobe", "", "Deck of Wonder", "Domclavis Key", "Dragon Vessel (Slumbering)",
             "Charging Bugle", "Cuff of Captions", "Decanter of Endless Water", "Deck of Illusions", "Deck of Miscellany", "Dust of Corrosion", "Dust of Deliciousness", "Dust of Dryness",
@@ -207,7 +207,7 @@ export const itemNames = {
             "Badge of the Wayfarer", "Bag of Beans", "Bag of Magic Blocks", "Banner of the Krig Rune", "Barternder's Armistice",
             "Basco's Handy Bangle", "Battle Charm, +2", "Bead of Force", "Bead of Meditation", "Bell Branch",
             "Belt of Dwarvenkind", "Belt of Hill Giant Strength", "Belt of Orion", "Belt of The Hell Hound", "Belt of the Raid Leader",
-            "Bismuth Crown", "Black Chromatic Rose", "Blizzard Sphere", "Blod Stone", "Bloodwell Vial, +2",
+            "Gate Key (C Tier)","Bismuth Crown", "Black Chromatic Rose", "Blizzard Sphere", "Blod Stone", "Bloodwell Vial, +2",
             "Blue Chromatic Rose", "Boog's Ball", "Bottled Comet", "Bounder's Ball", "Bowl of Commanding Water Elementals",
             "Brazier of Commanding Fire elementals", "Bridle of Capturing", "Cauldron of Plenty", "Butcher's Bib", "Canaith Mandolin",
             "Censor of Controlling Air Elementals", "Chain of Returning", "Chancellor's Crest", "Charm of Plant Command", "Chime of Opening", "Chimeric Collar", "Chromatic Quiver", "Cli Lyre",
@@ -233,7 +233,7 @@ export const itemNames = {
         ],
         VeryRare: ["Abracadabrus", "All-Purpose Tool, +3", "Amethyst Lodestone", "Archivist's Key", "Bag of Devouring",
             "Bag of Eyes", "Battle Charm, +3", "Battle Standard of Infernal Power", "Battlechef's Splendid Saucepan", "Belt of Fire Giant Strength",
-            "Belt of Frost Giant Strength", "Belt of Returning", "Belt of of Stone Giant Strength", "Bloodwell Vial, +3", "Bobbing Lily Pad",
+            "Gate Key (B Tier)", "Belt of Frost Giant Strength", "Belt of Returning", "Belt of of Stone Giant Strength", "Bloodwell Vial, +3", "Bobbing Lily Pad",
             "Brambleheart Quiver", "Camilla's Quicksilver Mirror", "Candle of Invocation", "Carpet of Flying (3 ft. x 5 ft.)", "Carpet of Flying (4 ft. x 6 ft.", "Carpet of Flying (5 ft. x 7 ft.)",
             "Carpet of Flying (6 ft. x 9 ft.)", "Cauldron of Rebirth", "Chronal Sphere", "Chronolometer", "Cloche of Surprise Treats", "Coldfire Anvil (Very Rare)", "Collar of the Crysal Veil", "Conch of Teleportation",
             "Crystal Ball", "Crystalline Chronicle", "Deck of Dimensions", "Deck of Wild Cards", "Devastation Orb", "Dimensional Loop", "Dimensional Quiver", "Dispelling Stone",
@@ -248,14 +248,14 @@ export const itemNames = {
             "Charging Bugle", "Cuff of Captions", "Decanter of Endless Water", "Deck of Illusions", "Deck of Miscellany", "Deck of Wonder", "Domclavis Key", "Dragon Vessel (Slumbering)"
         ],
         Legendary: ["Belt of Cloud Giant Strength", "Belt of Storm Giant Strength", "Black Crystal Tablet", "Bloodscryer Oculus", "Crystal Ball of Mind Reading",
-            "Deck of Many Things", "Deck of Many More Things", "Danoth's Visor (Dormant)", "Gate Key", "Crystal Ball of True Seeing", "Crystal Ball of Telepathy",
+            "Gate Key (A Tier)", "Deck of Many Things", "Deck of Many More Things", "Danoth's Visor (Dormant)", "Gate Key", "Crystal Ball of True Seeing", "Crystal Ball of Telepathy",
             "Deck of Several Thingss", "Fate Dealer's Deck, +3", "Fell-Rider Chariot", "Gold Canary Figurine of Wondrous Power", "Gorget of the Holy Soldier", "Guardian's Reliquary",
             "Harp of Gilded Plenty", "Heart of Damned Intervention", "Horn of Beckoning Death", "Horn of Valhalla (Iron)", "Infernal Tack", "Infiltrator's Key (Dormant)",
             "Iron Flask", "Lava Crucible", "Life Turner", "Ollamh Harp", "Orb of Skoraeus", "Platinum Scarf", "Quiver of Elemental Chaos", "Seed of Rebirth",
             "Sovereign Glue", "Spell Bottle", "Spell Binding Shackles (Legendary)", "Stormgirdle (Dormant)", "Tablet of Reawakening", "Universal Solvent",
             "Witchlight Watch", "Prehistoric Figurine of Wondrous Power (Jasper Tyrannosaurus Rex)"
         ],
-        Unique: ["Luba's Tarokka of Souls", "Skeleton Key", "Teeth of Dahlver-Nar"]
+        Unique: ["Gate Key (S Tier)","Luba's Tarokka of Souls", "Skeleton Key", "Teeth of Dahlver-Nar"]
     },
 
     Ring: {
@@ -762,19 +762,19 @@ export const itemNames = {
     Gems: {
         Common: ["High-Quality Diamond (300 GP)", "High-Quality Diamond (500 GP)",],
         Uncommon: ["Elemental Gem (Blue Sapphire)", "Elemental Gem (Emerald)", "Elemental Gem (Red Corundum)", "Elemental Gem (Yellow Diamond)", "Fabulist Gem", "Gem of Brightness", "Spell Gem (Lapis Lazuli",
-            "Spell Gem (Obsidian)", "Exquisite Diamond (1000 GP)"
+            "Spell Gem (Obsidian)", "Exquisite Diamond (1000 GP)", 
         ],
         Rare: ["Gem of Seeing", "Spell Gem (Bloodstone)", "Spell Gem (Quartz)", "Ioun Stone of Awareness", "Ioun Stone of Historical Knowledge", "Ioun Stone of Language Knowledge", "Ioun Stone of Natural Knowledge", "Ioun Stone of Protection",
-            "Ioun Stone of Religious Knowledge", "Ioun Stone of Reserve", "Ioun Stone of Self-Preservation", "Ioun Stone of Supreme Intellect", "Ioun Stone of Sustenance"
+            "Ioun Stone of Religious Knowledge", "Ioun Stone of Reserve", "Ioun Stone of Self-Preservation", "Ioun Stone of Supreme Intellect", "Ioun Stone of Sustenance", "Warp Crystal"
         ],
         VeryRare: ["Spell Gem (Amber)", "Spell Gem (Jade)", "Spell Gem (Topaz)", "Ioun Stone of Absorption", "Ioun Stone of Agility", "Ioun Stone of Fortitude", "Ioun Stone of Insight", "Ioun Stone of Intellect", "Ioun Stone of Leadership", "Ioun Stone of Strength", "Ioun Stone of Vitality",
-            "Amethyst Lodestone", "Fragment of Elder Starlight"
+            "Amethyst Lodestone", "Fragment of Elder Starlight", "Party Warp Crystal"
         ],
         Legendary: ["Mastery Gem", "Flawless Diamond (25,000 GP)", "Ruby Weave Gem", "Spell Gem (Diamond)", "Spell Gem (Ruby)", "Spell Gem (Star Ruby)", "Ioun Stone of Greater Absorption", "Ioun Stone of Mastery", "Ioun Stone of Regeneration",
             "Jewel of Three Prayers (Dormant)", "Nightfall Pearl", "Scaled Ornament (Ascendant)", "Shard Solitaire (Black Sapphire)", "Shard Solitaire (Diamond)",
-            "Shard Solitaire (Jacinth)", "Shard Solitaire (Rainbow Peral)", "Shard Solitaire (Ruby)", "Shard Solitaire (Black Sapphire)"
+            "Shard Solitaire (Jacinth)", "Shard Solitaire (Rainbow Peral)", "Shard Solitaire (Ruby)", "Shard Solitaire (Black Sapphire)", "Warp Nexus Crystal"
         ],
-        Unique: ["?????"]
+        Unique: ["Warp Nexus Party Crystal"]
     },
 
     Shield: {
@@ -793,7 +793,7 @@ export const itemNames = {
             "Shield of Yggdrasil", "Shield of the Cavalier", "Shield of the Everfighter", "Shield of the Uven Rune", "Shield, +3", "Spellguard Shield", "Infernal Aegis Shield"
         ],
         Legendary: ["Shield of the Blazing Dreadought", "Shield of the Hidden Lord", "Starmetal Shield", "Euryale's Aegis"],
-        Unique: ["???"]
+        Unique: ["Aegis of the Everlasting", "The Mawguard Shield"]
     },
 
     WeaponArt: {
@@ -1089,7 +1089,7 @@ export const itemNames = {
             "Holy Avenger Halberd", "True Name Halberd, +3", "Soul-Searing Scythe"
         ],
         Unique: [
-            "?????"
+            "The Mawblade Halberd"
         ]
     },
 
@@ -1258,7 +1258,7 @@ export const itemNames = {
             "True Name Pike, +3"
         ],
         Unique: [
-            "?????"
+            "The Wraithcall Pike"
         ]
     },
 
@@ -1293,7 +1293,7 @@ export const itemNames = {
             "Holy Avenger Lance", "True Name Lance, +3"
         ],
         Unique: [
-            "?????"
+            "Infernal Lance of the Crimson Pyre"
         ]
     },
 
