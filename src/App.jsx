@@ -39,7 +39,7 @@ const App = () => {
   const [resetDeck, setResetDeck] = useState(false); // State for the second deck reset
   const [characterLuck, setCharacterLuck] = useState(0); // Character's Luck
   const [dungeonLuck, setDungeonLuck] = useState(0); // Dungeon Difficulty Luck
-  const [selectedDungeon, setSelectedDungeon] = useState(null); // Track selected button
+  const [selectedDungeon, setSelectedDungeon] = useState(null); // Track selected dungeon class
   const [selectedCard, setSelectedCard] = useState(null);
   const [isDrawing, setIsDrawing] = useState(false);
   const [currentSection, setCurrentSection] = useState('DungeonCompletion');
@@ -89,17 +89,14 @@ const App = () => {
   };
 
   const resetCards = () => {
-    // Apply the fade-away class to all cards
     setCards((prevCards) =>
       prevCards.map((card) => ({ ...card, fadeAway: true }))
     );
-
-    // Delay clearing the cards to allow animation to finish
     setTimeout(() => {
       setCards([]);
       setSelectedCard(null);
-      setResetDeck((prev) => !prev); // Toggle resetDeck to trigger state change
-    }, 500); // Match the animation duration
+      setResetDeck((prev) => !prev);
+    }, 500);
   };
 
   const handleNavClick = (section) => {
@@ -118,7 +115,6 @@ const App = () => {
           <div className="top-center-container">
             <h1>Why Not Test Your Luck?</h1>
             <div className="luck-section">
-              {/* Character's Luck Input and Total Luck in the same row */}
               <div className="luck-row">
                 <div className="luck-input">
                   <label>
@@ -131,90 +127,70 @@ const App = () => {
                     />
                   </label>
                 </div>
-                {/* Display Total Luck */}
                 <div className="total-luck">
                   <h3>Total Luck: {totalLuck}</h3>
                 </div>
               </div>
 
-              {/* Dungeon Difficulty Buttons */}
+              {/* Updated Dungeon Difficulty Buttons */}
               <div className="dungeon-difficulty">
                 <button
                   onClick={() => {
                     setDungeonLuck(-50);
-                    setSelectedDungeon('Rudimentary');
+                    setSelectedDungeon('F');
                   }}
-                  className={selectedDungeon === 'Rudimentary' ? 'selected' : ''}
+                  className={selectedDungeon === 'F' ? 'selected' : ''}
                 >
-                  Rudimentary
+                  F Class Dungeon (-50 Luck)
                 </button>
                 <button
                   onClick={() => {
                     setDungeonLuck(-25);
-                    setSelectedDungeon('Simple');
+                    setSelectedDungeon('D');
                   }}
-                  className={selectedDungeon === 'Simple' ? 'selected' : ''}
+                  className={selectedDungeon === 'D' ? 'selected' : ''}
                 >
-                  Simple
+                  D Class Dungeon (-25 Luck)
                 </button>
                 <button
                   onClick={() => {
                     setDungeonLuck(0);
-                    setSelectedDungeon('Standard');
+                    setSelectedDungeon('C');
                   }}
-                  className={selectedDungeon === 'Standard' ? 'selected' : ''}
+                  className={selectedDungeon === 'C' ? 'selected' : ''}
                 >
-                  Standard
-                </button>
-                <button
-                  onClick={() => {
-                    setDungeonLuck(10);
-                    setSelectedDungeon('Adept');
-                  }}
-                  className={selectedDungeon === 'Adept' ? 'selected' : ''}
-                >
-                  Adept
+                  C Class Dungeon (0 Luck)
                 </button>
                 <button
                   onClick={() => {
                     setDungeonLuck(20);
-                    setSelectedDungeon('Intermediate');
+                    setSelectedDungeon('B');
                   }}
-                  className={selectedDungeon === 'Intermediate' ? 'selected' : ''}
+                  className={selectedDungeon === 'B' ? 'selected' : ''}
                 >
-                  Intermediate
+                  B Class Dungeon (+20 Luck)
                 </button>
                 <button
                   onClick={() => {
-                    setDungeonLuck(40);
-                    setSelectedDungeon('Expert');
+                    setDungeonLuck(35);
+                    setSelectedDungeon('A');
                   }}
-                  className={selectedDungeon === 'Expert' ? 'selected' : ''}
+                  className={selectedDungeon === 'A' ? 'selected' : ''}
                 >
-                  Expert
+                  A Class Dungeon (+35 Luck)
                 </button>
                 <button
                   onClick={() => {
                     setDungeonLuck(60);
-                    setSelectedDungeon('Master');
+                    setSelectedDungeon('S');
                   }}
-                  className={selectedDungeon === 'Master' ? 'selected' : ''}
+                  className={selectedDungeon === 'S' ? 'selected' : ''}
                 >
-                  Master
-                </button>
-                <button
-                  onClick={() => {
-                    setDungeonLuck(100);
-                    setSelectedDungeon('Legendary');
-                  }}
-                  className={selectedDungeon === 'Legendary' ? 'selected' : ''}
-                >
-                  Legendary
+                  S Class Dungeon (+60 Luck)
                 </button>
               </div>
             </div>
           </div>
-          {/* First Deck */}
           <div className="deck-container" onClick={generateCards}>
             {[...Array(5)].map((_, i) => (
               <img
@@ -237,8 +213,6 @@ const App = () => {
               />
             ))}
           </div>
-
-          {/* Second Deck */}
           <div className="deck-container second-deck" onClick={resetCards}>
             <img
               src={voidImage}
