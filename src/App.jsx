@@ -9,6 +9,7 @@ import BoostArts from './BoostArts';
 import SkillPointUsage from './SkillPointUsage';
 import CharacterSheets from './CharacterSheets';
 import UniqueSkill from './UniqueSkill';
+import Chests from './Chests';
 import './App.css';
 import appBackground from './assets/app-background.jpg';
 import deckImage from './assets/card-design.jpg';
@@ -224,6 +225,7 @@ const App = () => {
       )}
       {currentSection === 'WeaponArts' && <WeaponArts />}
       {currentSection === 'SacredArts' && <SacredArts />}
+      {currentSection === 'Chests' && <Chests />}
       {currentSection === 'PassiveArts' && <PassiveArts />}
       {currentSection === 'BoostArts' && <BoostArts />}
       {currentSection === 'SkillPointUsage' && <SkillPointUsage />}

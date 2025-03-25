@@ -1,0 +1,75 @@
+/* Chests.css */
+
+.chests-container {
+    text-align: center !important;
+    padding: 20px !important;
+    font-family: 'Arial', sans-serif !important;
+    color: #333 !important;
+    background: transparent !important;
+    border-radius: 8px !important;
+    max-width: 800px !important;
+    margin: 20px auto !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  .chest-title {
+    font-size: 2.5rem !important;
+    margin-bottom: 20px !important;
+  }
+  
+  .chest-icon {
+    width: 150px !important;
+    margin-bottom: 20px !important;
+  }
+  
+  .chest-buttons {
+    margin-bottom: 20px !important;
+  }
+  
+  .chest-buttons button {
+    margin: 5px !important;
+    padding: 10px 15px !important;
+    background-color: silver !important;
+    border: none !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    font-size: 1rem !important;
+    transition: background-color 0.3s ease, transform 0.2s ease !important;
+  }
+  
+  .chest-buttons button:hover {
+    background-color: #d0d0d0 !important;
+    transform: scale(1.05) !important;
+  }
+  
+  .loot-section {
+    margin-top: 20px !important;
+  }
+  
+  .loot-section h2 {
+    font-size: 2rem !important;
+    margin-bottom: 10px !important;
+  }
+  
+  .loot-list {
+    list-style-type: none !important;
+    padding: 0 !important;
+  }
+  
+  .loot-list li {
+    margin: 5px 0 !important;
+    font-size: 1.1rem !important;
+    padding: 5px 10px !important;
+    background: #fff !important;
+    border: 1px solid #ddd !important;
+    border-radius: 4px !important;
+    display: inline-block !important;
+  }
+  
+  .loot-gold {
+    font-size: 1.3rem !important;
+    font-weight: bold !important;
+    margin-top: 10px !important;
+    color:gold !important;
+  }
+  

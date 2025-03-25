@@ -12,6 +12,12 @@ const Navbar = ({ onNavClick, currentSection }) => {
           Dungeon Completion
         </li>
         <li
+        className={`nav-item ${currentSection === 'Chests' ? 'active' : ''}`}
+         onClick={() => onNavClick('Chests')}
+        >
+           Chests
+        </li>
+        <li
           className={`nav-item ${currentSection === 'WeaponArts' ? 'active' : ''}`}
           onClick={() => onNavClick('WeaponArts')}
         >

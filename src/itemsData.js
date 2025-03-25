@@ -729,17 +729,17 @@ export const itemNames = {
     Gems: {
         Common: ["High-Quality Diamond (300 GP)", "High-Quality Diamond (500 GP)",],
         Uncommon: ["Elemental Gem (Blue Sapphire)", "Elemental Gem (Emerald)", "Elemental Gem (Red Corundum)", "Elemental Gem (Yellow Diamond)", "Fabulist Gem", "Gem of Brightness", "Spell Gem (Lapis Lazuli",
-            "Spell Gem (Obsidian)", "Exquisite Diamond (1000 GP)",
+            "Spell Gem (Obsidian)", "Exquisite Diamond (1000 GP)", "Empty Aspect Orb", "Minor Magicule Crystal"
         ],
         Rare: ["Gem of Seeing", "Spell Gem (Bloodstone)", "Spell Gem (Quartz)", "Ioun Stone of Awareness", "Ioun Stone of Historical Knowledge", "Ioun Stone of Language Knowledge", "Ioun Stone of Natural Knowledge", "Ioun Stone of Protection",
-            "Ioun Stone of Religious Knowledge", "Ioun Stone of Reserve", "Ioun Stone of Self-Preservation", "Ioun Stone of Supreme Intellect", "Ioun Stone of Sustenance", "Warp Crystal"
+            "Ioun Stone of Religious Knowledge", "Ioun Stone of Reserve", "Ioun Stone of Self-Preservation", "Ioun Stone of Supreme Intellect", "Ioun Stone of Sustenance", "Warp Crystal", "Greater Magicule Crystal"
         ],
         VeryRare: ["Spell Gem (Amber)", "Spell Gem (Jade)", "Spell Gem (Topaz)", "Ioun Stone of Absorption", "Ioun Stone of Agility", "Ioun Stone of Fortitude", "Ioun Stone of Insight", "Ioun Stone of Intellect", "Ioun Stone of Leadership", "Ioun Stone of Strength", "Ioun Stone of Vitality",
-            "Amethyst Lodestone", "Fragment of Elder Starlight", "Party Warp Crystal"
+            "Amethyst Lodestone", "Fragment of Elder Starlight", "Party Warp Crystal", "High-Grade Magicule Crystal"
         ],
         Legendary: ["Mastery Gem", "Flawless Diamond (25,000 GP)", "Ruby Weave Gem", "Spell Gem (Diamond)", "Spell Gem (Ruby)", "Spell Gem (Star Ruby)", "Ioun Stone of Greater Absorption", "Ioun Stone of Mastery", "Ioun Stone of Regeneration",
             "Jewel of Three Prayers (Dormant)", "Nightfall Pearl", "Scaled Ornament (Ascendant)", "Shard Solitaire (Black Sapphire)", "Shard Solitaire (Diamond)",
-            "Shard Solitaire (Jacinth)", "Shard Solitaire (Rainbow Peral)", "Shard Solitaire (Ruby)", "Shard Solitaire (Black Sapphire)", "Warp Nexus Crystal"
+            "Shard Solitaire (Jacinth)", "Shard Solitaire (Rainbow Peral)", "Shard Solitaire (Ruby)", "Shard Solitaire (Black Sapphire)", "Warp Nexus Crystal", "Primal Magicule Core"
         ],
         Unique: ["Warp Nexus Party Crystal"]
     },
@@ -949,7 +949,7 @@ export const itemNames = {
         Legendary: [
             "Holy Avenger Hand Crossbow", "Holy Avenger Heavy Crossbow", "Holy Avenger Light Crossbow", "True Name Hand Crossbow, +3", "True Name Heavy Crossbow, +3", "True Name Light Crossbow, +3"
         ],
-        Unique: ["monkey", "Bonkue", "Dragg", "Temu", "powderpuff"]
+        Unique: ["???"]
     },
 
     Spear: {
@@ -1289,5 +1289,11 @@ export const itemNames = {
         Unique: [
             "?????"
         ]
+    },
+    Misc: {
+        Common: ["Longsword", "Shortsword", "Torch x5", "Torch x3", "Longbow", "Shortbow", "Arrows x20", "Crossbow Bolts x20", "Bag of Ball Bearings", "Hempen Rope 50 ft",
+            "Silk Rope 50 ft", "Dagger", "Thieves' Tools", "Ink", "Clothes, Common", "Shield", "Warhammer", "Maul", "Greataxe", "Handaxe", "Battleaxe", "Heavy Crossbow", "Hand Crossbow", "Light Crossbow",
+            "Greatsword", "Club", "Greatclub", "Cook's Utensils", "Smith's Tools", "War Pick", "Sickle", "Staff", "Shield", "Rations x2", "Rations x5", "Singular Ration", "Whip", "Bedroll", "Tent"
+        ],
     }
 };
