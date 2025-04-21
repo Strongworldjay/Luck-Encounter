@@ -509,7 +509,7 @@ export const itemNames = {
             "Liar’s Lament Greatsword", "Luck Blade Greatsword", "Moonblade Greatsword", "Bolide Blade Katana",
             "The Crimson Claymore ( Greatsword )", "Vorpal Greatsword",
             "Eternal Slayer Rapier", "Holy Avenger Rapier", "Howl ( Rapier )", "Defender Scimitar", "Double-Bladed Scimitar of the Planes", "Dragonkin Scimitar +3", "Eternal Slayer Scimitar",
-            "Holy Avenger Scimitar", "Luck Blade Scimitar", "Memento of the Shapeless Scimitar", "Moonblade Scimitar",
+            "Holy Avenger Scimitar", "Luck Blade Scimitar",  "Moonblade Scimitar",
             "Scimitar of the Planes", "Vorpal Scimitar",
             "Luck Blade Rapier", "Maestro’s Conductive Rapier",
             "Moonblade Rapier", "Octavius' Saber ( Rapier )", "Pride and Prejudice ( Rapier )",
@@ -582,7 +582,7 @@ export const itemNames = {
             "Comet Smasher Light Hammer", "Dragonkin Light Hammer +2", "Forcebreaker Light Hammer", "Foresight Light Hammer",
             "Light Hammer, +3", "Nine Lives Stealer Light Hammer", "Ruidium Light Hammer",  "Hammer of Runic Focus"],
         Legendary: ["Defender Warhammer", "Dragonkin Warhammer +3", "Emberheart Warhammer", "Forgemaster's Might Warhammer",
-            "Holy Avenger Warhammer", "Memento of the Shapeless Warhammer", "Defender Maul",
+            "Holy Avenger Warhammer", "Defender Maul",
             "Dragonkin Maul +3", "Forgemaster's Might Maul", "Heaven's Gavel Maul", "Holy Avenger Maul",
              "Dragonkin Light Hammer +3", "Holy Avenger Light Hammer", ],
         Unique: ["Akmon, Hammer of Purphoros", "Soulbond Maul: Doomwake, the Curse-Eater"]
@@ -994,7 +994,7 @@ export const itemNames = {
             "Defender Spear", "Dragonkin Spear +3", "Holy Avenger Spear",
             "Purity Spear", "Shard Solitaire (Rainbow Pearl)", "Spear of Gael Wode",
            "Vicious Vortex Spear", "Davy Jones' Key (Trident)", "Defender Trident", "Dragonkin Trident +3",
-            "Holy Avenger Trident", "Memento of the Shapeless Trident",  "Dragonkin Javelin +3", "Holy Avenger Javelin",
+            "Holy Avenger Trident", "Dragonkin Javelin +3", "Holy Avenger Javelin",
             
         ],
         Unique: [
@@ -1070,7 +1070,6 @@ export const itemNames = {
         Legendary: [
             "Dragonkin Greatclub +3", "Holy Avenger Greatclub", 
             "Defender Club", "Dragonkin Club +3", "Holy Avenger Club",
-            "Memento of the Shapeless Club",
         ],
         Unique: [
             "?????"
