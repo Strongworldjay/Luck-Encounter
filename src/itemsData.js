@@ -806,7 +806,7 @@ export const itemNames = {
 
         Rare: ["Blood Bump C", "Dark Embrace C", "Blazing Blood C", "Unbound Instrument C", "Red Skull C", "Fire Resistance", "Acid Resistance", "Cold Resistance",
             "Bludgeoning Resistance", "Piercing Resistance", "Poison Resistance", "Slashing Resistance", "Thunder Resistance", "Lightning Resistance", "Necrotic Resistance", "Poison Resistance",
-            "Disease Resistance", "Fortitude C", "Grit C", "Fleetfoot C", "Endurance C", "Return C", "Lock On C", "Threshold C",
+            "Titan's Stature", "Fortitude C", "Grit C", "Fleetfoot C", "Endurance C", "Return C", "Lock On C", "Threshold C",
             "Blade Dance C", "Lucky Living", "Lucky Defense", "Lucky Landings", "", "Folkvangr C", "Folkvangr C", "A Thousand Cuts C",
         ],
         VeryRare: ["Blood Bump B", "Dark Embrace B", "Blazing Blood B", "Unbound Instrument B", "Red Skull B", "Grit B", "Fleetfoot B", "Endurance B", "Return B", "Lock On B", "Folkvangr B",
@@ -935,7 +935,7 @@ export const itemNames = {
         Legendary: [
             "Holy Avenger Hand Crossbow", "Holy Avenger Heavy Crossbow", "Holy Avenger Light Crossbow",
         ],
-        Unique: ["???"]
+        Unique: ["Soulbond Light Crossbow: Whispershot, the Needle of Intent", "Soulbond Heavy Crossbow: Gravepiercer, the Quiet Sentence", ]
     },
 
     Spear: {
@@ -1072,7 +1072,7 @@ export const itemNames = {
             "Defender Club", "Dragonkin Club +3", "Holy Avenger Club",
         ],
         Unique: [
-            "?????"
+            "Soulbond Club: Fangbranch, the Wild Totem"
         ]
     },
 
@@ -1272,7 +1272,7 @@ export const itemNames = {
            
         ],
         Unique: [
-            "?????"
+            "Soulbond War Pick: Rivenpact, the Vow Unmaker"
         ]
     },
     Misc: {
