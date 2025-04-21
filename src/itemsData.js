@@ -5,7 +5,7 @@ export const itemNames = {
             "Shapeshifter's Circlet", "Stylist's Circlet", "Vox Helm"
         ],
         Uncommon: [
-            "Dusk Mask", "Kukulthan Cultist Mask", "Lupine Mask",
+            "Dusk Mask", "Kukulthan Cultist Mask", "Lupine Mask", "Cap of Curing",
             "Mask of the Beast", "Mask of the Mimic", "Mask of the Pact Bearer",
             "Masks of the Sacred Beasts (Lion)",
             "Scarab Mask", "Bismuth Crown", "Circlet of Blasting",
@@ -63,7 +63,7 @@ export const itemNames = {
         Rare: ["Aurumplate Robes", "Gi of Shifting Seasons", "Master Spellwoven Robes", "Polaris Magistrate Robe", "Robe of Cunning", "Robe of Eyes", "Robe of Summer", "Robe of the Forlorn"],
         VeryRare: ["Aurumplate Robes, +1", "Robe of Scintillating Colors", "Robe of Stars"],
         Legendary: ["Robe of The Scriber", "Robe of the Archmagi", "The Walking Church"],
-        Unique: ["????"]
+        Unique: ["Soulbond Robe: Ashweave Mantle, Ember of the Scarred Flame"]
     },
 
     HeavyArmor: {
@@ -93,7 +93,7 @@ export const itemNames = {
         Uncommon: ["Fey-Touched Leather", "Fey-Touched Studded Leather", "Mariner's Leather Armor", "Mariner's Studded Leather Armor", "Owlbear Leather Armor",
             "Sagittarian Leather Vestments", "Sagittarian Studded Leather Vestments", "Venombane Leather Armor"
         ],
-        Rare: ["Captain's Pride Leather", "Captain's Pride Studded Leather", "Feywrought Armor, Leather", "Feywrought Armor, Studded Leather", "Glamoured Studded Leather", "Gloomwrought Armor, Leather",
+        Rare: ["Captain's Pride Leather", "Captain's Pride Studded Leather", "Feywrought Armor, Leather", "Feywrought Armor, Studded Leather", "Glamoured Studded Leather", "Gloomwrought Armor, Leather", "Tunic of Thunderous Might",
             "Gloomwrought Armor, Studded Leather", "Leather Armor of Vulnerability (Bludgeoning)", "Leather Armor of Vulnerability (Piercing)", "Leather Armor of Vulnerability (Slashing)", "Leather Golem Armor",
             "Leather, +1", "Mistwalker Leather Armor", "Moonswaddled Leather Armor", "Moonswaddled Padded Leather Armor", "Moonswaddled Studded Leather Armor", "Myceliaweave Leather Armor", "Myceliaweave Studded Leather Armor",
             "Poison Leather Armor of Amphibios", "Poison Padded Leather Armor of Amphibios", "Poison Studded Leather armor of Amphibios", "Tundra Titan Leather", "Zephyr Armor, Leather", "Zephyr Armor, Studded Leather", "Studded Leather, +1"
@@ -185,7 +185,7 @@ export const itemNames = {
         ],
         VeryRare: ["Boots of Dendallen", "Boots of Haste", "Pathfinder's Boots"],
         Legendary: ["Skylit Greaves"],
-        Unique: ["???"]
+        Unique: ["Soulbond Boots: Bloodtrack Boots, Steps of the Crimson Pursuit"]
     },
 
     WondrousItem: {
@@ -281,16 +281,18 @@ export const itemNames = {
     },
 
     Ring: {
-        Common: ["Doodle Ring", "Band of Loyalty", "Pair of Bands of the Found and Lost", "Pair of Tiny Violin Rings", "Ring of Gestures", "Ring of Roses", "Ring of the Fowl Sentinel", "Ring of the Printless", "Ring of Perching"],
+        Common: ["Doodle Ring", "Band of Loyalty", "Pair of Bands of the Found and Lost", "Pair of Tiny Violin Rings", "Ring of Gestures", "Ring of Roses", "Ring of the Fowl Sentinel", "Ring of the Printless", "Ring of Perching",
+            "Common Storage Ring"
+        ],
         Uncommon: ["Ring of the Soul Harvest", "Band of the Dryad", "Brawler's Ring", "Hushed Ring", "Medusan Signet", "Ring of Eight Eyes",
-            "Ring of Healer's Heroism", "Ring of Hidden Desire", "Ring of Jumping", "Ring of Mind Shielding", "Ring of Obscuring",
+            "Ring of Healer's Heroism", "Ring of Hidden Desire", "Ring of Jumping", "Ring of Mind Shielding", "Ring of Obscuring", "Uncommon Storage Ring",
             "Ring of Puzzler's Wit", "Ring of Rituals", "Ring of Seething", "Ring of Stolen Alacrity", "Ring of Swimming",
             "Ring of Truth Telling", "Ring of Volleys", "Ring of Warmth", "Ring of Wind", "Ring of the Mute Mage",
             "Band of the Orator", "Ring of the Sandskimmer", "Rings of Shared Suffering", "Wailing Ring",
         ],
         Rare: ["Enchantment Breaker Ring", "Shared Burden Rings", "Contingency Band", "Iron Ring", "Mageplate Ring", "Minor Ring of Invisibility", "Netherse Ring of Protection",
-            "Quick Change Ring", "Ring of Acid Resistance", "Ring of Anchoring", "Ring of Animal Influence", "Ring of Changing Shapess",
-            "Ring of Cold Resistance", "Ring of Eldritch Ire", "Ring of Evasion", "Ring of Feather Falling", "Ring of Fire",
+            "Quick Change Ring", "Ring of Acid Resistance", "Ring of Anchoring", "Ring of Animal Influence", "Ring of Changing Shapess", "Rare Storage Ring",
+            "Ring of Cold Resistance", "Ring of Eldritch Ire", "Ring of Evasion", "Ring of Feather Falling", "Ring of Fire", "Ring of the Final Breath",
             "Ring of Fire Resistance", "Ring of Force Resistance", "Ring of Free Action", "Ring of Honor", "Ring of Lightning Resistance",
             "Ring of Misdirection", "Ring of Necrotic Resistance", "Ring of Poison Resistance", "Ring of Protection", "Ring of Psychic Resistance",
             "Ring of Solar's Sight", "Ring of Spell Storing", "Ring of Stone", "Ring of Temporal Salvation", "Ring of Thunder Resistance",
@@ -298,15 +300,15 @@ export const itemNames = {
             "Sage's Signet (Songbird)", "Signet Ring of Blindness", "Signet Ring of Deafness", "Signet Ring of Silence", "Starmetal Ring", "Companion's Band"
         ],
         VeryRare: ["Ramp Ring", "Ring of Scarlet Shadows", "Septum Ring of the Great Minotaur", "Blazeblood Signet", "Gateway Ring", "Horned Ring", "Ring of Amity", "Ring of Ice",
-            "Ring of Lunar Might", "Ring of Red Fury", "Ring of Regneration", "Ring of Shooting Stars", "Ring of Telekinesis",
+            "Ring of Lunar Might", "Ring of Red Fury", "Ring of Regneration", "Ring of Shooting Stars", "Ring of Telekinesis", "Very Rare Storage Ring",
             "Ring of the Split Mind", "Sage's Signet (Bear)", "Sage's Signet (Hart)", "Sage's Signet (Lion)", "Sage's Signet (Wolf)",
             "Signet Rings of the Fey Court", "Sun Eater's Mind", "Sun Eater's Soul"
         ],
         Legendary: ["Puzzle Ring of Vitality, Life, and Power", "Ring of Air Elemental Command", "Ring of Djinii Summoning", "Ring of Earth Elemental Command", "Ring of Elemental Command (Air)",
             "Ring of Elemental Command (Earth)", "Ring of Elemental Command (Fire)", "Ring of Elemental Command (Water)", "Ring of Fire Elemental Command", "Ring of Invisibility", "Ring of Spell Turning",
-            "Ring of Three Wishes", "Ring of Water Elemental Command", "Ring of the Assassin Lord", "Rings of Spell Sharing"
+            "Ring of Three Wishes", "Ring of Water Elemental Command", "Ring of the Assassin Lord", "Rings of Spell Sharing", "Legendary Storage Ring"
         ],
-        Unique: ["Ring of Winter"]
+        Unique: ["Ring of Winter", "Infinite Storage Ring"]
     },
 
     Necklace: {
@@ -334,13 +336,13 @@ export const itemNames = {
         Legendary: ["Death's Shadow", "Kiss of the Changebringer (Dormant)", "Talarith", "Talisman of Pure Good",
             "Talisman of Ultimate Evil", "Talisman of the Sphere", "Wreath of the Prism (Dormant)"
         ],
-        Unique: ["????"]
+        Unique: ["Soulbond Necklace: Whisperthread, the Living Memory"]
     },
 
     Cloak: {
         Common: ["Cloak of Billowing", "Cloak of Many Fashions", "Forecaster's Cloak"],
-        Uncommon: ["Cloak of Daggers", "Cloak of Elvenkind", "Cloak of Protection", "Cloak of the Manta Ray", "Oragami Cloak", "Otyugh Cloak", "Seer's Starlight Cloak", "Wisp Cloak",
-            "Alpine Mantle", "Couatl Herald's Mantle", "Dark Mantle", "Mantle of the Lightbender", "Nature's Mantle", "Sir Varion's Mantle", "Luna Moth Cape", "Great Owl's Shroud"
+        Uncommon: ["Cloak of Daggers", "Cloak of Elvenkind", "Cloak of Protection", "Cloak of the Manta Ray", "Oragami Cloak", "Otyugh Cloak", "Seer's Starlight Cloak", "Wisp Cloak", "Oathlord's Conquest",
+            "Alpine Mantle", "Couatl Herald's Mantle", "Dark Mantle", "Mantle of the Lightbender", "Nature's Mantle", "Sir Varion's Mantle", "Luna Moth Cape", "Great Owl's Shroud", "Cloak of the Bound Sky", "Cloak of the Unbound Acrobat",
         ],
         Rare: ["Cloak of Displacement", "Cloak of The Depths", "Cloak of the Bat", "Cloak of the Boundless Spirit", "Cloak of the Djinni", "Cloak of the Protector's Charge", "Cloak of the Riverstalker",
             "Cloak of the Stygian Bat", "Fire Dervish Cloak", "Frostfell Cloak", "Hell Hound Cloak", "Fool's Mantle", "Mantle of Adaptivity", "Mantle of Security", "Mantle of Spell Resistance", "Mantle of the Pack Lord", "Monarch Mantle", "Rogue's Mantle", "Sharkrazor Mantle", "Timeshifter's Mantle",
@@ -350,7 +352,7 @@ export const itemNames = {
             "Cape of Enlargement", "Tempest Griffon Feather Cape", "Echo of the Oni"
         ],
         Legendary: ["Cloak of Invisibility", "Meta Mantle", "Cabal's Ruin (Dormant)", "Verminshroud (Dormant)"],
-        Unique: ["???"]
+        Unique: ["Soulbond Cloak: Wraithmantle, Shroud of the Passing Veil"]
     },
 
     Potion: {
@@ -583,7 +585,7 @@ export const itemNames = {
             "Holy Avenger Warhammer", "Memento of the Shapeless Warhammer", "True Name Warhammer, +3", "Defender Maul",
             "Dragonkin Maul +3", "Forgemaster's Might Maul", "Heaven's Gavel Maul", "Holy Avenger Maul",
             "True Name Maul, +3", "Dragonkin Light Hammer +3", "Holy Avenger Light Hammer", "True Name Light Hammer, +3"],
-        Unique: ["Akmon, Hammer of Purphoros"]
+        Unique: ["Akmon, Hammer of Purphoros", "Soulbond Maul: Doomwake, the Curse-Eater"]
     },
     Axe: {
         Common: ["Battleaxe of Showmanship", "Silvered Batleaxe", "Handaxe of Showmanship", "Silvered Handaxe", "Greataxe of Showmanship", "Silvered Greataxe", "Yester Hill Axe"],
@@ -630,7 +632,7 @@ export const itemNames = {
         Legendary: ["Crypt Keeper Glaive", "Defender Glaive", "Dragonkin Glaive, +3", "Glaive of the Revenant King", "Holy Avenger Glaive",
             "Luck Blade Glaive", "Red Queen's Burden", "True Name Glaive, +3", "Vorpal Glaive", "Mage Eater Scythe", "Scythe of the Foreboding Reaper"
         ],
-        Unique: ["????"]
+        Unique: ["Soulbond Glaive: Nihlshade, Voice of the End"]
     },
 
     Dagger: {
@@ -760,93 +762,77 @@ export const itemNames = {
             "Shield of Yggdrasil", "Shield of the Cavalier", "Shield of the Everfighter", "Shield of the Uven Rune", "Shield, +3", "Spellguard Shield", "Infernal Aegis Shield"
         ],
         Legendary: ["Shield of the Blazing Dreadought", "Shield of the Hidden Lord", "Starmetal Shield", "Euryale's Aegis"],
-        Unique: ["Aegis of the Everlasting", "The Mawguard Shield"]
+        Unique: ["Aegis of the Everlasting", "The Mawguard Shield", "Soulbond Shield: Aetherhearth, the Shield-Forge"]
     },
 
     WeaponArt: {
-        Common: ["Folkvangr F", "Gjöll F", "Mystletainn F", "Instant Sword F", "Dazed Strike F", "Anger F", "Grand Finale F", "A Thousand Cuts F",
-            "Titan Slayer F", "Bellringer F", "Sandfort Spade F", "Echo F", "Vorpal Strike F", "Blood for Blood F", "Durandal F", "Killing Edge F",
-            "Backstab F", "Twin Strike F", "Heavy Blade F", "Armor Smasher F", "Hand of Greed F", "Steadfast Sword F", "Bash F", "Whirlwind F",
-            "Double Cleave F", "Snake Bite F", "Crusher F", "Avalanche F", "Sweeping Strike F", "Folkvangr F", "Fortitude F", "Folkvangr F",
+        Common: ["Folkvangr F", "Grand Finale F", "Backstab F",
+             "Retaliation F",  "Killing Edge F",
+             "Twin Strike F", "Heavy Blade F", "Armor Smasher F", "Hand of Greed F", "Steadfast Sword F", "Avalanche F", "Split Shot F",
         ],
         Uncommon: ["Folkvangr D", "Gjöll D", "Mystletainn D", "Instant Sword D", "Dazed Strike D", "Anger D", "Grand Finale D", "A Thousand Cuts D",
-            "Titan Slayer D", "Bellringer D", "Sandfort Spade D", "Echo D", "Vorpal Strike D", "Blood for Blood D", "Durandal D", "Double Cleave D", "Killing Edge D",
+            "Titan Slayer D", "Bellringer D", "Sandfort Spade D", "Echo D", "Vorpal Strike D", "Retaliation D", "Durandal D", "Double Cleave D", "Killing Edge D",
             "Backstab D", "Twin Strike D", "Heavy Blade D", "Armor Smasher D", "Hand of Greed D", "Steadfast Sword D", "Bash D",
-            "Whirlwind D", "Snake Bite D", "Crusher D", "Avalanche D", "Sweeping Strike D", "Folkvangr D", "Folkvangr D", "Folkvangr D",],
+            "Whirlwind D", "Snake Bite D", "Crusher D", "Avalanche D", "Sweeping Strike D", "Split Shot D", "Folkvangr D", "Folkvangr D",],
 
         Rare: ["Folkvangr C", "Gjöll C", "Mystletainn C", "Instant Sword C", "Dazed Strike C", "Anger C", "Grand Finale C", "A Thousand Cuts C",
-            "Titan Slayer C", "Bellringer C", "Sandfort Spade C", "Echo C", "Vorpal Strike C", "Blood for Blood C", "Durandal C", "Killing Edge C",
+            "Titan Slayer C", "Bellringer C", "Sandfort Spade C", "Echo C", "Vorpal Strike C", "Retaliation C", "Durandal C", "Killing Edge C",
             "Backstab C", "Twin Strike C", "Heavy Blade C", "Armor Smasher C", "Hand of Greed C", "Steadfast Sword C", "Bash C", "Double Cleave C",
-            "Whirlwind C", "Snake Bite C", "Crusher C", "Avalanche C", "Sweeping Strike C", "Folkvangr C", "Folkvangr C", "Folkvangr C",
+            "Whirlwind C", "Snake Bite C", "Crusher C", "Avalanche C", "Sweeping Strike C", "Split Shot C", "Folkvangr C", "Folkvangr C",
         ],
         VeryRare: ["Folkvangr B", "Gjöll B", "Mystletainn B", "Instant Sword B", "Dazed Strike B", "Anger B", "Grand Finale B", "A Thousand Cuts B",
-            "Titan Slayer B", "Bellringer B", "Sandfort Spade B", "Echo B", "Vorpal Strike B", "Blood for Blood B", "Durandal B", "Killing Edge B",
+            "Titan Slayer B", "Bellringer B", "Sandfort Spade B", "Echo B", "Vorpal Strike B", "Retaliation B", "Durandal B", "Killing Edge B",
             "Backstab B", "Twin Strike  B", "Heavy Blade B", "Armor Smasher B", "Hand of Greed B", "Steadfast Sword B", "Bash B", "Double Cleave B",
-            "Whirlwind B", "Snake Bite B", "Crusher B", "Avalanche B", "Sweeping Strike B", "Folkvangr B", "Folkvangr B", "Folkvangr B",
+            "Whirlwind B", "Snake Bite B", "Crusher B", "Avalanche B", "Sweeping Strike B", "Split Shot B", "Folkvangr B", "Folkvangr B",
         ],
         Legendary: ["Folkvangr A", "Gjöll A", "Mystletainn A", "Instant Sword A", "Dazed Strike A", "Anger A", "Grand Finale A", "A Thousand Cuts A",
-            "Titan Slayer A", "Bellringer A", "Sandfort Spade A", "Echo A", "Vorpal Strike A", "Blood for Blood A", "Durandal A", "Killing Edge A",
+            "Titan Slayer A", "Bellringer A", "Sandfort Spade A", "Echo A", "Vorpal Strike A", "Retaliation A", "Durandal A", "Killing Edge A",
             "Backstab A", "Twin Strike A", "Heavy Blade A", "Armor Smasher A", "Hand of Greed A", "Steadfast Sword A", "Bash A", "Double Cleave A",
-            "Whirlwind A", "Snake Bite A", "Crusher A", "Avalanche A", "Sweeping Strike A", "Folkvangr A", "Folkvangr A", "Folkvangr A",
+            "Whirlwind A", "Snake Bite A", "Crusher A", "Avalanche A", "Sweeping Strike A", "Split Shot A", "Folkvangr A", "Folkvangr A",
         ],
         Unique: ["Folkvangr S", "Gjöll S", "Mystletainn S", "Instant Sword S", "Dazed Strike S", "Anger S", "Grand Finale S", "A Thousand Cuts S",
-            "Titan Slayer S", "Bellringer S", "Sandfort Spade S", "Echo S", "Vorpal StrikeS", "Blood for Blood S", "Durandal S", "Killing Edge S",
+            "Titan Slayer S", "Bellringer S", "Sandfort Spade S", "Echo S", "Vorpal StrikeS", "Retaliation S", "Durandal S", "Killing Edge S",
             "Backstab S", "Twin Strike S", "Heavy Blade S", "Armor Smasher S", "Hand of Greed S", "Steadfast Sword S", "Bash S", "Double Cleave S",
-            "Whirlwind S", "Snake Bite S", "Crusher S", "Avalanche S", "Sweeping Strike S", "Folkvangr S", "Folkvangr S", "Folkvangr S",
+            "Whirlwind S", "Snake Bite S", "Crusher S", "Avalanche S", "Sweeping Strike S", "Split Shot S", "Folkvangr S", "Folkvangr S",
         ]
     },
 
     PassiveArt: {
-        Common: ["Blood Bump F", "Dark Embrace F", "Blazing Blood F", "Unbound Instrument F", "Red Skull F", "Fire Resistance F", "Acid Resistance F", "Cold Resistance F",
-            "Bludgeoning Resistance F", "Piercing Resistance F", "Poison Resistance F", "Slashing Resistance F", "Thunder Resistance F", "Lightning Resistance F", "Necrotic Resistance F", "Radiant Resistance F",
-            "Disease Resistance F", "Fortitude F", "Grit F", "Fleetfoot F", "Endurance F", "Return F", "Lock On F", "Blade Dance F",
-            "Folkvangr F", "Folkvangr F", "Fortitude F", "Folkvangr F", "Folkvangr F", "Folkvangr F", "Fortitude F", "Folkvangr F",
+        Common: ["Blazing Blood F", "Unbound Instrument F", "Red Skull F", "Fortitude F", "Grit F", "Fleetfoot F", 
+            "Threshold F", "A Thousand Cuts F",
         ],
-        Uncommon: ["Blood Bump D", "Dark Embrace D", "Blazing Blood D", "Unbound Instrument D", "Red Skull D", "Fire Resistance D", "Acid Resistance D", "Cold Resistance D",
-            "Bludgeoning Resistance D", "Piercing Resistance D", "Poison Resistance D", "Slashing Resistance D", "Thunder Resistance D", "Lightning Resistance D", "Necrotic Resistance D", "Radiant Resistance D", "Fortitude D",
-            "Disease Resistance D", "Grit D", "Fleetfoot D", "Endurance D", "Return D", "Fortitude D", "Lock On D",
-            "Blade Dance D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D",],
+        Uncommon: ["Blood Bump D", "Dark Embrace D", "Blazing Blood D", "Unbound Instrument D", "Red Skull D", "Grit D", "Fleetfoot D", "Endurance D", "Return D", "Fortitude D", "Lock On D",
+            "Blade Dance D", "Threshold D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "A Thousand Cuts D",],
 
-        Rare: ["Blood Bump C", "Dark Embrace C", "Blazing Blood C", "Unbound Instrument C", "Red Skull C", "Fire Resistance C", "Acid Resistance C", "Cold Resistance C",
-            "Bludgeoning Resistance C", "Piercing Resistance C", "Poison Resistance C", "Slashing Resistance C", "Thunder Resistance C", "Lightning Resistance C", "Necrotic Resistance C", "Radiant Resistance C",
-            "Disease Resistance C", "Fortitude C", "Grit C", "Fleetfoot C", "Endurance C", "Return C", "Lock On C", "Folkvangr C",
-            "Blade Dance C", "Lucky Living", "Lucky Defense", "Lucky Landings", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C",
+        Rare: ["Blood Bump C", "Dark Embrace C", "Blazing Blood C", "Unbound Instrument C", "Red Skull C", "Fire Resistance", "Acid Resistance", "Cold Resistance",
+            "Bludgeoning Resistance", "Piercing Resistance", "Poison Resistance", "Slashing Resistance", "Thunder Resistance", "Lightning Resistance", "Necrotic Resistance", "Poison Resistance",
+            "Disease Resistance", "Fortitude C", "Grit C", "Fleetfoot C", "Endurance C", "Return C", "Lock On C", "Threshold C",
+            "Blade Dance C", "Lucky Living", "Lucky Defense", "Lucky Landings", "", "Folkvangr C", "Folkvangr C", "A Thousand Cuts C",
         ],
-        VeryRare: ["Blood Bump B", "Dark Embrace B", "Blazing Blood B", "Unbound Instrument B", "Red Skull B", "Fire Resistance B", "Acid Resistance B", "Cold Resistance B",
-            "Bludgeoning Resistance B", "Piercing Resistance B", "Poison Resistance B", "Slashing Resistance B", "Thunder Resistance B", "Lightning Resistance B", "Necrotic Resistance B", "Radiant Resistance B",
-            "Disease Resistance B", "Fortitude B", "Grit B", "Fleetfoot B", "Endurance B", "Return B", "Lock On B", "Folkvangr B",
-            "Blade Dance B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B",
+        VeryRare: ["Blood Bump B", "Dark Embrace B", "Blazing Blood B", "Unbound Instrument B", "Red Skull B", "Grit B", "Fleetfoot B", "Endurance B", "Return B", "Lock On B", "Folkvangr B",
+            "Blade Dance B", "Fleetfoot B", "Threshold B", "Folkvangr B", "Recycle", "Folkvangr B", "Folkvangr B", "A Thousand Cuts B",
         ],
-        Legendary: ["Blood Bump A", "Dark Embrace A", "Blazing Blood A", "Unbound Instrument A", "Red Skull A", "Fire Resistance A", "Acid Resistance A", "Cold Resistance A",
-            "Bludgeoning Resistance A", "Piercing Resistance A", "Poison Resistance A", "Slashing Resistance A", "Thunder Resistance A", "Lightning Resistance A", "Necrotic Resistance A", "Radiant Resistance A",
-            "Disease Resistance A", "Fortitude A", "Grit A", "Fleetfoot A", "Endurance A", "Return A", "Lock On A", "Folkvangr A",
-            "Blade Dance A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A",
+        Legendary: ["Blood Bump A", "Dark Embrace A", "Blazing Blood A", "Unbound Instrument A", "Red Skull A", "Fortitude A", "Grit A", "Fleetfoot A", "Endurance A", "Return A", "Lock On A", "Folkvangr A",
+            "Blade Dance A", "Fleetfoot A", "Threshold A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "A Thousand Cuts A",
         ],
-        Unique: ["Blood Bump S", "Dark Embrace S", "Blazing Blood S", "Unbound Instrument S", "Red Skull S", "Fire Resistance S", "Acid Resistance S", "Cold Resistance S",
-            "Bludgeoning Resistance S", "Piercing Resistance S", "Poison Resistance S", "Slashing Resistance S", "Thunder Resistance S", "Lightning Resistance S", "Necrotic Resistance S", "Radiant Resistance S",
-            "Disease Resistance S", "Fortitude S", "Grit S", "Fleetfoot S", "Endurance S", "Return S", "Lock On S", "Folkvangr S",
-            "Blade Dance S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S",
+        Unique: ["Blood Bump S", "Dark Embrace S", "Blazing Blood S", "Unbound Instrument S", "Red Skull S", "Fortitude S", "Grit S", "Fleetfoot S", "Endurance S", "Return S", "Lock On S", "Folkvangr S",
+            "Blade Dance S", "Fleetfoot S", "Threshold S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "A Thousand Cuts S",
         ]
     },
     BoostArt: {
-        Common: ["Skuld F", "Warcry F", "Envenom F", "Predator F", "Flash Step F", "Rampage F", "Dream Catcher F", "Enhance Armaments F",
-            "Skate Foot F", "Buffer F", "Leap F", "Doppelganger F", "After Image F", "Limit Break F", "Spot Weakness F", "Fire Breathing F",
-            "Flex F", "Weight of Burden F", "Weight of Feather F", "Piercing Sight F", "Tremor Pulse F", "Trade-Off F", "Fabricator’s Touch F", "Aura Fist (Black) F",
-            "Aura Fist (Blue) F", "Aura Fist (Green) F", "Aura Fist (Silver) F", "Aura Fist (Gold) F", "Aura Fist (Red) F", "Imbue Armament (Fire) F", "Imbue Armament (Cold) F", "Imbue Armament (Acid) F",
-            "Imbue Armament (Thunder) F", "Imbue Armament (Lightning) F", "Trade-Off F", "Iron Body F", "Gravitational Repulsion F", "Gravitational Attraction F", "Obfuscation F", "Trace F", "Folkvangr F", "Malice F",
-            "Blade Dance F", "Folkvangr F", "Folkvangr F", "Folkvangr F", "Folkvangr F", "Folkvangr F", "Folkvangr F", "Folkvangr F", "Folkvangr F", "Folkvangr F",
-            "Blade Dance F", "Folkvangr F", "Folkvangr F", "Folkvangr F", "Folkvangr F", "Folkvangr F", "Folkvangr F", "Folkvangr F", "Folkvangr F", "Folkvangr F",
-            "Blade Dance F", "Folkvangr F", "Folkvangr F", "Folkvangr F", "Folkvangr F", "Folkvangr F", "Folkvangr F", "Folkvangr F", "Folkvangr F", "Folkvangr F",
-            "Blade Dance F", "Folkvangr F", "Folkvangr F", "Folkvangr F", "Folkvangr F", "Folkvangr F", "Folkvangr F", "Folkvangr F", "Folkvangr F", "Folkvangr F",
-            "Blade Dance F", "Folkvangr F", "Folkvangr F", "Folkvangr F", "Folkvangr F", "Folkvangr F", "Folkvangr F", "Folkvangr F", "Folkvangr F", "Folkvangr F",
+        Common: ["Flash Step F", "Rampage F", "Dream Catcher F", "Regeneration F",
+             "Evade F", 
+             "Piercing Sight F",  "Trade-Off F", "Fabricator’s Touch F", "Aura Fist (Black) F",
+             "Aura Fist (Red) F", "Iron Body F",  "Gravitational Attraction F",  "Trace F", 
+        
         ],
         Uncommon: ["Skuld D", "Warcry D", "Envenom D", "Predator D", "Flash Step D", "Rampage D", "Dream Catcher D", "Enhance Armaments D",
-            "Skate Foot D", "Buffer D", "Leap D", "Doppelganger D", "After Image D", "Limit Break D", "Spot Weakness D", "Fire Breathing D", "Flex D",
+            "Skate Foot D", "Buffer D", "Leap D", "Doppelganger D", "Evade D", "Limit Break D", "Spot Weakness D", "Fire Breathing D", "Flex D",
             "Weight of Burden D", "Weight of Feather D", "Piercing Sight D", "Tremor Pulse D", "Trade-Off D", "Fabricator’s Touch D", "Aura Fist (Black) D",
             "Aura Fist (Blue) D", "Aura Fist (Green) D", "Aura Fist (Silver) D", "Aura Fist (Gold) D", "Aura Fist (Red) D", "Imbue Armament (Fire) D", "Imbue Armament (Cold) D", "Imbue Armament (Acid) D",
             "Imbue Armament (Thunder) D", "Imbue Armament (Lightning) D", "Trade-Off D", "Iron Body D", "Gravitational Repulsion D", "Gravitational Attraction D", "Obfuscation D", "Trace D", "Folkvangr D", "Malice D",
             "Weight of Burden D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D",
-            "Blade Dance D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D",
+            "Regeneration D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D",
             "Blade Dance D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D",
             "Blade Dance D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D",
             "Blade Dance D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D",
@@ -854,11 +840,11 @@ export const itemNames = {
             "Blade Dance D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D",],
 
         Rare: ["Skuld C", "Warcry C", "Envenom C", "Predator C", "Flash Step C", "Rampage C", "Dream Catcher C", "Enhance Armaments C",
-            "Skate Foot C", "Buffer C", "Leap C", "Doppelganger C", "After Image C", "Limit Break C", "Spot Weakness C", "Fire Breathing C",
+            "Skate Foot C", "Buffer C", "Leap C", "Doppelganger C", "Evade C", "Limit Break C", "Spot Weakness C", "Fire Breathing C",
             "Flex C", "Weight of Burden C", "Weight of Feather C", "Piercing Sight C", "Tremor Pulse C", "Fabricator’s Touch C", "Aura Fist (Black) C", "Folkvangr C",
             "Aura Fist (Blue) C", "Aura Fist (Green) C", "Aura Fist (Silver) C", "Aura Fist (Gold) C", "Aura Fist (Red) C", "Imbue Armament (Fire) C", "Imbue Armament (Cold) C", "Imbue Armament (Acid) C",
             "Imbue Armament (Thunder) C", "Imbue Armament (Lightning) C", "Trade-Off C", "Iron Body C", "Gravitational Repulsion C", "Gravitational Attraction C", "Obfuscation C", "Trace C", "Folkvangr C", "Malice C",
-            "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C",
+            "Regeneration C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C",
             "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C",
             "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C",
             "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C",
@@ -866,33 +852,33 @@ export const itemNames = {
             "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C",
         ],
         VeryRare: ["Skuld B", "Warcry B", "Envenom B", "Predator B", "Flash Step B", "Rampage B", "Dream Catcher B", "Enhance Armaments B",
-            "Skate Foot B", "Buffer B", "Leap B", "Doppelganger B", "After Image B", "Limit Break B", "Spot Weakness B", "Fire Breathing B",
+            "Skate Foot B", "Buffer B", "Leap B", "Doppelganger B", "Evade B", "Limit Break B", "Spot Weakness B", "Fire Breathing B",
             "Flex B", "Weight of Burden B", "Weight of Feather B", "Piercing Sight B", "Tremor Pulse B", "Trade-Off B", "Fabricator’s Touch B", "Aura Fist (Black) B",
             "Aura Fist (Blue) B", "Aura Fist (Green) B", "Aura Fist (Silver) B", "Aura Fist (Gold) B", "Aura Fist (Red) B", "Imbue Armament (Fire) B", "Imbue Armament (Cold) B", "Imbue Armament (Acid) B",
             "Imbue Armament (Thunder) B", "Imbue Armament (Lightning) B", "Trade-Off B", "Iron Body B", "Gravitational Repulsion B", "Gravitational Attraction B", "Obfuscation B", "Trace B", "Folkvangr B", "Malice B",
-            "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B",
+            "Regeneration B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B",
             "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B",
             "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B",
             "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B",
             "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B",
         ],
         Legendary: ["Skuld A", "Warcry A", "Envenom A", "Predator A", "Flash Step A", "Rampage A", "Dream Catcher A", "Enhance Armaments A",
-            "Skate FootA", "Buffer A", "Leap A", "Doppelganger A", "After Image A", "Limit Break A", "Spot Weakness A", "Fire Breathing A",
+            "Skate FootA", "Buffer A", "Leap A", "Doppelganger A", "Evade A", "Limit Break A", "Spot Weakness A", "Fire Breathing A",
             "Flex A", "Weight of Burden A", "Weight of Feather A", "Piercing Sight A", "Tremor Pulse A", "Trade-Off A", "Fabricator’s Touch A", "Aura Fist (Black) A",
             "Aura Fist (Blue) A", "Aura Fist (Green) A", "Aura Fist (Silver) A", "Aura Fist (Gold) A", "Aura Fist (Red) A", "Imbue Armament (Fire) A", "Imbue Armament (Cold) A", "Imbue Armament (Acid) A",
             "Imbue Armament (Thunder) A", "Imbue Armament (Lightning) A", "Trade-Off A", "Iron Body A", "Gravitational Repulsion A", "Gravitational Attraction A", "Obfuscation A", "Trace A", "Folkvangr A", "Malice A",
-            "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A",
+            "Regeneration A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A",
             "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A",
             "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A",
             "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A",
             "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A", "Folkvangr A",
         ],
         Unique: ["Skuld S", "Warcry S", "Envenom S", "Predator S", "Flash Step S", "Rampage S", "Dream Catcher S", "Enhance Armaments S",
-            "Skate Foot S", "Buffer S", "Leap S", "Doppelganger S", "After Image S", "Limit Break S", "Spot Weakness S", "Fire Breathing S",
+            "Skate Foot S", "Buffer S", "Leap S", "Doppelganger S", "Evade S", "Limit Break S", "Spot Weakness S", "Fire Breathing S",
             "Flex S", "Weight of Burden S", "Weight of Feather S", "Piercing Sight S", "Tremor Pulse S", "Trade-Off S", "Fabricator’s Touch S", "Aura Fist (Black) S",
             "Aura Fist (Blue) S", "Aura Fist (Green) S", "Aura Fist (Silver) S", "Aura Fist (Gold) S", "Aura Fist (Red) S", "Imbue Armament (Fire) S", "Imbue Armament (Cold) S", "Imbue Armament (Acid) S",
             "Imbue Armament (Thunder) S", "Imbue Armament (Lightning) S", "Trade-Off S", "Iron Body S", "Gravitational Repulsion S", "Gravitational Attraction S", "Obfuscation S", "Trace S", "Folkvangr S", "Malice S",
-            "Blade Dance S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S",
+            "Regeneration S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S",
             "Blade Dance S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S",
             "Blade Dance S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S",]
     },
@@ -907,11 +893,11 @@ export const itemNames = {
 
     ExperiencePoints: {
         Common: [100, 200, 300],
-        Uncommon: [350, 500, 650],
-        Rare: [750, 1000, 1150, 1300],
-        VeryRare: [1250, 1500, 1750, 2000],
-        Legendary: [2500, 3250, 4000],
-        Unique: [10000]
+        Uncommon: [500, 750, 1000],
+        Rare: [1250, 1500, 1750, 2000],
+        VeryRare: [2500, 3500, 5000, 7500],
+        Legendary: [8000, 9500, 12000],
+        Unique: [25000]
     },
 
     Crossbow: {
@@ -1012,7 +998,7 @@ export const itemNames = {
             "True Name Javelin, +3"
         ],
         Unique: [
-            "Khrusor, Spear of Heliod"
+            "Khrusor, Spear of Heliod", "Soulbond Trident: Nyrulna, Soul of the Tempest"
         ]
     },
 
