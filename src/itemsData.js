@@ -393,19 +393,19 @@ export const itemNames = {
             "Jo'Catian Denier Shortsword", "Mockingblade Shortsword", "Runegold Conduit Shortsword",
             "Shortsword of Blind Faith", "Shortsword of Spite", "Shortsword of Vengeance",
             "Shortsword of Verdict", "Shortsword of Warning", "Shortsword of the Pack Leader",
-            "Shortsword, +1", "True Name Shortsword", "Young Dragon Edge Shortsword",
-            "True Name Longsword", "Young Dragon Edge Longsword", "Adamantine Rapier", "Hellfire Rapier", "Marlin Lunger ( Rapier )",
+            "Shortsword, +1",  "Young Dragon Edge Shortsword",
+            "Young Dragon Edge Longsword", "Adamantine Rapier", "Hellfire Rapier", "Marlin Lunger ( Rapier )",
             "Rapier of Blind Faith", "Rapier of Spite", "Rapier of Vengeance",
             "Rapier of Verdict", "Rapier of Warning", "Rapier, +1",
-            "Rat King Rapier", "Runegold Conduit Rapier", "True Name Rapier",
+            "Rat King Rapier", "Runegold Conduit Rapier", 
             "Young Dragon Edge Rapier", "Adamantine Greatsword", "Greatsword of Blind Faith", "Greatsword of Spite",
             "Greatsword of Vengeance", "Katana, +1", "Greatsword of Verdict", "Greatsword of Warning",
             "Greatsword of the Pack Leader", "Greatsword, +1", "Hellfire Greatsword",
             "Orichalum Greatsword, +1", "Runegold Conduit Greatsword", "Silver Eagle Greatsword",
-            "True Name Greatsword", "Adamantine Scimitar", "Double-Bladed Scimitar of Verdict", "Double-Blades Scimitar of Blind Faith",
+           "Adamantine Scimitar", "Double-Bladed Scimitar of Verdict", "Double-Blades Scimitar of Blind Faith",
             "Hellfire Double-Bladed Scimitar", "Hellfire Scimitar", "Jo'Catian Denier Scimitar", "Runegold Conduit Scimitar",
             "Scimitar of Blind Faith", "Scimitar of Spite", "Scimitar of Vengeance", "Scimitar of Verdict",
-            "Scimitar of Warning", "Scimitar, +1", "True Name Scimitar", "Young Dragon Edge Scimitar"],
+            "Scimitar of Warning", "Scimitar, +1",  "Young Dragon Edge Scimitar"],
         Rare: ["Acheron Blade, Longsword", "Adult Dragon Edge Longsword", "Coldfire Longsword",
             "Corpse Slayer, Longsword", "Couatl Herald's Fang Longsword", "Crystal Longsword",
             "Delerium-Forged Longsword", "Katana, +2", "Riptide Katana", "Dragon Slayer Longsword", "Dragonkin Longsword +1",
@@ -414,7 +414,7 @@ export const itemNames = {
             "Longsword of Mooring", "Longsword of Resonance", "Longsword of Wounding",
             "Longsword, +2", "Lycan Longsword", "Lycan Slayer Longsword", "Mind Blade Longsword",
             "Monster Tamer's Longsword", "Runegold Conduit Longsword", "Solacesteel Mitigator Longsword",
-            "True Name Longsword, +1", "Verax Longsword", "Vicious Longsword", "Voltedge Longsword",
+            "Verax Longsword", "Vicious Longsword", "Voltedge Longsword",
             "Warding Longsword", "Weapon of Certain Death, Longsword", "Whirling Longsword",
             "Acheron Blade, Shortsword", "Adult Dragon Edge Shortsword", "Coldfire Shortsword",
             "Corpse Slayer, Shortsword", "Couatl Herald's Fang Shortsword", "Crystal Shortsword",
@@ -424,7 +424,7 @@ export const itemNames = {
             "Monster Tamer's Shortsword", "Rift Sheath Shortswords (Requires Riff Sheath Quarterstaff)",
             "Runegold Conduit Shortsword", "Shortsword of Life Stealing", "Shortsword of Wounding",
             "Shortsword, +2", "Solacesteel Mitigator Shortsword", "Spatha, The Shortsword of Martial Mystery",
-            "True Name Shortsword, +1", "Verax Shortsword", "Vicious Shortsword",
+            "Verax Shortsword", "Vicious Shortsword",
             "Voltedge Shortsword", "Warding Shortsword", "Weapon of Certain Death, Shortsword",
             "Whirling Shortsword", "Wyvernblade Shortsword", "Sun Blade", "Acheron Blade, Rapier", "Adult Dragon Edge Rapier", "Blood Rose Rapier",
             "Cinnabar Rapier", "Coldfire Rapier", "Corpse Slayer, Rapier",
@@ -434,7 +434,7 @@ export const itemNames = {
             "Lunar Rapier", "Lycan Rapier", "Mind Blade Rapier",
             "Monster Tamer's Rapier", "Rapier of Life Stealing", "Rapier of Wounding",
             "Rapier, +2", "Relentless Stinger ( Rapier )", "Runegold Conduit Rapier",
-            "Solacesteel Mitigator Rapier", "Tooth Rapier", "True Name Rapier, +1",
+            "Solacesteel Mitigator Rapier", "Tooth Rapier", 
             "Verax Rapier", "Vicious Rapier", "Vicious Rapier, +1",
             "Voltedge Rapier", "Warding Rapier", "Weapon of Certain Death, Rapier",
             "Whirling Rapier", "Wyvernblade Rapier", "Acheron Blade, Greatsword", "Blood Rose Greatsword", "Carnivora Carnival Greatsword",
@@ -445,14 +445,14 @@ export const itemNames = {
             "Greatsword of Wounding", "Greatsword, +2", "Jishin, Earth Render Greatsword (Rare)",
             "Lycan Greatsword", "Mind Blade Greatsword", "Monster Tamer's Greatsword",
             "Runegold Conduit Greatsword", "Seadevil’s Fang Greatsword", "Solacesteel Mitigator Greatsword",
-            "True Name Greatsword, +1", "Verax Greatsword", "Vicious Greatsword",
+            "Verax Greatsword", "Vicious Greatsword",
             "Voltedge Greatsword", "Warding Greatsword", "Weapon of Certain Death, Greatsword",
             "Wyvernwing Greatsword", "Acheron Blade, Scimitar", "Adult Dragon Edge Scimitar", "Astral Shard Scimitar", "Coldfire Double-Bladed Scimitar",
             "Coldfire Scimitar", "Corpse Slayer, Scimitar", "Crystal Scimitar", "Delerium-Forged Scimitar", "Dragon Slayer Scimitar",
             "Dragonkin Scimitar +1", "Flame Tongue Scimitar", "Gambler's Blade, Scimitar", "Gentleman’s Speedy Saber",
             "Giant Slayer Scimitar", "Lightning Khopesh", "Lycan Scimitar", "Mind Blade Scimitar", "Mirrorlight Edge Scimitar",
             "Runegold Conduit Scimitar", "Scimitar of Life Stealing", "Scimitar of Wounding", "Scimitar, +2", "Spirit Sheath Scimitar",
-            "True Name Scimitar, +1", "Urnblade", "Verax Double-Bladed Scimitar", "Verax Scimitar", "Vicious Scimitar",
+             "Urnblade", "Verax Double-Bladed Scimitar", "Verax Scimitar", "Vicious Scimitar",
             "Viper Khopesh Scimitar", "Voltedge Scimitar", "Warding Double-Bladed Scimitar", "Warding Scimitar",
             "Weapon of Certain Death, Scimitar", "Whirling Scimitar"
         ],
@@ -465,7 +465,7 @@ export const itemNames = {
             "Longsword, +3", "Mage Slayer Longsword", "Molten Maw ( Longsword )", "Nine Lives Stealer Longsword",
             "Polymorph Blade, Longsword", "Pseudo Slashing Longsword", "Quadrimium Longsword",
             "Ruidium Longsword", "Blade of the Spelldrinker", "Runegold Conduit Longsword", "Spell Scriber Longsword",
-            "Thousand-Cuts Longsword", "True Name Longsword, +2", "Xibalban Blade Longsword",
+            "Thousand-Cuts Longsword",  "Xibalban Blade Longsword",
             "Ancient Dragon Edge Shortsword", "Blade of the Medusa, Shortsword", "Bloodshed Shortsword",
             "Dancing Shortsword", "Dragonkin Shortsword +2", "Fool's Shortsword",
             "Foresight Shortsword", "Frost Brand Shortsword", "Frostburn Blade Shortsword",
@@ -473,13 +473,13 @@ export const itemNames = {
             "Ioun Blade Shortsword", "Jishin, Earth Render Shortsword (Very Rare)", "Ki Blade ( Shortsword )",
             "Nine Lives Stealer Shortsword", "Polymorph Blade, Shortsword", "Ruidium Shortsword",
             "Runegold Conduit Shortsword", "Shortsword of Throne's Command", "Shortsword, +3",
-            "True Name Shortsword, +2", "Ancient Dragon Edge Rapier", "Blade of the Medusa, Rapier", "Bloodshed Rapier",
+             "Ancient Dragon Edge Rapier", "Blade of the Medusa, Rapier", "Bloodshed Rapier",
             "Charged Rapier", "Dancing Rapier", "Dragonkin Rapier +2", "Ancient Dragon Edge Scimitar", "Blade of the Medusa, Scimitar", "Bloodshed Scimitar", "Bloodthirster Scimitar",
             "Dancing Scimitar", "Double-Bladed Scimitar of Throne's Command", "Dragonkin Scimitar +2", "Fire Stone Double-Bladed Scimitar",
             "Fool's Double-Bladed Scimitar", "Fool's Scimitar", "Foresight Scimitar", "Frost Brand Scimitar", "Frostburn Blade Scimitar",
             "Give and Take Scimitar", "Ioun Blade Double-Bladed Scimitar", "Ioun Blade Scimitar", "Laughing Luna", "Lurking Dark Double-Bladed Scimitar",
             "Magebane Scimitar", "Nine Lives Stealer Scimitar", "Polymorph Blade, Scimitar", "Ruidium Scimitar", "Runegold Conduit Scimitar",
-            "Scimitar of Sharpness", "Scimitar of Speed", "Scimitar of Throne's Command", "Scimitar, +3", "True Name Scimitar, +2",
+            "Scimitar of Sharpness", "Scimitar of Speed", "Scimitar of Throne's Command", "Scimitar, +3", 
             "Wind and Whirl Scimitars",
             "Elegant Egoist Rapier", "Fool's Rapier", "Foresight Rapier",
             "Frost Brand Rapier", "Frostburn Blade Rapier", "Ioun Blade Rapier",
@@ -487,7 +487,7 @@ export const itemNames = {
             "Polymorph Blade, Rapier", "Rapier of Throne's Command", "Rapier, +3",
             "Royal Blade of Amphibios ( Rapier )", "Ruidium Rapier", "Runegold Conduit Rapier",
             "Spiral Spark Rapier", "The Rose Basket Rapier", "Timepiercer Rapier",
-            "True Name Rapier, +2", "Avant Garde Greatsword", "Baku’s Quadrimium Greatsword", "Blade of the Medusa, Greatsword",
+             "Avant Garde Greatsword", "Baku’s Quadrimium Greatsword", "Blade of the Medusa, Greatsword",
             "Bloodshed Greatsword", "Dancing Greatsword", "Dragonkin Greatsword +2",
             "Electro-Immolator Greatsword", "Fool's Greatsword", "Foresight Greatsword",
             "Frost Brand Greatsword", "Frostburn Blade Greatsword", "Greatsword of Sanctuary",
@@ -495,53 +495,53 @@ export const itemNames = {
             "Impact ( Greatsword )", "Ioun Blade Greatsword", "Nine Lives Stealer Greatsword",
             "Polymorph Blade, Greatsword", "Quadrimium Greatsword", "Royal Cerulean Crest Greatsword",
             "Ruidium Greatsword", "Runegold Conduit Greatsword", "Thousand-Cuts Greatsword",
-            "Titan's Tooth Claymore ( Greatsword )", "True Name Greatsword, +2"],
+            "Titan's Tooth Claymore ( Greatsword )", ],
         Legendary: ["Aberrant Nail ( Longsword )", "Ao Hai's Fang ( Longsword )", "Blade of the Unbroken Circle ( Longsword )",
             "Defender Longsword", "Dragon-Kindled Edge Longsword", "Dragonkin Longsword +3",
             "Eternal Slayer Longsword", "Godsteel Worldcarver Longsword", "Greedy Gladius Longsword",
             "Holy Avenger Longsword", "Infernal Ichor Longsword", "Jishin, Earth Render Longsword (Legendary)",
-            "Longsword of the Planes", "Longsword of the Spelldrinker", "Luck Blade Longsword", "Moonblade Longsword", "True Name Longsword, +3",
+            "Longsword of the Planes", "Longsword of the Spelldrinker", "Luck Blade Longsword", "Moonblade Longsword", 
             "Vorpal Longsword", "Windrazor Longsword", "Brilliance ( Shortsword )", "Defender Shortsword", "Dragonkin Shortsword +3",
             "Eternal Slayer Shortsword", "Gladius of the Everfighter ( Shortsword )",
             "Cymrith Rapier", "Defender Rapier", "Dragonkin Rapier +3", "Defender Greatsword", "Dragonkin Greatsword +3", "Eternal Slayer Greatsword",
             "Fallen Star Greatswords", "Godsteel Worldcarver Greatsword", "Greater Silver Sword",
             "Greatsword of the Planes", "Holy Avenger Greatsword", "Kin-Rin Greatsword - Series 7",
             "Liar’s Lament Greatsword", "Luck Blade Greatsword", "Moonblade Greatsword", "Bolide Blade Katana",
-            "The Crimson Claymore ( Greatsword )", "True Name Greatsword, +3", "Vorpal Greatsword",
+            "The Crimson Claymore ( Greatsword )", "Vorpal Greatsword",
             "Eternal Slayer Rapier", "Holy Avenger Rapier", "Howl ( Rapier )", "Defender Scimitar", "Double-Bladed Scimitar of the Planes", "Dragonkin Scimitar +3", "Eternal Slayer Scimitar",
             "Holy Avenger Scimitar", "Luck Blade Scimitar", "Memento of the Shapeless Scimitar", "Moonblade Scimitar",
-            "Scimitar of the Planes", "True Name Scimitar, +3", "Vorpal Scimitar",
+            "Scimitar of the Planes", "Vorpal Scimitar",
             "Luck Blade Rapier", "Maestro’s Conductive Rapier",
             "Moonblade Rapier", "Octavius' Saber ( Rapier )", "Pride and Prejudice ( Rapier )",
-            "Rapier of the Planes", "True Name Rapier, +3", "Violet King's Promise ( Rapier )",
+            "Rapier of the Planes","Violet King's Promise ( Rapier )",
             "Holy Avenger Shortsword", "Luck Blade Shortsword", "Sun Blade Lorkor", "Grave Digger",
-            "Moonblade Shortsword", "Shortsword of the Planes", "True Name Shortsword, +3", "Blade of Forlorn Hope"],
+            "Moonblade Shortsword", "Shortsword of the Planes",  "Blade of Forlorn Hope"],
         Unique: ["Dominion Authority", "Paradoxical Paradigm Longsword", "Silverwind, The Cleansing Breeze ( Longsword )", "Blade of Avernus", "Void Blade", "Solaris ( Longsword )", "Absolute Arbiter"]
     },
     Bow: {
         Common: ["Longbow of Showmanship", "Silvered Longbow", "Silvered Shortbow",
             "Silvered Sling", "Sling of Showmanship", "Shortbow of Showmanship"],
         Uncommon: ["Battlement Longbow", "Candleflame Longbow", "Hellfire Longbow",
-            "Longbow of Warning", "Longbow, +1", "True Name Longbow", "Battlement Shortbow", "Candleflame Shortbow", "Hellfire Shortbow",
-            "Shortbow of Warning", "Shortbow, +1", "True Name Shortbow",
+            "Longbow of Warning", "Longbow, +1", "Battlement Shortbow", "Candleflame Shortbow", "Hellfire Shortbow",
+            "Shortbow of Warning", "Shortbow, +1", 
             "Hellfire Sling", "Sling of Giant Felling",
             "Sling of Warning", "Sling, +1", "Torchbearer’s Sling",
-            "True Name Sling"],
+            ],
         Rare: ["Corpse Slayer, Longbow", "Couatl Herald's Reach Longbow", "Dragon Slayer Longbow", "Dragon Wing Longbow", "Giant Slayer Longbow", "Glimmering Moonbow, Longbow", "Bow of the Eldritch Archer",
             "Killskull Longbow of Dread", "Longbow of Conflagration", "Longbow of the Cobra", "Brass Wyrmshide Bow", "Longbow of the Twilight Valkyrie", "Longbow, +2", "Lycan Longbow", "Blue Wyrmshide Bow", "Bow of Mind Thievery",
-            "Mirrorlight Stinger Longbow", "Oceanic Longbow", "Redeemer's Regards ( Longbow )", "Screaming Longbow", "Starcrossed Longbow", "True Name Longbow, +1", "Air Render ( Shortbow )", "Corpse Slayer, Shortbow", "Couatl Herald's Reach Shortbow",
+            "Mirrorlight Stinger Longbow", "Oceanic Longbow", "Redeemer's Regards ( Longbow )", "Screaming Longbow", "Starcrossed Longbow",  "Air Render ( Shortbow )", "Corpse Slayer, Shortbow", "Couatl Herald's Reach Shortbow",
             "Dragon Slayer Shortbow", "Dragon Wing Shortbow", "Giant Slayer Shortbow", "Bronze Wyrmshide Bow", "Copper Wyrmshide Bow", "Glimmering Moonbow, Shortbow", "Lycan Shortbow", "Mirrorlight Stinger Shortbow", "Gold Wyrmshide Bow", "Red Wyrmshide Bow",
             "Oceanic Shortbow", "Shortbow of Conflagration", "Shortbow of the Cobra", "Black Wyrmshide Bow", "Shortbow of the Twilight Valkyrie", "Shortbow, +2", "Splintershot Shortbow", "Silver Wyrmshide Bow", "White Wyrmshide Bow",
-            "Starcrossed Shortbow", "True Name Shortbow, +1", "Vicious Shortbow", "Weapon of Certain Death, Shortbow", "Webgrip Shortbow", "Blazing Bowstring",
+            "Starcrossed Shortbow",  "Vicious Shortbow", "Weapon of Certain Death, Shortbow", "Webgrip Shortbow", "Blazing Bowstring",
             "Vicious Longbow", "Weapon of Certain Death, Longbow", "Webgrip Longbow", "Corpse Slayer, Sling", "Dragon Slayer Sling", "Giant Slayer Sling",
-            "Lycan Sling", "Oceanic Sling", "Pennypuncher Slingshot", "Sling of the Tiny Giant", "Sling, +2", "True Name Sling, +1", "Two-Birds Sling", "Vicious Sling", "Weapon of Certain Death, Sling"],
+            "Lycan Sling", "Oceanic Sling", "Pennypuncher Slingshot", "Sling of the Tiny Giant", "Sling, +2", "Two-Birds Sling", "Vicious Sling", "Weapon of Certain Death, Sling"],
         VeryRare: ["Arc of the Alicorn ( Longbow )", "Arkano Longbow", "Energy Longbow", "Foresight Longbow", "Longbow of Melodies", "Longbow of Throne's Command",
             "Longbow of the Spelldrinker", "Longbow, +3", "Nine Lives Stealer Longbow", "Oathbow Longbow", "Phasing Longbow", "Ruidium Longbow",
-            "Shooting Star Longbow", "True Name Longbow, +2", "Energy Shortbow", "Foresight Shortbow", "Harp of Valor Shortbow", "Nine Lives Stealer Shortbow", "Oath Shortbow", "Phasing Shortbow", "Bow of Four",
-            "Ruidium Shortbow", "Shortbow of Melodies", "Shortbow of the Spelldrinker", "Shortbow, +3", "True Name Shortbow, +2", "Forcebreaker Sling", "Foresight Sling", "Nine Lives Stealer Sling",
-            "Ruidium Sling", "Sling, +3", "True Name Sling, +2"],
+            "Shooting Star Longbow",  "Energy Shortbow", "Foresight Shortbow", "Harp of Valor Shortbow", "Nine Lives Stealer Shortbow", "Oath Shortbow", "Phasing Shortbow", "Bow of Four",
+            "Ruidium Shortbow", "Shortbow of Melodies", "Shortbow of the Spelldrinker", "Shortbow, +3",  "Forcebreaker Sling", "Foresight Sling", "Nine Lives Stealer Sling",
+            "Ruidium Sling", "Sling, +3", ],
         Legendary: ["Holy Avenger Longbow", "Longbow of the Healing Hearth", "Slaying Longbow",
-            "Spellfire Longbow", "True Name Longbow, +3", "Holy Avenger Shortbow", "True Name Shortbow, +3"],
+            "Spellfire Longbow", "Holy Avenger Shortbow", ],
         Unique: ["Ionbreaker, the Tempest's Reach Longbow", "Cupid's Bow", "Ephixis, Bow of Nylea"]
     },
     Hammer: {
@@ -549,42 +549,42 @@ export const itemNames = {
             "Maul of Showmanship", "Silvered Maul",
             "Light Hammer of Showmanship", "Redsmith Light Hammer",
             "Silvered Light Hammer"],
-        Uncommon: ["Adamantine Warhammer", "Hellfire Warhammer", "True Name Warhammer",
+        Uncommon: ["Adamantine Warhammer", "Hellfire Warhammer", 
             "Warhammer of Blind Faith", "Warhammer of Spite",
             "Warhammer of Verdict", "Warhammer of Warning",
             "Warhammer, +1", "Adamantine Maul", "Hellfire Maul",
             "Maul of Blind Faith", "Maul of Spite", "Maul of Verdict",
             "Maul of Warning", "Maul, +1", "Ol' Stumpy",
-            "Silver Eagle Maul", "True Name Maul", "Adamantine Light Hammer",
+            "Silver Eagle Maul", "Adamantine Light Hammer",
             "Hellfire Light Hammer", "Light Hammer of Blind Faith",
             "Light Hammer of Spite", "Light Hammer of Verdict",
             "Light Hammer of Warning", "Light Hammer of Whispers",
-            "Light Hammer, +1", "True Name Light Hammer"],
+            "Light Hammer, +1", ],
         Rare: ["Coldfire Warhammer", "Corpse Slayer, Warhammer", "Dragon Slayer Warhammer", "Dragonkin Warhammer +1",
-            "Flame Tongue Warhammer", "Giant Slayer Warhammer", "Lycan Warhammer", "True Name Warhammer, +1",
+            "Flame Tongue Warhammer", "Giant Slayer Warhammer", "Lycan Warhammer", ,
             "Verax Warhammer", "Vicious Warhammer",
             "Warding Warhammer", "Warhammer of Eruptions", "Warhammer of Mooring", "Warhammer, +2",
             "Weapon of Certain Death, Warhammer", "Whirling Warhammer",
             "Battlebrew Maul", "Coldfire Maul", "Corpse Slayer, Maul", "Dragon Slayer Maul", "Dragonkin Maul +1", "FireBrand Maul",
             "Flame Tongue Maul", "Focus Breaker Maul", "Gelatinous Maul", "Giant Slayer Maul",
             "Ironleaf Maul of Entanglement", "Lycan Maul", "Maul of the Guiding Star", "Maul, +2",
-            "Radiant Defender Maul", "True Name Maul, +1", "Verax Maul", "Vicious Maul", "Warding Maul",
+            "Radiant Defender Maul",  "Verax Maul", "Vicious Maul", "Warding Maul",
             "Weapon of Certain Death, Maul", "Coldfire Light Hammer", "Corpse Slayer, Light Hammer", "Dragon Slayer Light Hammer",
             "Dragonkin Light Hammer +1", "Flame Tongue Light Hammer", "Giant Slayer Light Hammer", "Light Hammer, +2",
             "Lycan Light Hammer", "Master Machinist's Marvelous Mallet", "Oceanic Light Hammer", "Quake Light Hammer",
-            "Starmetal Striker Light Hammer", "True Name Light Hammer, +1", "Verax Light Hammer", "Vicious Light Hammer",
+            "Starmetal Striker Light Hammer", "Verax Light Hammer", "Vicious Light Hammer",
             "Warding Light Hammer", "Weapon of Certain Death, Light Hammer", "Whirling Light Hammer"],
         VeryRare: ["Comet Smasher Warhammer", "Dragonkin Warhammer +2", "Festerwood Masher Warhammer", "Forcebreaker Warhammer",
-            "Foresight Warhammer", "Nine Lives Stealer Warhammer", "Ruidium Warhammer", "True Name Warhammer, +2",
+            "Foresight Warhammer", "Nine Lives Stealer Warhammer", "Ruidium Warhammer", 
             "Warhammer of Throne's Command", "Warhammer, +3", "Comet Smasher Maul", "Dragonkin Maul +2",
             "Festerwood Masher Maul", "Forcebreaker Maul", "Foresight Maul", "Maul of Throne's Command",
-            "Maul, +3", "Molten Hammer", "Nine Lives Stealer Maul", "Quagmire Maul", "Ruidium Maul", "True Name Maul, +2",
+            "Maul, +3", "Molten Hammer", "Nine Lives Stealer Maul", "Quagmire Maul", "Ruidium Maul",
             "Comet Smasher Light Hammer", "Dragonkin Light Hammer +2", "Forcebreaker Light Hammer", "Foresight Light Hammer",
-            "Light Hammer, +3", "Nine Lives Stealer Light Hammer", "Ruidium Light Hammer", "True Name Light Hammer, +2", "Hammer of Runic Focus"],
+            "Light Hammer, +3", "Nine Lives Stealer Light Hammer", "Ruidium Light Hammer",  "Hammer of Runic Focus"],
         Legendary: ["Defender Warhammer", "Dragonkin Warhammer +3", "Emberheart Warhammer", "Forgemaster's Might Warhammer",
-            "Holy Avenger Warhammer", "Memento of the Shapeless Warhammer", "True Name Warhammer, +3", "Defender Maul",
+            "Holy Avenger Warhammer", "Memento of the Shapeless Warhammer", "Defender Maul",
             "Dragonkin Maul +3", "Forgemaster's Might Maul", "Heaven's Gavel Maul", "Holy Avenger Maul",
-            "True Name Maul, +3", "Dragonkin Light Hammer +3", "Holy Avenger Light Hammer", "True Name Light Hammer, +3"],
+             "Dragonkin Light Hammer +3", "Holy Avenger Light Hammer", ],
         Unique: ["Akmon, Hammer of Purphoros", "Soulbond Maul: Doomwake, the Curse-Eater"]
     },
     Axe: {
@@ -618,19 +618,19 @@ export const itemNames = {
     Glaive: {
         Common: ["Silvered Glaive", "Moon-Touched, Glaive"],
         Uncommon: ["Adamantine Glaive", "Glaive of Blind Faith", "Glaive of Spite", "Glaive of Vengeance", "Glaive of Warning",
-            "Glaive, +1", "Hellfire Glaive", "True Name Glaive"
+            "Glaive, +1", "Hellfire Glaive", 
         ],
         Rare: ["Coldfire Glaive", "Corpse Slayer, Glaive", "Dragon Slayer Glaive", "Flame Tongue Glaive", "Giant Slayer Glaive",
             "Glaive of Life Stealing", "Glaive of Wounding", "Glaive of the Forest Guardian", "Glaive, +2", "Knight's Standard of Virtue Glaive",
-            "Lycan Glaive", "Rime of the Justicars Glaive", "True Name Glaive, +1", "Vicious Glaive", "Warding Glaive", "Wavebender's Leiomano Glaive",
+            "Lycan Glaive", "Rime of the Justicars Glaive", , "Vicious Glaive", "Warding Glaive", "Wavebender's Leiomano Glaive",
             "Weapon of Certain Death, Glaive", "Covolt Scythe"
         ],
         VeryRare: ["Dragonkin Glaive, +2", "Firebrand Glaive", "Foresight Glaive", "Frost Brand Glaive", "Glaive of Sharpness",
-            "Glaive of Throne's Command", "Glaive, +3", "Nine Lives Stealer Glaive", "Aciurgist’s Blade", "Ruidium Glaive", "True Name Glaive, +2",
+            "Glaive of Throne's Command", "Glaive, +3", "Nine Lives Stealer Glaive", "Aciurgist’s Blade", "Ruidium Glaive",
             "Snuff Scythe"
         ],
         Legendary: ["Crypt Keeper Glaive", "Defender Glaive", "Dragonkin Glaive, +3", "Glaive of the Revenant King", "Holy Avenger Glaive",
-            "Luck Blade Glaive", "Red Queen's Burden", "True Name Glaive, +3", "Vorpal Glaive", "Mage Eater Scythe", "Scythe of the Foreboding Reaper"
+            "Luck Blade Glaive", "Red Queen's Burden",  "Vorpal Glaive", "Mage Eater Scythe", "Scythe of the Foreboding Reaper"
         ],
         Unique: ["Soulbond Glaive: Nihlshade, Voice of the End"]
     },
@@ -640,28 +640,28 @@ export const itemNames = {
         Uncommon: ["Adamantine Dagger", "Bloodthirsty Bistoury ( Dagger )", "Courtesan's Fanblade ( Dagger )", "Covolt Dagger", "Dagger of Blind Faith", "Dagger of First Light",
             "Dagger of Spite", "Dagger of Vengeance", "Dagger of Verdict", "Dagger of Warning", "Dagger, +1", "Dusk Dagger (Uncommon)",
             "Frozen Dagger", "Galepierce Dagger", "Glass Carver ( Dagger )", "Hellfire Dagger", "Kukulthan Cultist Dagger", "Riff's Dimensional Ripper ( Dagger )",
-            "True Name Dagger", "Young Dragon Edge Dagger", "Adamantine Sickle", "Harvest Sickle", "Hellfire Sickle", "Ice Sickle", "Moon Sickle, +1", "Sickle of Blind Faith",
-            "Sickle of Spite", "Sickle of Verdict", "Sickle of Warning", "Sickle, +1", "True Name Sickle", "Young Dragon Edge Sickle"
+            "Young Dragon Edge Dagger", "Adamantine Sickle", "Harvest Sickle", "Hellfire Sickle", "Ice Sickle", "Moon Sickle, +1", "Sickle of Blind Faith",
+            "Sickle of Spite", "Sickle of Verdict", "Sickle of Warning", "Sickle, +1",  "Young Dragon Edge Sickle"
         ],
         Rare: ["Adult Dragon Edge Dagger", "Bandolier of the Elements ( Daggers )", "Basilisk Dagger", "Coldfire Dagger", "Corpse Slayer, Dagger", "Couatl Herald's Fang Dagger",
             "Dagger of Blindsight", "Dagger of Denial", "Dagger of Venom", "Dagger, +2", "Dauntless Devotion Dagger",
             "Dragon Slayer Dagger", "Dragonkin Dagger +1", "Dragontooth Dagger", "Dusk Dagger (Rare)", "Faithful Feathers Daggers", "Feather Dagger",
             "Flame Tongue Dagger", "Giant Slayer Dagger", "Lamian Facestealer ( Dagger )", "Lycan Dagger", "Obsidian Star Dagger", "Oceanic Dagger",
-            "Pick and Pocket ( Dagger )", "Seraphim's Stiletto ( Dagger )", "Spiderbite Daggers", "True Name Dagger, +1", "Verax Dagger", "Vicious Dagger",
+            "Pick and Pocket ( Dagger )", "Seraphim's Stiletto ( Dagger )", "Spiderbite Daggers", "Verax Dagger", "Vicious Dagger",
             "Voltedge Dagger", "Wandblade Dagger", "Warding Dagger", "Weapon of Certain Death, Dagger", "Whirling Dagger", "Adult Dragon Edge Sickle", "Coldfire Sickle", "Corpse Slayer, Sickle",
             "Dragonkin Sickle +1", "Flame Tongue Sickle", "Giant Slayer Sickle", "Lycan Sickle", "Moon Sickle, +2", "Sickle of Cunning",
-            "Sickle, +2", "Storm Sickle", "True Name Sickle, +1", "Verax Sickle", "Vicious Sickle", "Warding Sickle",
+            "Sickle, +2", "Storm Sickle", "Verax Sickle", "Vicious Sickle", "Warding Sickle",
             "Weapon of Certain Death, Sickle", "Whirling Sickle"],
         VeryRare: ["Ancient Dragon Edge Dagger", "Assassin’s Dagger", "Bloodmage Dagger", "Corecut Dagger", "Dagger, +3", "Dragonkin Dagger +2",
             "Dusk Dagger (Very Rare)", "Foresight Dagger", "Grass Whistle Dagger", "Ioun Blade Dagger", "Nine Lives Stealer Dagger", "Purging Dagger",
             "Ruidium Dagger", "Shadow Drinker Dagger", "Shattered Fragment ( Dagger )",
-            "Starmetal Sliver Dagger", "True Name Dagger, +2", "Arcane Scalpel", "Ancient Dragon Edge Sickle", "Dragonkin Sickle +2", "Foresight Sickle",
+            "Starmetal Sliver Dagger", "Arcane Scalpel", "Ancient Dragon Edge Sickle", "Dragonkin Sickle +2", "Foresight Sickle",
             "Ioun Blade Sickle", "Moon Sickle, +3", "Nine Lives Stealer Sickle",
-            "Ruidium Sickle", "Sickle, +3", "True Name Sickle, +2"],
+            "Ruidium Sickle", "Sickle, +3", ],
         Legendary: ["Defender Dagger", "Dragonkin Dagger +3", "Heaven's Edge ( Dagger )",
             "Holy Avenger Dagger", "Spirit Cleaver ( Dagger )", "Rakdos Riteknife",
-            "True Name Dagger, +3", "Defender Sickle", "Dragonkin Sickle +3", "Holy Avenger Sickle",
-            "Luck Blade Sickle", "True Name Sickle, +3"],
+             "Defender Sickle", "Dragonkin Sickle +3", "Holy Avenger Sickle",
+            "Luck Blade Sickle", ],
         Unique: ["Blade of Broken Mirrors"]
     },
 
@@ -913,8 +913,8 @@ export const itemNames = {
             "Crossbow, Light of Warning", "Crossbow, Light, +1",
             "Hand Crossbow of Warning", "Heavy Crossbow of Warning", "Hellfire Crossbow, Hand",
             "Hellfire Crossbow, Heavy", "Hellfire Crossbow, Light", "Light Crossbow of Warning",
-            "Orner's Venomous Crossbow", "Trampling Crossbow", "True Name Hand Crossbow",
-            "True Name Heavy Crossbow", "True Name Light Crossbow",
+            "Orner's Venomous Crossbow", "Trampling Crossbow", 
+           
         ],
         Rare: [
             "Bloodletter’s Hand Crossbow", "Bloodletter’s Heavy Crossbow", "Bloodletter’s Light Crossbow", "Comet Ballista Crossbow", "Corpse Slayer, Crossbow, Hand", "Corpse Slayer, Crossbow, Heavy",
@@ -923,17 +923,17 @@ export const itemNames = {
             "Giant Slayer Hand Crossbow", "Giant Slayer Heavy Crossbow", "Giant Slayer Light Crossbow", "Lycan Hand Crossbow", "Lycan Heavy Crossbow", "Lycan Light Crossbow",
             "Medzo's Crossbow", "Oceanic Hand Crossbow", "Oceanic Heavy Crossbow",
             "Oceanic Light Crossbow", "Quickdraw Hand Crossbow", "Reap and Sew Light Crossbow", "Riptide Crossbow", "Starcrossed Hand Crossbow", "Starcrossed Heavy Crossbow",
-            "Starcrossed Light Crossbow", "Starshot Hand Crossbow", "Starshot Heavy Crossbow", "Starshot Light Crossbow", "True Name Hand Crossbow, +1", "True Name Heavy Crossbow, +1", "True Name Light Crossbow, +1", "Vicious Crossbow, Hand", "Vicious Crossbow, Heavy",
+            "Starcrossed Light Crossbow", "Starshot Hand Crossbow", "Starshot Heavy Crossbow", "Starshot Light Crossbow",
             "Vicious Crossbow, Light", "Vicious Hand Crossbow", "Vicious Heavy Crossbow", "Vicious Light Crossbow", "Vigilus Crossbow", "Weapon of Certain Death, Crossbow, Hand",
             "Weapon of Certain Death, Crossbow, Heavy", "Weapon of Certain Death, Crossbow, Light"
         ],
         VeryRare: [
             "Bolt Crossbow", "Crossbow, Hand, +3", "Crossbow, Heavy, +3", "Crossbow, Light, +3", "Foresight Hand Crossbow", "Foresight Heavy Crossbow", "Foresight Light Crossbow",
             "Hand Crossbow of Throne's Command", "Heavy Crossbow of Throne's Command", "Nine Lives Stealer Hand Crossbow", "Nine Lives Stealer Heavy Crossbow", "Nine Lives Stealer Light Crossbow", "Rocborne Hand Ballista ( Crossbow, Heavy)",
-            "Ruidium Hand Crossbow", "Ruidium Heavy Crossbow", "Ruidium Light Crossbow", "True Name Hand Crossbow, +2", "True Name Heavy Crossbow, +2", "True Name Light Crossbow, +2"
+            "Ruidium Hand Crossbow", "Ruidium Heavy Crossbow", "Ruidium Light Crossbow", 
         ],
         Legendary: [
-            "Holy Avenger Hand Crossbow", "Holy Avenger Heavy Crossbow", "Holy Avenger Light Crossbow", "True Name Hand Crossbow, +3", "True Name Heavy Crossbow, +3", "True Name Light Crossbow, +3"
+            "Holy Avenger Hand Crossbow", "Holy Avenger Heavy Crossbow", "Holy Avenger Light Crossbow",
         ],
         Unique: ["???"]
     },
@@ -947,19 +947,19 @@ export const itemNames = {
             "Adamantine Spear", "Blood Spear", "Eclipse Spear",
             "Galepierce Spear", "Gilded Spear", "Hellfire Spear",
             "Spear of Blind Faith", "Spear of Spite", "Spear of Warning",
-            "Spear, +1", "Sunsplitter Spear (Uncommon)", "True Name Spear",
+            "Spear, +1", "Sunsplitter Spear (Uncommon)",
             "Young Dragon Edge Spear", "Adamantine Trident", "Galepierce Trident", "Hellfire Trident",
             "Trident of Blind Faith", "Trident of Fish Command", "Trident of Spite",
             "Trident of Warning", "Trident of the Dryad", "Trident, +1",
-            "True Name Trident", "Young Dragon Edge Trident", "Adult Dragon Edge Trident", "Bloodshard Trident", "Coldfire Trident",
+             "Young Dragon Edge Trident", "Adult Dragon Edge Trident", "Bloodshard Trident", "Coldfire Trident",
             "Corpse Slayer, Trident", "Dragon Slayer Trident", "Dragonkin Trident +1",
             "Flame Tongue Trident", "Frost Giant Trident Fork", "Giant Slayer Trident",
             "Lycan Trident", "Oceanic Trident", "Trident of Returning",
-            "Trident of the Hydra", "Trident, +2", "True Name Trident, +1",
+            "Trident of the Hydra", "Trident, +2", 
             "Verax Trident", "Vicious Trident", "Warding Trident",
             "Weapon of Certain Death, Trident", "Whirling Trident", "Adamantine Javelin", "Galepierce Javelin", "Hellfire Javelin",
             "Javelin of Blind Faith", "Javelin of Lightning", "Javelin of Warning",
-            "Javelin, +1", "Prismatic Javelin", "True Name Javelin",
+            "Javelin, +1", "Prismatic Javelin", 
             "Young Dragon Edge Javelin"
         ],
         Rare: [
@@ -969,12 +969,12 @@ export const itemNames = {
             "Ironleaf Impaler Spear", "Lycan Spear", "Oceanic Spear",
             "Peregrine Spear", "Sky Anchor ( Spear )", "Spear, +2",
             "Starmetal Shard Spear", "Steam Harpoon ( Spear )", "Sunsplitter Spear (Rare)",
-            "True Name Spear, +1", "Vicious Spear", "Wardancer's Spear",
+             "Vicious Spear", "Wardancer's Spear",
             "Warding Spear", "Weapon of Certain Death, Spear", "Whirling Spear", "Adult Dragon Edge Javelin", "Coldfire Javelin", "Corpse Slayer, Javelin",
             "Dragon Slayer Javelin", "Dragonkin Javelin +1", "Flame Tongue Javelin",
             "Giant Slayer Javelin", "Ironleaf Impaler Javelin", "Javelin, +2",
             "Lycan Javelin", "Meteoric Javelin", "Oceanic Javelin",
-            "True Name Javelin, +1", "Verax Javelin", "Vicious Javelin",
+             "Verax Javelin", "Vicious Javelin",
             "Weapon of Certain Death, Javelin", "Whirling Javelin"
         ],
         VeryRare: [
@@ -982,20 +982,20 @@ export const itemNames = {
             "Foresight Spear", "Frostburn Spear", "Gilded Spear of the Fey",
             "Mirrorlight Piercer Spear", "Nine Lives Stealer Spear", "Ruidium Spear",
             "Sanguine Spear", "Spear of Backbiting", "Spear, +3",
-            "Stalaga Spear", "Sunsplitter Spear (Very Rare)", "True Name Spear, +2", "Ancient Dragon Edge Trident", "Dragonkin Trident +2", "Foresight Trident",
+            "Stalaga Spear", "Sunsplitter Spear (Very Rare)",  "Ancient Dragon Edge Trident", "Dragonkin Trident +2", "Foresight Trident",
             "Hellfire Pitchfork Trident", "Nine Lives Stealer Trident", "Ruidium Trident",
             "Tidecaller Trident", "Trident of Throne's Command", "Trident, +3",
-            "True Name Trident, +2", "Ancient Dragon Edge Javelin", "Bulette Javelin Torpedo",
+             "Ancient Dragon Edge Javelin", "Bulette Javelin Torpedo",
             "Dragonkin Javelin +2", "Foresight Javelin", "Javelin of Backbiting",
             "Javelin, +3", "Nine Lives Stealer Javelin", "Ruidium Javelin",
-            "True Name Javelin, +2"
+           
         ],
         Legendary: [
             "Defender Spear", "Dragonkin Spear +3", "Holy Avenger Spear",
             "Purity Spear", "Shard Solitaire (Rainbow Pearl)", "Spear of Gael Wode",
-            "True Name Spear, +3", "Vicious Vortex Spear", "Davy Jones' Key (Trident)", "Defender Trident", "Dragonkin Trident +3",
-            "Holy Avenger Trident", "Memento of the Shapeless Trident", "True Name Trident, +3", "Dragonkin Javelin +3", "Holy Avenger Javelin",
-            "True Name Javelin, +3"
+           "Vicious Vortex Spear", "Davy Jones' Key (Trident)", "Defender Trident", "Dragonkin Trident +3",
+            "Holy Avenger Trident", "Memento of the Shapeless Trident",  "Dragonkin Javelin +3", "Holy Avenger Javelin",
+            
         ],
         Unique: [
             "Khrusor, Spear of Heliod", "Soulbond Trident: Nyrulna, Soul of the Tempest"
@@ -1009,24 +1009,24 @@ export const itemNames = {
         Uncommon: [
             "Adamantine Halberd", "Halberd of Blind Faith", "Halberd of Spite",
             "Halberd of Verdict", "Halberd of Warning", "Halberd, +1",
-            "Hellfire Halberd", "True Name Halberd"
+            "Hellfire Halberd", 
         ],
         Rare: [
             "Coldfire Halberd", "Corpse Slayer, Halberd", "Death Knell Halberd",
             "Dragon Slayer Halberd", "Dragonkin Halberd +1", "Flame Tongue Halberd",
             "Giant Slayer Halberd", "Halberd of the Peacock", "Halberd, +2",
             "Knight's Standard of Valor Halberd", "Lycan Halberd", "Prototype Thunderberd ( Halberd )",
-            "True Name Halberd, +1", "Verax Halberd", "Vicious Halberd",
+            "Verax Halberd", "Vicious Halberd",
             "Warding Halberd", "Weapon of Certain Death, Halberd"
         ],
         VeryRare: [
             "Dragonkin Halberd +2", "Executioner's Halberd", "Foresight Halberd",
             "Halberd of Throne's Command", "Halberd, +3", "Nine Lives Stealer Halberd",
-            "Ruidium Halberd", "Splitter Halberd", "True Name Halberd, +2"
+            "Ruidium Halberd", "Splitter Halberd", 
         ],
         Legendary: [
             "Defender Halberd", "Dragonkin Halberd +3", "Halberd of the Forsaken Pact *",
-            "Holy Avenger Halberd", "True Name Halberd, +3", "Soul-Searing Scythe"
+            "Holy Avenger Halberd", "Soul-Searing Scythe"
         ],
         Unique: [
             "The Mawblade Halberd"
@@ -1041,36 +1041,36 @@ export const itemNames = {
         Uncommon: [
             "Adamantine Greatclub", "Greatclub of Blind Faith", "Greatclub of Spite",
             "Greatclub of Verdict", "Greatclub of Warning", "Greatclub, +1",
-            "Hellfire Greatclub", "Squasher Greatclub", "True Name Greatclub",
+            "Hellfire Greatclub", "Squasher Greatclub", 
             "Adamantine Club", "Club of Blind Faith", "Club of Dancing",
             "Club of Spite", "Club of Verdict", "Club of Warning",
             "Club of the Forest Drake", "Club of the Rook", "Club, +1",
-            "Hellfire Club", "True Name Club"
+            "Hellfire Club",
         ],
         Rare: [
             "Blazeball Greatclub", "Coldfire Greatclub", "Corpse Slayer, Greatclub",
             "Dragon Slayer Greatclub", "Dragonkin Greatclub +1", "Flame Tongue Greatclub",
             "Forest Dwellers Greatclub", "Giant Slayer Greatclub", "Greatclub, +2",
-            "Lycan Greatclub", "Stalagmight Geode ( Greatclub )", "True Name Greatclub, +1",
+            "Lycan Greatclub", "Stalagmight Geode ( Greatclub )", 
             "Vicious Greatclub", "Warding Greatclub", "Weapon of Certain Death, Greatclub",
             "Blazeball Club", "Club, +2", "Coldfire Club",
             "Corpse Slayer, Club", "Dragon Slayer Club", "Dragonkin Club +1",
             "Druidic Throwing Club", "Flame Tongue Club", "Giant Slayer Club",
-            "Lycan Club", "True Name Club, +1", "Vicious Club",
+            "Lycan Club", "Vicious Club",
             "Warding Club", "Weapon of Certain Death, Club", "Whirling Club"
         ],
         VeryRare: [
             "Blistering Beheader Greatclub", "Comet Smasher Greatclub", "Dragonkin Greatclub +2",
             "Forcebreaker Greatclub", "Foresight Greatclub", "Greatclub, +3",
             "Nine Lives Stealer Greatclub", "Ruidium Greatclub", "Thunderous Greatclub",
-            "True Name Greatclub, +2", "Club, +3", "Comet Smasher Club",
+            "Club, +3", "Comet Smasher Club",
             "Dragonkin Club +2", "Forcebreaker Club", "Foresight Club",
-            "Nine Lives Stealer Club", "Ruidium Club", "True Name Club, +2"
+            "Nine Lives Stealer Club", "Ruidium Club",
         ],
         Legendary: [
-            "Dragonkin Greatclub +3", "Holy Avenger Greatclub", "True Name Greatclub +3",
+            "Dragonkin Greatclub +3", "Holy Avenger Greatclub", 
             "Defender Club", "Dragonkin Club +3", "Holy Avenger Club",
-            "Memento of the Shapeless Club", "True Name Club, +3"
+            "Memento of the Shapeless Club",
         ],
         Unique: [
             "?????"
@@ -1087,48 +1087,48 @@ export const itemNames = {
             "Hellfire Mace", "Mace of Blind Faith", "Mace of Spite",
             "Mace of Verdict", "Mace of Warning", "Mace of the Priest",
             "Mace of the Pumpkin King", "Mace, +1", "Prying Mace",
-            "True Name Mace", "Adamantine Morningstar", "Hellfire Morningstar", "Morningstar of Blind Faith",
+            "Adamantine Morningstar", "Hellfire Morningstar", "Morningstar of Blind Faith",
             "Morningstar of Spite", "Morningstar of Verdict", "Morningstar of Warning",
-            "Morningstar, +1", "True Name Morningstar", "Young Dragon Edge Morningstar",
+            "Morningstar, +1", "Young Dragon Edge Morningstar",
             "Adamantine Flail", "Attack-In-The-Box Flail", "Explosive Flail",
             "Flail of Blind Faith", "Flail of Spite", "Flail of Verdict",
-            "Flail of Warning", "Flail, +1", "Hellfire Flail", "True Name Flail"
+            "Flail of Warning", "Flail, +1", "Hellfire Flail", 
         ],
         Rare: [
             "Coldfire Mace", "Consecrated Mace", "Corpse Slayer, Mace",
             "Dragon Slayer Mace", "Dragonkin Mace +1", "Flame Tongue Mace",
             "Giant Slayer Mace", "Lycan Mace", "Mace of Disruption",
             "Mace of Smiting", "Mace of Terror", "Mace of Vampire Slaying",
-            "Mace, +2", "Many-Eyed Mace", "True Name Mace, +1",
+            "Mace, +2", "Many-Eyed Mace", 
             "Verax Mace", "Vicious Mace", "Warding Mace",
             "Weapon of Certain Death, Mace", "Whirling Mace", "Adult Dragon Edge Morningstar", "Coldfire Morningstar", "Corpse Slayer, Morningstar",
             "Dragon Slayer Morningstar", "Dragonkin Morningstar +1", "Flame Tongue Morningstar",
             "Giant Slayer Morningstar", "Lycan Morningstar", "Morningstar, +2", "Starbreaker Morningstar",
-            "True Name Morningstar, +1", "Verax Morningstar", "Vicious Morningstar",
+             "Verax Morningstar", "Vicious Morningstar",
             "Warding Morningstar", "Weapon of Certain Death, Morningstar", "Whirling Morningstar",
             "Caduceus Flail", "Coldfire Flail", "Corpse Slayer, Flail", "Dragon Slayer Flail",
             "Dragonkin Flail +1", "Flail, +2", "Flame Tongue Flail", "Giant Slayer Flail",
             "Harbinger's Flail", "Hydra Flail", "Lycan Flail", "Ruinous Flail",
-            "Thunderous Flail", "True Name Flail, +1", "Verax Flail", "Vicious Flail",
+            "Thunderous Flail", "Verax Flail", "Vicious Flail",
             "Warding Flail", "Weapon of Certain Death, Flail", "Whirling Flail"
         ],
         VeryRare: [
             "Comet Smasher Mace", "Consecrated Mace, +1", "Dragonkin Mace +2",
             "Fable's End Mace", "Forcebreaker Mace", "Foresight Mace",
             "Mace, +3", "Niko's Mace", "Nine Lives Stealer Mace",
-            "Ruidium Mace", "True Name Mace, +2", "Ancient Dragon Edge Morningstar", "Dragonkin Morningstar +2", "Foresight Morningstar",
+            "Ruidium Mace",  "Ancient Dragon Edge Morningstar", "Dragonkin Morningstar +2", "Foresight Morningstar",
             "Massive Morningstar Shotgun", "Morningstar of Throne's Command", "Morningstar, +3",
-            "Nine Lives Stealer Morningstar", "Ruidium Morningstar", "True Name Morningstar, +2",
+            "Nine Lives Stealer Morningstar", "Ruidium Morningstar", 
             "Comet Smasher Flail", "Dragonkin Flail +2", "Flail of Throne's Command",
             "Flail, +3", "Forcebreaker Flail", "Foresight Flail", "Furious Flail",
             "Hcor'uk the Colossal's Portable Handheld Flail of Walloping",
             "Infernal Chain ( Flail )", "Nine Lives Stealer Flail", "Ruidium Flail",
-            "True Name Flail, +2"
+            
         ],
         Legendary: [
-            "Defender Mace", "Dragonkin Mace +3", "Holy Avenger Mace", "True Name Mace, +3", "Defender Morningstar", "Dragonkin Morningstar +3", "Holy Avenger Morningstar",
-            "True Name Morningstar, +3", "Defender Flail", "Dragonkin Flail +3",
-            "Flail of Tiamat", "Holy Avenger Flail", "True Name Flail, +3"
+            "Defender Mace", "Dragonkin Mace +3", "Holy Avenger Mace", "Defender Morningstar", "Dragonkin Morningstar +3", "Holy Avenger Morningstar",
+             "Defender Flail", "Dragonkin Flail +3",
+            "Flail of Tiamat", "Holy Avenger Flail", 
         ],
         Unique: [
             "Mace of the Black Crown (Dormant)"
@@ -1142,7 +1142,7 @@ export const itemNames = {
             "Adamantine Whip", "Gelatinous Whip", "Hedonic Motivator (Whip)",
             "Hellfire Whip", "Kraken's Whip", "Roaring Whip",
             "Scorpion Lasher (Whip)", "Tasha's Mind Whip Spell Scroll", "Torchbearer's Reach Whip",
-            "True Name Whip", "Whip of Blind Faith", "Whip of Spite",
+             "Whip of Blind Faith", "Whip of Spite",
             "Whip of Verdict", "Whip of Warning", "Whip of the Copper Eel",
             "Whip, +1"
         ],
@@ -1151,18 +1151,18 @@ export const itemNames = {
             "Corpse Slayer, Whip", "Couatl Herald's Lash Whip", "Dragon Slayer Whip",
             "Dragonkin Whip +1", "Flame Tongue Whip", "Giant Slayer Whip",
             "Grasping Whip", "Lash of the Spelldrinker (Whip)", "Lycan Whip",
-            "Scarlet Scourge Whip", "Task Master Whip", "True Name Whip, +1",
+            "Scarlet Scourge Whip", "Task Master Whip", 
             "Vicious Whip", "Warding Whip", "Weapon of Certain Death, Whip",
             "Whip, +2", "Whirling War Pick", "Whirling Whip"
         ],
         VeryRare: [
             "Dragonkin Whip +2", "Dyrrn's Tentacle Whip", "Foresight Whip",
             "Monsterbane Whip Lasher", "Nine Lives Stealer Whip", "Ruidium Whip",
-            "True Name Whip, +2", "Whip of Throne's Command", "Whip, +3"
+            "Whip of Throne's Command", "Whip, +3"
         ],
         Legendary: [
             "Defender Whip", "Dragonkin Whip +3", "Holy Avenger Whip",
-            "True Name Whip, +3"
+            
         ],
         Unique: [
             "Mastix, Whip of Erebos"
@@ -1177,25 +1177,25 @@ export const itemNames = {
         Uncommon: [
             "Adamantine Pike", "Hellfire Pike", "Pike of Blind Faith",
             "Pike of Spite", "Pike of Verdict", "Pike of Warning",
-            "Pike, +1", "True Name Pike"
+            "Pike, +1", 
         ],
         Rare: [
             "Coldfire Pike", "Corpse Slayer, Pike", "Dragon Slayer Pike",
             "Dragonkin Pike +1", "Flame Tongue Pike", "Giant Slayer Pike",
             "Knight's Standard of Vigor Pike", "Lycan Pike", "Pike, +2",
-            "Solacesteel Requiem", "Spirit Pike", "True Name Pike, +1",
+            "Solacesteel Requiem", "Spirit Pike", 
             "Verax Pike", "Vicious Pike", "Warding Pike",
             "Weapon of Certain Death, Pike"
         ],
         VeryRare: [
             "Dragonkin Pike +2", "Foresight Pike",
             "Nine Lives Stealer Pike", "Pike of Throne's Command",
-            "Pike, +3", "Ruidium Pike", "True Name Pike, +2"
+            "Pike, +3", "Ruidium Pike", 
         ],
         Legendary: [
             "Chillspike", "Defender Pike", "Dragonkin Pike +3",
             "Holy Avenger Pike", "Pike of the Forgotten Legion",
-            "True Name Pike, +3"
+          
         ],
         Unique: [
             "The Wraithcall Pike"
@@ -1212,25 +1212,25 @@ export const itemNames = {
             "Hellfire Lance", "Lance of Blind Faith", "Lance of Spite",
             "Lance of Verdict", "Lance of Warning", "Lance, +1",
             "Silver Eagle Lance", "Sir Varion's Lance",
-            "Telescoping Blade-Lance", "True Name Lance"
+            "Telescoping Blade-Lance", 
         ],
         Rare: [
             "Coldfire Lance", "Corpse Slayer, Lance", "Dragon Slayer Lance",
             "Dragonkin Lance +1", "Echoing Lance Spell Scroll",
             "Flame Tongue Lance", "Giant Slayer Lance", "Lance, +2",
             "Lycan Lance", "Raulothim's Psychic Lance Spell Scroll",
-            "True Name Lance, +1", "Verax Lance", "Vicious Lance",
+           "Verax Lance", "Vicious Lance",
             "Warding Lance", "Weapon of Certain Death, Lance"
         ],
         VeryRare: [
             "Dragonkin Lance +2", "Foresight Lance", "Hurricane Lance",
             "Lance of Throne's Command", "Lance of the Hungering Dead",
             "Lance of the Statuemaker", "Lance, +3", "Nine Lives Stealer Lance",
-            "Ruidium Lance", "True Name Lance, +2"
+            "Ruidium Lance", 
         ],
         Legendary: [
             "Defender Lance", "Dragon Tamer Lance", "Dragonkin Lance +3",
-            "Holy Avenger Lance", "True Name Lance, +3"
+            "Holy Avenger Lance",
         ],
         Unique: [
             "Infernal Lance of the Crimson Pyre"
@@ -1244,7 +1244,7 @@ export const itemNames = {
         ],
         Uncommon: [
             "Adamantine War Pick", "Hellfire War Pick", "Spellbreaker War Pick",
-            "True Name War Pick", "War Pick of Blind Faith", "War Pick of Spite",
+             "War Pick of Blind Faith", "War Pick of Spite",
             "War Pick of Verdict", "War Pick of Warning", "War Pick, +1",
             "Young Dragon Edge War Pick"
         ],
@@ -1255,7 +1255,7 @@ export const itemNames = {
             "Flame Tongue War Pick", "Giant Slayer War Pick", "Gorgon War Pick",
             "Luminous War Pick", "Lycan War Pick", "Magma War Pick",
             "Shipwrecker War Pick", "Spellbreaker War Pick",
-            "True Name War Pick, +1", "Verax War Pick", "Vicious War Pick",
+            "Verax War Pick", "Vicious War Pick",
             "War Pick, +2", "Warding Pike", "Warding War Pick",
             "Weapon of Certain Death, War Pick", "Whirling War Pick"
         ],
@@ -1264,13 +1264,13 @@ export const itemNames = {
             "Dragonkin War Pick +2", "Foresight War Pick",
             "Nine Lives Stealer War Pick", "Radiant War Pick",
             "Ruidium War Pick", "Spellbreaker War Pick",
-            "Stonemaker War Pick", "True Name War Pick, +2",
+            "Stonemaker War Pick", 
             "War Pick of Throne's Command", "War Pick, +3"
         ],
         Legendary: [
             "Astral Sea Piercer War Pick", "Defender War Pick",
             "Dragonkin War Pick +3", "Holy Avenger War Pick",
-            "True Name War Pick, +3"
+           
         ],
         Unique: [
             "?????"
