@@ -29,7 +29,7 @@ const itemTypes = [
   'Helmet', 'HeavyArmor', 'Gauntlet', 'Boots', 'Necklace', 'Cloak', 'Potion',
   'Sword', 'Bow', 'Axe', 'Hammer', 'Glaive', 'Dagger', 'Staff', 'Rod', 'Wand',
   'Grimoire', 'Gems', 'WeaponArt',
-  'PassiveArt', 'BoostArt', 'SkillPoints', 'ExperiencePoints', 'Robe', 'Ring', 'LightArmor',
+  'PassiveArt', 'BoostArt', 'SkillPoints', 'Robe', 'Ring', 'LightArmor',
   'MediumArmor', 'WondrousItem', 'Shield', 'Crossbow', 'Spear', 'Halberd', 'Club', 'Whip', 'Mace',
   'Warpick', 'Lance', 'Pike',
 ];
