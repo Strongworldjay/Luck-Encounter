@@ -275,9 +275,9 @@ export const itemNames = {
             "Harp of Gilded Plenty", "Heart of Damned Intervention", "Horn of Beckoning Death", "Horn of Valhalla (Iron)", "Infernal Tack", "Infiltrator's Key (Dormant)",
             "Iron Flask", "Lava Crucible", "Life Turner", "Ollamh Harp", "Orb of Skoraeus", "Platinum Scarf", "Quiver of Elemental Chaos", "Seed of Rebirth",
             "Sovereign Glue", "Spell Bottle", "Spell Binding Shackles (Legendary)", "Stormgirdle (Dormant)", "Tablet of Reawakening", "Universal Solvent",
-            "Witchlight Watch", "Prehistoric Figurine of Wondrous Power (Jasper Tyrannosaurus Rex)", "Grandstone of Dominion"
+            "Witchlight Watch", "Prehistoric Figurine of Wondrous Power (Jasper Tyrannosaurus Rex)", "Grandstone of Dominion", "Settlement Stone"
         ],
-        Unique: ["Gate Key (S Tier)", "Luba's Tarokka of Souls", "Skeleton Key", "Teeth of Dahlver-Nar", "Settlement Stone"]
+        Unique: ["Gate Key (S Tier)", "Luba's Tarokka of Souls", "Skeleton Key", "Teeth of Dahlver-Nar", "[Redacted]"]
     },
 
     Ring: {
@@ -323,7 +323,7 @@ export const itemNames = {
             "Necklace of Nine Lives", "Necklace of Prayer Beads", "Necklace of Thunderbolts",
             "Amulet of Divine Protection", "Amulet of Health",
             "Amulet of Immutability", "Amulet of Protection from Turning",
-            "Amulet of the Devout, +2", "Amulet of the Lycanthrope",
+            "Amulet of the Devout, +2", "Amulet of the Lycanthrope", "Pendant of the Red Knights",
             "Amulet of the Sentinel", "Master's Amulet",
             "Shield Guardian Amulet", "Boreal Pendant", "Soul Pendant"
         ],
@@ -371,12 +371,14 @@ export const itemNames = {
             "Potion of Mind Reading", "Potion of Spell Recovery", "Potion of Stone Giant Strength", "Potion of Superior Healing", "Powder Bomb of Mental Purity",
             "Rejuvinating Draft (Rare)", "EXP Flask"
         ],
-        VeryRare: ["Bottled Abyss", "Lindwyrm Venom", "Magebane Poison", "Oil of Sharpness", "Potion of Cloud Giant Strength",
+        VeryRare: ["Bottled Abyss", "Lindwyrm Venom", "Magebane Poison", "Oil of Sharpness", "Potion of Cloud Giant Strength", "Elixir of the Golden Tongue", "Elixir of Lunar Insight", "Elixir of Crystal Clarity", "Elixir of Verdant Endurance", "Elixir of Windspun Grace", "Elixir of Ironblood Vigor",
             "Potion of Dragon's Breath (Very Rare)", "Potion of Flying", "Potion of Greater Invsibility", "Potion of Longevity", "Potion of Mind Control (Monster)",
             "Potion of Possibility", "Dungeon Essence Flask", "Skill Point Flask", "Potion of Speed", "Potion of Spell Recovery (Very Rare)", "Potion of Supreme Healing", "Potion of Vitality", "Rejuvenating Draft (Very Rare)"
         ],
-        Legendary: ["Coldfire Phoenix Draft", "Potion of Dragon's Majesty", "Potion of Giant Size", "Potion of Storm Giant Strength", "Potion of the Unwavering Warrior", "Rejuvenating Draft (Legendary)"],
-        Unique: ["Elixir of Divine Renewal"]
+        Legendary: ["Coldfire Phoenix Draft", "Potion of Dragon's Majesty", "Potion of Giant Size", "Potion of Storm Giant Strength", "Potion of the Unwavering Warrior", "Rejuvenating Draft (Legendary)",
+            "Elixir of the Forked Path", "Elixir of Titanblood Vigor", "Elixir of Divine Presence", "Elixir of Hearthheart Vitality", "Elixir of Mindglass Clarity", "Elixir of the Moonwoven Soul", "Elixir of Zephyr's Protection"
+        ],
+        Unique: ["Elixir of Divine Renewal", "Elixir of the Unwritten Path",]
     },
 
     Sword: {
@@ -516,7 +518,7 @@ export const itemNames = {
             "Rapier of the Planes","Violet King's Promise ( Rapier )",
             "Holy Avenger Shortsword", "Luck Blade Shortsword", "Sun Blade Lorkor", "Grave Digger",
             "Moonblade Shortsword", "Shortsword of the Planes",  "Blade of Forlorn Hope"],
-        Unique: ["Dominion Authority", "Paradoxical Paradigm Longsword", "Silverwind, The Cleansing Breeze ( Longsword )", "Blade of Avernus", "Void Blade", "Solaris ( Longsword )", "Absolute Arbiter"]
+        Unique: ["Dominion Authority", "Soulbond Weapon: The Dueller", "Paradoxical Paradigm Longsword", "Silverwind, The Cleansing Breeze ( Longsword )", "Blade of Avernus", "Void Blade", "Solaris ( Longsword )", "Absolute Arbiter"]
     },
     Bow: {
         Common: ["Longbow of Showmanship", "Silvered Longbow", "Silvered Shortbow",
@@ -731,19 +733,19 @@ export const itemNames = {
     Gems: {
         Common: ["High-Quality Diamond (300 GP)", "High-Quality Diamond (500 GP)",],
         Uncommon: ["Elemental Gem (Blue Sapphire)", "Elemental Gem (Emerald)", "Elemental Gem (Red Corundum)", "Elemental Gem (Yellow Diamond)", "Fabulist Gem", "Gem of Brightness", "Spell Gem (Lapis Lazuli",
-            "Spell Gem (Obsidian)", "Exquisite Diamond (1000 GP)", "Empty Aspect Orb", "Minor Magicule Crystal"
+            "Spell Gem (Obsidian)", "Exquisite Diamond (1000 GP)", "Empty Aspect Orb", "Minor Magicule Crystal", "+1 Enchantment Gem"
         ],
         Rare: ["Gem of Seeing", "Spell Gem (Bloodstone)", "Spell Gem (Quartz)", "Ioun Stone of Awareness", "Ioun Stone of Historical Knowledge", "Ioun Stone of Language Knowledge", "Ioun Stone of Natural Knowledge", "Ioun Stone of Protection",
             "Ioun Stone of Religious Knowledge", "Ioun Stone of Reserve", "Ioun Stone of Self-Preservation", "Ioun Stone of Supreme Intellect", "Ioun Stone of Sustenance", "Warp Crystal", "Greater Magicule Crystal"
         ],
         VeryRare: ["Spell Gem (Amber)", "Spell Gem (Jade)", "Spell Gem (Topaz)", "Ioun Stone of Absorption", "Ioun Stone of Agility", "Ioun Stone of Fortitude", "Ioun Stone of Insight", "Ioun Stone of Intellect", "Ioun Stone of Leadership", "Ioun Stone of Strength", "Ioun Stone of Vitality",
-            "Amethyst Lodestone", "Fragment of Elder Starlight", "Party Warp Crystal", "High-Grade Magicule Crystal"
+            "Amethyst Lodestone", "Fragment of Elder Starlight", "Party Warp Crystal", "High-Grade Magicule Crystal", "+2 Enchantment Gem"
         ],
         Legendary: ["Mastery Gem", "Flawless Diamond (25,000 GP)", "Ruby Weave Gem", "Spell Gem (Diamond)", "Spell Gem (Ruby)", "Spell Gem (Star Ruby)", "Ioun Stone of Greater Absorption", "Ioun Stone of Mastery", "Ioun Stone of Regeneration",
             "Jewel of Three Prayers (Dormant)", "Nightfall Pearl", "Scaled Ornament (Ascendant)", "Shard Solitaire (Black Sapphire)", "Shard Solitaire (Diamond)",
-            "Shard Solitaire (Jacinth)", "Shard Solitaire (Rainbow Peral)", "Shard Solitaire (Ruby)", "Shard Solitaire (Black Sapphire)", "Warp Nexus Crystal", "Primal Magicule Core"
+            "Shard Solitaire (Jacinth)", "Shard Solitaire (Rainbow Peral)", "Shard Solitaire (Ruby)", "Shard Solitaire (Black Sapphire)", "Warp Nexus Crystal", "Primal Magicule Core", "+3 Enchantment Gem"
         ],
-        Unique: ["Warp Nexus Party Crystal"]
+        Unique: ["Warp Nexus Party Crystal", "+4 Enchantment Gem"]
     },
 
     Shield: {
@@ -831,13 +833,7 @@ export const itemNames = {
             "Weight of Burden D", "Weight of Feather D", "Piercing Sight D", "Tremor Pulse D", "Trade-Off D", "Fabricator’s Touch D", "Aura Fist (Black) D",
             "Aura Fist (Blue) D", "Aura Fist (Green) D", "Aura Fist (Silver) D", "Aura Fist (Gold) D", "Aura Fist (Red) D", "Imbue Armament (Fire) D", "Imbue Armament (Cold) D", "Imbue Armament (Acid) D",
             "Imbue Armament (Thunder) D", "Imbue Armament (Lightning) D", "Trade-Off D", "Iron Body D", "Gravitational Repulsion D", "Gravitational Attraction D", "Obfuscation D", "Trace D", "Folkvangr D", "Malice D",
-            "Weight of Burden D", "Summoner's Wave D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D",
-            "Regeneration D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D",
-            "Blade Dance D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D",
-            "Blade Dance D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D",
-            "Blade Dance D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D",
-            "Blade Dance D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D",
-            "Blade Dance D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "Folkvangr D",],
+            "Weight of Burden D", "Summoner's Wave D", "Folkvangr D", "Folkvangr D",],
 
         Rare: ["Skuld C", "Warcry C", "Envenom C", "Predator C", "Flash Step C", "Rampage C", "Dream Catcher C", "Enhance Armaments C",
             "Skate Foot C", "Buffer C", "Leap C", "Doppelganger C", "Evade C", "Limit Break C", "Spot Weakness C", "Fire Breathing C",
@@ -845,22 +841,14 @@ export const itemNames = {
             "Aura Fist (Blue) C", "Aura Fist (Green) C", "Aura Fist (Silver) C", "Aura Fist (Gold) C", "Aura Fist (Red) C", "Imbue Armament (Fire) C", "Imbue Armament (Cold) C", "Imbue Armament (Acid) C",
             "Imbue Armament (Thunder) C", "Imbue Armament (Lightning) C", "Trade-Off C", "Iron Body C", "Gravitational Repulsion C", "Gravitational Attraction C", "Obfuscation C", "Trace C", "Folkvangr C", "Malice C",
             "Regeneration C", "Summoner's Wave C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C",
-            "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C",
-            "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C",
-            "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C",
-            "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C",
-            "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C", "Folkvangr C",
+            
         ],
         VeryRare: ["Skuld B", "Warcry B", "Envenom B", "Predator B", "Flash Step B", "Rampage B", "Dream Catcher B", "Enhance Armaments B",
             "Skate Foot B", "Buffer B", "Leap B", "Doppelganger B", "Evade B", "Limit Break B", "Spot Weakness B", "Fire Breathing B",
             "Flex B", "Weight of Burden B", "Weight of Feather B", "Piercing Sight B", "Tremor Pulse B", "Trade-Off B", "Fabricator’s Touch B", "Aura Fist (Black) B",
             "Aura Fist (Blue) B", "Aura Fist (Green) B", "Aura Fist (Silver) B", "Aura Fist (Gold) B", "Aura Fist (Red) B", "Imbue Armament (Fire) B", "Imbue Armament (Cold) B", "Imbue Armament (Acid) B",
             "Imbue Armament (Thunder) B", "Imbue Armament (Lightning) B", "Trade-Off B", "Iron Body B", "Gravitational Repulsion B", "Gravitational Attraction B", "Obfuscation B", "Trace B", "Folkvangr B", "Malice B",
-            "Regeneration B", "Summoner's Wave B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B",
-            "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B",
-            "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B",
-            "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B",
-            "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B", "Folkvangr B",
+            "Regeneration B", "Summoner's Wave B", "Folkvangr B", 
         ],
         Legendary: ["Skuld A", "Warcry A", "Envenom A", "Predator A", "Flash Step A", "Rampage A", "Dream Catcher A", "Enhance Armaments A",
             "Skate FootA", "Buffer A", "Leap A", "Doppelganger A", "Evade A", "Limit Break A", "Spot Weakness A", "Fire Breathing A",
@@ -883,12 +871,12 @@ export const itemNames = {
             "Blade Dance S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S", "Folkvangr S",]
     },
     SkillPoints: {
-        Common: [1, 2, 3],
-        Uncommon: [2, 3, 4, 5],
-        Rare: [4, 5, 6, 7, 8],
-        VeryRare: [7, 8, 9, 10, 11, 12],
-        Legendary: [10, 11, 12, 13, 14, 15],
-        Unique: [20]
+        Common: [2, 4, 5],
+        Uncommon: [5, 7, 9],
+        Rare: [10, 12, 14],
+        VeryRare: [15, 20],
+        Legendary: [22, 27],
+        Unique: [35]
     },
 
     ExperiencePoints: {

@@ -1,138 +1,168 @@
+// Chests.jsx
+
 import React, { useState } from "react";
 import { getRandomItem } from "./ItemGenerator";
 import { itemNames } from "./itemsData";
 import treasureChestIcon from "./assets/treasurechest.png";
+import "./Chests.css";
 
-// Chest settings: defines the gold range and which magical rarities are allowed.
+// 1) Rarity settings (with weighted chances for the “extra” item)
 const chestSettings = {
-  wooden: {
-    goldRange: [10, 20],
-    magicAllowed: [] // For wooden chests, if no magical rarity is allowed, we'll default to "Uncommon"
-  },
-  steel: {
-    goldRange: [20, 40],
-    magicAllowed: ["Uncommon"]
-  },
-  bronze: {
-    goldRange: [30, 60],
-    magicAllowed: ["Uncommon", "Rare"]
-  },
-  silver: {
-    goldRange: [40, 80],
-    magicAllowed: ["Rare", "Very Rare"]
-  },
-  gold: {
-    goldRange: [50, 100],
-    magicAllowed: ["Very Rare"]
-  },
-  platinum: {
-    goldRange: [80, 150],
-    magicAllowed: ["Legendary"]
-  },
-  emerald: {
-    goldRange: [100, 200],
-    magicAllowed: ["Unique"]
-  }
+  wooden:   { goldRange: [10, 20],  rarityWeights: { Common: 1.0 } },
+  steel:    { goldRange: [20, 40],  rarityWeights: { Common: 0.9, Uncommon: 0.1 } },
+  bronze:   { goldRange: [30, 60],  rarityWeights: { Common: 0.6, Uncommon: 0.3, Rare: 0.1 } },
+  silver:   { goldRange: [40, 80],  rarityWeights: { Uncommon: 0.6, Rare: 0.35, VeryRare: 0.05 } },
+  gold:     { goldRange: [50, 100], rarityWeights: { Uncommon: 0.25, Rare: 0.55, VeryRare: 0.15, Legendary: 0.05 } },
+  platinum: { goldRange: [80, 150], rarityWeights: { Rare: 0.1, VeryRare: 0.35, Legendary: 0.45, Unique: 0.1 } },
+  emerald:  { goldRange: [100, 200],rarityWeights: { Legendary: 0.7, Unique: 0.3 } }
 };
 
-// Returns a random integer between min and max (inclusive)
+// Helper: uniform random integer
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-// Available item types for magical items (from your card system)
-const itemTypes = [
-  "Helmet", "HeavyArmor", "Gauntlet", "Boots", "Necklace", "Cloak", "Potion",
-  "Sword", "Bow", "Axe", "Hammer", "Glaive", "Dagger", "Staff", "Rod", "Wand",
-  "Grimoire", "Gems", "WeaponArt",
-  "PassiveArt", "BoostArt", "SkillPoints", "ExperiencePoints", "Robe", "Ring", "LightArmor",
-  "MediumArmor", "WondrousItem", "Shield", "Crossbow", "Spear", "Halberd", "Club", "Whip", "Mace",
-  "Warpick", "Lance", "Pike"
-];
+// Helper: pick a key by its weight
+function getWeightedRarity(weights) {
+  const entries = Object.entries(weights);
+  const total = entries.reduce((sum, [, w]) => sum + w, 0);
+  let roll = Math.random() * total;
+  for (let [rarity, w] of entries) {
+    if (roll < w) return rarity;
+    roll -= w;
+  }
+  return entries[0][0];
+}
 
-const Chests = () => {
-  const [loot, setLoot] = useState(null);
-  const [selectedChest, setSelectedChest] = useState("");
+// 2) Define the “types” of chest content and their allowed itemTypes
+const chestTypes = {
+  Random:         null,  // all categories
+  "Melee Weapon": [
+    "Sword","Axe","Hammer","Glaive","Dagger","Mace","Warpick","Lance","Pike","Whip"
+  ],
+  "Ranged Weapon": [
+    "Bow","Crossbow"
+  ],
+  "Light Armor":   ["LightArmor"],
+  "Medium Armor":  ["MediumArmor"],
+  "Heavy Armor":   ["HeavyArmor","Shield"],
+  "Wondrous Item": ["WondrousItem","Grimoire","Gems"],
+  "Magic Focus":   ["Staff","Rod","Wand"],
+  Jewelry:         ["Necklace","Ring","Gems"],
+  Accessories:     ["Helmet","Boots","Cloak","Gauntlet"],
+  Supplies:        ["Potion"]
+};
 
-  const openChest = (chestType) => {
-    setSelectedChest(chestType);
-    const settings = chestSettings[chestType];
+export default function Chests() {
+  const [selectedRarity, setSelectedRarity]       = useState("");
+  const [selectedChestType, setSelectedChestType] = useState("");
+  const [loot, setLoot]                           = useState(null);
 
-    // Generate 1–5 random items from the "Misc" category
+  function openChest(rarity, chestType) {
+    const { goldRange, rarityWeights } = chestSettings[rarity];
+
+    // 1) pick 1–5 misc commons
     const miscCount = getRandomInt(1, 5);
-    const miscLoot = [];
-    if (itemNames.Misc && itemNames.Misc.Common && itemNames.Misc.Common.length > 0) {
-      for (let i = 0; i < miscCount; i++) {
-        const arr = itemNames.Misc.Common;
-        const randomItem = arr[getRandomInt(0, arr.length - 1)];
-        miscLoot.push({ name: randomItem, rarity: "Common", category: "Misc" });
-      }
-    } else {
-      console.error("No Misc items found in itemsData.");
-    }
+    const miscArr   = itemNames.Misc?.Common || [];
+    const miscLoot  = Array.from({ length: miscCount }, () => ({
+      name: miscArr[getRandomInt(0, miscArr.length - 1)],
+      rarity: "Common",
+      category: "Misc"
+    }));
 
-    // Generate exactly one magical item.
-    let allowedMagic = settings.magicAllowed;
-    // If no magical rarities are allowed, default to "Uncommon"
-    if (!allowedMagic || allowedMagic.length === 0) {
-      allowedMagic = ["Uncommon"];
-    }
-    const chosenMagicRarity = allowedMagic[getRandomInt(0, allowedMagic.length - 1)];
-    const randomType = itemTypes[getRandomInt(0, itemTypes.length - 1)];
-    // Remove spaces from rarity for consistency if needed.
-    const magicItemName = getRandomItem(randomType, null, chosenMagicRarity.replace(" ", ""));
-    const magicalLoot = {
-      itemType: randomType,
-      name: magicItemName,
-      rarity: chosenMagicRarity
+    // 2) pick one “extra” item with weighted rarity
+    const chosenRarity = getWeightedRarity(rarityWeights);
+    const allowedTypes = chestTypes[chestType] || Object.keys(itemNames);
+    const poolTypes    = allowedTypes
+      ? allowedTypes
+      : Object.keys(itemNames);
+    const randomType   = poolTypes[getRandomInt(0, poolTypes.length - 1)];
+    const itemName     = getRandomItem(randomType, null, chosenRarity);
+    const extraLoot    = {
+      name: itemName,
+      rarity: chosenRarity,
+      itemType: randomType
     };
 
-    // Determine gold amount based on chest settings.
-    const gold = getRandomInt(settings.goldRange[0], settings.goldRange[1]);
+    // 3) gold only for Random chestType
+    const gold = chestType === "Random"
+      ? getRandomInt(goldRange[0], goldRange[1])
+      : null;
 
-    // Combine misc loot with the magical loot.
-    setLoot({ items: [...miscLoot, magicalLoot], gold });
-  };
+    setLoot({ items: [...miscLoot, extraLoot], gold });
+  }
+
+  function handleOpen() {
+    if (!selectedRarity || !selectedChestType) {
+      alert("Please select both a rarity and a chest type first.");
+      return;
+    }
+    openChest(selectedRarity, selectedChestType);
+  }
 
   return (
-    <div className="chests-container" style={{ textAlign: "center", padding: "20px" }}>
+    <div className="chests-container">
       <h1 className="chest-title">Chest Loot</h1>
-      <img
-        src={treasureChestIcon}
-        alt="Treasure Chest"
-        className="chest-icon"
-        style={{ width: "150px", marginBottom: "20px" }}
-      />
-      <div className="chest-buttons" style={{ marginBottom: "20px" }}>
-        {Object.keys(chestSettings).map((chestType) => (
+      <img src={treasureChestIcon} className="chest-icon" alt="Chest" />
+
+      {/* Rarity buttons */}
+      <div className="chest-buttons">
+        {Object.keys(chestSettings).map((r) => {
+          const key = r.toLowerCase();
+          return (
+            <button
+              key={r}
+              className={`rarity-button ${key} ${r === selectedRarity ? "selected" : ""}`}
+              onClick={() => setSelectedRarity(r)}
+            >
+              {r.charAt(0).toUpperCase() + r.slice(1)}
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Type buttons */}
+      <div className="chest-buttons">
+        {Object.keys(chestTypes).map((type) => (
           <button
-            key={chestType}
-            onClick={() => openChest(chestType)}
-            style={{ margin: "5px", padding: "10px 15px", cursor: "pointer" }}
+            key={type}
+            className={type === selectedChestType ? "selected" : ""}
+            onClick={() => setSelectedChestType(type)}
           >
-            {chestType.charAt(0).toUpperCase() + chestType.slice(1)}
+            {type}
           </button>
         ))}
       </div>
+
+      {/* Open action */}
+      <div style={{ margin: "20px 0" }}>
+        <button className="open-chest-btn" onClick={handleOpen}>
+          Open Chest
+        </button>
+      </div>
+
+      {/* Loot display */}
       {loot && (
-        <div className="loot-section" style={{ marginTop: "20px" }}>
+        <div className="loot-section">
           <h2>
-            Loot from {selectedChest.charAt(0).toUpperCase() + selectedChest.slice(1)} Chest
+            Loot from {selectedRarity.charAt(0).toUpperCase() + selectedRarity.slice(1)} –{" "}
+            {selectedChestType} Chest
           </h2>
-          <ul className="loot-list" style={{ listStyleType: "none", padding: 0 }}>
-            {loot.items.map((item, index) => (
-              <li key={index} style={{ margin: "5px 0", padding: "5px 10px", display: "inline-block", border: "1px solid #ddd", borderRadius: "4px" }}>
-                {item.name} <em>({item.rarity}) {item.category ? `- ${item.category}` : `- ${item.itemType}`}</em>
+          <ul className="loot-list">
+            {loot.items.map((it, i) => (
+              <li key={i} className={`loot-item ${it.rarity.toLowerCase()}`}>
+                {it.name} <em>({it.rarity})</em>{" "}
+                {it.category
+                  ? <span>- {it.category}</span>
+                  : <span>- {it.itemType}</span>}
               </li>
             ))}
           </ul>
-          <p className="loot-gold" style={{ fontSize: "1.3rem", fontWeight: "bold", marginTop: "10px" }}>
-            <strong>Gold: </strong> {loot.gold}
-          </p>
+          {loot.gold != null && (
+            <p className="loot-gold">Gold: {loot.gold}</p>
+          )}
         </div>
       )}
     </div>
   );
-};
-
-export default Chests;
+}
