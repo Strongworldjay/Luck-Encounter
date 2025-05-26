@@ -17,8 +17,8 @@ import voidImage from './assets/void.webp'; // Importing the new image
 import { getRandomItem } from './ItemGenerator';
 
 const rarities = [
-  { name: 'Common', color: 'white', range: [-100, 50] },
-  { name: 'Uncommon', color: 'green', range: [51, 70] },
+  { name: 'Common', color: 'white', range: [-100, 40] },
+  { name: 'Uncommon', color: 'green', range: [41, 70] },
   { name: 'Rare', color: 'blue', range: [71, 81] },
   { name: 'Very Rare', color: 'purple', range: [82, 90] },
   { name: 'Legendary', color: 'orange', range: [91, 99] },

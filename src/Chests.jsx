@@ -8,9 +8,9 @@ import "./Chests.css";
 
 // 1) Rarity settings (with weighted chances for the “extra” item)
 const chestSettings = {
-  wooden:   { goldRange: [10, 20],  rarityWeights: { Common: 1.0 } },
-  steel:    { goldRange: [20, 40],  rarityWeights: { Common: 0.9, Uncommon: 0.1 } },
-  bronze:   { goldRange: [30, 60],  rarityWeights: { Common: 0.6, Uncommon: 0.3, Rare: 0.1 } },
+  wooden:   { goldRange: [10, 20],  rarityWeights: { Common: 0.95, Uncommon: 0.05 } },
+  steel:    { goldRange: [20, 40],  rarityWeights: { Common: 0.75, Uncommon: 0.25 } },
+  bronze:   { goldRange: [30, 60],  rarityWeights: { Common: 0.20, Uncommon: 0.65, Rare: 0.15 } },
   silver:   { goldRange: [40, 80],  rarityWeights: { Uncommon: 0.6, Rare: 0.35, VeryRare: 0.05 } },
   gold:     { goldRange: [50, 100], rarityWeights: { Uncommon: 0.25, Rare: 0.55, VeryRare: 0.15, Legendary: 0.05 } },
   platinum: { goldRange: [80, 150], rarityWeights: { Rare: 0.1, VeryRare: 0.35, Legendary: 0.45, Unique: 0.1 } },
@@ -36,7 +36,13 @@ function getWeightedRarity(weights) {
 
 // 2) Define the “types” of chest content and their allowed itemTypes
 const chestTypes = {
-  Random:         null,  // all categories
+    Random: [
+    "Helmet", "HeavyArmor", "Gauntlet", "Boots", "Necklace", "Cloak", "Potion",
+    "Sword", "Bow", "Axe", "Hammer", "Glaive", "Dagger", "Staff", "Rod", "Wand",
+    "Grimoire", "Gems", "Scroll",
+    "Robe", "Ring", "LightArmor", "MediumArmor", "WondrousItem", "Shield",
+    "Crossbow", "Spear", "Halberd", "Club", "Whip", "Mace", "Warpick", "Lance", "Pike"
+  ],
   "Melee Weapon": [
     "Sword","Axe","Hammer","Glaive","Dagger","Mace","Warpick","Lance","Pike","Whip"
   ],
