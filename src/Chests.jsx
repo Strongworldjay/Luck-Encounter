@@ -39,7 +39,7 @@ const chestTypes = {
     Random: [
     "Helmet", "HeavyArmor", "Gauntlet", "Boots", "Necklace", "Cloak", "Potion",
     "Sword", "Bow", "Axe", "Hammer", "Glaive", "Dagger", "Staff", "Rod", "Wand",
-    "Grimoire", "Gems", "Scroll",
+    "Grimoire", "Gems", "Scrolls",
     "Robe", "Ring", "LightArmor", "MediumArmor", "WondrousItem", "Shield",
     "Crossbow", "Spear", "Halberd", "Club", "Whip", "Mace", "Warpick", "Lance", "Pike"
   ],
