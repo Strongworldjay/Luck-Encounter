@@ -28,7 +28,7 @@
 }
 
 /* Unique background colors per card */
-.character-card:nth-child(1) { background-color: rgb(84, 21, 84); }
+.character-card:nth-child(1) { background-color: rgb(138, 36, 138); }
 .character-card:nth-child(2) { background-color: rgb(89, 92, 174); }
 .character-card:nth-child(3) { background-color: rgb(3, 117, 117); }
 .character-card:nth-child(4) { background-color: rgb(172, 149, 35); }

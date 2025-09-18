@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import './CharacterSheets.css';
-import solaraImage from './assets/Ryun.jpeg';
-import kaneImage from './assets/Lucky.jpeg';
-import wingImage from './assets/Blu.jpeg';
-import clovisImage from './assets/Braknir.jpeg';
+import solaraImage from './assets/Ryun.png';
+import kaneImage from './assets/Lucky.png';
+import wingImage from './assets/Blu.png';
+import clovisImage from './assets/Braknir.png';
 
 const characters = [
   {
@@ -58,7 +58,7 @@ const characters = [
       charisma: { score: 14, modifier: '+2' },
     },
     backstory:
-      "Wyn Vayne was born under drifting skies and raised in the alleys of Zephyrhaven, a street orphan shaped by chance and charm. Growing up among gamblers, thieves, and fortune-seekers, he quickly became known for his uncanny luck—slipping past guards, finding coin purses at the perfect moment, and always rolling the right number. Taught by the old rogues of the Windswept Den, Wyn mastered card tricks, sleight of hand, and the one rule that mattered: “Fortune favors the bold.” But Wyn wants more than just back-alley fame. He dreams of joining the legendary Thieves’ Guild—the shadowy power behind Midan’s underworld. Armed with loaded dice, a quick tongue, and a gambler’s grin, he’s set out to prove he’s more than just lucky—he’s worthy. Whether fate, luck, or the wind itself guides him, Wyn Vayne is ready to take his biggest gamble yet."
+      "Wyn Vayne was born beneath the drifting skies, his existence as fleeting as the wind and as unpredictable as a roll of the dice. A street orphan from the small town of Zephyrhaven, he grew up among thieves, gamblers, and fortune-seekers. Unlike many who struggled to survive, Wyn always had luck on his side—whether it was slipping past guards unnoticed, finding a misplaced coin purse at just the right time, or rolling the perfect number to win a game of dice. Though he was small, his quick hands and silver tongue earned him a reputation among the city's back-alley gamblers and pickpockets. The old conmen at the Windswept Den, a notorious tavern where the city's lowlifes mingaled, took a liking to the boy. They taught him card tricks, sleight of hand, and the golden rule of rogues: “The biggest risk is taking none at all—fortune favors the bold.” But Wyn doesn’t just want to scrape by in the shadows—he dreams of something bigger. He has heard whispers of the legendary Thieves’ Guild said to control Midan’s underworld. They only recruit the best—those who prove themselves worthy through skill, cunning, and an audacity that borders on foolishness. To Wyn, it sounds like the perfect place for someone like him. So, armed with little more than his wits, a set of loaded dice, and a knack for getting into (and out of) trouble, Wyn has set out on his journey. Whether it’s luck, fate, or the winds of adventure guiding him, he’s ready to take the biggest gamble of his life."
   },
   {
     id: 3,
@@ -85,7 +85,7 @@ const characters = [
       charisma: { score: 14, modifier: '+2' },
     },
     backstory:
-      "Bludrin Ironmolt’s earliest memories are of a deadly blizzard—the same one that left him orphaned and buried in a ruined caravan, his silver-dusted scales shielding his small body from the cold. Found and adopted by blacksmiths Bram and Tilda Ironmolt, Blu grew up in the forge, where he discovered a natural talent and passion for crafting steel and etching runes..."
+      "The couple who found him were blacksmiths—Bram and Tilda Ironmolt—traveling to a remote settlement to deliver enchanted blades. But in the forge, he bloomed. Where others saw soot and sweat, Blu saw art. Where others felt exhaustion, he felt excitement. Despite his age, he learned to temper steel, shape alloys, and etch runes far beyond his years. He was eager to prove himself—not to the world, but to the lingering mystery in his blood. The warhammer he trained with, twice his size, was a symbol: he would not let the legacy of his ancestry be buried beneath snow and silence. The System recognized his potential. Even before setting foot in a dungeon, Blu was regarded by the local Artisan’s Guild as a prodigy in waiting. His own silvery scales, his breath that danced with ice, and his recurring dreams of flying through mountain storms—not falling, but soaring—all hinted at a connection to that ancient line. He began secretly collecting stories, scraps of lore about the silver dragons—guardians, it was said, who once watched over the skies before the rise of the Architect. Perhaps, he thought, one had loved a mortal. Perhaps that story ended with him. Blu made a vow. He would join the Artisan’s Guild not just to master his craft but to earn access to the rarest materials, the oldest forges, and the guarded knowledge only high-ranking artisans could access. His goal was not just to become the greatest blacksmith in Midan, but to forge something worthy of awakening his lineage—something that could call to the skies themselves. He dreams of venturing to the edge of the System’s reach, to the Frostspire Wastes, where rumors speak of slumbering silver wyrms entombed beneath ancient ice. There, perhaps, he could uncover where his kind once ruled, and why they vanished. Some nights, Blu stares into the fire of the forge and sees visions—wings wrapped in clouds, ancient voices speaking in a tongue older than the System, and a face like his own… older, wiser, draconic."
   },
   {
     id: 4,
@@ -112,7 +112,7 @@ const characters = [
       charisma: { score: 14, modifier: '+2' },
     },
     backstory:
-      'Braknir was born without a mane, a shameful mark among the leonin, where strength and status were tied to physical traits...'
+      'Braknir, born without a mane, was an oddity among the leonin. In a society where a male’s strength was often judged by the fullness of his mane, his lack of one marked him as weak—an outcast before he could even stand. The warriors of his pride barely acknowledged him, and he was left to be raised among the females, learning their ways instead of the battle training that was his birthright. But Braknir refused to accept his fate. He watched the warriors from the shadows, mimicking their movements, practicing in secret with crude weapons he carved from bone and wood. He wrestled the young hunters of the pridesisters, sharpening his instincts. Yet no matter how much he trained, he was never accepted. When he came of age, he challenged a warrior of his pride, hoping to prove his worth. The fight was a disaster. His opponent didn’t see him as a real challenger—only an insult. The warrior tore into him without restraint, leaving Braknir bloodied and broken. The left side of his face was ruined, permanently scarred. He was mocked, shunned, and left with no choice but to leave the pride behind. With nothing but scavenged leather armor—too tight around his growing frame—and a battered weapon, Braknir set out into the world, determined to forge himself into a true warrior. He took whatever work he could find—guarding caravans, brawling for coin, hunting dangerous beasts. He studies every fighting style he encounters, determined to master them all. Magic, however, he despises, seeing it as a crutch for the weak.'
   },
 ];
 
