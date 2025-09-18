@@ -1,169 +1,133 @@
-/* Chests.css */
-
-.chests-container {
-  text-align: center !important;
-  padding: 20px !important;
-  font-family: Arial, sans-serif !important;
-  color: #333 !important;
-  background: transparent !important;
-  max-width: 800px !important;
-  margin: 20px auto !important;
+.character-sheets-container {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  position: relative;
 }
 
-.chest-title {
-  font-size: 2.5rem !important;
-  margin-bottom: 20px !important;
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  flex: 2;
 }
 
-.chest-icon {
-  width: 200px !important;
-  margin-bottom: 20px !important;
+.character-card {
+  border-radius: 12px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  color: #fff;                 /* readable on colored backgrounds */
+  background-color: #222;      /* fallback */
+  transition: transform .35s ease, opacity .35s ease, box-shadow .35s ease;
+  cursor: pointer;
 }
 
-.chest-buttons {
-  margin-bottom: 20px !important;
-  /* Ensure buttons wrap on small screens */
-  display: flex !important;
-  flex-wrap: wrap !important;
-  justify-content: center !important;
+/* Unique background colors per card */
+.character-card:nth-child(1) { background-color: rgb(84, 21, 84); }
+.character-card:nth-child(2) { background-color: rgb(89, 92, 174); }
+.character-card:nth-child(3) { background-color: rgb(3, 117, 117); }
+.character-card:nth-child(4) { background-color: rgb(172, 149, 35); }
+
+.character-card img.character-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto 8px;
+  display: block;
+  object-fit: cover;
+  border: 2px solid rgba(255,255,255,.35);
 }
 
-/* ----------------------- */
-/* Rarity Buttons (already defined above) */
-/* ----------------------- */
+.character-card:hover { transform: scale(1.04); }
 
-.rarity-button {
-  margin: 5px !important;
-  padding: 10px 15px !important;
-  border: none !important;
-  border-radius: 4px !important;
-  cursor: pointer !important;
-  font-size: 1rem !important;
-  color: #fff !important;
-  transition: filter 0.2s ease !important;
+.character-card.focused {
+  position: relative;
+  z-index: 1;
+  width: 350px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .45);
 }
 
-.rarity-button:hover {
-  filter: brightness(1.1) !important;
+.character-card.hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
-.rarity-button.selected {
-  box-shadow: 0 0 0 2px rgba(0,0,0,0.2) inset !important;
+.character-stats p {
+  margin: 2px 0;
+  font-size: 0.9em;
+  line-height: 1.2;
 }
 
-/* Wooden */
-.rarity-button.wooden { background-color: #DEB887 !important; }
-.rarity-button.wooden.selected { background-color: #CDA572 !important; }
+.character-card p { margin: 2px 0; line-height: 1.2; }
 
-/* Steel */
-.rarity-button.steel { background-color: #4682B4 !important; }
-.rarity-button.steel.selected { background-color: #3A6A8C !important; }
-
-/* Bronze */
-.rarity-button.bronze { background-color: #CD7F32 !important; }
-.rarity-button.bronze.selected { background-color: #A66E2F !important; }
-
-/* Silver */
-.rarity-button.silver { background-color: #C0C0C0 !important; color: #000 !important; }
-.rarity-button.silver.selected { background-color: #A8A8A8 !important; }
-
-/* Gold */
-.rarity-button.gold { background-color: #FFD700 !important; color: #000 !important; }
-.rarity-button.gold.selected { background-color: #E6C200 !important; }
-
-/* Platinum */
-.rarity-button.platinum { background-color: #E5E4E2 !important; color: #000 !important; }
-.rarity-button.platinum.selected { background-color: #C8C7C5 !important; }
-
-/* Emerald */
-.rarity-button.emerald { background-color: #50C878 !important; }
-.rarity-button.emerald.selected { background-color: #3CA66D !important; }
-
-/* ----------------------- */
-/* Category (Type) Buttons */
-/* ----------------------- */
-
-.chest-buttons button:not(.rarity-button) {
-  margin: 5px !important;
-  padding: 8px 12px !important;
-  background: #f0f0f0 !important;
-  border: 2px solid #ccc !important;
-  border-radius: 4px !important;
-  cursor: pointer !important;
-  font-size: 0.9rem !important;
-  color: #333 !important;
-  transition: background-color 0.2s ease, border-color 0.2s ease !important;
+/* Backstory panel (desktop) */
+.backstory-container {
+  flex: 1;
+  padding: 20px;
+  background-color: rgba(240, 240, 240, 0.92);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  color: #111;
+  max-width: 500px;
+  align-self: flex-start;
+  margin-left: -250px;  /* original layout offset */
+  margin-right: 300px;
 }
 
-.chest-buttons button:not(.rarity-button):hover {
-  background-color: #e0e0e0 !important;
-  border-color: #bbb !important;
+/* ---------- MOBILE (≤640px) ---------- */
+@media (max-width: 640px) {
+  .character-sheets-container {
+    flex-direction: column;      /* stack vertically */
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .cards-container {
+    width: 100%;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .character-card {
+    width: 92vw;                 /* full width on phones */
+    max-width: 420px;
+    margin: 0 auto;
+    border-radius: 14px;
+    transform: none !important;  /* no hover zoom on touch */
+  }
+
+  /* When focused on mobile, keep it full width and hide others */
+  .character-card.focused {
+    width: 92vw;
+    max-width: 520px;
+    order: 0;                    /* no reordering weirdness */
+    z-index: 2;
+  }
+  .character-card.hidden { display: none; }
+
+  /* Backstory sits BELOW the focused card, full width */
+  .backstory-container {
+    width: 92vw;
+    max-width: 680px;
+    margin: 8px auto 18px;       /* remove negative margins */
+    padding: 14px;
+    background-color: rgba(240, 240, 240, 0.95);
+    box-shadow: 0 8px 16px rgba(0,0,0,.4);
+  }
 }
 
-.chest-buttons button:not(.rarity-button).selected {
-  background-color: #4caf50 !important;  /* green */
-  border-color: #388e3c !important;
-  color: #fff !important;
-}
-
-/* ----------------------- */
-/* Open Chest Button */
-/* ----------------------- */
-
-.open-chest-btn {
-  padding: 12px 24px !important;
-  background-color: #4caf50 !important;  /* green */
-  border: none !important;
-  border-radius: 4px !important;
-  color: #fff !important;
-  font-size: 1.1rem !important;
-  cursor: pointer !important;
-  transition: background-color 0.2s ease !important;
-}
-
-.open-chest-btn:hover {
-  background-color: #43a047 !important;
-}
-
-/* ----------------------- */
-/* Loot Section */
-/* ----------------------- */
-
-.loot-section {
-  margin-top: 20px !important;
-}
-
-.loot-section h2 {
-  font-size: 2rem !important;
-  margin-bottom: 10px !important;
-}
-
-.loot-list {
-  list-style: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-.loot-item {
-  
-  padding: 5px 10px !important;
-  margin: 5px !important;
-  display: inline-block !important;
-  border-radius: 4px !important;
-  color: #000 !important;
-}
-
-/* Per-rarity backgrounds for loot items */
-.loot-item.common    { background-color: #ffffff !important; }
-.loot-item.uncommon  { background-color: #0b6813 !important; }
-.loot-item.rare      { background-color: rgb(30, 115, 136) !important; }
-.loot-item.veryrare  { background-color: #ab0bc4 !important; }
-.loot-item.legendary { background-color: #ce9c4c !important; }
-.loot-item.unique    { background-color: #910016 !important; }
-
-.loot-gold {
-  font-size: 1.3rem !important;
-  font-weight: bold !important;
-  margin-top: 10px !important;
-  color: gold !important;
+/* ---------- TABLET (641–1024px) ---------- */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .character-sheets-container { gap: 14px; }
+  .character-card { width: 320px; }
+  .character-card.focused { width: 360px; }
+  .backstory-container {
+    margin-left: -120px;
+    margin-right: 140px;
+  }
 }

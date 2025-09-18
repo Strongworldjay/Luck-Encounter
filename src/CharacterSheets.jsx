@@ -30,8 +30,9 @@ const characters = [
       wisdom: { score: 12, modifier: '+1' },
       charisma: { score: 20, modifier: '+5' },
     },
-    backstory: "I never really fit in—not at school, not at home. While others were out living, I buried myself in stories, anime, and games, always dreaming of another world. So when I graduated, I picked up a new game that caught my eye: The Architect’s System: Grasp of True Power. It promised something unique, something immersive. I didn’t expect it to actually take me. One moment I was choosing my path, the next I was waking up somewhere else entirely—somewhere real. A voice welcomed me to the true game, and the System became part of my reality. Thrown into a tutorial dungeon with two strangers who clearly weren’t from Earth, I had no time to panic. Instinct—or maybe fate—pushed me forward. I chose the path of cultivation, the one thing that felt like it truly resonated with who I wanted to be. This world is dangerous, vast, and full of things I don’t understand—but for once, I feel like I belong. Whether this is a dream or some twisted gift, I’m not wasting the chance. I’ll rise, not just to survive, but to seize the power I was always meant for."
-   },
+    backstory:
+      "I never really fit in—not at school, not at home. While others were out living, I buried myself in stories, anime, and games, always dreaming of another world. So when I graduated, I picked up a new game that caught my eye: The Architect’s System: Grasp of True Power. It promised something unique, something immersive. I didn’t expect it to actually take me. One moment I was choosing my path, the next I was waking up somewhere else entirely—somewhere real. A voice welcomed me to the true game, and the System became part of my reality. Thrown into a tutorial dungeon with two strangers who clearly weren’t from Earth, I had no time to panic. Instinct—or maybe fate—pushed me forward. I chose the path of cultivation, the one thing that felt like it truly resonated with who I wanted to be. This world is dangerous, vast, and full of things I don’t understand—but for once, I feel like I belong. Whether this is a dream or some twisted gift, I’m not wasting the chance. I’ll rise, not just to survive, but to seize the power I was always meant for."
+  },
   {
     id: 2,
     image: kaneImage,
@@ -56,7 +57,8 @@ const characters = [
       wisdom: { score: 13, modifier: '+1' },
       charisma: { score: 14, modifier: '+2' },
     },
-    backstory: "Wyn Vayne was born under drifting skies and raised in the alleys of Zephyrhaven, a street orphan shaped by chance and charm. Growing up among gamblers, thieves, and fortune-seekers, he quickly became known for his uncanny luck—slipping past guards, finding coin purses at the perfect moment, and always rolling the right number. Taught by the old rogues of the Windswept Den, Wyn mastered card tricks, sleight of hand, and the one rule that mattered: “Fortune favors the bold.” But Wyn wants more than just back-alley fame. He dreams of joining the legendary Thieves’ Guild—the shadowy power behind Midan’s underworld. Armed with loaded dice, a quick tongue, and a gambler’s grin, he’s set out to prove he’s more than just lucky—he’s worthy. Whether fate, luck, or the wind itself guides him, Wyn Vayne is ready to take his biggest gamble yet.",
+    backstory:
+      "Wyn Vayne was born under drifting skies and raised in the alleys of Zephyrhaven, a street orphan shaped by chance and charm. Growing up among gamblers, thieves, and fortune-seekers, he quickly became known for his uncanny luck—slipping past guards, finding coin purses at the perfect moment, and always rolling the right number. Taught by the old rogues of the Windswept Den, Wyn mastered card tricks, sleight of hand, and the one rule that mattered: “Fortune favors the bold.” But Wyn wants more than just back-alley fame. He dreams of joining the legendary Thieves’ Guild—the shadowy power behind Midan’s underworld. Armed with loaded dice, a quick tongue, and a gambler’s grin, he’s set out to prove he’s more than just lucky—he’s worthy. Whether fate, luck, or the wind itself guides him, Wyn Vayne is ready to take his biggest gamble yet."
   },
   {
     id: 3,
@@ -68,7 +70,7 @@ const characters = [
     armorClass: 19,
     age: 14,
     alignment: 'Chaotic Neutral',
-    skills: ['Acrobatics', 'Arcana', 'Athletics', 'Investigation', 'Perception', 'Survival', 'Smiths Tools', ],
+    skills: ['Acrobatics', 'Arcana', 'Athletics', 'Investigation', 'Perception', 'Survival', 'Smiths Tools'],
     languages: ['Common', 'Draconic', 'Dwarvish', 'Giant', 'Orc', 'Undercommon'],
     class: 'Barbarian',
     subclass: 'Path of the Winter-Wyrm',
@@ -82,7 +84,8 @@ const characters = [
       wisdom: { score: 12, modifier: '+1' },
       charisma: { score: 14, modifier: '+2' },
     },
-    backstory: "Bludrin Ironmolt’s earliest memories are of a deadly blizzard—the same one that left him orphaned and buried in a ruined caravan, his silver-dusted scales shielding his small body from the cold. Found and adopted by blacksmiths Bram and Tilda Ironmolt, Blu grew up in the forge, where he discovered a natural talent and passion for crafting steel and etching runes. Though he never spoke of his past, his quiet determination and strength earned him early recognition from the Artisan’s Guild as a prodigy. As he honed his skills, Blu began uncovering whispers of silver dragons—mythic beings of justice and frost—and suspected his icy breath and shimmering scales marked him as a descendant. Driven by a dream to forge something worthy of that legacy, he took the Ironmolt name and vowed to unlock the truth of his bloodline. Now, at twelve, he stands ready to brave dungeons, master the forge, and one day journey to the Frostspire Wastes, where ancient wyrms may still sleep beneath the ice. The call of his heritage is strong—and he will answer it with steel and frost.",
+    backstory:
+      "Bludrin Ironmolt’s earliest memories are of a deadly blizzard—the same one that left him orphaned and buried in a ruined caravan, his silver-dusted scales shielding his small body from the cold. Found and adopted by blacksmiths Bram and Tilda Ironmolt, Blu grew up in the forge, where he discovered a natural talent and passion for crafting steel and etching runes..."
   },
   {
     id: 4,
@@ -108,18 +111,19 @@ const characters = [
       wisdom: { score: 12, modifier: '+1' },
       charisma: { score: 14, modifier: '+2' },
     },
-    backstory: 'Braknir was born without a mane, a shameful mark among the leonin, where strength and status were tied to physical traits. Raised among the pridesisters instead of warriors, he secretly trained in their shadows, crafting weapons from bone and wood and mimicking battle techniques in silence. When he finally challenged a pride warrior to prove himself, he was brutally defeated, scarred, and cast out. Alone and wounded, Braknir left his pride behind, vowing to carve his own path. He took on dangerous work—guarding, brawling, and hunting—studying every fighting style he could, while refusing to ever rely on magic. Though still early in his journey, Braknir fights not for pride or prophecy, but to become a true warrior by his own hand.'
+    backstory:
+      'Braknir was born without a mane, a shameful mark among the leonin, where strength and status were tied to physical traits...'
   },
 ];
 
-const CharacterSheets = () => {
+export default function CharacterSheets() {
   const [focusedCard, setFocusedCard] = useState(null);
 
   const handleCardClick = (id) => {
     setFocusedCard(focusedCard === id ? null : id);
   };
 
-  const focusedCharacter = characters.find((char) => char.id === focusedCard);
+  const focusedCharacter = characters.find((c) => c.id === focusedCard);
 
   return (
     <div className="character-sheets-container">
@@ -127,16 +131,18 @@ const CharacterSheets = () => {
         {characters.map((character) => (
           <div
             key={character.id}
+            role="button"
+            tabIndex={0}
             className={`character-card ${focusedCard === character.id ? 'focused' : ''} ${
               focusedCard && focusedCard !== character.id ? 'hidden' : ''
             }`}
             onClick={() => handleCardClick(character.id)}
+            onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && handleCardClick(character.id)}
           >
             <img src={character.image} alt={character.name} className="character-image" />
             <h2>{character.name}</h2>
             <p><strong>Level:</strong> {character.level}</p>
             <p><strong>Race:</strong> {character.race}</p>
-       
             <p><strong>Age:</strong> {character.age}</p>
             <p><strong>Alignment:</strong> {character.alignment}</p>
             <p><strong>Skills:</strong> {character.skills.join(', ')}</p>
@@ -155,6 +161,7 @@ const CharacterSheets = () => {
           </div>
         ))}
       </div>
+
       {focusedCharacter && (
         <div className="backstory-container">
           <h3>Backstory</h3>
@@ -163,6 +170,4 @@ const CharacterSheets = () => {
       )}
     </div>
   );
-};
-
-export default CharacterSheets;
+}

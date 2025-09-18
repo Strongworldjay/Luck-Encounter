@@ -144,11 +144,26 @@ input[type="text"] {
   100% { opacity: 0; transform: scale(0.8); }
 }
 
+/* Disable hover-scale on touch devices (prevents overflow during gestures) */
+@media (hover: none) and (pointer: coarse) {
+  .card:hover { transform: none; }
+}
+
 /* ---------- MOBILE (≤640px) ---------- */
 @media (max-width: 640px) {
-  :root { --deck-size: 60px; } /* tap size */
+  /* tap size + how high to lift the corner buttons */
+  :root { 
+    --deck-size: 60px;
+    --deck-lift: 32px; /* raise buttons a bit higher */
+  }
 
-  body { overflow: auto; }
+  /* 1) Prevent any horizontal stretch/scroll */
+  html, body, #root, .app-container {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  body { overflow-y: auto; }
 
   .app-container {
     height: auto;
@@ -178,7 +193,7 @@ input[type="text"] {
     gap: 10px;
   }
 
-  /* NEW: left-align "Total Luck" + the input block on mobile */
+  /* Left-align "Total Luck" + the input block on mobile */
   .total-luck { justify-self: start; text-align: left; }
   .total-luck h3 { margin: 0; text-align: left; }
   .luck-input { justify-self: start; }
@@ -203,21 +218,30 @@ input[type="text"] {
     line-height: 1.2;
   }
 
-  /* Cards area: extra room at bottom for floating buttons */
+  /* 2) Reserve vertical space for the cards so the screen doesn't "jump" */
   .card-container {
-    padding: 14px 10px 148px;  /* room for deck + void */
+    width: 100%;
+    box-sizing: border-box;
+    /* previously 148px; auto-adjust with deck-lift */
+    padding: 14px 10px calc(148px + (var(--deck-lift) - 18px));
     gap: 14px !important;
     flex-wrap: wrap;
     justify-content: center;
+    min-height: 58vw; /* ~one row of cards reserved */
   }
 
-  /* Deck buttons pinned in corners, above browser chrome */
+  /* For very small phones, reserve a bit more (likely 2 rows) */
+  @media (max-width: 360px) {
+    .card-container { min-height: 100vw; }
+  }
+
+  /* Deck buttons pinned in corners, lifted above browser chrome */
   .deck-container,
   .deck-container.second-deck {
     position: fixed !important;
     width: var(--deck-size);
     height: var(--deck-size);
-    bottom: calc(18px + env(safe-area-inset-bottom)) !important;
+    bottom: calc(var(--deck-lift) + env(safe-area-inset-bottom)) !important;
     top: auto !important;
     transform: none !important;
     z-index: 30;

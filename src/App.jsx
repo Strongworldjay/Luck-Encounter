@@ -105,7 +105,7 @@ export default function App() {
         onNavClick={handleNavClick}
         currentSection={currentSection}
         compact={isMobile}
-        mobileHiddenItems={['SkillPointUsage','MagicBingo','RandomWheel','CharacterSheets']}
+        mobileHiddenItems={['SkillPointUsage','MagicBingo','RandomWheel',]}
       />
 
       {currentSection === 'DungeonCompletion' && (
