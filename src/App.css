@@ -63,7 +63,8 @@ body {
   gap: 16px;
 }
 
-input[type="number"] {
+input[type="text"] {
+  /* keep desktop styles; mobile override below prevents iOS zoom */
   margin-top: 5px;
   padding: 10px 12px;
   font-size: 1rem;
@@ -181,6 +182,11 @@ input[type="number"] {
   .total-luck { justify-self: start; text-align: left; }
   .total-luck h3 { margin: 0; text-align: left; }
   .luck-input { justify-self: start; }
+
+  /* Prevent iOS zoom by keeping ≥16px font on mobile */
+  input[type="text"] {
+    font-size: 16px;
+  }
 
   .dungeon-difficulty {
     display: grid;

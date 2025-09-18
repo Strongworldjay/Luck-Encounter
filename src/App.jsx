@@ -22,7 +22,7 @@ const rarities = [
   { name: 'Rare',      color: 'blue',   range: [50, 89] },
   { name: 'Very Rare', color: 'purple', range: [90, 109] },
   { name: 'Legendary', color: 'orange', range: [110, 140] },
-  { name: 'Unique',    color: 'red',    range: [141, 300] },
+  { name: 'Unique',    color: 'red',    range: [141, 200] },
 ];
 
 const itemTypes = [
@@ -105,7 +105,7 @@ export default function App() {
         onNavClick={handleNavClick}
         currentSection={currentSection}
         compact={isMobile}
-        mobileHiddenItems={['SkillPointUsage','MagicBingo','RandomWheel',]}
+        mobileHiddenItems={['SkillPointUsage','MagicBingo','RandomWheel','CharacterSheets']}
       />
 
       {currentSection === 'DungeonCompletion' && (
@@ -118,11 +118,18 @@ export default function App() {
                 <div className="luck-input">
                   <label>
                     Character's Luck:
+                    {/* Numeric keypad + no iOS zoom */}
                     <input
-                      type="number"
+                      type="text"
                       inputMode="numeric"
-                      value={characterLuck}
-                      onChange={(e) => setCharacterLuck(parseInt(e.target.value) || 0)}
+                      pattern="[0-9]*"
+                      enterKeyHint="done"
+                      autoComplete="off"
+                      value={String(characterLuck)}
+                      onChange={(e) => {
+                        const v = e.target.value.replace(/\D+/g, ''); // digits only
+                        setCharacterLuck(v === '' ? 0 : parseInt(v, 10));
+                      }}
                       placeholder="Enter character's luck"
                     />
                   </label>
