@@ -21,7 +21,7 @@ body {
 
 .content-wrap { width: 100%; }
 
-/* Panel — now transparent (kept as a hook if you add styles later) */
+/* Transparent wrapper (hook class, no styling) */
 .panel {
   background: transparent !important;
   border: none !important;
@@ -53,7 +53,7 @@ body {
   align-items: center;
 }
 
-/* Luck row: center as a group on desktop/tablet */
+/* Luck row centered as a group (desktop/tablet) */
 .luck-row {
   display: grid;
   grid-auto-flow: column;
@@ -135,7 +135,7 @@ input[type="number"] {
 
 .deck-image:hover { transform: scale(1.1); }
 
-/* Card fade animation (flip in Card.css) */
+/* Card fade animation (flip is in Card.css) */
 .card.fade-away { animation: fadeOut 0.5s ease forwards; }
 
 @keyframes fadeOut {
@@ -145,6 +145,8 @@ input[type="number"] {
 
 /* ---------- MOBILE (≤640px) ---------- */
 @media (max-width: 640px) {
+  :root { --deck-size: 60px; } /* tap size */
+
   body { overflow: auto; }
 
   .app-container {
@@ -167,6 +169,7 @@ input[type="number"] {
 
   .luck-section { width: 100%; }
 
+  /* Stack the two blocks, and align them left per request */
   .luck-row {
     grid-template-columns: 1fr;
     justify-content: stretch;
@@ -174,11 +177,10 @@ input[type="number"] {
     gap: 10px;
   }
 
-  .total-luck h3 {
-    margin: 0;
-    text-align: center;
-    font-size: 1.05rem;
-  }
+  /* NEW: left-align "Total Luck" + the input block on mobile */
+  .total-luck { justify-self: start; text-align: left; }
+  .total-luck h3 { margin: 0; text-align: left; }
+  .luck-input { justify-self: start; }
 
   .dungeon-difficulty {
     display: grid;
@@ -195,34 +197,36 @@ input[type="number"] {
     line-height: 1.2;
   }
 
-  /* More bottom space for buttons */
+  /* Cards area: extra room at bottom for floating buttons */
   .card-container {
-    padding: 14px 10px 148px;  /* was 112px */
+    padding: 14px 10px 148px;  /* room for deck + void */
     gap: 14px !important;
     flex-wrap: wrap;
     justify-content: center;
   }
 
-  /* Deck buttons pinned and lifted above browser chrome */
-  .deck-container {
-    position: fixed !important;
-    left: 12px !important;
-    bottom: calc(18px + env(safe-area-inset-bottom)) !important;
-    top: auto !important;
-    transform: none !important;
-    z-index: 30;
-  }
+  /* Deck buttons pinned in corners, above browser chrome */
+  .deck-container,
   .deck-container.second-deck {
     position: fixed !important;
-    right: 12px !important;
-    left: auto !important;
+    width: var(--deck-size);
+    height: var(--deck-size);
     bottom: calc(18px + env(safe-area-inset-bottom)) !important;
     top: auto !important;
     transform: none !important;
     z-index: 30;
   }
+  .deck-container { left: 12px !important; }
+  .deck-container.second-deck { right: 12px !important; left: auto !important; }
+
   .deck-image {
-    width: 60px;
-    height: auto;
+    width: 100% !important;  /* fill the square box */
+    height: auto !important;
   }
+}
+
+/* ---------- TABLET (641–1024px) ---------- */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .top-center-container { width: min(92vw, 900px); }
+  .deck-image { width: 80px; }
 }

@@ -22,7 +22,7 @@ const rarities = [
   { name: 'Rare',      color: 'blue',   range: [50, 89] },
   { name: 'Very Rare', color: 'purple', range: [90, 109] },
   { name: 'Legendary', color: 'orange', range: [110, 140] },
-  { name: 'Unique',    color: 'red',    range: [141, 200] },
+  { name: 'Unique',    color: 'red',    range: [141, 300] },
 ];
 
 const itemTypes = [
@@ -60,7 +60,7 @@ export default function App() {
     setIsDrawing(true);
     setSelectedCard(null);
 
-    const count = 3; // ← always draw 3 (mobile + desktop)
+    const count = 3; // always draw 3
     const newCards = Array.from({ length: count }, (_, index) => {
       const baseRoll = Math.floor(Math.random() * 100) + 1;
       const totalRoll = baseRoll + totalLuck;
@@ -105,7 +105,7 @@ export default function App() {
         onNavClick={handleNavClick}
         currentSection={currentSection}
         compact={isMobile}
-        mobileHiddenItems={['SkillPointUsage','MagicBingo','RandomWheel','CharacterSheets']}
+        mobileHiddenItems={['SkillPointUsage','MagicBingo','RandomWheel',]}
       />
 
       {currentSection === 'DungeonCompletion' && (
@@ -150,29 +150,33 @@ export default function App() {
                         className={selectedDungeon === 'B' ? 'selected' : ''}>
                   B Class Dungeon (+25 Luck)
                 </button>
-                <button onClick={() => { setDungeonLuck(35); setSelectedDungeon('A'); }}
+                <button onClick={() => { setDungeonLuck(45); setSelectedDungeon('A'); }}
                         className={selectedDungeon === 'A' ? 'selected' : ''}>
-                  A Class Dungeon (+35 Luck)
+                  A Class Dungeon (+45 Luck)
                 </button>
-                <button onClick={() => { setDungeonLuck(50); setSelectedDungeon('S'); }}
+                <button onClick={() => { setDungeonLuck(75); setSelectedDungeon('S'); }}
                         className={selectedDungeon === 'S' ? 'selected' : ''}>
-                  S Class Dungeon (+50 Luck)
+                  S Class Dungeon (+75 Luck)
                 </button>
               </div>
             </div>
           </div>
 
-          {/* Left deck (draw) */}
+          {/* Left deck (draw): stack on desktop, single image on mobile */}
           <div className="deck-container" onClick={generateCards} role="button" aria-label="Draw cards">
-            {[...Array(5)].map((_, i) => (
-              <img
-                key={i}
-                src={deckImage}
-                alt="Deck of Cards"
-                className="deck-image"
-                style={{ top: `${i * 2}px`, left: `${i * 2}px`, position: 'absolute' }}
-              />
-            ))}
+            {isMobile ? (
+              <img src={deckImage} alt="Deck of Cards" className="deck-image" />
+            ) : (
+              [...Array(5)].map((_, i) => (
+                <img
+                  key={i}
+                  src={deckImage}
+                  alt="Deck of Cards"
+                  className="deck-image"
+                  style={{ top: `${i * 2}px`, left: `${i * 2}px`, position: 'absolute' }}
+                />
+              ))
+            )}
           </div>
 
           {/* Cards */}
@@ -188,7 +192,7 @@ export default function App() {
             ))}
           </div>
 
-          {/* Right deck (reset) */}
+          {/* Right deck (reset / void) */}
           <div className="deck-container second-deck" onClick={resetCards} role="button" aria-label="Reset cards">
             <img src={voidImage} alt="Void Deck" className="deck-image" />
           </div>
