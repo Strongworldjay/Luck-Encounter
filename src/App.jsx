@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'; 
+import React, { useState, useEffect, useRef } from 'react';
 import Card from './Card';
 import LoadingScreen from './LoadingScreen';
 import Navbar from './Navbar';
@@ -14,27 +14,27 @@ import appBackground from './assets/app-background.jpg';
 import deckImage from './assets/card-design.jpg';
 import voidImage from './assets/void.webp';
 import { getRandomItem } from './ItemGenerator';
-import { useBreakpoint } from './hooks/useBreakpoint'; // ← NEW
+import { useBreakpoint } from './hooks/useBreakpoint';
 
 const rarities = [
-  { name: 'Common', color: 'white', range: [-100, 5] },
-  { name: 'Uncommon', color: 'green', range: [6, 49] },
-  { name: 'Rare', color: 'blue', range: [50, 89] },
+  { name: 'Common',    color: 'white',  range: [-100, 5] },
+  { name: 'Uncommon',  color: 'green',  range: [6, 49] },
+  { name: 'Rare',      color: 'blue',   range: [50, 89] },
   { name: 'Very Rare', color: 'purple', range: [90, 109] },
   { name: 'Legendary', color: 'orange', range: [110, 140] },
-  { name: 'Unique', color: 'red', range: [141, 200] },
+  { name: 'Unique',    color: 'red',    range: [141, 200] },
 ];
 
 const itemTypes = [
-  'Helmet', 'HeavyArmor', 'Gauntlet', 'Boots', 'Necklace', 'Cloak', 
-  'Sword', 'Bow', 'Axe', 'Hammer', 'Glaive', 'Dagger', 'Staff', 'Rod', 'Wand',
-  'Grimoire', 'WeaponArt', 'Scythe', 'Dagger', 'Sword',
-  'PassiveArt', 'BoostArt', 'SkillPoints', 'Robe', 'Ring', 'LightArmor',
-  'MediumArmor', 'WondrousItem', 'Shield', 'Crossbow', 'Spear', 'Halberd', 'Club', 'Whip', 'Mace',
-  'Warpick', 'Lance', 'Pike', 'Mana', 'Sword'
+  'Helmet','HeavyArmor','Gauntlet','Boots','Necklace','Cloak',
+  'Sword','Bow','Axe','Hammer','Glaive','Dagger','Staff','Rod','Wand',
+  'Grimoire','WeaponArt','Scythe','Dagger','Sword',
+  'PassiveArt','BoostArt','SkillPoints','Robe','Ring','LightArmor',
+  'MediumArmor','WondrousItem','Shield','Crossbow','Spear','Halberd','Club','Whip','Mace',
+  'Warpick','Lance','Pike','Mana','Sword'
 ];
 
-const App = () => {
+export default function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [cards, setCards] = useState([]);
   const [resetDeck, setResetDeck] = useState(false);
@@ -46,13 +46,11 @@ const App = () => {
   const [currentSection, setCurrentSection] = useState('DungeonCompletion');
   const cardRefs = useRef([]);
 
-  const isMobile = useBreakpoint('(max-width: 640px)'); // ← NEW
+  const isMobile = useBreakpoint('(max-width: 640px)');
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 4000);
-    return () => clearTimeout(timer);
+    const t = setTimeout(() => setIsLoading(false), 4000);
+    return () => clearTimeout(t);
   }, []);
 
   const totalLuck = characterLuck + dungeonLuck;
@@ -62,11 +60,11 @@ const App = () => {
     setIsDrawing(true);
     setSelectedCard(null);
 
-    const count = isMobile ? 2 : 3; // ← Fewer cards on phones
+    const count = 3; // ← always draw 3 (mobile + desktop)
     const newCards = Array.from({ length: count }, (_, index) => {
       const baseRoll = Math.floor(Math.random() * 100) + 1;
       const totalRoll = baseRoll + totalLuck;
-      const rarity = rarities.find((r) => totalRoll >= r.range[0] && totalRoll <= r.range[1]) || rarities[0];
+      const rarity = rarities.find(r => totalRoll >= r.range[0] && totalRoll <= r.range[1]) || rarities[0];
       const itemType = itemTypes[Math.floor(Math.random() * itemTypes.length)];
       const itemName = getRandomItem(itemType, null, rarity.name.replace(' ', ''));
       return { id: index, rarity, itemType, item: itemName, revealed: false, fadeAway: false };
@@ -79,20 +77,18 @@ const App = () => {
   const revealCard = (index) => {
     const selected = cards[index];
     setSelectedCard(selected);
-    setCards((prevCards) =>
-      prevCards.map((card, i) =>
-        i === index ? { ...card, revealed: true } : { ...card, fadeAway: true }
-      )
+    setCards(prev =>
+      prev.map((card, i) => (i === index ? { ...card, revealed: true } : { ...card, fadeAway: true }))
     );
     console.log(`You have obtained the ${selected.rarity.name} ${selected.itemType}: ${selected.item}`);
   };
 
   const resetCards = () => {
-    setCards((prevCards) => prevCards.map((card) => ({ ...card, fadeAway: true })));
+    setCards(prev => prev.map(card => ({ ...card, fadeAway: true })));
     setTimeout(() => {
       setCards([]);
       setSelectedCard(null);
-      setResetDeck((prev) => !prev);
+      setResetDeck(prev => !prev);
     }, 500);
   };
 
@@ -105,16 +101,18 @@ const App = () => {
       className={`app-container ${isMobile ? 'mobile' : 'desktop'}`}
       style={{ backgroundImage: `url(${appBackground})` }}
     >
-      <Navbar onNavClick={handleNavClick} currentSection={currentSection} compact={isMobile} mobileHiddenItems={[
-    'SkillPointUsage',
-    'MagicBingo',
-    'RandomWheel',
-    'CharacterSheets'
-  ]}/>
+      <Navbar
+        onNavClick={handleNavClick}
+        currentSection={currentSection}
+        compact={isMobile}
+        mobileHiddenItems={['SkillPointUsage','MagicBingo','RandomWheel','CharacterSheets']}
+      />
+
       {currentSection === 'DungeonCompletion' && (
         <div className="content-wrap">
-          <div className="top-center-container">
+          <div className="top-center-container panel">
             <h1>Why Not Test Your Luck?</h1>
+
             <div className="luck-section">
               <div className="luck-row">
                 <div className="luck-input">
@@ -129,6 +127,7 @@ const App = () => {
                     />
                   </label>
                 </div>
+
                 <div className="total-luck">
                   <h3>Total Luck: {totalLuck}</h3>
                 </div>
@@ -163,7 +162,8 @@ const App = () => {
             </div>
           </div>
 
-          <div className="deck-container" onClick={generateCards} role="button">
+          {/* Left deck (draw) */}
+          <div className="deck-container" onClick={generateCards} role="button" aria-label="Draw cards">
             {[...Array(5)].map((_, i) => (
               <img
                 key={i}
@@ -175,6 +175,7 @@ const App = () => {
             ))}
           </div>
 
+          {/* Cards */}
           <div className={`card-container ${isDrawing ? 'drawing' : ''}`}>
             {cards.map((card, index) => (
               <Card
@@ -187,19 +188,19 @@ const App = () => {
             ))}
           </div>
 
-          <div className="deck-container second-deck" onClick={resetCards} role="button">
+          {/* Right deck (reset) */}
+          <div className="deck-container second-deck" onClick={resetCards} role="button" aria-label="Reset cards">
             <img src={voidImage} alt="Void Deck" className="deck-image" />
           </div>
         </div>
       )}
 
-      {/* Wheel section */}
       {currentSection === 'Wheel' && (
         <RandomWheel
           totalLuck={totalLuck}
           itemTypes={itemTypes}
-          compact={isMobile}                 // ← let Wheel shrink on phones
-          onReward={(payload) => console.log("Wheel Reward:", payload)}
+          compact={isMobile}
+          onReward={(payload) => console.log('Wheel Reward:', payload)}
         />
       )}
 
@@ -212,6 +213,4 @@ const App = () => {
       {currentSection === 'UniqueSkill' && <UniqueSkill />}
     </div>
   );
-};
-
-export default App;
+}

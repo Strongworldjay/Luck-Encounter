@@ -133,16 +133,17 @@
 /* ---------- MOBILE (≤640px) ---------- */
 @media (max-width: 640px) {
   .card-container {
-    padding: 16px 12px 96px;
-    gap: 16px;
+    padding: 14px 10px 148px;   /* extra bottom room for deck + void buttons */
+    gap: 14px;
     flex-wrap: wrap;
+    justify-content: center;
   }
 
   .card {
-    width: 42vw;               /* responsive width */
-    height: calc(42vw * 1.5);  /* keep 2.5:3.75 ratio */
-    min-width: 0;
-    min-height: 0;
+    width: 34vw;                /* slightly smaller so 3 fit comfortably */
+    height: calc(34vw * 1.5);
+    min-width: 128px;           /* safety minimums for very small phones */
+    min-height: 192px;
     border-radius: 16px;
   }
 
@@ -150,13 +151,14 @@
   .card-face,
   .card::before { border-radius: 16px; }
 
-  .item-overlay { height: 64%; opacity: 0.35; }
+  .item-overlay { height: 60%; opacity: 0.35; }
 
-  .item-category { font-size: 1rem; }
-  .item-name { font-size: 0.9rem; }
+  .item-category { font-size: 0.95rem; }
+  .item-name     { font-size: 0.85rem; }
 }
 
 /* ---------- TABLET (641–1024px) ---------- */
 @media (min-width: 641px) and (max-width: 1024px) {
+  .card-container { gap: 28px; }
   .card { width: 220px; height: 330px; }
 }
