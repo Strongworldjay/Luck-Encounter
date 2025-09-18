@@ -105,7 +105,12 @@ const App = () => {
       className={`app-container ${isMobile ? 'mobile' : 'desktop'}`}
       style={{ backgroundImage: `url(${appBackground})` }}
     >
-      <Navbar onNavClick={handleNavClick} currentSection={currentSection} compact={isMobile} />
+      <Navbar onNavClick={handleNavClick} currentSection={currentSection} compact={isMobile} mobileHiddenItems={[
+    'SkillPointUsage',
+    'MagicBingo',
+    'RandomWheel',
+    'CharacterSheets'
+  ]}/>
       {currentSection === 'DungeonCompletion' && (
         <div className="content-wrap">
           <div className="top-center-container">
