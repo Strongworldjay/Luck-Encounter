@@ -1,133 +1,199 @@
-.character-sheets-container {
+/* Root layout (scoped so global styles don't leak) */
+.chests-container {
+  --chest-max: 250px;                 /* desktop cap for chest image */
+  width: min(1100px, 94vw);
+  margin: 16px auto 24px;
+  padding: 8px 8px 16px;
   display: flex;
-  gap: 10px;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 20px;
-  position: relative;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
 }
 
-.cards-container {
+/* Title */
+.chest-title {
+  width: 100%;
+  margin: 0 0 4px;
+  font-size: clamp(1.4rem, 1.1rem + 1.2vw, 2rem);
+  line-height: 1.2;
+  font-weight: 800;
+  text-align: left;
+  color: #000;
+  text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+
+/* Large chest art (scaled + capped) */
+.chest-icon {
+  display: block;
+  width: clamp(220px, 45vw, var(--chest-max));
+  max-width: 100%;
+  max-height: 42vh;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,.35));
+}
+
+/* Rows of filter buttons */
+.chest-buttons {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 8px;
   justify-content: center;
-  flex: 2;
+  align-items: center;
+  margin-top: 6px;
 }
 
-.character-card {
-  border-radius: 12px;
-  padding: 20px;
-  width: 300px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  text-align: center;
-  color: #fff;                 /* readable on colored backgrounds */
-  background-color: #222;      /* fallback */
-  transition: transform .35s ease, opacity .35s ease, box-shadow .35s ease;
+/* Generic button styling for this page (scoped) */
+.chests-container button {
+  appearance: none;
+  border: 1px solid rgba(255,255,255,.28);
+  background: rgba(34,34,34,.85);
+  color: #fff;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  line-height: 1.1;
   cursor: pointer;
+  transition: transform .12s ease, background-color .2s ease, box-shadow .2s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,.25);
+  white-space: nowrap;
+}
+.chests-container button:hover { 
+  background: rgba(68,68,68,.92); 
+  transform: translateY(-1px);
+}
+.chests-container button.selected {
+  outline: 2px solid gold;
+  box-shadow: 0 0 0 3px rgba(255,215,0,.25);
 }
 
-/* Unique background colors per card */
-.character-card:nth-child(1) { background-color: rgb(138, 36, 138); }
-.character-card:nth-child(2) { background-color: rgb(89, 92, 174); }
-.character-card:nth-child(3) { background-color: rgb(3, 117, 117); }
-.character-card:nth-child(4) { background-color: rgb(172, 149, 35); }
+/* Rarity button accents (optional) */
+.rarity-button.wooden   { background: #5a4636; }
+.rarity-button.steel    { background: #68707a; }
+.rarity-button.bronze   { background: #8b5e34; }
+.rarity-button.silver   { background: #9ba4b5; color: #111; }
+.rarity-button.gold     { background: #c9a227; color: #111; }
+.rarity-button.platinum { background: #b0c4de; color: #111; }
+.rarity-button.emerald  { background: #0d8b6a; }
 
-.character-card img.character-image {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  margin: 0 auto 8px;
-  display: block;
-  object-fit: cover;
-  border: 2px solid rgba(255,255,255,.35);
+/* Primary action row */
+.chests-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
 }
-
-.character-card:hover { transform: scale(1.04); }
-
-.character-card.focused {
-  position: relative;
-  z-index: 1;
-  width: 350px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, .45);
+.open-chest-btn {
+  background: #78a851;
+  border: 1px solid rgba(255,255,255,.35);
 }
+.open-chest-btn:hover { background: #6c9b49; }
 
-.character-card.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.character-stats p {
-  margin: 2px 0;
-  font-size: 0.9em;
-  line-height: 1.2;
-}
-
-.character-card p { margin: 2px 0; line-height: 1.2; }
-
-/* Backstory panel (desktop) */
-.backstory-container {
-  flex: 1;
-  padding: 20px;
-  background-color: rgba(240, 240, 240, 0.92);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+/* Loot output — transparent panel */
+.loot-section {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  background: transparent;   /* keep the world art visible */
+  border: none;
   border-radius: 10px;
+  color: #fff;
+  box-shadow: none;
+}
+
+/* Tight, wrap-around item pills */
+.loot-list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;                  /* compact spacing */
+  align-items: center;
+}
+
+/* Base pill look (used if rarity missing) */
+.loot-item {
+  padding: 4px 8px;
+  border-radius: 8px;
+  background: rgba(255,255,255,.92);
+  color: #000;
+  font-size: 0.95rem;
+  line-height: 1.25;
+  box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  border: 1px solid rgba(0,0,0,.08);
+}
+
+/* -------- Full-background colors per rarity -------- */
+.loot-item.common {
+  background: #f3f4f6;       /* light gray */
   color: #111;
-  max-width: 500px;
-  align-self: flex-start;
-  margin-left: -250px;  /* original layout offset */
-  margin-right: 300px;
+}
+.loot-item.uncommon {
+  background: #32c173;       /* mint */
+  color: #0d3b2a;
+}
+.loot-item.rare {
+  background: #4475c4;       /* powder blue */
+  color: #102a56;
+}
+/* cover both "veryrare" and "very-rare" just in case */
+.loot-item.veryrare,
+.loot-item.very-rare {
+  background: #cd1dd0;       /* lavender */
+  color: #3a0a63;
+}
+.loot-item.legendary {
+  background: #ebb03a;       /* soft gold */
+  color: #5a3b00;
+}
+.loot-item.unique {
+  background: #530c16;       /* soft rose */
+  color: #5a0b19;
 }
 
-/* ---------- MOBILE (≤640px) ---------- */
+/* Gold total — gold fill + gold outline + soft glow */
+.loot-gold {
+  margin-top: 6px;
+  font-weight: 900;
+  font-size: 1.2rem;
+  letter-spacing: .3px;
+
+  color: #ffd700 !important;
+  -webkit-text-fill-color: #ffd700 !important;
+  -webkit-text-stroke: 1px #d4af37;          /* gold outline */
+  text-shadow:
+    0 0 6px rgba(255,215,0,.55),
+    0 0 12px rgba(255,215,0,.35);
+}
+
+/* ----------------- Mobile (≤640px) ----------------- */
 @media (max-width: 640px) {
-  .character-sheets-container {
-    flex-direction: column;      /* stack vertically */
-    gap: 12px;
-    padding: 12px;
+  .chests-container {
+    --chest-max: 320px;
+    width: 94vw;
+    margin-top: 10px;
+    gap: 10px;
   }
 
-  .cards-container {
-    width: 100%;
-    justify-content: center;
-    gap: 12px;
+  .chest-icon {
+    width: clamp(200px, 70vw, var(--chest-max));
+    max-height: 36vh;
+    filter: drop-shadow(0 8px 14px rgba(0,0,0,.35));
   }
 
-  .character-card {
-    width: 92vw;                 /* full width on phones */
-    max-width: 420px;
-    margin: 0 auto;
-    border-radius: 14px;
-    transform: none !important;  /* no hover zoom on touch */
+  .chest-buttons { gap: 6px; }
+  .chests-container button {
+    font-size: 0.95rem;
+    padding: 10px 12px;
   }
 
-  /* When focused on mobile, keep it full width and hide others */
-  .character-card.focused {
-    width: 92vw;
-    max-width: 520px;
-    order: 0;                    /* no reordering weirdness */
-    z-index: 2;
-  }
-  .character-card.hidden { display: none; }
-
-  /* Backstory sits BELOW the focused card, full width */
-  .backstory-container {
-    width: 92vw;
-    max-width: 680px;
-    margin: 8px auto 18px;       /* remove negative margins */
-    padding: 14px;
-    background-color: rgba(240, 240, 240, 0.95);
-    box-shadow: 0 8px 16px rgba(0,0,0,.4);
-  }
+  .loot-list { gap: 4px; }
 }
 
-/* ---------- TABLET (641–1024px) ---------- */
+/* ----------------- Tablet (641–1024px) ----------------- */
 @media (min-width: 641px) and (max-width: 1024px) {
-  .character-sheets-container { gap: 14px; }
-  .character-card { width: 320px; }
-  .character-card.focused { width: 360px; }
-  .backstory-container {
-    margin-left: -120px;
-    margin-right: 140px;
-  }
+  .chests-container { --chest-max: 380px; }
+  .chest-icon { width: clamp(220px, 52vw, var(--chest-max)); max-height: 40vh; }
 }

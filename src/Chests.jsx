@@ -1,13 +1,9 @@
 // Chests.jsx
-
 import React, { useState } from "react";
 import { getRandomItem } from "./ItemGenerator";
 import { itemNames } from "./itemsData";
 
-// ✅ Fallback (used if a specific rarity icon is missing)
 import treasureChestIcon from "./assets/wooden2.jpeg";
-
-// ✅ Add your per-rarity chest images (adjust paths/filenames to match your project)
 import woodenChestIcon from "./assets/wooden2.jpeg";
 import steelChestIcon from "./assets/steel2.jpeg";
 import bronzeChestIcon from "./assets/bronze2.png";
@@ -18,7 +14,6 @@ import emeraldChestIcon from "./assets/emerald2.jpeg";
 
 import "./Chests.css";
 
-// Map rarity → icon (fallback happens below if a key is missing)
 const chestIcons = {
   wooden: woodenChestIcon,
   steel: steelChestIcon,
@@ -29,7 +24,6 @@ const chestIcons = {
   emerald: emeraldChestIcon,
 };
 
-// 1) Rarity settings (with weighted chances for the “extra” item)
 const chestSettings = {
   wooden:   { goldRange: [10, 20],  rarityWeights: { Common: 0.95, Uncommon: 0.05 } },
   steel:    { goldRange: [20, 40],  rarityWeights: { Common: 0.75, Uncommon: 0.25 } },
@@ -40,7 +34,6 @@ const chestSettings = {
   emerald:  { goldRange: [100, 200],rarityWeights: { Legendary: 0.7, Unique: 0.3 } }
 };
 
-// Helpers
 function getRandomInt(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
 function getWeightedRarity(weights) {
   const entries = Object.entries(weights);
@@ -53,14 +46,13 @@ function getWeightedRarity(weights) {
   return entries[0][0];
 }
 
-// 2) Chest content pools
 const chestTypes = {
   Random: [
-    "Helmet", "HeavyArmor", "Gauntlet", "Boots", "Necklace", "Cloak", "Potion",
-    "Sword", "Bow", "Axe", "Hammer", "Glaive", "Dagger", "Staff", "Rod", "Wand",
-    "Grimoire", "Gems", "Scrolls", "Keys", "TreasureMap", "Ammunition",
-    "Robe", "Ring", "LightArmor", "MediumArmor", "WondrousItem", "Shield",
-    "Crossbow", "Spear", "Halberd", "Club", "Whip", "Mace", "Warpick", "Lance", "Pike"
+    "Helmet","HeavyArmor","Gauntlet","Boots","Necklace","Cloak","Potion",
+    "Sword","Bow","Axe","Hammer","Glaive","Dagger","Staff","Rod","Wand",
+    "Grimoire","Gems","Scrolls","Keys","TreasureMap","Ammunition",
+    "Robe","Ring","LightArmor","MediumArmor","WondrousItem","Shield",
+    "Crossbow","Spear","Halberd","Club","Whip","Mace","Warpick","Lance","Pike"
   ],
   "Melee Weapon": ["Sword","Axe","Hammer","Glaive","Dagger","Mace","Warpick","Lance","Pike","Whip"],
   "Ranged Weapon": ["Bow","Crossbow"],
@@ -71,10 +63,9 @@ const chestTypes = {
   "Magic Focus":   ["Staff","Rod","Wand"],
   Jewelry:         ["Necklace","Ring","Gems"],
   Accessories:     ["Helmet","Boots","Cloak","Gauntlet"],
-  Supplies:        ["Potion", "Ammunition"]
+  Supplies:        ["Potion","Ammunition"]
 };
 
-// 3) Special-drop config ONLY for Random chests (adds ON TOP of the base extra)
 const specialDropConfig = {
   enabledForChestType: "Random",
   chances: { Potion: 0.05, Ammunition: 0.05, Scrolls: 0.05, Gems: 0.04 },
@@ -108,8 +99,7 @@ export default function Chests() {
   function openChest(rarity, chestType) {
     const { goldRange, rarityWeights } = chestSettings[rarity];
 
-    // 1) Misc (1–5)
-    const miscCount = getRandomInt(1, 5);
+    const miscCount = getRandomInt(1, 3);
     const miscArr   = itemNames.Misc?.Common || [];
     const miscLoot  = Array.from({ length: miscCount }, () => ({
       name: miscArr[getRandomInt(0, miscArr.length - 1)],
@@ -117,7 +107,6 @@ export default function Chests() {
       category: "Misc"
     }));
 
-    // 2) Base extra
     const pool       = chestTypes[chestType] || Object.keys(itemNames);
     const baseType   = pool[getRandomInt(0, pool.length - 1)];
     const baseRarity = getWeightedRarity(rarityWeights);
@@ -126,7 +115,6 @@ export default function Chests() {
 
     const items = [...miscLoot, baseExtra];
 
-    // 3) Optional special for Random
     if (chestType === "Random") {
       const specialCat = maybePickSpecialCategory(chestType);
       if (specialCat) {
@@ -137,9 +125,7 @@ export default function Chests() {
       }
     }
 
-    // 4) Gold only for Random
     const gold = chestType === "Random" ? getRandomInt(goldRange[0], goldRange[1]) : null;
-
     setLoot({ items, gold });
   }
 
@@ -151,21 +137,18 @@ export default function Chests() {
     openChest(selectedRarity, selectedChestType);
   }
 
-  // ✅ Choose the current chest image based on selected rarity (fall back to default)
   const currentChestIcon = chestIcons[selectedRarity] || treasureChestIcon;
 
   return (
     <div className="chests-container">
       <h1 className="chest-title">Chest Loot</h1>
 
-      {/* ✅ Reactive chest image */}
       <img
         src={currentChestIcon}
         className={`chest-icon ${selectedRarity || ""}`}
         alt={`${selectedRarity ? `${selectedRarity} chest` : "Chest"}`}
       />
 
-      {/* Rarity buttons */}
       <div className="chest-buttons">
         {Object.keys(chestSettings).map((r) => {
           const key = r.toLowerCase();
@@ -181,7 +164,6 @@ export default function Chests() {
         })}
       </div>
 
-      {/* Type buttons */}
       <div className="chest-buttons">
         {Object.keys(chestTypes).map((type) => (
           <button
@@ -194,14 +176,12 @@ export default function Chests() {
         ))}
       </div>
 
-      {/* Open action */}
-      <div style={{ margin: "20px 0" }}>
+      <div className="chests-actions">
         <button className="open-chest-btn" onClick={handleOpen}>
           Open Chest
         </button>
       </div>
 
-      {/* Loot display */}
       {loot && (
         <div className="loot-section">
           <h2>
