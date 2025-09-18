@@ -2,10 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import Card from './Card';
 import LoadingScreen from './LoadingScreen';
 import Navbar from './Navbar';
-import WeaponArts from './WeaponArts';
+import RandomWheel from './RandomWheel';
 import SacredArts from './SacredArts';
-import PassiveArts from './PassiveArts';
-import BoostArts from './BoostArts';
+import Magic from './MagicBingo';
 import SkillPointUsage from './SkillPointUsage';
 import CharacterSheets from './CharacterSheets';
 import UniqueSkill from './UniqueSkill';
@@ -17,21 +16,21 @@ import voidImage from './assets/void.webp'; // Importing the new image
 import { getRandomItem } from './ItemGenerator';
 
 const rarities = [
-  { name: 'Common', color: 'white', range: [-100, 20] },
-  { name: 'Uncommon', color: 'green', range: [21, 54] },
-  { name: 'Rare', color: 'blue', range: [55, 81] },
-  { name: 'Very Rare', color: 'purple', range: [82, 95] },
-  { name: 'Legendary', color: 'orange', range: [96, 125] },
-  { name: 'Unique', color: 'red', range: [126, 200] },
+  { name: 'Common', color: 'white', range: [-100, 11] },
+  { name: 'Uncommon', color: 'green', range: [12, 54] },
+  { name: 'Rare', color: 'blue', range: [55, 89] },
+  { name: 'Very Rare', color: 'purple', range: [90, 109] },
+  { name: 'Legendary', color: 'orange', range: [110, 140] },
+  { name: 'Unique', color: 'red', range: [141, 200] },
 ];
 
 const itemTypes = [
-  'Helmet', 'HeavyArmor', 'Gauntlet', 'Boots', 'Necklace', 'Cloak', 'Potion',
+  'Helmet', 'HeavyArmor', 'Gauntlet', 'Boots', 'Necklace', 'Cloak', 
   'Sword', 'Bow', 'Axe', 'Hammer', 'Glaive', 'Dagger', 'Staff', 'Rod', 'Wand',
-  'Grimoire', 'Gems', 'WeaponArt',
+  'Grimoire', 'Gems', 'WeaponArt', 'Keys', 'TreasureMap', 'Scythe',
   'PassiveArt', 'BoostArt', 'SkillPoints', 'Robe', 'Ring', 'LightArmor',
   'MediumArmor', 'WondrousItem', 'Shield', 'Crossbow', 'Spear', 'Halberd', 'Club', 'Whip', 'Mace',
-  'Warpick', 'Lance', 'Pike',
+  'Warpick', 'Lance', 'Pike', 'Mana'
 ];
 
 const App = () => {
@@ -182,12 +181,12 @@ const App = () => {
                 </button>
                 <button
                   onClick={() => {
-                    setDungeonLuck(60);
+                    setDungeonLuck(50);
                     setSelectedDungeon('S');
                   }}
                   className={selectedDungeon === 'S' ? 'selected' : ''}
                 >
-                  S Class Dungeon (+60 Luck)
+                  S Class Dungeon (+50 Luck)
                 </button>
               </div>
             </div>
@@ -223,11 +222,23 @@ const App = () => {
           </div>
         </div>
       )}
-      {currentSection === 'WeaponArts' && <WeaponArts />}
+
+      {/* 👉 NEW: Wheel section */}
+      {currentSection === 'Wheel' && (
+        <RandomWheel
+          totalLuck={totalLuck}
+          itemTypes={itemTypes}
+          onReward={(payload) => {
+            // OPTIONAL: Plug into your inventory/log system here
+            console.log("Wheel Reward:", payload);
+          }}
+        />
+         )}
+      {currentSection === 'RandomWheel' && <RandomWheel />}
       {currentSection === 'SacredArts' && <SacredArts />}
       {currentSection === 'Chests' && <Chests />}
-      {currentSection === 'PassiveArts' && <PassiveArts />}
-      {currentSection === 'BoostArts' && <BoostArts />}
+  
+      {currentSection === 'MagicBingo' && <Magic />}
       {currentSection === 'SkillPointUsage' && <SkillPointUsage />}
       {currentSection === 'CharacterSheets' && <CharacterSheets />}
       {currentSection === 'UniqueSkill' && <UniqueSkill />}

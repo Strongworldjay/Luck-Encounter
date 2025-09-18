@@ -1,0 +1,120 @@
+/* MagicBingo.module.css — isolated styles for Magic Bingo */
+
+:root {
+  --mb-bg-top: #0f172a !important;      /* slate-900 */
+  --mb-bg-mid: #020617 !important;      /* slate-950 */
+  --mb-bg-bot: #000000 !important;
+  --mb-text: #000000 !important;        /* slate-200 */
+  --mb-muted: #94a3b8 !important;       /* slate-400 */
+  --mb-border: #1f2937 !important;      /* slate-800 */
+  --mb-card: rgba(2, 6, 23, 0.6) !important;
+  --mb-gloss: rgba(255, 255, 255, 0.05) !important;
+  --mb-primary: #4f46e5 !important;     /* indigo-600 */
+  --mb-primary-hover: #6366f1 !important;/* indigo-500 */
+  --mb-secondary: #059669 !important;   /* emerald-600 */
+  --mb-secondary-hover: #10b981 !important;/* emerald-500 */
+  --mb-mark: #ffffff !important;        /* emerald-400 */
+  --mb-mark-border: #6ee7b7 !important; /* emerald-300 */
+}
+
+/* Root & layout */
+.root {
+  min-height: 100vh !important;
+  color: var(--mb-text) !important;
+  background: linear-gradient(to bottom, var(--mb-bg-top), var(--mb-bg-mid), var(--mb-bg-bot)) !important;
+  padding: 1.5rem !important;
+}
+.container { max-width: 80rem !important; margin: 0 auto !important; }
+
+.header {
+  display: flex !important; gap: 0.75rem !important; flex-direction: column !important; align-items: flex-start !important; justify-content: space-between !important;
+}
+@media (min-width: 640px) { .header { flex-direction: row !important; align-items: flex-end !important; } }
+
+.title { font-size: 1.875rem !important; line-height: 2.25rem !important; font-weight: 800 !important; letter-spacing: -0.01em !important; }
+.subtitle { color: var(--mb-muted) !important; }
+
+.actions { display: flex !important; flex-wrap: wrap !important; gap: 0.5rem !important; }
+.btnPrimary, .btnSecondary {
+  border: 0 !important; border-radius: 1rem !important; padding: 0.5rem 1rem !important; font-weight: 700 !important; cursor: pointer !important; color: white !important;
+  transition: transform 120ms ease, background-color 120ms ease, box-shadow 120ms ease !important;
+}
+.btnPrimary { background: var(--mb-primary) !important; }
+.btnPrimary:hover { background: var(--mb-primary-hover) !important; }
+.btnSecondary { background: var(--mb-secondary) !important; }
+.btnSecondary:hover { background: var(--mb-secondary-hover) !important; }
+.btnPrimary:active, .btnSecondary:active { transform: scale(0.97) !important; }
+
+.controls { display: flex !important; flex-wrap: wrap !important; align-items: center !important; gap: 0.75rem !important; margin-top: 1rem !important; }
+.checkboxLabel { display: inline-flex !important; align-items: center !important; gap: 0.5rem !important; cursor: pointer !important; user-select: none !important; }
+.seed { display: inline-flex !important; align-items: center !important; gap: 0.5rem !important; }
+.seed > span { font-size: 0.75rem !important; color: var(--mb-muted) !important; }
+.seedCode { background: #0b1220 !important; border: 1px solid var(--mb-border) !important; border-radius: 0.375rem !important; padding: 0.125rem 0.375rem !important; font-size: 0.75rem !important; }
+.rerollBtn { font-size: 0.75rem !important; background: #0b1220 !important; border: 1px solid var(--mb-border) !important; border-radius: 999px !important; padding: 0.25rem 0.75rem !important; color: var(--mb-text) !important; }
+.rerollBtn:hover { background: #111827 !important; }
+
+.indicator { color: var(--mb-secondary-hover) !important; font-weight: 700 !important; }
+
+.cardWrap { display: grid !important; place-items: center !important; margin-top: 1.5rem !important; }
+
+/* Updated: card stacks header row above grid */
+.card {
+  background: var(--mb-card) !important; border: 1px solid var(--mb-border) !important; border-radius: 1.5rem !important; padding: 0.75rem !important; box-shadow: 0 25px 50px -12px rgba(0,0,0,.8) !important;
+  width: 100% !important; max-width: 48rem !important; aspect-ratio: 1 / 1 !important;
+  display: flex !important; flex-direction: column !important;
+}
+
+/* NEW: MAGIC header row */
+.letters {
+  display: grid !important;
+  grid-template-columns: repeat(5, 1fr) !important;
+  gap: 0.75rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.letter {
+  text-align: center !important;
+  font-weight: 800 !important;
+  font-size: 1.25rem !important;
+  letter-spacing: 0.12em !important;
+  color: var(--mb-text) !important;
+  padding: 0.25rem 0 !important;
+  border-bottom: 2px solid var(--mb-border) !important;
+}
+
+/* Grid now fills remaining space below header row */
+.grid {
+  flex: 1 1 auto !important;
+  height: auto !important;
+  display: grid !important;
+  grid-template-columns: repeat(5, 1fr) !important;
+  grid-template-rows: repeat(5, 1fr) !important;
+  gap: 0.75rem !important;
+}
+
+.square {
+  position: relative !important; border: 1px solid var(--mb-border) !important; border-radius: 1rem !important; padding: 0.5rem !important; text-align: center !important; display: grid !important; place-items: center !important;
+  background: rgba(255, 255, 255, 0) !important; color: var(--mb-text) !important; box-shadow: 0 8px 20px rgba(0,0,0,.35) !important;
+  transition: background-color 120ms ease, border-color 120ms ease, transform 120ms ease !important;
+}
+.square:hover { background: rgba(2, 6, 23, 0.6) !important; border-color: #334155 !important; }
+.square::after {
+  content: "" !important; position: absolute !important; top: 0.5rem !important; right: 0.5rem !important; width: 1rem !important; height: 1rem !important; border-radius: 999px !important; border: 1px solid #334155 !important;
+}
+.squareMarked { background: rgba(5, 150, 105, 0.20) !important; border-color: rgba(16, 185, 129, 0.6) !important; }
+.squareMarked::after { background: var(--mb-mark) !important; border-color: var(--mb-mark-border) !important; }
+.squareText { font-weight: 500 !important; }
+.squareCenter { font-weight: 800 !important; }
+.squareCenter small { display: inline-block !important; opacity: 0.8 !important; font-weight: 400 !important; font-size: 10px !important; color: #a7f3d0 !important; }
+.gloss { position: absolute !important; inset: 0 !important; border-radius: 1rem !important; background: linear-gradient(135deg, var(--mb-gloss), transparent) !important; pointer-events: none !important; }
+
+.footer { margin-top: 1.5rem !important; text-align: center !important; font-size: 0.75rem !important; color: var(--mb-muted) !important; }
+
+/* Print controls */
+.noPrint { }
+@media print {
+  .noPrint { display: none !important; }
+  .root { background: #fff !important; color: #000 !important; }
+  .card { background: #fff !important; border: 2px solid #000 !important; box-shadow: none !important; }
+  :global(body) { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}

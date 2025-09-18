@@ -29,24 +29,24 @@
 
 /* Assign unique background colors to cards */
 .character-card:nth-child(1) {
-    background-color: plum; /* Background color for card 1 */
+    background-color: rgb(84, 21, 84); /* Background color for card 1 */
 }
 
 .character-card:nth-child(2) {
-    background-color: burlywood; /* Background color for card 2 */
+    background-color: rgb(89, 92, 174); /* Background color for card 2 */
 }
 
 .character-card:nth-child(3) {
-    background-color: darkcyan; /* Background color for card 3 */
+    background-color: rgb(3, 117, 117); /* Background color for card 3 */
 }
 
 .character-card:nth-child(4) {
-    background-color: indianred; /* Background color for card 4 */
+    background-color: rgb(172, 149, 35); /* Background color for card 4 */
 }
 
 .character-card img {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     margin: 0 auto;
     display: block;
@@ -90,7 +90,7 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); 
     border-radius: 10px;
     color: black;
-    max-width: 300px;
+    max-width: 500px;
     align-self: flex-start; /* Ensure the backstory aligns with the top of the screen */
     margin-left: -250px;
     margin-right: 300px; /* Further reduce the margin to move it closer to the cards */

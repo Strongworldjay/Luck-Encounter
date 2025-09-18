@@ -14,8 +14,8 @@
 .nav-list {
   list-style-type: none;
   display: flex;
-  gap: 15px;
-  font-size: 0.9em;
+  gap: 100px;
+  font-size: 1em;
 }
 
 .nav-item {

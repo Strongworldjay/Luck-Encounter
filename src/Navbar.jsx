@@ -12,34 +12,10 @@ const Navbar = ({ onNavClick, currentSection }) => {
           Dungeon Completion
         </li>
         <li
-        className={`nav-item ${currentSection === 'Chests' ? 'active' : ''}`}
-         onClick={() => onNavClick('Chests')}
+          className={`nav-item ${currentSection === 'Chests' ? 'active' : ''}`}
+          onClick={() => onNavClick('Chests')}
         >
-           Chests
-        </li>
-        <li
-          className={`nav-item ${currentSection === 'WeaponArts' ? 'active' : ''}`}
-          onClick={() => onNavClick('WeaponArts')}
-        >
-          Weapon Arts
-        </li>
-        <li
-          className={`nav-item ${currentSection === 'SacredArts' ? 'active' : ''}`}
-          onClick={() => onNavClick('SacredArts')}
-        >
-          Sacred Arts
-        </li>
-        <li
-          className={`nav-item ${currentSection === 'PassiveArts' ? 'active' : ''}`}
-          onClick={() => onNavClick('PassiveArts')}
-        >
-          Passive Arts
-        </li>
-        <li
-          className={`nav-item ${currentSection === 'BoostArts' ? 'active' : ''}`}
-          onClick={() => onNavClick('BoostArts')}
-        >
-          Boost Arts
+          Chests
         </li>
         <li
           className={`nav-item ${currentSection === 'SkillPointUsage' ? 'active' : ''}`}
@@ -48,12 +24,17 @@ const Navbar = ({ onNavClick, currentSection }) => {
           Skill Point Usage
         </li>
         <li
-          className={`nav-item ${currentSection === 'UniqueSkill' ? 'active' : ''}`}
-          onClick={() => onNavClick('UniqueSkill')}
+          className={`nav-item ${currentSection === 'MagicBingo' ? 'active' : ''}`}
+          onClick={() => onNavClick('MagicBingo')}
         >
-          Unique Skill
+          Magic
         </li>
-
+         <li
+          className={`nav-item ${currentSection === 'RandomWheel' ? 'active' : ''}`}
+          onClick={() => onNavClick('RandomWheel')}
+        >
+          RandomWheel
+        </li>
         <li
           className={`nav-item ${currentSection === 'CharacterSheets' ? 'active' : ''}`}
           onClick={() => onNavClick('CharacterSheets')}
