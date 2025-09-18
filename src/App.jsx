@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react'; 
 import Card from './Card';
 import LoadingScreen from './LoadingScreen';
 import Navbar from './Navbar';
@@ -12,13 +12,14 @@ import Chests from './Chests';
 import './App.css';
 import appBackground from './assets/app-background.jpg';
 import deckImage from './assets/card-design.jpg';
-import voidImage from './assets/void.webp'; // Importing the new image
+import voidImage from './assets/void.webp';
 import { getRandomItem } from './ItemGenerator';
+import { useBreakpoint } from './hooks/useBreakpoint'; // ← NEW
 
 const rarities = [
-  { name: 'Common', color: 'white', range: [-100, 11] },
-  { name: 'Uncommon', color: 'green', range: [12, 54] },
-  { name: 'Rare', color: 'blue', range: [55, 89] },
+  { name: 'Common', color: 'white', range: [-100, 5] },
+  { name: 'Uncommon', color: 'green', range: [6, 49] },
+  { name: 'Rare', color: 'blue', range: [50, 89] },
   { name: 'Very Rare', color: 'purple', range: [90, 109] },
   { name: 'Legendary', color: 'orange', range: [110, 140] },
   { name: 'Unique', color: 'red', range: [141, 200] },
@@ -27,23 +28,25 @@ const rarities = [
 const itemTypes = [
   'Helmet', 'HeavyArmor', 'Gauntlet', 'Boots', 'Necklace', 'Cloak', 
   'Sword', 'Bow', 'Axe', 'Hammer', 'Glaive', 'Dagger', 'Staff', 'Rod', 'Wand',
-  'Grimoire', 'Gems', 'WeaponArt', 'Keys', 'TreasureMap', 'Scythe',
+  'Grimoire', 'WeaponArt', 'Scythe', 'Dagger', 'Sword',
   'PassiveArt', 'BoostArt', 'SkillPoints', 'Robe', 'Ring', 'LightArmor',
   'MediumArmor', 'WondrousItem', 'Shield', 'Crossbow', 'Spear', 'Halberd', 'Club', 'Whip', 'Mace',
-  'Warpick', 'Lance', 'Pike', 'Mana'
+  'Warpick', 'Lance', 'Pike', 'Mana', 'Sword'
 ];
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [cards, setCards] = useState([]);
-  const [resetDeck, setResetDeck] = useState(false); // State for the second deck reset
-  const [characterLuck, setCharacterLuck] = useState(0); // Character's Luck
-  const [dungeonLuck, setDungeonLuck] = useState(0); // Dungeon Difficulty Luck
-  const [selectedDungeon, setSelectedDungeon] = useState(null); // Track selected dungeon class
+  const [resetDeck, setResetDeck] = useState(false);
+  const [characterLuck, setCharacterLuck] = useState(0);
+  const [dungeonLuck, setDungeonLuck] = useState(0);
+  const [selectedDungeon, setSelectedDungeon] = useState(null);
   const [selectedCard, setSelectedCard] = useState(null);
   const [isDrawing, setIsDrawing] = useState(false);
   const [currentSection, setCurrentSection] = useState('DungeonCompletion');
   const cardRefs = useRef([]);
+
+  const isMobile = useBreakpoint('(max-width: 640px)'); // ← NEW
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -52,14 +55,15 @@ const App = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const totalLuck = characterLuck + dungeonLuck; // Combine the luck values
+  const totalLuck = characterLuck + dungeonLuck;
 
   const generateCards = () => {
     if (isDrawing) return;
     setIsDrawing(true);
     setSelectedCard(null);
 
-    const newCards = Array.from({ length: 3 }, (_, index) => {
+    const count = isMobile ? 2 : 3; // ← Fewer cards on phones
+    const newCards = Array.from({ length: count }, (_, index) => {
       const baseRoll = Math.floor(Math.random() * 100) + 1;
       const totalRoll = baseRoll + totalLuck;
       const rarity = rarities.find((r) => totalRoll >= r.range[0] && totalRoll <= r.range[1]) || rarities[0];
@@ -77,21 +81,14 @@ const App = () => {
     setSelectedCard(selected);
     setCards((prevCards) =>
       prevCards.map((card, i) =>
-        i === index
-          ? { ...card, revealed: true }
-          : { ...card, fadeAway: true }
+        i === index ? { ...card, revealed: true } : { ...card, fadeAway: true }
       )
     );
-
-    console.log(
-      `You have obtained the ${selected.rarity.name} ${selected.itemType}: ${selected.item}`
-    );
+    console.log(`You have obtained the ${selected.rarity.name} ${selected.itemType}: ${selected.item}`);
   };
 
   const resetCards = () => {
-    setCards((prevCards) =>
-      prevCards.map((card) => ({ ...card, fadeAway: true }))
-    );
+    setCards((prevCards) => prevCards.map((card) => ({ ...card, fadeAway: true })));
     setTimeout(() => {
       setCards([]);
       setSelectedCard(null);
@@ -99,19 +96,18 @@ const App = () => {
     }, 500);
   };
 
-  const handleNavClick = (section) => {
-    setCurrentSection(section);
-  };
+  const handleNavClick = (section) => setCurrentSection(section);
 
-  if (isLoading) {
-    return <LoadingScreen />;
-  }
+  if (isLoading) return <LoadingScreen />;
 
   return (
-    <div className="app-container" style={{ backgroundImage: `url(${appBackground})` }}>
-      <Navbar onNavClick={handleNavClick} currentSection={currentSection} />
+    <div
+      className={`app-container ${isMobile ? 'mobile' : 'desktop'}`}
+      style={{ backgroundImage: `url(${appBackground})` }}
+    >
+      <Navbar onNavClick={handleNavClick} currentSection={currentSection} compact={isMobile} />
       {currentSection === 'DungeonCompletion' && (
-        <div>
+        <div className="content-wrap">
           <div className="top-center-container">
             <h1>Why Not Test Your Luck?</h1>
             <div className="luck-section">
@@ -121,6 +117,7 @@ const App = () => {
                     Character's Luck:
                     <input
                       type="number"
+                      inputMode="numeric"
                       value={characterLuck}
                       onChange={(e) => setCharacterLuck(parseInt(e.target.value) || 0)}
                       placeholder="Enter character's luck"
@@ -132,66 +129,36 @@ const App = () => {
                 </div>
               </div>
 
-              {/* Updated Dungeon Difficulty Buttons */}
               <div className="dungeon-difficulty">
-                <button
-                  onClick={() => {
-                    setDungeonLuck(-50);
-                    setSelectedDungeon('F');
-                  }}
-                  className={selectedDungeon === 'F' ? 'selected' : ''}
-                >
+                <button onClick={() => { setDungeonLuck(-50); setSelectedDungeon('F'); }}
+                        className={selectedDungeon === 'F' ? 'selected' : ''}>
                   F Class Dungeon (-50 Luck)
                 </button>
-                <button
-                  onClick={() => {
-                    setDungeonLuck(-25);
-                    setSelectedDungeon('D');
-                  }}
-                  className={selectedDungeon === 'D' ? 'selected' : ''}
-                >
+                <button onClick={() => { setDungeonLuck(-25); setSelectedDungeon('D'); }}
+                        className={selectedDungeon === 'D' ? 'selected' : ''}>
                   D Class Dungeon (-25 Luck)
                 </button>
-                <button
-                  onClick={() => {
-                    setDungeonLuck(0);
-                    setSelectedDungeon('C');
-                  }}
-                  className={selectedDungeon === 'C' ? 'selected' : ''}
-                >
+                <button onClick={() => { setDungeonLuck(0); setSelectedDungeon('C'); }}
+                        className={selectedDungeon === 'C' ? 'selected' : ''}>
                   C Class Dungeon (0 Luck)
                 </button>
-                <button
-                  onClick={() => {
-                    setDungeonLuck(20);
-                    setSelectedDungeon('B');
-                  }}
-                  className={selectedDungeon === 'B' ? 'selected' : ''}
-                >
-                  B Class Dungeon (+20 Luck)
+                <button onClick={() => { setDungeonLuck(25); setSelectedDungeon('B'); }}
+                        className={selectedDungeon === 'B' ? 'selected' : ''}>
+                  B Class Dungeon (+25 Luck)
                 </button>
-                <button
-                  onClick={() => {
-                    setDungeonLuck(35);
-                    setSelectedDungeon('A');
-                  }}
-                  className={selectedDungeon === 'A' ? 'selected' : ''}
-                >
+                <button onClick={() => { setDungeonLuck(35); setSelectedDungeon('A'); }}
+                        className={selectedDungeon === 'A' ? 'selected' : ''}>
                   A Class Dungeon (+35 Luck)
                 </button>
-                <button
-                  onClick={() => {
-                    setDungeonLuck(50);
-                    setSelectedDungeon('S');
-                  }}
-                  className={selectedDungeon === 'S' ? 'selected' : ''}
-                >
+                <button onClick={() => { setDungeonLuck(50); setSelectedDungeon('S'); }}
+                        className={selectedDungeon === 'S' ? 'selected' : ''}>
                   S Class Dungeon (+50 Luck)
                 </button>
               </div>
             </div>
           </div>
-          <div className="deck-container" onClick={generateCards}>
+
+          <div className="deck-container" onClick={generateCards} role="button">
             {[...Array(5)].map((_, i) => (
               <img
                 key={i}
@@ -202,6 +169,7 @@ const App = () => {
               />
             ))}
           </div>
+
           <div className={`card-container ${isDrawing ? 'drawing' : ''}`}>
             {cards.map((card, index) => (
               <Card
@@ -213,31 +181,26 @@ const App = () => {
               />
             ))}
           </div>
-          <div className="deck-container second-deck" onClick={resetCards}>
-            <img
-              src={voidImage}
-              alt="Void Deck"
-              className="deck-image"
-            />
+
+          <div className="deck-container second-deck" onClick={resetCards} role="button">
+            <img src={voidImage} alt="Void Deck" className="deck-image" />
           </div>
         </div>
       )}
 
-      {/* 👉 NEW: Wheel section */}
+      {/* Wheel section */}
       {currentSection === 'Wheel' && (
         <RandomWheel
           totalLuck={totalLuck}
           itemTypes={itemTypes}
-          onReward={(payload) => {
-            // OPTIONAL: Plug into your inventory/log system here
-            console.log("Wheel Reward:", payload);
-          }}
+          compact={isMobile}                 // ← let Wheel shrink on phones
+          onReward={(payload) => console.log("Wheel Reward:", payload)}
         />
-         )}
-      {currentSection === 'RandomWheel' && <RandomWheel />}
+      )}
+
+      {currentSection === 'RandomWheel' && <RandomWheel compact={isMobile} />}
       {currentSection === 'SacredArts' && <SacredArts />}
       {currentSection === 'Chests' && <Chests />}
-  
       {currentSection === 'MagicBingo' && <Magic />}
       {currentSection === 'SkillPointUsage' && <SkillPointUsage />}
       {currentSection === 'CharacterSheets' && <CharacterSheets />}

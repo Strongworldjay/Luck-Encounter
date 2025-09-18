@@ -4,6 +4,7 @@
   justify-content: center;
   padding: 50px;
   margin-top: 20px;
+  flex-wrap: nowrap;
 }
 
 .card {
@@ -19,11 +20,10 @@
   justify-content: center;
   transition: transform 0.6s ease, opacity 1s ease;
   will-change: transform, opacity;
+  touch-action: manipulation;
 }
 
-.card:hover {
-  transform: scale(1.06); /* gentler so it doesn't fight the flip */
-}
+.card:hover { transform: scale(1.06); }
 
 .fade-away {
   opacity: 0;
@@ -32,7 +32,7 @@
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-/* Inner wrapper handles the flip */
+/* Flip wrapper */
 .card-inner {
   position: relative;
   width: 100%;
@@ -43,10 +43,7 @@
   border-radius: 20px;
 }
 
-/* When revealed, rotate the inner wrapper by 180deg */
-.card.revealed .card-inner {
-  transform: rotateY(180deg);
-}
+.card.revealed .card-inner { transform: rotateY(180deg); }
 
 /* Glow ring */
 .card::before {
@@ -58,8 +55,7 @@
   box-shadow: 0 0 10px 3px transparent;
   opacity: 1;
   z-index: -1;
-  
-  transition: opacity 0.8s ease, box-shadow 0.8s ease; /* align timing with flip */
+  transition: opacity 0.8s ease, box-shadow 0.8s ease;
 }
 
 .card.revealed::before {
@@ -68,10 +64,7 @@
   transition-delay: .7s;
 }
 
-/* Rarity → glow color */
-:root {
-  --glow-color: white;
-}
+:root { --glow-color: white; }
 .card.revealed.common     { --glow-color: white; }
 .card.revealed.uncommon   { --glow-color: green; }
 .card.revealed.rare       { --glow-color: rgb(68, 107, 117); }
@@ -94,7 +87,6 @@
   will-change: transform;
 }
 
-/* Front faces camera by default, back starts reversed */
 .card-front { transform: rotateY(180deg); }
 .card-back  { transform: rotateY(0deg); }
 
@@ -110,7 +102,7 @@
   pointer-events: none;
 }
 
-/* Item text */
+/* Text */
 .item-text {
   text-align: center;
   font-family: 'Cursive', sans-serif;
@@ -136,4 +128,35 @@
   text-shadow:
     2px 2px 3px rgba(0, 0, 0, 0.7),
     4px 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* ---------- MOBILE (≤640px) ---------- */
+@media (max-width: 640px) {
+  .card-container {
+    padding: 16px 12px 96px;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    width: 42vw;               /* responsive width */
+    height: calc(42vw * 1.5);  /* keep 2.5:3.75 ratio */
+    min-width: 0;
+    min-height: 0;
+    border-radius: 16px;
+  }
+
+  .card-inner,
+  .card-face,
+  .card::before { border-radius: 16px; }
+
+  .item-overlay { height: 64%; opacity: 0.35; }
+
+  .item-category { font-size: 1rem; }
+  .item-name { font-size: 0.9rem; }
+}
+
+/* ---------- TABLET (641–1024px) ---------- */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .card { width: 220px; height: 330px; }
 }

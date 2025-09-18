@@ -1,3 +1,4 @@
+/* Base */
 body {
   background-color: black;
   margin: 0;
@@ -17,6 +18,9 @@ body {
   padding-top: 60px;
 }
 
+.content-wrap { width: 100%; }
+
+/* Top section */
 .top-center-container {
   display: flex;
   flex-direction: column;
@@ -41,15 +45,16 @@ body {
 
 input[type="number"] {
   margin-top: 5px;
-  padding: 3px 5px;
-  font-size: 0.9em;
-  border-radius: 5px;
+  padding: 8px 10px;
+  font-size: 1rem;
+  border-radius: 8px;
   border: none;
   background-color: black;
   color: white;
   text-align: center;
 }
 
+/* Luck / dungeon row */
 .luck-buttons {
   display: flex;
   gap: 10px;
@@ -58,19 +63,51 @@ input[type="number"] {
   margin-top: 10px;
 }
 
+.dungeon-difficulty {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.dungeon-difficulty button {
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  touch-action: manipulation;
+}
+
+.dungeon-difficulty button:hover { background-color: #555; }
+
+.dungeon-difficulty button.selected {
+  background-color: #555;
+  box-shadow: 0 0 10px 4px gold;
+  color: gold;
+}
+
+.total-luck {
+  margin-top: 0px;
+  color: black;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+/* Decks */
 .deck-container {
   position: fixed;
   left: 20px;
-  /* Adjusted to move further left */
   top: 50%;
-  /* Vertically centered */
   transform: translateY(-50%);
   cursor: pointer;
 }
 
-.deck-container.second-deck {
-  top: 85%; /* Adjusts the position of the second deck */
-}
+.deck-container.second-deck { top: 85%; }
 
 .deck-image {
   width: 90px;
@@ -78,66 +115,84 @@ input[type="number"] {
   transition: transform 0.2s ease;
 }
 
-.deck-image:hover {
-  transform: scale(1.1);
-}
+.deck-image:hover { transform: scale(1.1); }
 
-.rarity {
-  color: #ffd700;
-}
+/* Fade-away animation used by cards */
+.card.fade-away { animation: fadeOut 0.5s ease forwards; }
 
-.item-name {
-  font-weight: bold;
-}
-
-.dungeon-difficulty {
-  display: flex;
-  justify-content: center;
-  gap: 10px; /* Adds spacing between buttons */
-  flex-wrap: wrap; /* Allows wrapping if buttons don't fit */
-}
-
-.dungeon-difficulty button {
-  padding: 8px 12px;
-  font-size: 0.9em;
-  border: none;
-  border-radius: 5px;
-  background-color: #333;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.dungeon-difficulty button:hover {
-  background-color: #555;
-}
-
-.dungeon-difficulty button.selected {
-  background-color: #555;
-  box-shadow: 0 0 10px 4px gold; /* Golden backglow effect */
-  color: gold; /* Optional: Change text color to gold */
-}
-
-.total-luck {
-  margin-top: 0px;
-  color: black; /* Total Luck text color */
-  font-weight: bold;
-  font-size: 1.2em;
-}
-
-/* Animation for cards disappearing */
-.card.fade-away {
-  animation: fadeOut 0.5s ease forwards;
-}
-
-/* Keyframes for fading out cards */
 @keyframes fadeOut {
-  0% {
-    opacity: 1;
-    transform: scale(1);
+  0%   { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.8); }
+}
+
+/* ---------- MOBILE (≤640px) ---------- */
+@media (max-width: 640px) {
+  body { overflow: auto; }                /* allow scrolling on phones */
+
+  .app-container {
+    height: auto;                         /* no viewport jump on iOS */
+    min-height: 100dvh;
+    padding-top: 56px;
   }
-  100% {
-    opacity: 0;
-    transform: scale(0.8);
+
+  .top-center-container h1 {
+    font-size: 1.4rem;
   }
+
+  .luck-section { width: 100%; padding: 0 12px; }
+
+  .luck-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 8px;
+  }
+
+  input[type="number"] {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 1.05rem;
+    border-radius: 10px;
+  }
+
+  .dungeon-difficulty {
+    gap: 8px;
+    padding: 8px 6px 0;
+  }
+
+  .dungeon-difficulty button {
+    width: calc(50% - 6px);               /* nice two-column stack */
+    font-size: 0.95rem;
+    padding: 12px 10px;
+    border-radius: 10px;
+  }
+
+  .deck-container {
+    position: fixed;
+    left: 10px;
+    bottom: 12px;
+    top: auto;
+    transform: none;
+  }
+
+  .deck-container.second-deck {
+    right: 10px;
+    left: auto;
+    bottom: 12px;
+    top: auto;
+  }
+
+  .deck-image { width: 64px; }
+
+  .card-container {
+    padding: 16px 12px 96px;             /* room for fixed decks */
+    gap: 16px !important;
+    flex-wrap: wrap;                      /* allow wrapping */
+  }
+}
+
+/* ---------- TABLET (641–1024px) ---------- */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .deck-image { width: 80px; }
+  .card-container { gap: 28px; }
 }

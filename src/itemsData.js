@@ -5,7 +5,7 @@ export const itemNames = {
             "Shapeshifter's Circlet", "Stylist's Circlet", "Vox Helm"
         ],
         Uncommon: [
-            "Dusk Mask", "Lupine Mask", "Cap of Curing",  "Circlet of Shifting Color", "Helm of the Vigilant Watchman",
+            "Dusk Mask", "Lupine Mask", "Cap of Curing", "Circlet of Shifting Color", "Helm of the Vigilant Watchman",
             "Mask of the Beast", "Mask of the Mimic", "Mask of the Pact Bearer",
             "Masks of the Sacred Beasts (Lion)",
             "Scarab Mask", "Bismuth Crown", "Circlet of Blasting",
@@ -25,15 +25,15 @@ export const itemNames = {
             "Avian Circlet", "Focus Circlet", "Helm of The Juggernaut",
             "Clangor Helmet", "Head of The Lion Medallion", "Helm of Heroes",
             "Helm of Patron Saints", "Helm of Sending", "Helm of Teleportation",
-            "Helm of the Gods",  "Circlet of Echoing Will", "Circlet of Verdant Synergy", "Crown of the Blazing Brand",
-      "Hat of the Silver Tongue", "Hood of the Astral Fist", "Hood of Subjugation",
-      "Helm of Unclouded Sight",
+            "Helm of the Gods", "Circlet of Echoing Will", "Circlet of Verdant Synergy", "Crown of the Blazing Brand",
+            "Hat of the Silver Tongue", "Hood of the Astral Fist", "Hood of Subjugation",
+            "Helm of Unclouded Sight",
             "Helmsman's Shelter Shield", "Scorch Helm", "Spelljamming Helm",
             "Vancian Helm"
         ],
         VeryRare: [
             "Mask of Dendallen", "Masks of the Sacred Beasts (Mule)", "Peregrine Mask",
-            "Bismuth Crown", "Crown of Deep Winter", "Crown of Majesty",  "Circlet of the Unshaken Mind", "Goswhit, the Goose-White Helm",
+            "Bismuth Crown", "Crown of Deep Winter", "Crown of Majesty", "Circlet of the Unshaken Mind", "Goswhit, the Goose-White Helm",
             "Crown of Whirling Comets", "Mindguard Crown", "Celestial Circlet",
             "Circlet of the Huntsman's Third Eye", "Circlet of the Sharpened Mind",
             "Ceratopper Helmet", "Flying Citadel Helm",
@@ -59,10 +59,10 @@ export const itemNames = {
     },
     Robe: {
         Common: ["Robe of Subtle Whispers"],
-        Uncommon: ["Robe of Serpents", "Robe of Useful Items", "Robe of the Altruist", "Rocborne Robe", "Spellwoven Robes",  "Regalia of the Folkborne Lineage", "Vestments of Arcane Precision"],
-        Rare: [  "Robes of Chaotic Aegis", "Raiment of Smoldering Wrath",
-      "Robes of Vital Overflow", "Robes of the Exhausted Flame",
-      "Robes of the Balanced Flow", "Aurumplate Robes", "Gi of Shifting Seasons", "Master Spellwoven Robes", "Polaris Magistrate Robe", "Robe of Cunning", "Robe of Eyes", "Robe of Summer", "Robe of the Forlorn"],
+        Uncommon: ["Robe of Serpents", "Robe of Useful Items", "Robe of the Altruist", "Rocborne Robe", "Spellwoven Robes", "Regalia of the Folkborne Lineage", "Vestments of Arcane Precision"],
+        Rare: ["Robes of Chaotic Aegis", "Raiment of Smoldering Wrath",
+            "Robes of Vital Overflow", "Robes of the Exhausted Flame",
+            "Robes of the Balanced Flow", "Aurumplate Robes", "Gi of Shifting Seasons", "Master Spellwoven Robes", "Polaris Magistrate Robe", "Robe of Cunning", "Robe of Eyes", "Robe of Summer", "Robe of the Forlorn"],
         VeryRare: ["Loner’s Shroud", "Stormwrath Garments", "Aurumplate Robes, +1", "Robe of Scintillating Colors", "Robe of Stars"],
         Legendary: ["Robe of The Scriber", "Robe of the Archmagi", "The Walking Church"],
         Unique: ["Soulbond Robe: Ashweave Mantle, Ember of the Scarred Flame"]
@@ -76,8 +76,8 @@ export const itemNames = {
             "Plate of Knight's Fellowship", "Scorpio Plate Armor"],
         Rare: ["Armor of Vulnerability (Bludgeoning)", "Armor of Vulnerability (Slashing)", "Armor of Vulnerability (Piercing)", "Bastion Chain", "Chain Mail of Vulnerability (Bludgeoning)",
             "Chain Mail of Vulnerability (Piercing)", "Chain Mail of Vulnerability (Slashing)", "Chain Mail Acolyte Robes", "Chain Mail, +1", "Elven Chain Mail", "Feywrought Armor, Chain Mail", "Feywrought Armor, Plate", "Feywrought Armor, Splint", "Feywrought Armor, Ring Mail",
-            "Gloomwrought Armor, Chain Mail",  "Chainmail of the Last Vigil", "Helldusk Plate", "Plate of Tempered Judgement",
-      "Plate of Steelforged Vow", "Gloomwrought Armor, Plate", "Gloomwrought Armor, Ring Mail", "Gloomwrought Armor, Splint", "Heavy Golem Armor", "Lionguard Chain Mail", "Mizzium Armor, Splint", "Molten Bronze Skin, Plate",
+            "Gloomwrought Armor, Chain Mail", "Chainmail of the Last Vigil", "Helldusk Plate", "Plate of Tempered Judgement",
+            "Plate of Steelforged Vow", "Gloomwrought Armor, Plate", "Gloomwrought Armor, Ring Mail", "Gloomwrought Armor, Splint", "Heavy Golem Armor", "Lionguard Chain Mail", "Mizzium Armor, Splint", "Molten Bronze Skin, Plate",
             "Nightstalker's Plate Armor of the Northeastern Wind", "Plate, +1", "Ring Mail of Vulnerability (Bludgeoning)", "Ring Mail of Vulnerability (Slashing)", "Ring Mail of Vulnerability (Piercing)", "Scorpion Armor", "Splint Armor of Vulnerability (Bludgeoning)",
             "Splint Armor of Vulnerability (Piercing)", "Splint Armor of Vulnerability (Slashing)", "Splint, +1", "Splinterguard", "Vainglorious Ring Mail Armor", "Warden's Chain Mail Armor", "Warden's Ring Mail Armor", "Warden's Splint Armor"
         ],
@@ -86,9 +86,9 @@ export const itemNames = {
             "Living Armor, Chain Mail", "Living Armor, Plate", "Living Armor, Ring Mail", "Living Armor, Splint", "Novanite Chain Mail Armor", "Novanite Plate Armor", "Novanite Ring Mail Armor", "Novanite Splint Armor", "Plate, +2", "Ring Mail. +2", "Solacesteel Plate", "Splint, +2"
         ],
         Legendary: ["Armor of Invulnerability", "Armor of the Sun & Stars", "Forgeplate of the Eternal Smith", "Obsidian Flint Dragon Plate", "Plate Armor of Etherealness",
-            "Plate, +3",  "Powered Armor", "Ring Mail, +3", "Splint, +3", "Tarrasque Plate"
+            "Plate, +3", "Powered Armor", "Ring Mail, +3", "Splint, +3", "Tarrasque Plate"
         ],
-        Unique: ["Plate of the Dawnmartyr (Dormant)",  "Akhainon, The World-Forged Armor of Achilles", "Skoleia, the Iron Ward of Hector", ]
+        Unique: ["Plate of the Dawnmartyr (Dormant)", "Akhainon, The World-Forged Armor of Achilles", "Skoleia, the Iron Ward of Hector",]
     },
     LightArmor: {
         Common: ["Freerunner's Leather Armor", "Freerunner's Studded Leather Armor", "Smoldering Armor, Leather", "Smoldering Armor, Studded Leather"],
@@ -101,7 +101,7 @@ export const itemNames = {
             "Poison Leather Armor of Amphibios", "Poison Padded Leather Armor of Amphibios", "Poison Studded Leather armor of Amphibios", "Tundra Titan Leather", "Zephyr Armor, Leather", "Zephyr Armor, Studded Leather", "Studded Leather, +1"
         ],
         VeryRare: ["Antimagic Armor, Leather", "Antimagic Armor, Studded Leather", "Dark Fathom Studded Leather Armor", "Demon Leather Armor", "Demon Studded Leather",
-           "Starstudded Leather", "Gambler’s Hide", "Last Stand Armor, Leather", "Last Stand Armor, Studded Leather", "Studded Leather, +2", "Yellow Harbinger's Path Leather", "Yellow Harbinger's Path Studded Leather"
+            "Starstudded Leather", "Gambler’s Hide", "Last Stand Armor, Leather", "Last Stand Armor, Studded Leather", "Studded Leather, +2", "Yellow Harbinger's Path Leather", "Yellow Harbinger's Path Studded Leather"
         ],
         Legendary: ["Deathwalker's Ward (Dormant)", "Leather, +3", "Studded Leather, +3"],
         Unique: []
@@ -115,7 +115,7 @@ export const itemNames = {
             "Adamantine Half Plate", "Armor of Fungal Spores, Half Plate", "Armor of Weightlessness, Half Plate", "Armor of the Fallen, Half Plate", "Fey-Touched Half Plate", "Fey-Touched Half Plate", "Mariner's Half Plate Armor", "Mithral Half Plate", "Sagittarian Half Plate Vestments", "Scorpio Half Plate Armor",
 
         ],
-        Rare: [ "Chain Shirt of the Last Vigil", "Breastplate of Sunken King", "Half Plate of Sunken King", "Armor of Acid Resistance, Breastplate", "Armor of Cold Resistance, Breastplate",
+        Rare: ["Chain Shirt of the Last Vigil", "Breastplate of Sunken King", "Half Plate of Sunken King", "Armor of Acid Resistance, Breastplate", "Armor of Cold Resistance, Breastplate",
             "Armor of Acid Resistance, Half Plate", "Armor of Cold Resistance, Half Plate", "Armor of Fire Resistance, Half Plate", "Armor of Force Resistance, Half Plate", "Armor of Lightning Resistance, Half Plate",
             "Armor of Necrotic Resistance, Half Plate", "Armor of Poison Resistance, Half Plate", "Armor of Psychic Resistance, Half Plate", "Armor of Radiant Resistance, Half Plate", "Armor of Thunder Resistance, Half Plate",
             "Armor of Fire Resistance, Breastplate", "Armor of Force Resistance, Breastplate", "Masterwork Scale Mail",
@@ -165,7 +165,7 @@ export const itemNames = {
         ],
         VeryRare: ["Exquisite Chemtracker Claws", "Gloves of Mimicry", "Wraps of The Pugilist", "Freezing Gauntlets ", "Mourningsteel Demi-Gauntlets", "Wyrmreaver Gauntlets",
             "Wraps of Unarmed Power, +3", "Wraps of the Restless", "Astral Bracelet of Energy", "Astral Bracelet of Heavens",
-            "Astral Bracelet of Hells", "Astral Bracelet of Knowledge", "Manaquark Gauntlets", 
+            "Astral Bracelet of Hells", "Astral Bracelet of Knowledge", "Manaquark Gauntlets",
             "Astral Bracelet of Omniscience", "Astral Bracelet of Planebending", "Slot Slugger",
             "Bracelet of Rock Magic", "Bracers of Spell Reflection", "Exquisite Chained Ambition",
             "Bracers of the Spellbreaker", "Firebrand Bracers", "Fourarm Bracers",
@@ -188,14 +188,14 @@ export const itemNames = {
         Unique: ["Víðarr’s Iron Boot, the Silent Shoe", "Soulbond Boots: Bloodtrack Boots, Steps of the Crimson Pursuit"]
     },
     WondrousItem: {
-        Common: ["Aurora Dust", "Bag of Bellstones",  "Bard-in-a-box", "Bead of Nourishment x3", "Bead of Refreshment x10", "Bird of a Feather", "Bullfrog Totem",
+        Common: ["Aurora Dust", "Bag of Bellstones", "Bard-in-a-box", "Bead of Nourishment x3", "Bead of Refreshment x10", "Bird of a Feather", "Bullfrog Totem",
             "Charlatan's Die", "Diorama Die", "Drowner's Pearl", "Featherwhumpus", "Foxfire Charm", "Gravity Goblet", "Griffon Coinpuch",
             "Griffon Key Loop", "Gripping Perfume", "Heward's Handy Spice Pouch", "Horn of Silent Alarm", "Immovable Button", "Incendiary Caltrops", "Instrument of Illusions",
             "Kobold Diviner's Hand", "Lock of Trickery", "Magnificent Pocket Vanity", "Masque Charm", "Orator's Quill", "Orb of Time",
             "Perfume of Bewitching", "Pipe of Rememberance", "Pipe of Smoke Monsters", "Pot of Awakening", "Rope of Mending", "Seat Belt", "Silver Coin of Durva",
             "Singing Stein", "Sleepytime Sheep Stuffy", "Snugglebeast Owlbear", "Statuette of Augury", "Tankard of Plenty", "Thermal Cube", "Widemouth Bucket",
         ],
-        Uncommon: ["Abjurer's Glider",  "Lesser Grave Lotus Seed", "Focusing Band, +1", "Conduit Crown Pommel", "Acorn Charm", "Alchemist's Potion Belt", "Alchemy Jug", "Angler's Worldly Fisher",
+        Uncommon: ["Abjurer's Glider", "Lesser Grave Lotus Seed", "Focusing Band, +1", "Conduit Crown Pommel", "Acorn Charm", "Alchemist's Potion Belt", "Alchemy Jug", "Angler's Worldly Fisher",
             "Arcanist's Magnificent Magnifier", "Augurer's Coin", "Baba Yaga's Dancing Broom", "Badge of the Abjurant Savant", "Badge of the Conjuration Savant",
             "Badge of the Divination Savant", "Badge of the Enchantment Savant", "Badge of the Evocation Savant", "Badge of the Illusion savant", "Badge of the Necromancy Savant",
             "Badge of the Transmutation Savant", "Bag of Goodberry Gummy Fish", "Bag of Holding", "Bag of Sundrops", "Bag of Tricks",
@@ -223,7 +223,7 @@ export const itemNames = {
 
         ],
         Rare: ["Abjurer's Bangle", "Shellback Carriage", "Bewitching Brush", "Greater Grave Lotus Seed",
-      "Great Owl’s Pocket Library", "Tinkerer’s Tune", "Resonant Crown Pommel", "Adventurer's Scarf", "All-Purpose Tool, +2", "Amethyst Die", "Appraiser's Eye",
+            "Great Owl’s Pocket Library", "Tinkerer’s Tune", "Resonant Crown Pommel", "Adventurer's Scarf", "All-Purpose Tool, +2", "Amethyst Die", "Appraiser's Eye",
             "Ashen Bloom", "Astral Caltrops", "Astral Shard", "Augustine's Dozen Roses", "Badge of the Watch",
             "Badge of the Wayfarer", "Bag of Beans", "Bag of Magic Blocks", "Banner of the Krig Rune", "Barternder's Armistice",
             "Basco's Handy Bangle", "Battle Charm, +2", "Bead of Force", "Bead of Meditation", "Bell Branch",
@@ -253,9 +253,9 @@ export const itemNames = {
 
         ],
         VeryRare: ["Abracadabrus", "All-Purpose Tool, +3", "Amethyst Lodestone", "Bag of Devouring",
-            "Bag of Eyes",  "Glastonbury Cross, Marker of Hidden Rest", "Glastonbury Thorn, Winter-Blooming Bough",
-      "Scabbard of Unspilled Blood", "Horn of Bran Galed, the Unfailing Horn",
-      "Countdown Drive", "Manaboard", "Harmonic Crown Pommel", "Battle Charm, +3", "Battle Standard of Infernal Power", "Battlechef's Splendid Saucepan", "Belt of Fire Giant Strength",
+            "Bag of Eyes", "Glastonbury Cross, Marker of Hidden Rest", "Glastonbury Thorn, Winter-Blooming Bough",
+            "Scabbard of Unspilled Blood", "Horn of Bran Galed, the Unfailing Horn",
+            "Countdown Drive", "Manaboard", "Harmonic Crown Pommel", "Battle Charm, +3", "Battle Standard of Infernal Power", "Battlechef's Splendid Saucepan", "Belt of Fire Giant Strength",
             "Belt of Frost Giant Strength", "Belt of Returning", "Belt of of Stone Giant Strength", "Bloodwell Vial, +3", "Bobbing Lily Pad",
             "Brambleheart Quiver", "Camilla's Quicksilver Mirror", "Candle of Invocation", "Carpet of Flying (3 ft. x 5 ft.)", "Carpet of Flying (4 ft. x 6 ft.", "Carpet of Flying (5 ft. x 7 ft.)",
             "Carpet of Flying (6 ft. x 9 ft.)", "Cauldron of Rebirth", "Chronal Sphere", "Chronolometer", "Cloche of Surprise Treats", "Coldfire Anvil (Very Rare)", "Collar of the Crysal Veil", "Conch of Teleportation",
@@ -275,18 +275,18 @@ export const itemNames = {
             "Harp of Gilded Plenty", "Heart of Damned Intervention", "Horn of Beckoning Death", "Horn of Valhalla (Iron)", "Infernal Tack",
             "Iron Flask", "Lava Crucible", "Life Turner", "Ollamh Harp", "Orb of Skoraeus", "Platinum Scarf", "Quiver of Elemental Chaos", "Seed of Rebirth",
             "Sovereign Glue", "Spell Bottle", "Grasp of Gravity", "Skidbladnir, Sail of Realms", "Glastonbury Zodiac, the Landscape Astrolabe",
-      "Maen Arthur, the Oath-Stone of the Hill", "Lapis Exillis, the Fallen Grail-Stone",
-      "Nef de Joie, the Ship of Joy", "Sovereign Crown Pommel", "Spell Binding Shackles (Legendary)", "Stormgirdle (Dormant)", "Tablet of Reawakening", "Universal Solvent",
+            "Maen Arthur, the Oath-Stone of the Hill", "Lapis Exillis, the Fallen Grail-Stone",
+            "Nef de Joie, the Ship of Joy", "Sovereign Crown Pommel", "Spell Binding Shackles (Legendary)", "Stormgirdle (Dormant)", "Tablet of Reawakening", "Universal Solvent",
             "Witchlight Watch", "Prehistoric Figurine of Wondrous Power (Jasper Tyrannosaurus Rex)", "Grandstone of Dominion", "Settlement Stone"
         ],
         Unique: ["Luba's Tarokka of Souls", "The Holy Grail, Cup of the Ever-Living", "Eldhrímnir, Cauldron of the Eternal Feast",
-      "Pandora’s Pithos, Vessel of Forgotten Dread", "Kordelya, The Lyre of Apollo’s Voice",
-      "Archon Crown Pommel", "Soul Armament: Bewitching Mirror Law", "Teeth of Dahlver-Nar", ]
+            "Pandora’s Pithos, Vessel of Forgotten Dread", "Kordelya, The Lyre of Apollo’s Voice",
+            "Archon Crown Pommel", "Soul Armament: Bewitching Mirror Law", "Teeth of Dahlver-Nar",]
     },
 
     Ring: {
         Common: ["Doodle Ring", "Band of Loyalty", "Pair of Bands of the Found and Lost", "Pair of Tiny Violin Rings", "Ring of Gestures", "Ring of Roses", "Ring of the Fowl Sentinel", "Ring of the Printless", "Ring of Perching",
-            "Common Storage Ring",  "Ring of the Mana Spark"
+            "Common Storage Ring", "Ring of the Mana Spark"
         ],
         Uncommon: ["Ring of the Soul Harvest", "Ring of the Mana Resevoir", "Ring of the Sunken King", "Band of the Dryad", "Brawler's Ring", "Hushed Ring", "Medusan Signet", "Ring of Eight Eyes",
             "Ring of Healer's Heroism", "Ring of Hidden Desire", "Ring of Jumping", "Ring of Mind Shielding", "Ring of Obscuring", "Uncommon Storage Ring",
@@ -294,7 +294,7 @@ export const itemNames = {
             "Ring of Truth Telling", "Ring of Volleys", "Ring of Warmth", "Ring of Wind", "Ring of the Mute Mage", "Ring of the Berserker's Endless Might",
             "Band of the Orator", "Ring of the Sandskimmer", "Rings of Shared Suffering", "Wailing Ring",
         ],
-        Rare: ["Enchantment Breaker Ring", "Shared Burden Rings",  "Ring of the Mana Font", "Focusing Band, +2", "Contingency Band", "Iron Ring", "Mageplate Ring", "Minor Ring of Invisibility", "Netherse Ring of Protection",
+        Rare: ["Enchantment Breaker Ring", "Shared Burden Rings", "Ring of the Mana Font", "Focusing Band, +2", "Contingency Band", "Iron Ring", "Mageplate Ring", "Minor Ring of Invisibility", "Netherse Ring of Protection",
             "Quick Change Ring", "Ring of Acid Resistance", "Ring of Anchoring", "Ring of Animal Influence", "Ring of Changing Shapess", "Rare Storage Ring",
             "Ring of Cold Resistance", "Ring of Eldritch Ire", "Ring of Evasion", "Ring of Feather Falling", "Ring of Fire", "Ring of the Final Breath",
             "Ring of Fire Resistance", "Ring of Force Resistance", "Ring of Free Action", "Ring of Honor", "Ring of Lightning Resistance", "Risky Ring",
@@ -303,8 +303,8 @@ export const itemNames = {
             "Ring of X-ray Vision", "Ring of the Arcane Berserker", "Ring of the Ram", "Ring of the True Companions", "Sage's Signet (Serpent)", "Ring of Freezing Wake",
             "Sage's Signet (Songbird)", "Signet Ring of Blindness", "Signet Ring of Deafness", "Signet Ring of Silence", "Starmetal Ring", "Companion's Band"
         ],
-        VeryRare: ["Ramp Ring",   "Eyes of the Forgotten", "Ring of Dispell", "Ring of the Mana Well", "Draupnir, Ring of Endless Echoes",
-      "Focusing Band, +3", "Ring of Scarlet Shadows", "Septum Ring of the Great Minotaur", "Blazeblood Signet", "Gateway Ring", "Horned Ring", "Ring of Amity", "Ring of Ice",
+        VeryRare: ["Ramp Ring", "Eyes of the Forgotten", "Ring of Dispell", "Ring of the Mana Well", "Draupnir, Ring of Endless Echoes",
+            "Focusing Band, +3", "Ring of Scarlet Shadows", "Septum Ring of the Great Minotaur", "Blazeblood Signet", "Gateway Ring", "Horned Ring", "Ring of Amity", "Ring of Ice",
             "Ring of Lunar Might", "Ring of Red Fury", "Ring of Regneration", "Ring of Shooting Stars", "Ring of Telekinesis", "Very Rare Storage Ring",
             "Ring of the Split Mind", "Sage's Signet (Bear)", "Sage's Signet (Hart)", "Sage's Signet (Lion)", "Sage's Signet (Wolf)",
             "Signet Rings of the Fey Court", "Sun Eater's Mind", "Sun Eater's Soul", "Ring of Shattered Precision"
@@ -352,13 +352,13 @@ export const itemNames = {
         Rare: ["Cloak of Displacement", "Cloak of The Depths", "Cloak of the Bat", "Cloak of the Boundless Spirit", "Cloak of the Djinni", "Cloak of the Protector's Charge", "Cloak of the Riverstalker",
             "Cloak of the Stygian Bat", "Fire Dervish Cloak", "Frostfell Cloak", "Hell Hound Cloak", "Fool's Mantle", "Mantle of Adaptivity", "Mantle of Security", "Mantle of Spell Resistance", "Mantle of the Pack Lord", "Monarch Mantle", "Rogue's Mantle", "Sharkrazor Mantle", "Timeshifter's Mantle",
             "Cape of the Mountebank", "Knifewing Cape", "Kagonesti Forest Shroud", "Carrion Shroud", "Cloak of Sturdy Stance", "MAster Cloak of the Hummingbird", "Cloak of the Silent Path", "Cloak of the Manifest Force",
-      "Cloak of the Serrated Veil", "Padarn Red Coat", "Misthunter Cloak",
+            "Cloak of the Serrated Veil", "Padarn Red Coat", "Misthunter Cloak",
 
         ],
         VeryRare: ["Cloak of Archnida", "Dune Duster Cloak", "H'rethi Cloak of Shielding", "Shadow Ward Cloak", "Visionary's Cloak", "Dream Mantle", "Mistral Mantle", "Omenbringer's Mantle",
-            "Cape of Enlargement", "Tempest Griffon Feather Cape", "Echo of the Oni",  "Gwen, the Snow-White Mantle"
+            "Cape of Enlargement", "Tempest Griffon Feather Cape", "Echo of the Oni", "Gwen, the Snow-White Mantle"
         ],
-        Legendary: ["Cloak of Invisibility", "Meta Mantle", "Cabal's Ruin (Dormant)", "Verminshroud (Dormant)","Hide of the Nemean Lion, Mantle of the Invincible Beast" ],
+        Legendary: ["Cloak of Invisibility", "Meta Mantle", "Cabal's Ruin (Dormant)", "Verminshroud (Dormant)", "Hide of the Nemean Lion, Mantle of the Invincible Beast"],
         Unique: ["Soulbond Cloak: Wraithmantle, Shroud of the Passing Veil"]
     },
 
@@ -400,7 +400,7 @@ export const itemNames = {
             "Longsword of Vengeance", "Longsword of Verdict", "Longsword of Warning",
             "Longsword of the Pack Leader", "Longsword, +1", "Runegold Conduit Longsword", "Adamantine Shortsword", "Crusader's Shortsword", "Hellfire Shortsword",
             "Jo'Catian Denier Shortsword", "Mockingblade Shortsword", "Runegold Conduit Shortsword",
-            "Shortsword of Blind Faith", "Shortsword of Spite", "Shortsword of Vengeance", 
+            "Shortsword of Blind Faith", "Shortsword of Spite", "Shortsword of Vengeance",
             "Shortsword of Verdict", "Shortsword of Warning", "Shortsword of the Pack Leader",
             "Shortsword, +1", "Young Dragon Edge Shortsword",
             "Young Dragon Edge Longsword", "Adamantine Rapier", "Hellfire Rapier", "Marlin Lunger",
@@ -420,7 +420,7 @@ export const itemNames = {
             "Delerium-Forged Longsword", "Katana, +2", "Riptide Katana", "Dragon Slayer Longsword", "Dragonkin Longsword +1",
             "Flame Tongue Longsword", "Gambler's Blade, Longsword", "Gentleman’s Saber",
             "Giant Slayer Longsword", "Jishin, Earth Render Longsword", "Longsword of Life Stealing",
-            "Longsword of Mooring", "Longsword of Resonance", "Longsword of Wounding",  "Bolar’s Oathblade", "Grimsever", "Ghostblade",
+            "Longsword of Mooring", "Longsword of Resonance", "Longsword of Wounding", "Bolar’s Oathblade", "Grimsever", "Ghostblade",
             "Longsword, +2", "Lycan Longsword", "Lycan Slayer Longsword", "Mind Blade Longsword",
             "Monster Tamer's Longsword", "Runegold Conduit Longsword", "Solacesteel Mitigator Longsword",
             "Verax Longsword", "Vicious Longsword", "Voltedge Longsword",
@@ -478,15 +478,15 @@ export const itemNames = {
             "Ancient Dragon Edge Shortsword", "Blade of the Medusa, Shortsword", "Bloodshed Shortsword",
             "Dancing Shortsword", "Dragonkin Shortsword +2", "Fool's Shortsword",
             "Foresight Shortsword", "Frost Brand Shortsword", "Frostburn Blade Shortsword",
-            "Gleaming Gehena Shortsword", "Hour and Minute",  "Djinni’s Saber", "Skǫfnung, Blade of the Forgotten King", "Nettlebane, Thorn of the Wild Curse",
-      "Galatine, the Sun-Kissed Blade", "Chillrend", "Gauldur Blackblade, Oath of the Barrow-King",
-      "Harkon’s Blade The Sanguine Triad", "Dragonsbane", "Herebane’s Courage", "Nightingale’s Blade",
-      "Red Eagles Bane", "Red Eagles Fury", "Soulrender", "Eduj, Grave-Frost Blade",
-      "Drainheart Sword, the Wraith’s Kiss", "The Pale Blade", "Windshear",
-      "Stormfang The Sky Hunter", "The Bloodskaal Blade", "Timestream Strike",
-      "Soul Armament: Dragon Brander", "Soul Armament: Coming Void", "Soul Armament: Faded Scarlet",
-      "Soul Armament: Great Earth", "Soul Armament: Violet Lightning",
-      "Soul Armament: Corridor of Hungering Music", "Clarent, the Sword of Peace",
+            "Gleaming Gehena Shortsword", "Hour and Minute", "Djinni’s Saber", "Skǫfnung, Blade of the Forgotten King", "Nettlebane, Thorn of the Wild Curse",
+            "Galatine, the Sun-Kissed Blade", "Chillrend", "Gauldur Blackblade, Oath of the Barrow-King",
+            "Harkon’s Blade The Sanguine Triad", "Dragonsbane", "Herebane’s Courage", "Nightingale’s Blade",
+            "Red Eagles Bane", "Red Eagles Fury", "Soulrender", "Eduj, Grave-Frost Blade",
+            "Drainheart Sword, the Wraith’s Kiss", "The Pale Blade", "Windshear",
+            "Stormfang The Sky Hunter", "The Bloodskaal Blade", "Timestream Strike",
+            "Soul Armament: Dragon Brander", "Soul Armament: Coming Void", "Soul Armament: Faded Scarlet",
+            "Soul Armament: Great Earth", "Soul Armament: Violet Lightning",
+            "Soul Armament: Corridor of Hungering Music", "Clarent, the Sword of Peace",
             "Ioun Blade Shortsword", "Jishin, Earth Render Shortsword", "Ki Blade",
             "Nine Lives Stealer Shortsword", "Polymorph Blade, Shortsword", "Ruidium Shortsword",
             "Runegold Conduit Shortsword", "Shortsword of Throne's Command", "Shortsword, +3",
@@ -527,29 +527,29 @@ export const itemNames = {
             "The Crimson Claymore", "Vorpal Greatsword",
             "Eternal Slayer Rapier", "Holy Avenger Rapier", "Howl", "Defender Scimitar", "Double-Bladed Scimitar of the Planes", "Dragonkin Scimitar +3", "Eternal Slayer Scimitar",
             "Holy Avenger Scimitar", "Luck Blade Scimitar", "Moonblade Scimitar",
-            "Scimitar of the Planes", "Vorpal Scimitar",    "Sunnbrandr, The Living Sword", "Dainsleif, the Bloodbound Blade", "Katheiron, Blade of Peleus the Chosen",
-      "Imperium, the Sword of the First King", "Höfud, Blade of the Eternal Watch",
-      "Fatum, the Sword of Aeneas the Enduring Flame", "Dawnbreaker",
-      "The Ebony Blade, Whisper of the Spider Queen", "Secace, the Blood-Vowed Blade",
-      "Sword of the Strange Hangings", "Calwdvwlch, the Hard-Cleft Blade",
-      "Bridgewarden’s Edge", "Riðill, Heart-Cutter of Reginn",
-      "Soul Armament: Raveled Justice", "Soul Armament: Snake Tail", "Soul Armament: Bleached Skull",
-      "Soul Armament: Slaying Moon", "Soul Armament: Three-Step Sword Beasts (Scimitar)",
-      "Soul Armament: Crimson Princess (Rapier)", "Soul Armament: Bell Cricket",
-      "Soul Armament: Twin Carp Precept", "Soul Armament: Apologizer",
-      "Soul Armament: Divine Eight-Mirror Sword", "Soul Armament: Mirror Flower",
-      "Soul Armament: Dissector (Shortsword)", "Soul Armament: Sundered Blade",
-      "Soul Armament: Flesh Purifier", "Soul Armament: Heavenly Punishment",
-      "Soul Armament: One-Stroke", "Soul Armament: Thousand Blossoms",
-      "Soul Armament: Ash Cat", "Soul Armament: Black Oath", "Soul Armament: White Snow",
-      "Rapier of the Yellow King", "The Giant-Slayer’s Sword", 
+            "Scimitar of the Planes", "Vorpal Scimitar", "Sunnbrandr, The Living Sword", "Dainsleif, the Bloodbound Blade", "Katheiron, Blade of Peleus the Chosen",
+            "Imperium, the Sword of the First King", "Höfud, Blade of the Eternal Watch",
+            "Fatum, the Sword of Aeneas the Enduring Flame", "Dawnbreaker",
+            "The Ebony Blade, Whisper of the Spider Queen", "Secace, the Blood-Vowed Blade",
+            "Sword of the Strange Hangings", "Calwdvwlch, the Hard-Cleft Blade",
+            "Bridgewarden’s Edge", "Riðill, Heart-Cutter of Reginn",
+            "Soul Armament: Raveled Justice", "Soul Armament: Snake Tail", "Soul Armament: Bleached Skull",
+            "Soul Armament: Slaying Moon", "Soul Armament: Three-Step Sword Beasts (Scimitar)",
+            "Soul Armament: Crimson Princess (Rapier)", "Soul Armament: Bell Cricket",
+            "Soul Armament: Twin Carp Precept", "Soul Armament: Apologizer",
+            "Soul Armament: Divine Eight-Mirror Sword", "Soul Armament: Mirror Flower",
+            "Soul Armament: Dissector (Shortsword)", "Soul Armament: Sundered Blade",
+            "Soul Armament: Flesh Purifier", "Soul Armament: Heavenly Punishment",
+            "Soul Armament: One-Stroke", "Soul Armament: Thousand Blossoms",
+            "Soul Armament: Ash Cat", "Soul Armament: Black Oath", "Soul Armament: White Snow",
+            "Rapier of the Yellow King", "The Giant-Slayer’s Sword",
             "Luck Blade Rapier", "Maestro’s Conductive Rapier",
             "Moonblade Rapier", "Octavius' Saber", "Pride and Prejudice",
             "Rapier of the Planes", "Violet King's Promise",
             "Holy Avenger Shortsword", "Luck Blade Shortsword", "Sun Blade Lorkor", "Grave Digger",
             "Moonblade Shortsword", "Shortsword of the Planes", "Blade of Forlorn Hope"],
         Unique: ["Dominion Authority", "Soulbond Rapier: Valacour", "Paradoxical Paradigm Longsword", "Silverwind, The Cleansing Breeze ", "Blade of Avernus", "Void Blade", "Solaris", "Absolute Arbiter",
-          "Excalibur, the Lake-Born Sovereign",  
+            "Excalibur, the Lake-Born Sovereign",
         ]
     },
     Bow: {
@@ -574,11 +574,11 @@ export const itemNames = {
             "Shooting Star Longbow", "Energy Shortbow", "Foresight Shortbow", "Harp of Valor Shortbow", "Nine Lives Stealer Shortbow", "Oath Shortbow", "Phasing Shortbow", "Bow of Four",
             "Ruidium Shortbow", "Shortbow of Melodies", "Shortbow of the Spelldrinker", "Shortbow, +3", "Forcebreaker Sling", "Foresight Sling", "Nine Lives Stealer Sling",
             "Ruidium Sling", "Sling, +3", "Titanpiercer", "Hircine’s Whisper", "Drainspell Bow", "Dwarven Black Bow of Fate, Kagrumez Pattern",
-      "Gauldur Blackbow", "Nightingale Bow", "Zephyr, Wind-Quick Bow",
-      "Glass Bow of the Stag Prince"],
+            "Gauldur Blackbow", "Nightingale Bow", "Zephyr, Wind-Quick Bow",
+            "Glass Bow of the Stag Prince"],
         Legendary: ["Holy Avenger Longbow", "Longbow of the Healing Hearth", "Slaying Longbow",
-            "Spellfire Longbow", "Holy Avenger Shortbow",  "Echion, Bow of Heracles the Undying", "Auriel’s Bow, Dawn’s Reproach", "Fail-Not, the Unfailing Bow",
-      "Eros’ Bow, String of the Heart", "Crowned Arsenal: Zephyr Heart of Yona’hiya"],
+            "Spellfire Longbow", "Holy Avenger Shortbow", "Echion, Bow of Heracles the Undying", "Auriel’s Bow, Dawn’s Reproach", "Fail-Not, the Unfailing Bow",
+            "Eros’ Bow, String of the Heart", "Crowned Arsenal: Zephyr Heart of Yona’hiya"],
         Unique: ["Solstring, the Bow of Apollo the Bright", "Ionbreaker, the Tempest's Reach Longbow", "Cupid's Bow", "Ephixis, Bow of Nylea"]
     },
     Hammer: {
@@ -618,18 +618,18 @@ export const itemNames = {
             "Maul, +3", "Molten Hammer", "Nine Lives Stealer Maul", "Quagmire Maul", "Ruidium Maul",
             "Comet Smasher Light Hammer", "Dragonkin Light Hammer +2", "Forcebreaker Light Hammer", "Foresight Light Hammer",
             "Light Hammer, +3", "Nine Lives Stealer Light Hammer", "Ruidium Light Hammer", "Hammer of Runic Focus",
-        "Mjölnir, Hammer of the Storm Realm", "Dawnguard Rune Hammer, Ward of the Rising Sun",
-      "Aegisbane, Shatter-Shield’s Heirloom", "Manablast Hammer"],
+            "Mjölnir, Hammer of the Storm Realm", "Dawnguard Rune Hammer, Ward of the Rising Sun",
+            "Aegisbane, Shatter-Shield’s Heirloom", "Manablast Hammer"],
         Legendary: ["Defender Warhammer", "Dragonkin Warhammer +3", "Emberheart Warhammer", "Forgemaster's Might Warhammer",
             "Holy Avenger Warhammer", "Defender Maul", "Champion’s Cudgel, Hammer of Conflux", "Volendrung, Hammer of the Exiled Prince",
-      "Manawarped Maul",
+            "Manawarped Maul",
             "Dragonkin Maul +3", "Forgemaster's Might Maul", "Heaven's Gavel Maul", "Holy Avenger Maul",
             "Dragonkin Light Hammer +3", "Holy Avenger Light Hammer",],
         Unique: ["Akmon, Hammer of Purphoros", "Soulbond Maul: Doomwake, the Curse-Eater"]
     },
     Axe: {
         Common: ["Battleaxe of Showmanship", "Silvered Batleaxe", "Handaxe of Showmanship", "Silvered Handaxe", "Greataxe of Showmanship", "Silvered Greataxe", "Yester Hill Axe"],
-        Uncommon: ["Adamantine Battleaxe",  "Poacher’s Battleaxe", "Poacher’s Greataxe", "Poacher’s Handaxe", "Battle T-Axe", "Battleaxe of Blind Faith", "Battleaxe of Hurricanes", "Battleaxe of Spite",
+        Uncommon: ["Adamantine Battleaxe", "Poacher’s Battleaxe", "Poacher’s Greataxe", "Poacher’s Handaxe", "Battle T-Axe", "Battleaxe of Blind Faith", "Battleaxe of Hurricanes", "Battleaxe of Spite",
             "Battleaxe of Verdict", "Battle of Warning", "Battleaxe, +1", "Tether Tearer Battleaxe",
             "Adamantine Handaxe", "Direstone Dwarven Key", "Festerwood Logger", "Handaxe of Blind Faith", "Handaxe of Spite",
             "Handaxe of Verdict", "Handaxe of Warning", "Handaxe, +1", "Hexaxe", "Steel Hawk Handaxe", "Tether Tearer Handaxe",
@@ -654,7 +654,7 @@ export const itemNames = {
         Legendary: ["Defender Battleaxe", "Holy Avenger Battleaxe", "Starmetal Solar Battleaxe", "Holy Avenger Handaxe", "Defender Greataxe",
             "Greataxe of a Titan Stone", "Holy Avenger Greataxe", "Realmswarden Greataxe", "Soulshredder", "Starmetal Solar Greataxe", "The Timekeeper's Pendulum Greataxe", "Aucbog's Giant Axe",
             "Leviathan Axe, Freezing Fang of the Forgotten World", "Dawnguard Rune Axe",
-      
+
         ],
         Unique: ["Hatred, the Wrathful Edge", "Axe of the Dwarvish Lords", "Odinsbane, the Wolf-Bound Fang"]
     },
@@ -672,7 +672,7 @@ export const itemNames = {
             "Glaive of Throne's Command", "Glaive, +3", "Nine Lives Stealer Glaive", "Aciurgist’s Blade", "Ruidium Glaive",
         ],
         Legendary: ["Crypt Keeper Glaive", "Defender Glaive", "Dragonkin Glaive, +3", "Glaive of the Revenant King", "Holy Avenger Glaive",
-            "Luck Blade Glaive", "Red Queen's Burden", "Vorpal Glaive", 
+            "Luck Blade Glaive", "Red Queen's Burden", "Vorpal Glaive",
         ],
         Unique: ["Soulbond Glaive: Nihlshade, Voice of the End"]
     },
@@ -682,25 +682,25 @@ export const itemNames = {
         Uncommon: ["Adamantine Dagger", "Bloodthirsty Bistoury", "Courtesan's Fanblade", "Covolt Dagger", "Dagger of Blind Faith", "Dagger of First Light",
             "Dagger of Spite", "Dagger of Vengeance", "Dagger of Verdict", "Dagger of Warning", "Dagger, +1", "Dusk Dagger",
             "Frozen Dagger", "Galepierce Dagger", "Glass Carver", "Hellfire Dagger", "Riff's Dimensional Ripper",
-            "Young Dragon Edge Dagger","Feather Dagger", "Dagger of the Deep", "Fishfolk Scimitar",
+            "Young Dragon Edge Dagger", "Feather Dagger", "Dagger of the Deep", "Fishfolk Scimitar",
         ],
         Rare: ["Adult Dragon Edge Dagger", "Bandolier of the Elements", "Basilisk Dagger", "Coldfire Dagger", "Corpse Slayer, Dagger", "Couatl Herald's Fang Dagger",
             "Dagger of Blindsight", "Dagger of Denial", "Dagger of Venom", "Dagger, +2", "Dauntless Devotion Dagger",
             "Dragon Slayer Dagger", "Dragonkin Dagger +1", "Dragontooth Dagger", "Dusk Dagger", "Faithful Feathers Daggers",
             "Flame Tongue Dagger", "Giant Slayer Dagger", "Lamian Facestealer", "Lycan Dagger", "Obsidian Star Dagger", "Oceanic Dagger",
             "Pick and Pocket ( Dagger )", "Seraphim's Stiletto", "Spiderbite Daggers", "Verax Dagger", "Vicious Dagger",
-            "Voltedge Dagger", "Wandblade Dagger", "Warding Dagger", "Weapon of Certain Death, Dagger", "Whirling Dagger", ],
+            "Voltedge Dagger", "Wandblade Dagger", "Warding Dagger", "Weapon of Certain Death, Dagger", "Whirling Dagger",],
         VeryRare: ["Ancient Dragon Edge Dagger", "Assassin’s Dagger", "Bloodmage Dagger", "Corecut Dagger", "Dagger, +3", "Dragonkin Dagger +2",
             "Dusk Dagger (Very Rare)", "Foresight Dagger", "Grass Whistle Dagger", "Ioun Blade Dagger", "Nine Lives Stealer Dagger", "Purging Dagger",
             "Ruidium Dagger", "Shadow Drinker Dagger", "Shattered Fragment",
             "Starmetal Sliver Dagger", "Arcane Scalpel", "Bloodthorn, the Whispering Fang", "Carnwennan, the White-Hilt in Shadow",
-      "Knife of Llawfrodedd, the Carver of Four-and-Twenty", ],
+            "Knife of Llawfrodedd, the Carver of Four-and-Twenty",],
         Legendary: ["Defender Dagger", "Dragonkin Dagger +3", "Heaven's Edge", "Starsever",
             "Holy Avenger Dagger", "Spirit Cleaver", "Mehrunes’ Razor, Dagger of the Dismembered Prince", "Blade of Woe",
-      "Khavozein’s Fang", "Lævateinn, Nine-Locked Wound-Twig",
-      "Soul Armament: Calabash", "Soul Armament: River Weir",
-      "Soul Armament: Severing Wind", "Soul Armament: Earthshaker Catfish",
-      "Call and Response", "Rakdos Riteknife",],
+            "Khavozein’s Fang", "Lævateinn, Nine-Locked Wound-Twig",
+            "Soul Armament: Calabash", "Soul Armament: River Weir",
+            "Soul Armament: Severing Wind", "Soul Armament: Earthshaker Catfish",
+            "Call and Response", "Rakdos Riteknife",],
         Unique: ["Blade of Broken Mirrors"]
     },
     Scythe: {
@@ -710,7 +710,7 @@ export const itemNames = {
         Uncommon: [
             "Adamantine Sickle", "Harvest Sickle", "Hellfire Sickle", "Ice Sickle", "Lunar Sickle",
             "Moon Sickle, +1", "Sickle of Blind Faith", "Sickle of Spite", "Sickle of Verdict", "Sickle of Warning",
-            "Sickle, +1",  "Young Dragon Edge Sickle"
+            "Sickle, +1", "Young Dragon Edge Sickle"
         ],
         Rare: [
             "Covolt Scythe", "Unseen Scythe", "Adult Dragon Edge Sickle", "Coldfire Sickle", "Corpse Slayer, Sickle",
@@ -720,11 +720,11 @@ export const itemNames = {
         ],
         VeryRare: [
             "Snuff Scythe", "Ancient Dragon Edge Sickle", "Dragonkin Sickle +2", "Foresight Sickle", "Ioun Blade Sickle",
-            "Moon Sickle, +3", "Nine Lives Stealer Sickle", "Ruidium Sickle", "Sickle, +3", 
+            "Moon Sickle, +3", "Nine Lives Stealer Sickle", "Ruidium Sickle", "Sickle, +3",
         ],
         Legendary: [
             "Defender Sickle", "Dragonkin Sickle +3", "Holy Avenger Sickle", "Luck Blade Sickle",
-            "Memento of the Shapeless Sickle", "Mage Eater Scythe",  "Soul Armament: Raging Gale",
+            "Memento of the Shapeless Sickle", "Mage Eater Scythe", "Soul Armament: Raging Gale",
             "Scythe of the Foreboding Reaper", "Soul-Searing Scythe"
         ],
         Unique: [
@@ -744,8 +744,8 @@ export const itemNames = {
             "Staff of Frost", "Staff of Power", "Staff of Striking", "Staff of Thunder and Lightning", "Voyager Staff", "Staff of Whispering Thoughts",
         ],
         Legendary: ["Blackstaff", "Dragonstaff of Ahghairon", "Hither-Tither Staff", "Inscrutable Staff", "Staff of Conflux (Dormant)",
-            "Staff of Contaminated Power", "Staff of the Magi",  "Staff of the Old Enchanter", "Staff of Dread Zombies", "Sanguine Rose",
-      "Skull of Corruption", "Wabbajack, Sceptre of the Madgod", "Thyrsus, Staff of Divine Ecstasy"
+            "Staff of Contaminated Power", "Staff of the Magi", "Staff of the Old Enchanter", "Staff of Dread Zombies", "Sanguine Rose",
+            "Skull of Corruption", "Wabbajack, Sceptre of the Madgod", "Thyrsus, Staff of Divine Ecstasy"
         ],
         Unique: ["Caduceus of Hermes, Staff of Twin Paths", "Staff of the Sovereign Thrall", "Staff of the Forgotten One", "Crook of Rao", "Precipit, the Formless"]
     },
@@ -804,12 +804,12 @@ export const itemNames = {
         VeryRare: ["Keystone Wayfinder Rune", "Keystone Falconer’s Rune", "Keystone Arcane Rune", "Spell Gem (Amber)", "Spell Gem (Jade)", "Spell Gem (Topaz)", "Ioun Stone of Absorption", "Ioun Stone of Agility", "Ioun Stone of Fortitude", "Ioun Stone of Insight", "Ioun Stone of Intellect", "Ioun Stone of Leadership", "Ioun Stone of Strength", "Ioun Stone of Vitality",
             "Amethyst Lodestone", "Fragment of Elder Starlight", "Party Warp Crystal", "High-Grade Magicule Crystal", "+2 Enchantment Gem"
         ],
-        Legendary: ["Mastery Gem",  "Heartstone Wayfinder Rune", "Heartstone Arcane Rune", "Heartstone Vampiric Rune", "Flawless Diamond (25,000 GP)", "Ruby Weave Gem", "Spell Gem (Diamond)", "Spell Gem (Ruby)", "Spell Gem (Star Ruby)", "Ioun Stone of Greater Absorption", "Ioun Stone of Mastery", "Ioun Stone of Regeneration",
+        Legendary: ["Mastery Gem", "Heartstone Wayfinder Rune", "Heartstone Arcane Rune", "Heartstone Vampiric Rune", "Flawless Diamond (25,000 GP)", "Ruby Weave Gem", "Spell Gem (Diamond)", "Spell Gem (Ruby)", "Spell Gem (Star Ruby)", "Ioun Stone of Greater Absorption", "Ioun Stone of Mastery", "Ioun Stone of Regeneration",
             "Jewel of Three Prayers (Dormant)", "Nightfall Pearl", "Scaled Ornament (Ascendant)", "Shard Solitaire (Black Sapphire)", "Shard Solitaire (Diamond)",
             "Shard Solitaire (Jacinth)", "Shard Solitaire (Rainbow Peral)", "Shard Solitaire (Ruby)", "Shard Solitaire (Black Sapphire)", "Warp Nexus Crystal", "Primal Magicule Core", "+3 Enchantment Gem"
         ],
         Unique: ["Warp Nexus Party Crystal", "+4 Enchantment Gem", "Worldscript Wayfinder Rune", "Worldscript Falconer’s Rune",
-      "Worldscript Arcane Rune", "Worldscript Vampiric Rune"]
+            "Worldscript Arcane Rune", "Worldscript Vampiric Rune"]
     },
     Shield: {
         Common: ["Shield of Expression", "Sun and Moon Shield"],
@@ -826,8 +826,8 @@ export const itemNames = {
         VeryRare: ["Animated Shield", "Arborguard Shield", "Infernal Aegis Shield", "Oathkeeper's Resolve", "Aegis of the Ghost",
             "Shield of Yggdrasil", "Shield of the Cavalier", "Shield of the Everfighter", "Shield of the Uven Rune", "Shield, +3", "Spellguard Shield", "Infernal Aegis Shield"
         ],
-        Legendary: ["Shield of the Blazing Dreadought", "Shield of the Hidden Lord", "Starmetal Shield", "Euryale's Aegis",   "Pridwen, the Icon-Bearing Shield", "Shield of the Sepulchre",
-      "Shield of the Hammer-Bearer", "Shield of the White Cross"],
+        Legendary: ["Shield of the Blazing Dreadought", "Shield of the Hidden Lord", "Starmetal Shield", "Euryale's Aegis", "Pridwen, the Icon-Bearing Shield", "Shield of the Sepulchre",
+            "Shield of the Hammer-Bearer", "Shield of the White Cross"],
         Unique: ["Aegis of the Everlasting", "The Mawguard Shield", "Soulbond Shield: Aetherhearth, the Shield-Forge", "Aegiskalos, the Shield of Achilles",
 
         ]
@@ -973,7 +973,7 @@ export const itemNames = {
             "Corpse Slayer, Crossbow, Light", "Crossbow, Hand, +2", "Crossbow, Heavy, +2", "Crossbow, Light, +2", "Dragon Slayer Hand Crossbow",
             "Dragon Slayer Heavy Crossbow", "Dragon Slayer Light Crossbow", "Dragon Wing Hand Crossbow", "Dragon Wing Heavy Crossbow", "Dragon Wing Light Crossbow", "Fire, Fire! Crossbow",
             "Giant Slayer Hand Crossbow", "Giant Slayer Heavy Crossbow", "Giant Slayer Light Crossbow", "Lycan Hand Crossbow", "Lycan Heavy Crossbow", "Lycan Light Crossbow",
-            "Medzo's Crossbow", "Oceanic Hand Crossbow", "Oceanic Heavy Crossbow",  "Misthunter Hand Crossbow", "Misthunter Heavy Crossbow", "Misthunter Light Crossbow",
+            "Medzo's Crossbow", "Oceanic Hand Crossbow", "Oceanic Heavy Crossbow", "Misthunter Hand Crossbow", "Misthunter Heavy Crossbow", "Misthunter Light Crossbow",
             "Oceanic Light Crossbow", "Quickdraw Hand Crossbow", "Reap and Sew Light Crossbow", "Riptide Crossbow", "Starcrossed Hand Crossbow", "Starcrossed Heavy Crossbow",
             "Starcrossed Light Crossbow", "Starshot Hand Crossbow", "Starshot Heavy Crossbow", "Starshot Light Crossbow",
             "Vicious Crossbow, Light", "Vicious Hand Crossbow", "Vicious Heavy Crossbow", "Vicious Light Crossbow", "Vigilus Crossbow", "Weapon of Certain Death, Crossbow, Hand",
@@ -1043,10 +1043,10 @@ export const itemNames = {
         ],
         Legendary: [
             "Defender Spear", "Dragonkin Spear +3", "Holy Avenger Spear", "Aegispoint, Spear of Pallas Athena", "Pelian Fang, Spear of Achilles",
-      "Vindex, the Spear of Mars Triumphant", "Enyalius, Spear of Ares",
-      "Rhongowennan, the Unyielding Spear", "Spirit Spear Chastiefol",
-      "Soul Armament: Stern Spirit", "Soul Armament: Splitting Crow",
-      "Soul Armament: Twisted Flower",
+            "Vindex, the Spear of Mars Triumphant", "Enyalius, Spear of Ares",
+            "Rhongowennan, the Unyielding Spear", "Spirit Spear Chastiefol",
+            "Soul Armament: Stern Spirit", "Soul Armament: Splitting Crow",
+            "Soul Armament: Twisted Flower",
             "Purity Spear", "Shard Solitaire (Rainbow Pearl)", "Spear of Gael Wode",
             "Vicious Vortex Spear", "Davy Jones' Key", "Defender Trident", "Dragonkin Trident +3",
             "Holy Avenger Trident", "Dragonkin Javelin +3", "Holy Avenger Javelin",
@@ -1076,7 +1076,7 @@ export const itemNames = {
         VeryRare: [
             "Dragonkin Halberd +2", "Executioner's Halberd", "Foresight Halberd",
             "Halberd of Throne's Command", "Halberd, +3", "Nine Lives Stealer Halberd",
-            "Ruidium Halberd", "Splitter Halberd",  "Soul Armament: Ink Moon Halo",
+            "Ruidium Halberd", "Splitter Halberd", "Soul Armament: Ink Moon Halo",
         ],
         Legendary: [
             "Defender Halberd", "Dragonkin Halberd +3", "Halberd of the Forsaken Pact *",
@@ -1116,13 +1116,13 @@ export const itemNames = {
             "Blistering Beheader Greatclub", "Comet Smasher Greatclub", "Dragonkin Greatclub +2",
             "Forcebreaker Greatclub", "Foresight Greatclub", "Greatclub, +3",
             "Nine Lives Stealer Greatclub", "Ruidium Greatclub", "Thunderous Greatclub",
-            "Club, +3", "Comet Smasher Club",  "Soul Armament: Mercy Wheel",
+            "Club, +3", "Comet Smasher Club", "Soul Armament: Mercy Wheel",
             "Dragonkin Club +2", "Forcebreaker Club", "Foresight Club",
             "Nine Lives Stealer Club", "Ruidium Club",
         ],
         Legendary: [
             "Dragonkin Greatclub +3", "Holy Avenger Greatclub", "Kraken’s Beak", "Leviathan’s Tooth",
-      "Soul Armament: Heavenly Goblin Club",
+            "Soul Armament: Heavenly Goblin Club",
             "Defender Club", "Dragonkin Club +3", "Holy Avenger Club",
         ],
         Unique: [
@@ -1151,7 +1151,7 @@ export const itemNames = {
             "Dragon Slayer Mace", "Dragonkin Mace +1", "Flame Tongue Mace",
             "Giant Slayer Mace", "Lycan Mace", "Mace of Disruption",
             "Mace of Smiting", "Mace of Terror", "Mace of Vampire Slaying",
-            "Mace, +2", "Many-Eyed Mace",  "Ankylosaurus Flail",
+            "Mace, +2", "Many-Eyed Mace", "Ankylosaurus Flail",
             "Verax Mace", "Vicious Mace", "Warding Mace",
             "Weapon of Certain Death, Mace", "Whirling Mace", "Adult Dragon Edge Morningstar", "Coldfire Morningstar", "Corpse Slayer, Morningstar",
             "Dragon Slayer Morningstar", "Dragonkin Morningstar +1", "Flame Tongue Morningstar",
@@ -1210,11 +1210,11 @@ export const itemNames = {
         VeryRare: [
             "Dragonkin Whip +2", "Dyrrn's Tentacle Whip", "Foresight Whip",
             "Monsterbane Whip Lasher", "Nine Lives Stealer Whip", "Ruidium Whip",
-            "Whip of Throne's Command", "Whip, +3",   "Soul Armament: Tiger Culler", "Soul Armament: Self-Same Spiral"
+            "Whip of Throne's Command", "Whip, +3", "Soul Armament: Tiger Culler", "Soul Armament: Self-Same Spiral"
         ],
         Legendary: [
-            "Defender Whip", "Dragonkin Whip +3", "Holy Avenger Whip",   "Blades of Chaos, Shackles of the Burning Vow", "Tendril of Apocrypha",
-      "Soul Armament: Golden Flower Whip",
+            "Defender Whip", "Dragonkin Whip +3", "Holy Avenger Whip", "Blades of Chaos, Shackles of the Burning Vow", "Tendril of Apocrypha",
+            "Soul Armament: Golden Flower Whip",
         ],
         Unique: [
             "Mastix, Whip of Erebos"
@@ -1265,7 +1265,7 @@ export const itemNames = {
         ],
         Rare: [
             "Coldfire Lance", "Corpse Slayer, Lance", "Dragon Slayer Lance",
-            "Dragonkin Lance +1", 
+            "Dragonkin Lance +1",
             "Flame Tongue Lance", "Giant Slayer Lance", "Lance, +2",
             "Lycan Lance", "Lance of the Crab Knight",
             "Verax Lance", "Vicious Lance",
@@ -1298,7 +1298,7 @@ export const itemNames = {
         ],
         Rare: [
             "Adult Dragon Edge War Pick", "Coldfire War Pick", "Hoarfrost",
-            "Corpse Slayer, War Pick", "Direstone Dwarven Warpick",  "Notched Pickaxe, Storm-Prospector",
+            "Corpse Slayer, War Pick", "Direstone Dwarven Warpick", "Notched Pickaxe, Storm-Prospector",
             "Dragon Slayer War Pick", "Dragonkin War Pick +1",
             "Flame Tongue War Pick", "Giant Slayer War Pick", "Gorgon War Pick",
             "Luminous War Pick", "Lycan War Pick", "Magma War Pick",
@@ -1545,14 +1545,14 @@ export const itemNames = {
             "Sunburst Spell Scroll", "Symbol Spell Scroll", "Telepathy Spell Scroll",
             "Teleport Spell Scroll", "Temple of the Gods Spell Scroll", "Tether Essence Spell Scroll",
             "Whirlwind Spell Scroll", "Scroll of the Defender’s Way", "Scroll of the Wanderer’s Way", "Scroll of the Protector’s Way",
-      "Scroll of the Duelists Way", "Scroll of the Slinger’s Way", "Scroll of the Pugilist’s Way",
-      "Scroll of the Lost Technique: Shooter’s Way", "Scroll of the Lost Technique: Tunneler’s Way",
-      "Scroll of the Lost Technique: Phalanx Way", "Scroll of the Lost Technique: Destroyer’s Way",
-      "Scroll of the Lost Technique: Mariner’s Way", "Scroll of the Advanced Technique: Defender’s Way",
-      "Scroll of the Advanced Technique: Swift Striker’s Way",
-      "Scroll of the Advanced Technique: Armor-Piercer’s Way",
-      "Scroll of the Advanced Technique: Brutalist Way", "Scroll of the Dual Wielder’s Way",
-      "Scroll of the Guardian’s Way", "Scroll of the Archer’s Way",
+            "Scroll of the Duelists Way", "Scroll of the Slinger’s Way", "Scroll of the Pugilist’s Way",
+            "Scroll of the Lost Technique: Shooter’s Way", "Scroll of the Lost Technique: Tunneler’s Way",
+            "Scroll of the Lost Technique: Phalanx Way", "Scroll of the Lost Technique: Destroyer’s Way",
+            "Scroll of the Lost Technique: Mariner’s Way", "Scroll of the Advanced Technique: Defender’s Way",
+            "Scroll of the Advanced Technique: Swift Striker’s Way",
+            "Scroll of the Advanced Technique: Armor-Piercer’s Way",
+            "Scroll of the Advanced Technique: Brutalist Way", "Scroll of the Dual Wielder’s Way",
+            "Scroll of the Guardian’s Way", "Scroll of the Archer’s Way",
         ],
         Legendary: [
             "Astral Projection Spell Scroll", "Blade of Disaster Spell Scroll", "Foresight Spell Scroll",
@@ -1695,12 +1695,12 @@ export const itemNames = {
         Legendary: [],
         Unique: []
     },
-     Firearms: {
+    Firearms: {
         Common: [
             "Arrows, Walloping", "Torpedo Arrow", "Unbreakable Arrow", "Sling Bullets, Walloping", "Bird's Eye Bolt"
         ],
         Uncommon: [
-           "Arcanomatic Railgun" ],
+            "Arcanomatic Railgun"],
         Rare: [
             "Crossbow Bolts, +2", "Sling Bullets, +2", "Acidlight Arrow", "Arrow of Slaying", "Arrows, +2",
             "Hardened Delerium-Tipped Arrows", "Phoenix Arrow"
