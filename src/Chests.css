@@ -161,7 +161,7 @@
   letter-spacing: .3px;
 
   color: #ffd700 !important;
-  -webkit-text-fill-color: #ffd700 !important;
+  -webkit-text-fill-color: black !important;
   -webkit-text-stroke: 1px #d4af37;          /* gold outline */
   text-shadow:
     0 0 6px rgba(255,215,0,.55),
@@ -171,7 +171,7 @@
 /* ----------------- Mobile (≤640px) ----------------- */
 @media (max-width: 640px) {
   .chests-container {
-    --chest-max: 320px;
+    --chest-max: 200px;
     width: 94vw;
     margin-top: 10px;
     gap: 10px;

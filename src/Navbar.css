@@ -103,10 +103,33 @@
 }
 .dropdown-item:hover { background-color: #666; }
 
+/* --------- Desktop (≥1025px): push brand to far left --------- */
+@media (min-width: 1025px) {
+  /* Keep inner content clear of the brand */
+  .navbar-inner {
+    padding-left: 150px; /* room for the brand sitting at far-left */
+  }
+
+  /* Take the brand out of flow and pin it to the viewport edge */
+  .navbar-brand {
+    position: absolute;        /* positioned relative to .navbar (fixed) */
+    left: 8px;                  /* nudge closer to the edge; tweak as you like */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2100;              /* above anything inside the bar */
+  }
+}
+
 /* --------- Mobile (≤640px) --------- */
 @media (max-width: 640px) {
   .navbar { height: 44px; }
   .navbar-inner { padding: 6px 10px; }
+
+  /* Brand back to normal flow on small screens */
+  .navbar-brand {
+    position: static;
+    transform: none;
+  }
 
   .navbar-toggle { display: inline-block; }
 
@@ -155,4 +178,14 @@
 @media (min-width: 641px) and (max-width: 1024px) {
   .nav-list { gap: 36px; font-size: 0.95em; }
   .nav-item { padding: 6px 8px; }
+
+  /* Keep tablet layout simple: brand in normal flow */
+  .navbar-brand {
+    position: static;
+    transform: none;
+  }
+
+  .navbar-inner {
+    padding-left: 12px; /* no extra padding needed on tablet */
+  }
 }
