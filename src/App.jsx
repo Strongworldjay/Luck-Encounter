@@ -48,6 +48,35 @@ export default function App() {
 
   const isMobile = useBreakpoint('(max-width: 640px)');
 
+  // ---------- NEW: Filters state ----------
+  const [filtersOpen, setFiltersOpen] = useState(false);
+  const [enabledTypes, setEnabledTypes] = useState(() => {
+    try {
+      const raw = localStorage.getItem('enabledTypes');
+      return new Set(raw ? JSON.parse(raw) : []); // store as Set in state
+    } catch {
+      return new Set();
+    }
+  });
+
+  // Persist filters
+  useEffect(() => {
+    localStorage.setItem('enabledTypes', JSON.stringify([...enabledTypes]));
+  }, [enabledTypes]);
+
+  // Keyboard: close drawer on ESC
+  useEffect(() => {
+    if (!filtersOpen) return;
+    const onKey = (e) => e.key === 'Escape' && setFiltersOpen(false);
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [filtersOpen]);
+
+  // The pool used everywhere in the app
+  const filteredItemTypes = enabledTypes.size
+    ? itemTypes.filter(t => enabledTypes.has(t))
+    : itemTypes;
+
   useEffect(() => {
     const t = setTimeout(() => setIsLoading(false), 4000);
     return () => clearTimeout(t);
@@ -60,12 +89,14 @@ export default function App() {
     setIsDrawing(true);
     setSelectedCard(null);
 
+    const pool = filteredItemTypes.length ? filteredItemTypes : itemTypes;
     const count = 3; // always draw 3
+
     const newCards = Array.from({ length: count }, (_, index) => {
       const baseRoll = Math.floor(Math.random() * 100) + 1;
       const totalRoll = baseRoll + totalLuck;
       const rarity = rarities.find(r => totalRoll >= r.range[0] && totalRoll <= r.range[1]) || rarities[0];
-      const itemType = itemTypes[Math.floor(Math.random() * itemTypes.length)];
+      const itemType = pool[Math.floor(Math.random() * pool.length)];
       const itemName = getRandomItem(itemType, null, rarity.name.replace(' ', ''));
       return { id: index, rarity, itemType, item: itemName, revealed: false, fadeAway: false };
     });
@@ -108,6 +139,68 @@ export default function App() {
         mobileHiddenItems={['SkillPointUsage','MagicBingo','RandomWheel',]}
       />
 
+      {/* ---------- Filters bar (visible on DungeonCompletion) ---------- */}
+      {currentSection === 'DungeonCompletion' && (
+        <div className="filters-bar">
+          <button className="btn" onClick={() => setFiltersOpen(true)}>Filters</button>
+          {enabledTypes.size > 0 && (
+            <span className="filters-hint">{enabledTypes.size} enabled</span>
+          )}
+        </div>
+      )}
+
+      {/* ---------- Filters Drawer ---------- */}
+      {filtersOpen && (
+        <div className="filter-drawer" role="dialog" aria-modal="true">
+          <div
+            className="filter-drawer__panel"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="filter-drawer__header">
+              <h3>Item Filters</h3>
+              <button className="icon-btn" onClick={() => setFiltersOpen(false)} aria-label="Close">✕</button>
+            </div>
+
+            <div className="filter-actions">
+              <button className="btn small" onClick={() => setEnabledTypes(new Set(itemTypes))}>
+                Select all
+              </button>
+              <button className="btn small" onClick={() => setEnabledTypes(new Set())}>
+                Clear
+              </button>
+            </div>
+
+            <div className="filter-list">
+              {itemTypes.map((t) => {
+                const checked = enabledTypes.has(t);
+                return (
+                  <label key={t} className="filter-row">
+                    <input
+                      type="checkbox"
+                      checked={checked}
+                      onChange={() =>
+                        setEnabledTypes(prev => {
+                          const next = new Set(prev);
+                          if (next.has(t)) next.delete(t); else next.add(t);
+                          return next;
+                        })
+                      }
+                    />
+                    <span>{t}</span>
+                  </label>
+                );
+              })}
+            </div>
+
+            <div className="filter-footer">
+              <button className="btn primary" onClick={() => setFiltersOpen(false)}>Done</button>
+            </div>
+          </div>
+
+          <div className="filter-drawer__backdrop" onClick={() => setFiltersOpen(false)} />
+        </div>
+      )}
+
       {currentSection === 'DungeonCompletion' && (
         <div className="content-wrap">
           <div className="top-center-container panel">
@@ -127,7 +220,7 @@ export default function App() {
                       autoComplete="off"
                       value={String(characterLuck)}
                       onChange={(e) => {
-                        const v = e.target.value.replace(/\D+/g, ''); // digits only
+                        const v = e.target.value.replace(/\D+/g, '');
                         setCharacterLuck(v === '' ? 0 : parseInt(v, 10));
                       }}
                       placeholder="Enter character's luck"
@@ -169,7 +262,7 @@ export default function App() {
             </div>
           </div>
 
-          {/* Left deck (draw): stack on desktop, single image on mobile */}
+          {/* Left deck (draw) */}
           <div className="deck-container" onClick={generateCards} role="button" aria-label="Draw cards">
             {isMobile ? (
               <img src={deckImage} alt="Deck of Cards" className="deck-image" />
@@ -206,16 +299,24 @@ export default function App() {
         </div>
       )}
 
+      {/* Pass filtered types to wheels */}
       {currentSection === 'Wheel' && (
         <RandomWheel
           totalLuck={totalLuck}
-          itemTypes={itemTypes}
+          itemTypes={filteredItemTypes}
           compact={isMobile}
           onReward={(payload) => console.log('Wheel Reward:', payload)}
         />
       )}
 
-      {currentSection === 'RandomWheel' && <RandomWheel compact={isMobile} />}
+      {currentSection === 'RandomWheel' && (
+        <RandomWheel
+          compact={isMobile}
+          totalLuck={totalLuck}
+          itemTypes={filteredItemTypes}
+        />
+      )}
+
       {currentSection === 'SacredArts' && <SacredArts />}
       {currentSection === 'Chests' && <Chests />}
       {currentSection === 'MagicBingo' && <Magic />}
