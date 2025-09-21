@@ -1,3 +1,7 @@
+/* =========================
+   Card layout & animation
+   ========================= */
+
 .card-container {
   display: flex;
   gap: 50px;
@@ -6,6 +10,9 @@
   margin-top: 20px;
   flex-wrap: nowrap;
 }
+
+/* Shared corner radius */
+:root { --card-radius: 20px; }
 
 .card {
   width: 240px;
@@ -18,9 +25,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.6s ease, opacity 1s ease;
-  will-change: transform, opacity;
+
+  /* split transitions so we can delay only the glow */
+  transition-property: transform, opacity, box-shadow;
+  transition-duration: .6s, 1s, .6s;
+  transition-timing-function: ease, ease, ease;
+  transition-delay: 0s, 0s, 0s;
+
+  will-change: transform, opacity, box-shadow;
   touch-action: manipulation;
+  border-radius: var(--card-radius);
+  background: transparent;
+  box-shadow: 0 0 0 0 transparent; /* default no glow */
 }
 
 .card:hover { transform: scale(1.06); }
@@ -40,37 +56,26 @@
   transform-style: preserve-3d;
   transition: transform 0.8s ease;
   will-change: transform;
-  border-radius: 20px;
+  border-radius: var(--card-radius);
+  z-index: 1;
 }
 
 .card.revealed .card-inner { transform: rotateY(180deg); }
 
-/* Glow ring */
-.card::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-  box-shadow: 0 0 10px 3px transparent;
-  opacity: 1;
-  z-index: -1;
-  transition: opacity 0.8s ease, box-shadow 0.8s ease;
-}
-
-.card.revealed::before {
-  box-shadow: 0 0 15px 5px var(--glow-color);
-  opacity: 1;
-  transition-delay: .7s;
-}
-
+/* ---- GLOW: applied directly on card when revealed ---- */
 :root { --glow-color: white; }
 .card.revealed.common     { --glow-color: white; }
-.card.revealed.uncommon   { --glow-color: green; }
-.card.revealed.rare       { --glow-color: rgb(68, 107, 117); }
-.card.revealed.very-rare  { --glow-color: purple; }
-.card.revealed.legendary  { --glow-color: orange; }
-.card.revealed.unique     { --glow-color: red; }
+.card.revealed.uncommon   { --glow-color: #4caf50; }
+.card.revealed.rare       { --glow-color: #446b75; }
+.card.revealed.very-rare  { --glow-color: #7a3bd6; }
+.card.revealed.legendary  { --glow-color: #ff9800; }
+.card.revealed.unique     { --glow-color: #ff3b30; }
+
+.card.revealed {
+  box-shadow: 0 0 18px 6px var(--glow-color);
+  /* Delay ONLY the glow; flip/opacity start immediately */
+  transition-delay: 0s, 0s, .7s;
+}
 
 /* Faces */
 .card-face {
@@ -81,10 +86,11 @@
   justify-content: center;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  border-radius: 20px;
+  border-radius: var(--card-radius);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
   background-color: black;
   will-change: transform;
+  overflow: hidden; /* safety for rounding */
 }
 
 .card-front { transform: rotateY(180deg); }
@@ -130,26 +136,37 @@
     4px 4px 6px rgba(0, 0, 0, 0.5);
 }
 
+/* ----- RARITY-SPECIFIC TEXT COLORS ----- */
+.card.common     .item-text { color: #f2f2f2; }
+.card.uncommon   .item-text { color: #7CFC00; }
+
+/* Rare text color forced to match glow */
+.card.rare .item-text,
+.card.rare .item-text * {
+  color: #44a0b7 !important;
+}
+
+.card.very-rare  .item-text { color: #b68cff; }
+.card.legendary  .item-text { color: #ffbf66; }
+.card.unique     .item-text { color: #ff6b6b; }
+
 /* ---------- MOBILE (≤640px) ---------- */
 @media (max-width: 640px) {
+  :root { --card-radius: 16px; }
+
   .card-container {
-    padding: 14px 10px 148px;   /* extra bottom room for deck + void buttons */
+    padding: 14px 10px 148px;
     gap: 14px;
     flex-wrap: wrap;
     justify-content: center;
   }
 
   .card {
-    width: 34vw;                /* slightly smaller so 3 fit comfortably */
+    width: 34vw;
     height: calc(34vw * 1.5);
-    min-width: 128px;           /* safety minimums for very small phones */
+    min-width: 128px;
     min-height: 192px;
-    border-radius: 16px;
   }
-
-  .card-inner,
-  .card-face,
-  .card::before { border-radius: 16px; }
 
   .item-overlay { height: 60%; opacity: 0.35; }
 
