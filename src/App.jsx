@@ -15,7 +15,7 @@ import deckImage from './assets/card-design.jpg';
 import voidImage from './assets/void.webp';
 import { getRandomItem } from './ItemGenerator';
 import { useBreakpoint } from './hooks/useBreakpoint';
-
+import SkillPointPlanner from './SkillPointPlanner';
 const rarities = [
   { name: 'Common',    color: 'white',  range: [-100, 5] },
   { name: 'Uncommon',  color: 'green',  range: [6, 49] },
@@ -321,6 +321,7 @@ export default function App() {
       {currentSection === 'Chests' && <Chests />}
       {currentSection === 'MagicBingo' && <Magic />}
       {currentSection === 'SkillPointUsage' && <SkillPointUsage />}
+      {currentSection === 'SPPlanner' && <SkillPointPlanner />}
       {currentSection === 'CharacterSheets' && <CharacterSheets />}
       {currentSection === 'UniqueSkill' && <UniqueSkill />}
     </div>

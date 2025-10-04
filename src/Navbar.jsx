@@ -22,6 +22,7 @@ export default function Navbar({
   const items = useMemo(() => ([
     { id: 'DungeonCompletion', label: 'Dungeon Completion' },
     { id: 'Chests',            label: 'Chests' },
+     { id: 'SPPlanner',         label: 'SP Planner' },  
     { id: 'SkillPointUsage',   label: 'Skill Point Usage' },
     { id: 'MagicBingo',        label: 'Magic' },
     { id: 'RandomWheel',       label: 'RandomWheel' },
