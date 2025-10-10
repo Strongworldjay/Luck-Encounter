@@ -525,7 +525,12 @@ export const itemNames = {
             "Runestone of Ocean Currents", "Bound Wayfinder Rune", "Bound Falconer’s Rune", "Spell Gem (Obsidian)", "Exquisite Diamond (1000 GP)", "Empty Aspect Orb", "Minor Magicule Crystal", "+1 Enchantment Gem"
         ],
         Rare: ["Resonant Wayfinder Rune", "Resonant Falconer’s Rune", "Resonant Arcane Rune", "Gem of Seeing", "Spell Gem (Bloodstone)", "Spell Gem (Quartz)", "Ioun Stone of Awareness", "Ioun Stone of Historical Knowledge", "Ioun Stone of Language Knowledge", "Ioun Stone of Natural Knowledge", "Ioun Stone of Protection",
-            "Ioun Stone of Religious Knowledge", "Ioun Stone of Reserve", "Ioun Stone of Self-Preservation", "Ioun Stone of Supreme Intellect", "Ioun Stone of Sustenance", "Warp Crystal", "Greater Magicule Crystal"
+             "Oathstone of the Staff", "Oathstone of the Blade", "Oathstone of the Rod", "Oathstone of the Mage", "Oathstone of the Tomes",
+      "Oathstone of the Arts (Weapon)", "Oathstone of the Arts (Passive)", "Oathstone of the Arts (Boost)", "Oathstone of the Scythe", "Oathstone of the Hidden Blades",
+      "Oathstone of Skill", "Oathstone of The Robed", "Oathstone of The Cloaked", "Oathstone of The Protector", "Oathstone of The Helm",
+      "Oathstone of The Ring", "Oathstone of The Necklace", "Oathstone of Guardian", "Oathstone of Wonder", "Oathstone of Magic",
+      "Oathstone of the Pikeman", "Oathstone of the Phalanx", "Oathstone of The Lancer", "Oathstone of The Miner", "Oathstone of The Master",
+      "Oathstone of The Caveman", "Oathstone of The Elusive", "Oathstone of the Crossbow", "Oathstone of the Halberd", "Ioun Stone of Religious Knowledge", "Ioun Stone of Reserve", "Ioun Stone of Self-Preservation", "Ioun Stone of Supreme Intellect", "Ioun Stone of Sustenance", "Warp Crystal", "Greater Magicule Crystal"
         ],
         VeryRare: ["Keystone Wayfinder Rune", "Keystone Falconer’s Rune", "Keystone Arcane Rune", "Spell Gem (Amber)", "Spell Gem (Jade)", "Spell Gem (Topaz)", "Ioun Stone of Absorption", "Ioun Stone of Agility", "Ioun Stone of Fortitude", "Ioun Stone of Insight", "Ioun Stone of Intellect", "Ioun Stone of Leadership", "Ioun Stone of Strength", "Ioun Stone of Vitality",
             "Amethyst Lodestone", "Fragment of Elder Starlight", "Party Warp Crystal", "High-Grade Magicule Crystal", "+2 Enchantment Gem"
