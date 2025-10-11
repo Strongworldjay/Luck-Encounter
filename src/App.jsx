@@ -11,11 +11,17 @@ import UniqueSkill from './UniqueSkill';
 import Chests from './Chests';
 import './App.css';
 import appBackground from './assets/app-background.jpg';
+import darkmodeBackground from './assets/darkmode.jpg';
 import deckImage from './assets/card-design.jpg';
-import voidImage from './assets/void.webp';
+import darkDeck1 from './assets/darkmodecard1.png';
+import darkDeck2 from './assets/darkmodecard2.png';
+import darkDeck3 from './assets/darkmodecard3.png';
+import darkDeck4 from './assets/darkmodecard4.png';
+import blackholeImage from './assets/blackhole.png';
 import { getRandomItem } from './ItemGenerator';
 import { useBreakpoint } from './hooks/useBreakpoint';
 import SkillPointPlanner from './SkillPointPlanner';
+
 const rarities = [
   { name: 'Common',    color: 'white',  range: [-100, 5] },
   { name: 'Uncommon',  color: 'green',  range: [6, 49] },
@@ -48,41 +54,38 @@ export default function App() {
 
   const isMobile = useBreakpoint('(max-width: 640px)');
 
-  // ---------- NEW: Filters state ----------
+  // 🌙 Detect system dark mode
+  const [isDark, setIsDark] = useState(false);
+  useEffect(() => {
+    const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const update = () => setIsDark(darkQuery.matches);
+    update();
+    darkQuery.addEventListener('change', update);
+    return () => darkQuery.removeEventListener('change', update);
+  }, []);
+
+  // Filters
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [enabledTypes, setEnabledTypes] = useState(() => {
     try {
       const raw = localStorage.getItem('enabledTypes');
-      return new Set(raw ? JSON.parse(raw) : []); // store as Set in state
+      return new Set(raw ? JSON.parse(raw) : []);
     } catch {
       return new Set();
     }
   });
 
-  // Persist filters
   useEffect(() => {
     localStorage.setItem('enabledTypes', JSON.stringify([...enabledTypes]));
   }, [enabledTypes]);
 
-  // Keyboard: close drawer on ESC
   useEffect(() => {
-    if (!filtersOpen) return;
-    const onKey = (e) => e.key === 'Escape' && setFiltersOpen(false);
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
-  }, [filtersOpen]);
-
-  // The pool used everywhere in the app
-  const filteredItemTypes = enabledTypes.size
-    ? itemTypes.filter(t => enabledTypes.has(t))
-    : itemTypes;
-
-  useEffect(() => {
-    const t = setTimeout(() => setIsLoading(false), 4000);
+    const t = setTimeout(() => setIsLoading(false), 3000);
     return () => clearTimeout(t);
   }, []);
 
   const totalLuck = characterLuck + dungeonLuck;
+  const filteredItemTypes = enabledTypes.size ? itemTypes.filter(t => enabledTypes.has(t)) : itemTypes;
 
   const generateCards = () => {
     if (isDrawing) return;
@@ -90,7 +93,7 @@ export default function App() {
     setSelectedCard(null);
 
     const pool = filteredItemTypes.length ? filteredItemTypes : itemTypes;
-    const count = 3; // always draw 3
+    const count = 3;
 
     const newCards = Array.from({ length: count }, (_, index) => {
       const baseRoll = Math.floor(Math.random() * 100) + 1;
@@ -108,9 +111,7 @@ export default function App() {
   const revealCard = (index) => {
     const selected = cards[index];
     setSelectedCard(selected);
-    setCards(prev =>
-      prev.map((card, i) => (i === index ? { ...card, revealed: true } : { ...card, fadeAway: true }))
-    );
+    setCards(prev => prev.map((c, i) => (i === index ? { ...c, revealed: true } : { ...c, fadeAway: true })));
     console.log(`You have obtained the ${selected.rarity.name} ${selected.itemType}: ${selected.item}`);
   };
 
@@ -124,94 +125,35 @@ export default function App() {
   };
 
   const handleNavClick = (section) => setCurrentSection(section);
-
   if (isLoading) return <LoadingScreen />;
+
+  // Deck image logic
+  const darkDecks = [darkDeck1, darkDeck2, darkDeck3, darkDeck4];
+  const deckArt = isDark ? darkDecks[Math.floor(Math.random() * darkDecks.length)] : deckImage;
 
   return (
     <div
-      className={`app-container ${isMobile ? 'mobile' : 'desktop'}`}
-      style={{ backgroundImage: `url(${appBackground})` }}
+      className={`app-container ${isMobile ? 'mobile' : 'desktop'} ${isDark ? 'theme-dark' : ''}`}
+      style={{
+        backgroundImage: `url(${isDark ? darkmodeBackground : appBackground})`,
+      }}
     >
       <Navbar
         onNavClick={handleNavClick}
         currentSection={currentSection}
         compact={isMobile}
-        mobileHiddenItems={['SkillPointUsage','MagicBingo','RandomWheel',]}
+        mobileHiddenItems={['SkillPointUsage', 'MagicBingo', 'RandomWheel']}
       />
 
-      {/* ---------- Filters bar (visible on DungeonCompletion) ---------- */}
       {currentSection === 'DungeonCompletion' && (
-        <div className="filters-bar">
-          <button className="btn" onClick={() => setFiltersOpen(true)}>Filters</button>
-          {enabledTypes.size > 0 && (
-            <span className="filters-hint">{enabledTypes.size} enabled</span>
-          )}
-        </div>
-      )}
-
-      {/* ---------- Filters Drawer ---------- */}
-      {filtersOpen && (
-        <div className="filter-drawer" role="dialog" aria-modal="true">
-          <div
-            className="filter-drawer__panel"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="filter-drawer__header">
-              <h3>Item Filters</h3>
-              <button className="icon-btn" onClick={() => setFiltersOpen(false)} aria-label="Close">✕</button>
-            </div>
-
-            <div className="filter-actions">
-              <button className="btn small" onClick={() => setEnabledTypes(new Set(itemTypes))}>
-                Select all
-              </button>
-              <button className="btn small" onClick={() => setEnabledTypes(new Set())}>
-                Clear
-              </button>
-            </div>
-
-            <div className="filter-list">
-              {itemTypes.map((t) => {
-                const checked = enabledTypes.has(t);
-                return (
-                  <label key={t} className="filter-row">
-                    <input
-                      type="checkbox"
-                      checked={checked}
-                      onChange={() =>
-                        setEnabledTypes(prev => {
-                          const next = new Set(prev);
-                          if (next.has(t)) next.delete(t); else next.add(t);
-                          return next;
-                        })
-                      }
-                    />
-                    <span>{t}</span>
-                  </label>
-                );
-              })}
-            </div>
-
-            <div className="filter-footer">
-              <button className="btn primary" onClick={() => setFiltersOpen(false)}>Done</button>
-            </div>
-          </div>
-
-          <div className="filter-drawer__backdrop" onClick={() => setFiltersOpen(false)} />
-        </div>
-      )}
-
-      {currentSection === 'DungeonCompletion' && (
-        <div className="content-wrap">
+        <>
           <div className="top-center-container panel">
             <h1>Why Not Test Your Luck?</h1>
-
             <div className="luck-section">
               <div className="luck-row">
                 <div className="luck-input">
-                  <label>
+                  <label style={{ color: isDark ? 'gray' : 'black' }}>
                     Character's Luck:
-                    {/* Numeric keypad + no iOS zoom */}
                     <input
                       type="text"
                       inputMode="numeric"
@@ -223,17 +165,16 @@ export default function App() {
                         const v = e.target.value.replace(/\D+/g, '');
                         setCharacterLuck(v === '' ? 0 : parseInt(v, 10));
                       }}
-                      placeholder="Enter character's luck"
                     />
                   </label>
                 </div>
 
-                <div className="total-luck">
+                <div className="total-luck" style={{ color: isDark ? 'gray' : 'black' }}>
                   <h3>Total Luck: {totalLuck}</h3>
                 </div>
               </div>
 
-              <div className="dungeon-difficulty">
+              <div className={`dungeon-difficulty ${isDark ? 'dark' : ''}`}>
                 <button onClick={() => { setDungeonLuck(-50); setSelectedDungeon('F'); }}
                         className={selectedDungeon === 'F' ? 'selected' : ''}>
                   F Class Dungeon (-50 Luck)
@@ -262,21 +203,21 @@ export default function App() {
             </div>
           </div>
 
-          {/* Left deck (draw) */}
-          <div className="deck-container" onClick={generateCards} role="button" aria-label="Draw cards">
-            {isMobile ? (
-              <img src={deckImage} alt="Deck of Cards" className="deck-image" />
-            ) : (
-              [...Array(5)].map((_, i) => (
-                <img
-                  key={i}
-                  src={deckImage}
-                  alt="Deck of Cards"
-                  className="deck-image"
-                  style={{ top: `${i * 2}px`, left: `${i * 2}px`, position: 'absolute' }}
-                />
-              ))
-            )}
+          {/* Draw Deck (stacked look; hover only top slice) */}
+          <div className="deck-container deck-stack" onClick={generateCards} role="button" aria-label="Draw cards">
+            {[...Array(5)].map((_, i) => (
+              <img
+                key={i}
+                src={deckArt}
+                alt="Deck of Cards"
+                className={`deck-image deck-slice ${i === 4 ? 'top' : ''}`}
+                style={{
+                  top: `${i * 2}px`,
+                  left: `${i * 2}px`,
+                  position: 'absolute',
+                }}
+              />
+            ))}
           </div>
 
           {/* Cards */}
@@ -285,6 +226,7 @@ export default function App() {
               <Card
                 key={card.id}
                 card={card}
+                isDark={isDark}
                 onClick={() => revealCard(index)}
                 className={`card ${card.revealed ? 'revealed' : ''} ${card.fadeAway ? 'fade-away' : ''}`}
                 ref={(el) => (cardRefs.current[index] = el)}
@@ -292,29 +234,15 @@ export default function App() {
             ))}
           </div>
 
-          {/* Right deck (reset / void) */}
+          {/* Void Deck (single, slow rotating image) */}
           <div className="deck-container second-deck" onClick={resetCards} role="button" aria-label="Reset cards">
-            <img src={voidImage} alt="Void Deck" className="deck-image" />
+            <img src={blackholeImage} alt="Void Deck" className="deck-image blackhole-spin" />
           </div>
-        </div>
-      )}
-
-      {/* Pass filtered types to wheels */}
-      {currentSection === 'Wheel' && (
-        <RandomWheel
-          totalLuck={totalLuck}
-          itemTypes={filteredItemTypes}
-          compact={isMobile}
-          onReward={(payload) => console.log('Wheel Reward:', payload)}
-        />
+        </>
       )}
 
       {currentSection === 'RandomWheel' && (
-        <RandomWheel
-          compact={isMobile}
-          totalLuck={totalLuck}
-          itemTypes={filteredItemTypes}
-        />
+        <RandomWheel compact={isMobile} totalLuck={totalLuck} itemTypes={filteredItemTypes} />
       )}
 
       {currentSection === 'SacredArts' && <SacredArts />}

@@ -105,18 +105,16 @@
 
 /* --------- Desktop (≥1025px): push brand to far left --------- */
 @media (min-width: 1025px) {
-  /* Keep inner content clear of the brand */
   .navbar-inner {
-    padding-left: 150px; /* room for the brand sitting at far-left */
+    padding-left: 150px;
   }
 
-  /* Take the brand out of flow and pin it to the viewport edge */
   .navbar-brand {
-    position: absolute;        /* positioned relative to .navbar (fixed) */
-    left: 8px;                  /* nudge closer to the edge; tweak as you like */
+    position: absolute;
+    left: 8px;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 2100;              /* above anything inside the bar */
+    z-index: 2100;
   }
 }
 
@@ -125,7 +123,6 @@
   .navbar { height: 44px; }
   .navbar-inner { padding: 6px 10px; }
 
-  /* Brand back to normal flow on small screens */
   .navbar-brand {
     position: static;
     transform: none;
@@ -133,10 +130,9 @@
 
   .navbar-toggle { display: inline-block; }
 
-  /* Turn the list into a fixed panel under the bar */
   .nav-list {
     position: fixed;
-    top: 44px;                 /* sits just under the navbar */
+    top: 44px;
     left: 0;
     right: 0;
     background: rgba(51,51,51,0.98);
@@ -149,7 +145,7 @@
     box-shadow: 0 10px 20px rgba(0,0,0,.35);
     display: none;
     max-height: calc(100dvh - 44px);
-    overflow-y: auto;          /* scroll if long */
+    overflow-y: auto;
   }
   .nav-list.open { display: flex; }
 
@@ -157,10 +153,9 @@
     padding: 12px;
     font-size: 1rem;
     border-radius: 8px;
-    white-space: normal;       /* allow wrapping */
+    white-space: normal;
   }
 
-  /* "More" dropdown fits inside the panel */
   .nav-item.more { position: relative; }
   .dropdown-menu {
     position: relative;
@@ -179,13 +174,58 @@
   .nav-list { gap: 36px; font-size: 0.95em; }
   .nav-item { padding: 6px 8px; }
 
-  /* Keep tablet layout simple: brand in normal flow */
   .navbar-brand {
     position: static;
     transform: none;
   }
 
   .navbar-inner {
-    padding-left: 12px; /* no extra padding needed on tablet */
+    padding-left: 12px;
+  }
+}
+
+/* =======================================
+   🌙 Dark Mode Styling
+   ======================================= */
+@media (prefers-color-scheme: dark) {
+  .navbar {
+    background-color: #000 !important;
+    color: #aaa !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .navbar-inner {
+    background-color: #000;
+  }
+
+  .navbar-brand {
+    color: #bbb !important;
+  }
+
+  .nav-item,
+  .dropdown-item {
+    color: #aaa !important;
+    background: transparent;
+  }
+
+  .nav-item:hover,
+  .dropdown-item:hover {
+    background-color: #111 !important;
+    color: #fff !important;
+  }
+
+  .nav-item.active {
+    background-color: #111 !important;
+    color: #fff !important;
+    text-decoration: underline;
+  }
+
+  .dropdown-menu {
+    background-color: #111 !important;
+    border-color: rgba(255,255,255,0.1);
+  }
+
+  .navbar-toggle span {
+    background: #aaa !important;
   }
 }

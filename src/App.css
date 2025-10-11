@@ -1,4 +1,18 @@
-/* Base */
+/* ---------------------------------------
+   Base
+--------------------------------------- */
+:root {
+  /* Light theme accent (gold) */
+  --accent-color: #ffd700;
+  --accent-glow: rgba(255, 215, 0, 0.45);
+}
+
+.theme-dark {
+  /* Dark theme accent (deep blue) */
+  --accent-color: #1f3adf;
+  --accent-glow: rgba(31, 58, 223, 0.5);
+}
+
 body {
   background-color: black;
   margin: 0;
@@ -29,7 +43,9 @@ body {
   box-shadow: none !important;
 }
 
-/* Top section */
+/* ---------------------------------------
+   Top section
+--------------------------------------- */
 .top-center-container {
   display: block;
   margin: 20px auto 0;
@@ -43,6 +59,10 @@ body {
   font-size: 2rem;
   line-height: 1.2;
   text-align: center;
+  color: var(--accent-color);
+  text-shadow:
+    0 0 8px var(--accent-color),
+    0 0 16px var(--accent-glow);
 }
 
 .top-center-container label {
@@ -63,8 +83,13 @@ body {
   gap: 16px;
 }
 
+/* ---------------------------------------
+   Dark Mode: Adjust text color in inputs & total luck
+--------------------------------------- */
+.theme-dark .luck-input label { color: #ccc !important; }
+.theme-dark .total-luck { color: #ccc !important; }
+
 input[type="text"] {
-  /* keep desktop styles; mobile override below prevents iOS zoom */
   margin-top: 5px;
   padding: 10px 12px;
   font-size: 1rem;
@@ -82,7 +107,9 @@ input[type="text"] {
   font-size: 1.2em;
 }
 
-/* Dungeon difficulty buttons */
+/* ---------------------------------------
+   Dungeon difficulty buttons
+--------------------------------------- */
 .dungeon-difficulty {
   display: flex;
   justify-content: center;
@@ -107,11 +134,27 @@ input[type="text"] {
 
 .dungeon-difficulty button.selected {
   background-color: #555;
-  box-shadow: 0 0 10px 4px gold;
-  color: gold;
+  box-shadow: 0 0 10px 4px var(--accent-color);
+  color: var(--accent-color);
 }
 
-/* Decks (desktop defaults) */
+/* Dark mode: buttons become black */
+.theme-dark .dungeon-difficulty button {
+  background-color: #000 !important;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+.theme-dark .dungeon-difficulty button:hover {
+  background-color: #111 !important;
+}
+.theme-dark .dungeon-difficulty button.selected {
+  background-color: #111 !important;
+  box-shadow: 0 0 10px 4px var(--accent-color);
+  color: var(--accent-color);
+}
+
+/* ---------------------------------------
+   Decks
+--------------------------------------- */
 .deck-container {
   position: fixed;
   left: 20px;
@@ -121,6 +164,7 @@ input[type="text"] {
   z-index: 10;
 }
 
+/* Right (void) deck position */
 .deck-container.second-deck {
   top: 85%;
   left: auto;
@@ -128,17 +172,48 @@ input[type="text"] {
   transform: none;
 }
 
+/* Stack styling for left deck */
+.deck-container.deck-stack { position: fixed; }
+
 .deck-image {
   width: 90px;
   height: auto;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
 }
 
-.deck-image:hover { transform: scale(1.1); }
+/* Stacked slices (non-top are slightly offset inline) */
+.deck-slice {
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.45);
+}
 
-/* Card fade animation (flip is in Card.css) */
+/* Hover effect ONLY on the top slice of the LEFT deck */
+.deck-container.deck-stack:not(.second-deck):hover .deck-slice.top {
+  transform: translate(14px, 14px) rotate(2deg) scale(1.07) !important;
+  filter: brightness(1.15);
+  box-shadow: 0 0 12px 4px var(--accent-color);
+}
+
+/* Dark-mode hover keeps blue accent */
+.theme-dark .deck-container.deck-stack:not(.second-deck):hover .deck-slice.top {
+  filter: brightness(1.1);
+}
+
+/* Slow rotation for blackhole void deck image */
+.blackhole-spin {
+  animation: blackholeRotate 28s linear infinite;
+  transform-origin: 50% 50%;
+}
+@keyframes blackholeRotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ---------------------------------------
+   Card fade animation (flip is in Card.css)
+--------------------------------------- */
 .card.fade-away { animation: fadeOut 0.5s ease forwards; }
-
 @keyframes fadeOut {
   0%   { opacity: 1; transform: scale(1); }
   100% { opacity: 0; transform: scale(0.8); }
@@ -149,15 +224,15 @@ input[type="text"] {
   .card:hover { transform: none; }
 }
 
-/* ---------- MOBILE (≤640px) ---------- */
+/* ---------------------------------------
+   MOBILE (≤640px)
+--------------------------------------- */
 @media (max-width: 640px) {
-  /* tap size + how high to lift the corner buttons */
   :root { 
     --deck-size: 60px;
     --deck-lift: 32px; /* raise buttons a bit higher */
   }
 
-  /* 1) Prevent any horizontal stretch/scroll */
   html, body, #root, .app-container {
     max-width: 100%;
     overflow-x: hidden;
@@ -185,7 +260,6 @@ input[type="text"] {
 
   .luck-section { width: 100%; }
 
-  /* Stack the two blocks, and align them left per request */
   .luck-row {
     grid-template-columns: 1fr;
     justify-content: stretch;
@@ -193,15 +267,12 @@ input[type="text"] {
     gap: 10px;
   }
 
-  /* Left-align "Total Luck" + the input block on mobile */
   .total-luck { justify-self: start; text-align: left; }
   .total-luck h3 { margin: 0; text-align: left; }
   .luck-input { justify-self: start; }
 
   /* Prevent iOS zoom by keeping ≥16px font on mobile */
-  input[type="text"] {
-    font-size: 16px;
-  }
+  input[type="text"] { font-size: 16px; }
 
   .dungeon-difficulty {
     display: grid;
@@ -218,11 +289,10 @@ input[type="text"] {
     line-height: 1.2;
   }
 
-  /* 2) Reserve vertical space for the cards so the screen doesn't "jump" */
+  /* Reserve vertical space for cards so the screen doesn't jump */
   .card-container {
     width: 100%;
     box-sizing: border-box;
-    /* previously 148px; auto-adjust with deck-lift */
     padding: 14px 10px calc(148px + (var(--deck-lift) - 18px));
     gap: 14px !important;
     flex-wrap: wrap;
@@ -230,7 +300,6 @@ input[type="text"] {
     min-height: 58vw; /* ~one row of cards reserved */
   }
 
-  /* For very small phones, reserve a bit more (likely 2 rows) */
   @media (max-width: 360px) {
     .card-container { min-height: 100vw; }
   }
@@ -250,18 +319,22 @@ input[type="text"] {
   .deck-container.second-deck { right: 12px !important; left: auto !important; }
 
   .deck-image {
-    width: 100% !important;  /* fill the square box */
+    width: 100% !important;
     height: auto !important;
   }
 }
 
-/* ---------- TABLET (641–1024px) ---------- */
+/* ---------------------------------------
+   TABLET (641–1024px)
+--------------------------------------- */
 @media (min-width: 641px) and (max-width: 1024px) {
   .top-center-container { width: min(92vw, 900px); }
   .deck-image { width: 80px; }
 }
 
-/* Filters bar */
+/* ---------------------------------------
+   Filters bar & Drawer
+--------------------------------------- */
 .filters-bar {
   width: min(1100px, 94vw);
   margin: 6px auto 0;
@@ -279,7 +352,7 @@ input[type="text"] {
 /* Drawer */
 .filter-drawer { position: fixed; inset: 0; z-index: 3000; }
 
-/* FIX: backdrop below the panel */
+/* Backdrop below panel */
 .filter-drawer__backdrop {
   position: absolute; inset: 0;
   background: rgba(0,0,0,.45);
@@ -287,7 +360,7 @@ input[type="text"] {
   z-index: 1;
 }
 
-/* FIX: panel above the backdrop (clickable & not blurred) */
+/* Panel above backdrop */
 .filter-drawer__panel {
   position: absolute; top: 0; right: 0; height: 100%;
   width: min(420px, 92vw);
@@ -324,7 +397,7 @@ input[type="text"] {
   padding: 12px 14px; border-top: 1px solid #333; display: flex; justify-content: flex-end;
 }
 
-/* Reuse your existing button look */
+/* Buttons reused */
 .btn {
   background: #444; color: #fff; border: 1px solid #5a5a5a;
   padding: 8px 12px; border-radius: 8px; cursor: pointer;
@@ -334,7 +407,7 @@ input[type="text"] {
 .btn.primary { background: #7aa4ff; border-color: #89adff; color: #111; }
 .btn.primary:hover { background: #6b96f4; }
 
-/* Mobile: keep things comfy */
+/* Mobile: comfy drawer width */
 @media (max-width: 640px) {
   .filters-bar {
     width: min(92vw, 680px);

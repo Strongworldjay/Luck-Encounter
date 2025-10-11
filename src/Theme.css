@@ -1,0 +1,56 @@
+/* src/theme.css */
+:root {
+  /* light defaults */
+  color-scheme: light;
+  --bg: #ffffff;
+  --text: #111111;
+  --muted: #444;
+  --panel: rgba(0,0,0,.06);
+  --panel-border: rgba(0,0,0,.12);
+  --nav-bg: #333;
+  --nav-text: #fff;
+  --button-bg: #333;
+  --button-text: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --bg: #000000;
+    --text: #ffffff;
+    --muted: #bbbbbb;
+    --panel: rgba(255,255,255,.06);
+    --panel-border: rgba(255,255,255,.12);
+    --nav-bg: #333;
+    --nav-text: #fff;
+    --button-bg: #333;
+    --button-text: #fff;
+  }
+}
+
+/* Optional: explicit dark theme override via data-theme attr */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #000000;
+  --text: #ffffff;
+  --muted: #bbbbbb;
+  --panel: rgba(255,255,255,.06);
+  --panel-border: rgba(255,255,255,.12);
+  --nav-bg: #333;
+  --nav-text: #fff;
+  --button-bg: #333;
+  --button-text: #fff;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #ffffff;
+  --text: #111111;
+  --muted: #444;
+  --panel: rgba(0,0,0,.06);
+  --panel-border: rgba(0,0,0,.12);
+  --nav-bg: #e9e9e9;
+  --nav-text: #111;
+  --button-bg: #222;
+  --button-text: #fff;
+}

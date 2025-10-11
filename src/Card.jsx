@@ -1,14 +1,21 @@
 import React from 'react';
 import './Card.css';
-import whiteCard from './assets/white-card.jpg';
-import greenCard from './assets/green-card.jpg';
-import blueCard from './assets/blue-card.png';
-import purpleBlackCard from './assets/purple-card.jpg';
-import orangeCard from './assets/orange-card.avif';
-import redCard from './assets/red-card.avif';
+
+/* Light-mode back (shared) */
 import cardBack from './assets/card-design.jpg';
 
-// Overlay images
+/* Dark-mode back (use one or map by rarity if you like) */
+import darkCardBack from './assets/darkmodecard1.png';
+
+/* Rarity-based FRONT art */
+import commonFront    from './assets/common.png';
+import uncommonFront  from './assets/uncommon.png';
+import rareFront      from './assets/rare.png';
+import veryRareFront  from './assets/very-rare.png';
+import legendaryFront from './assets/legendary.png';
+import uniqueFront    from './assets/unique.png';
+
+/* Overlay icons */
 import lightArmorSymbol from './assets/light-armor.png';
 import mediumArmorSymbol from './assets/medium-armor.png';
 import robeSymbol from './assets/robe.png';
@@ -54,18 +61,22 @@ import mapSymbol from './assets/map-symbol.png';
 import manaSymbol from './assets/mana-symbol.png';
 import scythesymbol from './assets/scythe-symbol.png';
 
-const Card = ({ card, onClick }) => {
-  const getFrontImage = (rarity) => {
-    switch (rarity.name) {
-      case 'Common':     return whiteCard;
-      case 'Uncommon':   return greenCard;
-      case 'Rare':       return blueCard;
-      case 'Very Rare':  return purpleBlackCard;
-      case 'Legendary':  return orangeCard;
-      case 'Unique':     return redCard;
-      default:           return whiteCard;
-    }
-  };
+const rarityFrontMap = {
+  Common:     commonFront,
+  Uncommon:   uncommonFront,
+  Rare:       rareFront,
+  'Very Rare': veryRareFront,
+  Legendary:  legendaryFront,
+  Unique:     uniqueFront,
+};
+
+const Card = ({ card, onClick, isDark = false }) => {
+  // BACK: light uses shared back; dark uses dark-mode back
+  const backImg = isDark ? darkCardBack : cardBack;
+
+  // FRONT: rarity image + solid color behind it (white light / black dark)
+  const frontImg = rarityFrontMap[card.rarity.name] || commonFront;
+  const frontBackground = isDark ? '#000' : '#fff';
 
   const getOverlayImage = (itemType) => {
     const [mainType, subtype] = itemType.split(' ');
@@ -113,14 +124,12 @@ const Card = ({ card, onClick }) => {
       case 'Keys': return keySymbol;
       case 'Whip': return whipSymbol;
       case 'BoostArt': return skillSymbol;
-      default:
-        console.warn(`No overlay image found for itemType: ${itemType}`);
-        return null;
+      default: return null;
     }
   };
 
   const getRarityClass = (rarity) =>
-    rarity.name.toLowerCase().replace(/\s+/g, '-'); // 'Very Rare' -> 'very-rare'
+    rarity.name.toLowerCase().replace(/\s+/g, '-');
 
   const overlayImage = getOverlayImage(card.itemType);
 
@@ -129,15 +138,29 @@ const Card = ({ card, onClick }) => {
       className={`card ${card.revealed ? 'revealed' : ''} ${card.fadeAway ? 'fade-away' : ''} ${getRarityClass(card.rarity)}`}
       onClick={!card.fadeAway && !card.revealed ? onClick : undefined}
     >
-      {/* New inner wrapper that performs the flip */}
       <div className="card-inner">
+        {/* BACK shows first */}
+        <div
+          className="card-face card-back"
+          style={{
+            backgroundImage: `url(${backImg})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            borderRadius: '20px',
+          }}
+        />
+
+        {/* FRONT shows after flip — rarity PNG + solid background color */}
         <div
           className="card-face card-front"
           style={{
-            backgroundColor: 'black',
-            backgroundImage: `url(${getFrontImage(card.rarity)})`,
-            backgroundSize: 'cover',
+            /* solid color behind the PNG */
+            backgroundColor: frontBackground,
+            /* PNG on top */
+            backgroundImage: `url(${frontImg})`,
+            backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',
+            backgroundSize: 'cover',
             borderRadius: '20px',
           }}
         >
@@ -149,17 +172,6 @@ const Card = ({ card, onClick }) => {
             <div className="item-name">{card.item}</div>
           </div>
         </div>
-
-        <div
-          className="card-face card-back"
-          style={{
-            backgroundColor: 'black',
-            backgroundImage: `url(${cardBack})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            borderRadius: '20px',
-          }}
-        />
       </div>
     </div>
   );
