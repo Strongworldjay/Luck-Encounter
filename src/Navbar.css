@@ -229,3 +229,29 @@
     background: #aaa !important;
   }
 }
+/* Theme toggle (desktop button near brand) */
+.theme-toggle {
+  margin-left: auto;        /* pushes to the right before hamburger */
+  margin-right: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid var(--border, rgba(255,255,255,.15));
+  background: var(--elevated, #1a1a1a);
+  color: var(--app-text, #fff);
+  cursor: pointer;
+  transition: transform .15s ease, background .2s ease, border-color .2s ease;
+}
+.theme-toggle:hover { transform: translateY(-1px); }
+
+/* Hide the desktop toggle inside collapsed mobile nav (we add a text item there) */
+@media (max-width: 768px) {
+  .theme-toggle { display: none; }
+  .nav-item--theme { display: block; }
+}
+@media (min-width: 769px) {
+  .nav-item--theme { display: none; }
+}

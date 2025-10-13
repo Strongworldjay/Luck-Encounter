@@ -1,20 +1,72 @@
 /* ---------------------------------------
-   Base
+   THEME TOKENS (light defaults)
 --------------------------------------- */
 :root {
-  /* Light theme accent (gold) */
-  --accent-color: #ffd700;
+  /* accents */
+  --accent-color: #ffd700;                 /* gold */
   --accent-glow: rgba(255, 215, 0, 0.45);
+
+  /* app chrome */
+  --app-bg: #ffffff;                       /* light background */
+  --app-text: #111111;                     /* light text */
+}
+:root {
+  /* ...your existing vars... */
+  --poster-bg:   #ffffff;  /* card face in light mode */
+  --poster-text: #111111;
+}
+:root {
+  /* light */
+  --surface: #ffffff;
+  --elevated: #f6f7f9;
+  --app-text: #111111;
+  --text: var(--app-text);
+  --border: rgba(0,0,0,.12);
+
+  /* already added earlier, keep them: */
+  /* --poster-bg, --poster-text, --accent-color, etc. */
 }
 
 .theme-dark {
-  /* Dark theme accent (deep blue) */
-  --accent-color: #1f3adf;
-  --accent-glow: rgba(31, 58, 223, 0.5);
+  --surface: #0f0f10;
+  --elevated: #16171a;
+  --app-text: #f1f1f1;
+  --text: var(--app-text);
+  --border: rgba(255,255,255,.14);
 }
 
+.theme-dark {
+  /* ...your existing vars... */
+  --poster-bg:   #000000;  /* card face in dark mode */
+  --poster-text: #f3f3f3;
+}
+
+
+/* Dark mode overrides (apply .theme-dark to <html> or <body>) */
+.theme-dark {
+  --accent-color: #1f3adf;                 /* deep blue */
+  --accent-glow: rgba(31, 58, 223, 0.5);
+
+  --app-bg: #000000;                       /* dark background */
+  --app-text: #f3f3f3;                     /* dark text */
+}
+
+/* Optional: auto-follow system when no explicit theme is set */
+@media (prefers-color-scheme: dark) {
+  :root:not(.theme-dark):not(.theme-light) {
+    --app-bg: #000000;
+    --app-text: #f3f3f3;
+    --accent-color: #1f3adf;
+    --accent-glow: rgba(31, 58, 223, 0.5);
+  }
+}
+
+/* ---------------------------------------
+   Base
+--------------------------------------- */
 body {
-  background-color: black;
+  background-color: var(--app-bg);
+  color: var(--app-text);
   margin: 0;
   overflow: hidden;
 }
@@ -29,7 +81,7 @@ body {
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
-  color: #fff;
+  color: var(--app-text);
   padding-top: 60px; /* room for fixed navbar */
 }
 
@@ -67,7 +119,7 @@ body {
 
 .top-center-container label {
   margin-top: 0px;
-  color: black;
+  color: var(--app-text);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -96,13 +148,13 @@ input[type="text"] {
   border-radius: 10px;
   border: 1px solid rgba(255,255,255,0.15);
   background-color: #111;
-  color: white;
+  color: var(--app-text);
   text-align: center;
 }
 
 .total-luck {
   margin-top: 0px;
-  color: black;
+  color: var(--app-text);
   font-weight: bold;
   font-size: 1.2em;
 }
@@ -124,7 +176,7 @@ input[type="text"] {
   border: none;
   border-radius: 8px;
   background-color: #333;
-  color: white;
+  color: #fff;
   cursor: pointer;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   touch-action: manipulation;
@@ -228,7 +280,7 @@ input[type="text"] {
    MOBILE (≤640px)
 --------------------------------------- */
 @media (max-width: 640px) {
-  :root { 
+  :root {
     --deck-size: 60px;
     --deck-lift: 32px; /* raise buttons a bit higher */
   }
@@ -346,7 +398,7 @@ input[type="text"] {
 .filters-bar .filters-hint {
   font-size: 0.9rem;
   opacity: .9;
-  color: #fff;
+  color: var(--app-text);
 }
 
 /* Drawer */

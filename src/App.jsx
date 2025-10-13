@@ -21,6 +21,8 @@ import blackholeImage from './assets/blackhole.png';
 import { getRandomItem } from './ItemGenerator';
 import { useBreakpoint } from './hooks/useBreakpoint';
 import SkillPointPlanner from './SkillPointPlanner';
+import SpellsPage from "./pages/SpellsPage";
+import JumpCalculator from "./pages/JumpCalculator";
 
 const rarities = [
   { name: 'Common',    color: 'white',  range: [-100, 5] },
@@ -63,6 +65,11 @@ export default function App() {
     darkQuery.addEventListener('change', update);
     return () => darkQuery.removeEventListener('change', update);
   }, []);
+
+  // Apply theme class to <html> so CSS variables cascade app-wide
+  useEffect(() => {
+    document.documentElement.classList.toggle('theme-dark', isDark);
+  }, [isDark]);
 
   // Filters
   const [filtersOpen, setFiltersOpen] = useState(false);
@@ -133,7 +140,7 @@ export default function App() {
 
   return (
     <div
-      className={`app-container ${isMobile ? 'mobile' : 'desktop'} ${isDark ? 'theme-dark' : ''}`}
+      className={`app-container ${isMobile ? 'mobile' : 'desktop'}`}
       style={{
         backgroundImage: `url(${isDark ? darkmodeBackground : appBackground})`,
       }}
@@ -152,7 +159,7 @@ export default function App() {
             <div className="luck-section">
               <div className="luck-row">
                 <div className="luck-input">
-                  <label style={{ color: isDark ? 'gray' : 'black' }}>
+                  <label>
                     Character's Luck:
                     <input
                       type="text"
@@ -169,12 +176,12 @@ export default function App() {
                   </label>
                 </div>
 
-                <div className="total-luck" style={{ color: isDark ? 'gray' : 'black' }}>
+                <div className="total-luck">
                   <h3>Total Luck: {totalLuck}</h3>
                 </div>
               </div>
 
-              <div className={`dungeon-difficulty ${isDark ? 'dark' : ''}`}>
+              <div className="dungeon-difficulty">
                 <button onClick={() => { setDungeonLuck(-50); setSelectedDungeon('F'); }}
                         className={selectedDungeon === 'F' ? 'selected' : ''}>
                   F Class Dungeon (-50 Luck)
@@ -252,6 +259,8 @@ export default function App() {
       {currentSection === 'SPPlanner' && <SkillPointPlanner />}
       {currentSection === 'CharacterSheets' && <CharacterSheets />}
       {currentSection === 'UniqueSkill' && <UniqueSkill />}
+      {currentSection === "Spells" && <SpellsPage />}
+      {currentSection === 'JumpCalc' && <JumpCalculator />}
     </div>
   );
 }
