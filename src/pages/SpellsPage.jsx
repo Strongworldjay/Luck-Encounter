@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { ALL_SPELLS } from "../data/spells";
 import SpellsFilters from "../features/spells/SpellsFilters";
 import SpellCard from "../features/spells/SpellCard";
@@ -7,6 +7,7 @@ import SpellRow from "../features/spells/SpellRow";
 import "../features/spells/spells.css";
 
 const uniq = (arr) => [...new Set(arr)].sort();
+const PAGE_SIZE = 16;
 
 export default function SpellsPage() {
   // Build filter options from data
@@ -69,7 +70,7 @@ export default function SpellsPage() {
   const matchText = (needle, hay) =>
     !needle || (hay || "").toLowerCase().includes(String(needle).toLowerCase());
 
-  const list = useMemo(() => {
+  const fullList = useMemo(() => {
     const f = filters;
     const hasComp = (s, key) => !f.components?.[key] || !!(s.components && s.components[compMap[key]]);
     return ALL_SPELLS
@@ -96,11 +97,30 @@ export default function SpellsPage() {
   const [viewMode, setViewMode] = useState("cards"); // 'cards' | 'list'
   const [activeSpell, setActiveSpell] = useState(null);
 
+  // Pagination state
+  const [page, setPage] = useState(1);
+  const total = fullList.length;
+  const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+  const safePage = Math.min(page, totalPages);
+  const startIdx = (safePage - 1) * PAGE_SIZE;
+  const endIdx = startIdx + PAGE_SIZE;
+  const list = fullList.slice(startIdx, endIdx);
+
+  // Reset to page 1 whenever filters or view mode changes
+  useEffect(() => { setPage(1); }, [filters, viewMode]);
+
+  // Page strip numbers (compact)
+  const pagesToShow = useMemo(() => {
+    if (totalPages <= 7) return Array.from({ length: totalPages }, (_, i) => i + 1);
+    const set = new Set([1, 2, totalPages - 1, totalPages, safePage - 1, safePage, safePage + 1]);
+    return Array.from(set).filter(n => n >= 1 && n <= totalPages).sort((a, b) => a - b);
+  }, [totalPages, safePage]);
+
   return (
     <div className="spells-page">
       {/* Dedicated scroll area so only this page scrolls */}
       <div className="spells-scroll">
-        {/* Sticky filters inside scroll container */}
+        {/* Filters */}
         <SpellsFilters
           values={filters}
           onChange={setFilters}
@@ -109,7 +129,7 @@ export default function SpellsPage() {
           onReset={resetFilters}
         />
 
-        {/* Sticky toggle below filters (optional stickiness set in CSS) */}
+        {/* View toggle */}
         <div className="view-toggle">
           <button
             className={`view-btn ${viewMode === "cards" ? "active" : ""}`}
@@ -124,6 +144,15 @@ export default function SpellsPage() {
             Compact List
           </button>
         </div>
+
+        {/* TOP Pagination */}
+        <Pagination
+          page={safePage}
+          total={total}
+          totalPages={totalPages}
+          pages={pagesToShow}
+          onPage={setPage}
+        />
 
         {viewMode === "cards" ? (
           <div className="spell-grid">
@@ -148,10 +177,68 @@ export default function SpellsPage() {
             ))}
           </div>
         )}
+
+        {/* BOTTOM Pagination */}
+        <Pagination
+          page={safePage}
+          total={total}
+          totalPages={totalPages}
+          pages={pagesToShow}
+          onPage={setPage}
+        />
       </div>
 
       {/* Modal sits above the scroll container */}
       {activeSpell && <SpellModal spell={activeSpell} onClose={() => setActiveSpell(null)} />}
+    </div>
+  );
+}
+
+/* ---------- Local pagination component using your CSS classes ---------- */
+function Pagination({ page, total, totalPages, pages, onPage }) {
+  const start = total ? (page - 1) * PAGE_SIZE + 1 : 0;
+  const end = Math.min(total, page * PAGE_SIZE);
+
+  const items = [];
+  for (let i = 0; i < pages.length; i++) {
+    const n = pages[i];
+    items.push(
+      <button
+        key={`p-${n}`}
+        className={`page-btn ${page === n ? "active" : ""}`}
+        onClick={() => onPage(n)}
+        aria-current={page === n ? "page" : undefined}
+      >
+        {n}
+      </button>
+    );
+    if (i < pages.length - 1 && pages[i + 1] !== n + 1) {
+      items.push(<span key={`dots-${n}`} className="page-ellipsis">…</span>);
+    }
+  }
+
+  return (
+    <div className="pagination">
+      <div className="pagination__status">
+        Showing <strong>{start}-{end}</strong> of <strong>{total}</strong>
+      </div>
+      <div className="pagination__controls" role="navigation" aria-label="Pagination">
+        <button
+          className="page-btn"
+          onClick={() => onPage(Math.max(1, page - 1))}
+          disabled={page <= 1}
+        >
+          ‹ Prev
+        </button>
+        {items}
+        <button
+          className="page-btn"
+          onClick={() => onPage(Math.min(totalPages, page + 1))}
+          disabled={page >= totalPages}
+        >
+          Next ›
+        </button>
+      </div>
     </div>
   );
 }
