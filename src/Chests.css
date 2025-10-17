@@ -1,6 +1,6 @@
 /* Root layout (scoped so global styles don't leak) */
 .chests-container {
-  --chest-max: 250px;                 /* desktop cap for chest image */
+  --chest-max: 300px;                 /* desktop cap for chest image */
   width: min(1100px, 94vw);
   margin: 16px auto 24px;
   padding: 8px 8px 16px;
@@ -102,6 +102,13 @@
   box-shadow: none;
 }
 
+/* NEW: Lockpicking DC line */
+.loot-lockdc {
+  margin: 4px 0 8px;
+  font-weight: 700;
+  color: #fff;
+}
+
 /* Tight, wrap-around item pills */
 .loot-list {
   list-style: none;
@@ -196,4 +203,36 @@
 @media (min-width: 641px) and (max-width: 1024px) {
   .chests-container { --chest-max: 380px; }
   .chest-icon { width: clamp(220px, 52vw, var(--chest-max)); max-height: 40vh; }
+}
+/* =====================================
+   Automatic Dark Mode (Night Theme)
+   ===================================== */
+@media (prefers-color-scheme: dark) {
+
+  /* soft gray title instead of bright white */
+  .chest-title {
+    color: #bfc3c9;
+    text-shadow: none;
+  }
+
+  /* selection outline & glow — blue instead of gold */
+  .chests-container button.selected {
+    outline: 2px solid var(--accent-color, #7aa2ff);
+    box-shadow: 0 0 0 3px color-mix(in oklch, var(--accent-color, #7aa2ff) 35%, transparent);
+  }
+
+  /* "Gold" total → blue aura instead of gold */
+  .loot-gold {
+    color: #9db8ff !important;                   /* bluish text */
+    -webkit-text-fill-color: black !important;
+    -webkit-text-stroke: 1px var(--accent-color, #7aa2ff);
+    text-shadow:
+      0 0 6px color-mix(in oklch, var(--accent-color, #7aa2ff) 55%, transparent),
+      0 0 12px color-mix(in oklch, var(--accent-color, #7aa2ff) 35%, transparent);
+  }
+
+  /* Lockpicking DC text → black during dark mode */
+  .loot-lockdc {
+    color: #000;
+  }
 }
