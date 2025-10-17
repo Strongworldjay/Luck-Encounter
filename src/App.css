@@ -468,3 +468,8 @@ input[type="text"] {
   }
   .filter-drawer__panel { width: min(460px, 96vw); }
 }
+@media (min-width: 641px) {
+  .deck-container.deck-stack:not(.second-deck) {
+    margin-top: -96px;           /* ~1 inch */
+  }
+}
