@@ -3,11 +3,8 @@ import Card from './Card';
 import LoadingScreen from './LoadingScreen';
 import Navbar from './Navbar';
 import RandomWheel from './RandomWheel';
-import SacredArts from './SacredArts';
 import Magic from './MagicBingo';
-import SkillPointUsage from './SkillPointUsage';
 import CharacterSheets from './CharacterSheets';
-import UniqueSkill from './UniqueSkill';
 import Chests from './Chests';
 import './App.css';
 import appBackground from './assets/app-background.jpg';
@@ -23,6 +20,7 @@ import { useBreakpoint } from './hooks/useBreakpoint';
 import SkillPointPlanner from './SkillPointPlanner';
 import SpellsPage from "./pages/SpellsPage";
 import JumpCalculator from "./pages/JumpCalculator";
+import ShopInventory from "./pages/ShopInventory"; 
 
 const rarities = [
   { name: 'Common',    color: 'white',  range: [-100, 5] },
@@ -252,15 +250,13 @@ export default function App() {
         <RandomWheel compact={isMobile} totalLuck={totalLuck} itemTypes={filteredItemTypes} />
       )}
 
-      {currentSection === 'SacredArts' && <SacredArts />}
       {currentSection === 'Chests' && <Chests />}
       {currentSection === 'MagicBingo' && <Magic />}
-      {currentSection === 'SkillPointUsage' && <SkillPointUsage />}
       {currentSection === 'SPPlanner' && <SkillPointPlanner />}
       {currentSection === 'CharacterSheets' && <CharacterSheets />}
-      {currentSection === 'UniqueSkill' && <UniqueSkill />}
       {currentSection === "Spells" && <SpellsPage />}
       {currentSection === 'JumpCalc' && <JumpCalculator />}
+      {currentSection === 'ShopInventory' && <ShopInventory />}
     </div>
   );
 }
