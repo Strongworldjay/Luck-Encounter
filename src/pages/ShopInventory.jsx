@@ -1,113 +1,164 @@
 import React, { useMemo, useState } from "react";
 import "./shop.css";
+import { itemNames } from "../itemsData";
 
+/** Categories to include (sorted for UI) */
+const SHOP_CATEGORIES = [
+  'Ammunition','Axe','BoostArt','Boots','Bow','Cloak','Club','Crossbow','Dagger','Firearms','Gauntlet','Gems','Glaive',
+  'Grimoire','Halberd','Hammer','HeavyArmor','Helmet','Keys','Lance','LightArmor','Mace','Mana','MediumArmor','Misc',
+  'Necklace','PassiveArt','Pike','Ring','Robe','Rod','Scythe','Scrolls','Shield','SkillPoints','Spear','Staff','Sword',
+  'TreasureMap','Wand','Warpick','WeaponArt','Whip','WondrousItem'
+].sort((a,b)=>a.localeCompare(b));
+
+/** Map odd rarity keys -> display strings */
+const normalizeRarityKey = (key) => {
+  if (!key) return "Common";
+  const k = String(key).trim();
+  if (/^very\s*rare$/i.test(k) || /^veryrare$/i.test(k)) return "Very Rare";
+  return k
+    .replace(/([a-z])([A-Z])/g, "$1 $2")
+    .replace(/\s+/g, " ")
+    .replace(/^./, (c) => c.toUpperCase());
+};
+
+/** Heuristic price fallback by rarity (still shown in list) */
+const RARITY_PRICE_FALLBACK = {
+  Common: 25,
+  Uncommon: 100,
+  Rare: 500,
+  "Very Rare": 5000,
+  Legendary: 50000,
+  Unique: 100000,
+};
+
+/* -------------------------
+   itemData → flat catalog
+   ------------------------- */
 /**
- * Demo catalog — swap for your real data anytime.
+ * Accepts itemNames like:
+ * {
+ *   Warpick: {
+ *     Common: ["...", ...],
+ *     Uncommon: [...],
+ *     Rare: [...],
+ *     VeryRare: [...],
+ *     Legendary: [...],
+ *     Unique: [...]
+ *   },
+ *   Sword: { ... },
+ *   ...
+ * }
  */
-const CATALOG = [
-  { id: "sw_short", name: "Shortsword",        category: "Weapon",      rarity: "Common",    price: 10,    tags: ["martial"] },
-  { id: "sw_long",  name: "Longsword",         category: "Weapon",      rarity: "Uncommon",  price: 35,    tags: ["martial"] },
-  { id: "bow",      name: "Shortbow",          category: "Weapon",      rarity: "Common",    price: 25,    tags: ["ranged"] },
-  { id: "xbow",     name: "Light Crossbow",    category: "Weapon",      rarity: "Uncommon",  price: 50,    tags: ["ranged"] },
+function normalizeFromItemData(data, allowedCategories) {
+  const out = [];
+  if (!data || typeof data !== "object" || Array.isArray(data)) return out;
 
-  { id: "armor_lea", name: "Leather Armor",    category: "Armor",       rarity: "Common",    price: 10,    tags: [] },
-  { id: "armor_spl", name: "Splint Armor",     category: "Armor",       rarity: "Uncommon",  price: 200,   tags: [] },
-  { id: "shield",    name: "Shield",            category: "Armor",       rarity: "Common",    price: 10,    tags: [] },
+  for (const category of allowedCategories) {
+    const bucket = data[category] || data[category?.toLowerCase?.()];
+    if (!bucket || typeof bucket !== "object") continue;
 
-  { id: "p_heal",   name: "Potion of Healing",  category: "Consumable",  rarity: "Common",    price: 50,    tags: ["potion"] },
-  { id: "p_gheal",  name: "Potion: Greater",    category: "Consumable",  rarity: "Uncommon",  price: 150,   tags: ["potion"] },
-  { id: "p_sinv",   name: "Potion of Invisibility", category: "Consumable", rarity: "Rare",   price: 300,   tags: ["potion"] },
+    for (const rawRarityKey of Object.keys(bucket)) {
+      const rarity = normalizeRarityKey(rawRarityKey);
+      const list = bucket[rawRarityKey];
+      if (!Array.isArray(list)) continue;
 
-  { id: "scroll1",  name: "Spell Scroll (1st)", category: "Scroll",      rarity: "Uncommon",  price: 75,    tags: ["scroll"] },
-  { id: "scroll3",  name: "Spell Scroll (3rd)", category: "Scroll",      rarity: "Rare",      price: 300,   tags: ["scroll"] },
+      list.forEach((name) => {
+        const itemName = String(name);
+        const id = `${category}:${rarity}:${itemName}`;
+        const price = RARITY_PRICE_FALLBACK[rarity] ?? 25;
+        out.push({ id, name: itemName, category, rarity, price, tags: [] });
+      });
+    }
+  }
+  return out;
+}
 
-  { id: "bag_holding", name: "Bag of Holding",  category: "Wondrous",    rarity: "Uncommon",  price: 400,   tags: ["storage"] },
-  { id: "boots_elv",   name: "Boots of Elvenkind", category: "Wondrous", rarity: "Uncommon",  price: 600,   tags: ["stealth"] },
-  { id: "cloak_prot",  name: "Cloak of Protection", category: "Wondrous", rarity: "Rare",     price: 1400,  tags: ["defense"] },
-  { id: "vorpal",      name: "Vorpal Sword",    category: "Weapon",      rarity: "Legendary", price: 75000, tags: ["artifact"] },
+/** Count presets only (weights removed—rarity is rolled) */
+const STORE_SIZES = {
+  Small: 6,
+  Medium: 10,
+  Large: 16,
+};
+
+/** Your rarity odds table */
+const RARITY_ODDS = [
+  { name: "Common",    range: [1, 2] },
+  { name: "Uncommon",  range: [3, 50] },
+  { name: "Rare",      range: [51, 79] },
+  { name: "Very Rare", range: [80, 90] },
+  { name: "Legendary", range: [91, 99] },
+  { name: "Unique",    range: [100] },
 ];
 
-const ALL_CATEGORIES = ["Weapon", "Armor", "Consumable", "Scroll", "Wondrous", "Tool"];
-const ALL_RARITIES  = ["Common", "Uncommon", "Rare", "Very Rare", "Legendary"];
-
-const STORE_PRESETS = {
-  Small:  { count: 6,  weights: { Common: 0.60, Uncommon: 0.30, Rare: 0.08, "Very Rare": 0.02, Legendary: 0.00 } },
-  Medium: { count: 10, weights: { Common: 0.45, Uncommon: 0.35, Rare: 0.15, "Very Rare": 0.04, Legendary: 0.01 } },
-  Large:  { count: 16, weights: { Common: 0.30, Uncommon: 0.40, Rare: 0.22, "Very Rare": 0.07, Legendary: 0.01 } },
-};
-
-/** Weighted pick */
-const pickWeighted = (entries) => {
-  const total = entries.reduce((s, e) => s + e.weight, 0);
-  if (total <= 0) return entries[0]?.value;
-  const r = Math.random() * total;
-  let acc = 0;
-  for (const e of entries) { acc += e.weight; if (r <= acc) return e.value; }
-  return entries.at(-1)?.value;
-};
+/** Roll a 1–100 and map to rarity per table */
+function rollRarity() {
+  const r = Math.floor(Math.random() * 100) + 1; // 1..100
+  for (const entry of RARITY_ODDS) {
+    const [a, b] = entry.range.length === 1 ? [entry.range[0], entry.range[0]] : entry.range;
+    if (r >= a && r <= b) return entry.name;
+  }
+  return "Common";
+}
 
 export default function ShopInventory() {
   const [storeSize, setStoreSize] = useState("Small");
   const [allowDuplicates, setAllowDuplicates] = useState(false);
 
-  // Filters
-  const [categories, setCategories] = useState(ALL_CATEGORIES);
-  const [rarityAllowed, setRarityAllowed] = useState(new Set(ALL_RARITIES));
-  const [priceMin, setPriceMin] = useState("");
-  const [priceMax, setPriceMax] = useState("");
-  const [tagLike, setTagLike] = useState("");
+  // Build catalog from your real item data
+  const CATALOG = useMemo(() => normalizeFromItemData(itemNames, SHOP_CATEGORIES), []);
+
+  // Filters (only categories now)
+  const [categories, setCategories] = useState(SHOP_CATEGORIES);
+
+  // Modal state
+  const [filtersOpen, setFiltersOpen] = useState(false);
 
   // Result
   const [items, setItems] = useState([]);
 
-  const pool = useMemo(() => {
-    const min = priceMin === "" ? -Infinity : Number(priceMin);
-    const max = priceMax === "" ? Infinity : Number(priceMax);
-    const tag = (tagLike || "").trim().toLowerCase();
-    return CATALOG.filter((i) =>
-      categories.includes(i.category) &&
-      rarityAllowed.has(i.rarity) &&
-      i.price >= min && i.price <= max &&
-      (!tag || (i.tags || []).some(t => t.toLowerCase().includes(tag)) || i.name.toLowerCase().includes(tag))
-    );
-  }, [categories, rarityAllowed, priceMin, priceMax, tagLike]);
-
-  const rarityWeights = useMemo(() => {
-    const base = STORE_PRESETS[storeSize].weights;
-    const obj = {};
-    for (const r of ALL_RARITIES) obj[r] = rarityAllowed.has(r) ? (base[r] || 0) : 0;
-    const sum = Object.values(obj).reduce((s, v) => s + v, 0);
-    if (sum === 0) {
-      const allowed = ALL_RARITIES.filter(r => rarityAllowed.has(r));
-      allowed.forEach(r => { obj[r] = 1 / allowed.length; });
-    }
-    return obj;
-  }, [storeSize, rarityAllowed]);
+  // Pool = just the selected categories
+  const pool = useMemo(
+    () => CATALOG.filter(i => categories.includes(i.category)),
+    [CATALOG, categories]
+  );
 
   const generate = () => {
-    const { count } = STORE_PRESETS[storeSize];
-    const byRarity = new Map(ALL_RARITIES.map(r => [r, []]));
-    for (const it of pool) byRarity.get(it.rarity)?.push(it);
+    const count = STORE_SIZES[storeSize] || 6;
 
     const out = [];
     const used = new Set();
-    const wheel = ALL_RARITIES.map(r => ({ value: r, weight: rarityWeights[r] || 0 }));
 
     for (let i = 0; i < count; i++) {
-      let rarity = pickWeighted(wheel);
-      if (!byRarity.get(rarity)?.length) {
-        const fallback = ALL_RARITIES.find(r => (byRarity.get(r) || []).length);
-        if (!fallback) break;
-        rarity = fallback;
-      }
-      const list = byRarity.get(rarity);
-      if (!list.length) continue;
+      // Roll target rarity
+      const targetRarity = rollRarity();
 
-      let pick = list[Math.floor(Math.random() * list.length)];
+      // Optional: randomly choose a category among those selected, to avoid clustering
+      const cat = categories[Math.floor(Math.random() * categories.length)];
+
+      // Filter candidates by rolled rarity + chosen category
+      let candidates = pool.filter(p => p.category === cat && p.rarity === targetRarity);
+
+      // If none exist in that rarity for that category, fall back to any rarity in that category
+      if (candidates.length === 0) {
+        candidates = pool.filter(p => p.category === cat);
+      }
+
+      // If still none (shouldn't happen unless category empty), fall back to whole pool
+      if (candidates.length === 0) {
+        candidates = pool;
+      }
+      if (candidates.length === 0) break;
+
+      // Pick one (obey duplicates toggle)
+      let pick = candidates[Math.floor(Math.random() * candidates.length)];
       if (!allowDuplicates) {
         let tries = 0;
-        while (tries < 10 && used.has(pick.id)) { pick = list[Math.floor(Math.random() * list.length)]; tries++; }
+        while (tries < 12 && used.has(pick.id)) {
+          pick = candidates[Math.floor(Math.random() * candidates.length)];
+          tries++;
+        }
         if (used.has(pick.id)) {
+          // try any not-yet-used item from entire pool
           const rest = pool.filter(p => !used.has(p.id));
           if (!rest.length) break;
           pick = rest[Math.floor(Math.random() * rest.length)];
@@ -115,8 +166,16 @@ export default function ShopInventory() {
         used.add(pick.id);
       }
 
-      out.push({ id: pick.id, name: pick.name, category: pick.category, rarity: pick.rarity, price: pick.price, tags: pick.tags || [] });
+      out.push({
+        id: pick.id,
+        name: pick.name,
+        category: pick.category,
+        rarity: pick.rarity,   // from your dataset; not the roll—BUT roll constrained the pick
+        price: pick.price,
+        tags: pick.tags || [],
+      });
     }
+
     setItems(out);
   };
 
@@ -134,8 +193,13 @@ export default function ShopInventory() {
     document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
   };
 
-  const toggleRarity   = (r) => setRarityAllowed(prev => { const n = new Set(prev); n.has(r) ? n.delete(r) : n.add(r); return n; });
-  const toggleCategory = (c) => setCategories(prev => prev.includes(c) ? prev.filter(x => x !== c) : [...prev, c]);
+  const toggleCategory = (c) =>
+    setCategories(prev => prev.includes(c) ? prev.filter(x => x !== c) : [...prev, c]);
+
+  const selectAllCats   = () => setCategories(SHOP_CATEGORIES);
+  const selectNoneCats  = () => setCategories([]);
+  const invertCats      = () =>
+    setCategories(prev => SHOP_CATEGORIES.filter(c => !prev.includes(c)));
 
   return (
     <div className="shop-page shop-page--isolate">
@@ -144,7 +208,7 @@ export default function ShopInventory() {
           <h2>Shop Inventory Generator</h2>
           <div className="row gap">
             <div className="size-toggle" role="group" aria-label="Store size">
-              {Object.keys(STORE_PRESETS).map(size => (
+              {Object.keys(STORE_SIZES).map(size => (
                 <button
                   key={size}
                   className={`btn ${storeSize === size ? "primary" : ""}`}
@@ -156,65 +220,28 @@ export default function ShopInventory() {
             </div>
             <div className="row align">
               <label className="switch">
-                <input type="checkbox" checked={allowDuplicates} onChange={e => setAllowDuplicates(e.target.checked)} />
+                <input
+                  type="checkbox"
+                  checked={allowDuplicates}
+                  onChange={e => setAllowDuplicates(e.target.checked)}
+                />
                 <span /> Allow duplicates
               </label>
             </div>
           </div>
         </header>
 
-        {/* Filters */}
-        <section className="shop-filters">
-          <div className="grid">
-            <div className="field field--cats">
-              <label>Categories</label>
-              <div className="pillbox">
-                {ALL_CATEGORIES.map(c => (
-                  <button key={c} className={`pill ${categories.includes(c) ? "on" : ""}`} onClick={() => toggleCategory(c)} type="button">
-                    {c}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <div className="field field--rarity">
-              <label>Rarity</label>
-              <div className="pillbox">
-                {ALL_RARITIES.map(r => (
-                  <button key={r} className={`pill ${rarityAllowed.has(r) ? "on" : ""}`} onClick={() => toggleRarity(r)} type="button">
-                    {r}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <div className="field field--pmin">
-              <label>Price Min (gp)</label>
-              <input className="shop-input" type="number" inputMode="numeric" value={priceMin}
-                     onChange={(e)=>setPriceMin(e.target.value)} placeholder="0" />
-            </div>
-
-            <div className="field field--pmax">
-              <label>Price Max (gp)</label>
-              <input className="shop-input" type="number" inputMode="numeric" value={priceMax}
-                     onChange={(e)=>setPriceMax(e.target.value)} placeholder="∞" />
-            </div>
-
-            <div className="field field--tag">
-              <label>Tag / Name contains</label>
-              <input className="shop-input" value={tagLike} onChange={(e)=>setTagLike(e.target.value)}
-                     placeholder="e.g. potion, stealth, bow ..." />
-            </div>
-          </div>
-
-          <div className="actions">
+        {/* Toolbar */}
+        <div className="shop-toolbar">
+          <button className="btn filter-btn" onClick={() => setFiltersOpen(true)}>Filters</button>
+          <div className="row gap">
             <button className="btn primary" onClick={generate}>Generate</button>
             <button className="btn" onClick={copyToClipboard}>Copy</button>
             <button className="btn" onClick={exportJson}>Export JSON</button>
           </div>
-        </section>
+        </div>
 
-        {/* Output */}
+        {/* Results */}
         <section className="shop-results">
           <div className="results-header">
             <div>Item</div><div>Category</div><div>Rarity</div><div className="right">Price</div>
@@ -224,7 +251,7 @@ export default function ShopInventory() {
             <div className="empty">No items yet. Click <strong>Generate</strong> to create an inventory.</div>
           ) : (
             items.map((i) => (
-              <div key={i.id + Math.random()} className="rowline">
+              <div key={i.id} className="rowline">
                 <div className="name">{i.name}</div>
                 <div>{i.category}</div>
                 <div>{i.rarity}</div>
@@ -236,10 +263,54 @@ export default function ShopInventory() {
 
         <footer className="shop-foot">
           <div className="muted">
-            Store size controls <em>how many items</em> and the <em>rarity odds</em>. Filters limit the candidate pool before rolling.
+            Store size controls <em>how many items</em>. Rarity is rolled per item using your 1–100 odds. Filters only limit categories.
           </div>
         </footer>
       </div>
+
+      {/* Filters Modal — categories only */}
+      {filtersOpen && (
+        <div className="shop-modal" role="dialog" aria-modal="true" aria-label="Filters">
+          <div className="shop-modal__backdrop" onClick={() => setFiltersOpen(false)} />
+          <div className="shop-modal__panel">
+            <div className="shop-modal__header">
+              <h3>Filters</h3>
+              <button className="icon-btn" onClick={() => setFiltersOpen(false)} aria-label="Close">✕</button>
+            </div>
+
+            <div className="shop-modal__content">
+              <div className="field">
+                <div className="field-head">
+                  <label>Categories</label>
+                  <div className="mini-actions">
+                    <button className="mini" onClick={selectAllCats}>All</button>
+                    <button className="mini" onClick={selectNoneCats}>None</button>
+                    <button className="mini" onClick={invertCats}>Invert</button>
+                  </div>
+                </div>
+                <div className="pillbox">
+                  {SHOP_CATEGORIES.map(c => (
+                    <button
+                      key={c}
+                      type="button"
+                      className={`pill ${categories.includes(c) ? "on" : ""}`}
+                      onClick={() => toggleCategory(c)}
+                    >
+                      {c}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="shop-modal__footer">
+              <button className="btn" onClick={() => setFiltersOpen(false)}>Close</button>
+              <div className="spacer" />
+              <button className="btn primary" onClick={() => setFiltersOpen(false)}>Apply</button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import Card from './Card';
 import LoadingScreen from './LoadingScreen';
 import Navbar from './Navbar';
@@ -20,7 +20,7 @@ import { useBreakpoint } from './hooks/useBreakpoint';
 import SkillPointPlanner from './SkillPointPlanner';
 import SpellsPage from "./pages/SpellsPage";
 import JumpCalculator from "./pages/JumpCalculator";
-import ShopInventory from "./pages/ShopInventory"; 
+import ShopInventory from "./pages/ShopInventory";
 
 const rarities = [
   { name: 'Common',    color: 'white',  range: [-100, 5] },
@@ -69,8 +69,9 @@ export default function App() {
     document.documentElement.classList.toggle('theme-dark', isDark);
   }, [isDark]);
 
-  // Filters
+  // ---------- Filters state ----------
   const [filtersOpen, setFiltersOpen] = useState(false);
+
   const [enabledTypes, setEnabledTypes] = useState(() => {
     try {
       const raw = localStorage.getItem('enabledTypes');
@@ -80,14 +81,30 @@ export default function App() {
     }
   });
 
+  // Alphabetized, de-duplicated options for the filter UI
+  const filterOptions = useMemo(
+    () => Array.from(new Set(itemTypes)).sort((a, b) => a.localeCompare(b)),
+    []
+  );
+
+  // Persist filters
   useEffect(() => {
     localStorage.setItem('enabledTypes', JSON.stringify([...enabledTypes]));
   }, [enabledTypes]);
 
+  // Loading splash
   useEffect(() => {
     const t = setTimeout(() => setIsLoading(false), 3000);
     return () => clearTimeout(t);
   }, []);
+
+  // Keyboard: close drawer on ESC (only when open)
+  useEffect(() => {
+    if (!filtersOpen) return;
+    const onKey = (e) => e.key === 'Escape' && setFiltersOpen(false);
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [filtersOpen]);
 
   const totalLuck = characterLuck + dungeonLuck;
   const filteredItemTypes = enabledTypes.size ? itemTypes.filter(t => enabledTypes.has(t)) : itemTypes;
@@ -154,6 +171,15 @@ export default function App() {
         <>
           <div className="top-center-container panel">
             <h1>Why Not Test Your Luck?</h1>
+
+            {/* ---------- Filters bar ---------- */}
+            <div className="filters-bar">
+              <button className="btn" onClick={() => setFiltersOpen(true)}>Filters</button>
+              {enabledTypes.size > 0 && (
+                <span className="filters-hint">{enabledTypes.size} enabled</span>
+              )}
+            </div>
+
             <div className="luck-section">
               <div className="luck-row">
                 <div className="luck-input">
@@ -207,6 +233,58 @@ export default function App() {
               </div>
             </div>
           </div>
+
+          {/* ---------- Filters Drawer ---------- */}
+          {filtersOpen && (
+            <div className="filter-drawer" role="dialog" aria-modal="true" onClick={() => setFiltersOpen(false)}>
+              <div
+                className="filter-drawer__panel"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="filter-drawer__header">
+                  <h3>Item Filters</h3>
+                  <button className="icon-btn" onClick={() => setFiltersOpen(false)} aria-label="Close">✕</button>
+                </div>
+
+                <div className="filter-actions">
+                  <button className="btn small" onClick={() => setEnabledTypes(new Set(filterOptions))}>
+                    Select all
+                  </button>
+                  <button className="btn small" onClick={() => setEnabledTypes(new Set())}>
+                    Clear
+                  </button>
+                </div>
+
+                <div className="filter-list">
+                  {filterOptions.map((t) => {
+                    const checked = enabledTypes.has(t);
+                    return (
+                      <label key={t} className="filter-row">
+                        <input
+                          type="checkbox"
+                          checked={checked}
+                          onChange={() =>
+                            setEnabledTypes(prev => {
+                              const next = new Set(prev);
+                              if (next.has(t)) next.delete(t); else next.add(t);
+                              return next;
+                            })
+                          }
+                        />
+                        <span>{t}</span>
+                      </label>
+                    );
+                  })}
+                </div>
+
+                <div className="filter-footer">
+                  <button className="btn primary" onClick={() => setFiltersOpen(false)}>Done</button>
+                </div>
+              </div>
+
+              <div className="filter-drawer__backdrop" />
+            </div>
+          )}
 
           {/* Draw Deck (stacked look; hover only top slice) */}
           <div className="deck-container deck-stack" onClick={generateCards} role="button" aria-label="Draw cards">
