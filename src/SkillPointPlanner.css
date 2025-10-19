@@ -1,3 +1,19 @@
+/* ===============================
+   Skill Point Planner (accent-aware)
+   =============================== */
+
+/* Accent defaults (gold) */
+:root {
+  --sp-accent: #ffd700; /* gold */
+  --sp-accent-glow: rgba(255, 215, 0, 0.45);
+}
+
+/* Dark mode: swap to blue */
+.theme-dark {
+  --sp-accent: #1f3adf; /* deep blue */
+  --sp-accent-glow: rgba(31, 58, 223, 0.45);
+}
+
 .sp-planner {
   width: min(1100px, 94vw);
   margin: 8px auto 20px;
@@ -18,10 +34,20 @@
   padding: 8px 12px;
   border-radius: 10px;
   cursor: pointer;
+  transition: box-shadow .15s ease, outline-color .15s ease, filter .15s ease;
 }
+.sp-tab:hover {
+  filter: brightness(1.05);
+}
+
+/* <-- ACCENT & GLOW LIVE HERE */
 .sp-tab.active {
   background: #565656;
-  outline: 2px solid gold;
+  outline: 2px solid var(--sp-accent);
+  /* soft glow that automatically turns blue in dark mode */
+  box-shadow:
+    0 0 8px var(--sp-accent),
+    0 0 16px var(--sp-accent-glow);
 }
 
 .sp-card {
@@ -36,6 +62,10 @@
 .sp-card h2 {
   margin: 0 0 10px;
   text-align: center;
+  /* subtle title glow that tracks accent too (nice touch) */
+  text-shadow:
+    0 0 6px var(--sp-accent-glow),
+    0 0 10px var(--sp-accent-glow);
 }
 
 .sp-grid {
