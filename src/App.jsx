@@ -153,13 +153,17 @@ export default function App() {
   const darkDecks = [darkDeck1, darkDeck2, darkDeck3, darkDeck4];
   const deckArt = isDark ? darkDecks[Math.floor(Math.random() * darkDecks.length)] : deckImage;
 
+  // Fixed background: choose image and pass as CSS variable
+  const bgUrl = isDark ? darkmodeBackground : appBackground;
+
   return (
     <div
       className={`app-container ${isMobile ? 'mobile' : 'desktop'}`}
-      style={{
-        backgroundImage: `url(${isDark ? darkmodeBackground : appBackground})`,
-      }}
+      style={{ '--bg-url': `url(${bgUrl})` }}
     >
+      {/* Fixed background layer that never scrolls */}
+      <div className="app-bg-fixed" aria-hidden />
+
       <Navbar
         onNavClick={handleNavClick}
         currentSection={currentSection}

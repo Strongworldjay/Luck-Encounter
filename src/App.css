@@ -58,18 +58,33 @@ body {
   overflow: hidden;
 }
 
+/* Fixed, non-scrolling background layer (iOS-safe) */
 .app-container {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   width: 100vw;
   height: 100vh;
+
+  /* the app itself no longer sets a background image;
+     we draw it with .app-bg-fixed below */
+  background-image: none !important;
+
+  color: var(--app-text);
+  padding-top: 60px; /* room for fixed navbar */
+}
+
+.app-bg-fixed {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: var(--bg-url);
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
-  color: var(--app-text);
-  padding-top: 60px; /* room for fixed navbar */
+  will-change: transform;
 }
 
 .content-wrap { width: 100%; }

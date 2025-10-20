@@ -622,3 +622,69 @@
   color: var(--muted);
   user-select: none;
 }
+/* --- Prevent horizontal dragging/panning on touch --- */
+.spells-scroll,
+.spell-list,
+.spell-grid,
+.spell-row,
+.spell-row__summary,
+.spell-card,
+.spell-card__summary {
+  touch-action: pan-y;          /* allow only vertical scroll */
+  overflow-x: hidden;           /* no horizontal overflow */
+}
+
+html, body, .spells-page {      /* belt-and-suspenders on tiny viewports */
+  overscroll-behavior-x: none;
+}
+
+/* --- Mobile: make cards WAY smaller (~1/3 footprint) --- */
+/* Shrink padding, fonts, thumbs, gaps; show 2–3 columns on phones */
+@media (max-width: 560px) {
+  .spell-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* was 1 */
+    gap: 10px;
+  }
+  /* on wider small phones in landscape bump to 3 */
+  @media (min-width: 420px) and (max-width: 560px) {
+    .spell-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+
+  .spell-card {
+    --card-pad: 10px;
+    border-radius: 10px;
+  }
+  .spell-card__summary {
+    gap: 8px;
+    padding: 10px;
+  }
+  .spell-card__thumb {
+    width: 32px;  /* was 44 */
+    height: 32px;
+    border-radius: 8px;
+  }
+  .spell-card__title { font-size: .9rem; }   /* was 1rem */
+  .spell-card__meta  { font-size: .8rem; }
+
+  .spell-card__body { padding: 10px; }
+  .spell-card__list {
+    grid-template-columns: 1fr;  /* stack details */
+    gap: 6px 10px;
+    font-size: .85rem;
+  }
+  .spell-card__desc, .spell-card__sub { font-size: .9rem; }
+
+  /* Make poster variant small too */
+  .spell-poster { gap: 8px; padding: 12px; }
+  .spell-poster__title { font-size: 1.15rem; }
+  .spell-poster__img { max-width: 140px; }
+  .spell-poster__level { font-size: .85rem; }
+}
+
+/* Extra-tight mode for very small phones */
+@media (max-width: 380px) {
+  .spell-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .spell-card__thumb { width: 28px; height: 28px; }
+  .spell-card__title { font-size: .85rem; }
+  .spell-card__meta  { font-size: .75rem; }
+}

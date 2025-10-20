@@ -2,12 +2,9 @@ import React, { useMemo, useState } from 'react';
 import './Navbar.css';
 
 /**
- * Props:
- * - onNavClick(sectionId: string)
- * - currentSection: string
- * - compact?: boolean
- * - mobileHiddenItems?: string[]
- * - moveHiddenToMore?: boolean
+ * Navbar component with two dropdowns: Player Tools and DM Tools.
+ * - Player Tools: Dungeon Completion, SP Planner, Spells
+ * - DM Tools: Jump Calc, Wheel, Magic, Shop, Chests
  */
 export default function Navbar({
   onNavClick,
@@ -16,34 +13,41 @@ export default function Navbar({
   mobileHiddenItems = [],
   moveHiddenToMore = false,
 }) {
-  const [open, setOpen] = useState(false);
-  const [moreOpen, setMoreOpen] = useState(false);
+  const [open, setOpen] = useState(false);       // Mobile menu toggle
+  const [playerOpen, setPlayerOpen] = useState(false);
+  const [dmOpen, setDmOpen] = useState(false);
 
-  const items = useMemo(() => ([
+  // Define grouped items
+  const playerItems = useMemo(() => ([
     { id: 'DungeonCompletion', label: 'Dungeon Completion' },
-    { id: 'Chests',            label: 'Chests' },
     { id: 'SPPlanner',         label: 'SP Planner' },
-    { id: 'MagicBingo',        label: 'Magic' },
-    { id: 'RandomWheel',       label: 'RandomWheel' },
     { id: 'Spells',            label: 'Spells' },
-    { id: 'JumpCalc',          label: 'Jump Calc' },
-    { id: 'ShopInventory',     label: 'Shop' },      // NEW
   ]), []);
 
-  const visibleItems = useMemo(() => {
-    if (!compact) return items;
-    return items.filter(i => !mobileHiddenItems.includes(i.id));
-  }, [items, compact, mobileHiddenItems]);
-
-  const moreItems = useMemo(() => {
-    if (!compact || !moveHiddenToMore) return [];
-    return items.filter(i => mobileHiddenItems.includes(i.id));
-  }, [items, compact, mobileHiddenItems, moveHiddenToMore]);
+  const dmItems = useMemo(() => ([
+    { id: 'JumpCalc',      label: 'Jump Calc' },
+    { id: 'RandomWheel',   label: 'Wheel' },
+    { id: 'MagicBingo',    label: 'Magic' },
+    { id: 'ShopInventory', label: 'Shop' },
+    { id: 'Chests',        label: 'Chests' },
+  ]), []);
 
   const go = (id) => {
     onNavClick(id);
     setOpen(false);
-    setMoreOpen(false);
+    setPlayerOpen(false);
+    setDmOpen(false);
+  };
+
+  const parentActive = (items) => items.some(i => i.id === currentSection);
+
+  const togglePlayer = () => {
+    setPlayerOpen(v => !v);
+    setDmOpen(false);
+  };
+  const toggleDm = () => {
+    setDmOpen(v => !v);
+    setPlayerOpen(false);
   };
 
   return (
@@ -70,35 +74,53 @@ export default function Navbar({
         </button>
 
         <ul className={`nav-list ${open ? 'open' : ''}`}>
-          {visibleItems.map(({ id, label }) => (
-            <li
-              key={id}
-              className={`nav-item ${currentSection === id ? 'active' : ''}`}
-              onClick={() => go(id)}
+          {/* PLAYER TOOLS */}
+          <li className={`nav-item dropdown ${playerOpen ? 'open' : ''} ${parentActive(playerItems) ? 'active' : ''}`}>
+            <button
+              type="button"
+              className="dropdown-trigger"
+              aria-expanded={playerOpen}
+              aria-controls="player-menu"
+              onClick={togglePlayer}
             >
-              {label}
-            </li>
-          ))}
+              Player Tools ▾
+            </button>
+            <ul id="player-menu" className={`dropdown-menu ${playerOpen ? 'open' : ''}`}>
+              {playerItems.map(({ id, label }) => (
+                <li
+                  key={id}
+                  className={`dropdown-item ${currentSection === id ? 'active' : ''}`}
+                  onClick={() => go(id)}
+                >
+                  {label}
+                </li>
+              ))}
+            </ul>
+          </li>
 
-          {compact && moveHiddenToMore && moreItems.length > 0 && (
-            <li
-              className={`nav-item more ${moreOpen ? 'open' : ''}`}
-              onClick={() => setMoreOpen(v => !v)}
+          {/* DM TOOLS */}
+          <li className={`nav-item dropdown ${dmOpen ? 'open' : ''} ${parentActive(dmItems) ? 'active' : ''}`}>
+            <button
+              type="button"
+              className="dropdown-trigger"
+              aria-expanded={dmOpen}
+              aria-controls="dm-menu"
+              onClick={toggleDm}
             >
-              More ▾
-              <ul className={`dropdown-menu ${moreOpen ? 'open' : ''}`}>
-                {moreItems.map(({ id, label }) => (
-                  <li
-                    key={id}
-                    className="dropdown-item"
-                    onClick={(e) => { e.stopPropagation(); go(id); }}
-                  >
-                    {label}
-                  </li>
-                ))}
-              </ul>
-            </li>
-          )}
+              DM Tools ▾
+            </button>
+            <ul id="dm-menu" className={`dropdown-menu ${dmOpen ? 'open' : ''}`}>
+              {dmItems.map(({ id, label }) => (
+                <li
+                  key={id}
+                  className={`dropdown-item ${currentSection === id ? 'active' : ''}`}
+                  onClick={() => go(id)}
+                >
+                  {label}
+                </li>
+              ))}
+            </ul>
+          </li>
         </ul>
       </div>
     </nav>
