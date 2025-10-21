@@ -111,12 +111,7 @@
 @media (min-width: 1320px) { .spell-grid { grid-template-columns: repeat(4, 1fr); } }
 
 /* Add extra bottom room for card view */
-.spell-grid::after {
-  content: "";
-  display: block;
-  height: 60px;
-  grid-column: 1 / -1;
-}
+.spell-grid { padding-bottom: 60px; }
 
 /* --- Poster card look --- */
 .spell-card--poster {
@@ -425,7 +420,10 @@
 .spell-modal__sub {
   color: var(--app-text);
 }
-
+.spell-modal__desc {
+  white-space: pre-line;   /* <- this preserves newlines but wraps normally */
+  line-height: 1.6;
+}
 .spell-modal__chips { margin-top: 14px; display: grid; gap: 8px; }
 .chiprow { display:flex; flex-wrap: wrap; gap: 6px; align-items: center; }
 .chipcap { font-weight: 700; color: var(--muted); margin-right: 2px; }

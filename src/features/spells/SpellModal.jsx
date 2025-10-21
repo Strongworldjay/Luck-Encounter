@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import { slugify, spellImgUrl, schoolImgUrl, genericSpellImgUrl } from "./utils";
 
-const levelLabel = (lvl) => (lvl === 0 ? "Cantrip" : `${lvl}${[,"st","nd","rd"][lvl]||"th"}-level`);
+const levelLabel = (lvl) =>
+  lvl === 0 ? "Cantrip" : `${lvl}${[, "st", "nd", "rd"][lvl] || "th"}-level`;
 
 export default function SpellModal({ spell, onClose }) {
   const panelRef = useRef(null);
@@ -19,18 +20,33 @@ export default function SpellModal({ spell, onClose }) {
   const slug = spell.slug || slugify(spell.name || "");
   const initialSrc = spell.imagePath || spellImgUrl(slug);
   const imgRef = useRef(null);
-  const tried = useRef({ school:false, generic:false });
+  const tried = useRef({ school: false, generic: false });
   const onImgError = () => {
-    if (!tried.current.school) { tried.current.school = true; imgRef.current.src = schoolImgUrl(spell.school); return; }
-    if (!tried.current.generic) { tried.current.generic = true; imgRef.current.src = genericSpellImgUrl(); return; }
+    if (!tried.current.school) {
+      tried.current.school = true;
+      imgRef.current.src = schoolImgUrl(spell.school);
+      return;
+    }
+    if (!tried.current.generic) {
+      tried.current.generic = true;
+      imgRef.current.src = genericSpellImgUrl();
+      return;
+    }
   };
 
-  // small helpers
+  // component helper for components field
   const comps = (() => {
     const c = spell.components || {};
     const s = `${c.verbal ? "V" : ""}${c.somatic ? "S" : ""}${c.material ? "M" : ""}`;
     return s + (c.material && c.materialText ? ` (${c.materialText})` : "") || "—";
   })();
+
+  // Markdown-like inline parser for **bold**, __bold__, and newlines
+  const mdInlineToHtml = (md) =>
+    String(md ?? "")
+      .replace(/\*\*([\s\S]*?)\*\*/g, "<strong>$1</strong>")
+      .replace(/__([\s\S]*?)__/g, "<strong>$1</strong>")
+      .replace(/\r\n|\r|\n/g, "<br/>");
 
   return (
     <div className="spell-modal__backdrop" onClick={onClose} role="presentation">
@@ -45,12 +61,17 @@ export default function SpellModal({ spell, onClose }) {
         {/* Header */}
         <header className="spell-modal__header">
           <div className="spell-modal__titlewrap">
-            <h2 id="spell-modal-title" className="spell-modal__title">{spell.name}</h2>
+            <h2 id="spell-modal-title" className="spell-modal__title">
+              {spell.name}
+            </h2>
             <div className="spell-modal__subtitle">
-              {levelLabel(spell.spellLevel)} · {spell.school} · {spell.classes?.join(", ")}
+              {levelLabel(spell.spellLevel)} · {spell.school} ·{" "}
+              {spell.classes?.join(", ")}
             </div>
           </div>
-          <button className="spell-modal__close" onClick={onClose} aria-label="Close">✕</button>
+          <button className="spell-modal__close" onClick={onClose} aria-label="Close">
+            ✕
+          </button>
         </header>
 
         {/* Info bar */}
@@ -65,11 +86,17 @@ export default function SpellModal({ spell, onClose }) {
           </div>
           <div className="infocell">
             <div className="cap">Range / Area</div>
-            <div>{spell.range || "—"}{spell.area ? ` (${spell.area})` : ""}</div>
+            <div>
+              {spell.range || "—"}
+              {spell.area ? ` (${spell.area})` : ""}
+            </div>
           </div>
           <div className="infocell">
             <div className="cap">Attack / Save</div>
-            <div>{spell.attackType || "—"}{spell.saveRequired ? ` / ${spell.saveRequired}` : ""}</div>
+            <div>
+              {spell.attackType || "—"}
+              {spell.saveRequired ? ` / ${spell.saveRequired}` : ""}
+            </div>
           </div>
           <div className="infocell">
             <div className="cap">Damage / Effect</div>
@@ -81,7 +108,9 @@ export default function SpellModal({ spell, onClose }) {
           </div>
           <div className="infocell">
             <div className="cap">Conc. / Ritual</div>
-            <div>{spell.concentration ? "Yes" : "No"} / {spell.ritual ? "Yes" : "No"}</div>
+            <div>
+              {spell.concentration ? "Yes" : "No"} / {spell.ritual ? "Yes" : "No"}
+            </div>
           </div>
         </section>
 
@@ -102,21 +131,53 @@ export default function SpellModal({ spell, onClose }) {
           </div>
 
           <div className="spell-modal__text">
-            <p className="spell-modal__desc">{spell.descriptionMd}</p>
-            {spell.scalingMd && <p className="spell-modal__sub" dangerouslySetInnerHTML={{__html: spell.scalingMd.replace(/\*\*(.+?)\*\*/g,"<strong>$1</strong>")}} />}
-            {spell.higherLevelsMd && <p className="spell-modal__sub" dangerouslySetInnerHTML={{__html: spell.higherLevelsMd.replace(/\*\*(.+?)\*\*/g,"<strong>$1</strong>")}} />}
+            {/* Main description */}
+            <p
+              className="spell-modal__desc"
+              dangerouslySetInnerHTML={{ __html: mdInlineToHtml(spell.descriptionMd) }}
+            />
+
+            {/* Scaling text */}
+            {spell.scalingMd && (
+              <p
+                className="spell-modal__sub"
+                dangerouslySetInnerHTML={{
+                  __html: mdInlineToHtml(spell.scalingMd),
+                }}
+              />
+            )}
+
+            {/* Higher-levels text */}
+            {spell.higherLevelsMd && (
+              <p
+                className="spell-modal__sub"
+                dangerouslySetInnerHTML={{
+                  __html: mdInlineToHtml(spell.higherLevelsMd),
+                }}
+              />
+            )}
 
             {/* Tags & availability */}
             {(spell.tags?.length || spell.classes?.length) && (
               <div className="spell-modal__chips">
                 {spell.tags?.length ? (
-                  <div className="chiprow"><span className="chipcap">Tags:</span>
-                    {spell.tags.map(t => <span key={t} className="chip">{t}</span>)}
+                  <div className="chiprow">
+                    <span className="chipcap">Tags:</span>
+                    {spell.tags.map((t) => (
+                      <span key={t} className="chip">
+                        {t}
+                      </span>
+                    ))}
                   </div>
                 ) : null}
                 {spell.classes?.length ? (
-                  <div className="chiprow"><span className="chipcap">Available for:</span>
-                    {spell.classes.map(c => <span key={c} className="chip chip--hollow">{c}</span>)}
+                  <div className="chiprow">
+                    <span className="chipcap">Available for:</span>
+                    {spell.classes.map((c) => (
+                      <span key={c} className="chip chip--hollow">
+                        {c}
+                      </span>
+                    ))}
                   </div>
                 ) : null}
               </div>

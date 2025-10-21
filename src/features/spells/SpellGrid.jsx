@@ -40,7 +40,14 @@ export default function SpellGrid() {
           <option value="all">All levels</option>
           <option value="0">Cantrips (0)</option>
           <option value="1">1st level</option>
-          {/* add 2..9 */}
+          <option value="2">2nd level</option>
+          <option value="3">3rd level</option>
+          <option value="4">4th level</option>
+          <option value="5">5th level</option>
+          <option value="6">6th level</option>
+          <option value="7">7th level</option>
+          <option value="8">8th level</option>
+          <option value="9">9th level</option>
         </select>
       </div>
 
