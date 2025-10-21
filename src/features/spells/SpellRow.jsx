@@ -3,7 +3,13 @@ import { slugify, spellImgUrl, schoolImgUrl, genericSpellImgUrl } from "./utils"
 
 const levelLabel = (lvl) => (lvl === 0 ? "Cantrip" : `${lvl}${[,"st","nd","rd"][lvl]||"th"}-level`);
 
-export default function SpellRow({ spell }) {
+const mdInlineToHtml = (md) =>
+  String(md ?? "")
+    .replace(/\*\*([\s\S]*?)\*\*/g, "<strong>$1</strong>")
+    .replace(/__([\s\S]*?)__/g, "<strong>$1</strong>")
+    .replace(/\r\n|\r|\n/g, "<br/>");
+
+export default function SpellRow({ spell, onOpen }) {
   const [open, setOpen] = useState(false);
 
   // image + fallbacks (small icon)
@@ -22,14 +28,22 @@ export default function SpellRow({ spell }) {
 
   // Components helpers
   const compMap = { V: "verbal", S: "somatic", M: "material" };
-  const componentsObj = spell.components || {};
-  const compsAbbrev = ["V", "S", "M"]
-    .filter((k) => componentsObj[compMap[k]])
-    .join(", ");
+  const c = spell.components || {};
+  const compsAbbrev = ["V","S","M"].filter((k) => c[compMap[k]]).join(", ");
   const compsFull = (() => {
-    const s = ["V", "S", "M"].filter((k) => componentsObj[compMap[k]]).join("");
-    return s + (componentsObj.material && componentsObj.materialText ? ` (${componentsObj.materialText})` : "") || "—";
+    const s = ["V","S","M"].filter((k) => c[compMap[k]]).join("");
+    return s + (c.material && c.materialText ? ` (${c.materialText})` : "") || "—";
   })();
+
+  // Open modal from the icon without toggling the <details>
+  const handleIconOpen = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    onOpen && onOpen();
+  };
+  const handleIconKey = (e) => {
+    if (e.key === "Enter" || e.key === " ") handleIconOpen(e);
+  };
 
   return (
     <details className="spell-row" open={open} onToggle={(e) => setOpen(e.currentTarget.open)}>
@@ -37,7 +51,19 @@ export default function SpellRow({ spell }) {
         <div className="cell level">{levelLabel(spell.spellLevel)}</div>
 
         <div className="cell name">
-          <img className="icon" src={src} onError={onImgError} alt="" width={26} height={26} />
+          <img
+            className="icon icon--clickable"
+            src={src}
+            onError={onImgError}
+            alt=""
+            width={26}
+            height={26}
+            role="button"
+            tabIndex={0}
+            onClick={handleIconOpen}
+            onKeyDown={handleIconKey}
+            aria-label={`Open ${spell.name} details`}
+          />
           <div className="namewrap">
             <div className="title">{spell.name}</div>
             <div className="sub">{spell.school} • {compsAbbrev || "—"}</div>
@@ -71,22 +97,12 @@ export default function SpellRow({ spell }) {
         <hr className="rowrule" />
 
         <div className="rowdesc">
-          <p className="desc">{spell.descriptionMd}</p>
+          <p className="desc" dangerouslySetInnerHTML={{ __html: mdInlineToHtml(spell.descriptionMd) }} />
           {spell.scalingMd && (
-            <p
-              className="sub"
-              dangerouslySetInnerHTML={{
-                __html: spell.scalingMd.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
-              }}
-            />
+            <p className="sub" dangerouslySetInnerHTML={{ __html: mdInlineToHtml(spell.scalingMd) }} />
           )}
           {spell.higherLevelsMd && (
-            <p
-              className="sub"
-              dangerouslySetInnerHTML={{
-                __html: spell.higherLevelsMd.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
-              }}
-            />
+            <p className="sub" dangerouslySetInnerHTML={{ __html: mdInlineToHtml(spell.higherLevelsMd) }} />
           )}
         </div>
       </div>

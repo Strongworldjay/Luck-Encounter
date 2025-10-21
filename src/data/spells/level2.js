@@ -308,7 +308,7 @@ imagePath: spellImgUrl("bloodsacrifice")
 {
 slug: slugify("Blood Wisp"),
 name: "Blood Wisp",
-classes: ["Bard", "Sorcerer", "Wizard", "Order of the Profane Soul (INT)", "Order of the Profane Soul (WIS)"],
+classes: ["Bard", "Sorcerer", "Wizard", "Blood Hunter"],
 spellLevel: 2,
 school: "Evocation",
 castingTime: "1 hour",
@@ -352,30 +352,6 @@ descriptionMd:
 scalingMd:
 "**Using a Higher-Level Spell Slot.** When cast using a slot of 3rd level or higher, the recurring wound damage increases by 1d6 for each slot level above 2nd.",
 imagePath: spellImgUrl("bloodletter")
-},
-{
-slug: slugify("Boil Blood"),
-name: "Boil Blood",
-classes: ["Order of the Profane Soul (INT)"],
-spellLevel: 2,
-school: "Necromancy",
-castingTime: "1 action",
-duration: "Concentration, up to 1 minute",
-range: "60 feet",
-area: "1 creature that took slashing or piercing damage in the last minute",
-tags: ["Damage"],
-saveRequired: "CON",
-attackType: "Spell",
-damageTypes: ["Fire"],
-conditions: [],
-components: { verbal: true, somatic: true, material: false, materialText: "" },
-concentration: true,
-ritual: false,
-descriptionMd:
-"Choose a creature that has taken slashing or piercing damage in the last minute. The target makes a Constitution saving throw. On a failure, its blood heats and boils. At the start of each of its turns while affected, it takes 3d4 Fire damage and is wracked with agony—all terrain is difficult terrain for that creature. At the end of each of its turns, it repeats the save, ending the spell on a success.",
-scalingMd:
-"**At Higher Levels.** When cast using a slot of 3rd level or higher, the damage increases by 2d4 for each slot level above 2nd.",
-imagePath: spellImgUrl("boilblood")
 },
 {
 slug: slugify("Borrowed Knowledge"),
@@ -500,7 +476,7 @@ imagePath: spellImgUrl("chainofconviction")
 {
 slug: slugify("Boil Blood"),
 name: "Boil Blood",
-classes: ["Order of the Profane Soul (INT)"],
+classes: ["Blood Hunter"],
 spellLevel: 2,
 school: "Necromancy",
 castingTime: "1 action",

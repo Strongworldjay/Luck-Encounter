@@ -525,6 +525,7 @@
   background: color-mix(in oklch, var(--surface) 85%, transparent);
   padding: 12px;
 }
+.spell-row .icon--clickable { cursor: zoom-in; }
 
 .detailgrid {
   display: grid;
@@ -638,11 +639,37 @@ html, body, .spells-page {      /* belt-and-suspenders on tiny viewports */
 
 /* --- Mobile: make cards WAY smaller (~1/3 footprint) --- */
 /* Shrink padding, fonts, thumbs, gaps; show 2–3 columns on phones */
+/* Mobile: make poster cards MUCH smaller and lock to 2 columns */
 @media (max-width: 560px) {
   .spell-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)); /* was 1 */
-    gap: 10px;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px;
   }
+
+  .spell-card {
+    --card-pad: 8px;
+    border-radius: 10px;
+  }
+
+  .spell-poster {
+    gap: 6px;
+    padding: 10px;
+  }
+  .spell-poster__title {
+    font-size: .95rem;
+    line-height: 1.1;
+  }
+  .spell-poster__img {
+    /* keep transparent PNG edges clean, but make the art much smaller */
+    max-width: 110px;
+    max-height: 110px;
+  }
+  .spell-poster__level {
+    font-size: .8rem;
+    opacity: .85;
+  }
+}
+
   /* on wider small phones in landscape bump to 3 */
   @media (min-width: 420px) and (max-width: 560px) {
     .spell-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -677,7 +704,6 @@ html, body, .spells-page {      /* belt-and-suspenders on tiny viewports */
   .spell-poster__title { font-size: 1.15rem; }
   .spell-poster__img { max-width: 140px; }
   .spell-poster__level { font-size: .85rem; }
-}
 
 /* Extra-tight mode for very small phones */
 @media (max-width: 380px) {
@@ -685,4 +711,31 @@ html, body, .spells-page {      /* belt-and-suspenders on tiny viewports */
   .spell-card__thumb { width: 28px; height: 28px; }
   .spell-card__title { font-size: .85rem; }
   .spell-card__meta  { font-size: .75rem; }
+}
+
+/* --- Card/poster art: remove tile + cap size --- */
+.spell-poster__img,
+.spell-card__thumb {
+  background: transparent !important;   /* no square tile */
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Poster image sizing: keep aspect, don't crop */
+.spell-poster__img {
+  width: auto;                          /* let it size naturally */
+  height: auto;
+  max-width: var(--card-img-max, 180px);   /* ~screenshot size */
+  max-height: var(--card-img-max, 180px);
+  object-fit: contain;                  /* no cropping */
+  border-radius: 0;                     /* fully respect PNG alpha */
+  margin: 0 auto;                       /* stay centered in the card */
+}
+
+/* Optional: make them a touch smaller on narrow phones */
+@media (max-width: 560px) {
+  .spell-poster__img {
+    max-width: var(--card-img-max-sm, 140px);
+    max-height: var(--card-img-max-sm, 140px);
+  }
 }

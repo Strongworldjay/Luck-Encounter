@@ -48,29 +48,6 @@ scalingMd: "",
 imagePath: spellImgUrl("arborealcurse")
 },
 {
-slug: slugify("Arcanist's Sword"),
-name: "Arcanist's Sword",
-classes: ["Bard", "Wizard"],
-spellLevel: 7,
-school: "Evocation",
-castingTime: "1 action",
-duration: "Concentration, up to 1 minute",
-range: "60 feet",
-area: "1 floating sword (plane of force)",
-tags: ["Damage"],
-saveRequired: "None",
-attackType: "Melee Spell Attack",
-damageTypes: ["Force"],
-conditions: [],
-components: { verbal: true, somatic: true, material: true, materialText: "a miniature platinum sword with a grip and pommel of copper and zinc, worth 250 gp" },
-concentration: true,
-ritual: false,
-descriptionMd:
-"You create a glowing sword-shaped plane of force that hovers within range. When it appears and as a bonus action on subsequent turns, you command it to Attack, Guard, or Spin:\n\n• Attack. The sword moves up to 20 feet toward a creature and makes a melee spell attack, dealing 3d10 + your spellcasting ability modifier Force damage on a hit.\n• Guard. The sword moves up to 20 feet to share a creature’s space, granting it half cover. The first time a hostile creature comes within 5 feet of the sword, it makes a melee spell attack for 3d10 + modifier Force damage on a hit. It can’t attack again until you issue a new command.\n• Spin. The sword moves up to 20 feet to a point and begins to whirl. Creatures that start their turn or enter within 5 feet of it must make a Dexterity saving throw, taking 4d10 Force damage on a failed save, or half as much on a success.",
-scalingMd: "",
-imagePath: spellImgUrl("arcanistssword")
-},
-{
 slug: slugify("Ceaseless Torment"),
 name: "Ceaseless Torment",
 classes: ["Bard", "Warlock", "Wizard"],
@@ -139,28 +116,6 @@ descriptionMd:
 scalingMd:
 "Using a Higher-Level Spell Slot. Create two additional motes per slot level above 7th.",
 imagePath: spellImgUrl("crownofstars")
-},
-{
-  slug: slugify("Crush"),
-  name: "Crush",
-  classes: ["Sorcerer", "Warlock", "Wizard"],
-  spellLevel: 7,
-  school: "Evocation",
-  castingTime: "1 action",
-  duration: "Instantaneous (speed 0 until start of your next turn on fail)",
-  range: "60 feet",
-  area: "1 creature",
-  tags: ["Damage", "Control"],
-  saveRequired: "STR",
-  attackType: "Spell",
-  damageTypes: ["Bludgeoning"],
-  conditions: ["Prone", "Speed 0 (until start of your next turn)"],
-  components: { verbal: true, somatic: true, material: true, materialText: "bone powder" },
-  concentration: false,
-  ritual: false,
-  descriptionMd: "You trap a creature in crushing gravity. It must make a Strength save. On a failure, it takes 12d10 Bludgeoning damage, falls Prone, and its speed becomes 0 until the start of your next turn. On a success, it takes half damage and suffers no additional effects.",
-  scalingMd: "**Using a Higher-Level Spell Slot.** Target one additional creature for each slot level above 7th.",
-  imagePath: spellImgUrl("crush")
 },
 {
   slug: slugify("Diamondskin"),

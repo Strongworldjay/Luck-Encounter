@@ -136,5 +136,27 @@ imagePath: spellImgUrl("completeperfection")
   scalingMd: "",
   imagePath: spellImgUrl("formoftheelements")
 },
-
+{
+  slug: slugify("Invulnerability"),
+  name: "Invulnerability",
+  classes: ["Wizard"],
+  spellLevel: 9,
+  school: "Abjuration",
+  castingTime: "1 action",
+  duration: "Concentration, up to 10 minutes",
+  range: "Self",
+  area: "Self",
+  tags: ["Warding"],
+  saveRequired: "None",
+  attackType: "None",
+  damageTypes: [],
+  conditions: [],
+  components: { verbal: true, somatic: true, material: true, materialText: "a small piece of adamantine worth at least 500 gp, which the spell consumes" },
+  concentration: true,
+  ritual: false,
+  descriptionMd:
+    "You are Immune to all damage except Psychic damage until the spell ends, and you are Resistant to Psychic damage.",
+  scalingMd: "",
+  imagePath: spellImgUrl("invulnerability")
+}
 ];

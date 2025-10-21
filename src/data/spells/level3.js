@@ -76,7 +76,7 @@ imagePath: spellImgUrl("antagonize")
 {
 slug: slugify("Blood Bond"),
 name: "Blood Bond",
-classes: ["Druid", "Sangromancer", "Order of the Profane Soul (INT)", "Order of the Profane Soul (WIS)"],
+classes: ["Druid", "Sangromancer", "Blood Hunter", "Order of the Profane Soul (WIS)"],
 spellLevel: 3,
 school: "Enchantment",
 castingTime: "1 action",
@@ -244,7 +244,7 @@ imagePath: spellImgUrl("crookedward")
 {
   slug: slugify("Cruel Puppetry"),
   name: "Cruel Puppetry",
-  classes: ["Order of the Profane Soul (INT)"],
+  classes: ["Blood Hunter"],
   spellLevel: 3,
   school: "Necromancy",
   castingTime: "1 action",

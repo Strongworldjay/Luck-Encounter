@@ -1,3 +1,4 @@
+// SpellsPage.jsx
 import React, { useEffect, useMemo, useState } from "react";
 import { ALL_SPELLS } from "../data/spells";
 import SpellsFilters from "../features/spells/SpellsFilters";
@@ -173,7 +174,7 @@ export default function SpellsPage() {
               <div>Damage/Effect</div>
             </div>
             {list.map((s) => (
-              <SpellRow key={s.slug} spell={s} />
+              <SpellRow key={s.slug} spell={s} onOpen={() => setActiveSpell(s)} />
             ))}
           </div>
         )}

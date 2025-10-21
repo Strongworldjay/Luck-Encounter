@@ -194,7 +194,7 @@ imagePath: spellImgUrl("createthrall")
 {
   slug: slugify("Curse of Impotence"),
   name: "Curse of Impotence",
-  classes: ["Order of the Profane Soul (INT)", "Order of the Profane Soul (WIS)", "Druid"],
+  classes: ["Blood Hunter", "Druid"],
   spellLevel: 5,
   school: "Enchantment",
   castingTime: "1 action",

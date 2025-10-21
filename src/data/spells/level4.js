@@ -215,7 +215,7 @@ imagePath: spellImgUrl("consumingpyre")
 {
   slug: slugify("Dark Sacrament"),
   name: "Dark Sacrament",
-  classes: ["Warlock", "Wizard", "Order of the Profane Soul (INT)", "Order of the Profane Soul (WIS)"],
+  classes: ["Warlock", "Wizard", "Blood Hunter"],
   spellLevel: 4,
   school: "Evocation",
   castingTime: "1 action",

@@ -50,7 +50,7 @@ imagePath: spellImgUrl("beamofannihilation")
 {
 slug: slugify("Blood Tide"),
 name: "Blood Tide",
-classes: ["Druid", "Sorcerer", "Wizard", "Order of the Profane Soul (INT)", "Order of the Profane Soul (WIS)"],
+classes: ["Druid", "Sorcerer", "Wizard", "Blood Hunter"],
 spellLevel: 6,
 school: "Conjuration",
 castingTime: "1 action",
