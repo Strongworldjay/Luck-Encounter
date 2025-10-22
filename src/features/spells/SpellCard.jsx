@@ -50,14 +50,19 @@ export default function SpellCard({ spell, onOpen }) {
     >
       <div className="spell-poster">
         <h3 className="spell-poster__title">{spell.name}</h3>
-        <img
-          className="spell-poster__img"
-          src={src}
-          alt={`${spell.name} icon`}
-          loading="lazy"
-          decoding="async"
-          onError={onImgError}
-        />
+
+        {/* Aspect-ratio wrapper reserves the space */}
+        <div className="spell-poster__imgbox">
+          <img
+            className="spell-poster__img"
+            src={src}
+            alt={`${spell.name} icon`}
+            loading="lazy"
+            decoding="async"
+            onError={onImgError}
+          />
+        </div>
+
         <div className="spell-poster__level">{levelLabel(spell.spellLevel)}</div>
       </div>
     </div>

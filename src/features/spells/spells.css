@@ -739,3 +739,41 @@ html, body, .spells-page {      /* belt-and-suspenders on tiny viewports */
     max-height: var(--card-img-max-sm, 140px);
   }
 }
+
+/* === Poster image: reserve space with aspect-ratio wrapper === */
+.spell-poster__imgbox {
+  /* Matches your current visual sizing: 70% of card up to 200px */
+  width: min(70%, 200px);
+  aspect-ratio: 1 / 1;          /* square reservation; change if your art isn’t square */
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+
+  /* Optional subtle placeholder while image decodes */
+  background: color-mix(in oklch, var(--elevated) 70%, transparent);
+  border-radius: 14px;
+}
+
+/* Image fills the reserved box without cropping or layout shift */
+.spell-poster__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+
+  /* Respect transparent PNG edges; remove tiles/borders/shadows */
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0;
+}
+
+/* Mobile: smaller reserved box for tighter cards */
+@media (max-width: 560px) {
+  .spell-poster__imgbox {
+    width: var(--card-img-max-sm, 140px); /* aligns with your small layout */
+  }
+}
+
+/* If you want a non-square reservation (e.g., 4:3 art), switch aspect-ratio: */
+/* .spell-poster__imgbox { aspect-ratio: 4 / 3; } */
