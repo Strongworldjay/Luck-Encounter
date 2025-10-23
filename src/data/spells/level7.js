@@ -227,30 +227,6 @@ imagePath: spellImgUrl("crownofstars")
   scalingMd: "**Using a Higher-Level Spell Slot.** Use the spell slot’s level wherever the spell’s level appears in the Fleshling Construct stat block.",
   imagePath: spellImgUrl("fleshcrawl")
 },
-{
-    slug: slugify("Power Word Fortify"),
-    name: "Power Word Fortify",
-    classes: ["Bard", "Cleric"],
-    spellLevel: 7,
-    school: "Enchantment",
-    castingTime: "1 action",
-    duration: "Instantaneous",
-    range: "60 feet",
-    area: "up to six creatures",
-    tags: ["Buff"],
-    saveRequired: "None",
-    attackType: "None",
-    damageTypes: [],
-    conditions: [],
-    components: { verbal: true, somatic: false, material: false, materialText: "" },
-    concentration: false,
-    ritual: false,
-    descriptionMd:
-      "Divide **120 Temporary Hit Points** among up to **six** creatures you can see within range.",
-    scalingMd:
-      "**Using a Higher-Level Spell Slot.** Total temp HP increases by **30** per slot level above 7th.",
-    imagePath: spellImgUrl("powerwordfortify"),
-  },
   {
     slug: slugify("Power Word Maim"),
     name: "Power Word Maim",

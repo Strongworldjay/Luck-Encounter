@@ -794,3 +794,38 @@ html:not(.theme-dark) .spell-card:hover {
   box-shadow: 0 0 8px rgba(31, 58, 223, 0.55);
   transform: translateY(-2px);
 }
+@media (max-width: 560px) {
+  /* Square card face uses a consistent title height */
+  .spell-poster {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr;   /* title + image area */
+    align-items: start;
+    justify-items: center;
+    padding: 10px;
+  }
+}
+/* Lower the spell name on mobile cards */
+@media (max-width: 560px) {
+  .spell-poster {
+    grid-template-rows: auto 1fr; /* keep title + image */
+    row-gap: 6px;                 /* a bit more breathing room */
+  }
+  .spell-poster__title {
+    margin-top: 12px;              /* ↓ nudge the title down */
+    min-height: calc(2 * 1.2em);  /* reserve two lines for consistency */
+    line-height: 1.2;
+  }
+}
+/* Fine-tune mobile image positioning */
+@media (max-width: 560px) {
+  .spell-poster__imgbox {
+    transform: translate(-6px, -12px); /* ← 2px left, ↑ 4px up */
+  }
+
+  /* Keep the title balanced just below */
+  .spell-poster__title {
+    margin-top: 10px;  /* optional: balances upward image shift */
+  }
+}

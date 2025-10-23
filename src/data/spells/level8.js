@@ -389,29 +389,6 @@ imagePath: spellImgUrl("creepingdeath")
     imagePath: spellImgUrl("antimagic-field")
   },
   {
-    slug: slugify("Antipathy/Sympathy"),
-    name: "Antipathy/Sympathy",
-    classes: ["Bard", "Druid", "Wizard"],
-    spellLevel: 8,
-    school: "Enchantment",
-    castingTime: "1 hour",
-    duration: "10 days",
-    range: "60 feet",
-    area: "One Huge-or-smaller creature or object",
-    tags: ["Control", "Warding"],
-    saveRequired: "WIS",
-    attackType: "None",
-    damageTypes: [],
-    conditions: ["Frightened", "Charmed"],
-    components: { verbal: true, somatic: true, material: true, materialText: "a mix of vinegar and honey" },
-    concentration: false,
-    ritual: false,
-    descriptionMd:
-      "Choose **Antipathy** or **Sympathy** and a creature/object target. Specify a **kind of creature** (e.g., vampires). Creatures of that kind within **120 ft** make a **WIS save**.\n- **Antipathy**: on fail, target is **Frightened** and must move away by safest route.\n- **Sympathy**: on fail, target is **Charmed** and must move toward/adjacent to the target; taking damage from the target allows a save to end.\nEnd check: if a creature ends its turn **>120 ft** from the target, it saves to end the effect; on success it is **immune for 1 minute**.",
-    scalingMd: "",
-    imagePath: spellImgUrl("antipathy-sympathy")
-  },
-  {
     slug: slugify("Befuddlement"),
     name: "Befuddlement",
     classes: ["Bard", "Druid", "Warlock", "Wizard"],
@@ -759,5 +736,5 @@ imagePath: spellImgUrl("creepingdeath")
     scalingMd: "",
     imagePath: spellImgUrl("tsunami")
   },
-  
+
 ];
