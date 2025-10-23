@@ -7,14 +7,14 @@ const levelLabel = (lvl) =>
 export default function SpellModal({ spell, onClose }) {
   const panelRef = useRef(null);
 
-  // Close on Esc / backdrop click
+  // Close on Esc
   useEffect(() => {
     const onKey = (e) => e.key === "Escape" && onClose();
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [onClose]);
 
-  const stop = (e) => e.stopPropagation();
+  const stop = (e) => e.stopPropagation(); // keep clicks inside from closing
 
   // image with fallbacks
   const slug = spell.slug || slugify(spell.name || "");
@@ -30,18 +30,17 @@ export default function SpellModal({ spell, onClose }) {
     if (!tried.current.generic) {
       tried.current.generic = true;
       imgRef.current.src = genericSpellImgUrl();
-      return;
     }
   };
 
-  // component helper for components field
+  // components formatter
   const comps = (() => {
     const c = spell.components || {};
     const s = `${c.verbal ? "V" : ""}${c.somatic ? "S" : ""}${c.material ? "M" : ""}`;
     return s + (c.material && c.materialText ? ` (${c.materialText})` : "") || "—";
   })();
 
-  // Markdown-like inline parser for **bold**, __bold__, and newlines
+  // tiny inline md
   const mdInlineToHtml = (md) =>
     String(md ?? "")
       .replace(/\*\*([\s\S]*?)\*\*/g, "<strong>$1</strong>")
@@ -51,7 +50,7 @@ export default function SpellModal({ spell, onClose }) {
   return (
     <div className="spell-modal__backdrop" onClick={onClose} role="presentation">
       <div
-        className="spell-modal__panel"
+        className="spell-modal__panel spell-modal__panel--responsive"
         role="dialog"
         aria-modal="true"
         aria-labelledby="spell-modal-title"
@@ -65,8 +64,7 @@ export default function SpellModal({ spell, onClose }) {
               {spell.name}
             </h2>
             <div className="spell-modal__subtitle">
-              {levelLabel(spell.spellLevel)} · {spell.school} ·{" "}
-              {spell.classes?.join(", ")}
+              {levelLabel(spell.spellLevel)} · {spell.school} · {spell.classes?.join(", ")}
             </div>
           </div>
           <button className="spell-modal__close" onClick={onClose} aria-label="Close">
@@ -116,7 +114,7 @@ export default function SpellModal({ spell, onClose }) {
 
         <hr className="spell-modal__rule" />
 
-        {/* Body: image + text */}
+        {/* Body */}
         <section className="spell-modal__body">
           <div className="spell-modal__artwrap">
             <img
@@ -124,40 +122,29 @@ export default function SpellModal({ spell, onClose }) {
               src={initialSrc}
               onError={onImgError}
               alt={`${spell.name} art`}
-              className="spell-modal__art"
+              className="spell-modal__art spell-image--transparent"
               loading="lazy"
               decoding="async"
             />
           </div>
 
           <div className="spell-modal__text">
-            {/* Main description */}
             <p
               className="spell-modal__desc"
               dangerouslySetInnerHTML={{ __html: mdInlineToHtml(spell.descriptionMd) }}
             />
-
-            {/* Scaling text */}
             {spell.scalingMd && (
               <p
                 className="spell-modal__sub"
-                dangerouslySetInnerHTML={{
-                  __html: mdInlineToHtml(spell.scalingMd),
-                }}
+                dangerouslySetInnerHTML={{ __html: mdInlineToHtml(spell.scalingMd) }}
               />
             )}
-
-            {/* Higher-levels text */}
             {spell.higherLevelsMd && (
               <p
                 className="spell-modal__sub"
-                dangerouslySetInnerHTML={{
-                  __html: mdInlineToHtml(spell.higherLevelsMd),
-                }}
+                dangerouslySetInnerHTML={{ __html: mdInlineToHtml(spell.higherLevelsMd) }}
               />
             )}
-
-            {/* Tags & availability */}
             {(spell.tags?.length || spell.classes?.length) && (
               <div className="spell-modal__chips">
                 {spell.tags?.length ? (
