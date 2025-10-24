@@ -1,6 +1,7 @@
 /* ---------------------------------------
    Cards (compact + poster)
 --------------------------------------- */
+html { -webkit-text-size-adjust: 100%; }
 
 /* Container keeps prior styling */
 .spell-card {
