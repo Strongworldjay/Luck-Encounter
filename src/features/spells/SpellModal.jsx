@@ -14,9 +14,9 @@ export default function SpellModal({ spell, onClose }) {
     return () => window.removeEventListener("keydown", onKey);
   }, [onClose]);
 
-  const stop = (e) => e.stopPropagation(); // keep clicks inside from closing
+  const stop = (e) => e.stopPropagation(); // prevent backdrop close when clicking inside
 
-  // image with fallbacks
+  // Image with fallbacks
   const slug = spell.slug || slugify(spell.name || "");
   const initialSrc = spell.imagePath || spellImgUrl(slug);
   const imgRef = useRef(null);
@@ -33,14 +33,14 @@ export default function SpellModal({ spell, onClose }) {
     }
   };
 
-  // components formatter
+  // Components formatter
   const comps = (() => {
     const c = spell.components || {};
     const s = `${c.verbal ? "V" : ""}${c.somatic ? "S" : ""}${c.material ? "M" : ""}`;
     return s + (c.material && c.materialText ? ` (${c.materialText})` : "") || "—";
   })();
 
-  // tiny inline md
+  // Tiny inline md (**bold**, __bold__, newlines)
   const mdInlineToHtml = (md) =>
     String(md ?? "")
       .replace(/\*\*([\s\S]*?)\*\*/g, "<strong>$1</strong>")
@@ -114,7 +114,7 @@ export default function SpellModal({ spell, onClose }) {
 
         <hr className="spell-modal__rule" />
 
-        {/* Body */}
+        {/* Body: art + text */}
         <section className="spell-modal__body">
           <div className="spell-modal__artwrap">
             <img
@@ -129,22 +129,29 @@ export default function SpellModal({ spell, onClose }) {
           </div>
 
           <div className="spell-modal__text">
+            {/* Main description */}
             <p
               className="spell-modal__desc"
               dangerouslySetInnerHTML={{ __html: mdInlineToHtml(spell.descriptionMd) }}
             />
+
+            {/* Scaling text */}
             {spell.scalingMd && (
               <p
                 className="spell-modal__sub"
                 dangerouslySetInnerHTML={{ __html: mdInlineToHtml(spell.scalingMd) }}
               />
             )}
+
+            {/* Higher-levels text */}
             {spell.higherLevelsMd && (
               <p
                 className="spell-modal__sub"
                 dangerouslySetInnerHTML={{ __html: mdInlineToHtml(spell.higherLevelsMd) }}
               />
             )}
+
+            {/* Tags & availability */}
             {(spell.tags?.length || spell.classes?.length) && (
               <div className="spell-modal__chips">
                 {spell.tags?.length ? (
@@ -168,6 +175,20 @@ export default function SpellModal({ spell, onClose }) {
                   </div>
                 ) : null}
               </div>
+            )}
+
+            {/* Stat block (modal-only) */}
+            {(spell.statblockHtml || spell.statblockMd) && (
+              <section className="spell-modal__statblock">
+                <div
+                  className="statblock"
+                  dangerouslySetInnerHTML={{
+                    __html: spell.statblockHtml
+                      ? spell.statblockHtml
+                      : mdInlineToHtml(spell.statblockMd),
+                  }}
+                />
+              </section>
             )}
           </div>
         </section>

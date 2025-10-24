@@ -96,20 +96,6 @@
   line-height: 1.5;
 }
 
-/* Responsive grid for cards */
-.spell-grid {
-  display: grid;
-  gap: var(--grid-gap, 16px);
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  padding-bottom: 0;
-}
-@media (min-width: 680px)  { .spell-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1024px) { .spell-grid { grid-template-columns: repeat(3, 1fr); } }
-@media (min-width: 1320px) { .spell-grid { grid-template-columns: repeat(4, 1fr); } }
-
-/* Add extra bottom room for card view */
-.spell-grid { padding-bottom: 60px; }
-
 /* --- Poster card look --- */
 .spell-card--poster {
   background: var(--poster-bg);
@@ -157,6 +143,160 @@
   opacity: 0.9;
 }
 
+/* --- Card/poster art: remove tile + cap size --- */
+.spell-poster__img, .spell-card__thumb {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Poster image sizing: keep aspect, don't crop */
+.spell-poster__img {
+  width: auto;
+  height: auto;
+  max-width: var(--card-img-max, 180px);
+  max-height: var(--card-img-max, 180px);
+  object-fit: contain;
+  border-radius: 0;
+  margin: 0 auto;
+}
+
+/* Mobile: smaller reserved box for tighter cards */
+@media (max-width: 560px) {
+  .spell-poster__img { max-width: var(--card-img-max-sm, 140px); max-height: var(--card-img-max-sm, 140px); }
+}
+
+/* === Poster image: reserve space with aspect-ratio wrapper === */
+.spell-poster__imgbox {
+  width: min(70%, 200px);
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  background: color-mix(in oklch, var(--elevated) 70%, transparent);
+  border-radius: 14px;
+}
+
+/* Ensure modal image has NO tile/border anywhere */
+.spell-image--transparent,
+.spell-modal__art {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+/* Nuke any image tiles globally (poster + modal) */
+.spell-card--poster .spell-poster__img,
+.spell-poster .spell-poster__img,
+.spell-modal__art {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  outline: none !important;
+}
+
+/* The reserved aspect-ratio wrapper: transparent on ALL breakpoints */
+.spell-poster__imgbox {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+/* In case you’re not using .spell-poster__imgbox and the tile is on the thumb */
+.spell-card__thumb {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+/* Optional: ensure the card face itself isn't painting a dark square behind the art */
+.spell-card--poster { background: var(--poster-bg); }
+.spell-poster { background: transparent; }
+
+/* ==== Themed hover borders for cards ==== */
+html:not(.theme-dark) .spell-card:hover {
+  border-color: #ffd700; /* gold */
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.45);
+  transform: translateY(-2px);
+}
+.theme-dark .spell-card:hover {
+  border-color: #1f3adf; /* deep blue */
+  box-shadow: 0 0 8px rgba(31, 58, 223, 0.55);
+  transform: translateY(-2px);
+}
+
+/* ---------------------------------------
+   Grid: manual columns (4-up desktop, 2-up mobile)
+--------------------------------------- */
+.spell-grid {
+  display: grid;
+  gap: var(--grid-gap, 16px);
+  grid-template-columns: repeat(4, minmax(0, 1fr)); /* 4 per row */
+  padding-bottom: 60px;
+  margin-top: 16px;
+}
+@media (max-width: 560px) {
+  .spell-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 per row */
+    gap: 8px;
+  }
+
+  /* smaller card footprint */
+  .spell-card { --card-pad: 8px; border-radius: 10px; }
+  .spell-card__summary { gap: 8px; padding: 10px; }
+  .spell-card__thumb { width: 32px; height: 32px; border-radius: 8px; }
+  .spell-card__title { font-size: .9rem; }
+  .spell-card__meta  { font-size: .8rem; }
+
+  .spell-card__body { padding: 10px; }
+  .spell-card__list {
+    grid-template-columns: 1fr;
+    gap: 6px 10px;
+    font-size: .85rem;
+  }
+  .spell-card__desc, .spell-card__sub { font-size: .9rem; }
+
+  /* square poster face on small phones */
+  .spell-card--poster {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .spell-poster {
+    gap: 6px;
+    padding: 10px;
+    grid-template-rows: auto 1fr;
+  }
+  .spell-poster__level { display: none; }
+}
+
+/* Keep poster title + image balance on mobile */
+@media (max-width: 560px) {
+  .spell-poster {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    align-items: start;
+    justify-items: center;
+    padding: 10px;
+    row-gap: 6px;
+  }
+  .spell-poster__title {
+    margin-top: 10px;
+    min-height: calc(2 * 1.2em);
+    line-height: 1.2;
+  }
+  /* micro-nudge image to feel centered with taller titles */
+  .spell-poster__imgbox {
+    transform: translate(-6px, -12px);
+  }
+}
+
 /* ---------------------------------------
    Spells page layout + filters
 --------------------------------------- */
@@ -179,10 +319,7 @@
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
-.spells-scroll::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-}
+.spells-scroll::-webkit-scrollbar { width: 0; height: 0; }
 
 /* Ensure nothing overflows weirdly */
 .spells-filters, .spells-filters * { box-sizing: border-box; }
@@ -342,8 +479,6 @@
   gap: 10px 12px;
 }
 
-.spell-grid { margin-top: 16px; }
-
 /* ===== Modal ===== */
 .spell-modal__backdrop {
   position: fixed; inset: 0;
@@ -353,7 +488,12 @@
   display: flex; align-items: flex-start; justify-content: center;
   overflow: auto;
   padding: 32px 16px;
+
+  /* hide outer modal scrollbar, still scrollable */
+  scrollbar-width: none; 
+  -ms-overflow-style: none;
 }
+.spell-modal__backdrop::-webkit-scrollbar { width: 0; height: 0; }
 
 .spell-modal__panel {
   width: min(960px, 96vw);
@@ -560,18 +700,14 @@
 }
 @media (max-width: 560px) {
   .spell-list__header { display: none; }
-  .spell-row__summary {
-    grid-template-columns: 1fr 36px;
-  }
+  .spell-row__summary { grid-template-columns: 1fr 36px; }
   .spell-row .cell.level,
   .spell-row .cell:nth-child(n+3):not(.chevron) { display: none; }
 }
 
-/* Mobile tweak */
+/* Mobile tweak for viewport height with nav */
 @media (max-width: 640px) {
-  .spells-scroll {
-    height: calc(100dvh - var(--nav-h, 56px) - 8px);
-  }
+  .spells-scroll { height: calc(100dvh - var(--nav-h, 56px) - 8px); }
 }
 
 /* ===== Pagination ===== */
@@ -583,10 +719,7 @@
   justify-items: center;
   margin: 16px 0 8px;
 }
-.pagination__status {
-  font-size: .9rem;
-  color: var(--muted);
-}
+.pagination__status { font-size: .9rem; color: var(--muted); }
 .pagination__controls {
   display: inline-flex;
   gap: 6px;
@@ -608,15 +741,8 @@
   box-shadow: 0 0 0 3px color-mix(in oklch, var(--accent-color) 25%, transparent);
   font-weight: 700;
 }
-.page-btn[disabled] {
-  opacity: .5;
-  cursor: not-allowed;
-}
-.page-ellipsis {
-  padding: 0 6px;
-  color: var(--muted);
-  user-select: none;
-}
+.page-btn[disabled] { opacity: .5; cursor: not-allowed; }
+.page-ellipsis { padding: 0 6px; color: var(--muted); user-select: none; }
 
 /* --- Prevent horizontal dragging/panning on touch --- */
 .spells-scroll, .spell-list, .spell-grid, .spell-row, .spell-row__summary, .spell-card, .spell-card__summary {
@@ -625,207 +751,239 @@
 }
 html, body, .spells-page { overscroll-behavior-x: none; }
 
-/* --- Mobile: smaller card footprint + typography --- */
+/* Lower the spell name on mobile cards (balanced with image shift) */
+@media (max-width: 560px) {
+  .spell-poster__title {
+    margin-top: 8px;
+    min-height: calc(2 * 1.1em);
+    line-height: 1.1;
+  }
+}
+
+/* Fine-tune mobile image positioning (alt nudge) */
+@media (max-width: 560px) {
+  .spell-poster__imgbox { transform: translate(-20px, -4px); }
+}
+
+/* iOS focus-zoom fix: keep inputs >=16px on phones */
+@media (max-width: 560px) {
+  .spell-input,
+  .spell-select,
+  .dropdown__panel input,
+  .dropdown__panel select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* ================================
+   Statblock (modal-only), theme-aware
+=============================== */
+
+.spell-modal__statblock { margin-top: 14px; }
+
+/* Base card */
+.statblock {
+  /* tokens (overridden per theme below) */
+  --sb-bg: var(--surface);
+  --sb-text: var(--app-text);
+  --sb-border: var(--border);
+  --sb-rule: var(--accent-color);
+  --sb-head-bg: color-mix(in oklch, var(--accent-color) 10%, var(--surface));
+  --sb-muted: color-mix(in oklch, var(--app-text) 60%, transparent);
+  --sb-link: var(--accent-color);
+  --sb-shadow: 0 10px 26px rgba(0,0,0,.35);
+
+  background: var(--sb-bg);
+  color: var(--sb-text);
+  border: 1px solid var(--sb-border);
+  border-radius: 12px;
+  box-shadow: var(--sb-shadow);
+  padding: 12px 14px;
+
+  max-height: min(62vh, 760px);   /* scroll inside modal if long */
+  overflow: auto;
+
+  /* hide inner scrollbar track while keeping scroll */
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* old Edge/IE */
+}
+.statblock::-webkit-scrollbar { width: 0; height: 0; }
+
+/* Headings & rules inside pasted HTML */
+.statblock h1, .statblock h2, .statblock h3, .statblock h4 {
+  margin: 8px 0 6px;
+  font-weight: 800;
+  letter-spacing: .02em;
+}
+.statblock h1 { font-size: 1.1rem; }
+.statblock h2 { font-size: 1rem; }
+.statblock h3, .statblock h4 { font-size: .95rem; }
+
+.statblock hr {
+  border: 0;
+  border-top: 2px solid var(--sb-rule);
+  margin: 8px 0;
+}
+
+/* Tables common in stat blocks */
+.statblock table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+  font-size: .92rem;
+}
+.statblock th, .statblock td {
+  border: 1px solid var(--sb-border);
+  padding: 6px 8px;
+  vertical-align: middle;
+}
+.statblock th {
+  background: var(--sb-head-bg);
+  text-align: left;
+  font-weight: 800;
+}
+.statblock tr:nth-child(even) td {
+  background: color-mix(in oklch, var(--sb-head-bg) 35%, transparent);
+}
+
+.statblock .muted, .statblock small, .statblock .note { color: var(--sb-muted); }
+.statblock strong { font-weight: 800; }
+.statblock em { font-style: italic; }
+
+.statblock a {
+  color: var(--sb-link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.statblock a:hover { text-decoration-thickness: 2px; }
+
+.statblock img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+/* ================================
+   Theme tokens
+=============================== */
+
+/* Night / dark mode */
+.theme-dark .statblock {
+  --sb-bg: color-mix(in oklch, var(--surface) 90%, black 10%);
+  --sb-text: var(--app-text, #eaeaea);
+  --sb-border: color-mix(in oklch, var(--border) 80%, #000 20%);
+  --sb-rule: color-mix(in oklch, var(--accent-color) 65%, var(--sb-border));
+  --sb-head-bg: color-mix(in oklch, var(--accent-color) 12%, var(--surface));
+  --sb-muted: color-mix(in oklch, var(--sb-text) 55%, transparent);
+  --sb-link: color-mix(in oklch, var(--accent-color) 85%, #9cc9ff);
+  --sb-shadow: 0 16px 34px rgba(0,0,0,.45);
+}
+
+/* Day / light mode */
+html:not(.theme-dark) .statblock {
+  --sb-bg: #ffffff;
+  --sb-text: #111318;
+  --sb-border: #e4e6eb;
+  --sb-rule: color-mix(in oklch, var(--accent-color) 60%, #bfc6d0);
+  --sb-head-bg: color-mix(in oklch, var(--accent-color) 10%, #f7f8fa);
+  --sb-muted: #6b7280;
+  --sb-link: color-mix(in oklch, var(--accent-color) 85%, #0b63d8);
+  --sb-shadow: 0 8px 20px rgba(16, 24, 40, .10);
+}
+/* Optional knobs */
+:root {
+  --card-min: 260px;     /* desktop/tablet minimum */
+  --card-min-sm: 160px;  /* mobile minimum */
+}
+
+/* Grid: 4-up with a minimum width per track */
+.spell-grid {
+  display: grid;
+  gap: var(--grid-gap, 16px);
+  grid-template-columns: repeat(4, minmax(var(--card-min), 1fr));
+  padding-bottom: 60px;
+  margin-top: 16px;
+}
+
+/* Mobile: 2-up with its own minimum */
 @media (max-width: 560px) {
   .spell-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important; /* two per row */
+    grid-template-columns: repeat(2, minmax(var(--card-min-sm), 1fr));
     gap: 8px;
   }
-
-  .spell-card {
-    --card-pad: 8px;
-    border-radius: 10px;
-  }
-  .spell-card__summary { gap: 8px; padding: 10px; }
-  .spell-card__thumb { width: 32px; height: 32px; border-radius: 8px; }
-  .spell-card__title { font-size: .9rem; }
-  .spell-card__meta  { font-size: .8rem; }
-
-  .spell-card__body { padding: 10px; }
-  .spell-card__list {
-    grid-template-columns: 1fr;
-    gap: 6px 10px;
-    font-size: .85rem;
-  }
-  .spell-card__desc, .spell-card__sub { font-size: .9rem; }
-
-  /* Poster variant: make true squares */
+}
+/* ===== Mobile poster image centering & sizing ===== */
+@media (max-width: 560px) {
+  /* Square card face */
   .spell-card--poster {
     aspect-ratio: 1 / 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
+
+  /* Center the whole face */
   .spell-poster {
-    gap: 6px;
+    grid-template-rows: auto 1fr;   /* title + image area */
+    align-items: center;
+    justify-items: center;
     padding: 10px;
-    grid-template-rows: auto 1fr; /* title + art fills the square */
-  }
-  .spell-poster__level { display: none; }
-
-  .spell-poster__title {
-    font-size: .95rem;
-    line-height: 1.1;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    row-gap: 8px;
+    text-align: center;
   }
 
+  /* Kill any old mobile nudges that offset the art */
+  .spell-poster__imgbox,
+  .spell-poster__img {
+    transform: none !important;
+  }
+
+  /* Center the image container and keep it square */
   .spell-poster__imgbox {
-    width: 92%;
-    aspect-ratio: 1 / 1;
-    background: transparent;
-    border: 0;
-    border-radius: 0;
     display: grid;
     place-items: center;
     margin: 0 auto;
+    aspect-ratio: 1 / 1;
+
+    /* Shrinks on narrow phones, but won’t get silly-small */
+    width: clamp(120px, 82%, 200px);
   }
+
+  /* Image always centered & contained */
   .spell-poster__img {
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
     object-fit: contain;
+    object-position: center center;
+    display: block;
   }
-}
 
-/* on wider small phones in landscape bump to 3 */
-@media (min-width: 420px) and (max-width: 560px) {
-  .spell-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-}
-
-/* Extra-tight mode for very small phones */
-@media (max-width: 380px) {
-  .spell-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
-  .spell-card__thumb { width: 28px; height: 28px; }
-  .spell-card__title { font-size: .85rem; }
-  .spell-card__meta  { font-size: .75rem; }
-}
-
-/* --- Card/poster art: remove tile + cap size --- */
-.spell-poster__img, .spell-card__thumb {
-  background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
-}
-
-/* Poster image sizing: keep aspect, don't crop */
-.spell-poster__img {
-  width: auto;
-  height: auto;
-  max-width: var(--card-img-max, 180px);
-  max-height: var(--card-img-max, 180px);
-  object-fit: contain;
-  border-radius: 0;
-  margin: 0 auto;
-}
-
-/* Mobile: smaller reserved box for tighter cards */
-@media (max-width: 560px) {
-  .spell-poster__img { max-width: var(--card-img-max-sm, 140px); max-height: var(--card-img-max-sm, 140px); }
-}
-
-/* === Poster image: reserve space with aspect-ratio wrapper === */
-.spell-poster__imgbox {
-  width: min(70%, 200px);
-  aspect-ratio: 1 / 1;
-  margin: 0 auto;
-  display: grid;
-  place-items: center;
-  background: color-mix(in oklch, var(--elevated) 70%, transparent);
-  border-radius: 14px;
-}
-
-/* Ensure modal image has NO tile/border anywhere */
-.spell-image--transparent,
-.spell-modal__art {
-  background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-}
-/* ==== Nuke any image tiles globally (poster + modal) ==== */
-.spell-card--poster .spell-poster__img,
-.spell-poster .spell-poster__img,
-.spell-modal__art {
-  background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  outline: none !important;
-}
-
-/* The reserved aspect-ratio wrapper: make it transparent on ALL breakpoints */
-.spell-poster__imgbox {
-  background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-}
-
-/* In case you’re not using .spell-poster__imgbox and the tile is on the thumb */
-.spell-card__thumb {
-  background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-}
-
-/* Optional: ensure the card face itself isn't painting a dark square behind the art */
-.spell-card--poster {
-  background: var(--poster-bg);
-}
-.spell-poster {
-  background: transparent; /* keep face clean */
-}
-/* ==== Themed hover borders for cards ==== */
-
-/* Default (light / day mode) */
-html:not(.theme-dark) .spell-card:hover {
-  border-color: #ffd700;               /* gold accent */
-  box-shadow: 0 0 8px rgba(255, 215, 0, 0.45);
-  transform: translateY(-2px);
-}
-
-/* Dark / night mode */
-.theme-dark .spell-card:hover {
-  border-color: #1f3adf;               /* deep blue */
-  box-shadow: 0 0 8px rgba(31, 58, 223, 0.55);
-  transform: translateY(-2px);
-}
-@media (max-width: 560px) {
-  /* Square card face uses a consistent title height */
-  .spell-poster {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-rows: auto 1fr;   /* title + image area */
-    align-items: start;
-    justify-items: center;
-    padding: 10px;
-  }
-}
-/* Lower the spell name on mobile cards */
-@media (max-width: 560px) {
-  .spell-poster {
-    grid-template-rows: auto 1fr; /* keep title + image */
-    row-gap: 6px;                 /* a bit more breathing room */
-  }
+  /* Keep the title tidy above the art */
   .spell-poster__title {
-    margin-top: 12px;              /* ↓ nudge the title down */
-    min-height: calc(2 * 1.2em);  /* reserve two lines for consistency */
-    line-height: 1.2;
+    margin-top: 6px;
+    line-height: 1.1;
+    font-size: 0.95rem;   /* adjust if you want a bit bigger/smaller */
   }
 }
-/* Fine-tune mobile image positioning */
+/* ===== Mobile: nudge poster art upward a touch ===== */
 @media (max-width: 560px) {
+  /* small, safe upward nudge */
   .spell-poster__imgbox {
-    transform: translate(-6px, -12px); /* ← 2px left, ↑ 4px up */
+    margin-top: -14px;            /* raise image slightly */
   }
 
-  /* Keep the title balanced just below */
+  /* tighten spacing so the shift looks intentional */
+  .spell-poster {
+    row-gap: 2px;                 /* was 8px */
+  }
+
+  /* keep the title tidy (no extra bottom gap) */
   .spell-poster__title {
-    margin-top: 10px;  /* optional: balances upward image shift */
+    margin-bottom: 0;
+  }
+}
+/* ===== Desktop/Tablet: nudge poster art slightly left ===== */
+@media (min-width: 561px) {
+  .spell-card--poster .spell-poster__imgbox {
+    transform: translateX(-4px);   /* tweak: -4px (subtle) … -12px (bolder) */
   }
 }

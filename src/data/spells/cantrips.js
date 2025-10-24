@@ -838,7 +838,7 @@ export const CANTRIPS = [
 {
 slug: slugify("Booming Blade"),
 name: "Booming Blade",
-classes: ["Artificer", "Sorcerer", "Warlock", "Wizard", "College of Glamour", "College of Valor"],
+classes: ["Artificer", "Sorcerer", "Warlock", "Wizard"],
 spellLevel: 0,
 school: "Evocation",
 castingTime: "1 action",
@@ -1177,7 +1177,7 @@ imagePath: spellImgUrl("callingcard")
 {
   slug: slugify("Illusory Dart"),
   name: "Illusory Dart",
-  classes: ["Bard", "Sorcerer", "Wizard", "Aberrant Sorcery"],
+  classes: ["Bard", "Sorcerer", "Wizard"],
   spellLevel: 0,
   school: "Illusion",
   castingTime: "1 action",
@@ -1538,7 +1538,7 @@ imagePath: spellImgUrl("callingcard")
 {
   slug: slugify("Wind Field"),
   name: "Wind Field",
-  classes: ["Bard", "Paladin", "Eldritch Knight", "Arcane Trickster"],
+  classes: ["Bard", "Paladin"],
   spellLevel: 0,
   school: "Abjuration",
   castingTime: "1 action",
@@ -1581,5 +1581,27 @@ imagePath: spellImgUrl("callingcard")
   scalingMd:
     "Cantrip Upgrade. Damage increases by **1d8** at 5th (**2d8**), 11th (**3d8**), and 17th (**4d8**)."
 },
-
+{
+  slug: slugify("Illusory Instrument"),
+  name: "Illusory Instrument",
+  classes: ["Bard"],
+  spellLevel: 0,
+  school: "Illusion",
+  castingTime: "1 action",
+  duration: "10 minutes",
+  range: "Touch",
+  area: "1 instrument",
+  tags: ["Utility", "Illusion"],
+  saveRequired: "None",
+  attackType: "None",
+  damageTypes: [],
+  conditions: [],
+  components: { verbal: true, somatic: true, material: false, materialText: "" },
+  concentration: false,
+  ritual: false,
+  descriptionMd:
+    "You create an illusionary copy of a mundane musical instrument. The copy of the instrument takes on the shape of your fondest memory of the instrument, such as the first flute you owned or the half harp gifted to you by a loved one. This illusion moves as its physical counterpart would, but it is weightless and is tangible only to you. This instrument can be used as a Spellcasting Focus. This illusory instrument dissipates if you move 10 feet away from it or choose to end the spell (no action required by you).\n\n**Bonus Action:** You can command your instrument to create one of the following effects:\n- Mimic basic sounds heard on a daily basis, such as a bird chirping, footsteps, or a slamming door.\n- Automatically play a basic beat at the tempo of your choice.\n- Record anything played on it, and play it back on a loop.\n- Record and playback any noise that it could pick up within 15 feet, such as conversation, a royal decree, or a snoring party member who swears that they don’t snore.",
+  scalingMd: "",
+  imagePath: spellImgUrl("illusoryinstrument")
+}
 ];
