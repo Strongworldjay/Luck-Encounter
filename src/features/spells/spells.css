@@ -1,7 +1,16 @@
 /* ---------------------------------------
-   Cards (compact + poster)
+   Global / iOS sanity
 --------------------------------------- */
 html { -webkit-text-size-adjust: 100%; }
+html, body, .spells-page {
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* ---------------------------------------
+   Cards (compact + poster)
+--------------------------------------- */
 
 /* Container keeps prior styling */
 .spell-card {
@@ -11,6 +20,7 @@ html { -webkit-text-size-adjust: 100%; }
   box-shadow: var(--shadow);
   transition: border-color .15s ease, box-shadow .15s ease, transform .15s ease;
   overflow: hidden;
+  min-width: 0; /* allow grid tracks to shrink without overflow */
 }
 .spell-card:hover {
   border-color: color-mix(in oklch, var(--primary) 35%, var(--border));
@@ -39,17 +49,8 @@ html { -webkit-text-size-adjust: 100%; }
 }
 
 .spell-card__summary-text { display: grid; gap: 2px; }
-
-.spell-card__title {
-  margin: 0;
-  font-weight: 700;
-  font-size: 1rem;
-}
-.spell-card__meta {
-  margin: 0;
-  color: var(--muted);
-  font-size: .9rem;
-}
+.spell-card__title { margin: 0; font-weight: 700; font-size: 1rem; }
+.spell-card__meta  { margin: 0; color: var(--muted); font-size: .9rem; }
 
 /* Chevron indicator */
 .spell-card__summary::after {
@@ -139,10 +140,7 @@ html { -webkit-text-size-adjust: 100%; }
   border: 1px solid var(--border);
 }
 
-.spell-poster__level {
-  font-size: 1rem;
-  opacity: 0.9;
-}
+.spell-poster__level { font-size: 1rem; opacity: 0.9; }
 
 /* --- Card/poster art: remove tile + cap size --- */
 .spell-poster__img, .spell-card__thumb {
@@ -205,14 +203,6 @@ html { -webkit-text-size-adjust: 100%; }
   border-radius: 0 !important;
 }
 
-/* In case you’re not using .spell-poster__imgbox and the tile is on the thumb */
-.spell-card__thumb {
-  background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-}
-
 /* Optional: ensure the card face itself isn't painting a dark square behind the art */
 .spell-card--poster { background: var(--poster-bg); }
 .spell-poster { background: transparent; }
@@ -230,22 +220,28 @@ html:not(.theme-dark) .spell-card:hover {
 }
 
 /* ---------------------------------------
-   Grid: manual columns (4-up desktop, 2-up mobile)
+   Grid: mobile-first (2-up) → desktop (4-up)
+   Uses clamp() so first paint never exceeds viewport width.
 --------------------------------------- */
 .spell-grid {
   display: grid;
   gap: var(--grid-gap, 16px);
-  grid-template-columns: repeat(4, minmax(0, 1fr)); /* 4 per row */
+  /* 2 per row by default; each track can shrink but never get silly-small */
+  grid-template-columns: repeat(2, minmax(clamp(140px, 45vw, 220px), 1fr));
   padding-bottom: 60px;
   margin-top: 16px;
+  max-width: 100%;
 }
-@media (max-width: 560px) {
-  .spell-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 per row */
-    gap: 8px;
-  }
 
-  /* smaller card footprint */
+/* 4 per row once there’s room */
+@media (min-width: 840px) {
+  .spell-grid {
+    grid-template-columns: repeat(4, minmax(220px, 1fr));
+  }
+}
+
+/* Small-screen card footprint tweaks */
+@media (max-width: 560px) {
   .spell-card { --card-pad: 8px; border-radius: 10px; }
   .spell-card__summary { gap: 8px; padding: 10px; }
   .spell-card__thumb { width: 32px; height: 32px; border-radius: 8px; }
@@ -253,11 +249,7 @@ html:not(.theme-dark) .spell-card:hover {
   .spell-card__meta  { font-size: .8rem; }
 
   .spell-card__body { padding: 10px; }
-  .spell-card__list {
-    grid-template-columns: 1fr;
-    gap: 6px 10px;
-    font-size: .85rem;
-  }
+  .spell-card__list { grid-template-columns: 1fr; gap: 6px 10px; font-size: .85rem; }
   .spell-card__desc, .spell-card__sub { font-size: .9rem; }
 
   /* square poster face on small phones */
@@ -275,33 +267,52 @@ html:not(.theme-dark) .spell-card:hover {
   .spell-poster__level { display: none; }
 }
 
-/* Keep poster title + image balance on mobile */
+/* Keep poster title + image balance on mobile & nudge image up a bit */
 @media (max-width: 560px) {
   .spell-poster {
     width: 100%;
     height: 100%;
     display: grid;
     grid-template-rows: auto 1fr;
-    align-items: start;
+    align-items: center;
     justify-items: center;
     padding: 10px;
-    row-gap: 6px;
+    row-gap: 2px; /* tight for the upward nudge */
+    text-align: center;
   }
   .spell-poster__title {
-    margin-top: 10px;
-    min-height: calc(2 * 1.2em);
-    line-height: 1.2;
+    margin-top: 8px;
+    margin-bottom: 0;
+    min-height: calc(2 * 1.1em);
+    line-height: 1.1;
   }
-  /* micro-nudge image to feel centered with taller titles */
+  /* center + raise art slightly */
+  .spell-poster__imgbox,
+  .spell-poster__img { transform: none !important; }
   .spell-poster__imgbox {
-    transform: translate(-6px, -12px);
+    display: grid;
+    place-items: center;
+    aspect-ratio: 1 / 1;
+    width: clamp(120px, 82%, 200px);
+    margin: -14px auto 0; /* raise image */
   }
+  .spell-poster__img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: center center;
+    display: block;
+  }
+}
+
+/* Desktop/Tablet: nudge poster art slightly left for optical balance */
+@media (min-width: 561px) {
+  .spell-card--poster .spell-poster__imgbox { transform: translateX(-6px); }
 }
 
 /* ---------------------------------------
    Spells page layout + filters
 --------------------------------------- */
-
 .spells-page {
   max-width: 1200px;
   margin: 0 auto;
@@ -322,7 +333,6 @@ html:not(.theme-dark) .spell-card:hover {
 }
 .spells-scroll::-webkit-scrollbar { width: 0; height: 0; }
 
-/* Ensure nothing overflows weirdly */
 .spells-filters, .spells-filters * { box-sizing: border-box; }
 
 /* Filters (non-sticky) */
@@ -391,7 +401,6 @@ html:not(.theme-dark) .spell-card:hover {
   transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
 }
 .spell-input::placeholder { opacity: .7; }
-
 .spell-input:focus, .spell-select:focus, .pillbox:focus {
   border-color: color-mix(in oklch, var(--accent-color) 60%, var(--border));
   box-shadow: 0 0 0 3px color-mix(in oklch, var(--accent-color) 25%, transparent);
@@ -565,10 +574,7 @@ html:not(.theme-dark) .spell-card:hover {
 }
 
 .spell-modal__desc, .spell-modal__sub { color: var(--app-text); }
-.spell-modal__desc {
-  white-space: pre-line;
-  line-height: 1.6;
-}
+.spell-modal__desc { white-space: pre-line; line-height: 1.6; }
 .spell-modal__chips { margin-top: 14px; display: grid; gap: 8px; }
 .chiprow { display:flex; flex-wrap: wrap; gap: 6px; align-items: center; }
 .chipcap { font-weight: 700; color: var(--muted); margin-right: 2px; }
@@ -752,29 +758,13 @@ html:not(.theme-dark) .spell-card:hover {
 }
 html, body, .spells-page { overscroll-behavior-x: none; }
 
-/* Lower the spell name on mobile cards (balanced with image shift) */
-@media (max-width: 560px) {
-  .spell-poster__title {
-    margin-top: 8px;
-    min-height: calc(2 * 1.1em);
-    line-height: 1.1;
-  }
-}
-
-/* Fine-tune mobile image positioning (alt nudge) */
-@media (max-width: 560px) {
-  .spell-poster__imgbox { transform: translate(-20px, -4px); }
-}
-
 /* iOS focus-zoom fix: keep inputs >=16px on phones */
 @media (max-width: 560px) {
   .spell-input,
   .spell-select,
   .dropdown__panel input,
   .dropdown__panel select,
-  textarea {
-    font-size: 16px !important;
-  }
+  textarea { font-size: 16px !important; }
 }
 
 /* ================================
@@ -893,98 +883,98 @@ html:not(.theme-dark) .statblock {
   --sb-link: color-mix(in oklch, var(--accent-color) 85%, #0b63d8);
   --sb-shadow: 0 8px 20px rgba(16, 24, 40, .10);
 }
-/* Optional knobs */
-:root {
-  --card-min: 260px;     /* desktop/tablet minimum */
-  --card-min-sm: 160px;  /* mobile minimum */
+/* =========================================
+   Uniform card art size (poster cards)
+   ========================================= */
+
+/* One knob to rule them all */
+:root { --card-art-size: 200px; }           /* desktop/tablet */
+@media (max-width: 560px) {
+  :root { --card-art-size: 150px; }         /* phones */
 }
 
-/* Grid: 4-up with a minimum width per track */
-.spell-grid {
+/* Fixed square box for every card image */
+.spell-card--poster .spell-poster__imgbox {
+  width: var(--card-art-size);
+  height: var(--card-art-size);
+  aspect-ratio: 1 / 1;                      /* reserve space, prevent layout shift */
+  margin: 0 auto;                           /* center in card */
   display: grid;
-  gap: var(--grid-gap, 16px);
-  grid-template-columns: repeat(4, minmax(var(--card-min), 1fr));
-  padding-bottom: 60px;
-  margin-top: 16px;
+  place-items: center;
+  background: transparent !important;       /* ensure no tiles/borders */
+  border: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;               /* remove previous nudges */
 }
 
-/* Mobile: 2-up with its own minimum */
+/* Image always fills the box, but keeps its aspect */
+.spell-card--poster .spell-poster__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;                       /* letterbox if needed, no cropping */
+  object-position: center center;
+  display: block;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+/* =========================================
+   Make all poster cards the same height
+   by fixing the title area height
+   ========================================= */
+
+/* Tunables */
+:root {
+  --poster-title-lines: 2;        /* how many lines to allow */
+  --poster-title-lh: 1.15;        /* line-height for title */
+  --poster-title-fs: 1.05rem;     /* desktop title font-size */
+}
 @media (max-width: 560px) {
-  .spell-grid {
-    grid-template-columns: repeat(2, minmax(var(--card-min-sm), 1fr));
-    gap: 8px;
+  :root {
+    --poster-title-lines: 2;
+    --poster-title-lh: 1.10;
+    --poster-title-fs: 0.95rem;   /* slightly smaller on phones */
   }
 }
-/* ===== Mobile poster image centering & sizing ===== */
-@media (max-width: 560px) {
-  /* Square card face */
-  .spell-card--poster {
-    aspect-ratio: 1 / 1;
-  }
 
-  /* Center the whole face */
-  .spell-poster {
-    grid-template-rows: auto 1fr;   /* title + image area */
-    align-items: center;
-    justify-items: center;
-    padding: 10px;
-    row-gap: 8px;
-    text-align: center;
-  }
-
-  /* Kill any old mobile nudges that offset the art */
-  .spell-poster__imgbox,
-  .spell-poster__img {
-    transform: none !important;
-  }
-
-  /* Center the image container and keep it square */
-  .spell-poster__imgbox {
-    display: grid;
-    place-items: center;
-    margin: 0 auto;
-    aspect-ratio: 1 / 1;
-
-    /* Shrinks on narrow phones, but won’t get silly-small */
-    width: clamp(120px, 82%, 200px);
-  }
-
-  /* Image always centered & contained */
-  .spell-poster__img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    object-position: center center;
-    display: block;
-  }
-
-  /* Keep the title tidy above the art */
-  .spell-poster__title {
-    margin-top: 6px;
-    line-height: 1.1;
-    font-size: 0.95rem;   /* adjust if you want a bit bigger/smaller */
-  }
+/* The poster face uses two fixed rows: title (fixed height) + image (fills) */
+.spell-card--poster .spell-poster {
+  display: grid;
+  grid-template-rows:
+    calc(var(--poster-title-lines) * var(--poster-title-lh) * 1em)
+    1fr;
+  align-items: center;
+  justify-items: center;
 }
-/* ===== Mobile: nudge poster art upward a touch ===== */
-@media (max-width: 560px) {
-  /* small, safe upward nudge */
-  .spell-poster__imgbox {
-    margin-top: -14px;            /* raise image slightly */
-  }
 
-  /* tighten spacing so the shift looks intentional */
-  .spell-poster {
-    row-gap: 2px;                 /* was 8px */
-  }
+/* Title: clamp to N lines and *reserve* exactly that much height */
+.spell-card--poster .spell-poster__title {
+  margin: 6px 8px 0;                /* consistent spacing */
+  font-size: var(--poster-title-fs);
+  line-height: var(--poster-title-lh);
 
-  /* keep the title tidy (no extra bottom gap) */
-  .spell-poster__title {
-    margin-bottom: 0;
-  }
+  /* reserve the space so heights don’t change with longer names */
+  min-height: calc(var(--poster-title-lines) * var(--poster-title-lh) * 1em);
+  max-height: calc(var(--poster-title-lines) * var(--poster-title-lh) * 1em);
+
+  /* clamp + ellipsis */
+  display: -webkit-box;
+  -webkit-line-clamp: var(--poster-title-lines);
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  /* friendlier wrapping for very long words */
+  word-break: break-word;
+  hyphens: auto;
 }
-/* ===== Desktop/Tablet: nudge poster art slightly left ===== */
-@media (min-width: 561px) {
-  .spell-card--poster .spell-poster__imgbox {
-    transform: translateX(-4px);   /* tweak: -4px (subtle) … -12px (bolder) */
-  }
-}
+
+/* (Optional) If you want a very strict, identical outer height too,
+   you can set a fixed card height after the title/art are fixed.
+   Usually not needed, but here it is:
+
+:root { --poster-card-height: 340px; }
+.spell-card--poster { height: var(--poster-card-height); }
+@media (max-width:560px) { .spell-card--poster { --poster-card-height: 300px; } }
+
+*/
