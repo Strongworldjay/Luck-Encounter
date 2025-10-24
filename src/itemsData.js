@@ -17,7 +17,7 @@ export const itemNames = {
             "Helm of the Broken Dragon", "Helm of the Lichfiend", "Helm of the Platinum Dragon", "Helm of the Ruby Dragon", "Crown of Temporal Paralysis", "Scorch Helm (Very Rare)", "Skull Helm", "Watchful Helm", "Deathly Diadem", "Unicorn Diadem"
         ],
         Legendary: [
-            "Black Dragon Mask", "Blue Dragon Mask", "Green Dragon Mask", "Iron Maiden Mask", "Jester's Mask", "Mask of the Bloodshot Marauder",
+            "Black Dragon Mask", "Blue Dragon Mask", "Green Dragon Mask", "Iron Maiden's Prison", "Jester's Mask", "Mask of the Bloodshot Marauder",
             "Mask of the Pied Piper", "Aetherstep, the Winged Helm of Hermes", "Helm of Unseen Sovereignty", "Herald’s Visage", "Masks of the Sacred Beasts (Jackal)", "Red Dragon Mask", "White Dragon Mask",
             "Belashyrra's Beholder Crown", "Crown of Storms", "Crown of Westemär", "Lost Crown of Besilmer", "Circlet of Barbed Vision (Dormant)", "Helm of Disjunction", "Helm of the Justicars", "Helm of the Scavenger"
         ],
@@ -49,7 +49,7 @@ export const itemNames = {
             "Splint Armor of Vulnerability (Piercing)", "Splint Armor of Vulnerability (Slashing)", "Splint, +1", "Splinterguard", "Vainglorious Ring Mail Armor", "Warden's Chain Mail Armor", "Warden's Ring Mail Armor", "Warden's Splint Armor"
         ],
         VeryRare: ["Antimagic Armor, Chain Mail", "Antimagic Armor, Splint", "Antimagic Armor, Plate", "Antimagic Armor, Ring Mail", "Armor of Safeguarding, Chain Mail", "Armor of Safeguarding, Ring Mail", "Armor of Safeguarding, Splint", "Armor of Safeguarding, Plate",
-            "Brazen Armor", "Chain Mail, +2", "Demon Chain Mail", "Demon Plate Armor", "Demon Ring Mail", "Demon Splint Armor", "Hazewalker Plate", "Impact Plate", "Iron Maiden Plate", "Ironleaf Plate", "Last Stand Armor, Chain Mail", "Last Stand Armor, Plate", "Last Stand Armor, Splint",
+            "Brazen Armor", "Chain Mail, +2", "Demon Chain Mail", "Demon Plate Armor", "Demon Ring Mail", "Demon Splint Armor", "Hazewalker Plate", "Impact Plate", "Iron Maiden's Restraint", "Ironleaf Plate", "Last Stand Armor, Chain Mail", "Last Stand Armor, Plate", "Last Stand Armor, Splint",
             "Living Armor, Chain Mail", "Living Armor, Plate", "Living Armor, Ring Mail", "Living Armor, Splint", "Novanite Chain Mail Armor", "Novanite Plate Armor", "Novanite Ring Mail Armor", "Novanite Splint Armor", "Plate, +2", "Ring Mail. +2", "Solacesteel Plate", "Splint, +2"
         ],
         Legendary: ["Armor of Invulnerability", "Armor of the Sun & Stars", "Forgeplate of the Eternal Smith", "Obsidian Flint Dragon Plate", "Plate Armor of Etherealness",
@@ -59,11 +59,11 @@ export const itemNames = {
     },
     LightArmor: {
         Common: ["Freerunner's Leather Armor", "Freerunner's Studded Leather Armor", "Smoldering Armor, Leather", "Smoldering Armor, Studded Leather"],
-        Uncommon: ["Emberthread Battlegarb", "Fey-Touched Leather", "Fey-Touched Studded Leather", "Mariner's Leather Armor", "Mariner's Studded Leather Armor", "Owlbear Leather Armor",
+        Uncommon: ["Emberthread Battlegarb", "Raven Rock Shadowcoat", "Fey-Touched Leather", "Fey-Touched Studded Leather", "Mariner's Leather Armor", "Mariner's Studded Leather Armor", "Owlbear Leather Armor",
             "Sagittarian Leather Vestments", "Sagittarian Studded Leather Vestments", "Venombane Leather Armor"
         ],
         Rare: ["Captain's Pride Leather", "Captain's Pride Studded Leather", "Feywrought Armor, Leather", "Feywrought Armor, Studded Leather", "Glamoured Studded Leather", "Gloomwrought Armor, Leather", "Tunic of Thunderous Might",
-            "Gloomwrought Armor, Studded Leather", "Leather Armor of Vulnerability (Bludgeoning)", "Leather Armor of Vulnerability (Piercing)", "Leather Armor of Vulnerability (Slashing)", "Leather Golem Armor",
+            "Gloomwrought Armor, Studded Leather","Midnight Vambrace-Cuirass", "Leather Armor of Vulnerability (Bludgeoning)", "Leather Armor of Vulnerability (Piercing)", "Leather Armor of Vulnerability (Slashing)", "Leather Golem Armor",
             "Leather, +1", "Mistwalker Leather Armor", "Moonswaddled Leather Armor", "Moonswaddled Padded Leather Armor", "Moonswaddled Studded Leather Armor", "Myceliaweave Leather Armor", "Myceliaweave Studded Leather Armor",
             "Poison Leather Armor of Amphibios", "Poison Padded Leather Armor of Amphibios", "Poison Studded Leather armor of Amphibios", "Tundra Titan Leather", "Zephyr Armor, Leather", "Zephyr Armor, Studded Leather", "Studded Leather, +1"
         ],
@@ -82,17 +82,17 @@ export const itemNames = {
         Rare: ["Chain Shirt of the Last Vigil", "Breastplate of Sunken King", "Half Plate of Sunken King", "Armor of Acid Resistance, Breastplate", "Armor of Cold Resistance, Breastplate",
             "Armor of Acid Resistance, Half Plate", "Armor of Cold Resistance, Half Plate", "Armor of Fire Resistance, Half Plate", "Armor of Force Resistance, Half Plate", "Armor of Lightning Resistance, Half Plate",
             "Armor of Necrotic Resistance, Half Plate", "Armor of Poison Resistance, Half Plate", "Armor of Psychic Resistance, Half Plate", "Armor of Radiant Resistance, Half Plate", "Armor of Thunder Resistance, Half Plate", "Armor of Fire Resistance, Breastplate", "Armor of Force Resistance, Breastplate", "Masterwork Scale Mail", "Armor of Lightning Resistance, Breastplate",
-            "Armor of Necrotic Resistance, Breastplate", "Armor of Poison Resistance, Breastplate", "Armor of Psychic Resistance, Breastplate", "Armor of Radiant Resistance, Breastplate", "Armor of Thunder Resistance, Breastplate", "Breastplate of Balance", "Breastplate of Vulnerability (Bludgeoning)",
+            "Hauberk of the Pirate King", "Armor of Necrotic Resistance, Breastplate", "Armor of Poison Resistance, Breastplate", "Armor of Psychic Resistance, Breastplate", "Armor of Radiant Resistance, Breastplate", "Armor of Thunder Resistance, Breastplate", "Breastplate of Balance", "Breastplate of Vulnerability (Bludgeoning)",
             "Breastplate of Vulnerability (Piercing)", "Breastplate of Vulnerability (Slashing)", "Breastplate of the Morning Light", "Breastplate, +1", "Feywrought Armor, Breastplate", "Gloomwrought Armor, Breastplate",
             "Mizzium Armor, Breastplate", "Molten Bronze Skin, Breastplate", "Scorned Heart Breastplate", "Spiritwalker Breastplate", "Feywrought Armor, Hide", "Fused Chimeric Hide", "Gloomwrought Armor, Hide", "Hide Armor of Vulnerability (Bludgeoning)", "Hide Armor of Vulnerability (Piercing)",
             "Hide Armor of Vulnerability (Slashing)", "Hide, +1", "Myceliaweave Hide Armor", "Tundra Titan Hide", "Feywrought Armor, Half Plate", "Gloomwrought Armor, Half Plate", "Half Plate Armor of Vulnerability (Bludgeoning)", "Half Plate Armor of Vulnerability (Piercing)", "Half Plate Armor of Vulnerability (Slashing)",
             "Half Plate, +1", "Mithral Half Plate, +1", "Mizzium Armor, Half Plate", "Molten Bronze Skin, Half Plate", "Windswept Wyvern Half Plate"
         ],
         VeryRare: ["Antimagic Armor, Breastplate", "Blue Vanguard’s Glory Breastplate", "Breastplate, +2", "Demon Breastplate", "Last Stand Armor, Breastplate",
-            "Living Armor, Breastplate", "Novanite Breastplate Armor", "Phoenix Breastplate", "Ruidium Breastplate", "Time Warden Breastplate", "Winter's Embrace Breastplate", "Yellow Harbinger’s Path Breastplate", "Antimagic Armor, Hide", "Cloudkept Hide Armor", "Demon Hide Armor", "Grand Wolf's Hide", "Hide, +2", "Last Stand Armor, Hide", "Living Armor, Hide", "Yellow Harbinger's Path Hide",
+           "Judgment Cuirass", "Living Armor, Breastplate", "Novanite Breastplate Armor", "Phoenix Breastplate", "Ruidium Breastplate", "Time Warden Breastplate", "Winter's Embrace Breastplate", "Yellow Harbinger’s Path Breastplate", "Antimagic Armor, Hide", "Cloudkept Hide Armor", "Demon Hide Armor", "Grand Wolf's Hide", "Hide, +2", "Last Stand Armor, Hide", "Living Armor, Hide", "Yellow Harbinger's Path Hide",
             "Antimagic Armor, Half Plate", "Blue Vanguard's Glory Half Plate", "Demon Half Plate Armor", "Dwarven Half Plate", "Half Plate, +2", "Last Stand Armor, Half Plate", "Living Armor, Half Plate", "Novanite Half Plate Armor", "Yellow Harbinger's Path Half Plate"
         ],
-        Legendary: ["Breastplate, +3", "Stonebreaker's Breastplate", "Hide of the Feral Guardian (Dormant)", "Armor of the Valiant Soul (Dormant)", "Hide, +3", "Elegant-Resilience Half Plate", "Half Plate Armor of Etherealness", "Half Plate of the Blind Martyr", "Half Plate, +3", "Mourningsteel Half Plate", "Starmetal Nova Half Plate Armor",
+        Legendary: ["Forsworn Relic-Cuirass","Breastplate, +3", "Stonebreaker's Breastplate", "Hide of the Feral Guardian (Dormant)", "Armor of the Valiant Soul (Dormant)", "Hide, +3", "Elegant-Resilience Half Plate", "Half Plate Armor of Etherealness", "Half Plate of the Blind Martyr", "Half Plate, +3", "Mourningsteel Half Plate", "Starmetal Nova Half Plate Armor",
 
         ],
         Unique: []
@@ -172,10 +172,10 @@ export const itemNames = {
             "Eldritch Scarf", "Elemental Essence Shard, Air", "Elemental Essence Shard, Earth", "Elemental Essence Shard, Fire", "Elemental Essence Shard, Water", "Everglacier Prosethesis", "Faeflame torch", "Faithful Hound's Toy", "Far Realm Shard", "Fate Dealer's Deck, +1", "Feather of Diatryma Summoning ", "Ferryman's Take", "Figurine of Wondrous Power (Bronze Griffon)", "Figuring of Wondrous Power (Ebony Fly)", "Figurine of Wondrous Power (Golden Lions)", "Figurine of Wondrous Power (Ivory Goats)",
             "Figuring of Wondrous Power (Marble Elephant)", "Figuring of Wondrous Power (Onyx Dog)", "Figurine of Wondrous Power (Serpnetine Owl)", "Fire Stone", "Flamefriend Lantern", "Flying Chariot", "Folding Boat", "Foo-Lion Vestment", "Galder's Bubble Pipe", "Gavel of the Venn Rune", "Ghost Lantern", "Gibber Box", "Glowrune Pigment", "Golem Sapper", "Grave Trodders", "Green Chromatic Rose",
             "Heyward's Handy Haversack", "Heavenly Chalice", "Hero's Goblet", "High Standard Banner (Dormant)", "Hoarder's Haul", "Homeroot", "Hook of Fisher's Delight", "Horatio's Impossible Ship in a Bottle", "Horn of Blasting", "Horn of Valhalla (Bronze)", "Horn of Valhalla (Silver)", "Horn of the Endless Maze", "Horseshoes of Speed", "Immoveable Cat", "Iron Bands of Bilarro", "Kinetic Bowstring",
-            "Life's Flower Restorative", "Loadstone", "Lord Commander's Badge", "Lucky Kobold's Klaw, +2", "Lunar Compass", "Lyre of Building", "Magebind Shackles", "Master Spellwoven Robes", "Meta Medallion", "Mimir", "Mirror of the Past", "Mizzium Mortar", "Monocle of Clarity", "Mosshide Troll Belt", "Mourningsteel War Banner", "Nightmare Flask",
+            "Life's Flower Restorative", "Loadstone", "Lord Commander's Badge", "Lucky Kobold's Klaw, +2", "Lunar Compass", "Lyre of Building", "Magebind Shackles", "Master Spellwoven Robes", "Meta Medallion", "Mirror of the Past", "Mizzium Mortar", "Monocle of Clarity", "Mosshide Troll Belt", "Mourningsteel War Banner", "Nightmare Flask",
             "Outer Essence Shard, Choatic", "Outer Essence Shard, Evil", "Outer Essence Shard, Good", "Outer Essence Shard, Lawful", "Overmatter Totem", "Pack of Levitation", "Pack of Revisibility Bombs", "Pearl of Wisdom Quiver",
             "Phoenix Fan", "Portable Hole", "Porting Hole", "Power Collar", "Powergem Pommel 2 Slots", "Prehistoric Figurine of Wondrous Power (Kyanite Pteranodon)", "Prized Pet Protector (Rare)", "Professor Orb",
-            "Purse Piglet", "Quaal's Feather Token (Bird)", "Quaal's Feather Token (Swan Boat)", "Quaal's Feather Token (Whip)", "Ready Gunk", "Red Chromatic Rose", "Reveler's Concertina", "Ryhtm-Maker's Drum, +2", "Rope of Entanglement", "Sands of War", "Saint Virtuvio's Phylactery", "Sash of Sorcerous Synergy", "Scaled Ornament (Stirring)", "Scarf of Snow's Sanctum", "Scissors of Shadow Snipping", "Shadow Tag",
+            "Purse Piglet", "Quaal's Feather Token (Bird)", "Quaal's Feather Token (Swan Boat)", "Quaal's Feather Token (Whip)", "Ready Gunk", "Red Chromatic Rose", "Reveler's Concertina", "Rhythm-Maker's Drum, +2", "Rope of Entanglement", "Sands of War", "Saint Virtuvio's Phylactery", "Sash of Sorcerous Synergy", "Scaled Ornament (Stirring)", "Scarf of Snow's Sanctum", "Scissors of Shadow Snipping", "Shadow Tag",
             "Shadowfell Shard", "Shard of Xeluan", "Shrieking Greaves", "Skysail", "Snugglebeast Dragon", "Soul Lamp", "Sovereignseed Satchel", "Spellforge Scabbard", "Steward's Seal", "Stone of Controlling Earth Elementals", "Thalamus Thread", "Tick Tock (Dormant)", "Voyage Collar", "War Horn of Valor", "Warhorn of the Bronze Dragon",
             "Weird tank", "White Chromatic Rose", "Wind-Up Merchant", "Wings of Flying", "Wisplight Lantern", "Wraps of Unarmed Power, +2", "Wyrmling Wristlet", "Zafu of the Wandering Mind", "Minor Housing Stone"
         ],
@@ -209,7 +209,7 @@ export const itemNames = {
             "Band of the Orator", "Ring of the Sandskimmer", "Rings of Shared Suffering", "Wailing Ring",
         ],
         Rare: ["Enchantment Breaker Ring", "Shared Burden Rings", "Ring of the Mana Font", "Focusing Band, +2", "Contingency Band", "Iron Ring", "Mageplate Ring", "Minor Ring of Invisibility", "Netherse Ring of Protection",
-            "Quick Change Ring", "Ring of Acid Resistance", "Ring of Anchoring", "Ring of Animal Influence", "Ring of Changing Shapess", "Rare Storage Ring",
+            "Graveblight Signet", "Runeborn Signet", "Quick Change Ring", "Ring of Acid Resistance", "Ring of Anchoring", "Ring of Animal Influence", "Ring of Changing Shapess", "Rare Storage Ring",
             "Ring of Cold Resistance", "Ring of Eldritch Ire", "Ring of Evasion", "Ring of Feather Falling", "Ring of Fire", "Ring of the Final Breath",
             "Ring of Fire Resistance", "Ring of Force Resistance", "Ring of Free Action", "Ring of Honor", "Ring of Lightning Resistance", "Risky Ring",
             "Ring of Misdirection", "Ring of Necrotic Resistance", "Ring of Poison Resistance", "Ring of Protection", "Ring of Psychic Resistance",
@@ -512,9 +512,9 @@ export const itemNames = {
     },
     Grimoire: {
         Common: ["Patch of the Tome", "Book of Instant Copying"],
-        Uncommon: ["Tome of Dreams", "Arcane Grimoire, +1", "Book of Clothier's Croquis", "Detective's Notebook", "Lorehold Primer", "Prismari Primer", "Quandrix Primer", "Silverquill Primer", "Witherbloom Primer", "Heart Weaver's Primer"],
-        Rare: ["Bright Idea Tome", "Insatiable Tome", "Tome of the Dragon's Hoard", "Tome of the Ethereal", "Arcane Grimoire, +2", "Atlas of Endless Horizons", "Protective Verses", "Duplicitous Manuscript"],
-        VeryRare: ["Tome of Advanced Fighting Styles", "Tome of Clear Thought", "Tome of Leadership and Influence", "Tome of Understanding", "Arcane Grimoire, +3", "Edible Book of Recipes"],
+        Uncommon: ["Tome of Dreams", "Arcane Tome, +1", "Book of Clothier's Croquis", "Detective's Notebook", "Lorehold Primer", "Prismari Primer", "Quandrix Primer", "Silverquill Primer", "Witherbloom Primer", "Heart Weaver's Primer"],
+        Rare: [ "Grimoire of the Tidal Cipher (Sealed)","Grimoire of the Blooming Veil (Sealed)","Grimoire of the Cinder Crown (Sealed)","Grimoire of the Hoarfrost Veil (Sealed)","Grimoire of the Stormwrought Sigil (Sealed)","Grimoire of the Void Lattice (Sealed)", "Grimoire of the Sundered Hour (Sealed)", "Bright Idea Tome", "Insatiable Tome", "Tome of the Dragon's Hoard", "Tome of the Ethereal", "Arcane Tome, +2", "Atlas of Endless Horizons", "Protective Verses", "Duplicitous Manuscript"],
+        VeryRare: ["Tome of Advanced Fighting Styles", "Tome of Clear Thought", "Tome of Leadership and Influence", "Tome of Understanding", "Arcane Tome, +3", "Edible Book of Recipes"],
         Legendary: ["Tome of Lost Knowledge", "Tome of The Emperors Vault", "Tome of the Stilled Tongue", "Grimoire Infinitus", "Manual of Bodily Health", "Manual of Clay Golems", "Manual of Flesh Golems",
             "Manual of Gainful Exercise", "Manual of Iron Golems", "Manual of Quickness of Action", "Manual of Stone Golems", "[Redacted]", "[Redacted]", "[Redacted]", "[Redacted]"],
         Unique: ["Book of Exalted Deeds", "Book of Vile Darkness", "Necronomicon", "[Redacted]", "[Redacted]", "[Redacted]", "[Redacted]"]
