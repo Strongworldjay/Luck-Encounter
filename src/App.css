@@ -476,3 +476,28 @@ input[type="text"] {
   }
   .filter-drawer__panel { width: min(460px, 96vw); }
 }
+:root {
+  --input-bg: #ffffff;
+  --input-fg: #111111;
+  --input-border: rgba(0,0,0,.15);
+}
+
+.theme-dark {
+  --input-bg: #111111;
+  --input-fg: #f3f3f3;
+  --input-border: rgba(255,255,255,.15);
+}
+
+/* Apply to all text inputs (and your custom classes) */
+input[type="text"],
+.spell-input {
+  background-color: var(--input-bg) !important;
+  color: var(--input-fg) !important;
+  border: 1px solid var(--input-border) !important;
+}
+
+/* Make placeholders readable too */
+input[type="text"]::placeholder,
+.spell-input::placeholder {
+  color: color-mix(in oklch, var(--input-fg) 60%, transparent);
+}
