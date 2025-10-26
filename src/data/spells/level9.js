@@ -269,13 +269,13 @@ export const LEVEL9 = [
         imagePath: spellImgUrl("psychicscream"),
     },
     {
-        slug: slugify("Sacrament of the Forbidden Flame"),
-        name: "Sacrament of the Forbidden Flame",
+        slug: slugify("Forbidden Sacrament"),
+        name: "Forbidden Sacrament",
         classes: ["Warlock", "Sorcerer", "Wizard"],
         spellLevel: 9,
         school: "Abjuration",
         castingTime: "1 hour",
-        duration: "Instantaneous (summoned fiend persists 7 days)",
+        duration: "7 Days",
         range: "150 feet",
         area: "Ritual circle; up to 26 participants",
         tags: ["Summoning", "Ritual", "Dark"],
@@ -286,10 +286,11 @@ export const LEVEL9 = [
         components: { verbal: true, somatic: true, material: true, materialText: "100 gp of chalk **per participant**" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "**Cast only within the Deep Haze.** You perform a terrible rite with up to **26 willing participants**. On completion, all participants **except you** bleed from all orifices and **erupt into flames**, their **souls consumed** (cannot be revived, not even by *wish*). You **summon a Fiend** with CR up to the **number of sacrifices**; it lasts **7 days** (cannot be dismissed). It has its normal stats **except** its **maximum HP equals the combined maximum HP** of the sacrificed. If you die—or if you/your allies intentionally harm it—the Fiend becomes **enraged** and **uncontrolled**.",
-        scalingMd: "",
-        imagePath: spellImgUrl("sacramentoftheforbiddenflame"),
+        descriptionMd:"This spell may only be cast in an area where the lives of over 100 have been lost.\n\n" +
+"You perform a holy ceremony involving up to 26 faithful and willing humanoid creatures that ends when each participating creature chants the mantra and verbal components of this spell while standing in a magical circle drawn with magical chalk.\n\n" +
+"When you finish casting this spell, all the participants other than yourself begin to bleed from all orifices and eventually erupt into flames, their souls consumed and unable to be revived—not even by the Wish spell. You summon a Fiend with a Challenge Rating equal to the number of sacrifices made. This creature lasts for 7 days or until it is killed and cannot be dismissed. It retains all the original stats of the summoned creature, except its total maximum Hit Points become equal to the combined maximum Hit Points of all the sacrificed creatures.\n\n" +
+"If the summoner is killed, or if the summoner or their allies intentionally inflict harm upon the summoned devil, it becomes enraged and is no longer under control.",
+  scalingMd: "",
     },
     {
         slug: slugify("Astral Projection"),

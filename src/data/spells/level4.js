@@ -230,7 +230,10 @@ export const LEVEL4 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a dagger encrusted in jewels worth 100+ gp" },
         concentration: false,
         ritual: false,
-        descriptionMd: "As part of casting, expend four Hit Dice or the spell fails. Make a melee spell attack against a creature within 5 feet using the material component. On a hit, roll the expended Hit Dice + 4d8; the target takes Necrotic damage equal to the total. If this reduces the creature to 0 HP, it dies and you gain one dark blessing of your choice: **Unassailable** (Advantage on all saving throws); **Unbreakable** (size increases by one category, you gain Temporary HP equal to your CON modifier at the start of each of your turns, and your weapon attacks deal +1d4 damage); or **Unerring** (your Proficiency Bonus increases by 2). While blessed, when you take Radiant damage, you take an extra 1d4 Radiant damage. The blessing ends after 10 minutes or when you drop to 0 HP (whichever comes first).",
+        descriptionMd: "As part of casting this spell, you must expend four Hit Point Dice or the spell automatically fails. Make a melee spell attack against a creature within 5 feet using the Material component of this spell. On a hit, roll the Hit Point Dice expended to cast the spell plus 4d8. You deal Necrotic damage equal to the roll’s total. If this damage causes the creature to be reduced to 0 Hit Points, it immediately dies and you gain one of the following dark blessings of your choice. When you take Radiant damage while you have a dark blessing, you take an extra 1d4 Radiant damage.\n\n" +
+            "**Unassailable.** You have Advantage on all saving throws.\n\n" +
+            "**Unbreakable.** Your size increases by one category (from Medium to Large, for example), you gain a number of Temporary Hit Points equal to your Constitution modifier (minimum 1) at the start of each of your turns, and your weapon attacks deal an extra 1d4 damage.\n\n" +
+            "**Unerring.** Your Proficiency Bonus increases by 2. Your dark blessing ends after 10 minutes or when you are reduced to 0 Hit Points, whichever happens first.",
         scalingMd: "**Using a Higher-Level Spell Slot.** The initial damage increases by 1d8 for each slot level above 4th.",
         imagePath: spellImgUrl("darksacrament")
     },
@@ -318,7 +321,72 @@ export const LEVEL4 = [
         components: { verbal: true, somatic: true, material: false, materialText: "" },
         concentration: false,
         ritual: false,
-        descriptionMd: "You summon a majestic otherworldly steed in an unoccupied space within range, using the **Greater Otherworldly Steed** stat block. Choose the steed’s creature type (Celestial, Fey, or Fiend). It shares your initiative and functions as a controlled mount while you ride it; if you are Incapacitated, it acts immediately after you to protect you. The steed disappears at 0 HP or when you die, leaving worn/carried items. Casting this again replaces the prior steed.",
+        descriptionMd: "You summon a majestic otherworldly being that takes the form of a superior, loyal steed. It appears in an unoccupied space within range and uses the Greater Otherworldly Steed stat block. If you already have a steed from this spell, the previous one vanishes and is replaced.\n\n" +
+            "The steed resembles a Large, rideable beast such as a griffon, dire lion, celestial stag, or even a draconic creature. You choose the steed’s creature type—Celestial, Fey, or Fiend—when casting the spell, which determines certain traits in the stat block.\n\n" +
+            "**Combat.** The steed is an ally to you and your allies. In combat, it shares your Initiative count, and it functions as a controlled mount while you ride it (as defined in the rules on mounted combat). If you have the Incapacitated condition, the steed takes its turn immediately after yours and acts independently, focusing on protecting you.\n\n" +
+            "**Disappearance of the Steed.** The steed disappears if it drops to 0 Hit Points or if you die. When it disappears, it leaves behind anything it was wearing or carrying. If you cast this spell again, you decide whether you summon the steed that disappeared or a different one.",
+        statblockHtml: `
+  <div class="statblock">
+    <h2>GREATER OTHERWORLDLY STEED</h2>
+    <hr>
+    <p><em>Large Celestial, Fey, or Fiend (your choice), Unaligned</em></p>
+
+    <p>
+      <strong>AC</strong> 13 + the level of the spell (natural armor)<br>
+      <strong>HP</strong> 35 + 15 × the level of the spell<br>
+      <strong>Speed</strong> 80 ft.; Fly 80 ft.<br>
+      <strong>Initiative</strong> +2
+    </p>
+
+    <table>
+      <thead>
+        <tr><th></th><th>MOD</th><th>SAVE</th><th></th><th>MOD</th><th>SAVE</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>STR</strong> 22</td><td>+6</td><td>+6</td>
+          <td><strong>INT</strong> 8</td><td>−1</td><td>−1</td>
+        </tr>
+        <tr>
+          <td><strong>DEX</strong> 14</td><td>+2</td><td>+2</td>
+          <td><strong>WIS</strong> 14</td><td>+2</td><td>+2</td>
+        </tr>
+        <tr>
+          <td><strong>CON</strong> 18</td><td>+4</td><td>+4</td>
+          <td><strong>CHA</strong> 10</td><td>+0</td><td>+0</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      <strong>Damage Immunities</strong> —<br>
+      <strong>Senses</strong> <a href="#">Darkvision</a> 60 ft., <a href="#">Tremorsense</a> 30 ft. <em>(burrower only)</em>; Passive Perception 13<br>
+      <strong>Languages</strong> Understands the languages you speak<br>
+      <strong>Challenge</strong> — Proficiency Bonus equals your bonus
+    </p>
+
+    <hr>
+
+    <h3>Traits</h3>
+    <p><strong>Greater Life Bond.</strong> When you regain HP from a spell of 1st level or higher, the steed regains the same number of HP if it’s within 30 feet of you.</p>
+    <p><strong>Magic Resistance.</strong> The steed has Advantage on saving throws against spells and other magical effects.</p>
+    <p><strong>Surefooted Mount.</strong> The steed has Advantage on saving throws against being knocked Prone. While mounted, you cannot be dismounted except by magic or by falling Unconscious.</p>
+
+    <h3>Actions</h3>
+    <p><strong>Mythic Slam.</strong> <em>Melee weapon attack:</em> your spell attack modifier, reach 5 ft., one target.
+       <em>Hit:</em> 2d10 + PB Force damage + 1d10 of the origin type — Radiant <em>(Celestial)</em>, Psychic <em>(Fey)</em>, or Necrotic <em>(Fiend)</em>.</p>
+
+    <h3>Bonus Actions</h3>
+    <p><strong>Celestial Surge (Celestial only; Recharge after a Long Rest).</strong>
+       The steed heals itself or a creature within 10 feet for 4d8 + your spellcasting modifier HP.</p>
+
+    <p><strong>Fey Step (Fey only; Recharge 5–6).</strong>
+       The steed teleports itself and its rider up to 90 feet to an unoccupied space it can see.</p>
+
+    <p><strong>Fiendish Roar (Fiend only; Recharge 5–6).</strong>
+       Each creature of your choice within 30 feet must succeed on a Wisdom saving throw (DC = your spell save DC) or become Frightened until the end of your next turn.</p>
+  </div>
+`,
         scalingMd: "**Using a Higher-Level Spell Slot.** Use the higher slot level wherever the spell’s level appears in the stat block.",
         imagePath: spellImgUrl("findgreatersteed")
     },

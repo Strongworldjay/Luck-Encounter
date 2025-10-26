@@ -978,3 +978,21 @@ html:not(.theme-dark) .statblock {
 @media (max-width:560px) { .spell-card--poster { --poster-card-height: 300px; } }
 
 */
+@supports (-webkit-touch-callout: none) {
+  input,
+  select,
+  textarea,
+  .spell-input,
+  .spell-select,
+  .dropdown__panel input,
+  .dropdown__panel select {
+    font-size: 16px !important;   /* iOS won’t zoom if >=16px */
+    line-height: 1.2;             /* avoid cramped caret line box */
+  }
+
+  /* Make sure placeholders inherit the 16px too */
+  input::placeholder,
+  textarea::placeholder {
+    font-size: inherit;
+  }
+}
