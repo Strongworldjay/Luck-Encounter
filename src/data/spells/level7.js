@@ -201,10 +201,9 @@ export const LEVEL7 = [
         components: { verbal: true, somatic: true, material: true, materialText: "bone powder" },
         concentration: false,
         ritual: false,
-        descriptionMd: "With a touch, you revive a dead creature that has been dead for no more than a century, didn’t die of old age, and wasn’t Undead when it died.\n\n" +
-            "The creature returns to life with all its Hit Points. This spell also neutralizes any poisons that affected the creature at the time of death. This spell closes all mortal wounds and restores any missing body parts.\n\n" +
-            "Coming back from the dead is an ordeal. The target takes a −4 penalty to D20 Tests. Every time the target finishes a Long Rest, the penalty is reduced by 1 until it becomes 0.\n\n" +
-            "Casting this spell to revive a creature that has been dead for 365 days or longer taxes you. Until you finish a Long Rest, you can’t cast spells again, and you have Disadvantage on D20 Tests.",
+        descriptionMd: "You target one creature within range. It must succeed on a Strength saving throw or be trapped in a field of gravity that compresses it and forces it to fold in on itself.\n\n" +
+            "**On a failed save.** The target takes 12d10 Bludgeoning damage, falls Prone, and its Speed is reduced to 0 until the start of your next turn as it reels from the pain.\n\n" +
+            "**On a successful save.** The target takes half as much damage and no additional effects.",
         scalingMd: "**Using a Higher-Level Spell Slot.** Target one additional creature within range for each slot level above 7th.",
         imagePath: spellImgUrl("crush")
     },
@@ -381,8 +380,8 @@ export const LEVEL7 = [
         concentration: false,
         ritual: false,
         descriptionMd: "You crystalize your foe’s blood into razor darts that burst forth to strike your enemies. As part of casting this spell, you must expend seven Hit Point Dice or the spell automatically fails. Roll the Hit Point Dice expended to cast the spell. Choose a creature that you can see within range. The target takes Piercing damage equal to the roll. When a creature takes this damage, seven crimson darts burst from it.\n\n" +
-"You can direct each dart to hit a creature within 60 feet of the original target. The darts all strike simultaneously, and you can direct them to hit one creature or several, including the original target. For each dart, make a ranged spell attack against the chosen creature. On a hit, roll one Hit Point Dice expended to cast the spell, and the creature takes Piercing damage equal to the number rolled.",
-  scalingMd: "**Using a Higher-Level Spell Slot.** For each slot level above 7th, you can expend an additional Hit Die and create an extra dart.",
+            "You can direct each dart to hit a creature within 60 feet of the original target. The darts all strike simultaneously, and you can direct them to hit one creature or several, including the original target. For each dart, make a ranged spell attack against the chosen creature. On a hit, roll one Hit Point Dice expended to cast the spell, and the creature takes Piercing damage equal to the number rolled.",
+        scalingMd: "**Using a Higher-Level Spell Slot.** For each slot level above 7th, you can expend an additional Hit Die and create an extra dart.",
         imagePath: spellImgUrl("sanguinefusillade"),
     },
     {
@@ -457,7 +456,6 @@ export const LEVEL7 = [
             "When the bead explodes, flammable objects in the explosion that aren’t being worn or carried start burning.",
         scalingMd:
             "**Using a Higher-Level Spell Slot.** Base damage increases by **1d6** per slot level above 7.",
-        imagePath: spellImgUrl("delayedblastfireball")
     },
     {
         slug: slugify("Divine Word"),

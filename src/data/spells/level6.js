@@ -835,7 +835,7 @@ export const LEVEL6 = [
         descriptionMd:
             "Touch a **sapphire** and an **object** (≤10 lb, ≤6 ft longest dimension). The object gains an **Invisible mark** and its **name** is inscribed on the sapphire. Later, take a **Magic action** to speak the name and **crush the sapphire**: the object appears in your hand **regardless of distance or plane**, and the spell ends. If another creature is holding/carrying the object, you instead learn **who** and **where** it is.",
         scalingMd: "",
-        imagePath: spellImgUrl("drawmijsinstantsummons")
+        imagePath: spellImgUrl("instantsummon")
     },
     {
         slug: slugify("Eyebite"),
