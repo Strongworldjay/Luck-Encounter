@@ -430,7 +430,10 @@ export const LEVEL4 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a Gaming Set" },
         concentration: false,
         ritual: true,
-        descriptionMd: "You compel a creature that can hear and understand you to play a nonmagical game with high stakes. An unwilling target makes a Wisdom save or is compelled to join. **Loser takes 6d6 Psychic**; if no one wins by the end of the duration, **both** take the damage. If you or your allies harm the target, you **forfeit**; if the target or its allies harm you, **they** forfeit. You and the target may **negotiate additional stakes** (up to **12d6** Psychic, currency, property, titles, etc.). The spell reveals impossible bets; agreed material stakes **teleport** to the winner; the loser is magically compelled to carry out nonmaterial stakes. **No magic or creatures** other than the two of you can influence the game’s outcome.",
+        descriptionMd: "You magically compel a creature within range that can hear and understand you to a nonmagical game with vital consequences. An unwilling creature must succeed on a Wisdom saving throw or be compelled to join you in the game.\n\n" +
+            "The loser of the game takes 6d6 Psychic damage. If no player has won or lost by the end of the spell’s duration, both you and the target take this damage. If you or one of your allies harms the target, you forfeit the game, and vice versa if the target or one of its allies harms you.\n\n" +
+            "Additionally, you and the target creature can negotiate for greater stakes. You can wager for higher Psychic damage (up to a maximum of 12d6), currency, property, or more esoteric rewards, such as bestowal of a noble title. The spell reveals if a creature attempts to place a bet it can’t fulfill. A bet is finalized when you and the target agree on the bet, solidifying the bet with a handshake or similar gesture. Property or currency bet on the game is teleported to the winner at the game’s conclusion. The loser is also magically compelled to take any action (such as bestowing a noble title) wagered as part of a bet.\n\n" +
+            "Lastly, no spell, magical effect, or creature other than you and the target can influence the game’s outcome.",
         scalingMd: "",
         imagePath: spellImgUrl("gameoffate")
     },
@@ -474,7 +477,7 @@ export const LEVEL4 = [
         components: { verbal: true, somatic: true, material: false, materialText: "" },
         concentration: true,
         ritual: false,
-        descriptionMd: "You raise a wall of intense gravity. Its space is **difficult terrain**. **Ranged weapon attacks** that pass through the wall **automatically fail**; other ranged attacks have **Disadvantage**. A creature trying to pass through must make a STR save or take **4d8 Bludgeoning** and fall **Prone** (half and not Prone on a success).",
+        descriptionMd: "You create a wall of increased gravity on the ground at a point you can see within range. You can make the wall up to 30 feet long, 10 feet high, and 1 foot thick, or you can make a ringed wall up to 20 feet in diameter, 20 feet high, and 1 foot thick. The wall vanishes when the spell ends. The wall’s space is difficult terrain. Any ranged weapon attack that passes through the wall’s space automatically fails, and other ranged attacks have disadvantage. Any creature that tries to pass through the wall’s space must succeed on a Strength saving throw or take 4d8 bludgeoning damage and be knocked prone. On a success half as much and not knocked prone.",
         scalingMd: "",
         imagePath: spellImgUrl("gravitybarrier")
     },
@@ -496,7 +499,17 @@ export const LEVEL4 = [
         components: { verbal: true, somatic: false, material: false, materialText: "" },
         concentration: true,
         ritual: false,
-        descriptionMd: "A nature spirit transforms you. **Choose one:** **Primal Beast**—speed +10 ft; blindsight 90 ft; **Advantage** on STR-based attacks; your melee weapon attacks deal **+1d8 Force**. **Great Tree**—gain **10 temp HP** at the start of each of your turns; **Advantage** on CON saves; **Advantage** on DEX- and WIS-based attack rolls; while on the ground, terrain within **15 feet** of you is **difficult** for enemies.",
+        descriptionMd: "A nature spirit answers your call and transforms you into a powerful guardian. The transformation lasts until the spell ends. You choose one of the following forms to assume: **Primal Beast** or **Great Tree**.\n\n" +
+            "**Primal Beast.** Bestial fur covers your body, your facial features become feral, and you gain the following benefits:\n\n" +
+            "• Your walking speed increases by 10 feet.\n" +
+            "• You gain Blindsight with a range of 90 feet.\n" +
+            "• You make Strength-based attack rolls with Advantage.\n" +
+            "• Your melee weapon attacks deal an extra 1d8 Force damage on a hit.\n\n" +
+            "**Great Tree.** Your skin appears barky, leaves sprout from your hair, and you gain the following benefits:\n\n" +
+            "• You gain 10 Temporary Hit Points at the start of each of your turns.\n" +
+            "• You make Constitution saving throws with Advantage.\n" +
+            "• You make Dexterity- and Wisdom-based attack rolls with Advantage.\n" +
+            "• While you are on the ground, the ground within 15 feet of you is Difficult Terrain for your enemies.",
         scalingMd: "",
         imagePath: spellImgUrl("guardianofnature")
     },
@@ -589,8 +602,9 @@ export const LEVEL4 = [
         components: { verbal: true, somatic: true, material: false, materialText: "" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "A creature you can see must succeed on a Wisdom save or be **Charmed** for the duration. If it is already in a state of Anger (Rage, Frenzy, or similar), it has **Disadvantage** on the save. Its eyes glow red and ferocity overtakes it. On its turn it attacks a creature you mentally command; if that target is unreachable, it moves toward the nearest hostile creature (to you) and attacks. The target repeats the save at the end of each of its turns, ending the spell on a success. **Maintenance:** On later turns, you must take the **Magic action** to maintain control or the spell ends.",
+        descriptionMd: "One creature that you can see within range must succeed on a Wisdom saving throw or have the Charmed condition for the duration. The creature has Disadvantage on the saving throw if it is already in a state of Anger (such as Rage, Frenzy, or Wild Shape with an Anger feat).\n\n" +
+            "The eyes of the affected creature glow red and a sense of ferocity overtakes them. On their turn, they target a creature that the caster has mentally commanded them to attack. If the commanded target moves out of range, the Charmed creature instead moves toward the nearest hostile creature (to the caster) and makes a round of attacks. The target repeats the saving throw at the end of each of its turns, ending the spell on itself on a success.\n\n" +
+            "On your later turns, you must take the Magic action to maintain control of the target, or the spell ends.",
         scalingMd: "",
         imagePath: spellImgUrl("madnessincarnate")
     },
@@ -730,8 +744,12 @@ export const LEVEL4 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a handful of clay" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "Imbue a creature with elemental essence; it learns **Primordial** and gains one set of benefits:\n\n**Air.** Resistance to **Lightning** and **Thunder**; **fly 30 ft**.\n\n**Coldfire.** Resistance to **Cold**; as a **bonus action**, expend a Hit Die to heal (Con mod applies). If the target takes **Fire** damage, it can’t use this bonus action on its next turn.\n\n**Earth.** Advantage on saves vs being moved or **Prone**; **Tremorsense 30 ft**.\n\n**Fire.** Resistance to **Fire**; when damaged by a creature within 5 ft, you can use a **reaction** to make one melee attack.\n\n**Water.** Resistance to **Acid**; **breathe underwater** and **swim 60 ft**.",
+        descriptionMd: "When you cast this spell, grant a creature in range a portion of the power of the elementals. For the duration, the creature can speak and understand Primordial and gains additional benefits based on the element you choose when you cast the spell:\n\n" +
+            "Air. The target has Resistance to Lightning and Thunder damage. In addition, it has a Fly Speed of 30 feet.\n\n" +
+            "Coldfire. The target has Resistance to Cold damage. In addition, it can use a Bonus Action to expend a Hit Point Die, regaining a number of Hit Points equal to the number rolled plus its Constitution modifier. When the target takes Fire damage, it can’t use this Bonus Action on its next turn.\n\n" +
+            "Earth. The target has Advantage on saving throws against being moved or knocked Prone. In addition, it has Tremorsense with a range of 30 feet.\n\n" +
+            "Fire. The target has Resistance to Fire damage. In addition, when the target takes damage from a creature that is within 5 feet of it, it can take a Reaction to make one melee attack against that creature, using a weapon or an Unarmed Strike.\n\n" +
+            "Water. The target has Resistance to Acid damage. In addition, it can breathe underwater and has a Swim Speed of 60 feet.",
         scalingMd: "",
         imagePath: spellImgUrl("primordialpower"),
     },
@@ -824,8 +842,7 @@ export const LEVEL4 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a length of copper wire" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "Transform into a **bolt of lightning** and **teleport up to 60 ft** to a space you can see. Each creature within **5 ft** of the line between your start and end points makes a **DEX save**, taking **4d6 Lightning** on a failure, or half on a success.",
+        descriptionMd: "You transform yourself into a bolt of lightning and teleport up to 60 feet to an unoccupied space you can see. Each creature within 5 feet of the line created between your starting point and final destination makes a Dexterity saving throw, taking 4d6 Lightning damage on a failed save or half as much on a successful one.",
         scalingMd:
             "**Using a Higher-Level Spell Slot.** For each slot level above 4th, **+1d6** damage and **+10 ft** teleport distance.",
         imagePath: spellImgUrl("ridethelightning"),
@@ -881,8 +898,9 @@ export const LEVEL4 = [
         },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "As part of casting, **expend four Hit Dice** or the spell fails. A crimson pillar erupts. Creatures in the cylinder make a **CON save**, taking **Necrotic equal to the total of the expended Hit Dice + your casting mod** (half on success). You gain **10 temp HP** for **each creature that fails**.",
+        descriptionMd: "As part of casting this spell, you must expend four Hit Point Dice or the spell automatically fails. A crimson pillar erupts from the ground in a 20-foot-radius, 100-foot-high Cylinder centered on a point within range. Each creature within the Cylinder makes a Constitution saving throw.\n\n" +
+            "On a failed save, the creature takes Necrotic damage equal to a roll of the Hit Point Dice expended on the spell plus your spellcasting ability modifier. On a successful save, the creature takes half as much damage.\n\n" +
+            "For each creature that fails the saving throw against this spell, you gain 10 Temporary Hit Points.",
         scalingMd: "",
         imagePath: spellImgUrl("scarletcylinder"),
     },
@@ -1007,8 +1025,8 @@ export const LEVEL4 = [
         },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "Summon a **Reaper Spirit** in an unoccupied space **within 10 ft** of a target creature; that target becomes **haunted**. The spirit acts on your initiative (after you), obeys your commands, and **only attacks the haunted creature**. It disappears if it or the haunted creature drops to **0 HP**, or when the spell ends.\n\n**Reaper Spirit (summarized):** **AC 11 + spell level**, **HP 40 + 10/slot level above 4th**, **Speed 30 ft, fly 30 ft (hover)**. **Incorporeal Movement**; **Haunting Tracker** (you both sense the haunted creature’s direction & distance on the same plane). **Multiattack:** number of attacks = **half spell level (round down)**. **Reaping Scythe:** your spell attack mod to hit (with **advantage**), reach 5 ft, **1d10 + 3 + spell level Necrotic**. **Paralyzing Fear (1/day):** haunted target **WIS save** vs your DC or **Frightened (speed 0)** for 1 minute; save repeats at turn end or after taking damage.",
+        descriptionMd: "You call forth a spirit that embodies death itself. Choose a creature you can see within range. The spirit manifests in an unoccupied space that you can see within 10 feet of the target, and the target becomes haunted by the spirit. The spirit uses the Reaper Spirit stat block. The spirit disappears when it or the haunted creature is reduced to 0 Hit Points, or when the spell ends.\n\n" +
+            "The Reaper Spirit is an ally to you and your companions. In combat, the spirit shares your Initiative count, but it takes its turn immediately after yours. It obeys your verbal commands (no action required by you), but it will only attack the haunted creature. If you don’t issue the spirit any commands, it takes the Dodge action and uses its movement to avoid danger.",
         statblockHtml: `
   <div class="statblock">
     <h2>REAPER SPIRIT</h2>
@@ -1115,8 +1133,8 @@ export const LEVEL4 = [
         components: { verbal: true, somatic: true, material: false, materialText: "" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "Conjure a **magical swarm** (replenishing) in a **5-ft cube**. As a **bonus action** you move it **30 ft**. If it **enters** a creature’s space, it **stops** and **stings**: the creature takes **2d4 Piercing**, then makes a **CON save** for **2d12 Poison** on a fail.",
+        descriptionMd: "You conjure a magical swarm of flying insects that fill a 5-foot Cube within range. For the duration of the spell, the swarm is magically replenished and cannot be destroyed.\n\n" +
+            "As a Bonus Action, you can direct the swarm to move up to 30 feet. If the swarm enters another creature's space, it stops and swarms them, stinging repeatedly, and cannot be moved until the start of your next turn. The creature takes 2d4 Piercing damage and must make a Constitution saving throw, taking 2d12 Poison damage on a failed save or half as much damage on a successful one.",
         scalingMd:
             "**Using a Higher-Level Spell Slot.** **+2d4 Piercing** per slot above 4th.",
         imagePath: spellImgUrl("stingingswarm"),
@@ -1163,8 +1181,9 @@ export const LEVEL4 = [
         components: { verbal: true, somatic: true, material: false, materialText: "" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "A whirling **air sphere** forms around the target. It makes a **CON save**; on fail, it **loses 5d8 HP**, has **disadvantage on ability checks**, and **can’t speak**; on success, **half HP loss** only. Each of your turns, you may use an **action** to force another save. **Three consecutive failures**: the target is **Incapacitated** until a success or the spell ends. Creatures that **don’t breathe** are unaffected.",
+        descriptionMd: "You create a whirling sphere of air around a creature that causes them to struggle to breathe. The target must make a Constitution saving throw. On a failure, the target loses 5d8 hit points due to lack of air, has Disadvantage on all ability checks, and cannot speak. On a success, the target takes half as much damage and suffers no other effects.\n\n" +
+            "For the duration, as an action, you can force the creature to make a saving throw against this effect again. If a target fails their saving throw against this spell three times in a row, they become Incapacitated until they succeed on a save or the spell ends. If you don’t use your action to force the target to make a save, it counts as a success.\n\n" +
+            "A creature that does not need to breathe is unaffected by this spell.",
         scalingMd: "",
         imagePath: spellImgUrl("suffocate"),
     },
@@ -1215,9 +1234,9 @@ export const LEVEL4 = [
         components: { verbal: true, somatic: true, material: true, materialText: "ammo or thrown weapon (≥ 1 cp)" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "Duplicate of entry above (kept for sorting completeness). See **Storm Shot**.",
-        scalingMd: "",
+        descriptionMd: "You touch a piece of ammunition or weapon with the thrown property, imbuing it with the power of a hurricane for the duration. The first time you attack with the empowered item, it unleashes a blasting gale force, greatly empowering the shot. On a hit, the target takes an additional 4d8 damage from the attack, and is knocked backwards 30 feet. Any creature the target is knocked into by this movement takes 2d8 bludgeoning damage. On a miss, the target takes half as much damage and is not knocked back.\n\n" +
+            "Once an attack has been made with the piece of ammunition or weapon, the spell ends.",
+        scalingMd: "**Using a Higher-Level Spell Slot.** When you cast this spell using a spell slot of 5th level, the shot deals an additional 1d8 damage and the target is knocked backwards an additional 10 feet.",
         imagePath: spellImgUrl("stormshot"),
     },
     {
@@ -1330,8 +1349,11 @@ export const LEVEL4 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a droplet of water" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "Conjure a hovering **5-foot-radius** sphere of water. Creatures in the space make a Strength save. Success: ejected to the nearest space. **Huge+** auto-succeeds. Failure: **Restrained**, engulfed and beginning to **Suffocate**. A restrained target repeats the save at the end of each turn.\n\nThe sphere can hold up to **four Medium** or **one Large** creature. If overfilled, a random creature falls out **prone**. As a Magic action, move the sphere **30 feet**. On end, the sphere drops, extinguishing normal flames within 30 feet, then vanishes; restrained creatures fall **prone**."
+        descriptionMd: "You conjure up a sphere of water with a 5-foot radius at a point you can see within range. The sphere can hover but no more than 10 feet off the ground. The sphere remains for the spell’s duration.\n\n" +
+            "Any creature in the sphere’s space must make a Strength saving throw. On a successful save, a creature is ejected from that space to the nearest unoccupied space of the creature’s choice outside the sphere. A Huge or larger creature automatically succeeds on the saving throw. On a failed save, a creature is restrained by the sphere and is engulfed by the water, beginning to Suffocate. At the end of each of its turns, a restrained target can repeat the saving throw, ending the effect on itself on a success.\n\n" +
+            "The sphere can restrain as many as four Medium or smaller creatures or one Large creature. If the sphere restrains a creature that causes it to exceed this capacity, a random creature that was already restrained by the sphere falls out of it and lands prone in a space within 5 feet of it.\n\n" +
+            "As a Magic Action, you can move the sphere up to 30 feet in a straight line. If it moves over a pit, cliff, or other drop-off, it safely descends until it is hovering 10 feet above the ground. Any creature restrained by the sphere moves with it. You can ram the sphere into creatures, forcing them to make the saving throw.\n\n" +
+            "When the spell ends, the sphere falls to the ground and extinguishes all normal flames within 30 feet of it. Any creature restrained by the sphere is knocked prone in the space where it falls. The water then vanishes.",
     },
     {
         slug: slugify("Word of Despair"),
@@ -1762,8 +1784,9 @@ export const LEVEL4 = [
         components: { verbal: true, somatic: true, material: false, materialText: "" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "One **Beast** you can see must succeed on a **Wisdom** saving throw or be **Charmed** for the duration (**Advantage** if you or your allies are fighting it). Whenever the target takes damage, it repeats the save, ending the spell on a success. You have a **telepathic link** with the target on the same plane and can issue simple commands (no action required). If it completes an order and receives none, it acts to protect itself. You can command the target to take a **Reaction**, but you must use **your Reaction** to do so.",
+        descriptionMd: "One Beast you can see within range must succeed on a Wisdom saving throw or have the Charmed condition for the duration. The target has Advantage on the save if you or your allies are fighting it. Whenever the target takes damage, it repeats the save, ending the spell on itself on a success.\n\n" +
+            "You have a telepathic link with the Charmed target while the two of you are on the same plane of existence. On your turn, you can use this link to issue commands to the target (no action required), such as “Attack that creature,” “Move over there,” or “Fetch that object.” The target does its best to obey on its turn. If it completes an order and doesn’t receive further direction from you, it acts and moves as it likes, focusing on protecting itself.\n\n" +
+            "You can command the target to take a Reaction but must take your own Reaction to do so.",
         scalingMd:
             "**Using a Higher-Level Spell Slot.** Your Concentration can last longer: slot **5** (up to **10 minutes**), slot **6** (up to **1 hour**), slot **7+** (up to **8 hours**).",
         imagePath: spellImgUrl("dominatebeast")
@@ -1810,8 +1833,9 @@ export const LEVEL4 = [
         components: { verbal: true, somatic: true, material: false, materialText: "" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "Convert raw materials into products of the **same material**. Choose materials you can see within range and fabricate a **Large or smaller** object (within a **10-foot cube** or eight connected **5-foot cubes**). If working with **metal/stone/mineral**, the object can be no larger than **Medium** (**5-foot cube**). Quality matches the raw materials. You can’t create **creatures** or **magic items**, and you can’t create items that require high skill (e.g., **weapons/armor**) unless you have the relevant **Artisan’s Tools proficiency**.",
+        descriptionMd: "You convert raw materials into products of the same material. For example, you can fabricate a wooden bridge from a clump of trees, a rope from a patch of hemp, or clothes from flax or wool.\n\n" +
+            "Choose raw materials that you can see within range. You can fabricate a Large or smaller object (contained within a 10-foot Cube or eight connected 5-foot Cubes) given a sufficient quantity of material. If you’re working with metal, stone, or another mineral substance, however, the fabricated object can be no larger than Medium (contained within a 5-foot Cube). The quality of any fabricated objects is based on the quality of the raw materials.\n\n" +
+            "Creatures and magic items can’t be created by this spell. You also can’t use it to create items that require a high degree of skill—such as weapons and armor—unless you have proficiency with the type of Artisan’s Tools used to craft such objects.",
         scalingMd:
             "",
         imagePath: spellImgUrl("fabricate")
@@ -2004,8 +2028,9 @@ export const LEVEL4 = [
         components: { verbal: true, somatic: true, material: false, materialText: "" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "You conjure a vine sprouting from a surface in an unoccupied space within range. Make a **melee spell attack** against a creature within **30 ft.** of the vine; on a hit, it takes **4d8 Bludgeoning** damage and is **pulled up to 30 ft.** toward the vine. If the target is **Huge or smaller**, it becomes **Grappled** (escape **= your spell save DC**). The vine can grapple only one creature at a time; you can release it (no action). As a **Bonus Action** on later turns, repeat the attack against a creature within 30 ft. of the vine.",
+        descriptionMd: "You conjure a vine that sprouts from a surface in an unoccupied space that you can see within range. The vine lasts for the duration.\n\n" +
+            "Make a melee spell attack against a creature within 30 feet of the vine. On a hit, the target takes 4d8 Bludgeoning damage and is pulled up to 30 feet toward the vine; if the target is Huge or smaller, it has the Grappled condition (escape DC equal to your spell save DC). The vine can grapple only one creature at a time, and you can cause the vine to release a Grappled creature (no action required).\n\n" +
+            "As a Bonus Action on your later turns, you can repeat the attack against a creature within 30 feet of the vine.",
         scalingMd:
             "**Using a Higher-Level Spell Slot.** The vine can **grapple one additional creature** per slot level above 4.",
         imagePath: spellImgUrl("graspingvine")
@@ -2144,8 +2169,10 @@ export const LEVEL4 = [
         components: { verbal: true, somatic: true, material: true, materialText: "fur from a bloodhound" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "Name or describe a familiar creature. If it’s within **1,000 feet**, you sense the **direction** to its location and, if it’s moving, its **direction of movement**. You can also locate the nearest creature of a **specific kind** you’ve seen up close (**within 30 ft.**). The spell fails if **lead blocks** a direct path or if the target is in a **different form** (e.g., *polymorph*).",
+        descriptionMd: "You attempt to transform a creature that you can see within range into a Beast. The target must succeed on a Wisdom saving throw or shape-shift into Beast form for the duration. That form can be any Beast you choose that has a Challenge Rating equal to or less than the target’s (or the target’s level if it doesn’t have a Challenge Rating). The target’s game statistics are replaced by the stat block of the chosen Beast, but the target retains its alignment, personality, creature type, Hit Points, and Hit Point Dice.\n\n" +
+            "The target gains a number of Temporary Hit Points equal to the Hit Points of the Beast form. These Temporary Hit Points vanish if any remain when the spell ends. The spell ends early on the target if it has no Temporary Hit Points left.\n\n" +
+            "The target is limited in the actions it can perform by the anatomy of its new form, and it can’t speak or cast spells.\n\n" +
+            "The target’s gear melds into the new form. The creature can’t use or otherwise benefit from any of that equipment.",
         scalingMd: "",
         imagePath: spellImgUrl("locatecreature")
     },
@@ -2223,10 +2250,12 @@ export const LEVEL4 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a glass sphere" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "A shimmering **weightless** sphere encloses a **Large or smaller** creature or object on a failed **Dexterity** save. Nothing (objects, energy, spells) passes through. The sphere is **immune to all damage**; creatures inside can breathe but can’t affect or be affected by the outside. An enclosed creature can **roll** the sphere up to **half Speed**. The globe is destroyed by **[spells]disintegrate[/spells]** without harming what’s inside.",
+        descriptionMd: "A shimmering sphere encloses a Large or smaller creature or object within range. An unwilling creature must succeed on a Dexterity saving throw or be enclosed for the duration.\n\n" +
+            "Nothing—not physical objects, energy, or other spell effects—can pass through the barrier, in or out, though a creature in the sphere can breathe there. The sphere is immune to all damage, and a creature or object inside can’t be damaged by attacks or effects originating from outside, nor can a creature inside the sphere damage anything outside it.\n\n" +
+            "The sphere is weightless and just large enough to contain the creature or object inside. An enclosed creature can take an action to push against the sphere’s walls and thus roll the sphere at up to half the creature’s Speed. Similarly, the globe can be picked up and moved by other creatures.\n\n" +
+            "A Disintegrate spell targeting the globe destroys it without harming anything inside.",
         scalingMd: "",
-        imagePath: spellImgUrl("otilukesresilientsphere")
+        imagePath: spellImgUrl("resilientsphere")
     },
     {
         slug: slugify("Phantasmal Killer"),
@@ -2294,9 +2323,9 @@ export const LEVEL4 = [
         concentration: false,
         ritual: false,
         descriptionMd:
-            "You empower your next **melee weapon or Unarmed Strike**. On a hit, the target takes an extra **4d6 Psychic** damage and must make a **Wisdom** save or be **Stunned** until the **end of your next turn**.",
+            "You empower your next melee weapon or Unarmed Strike. On a hit, the target takes an extra 4d6 Psychic damage and must make a Wisdom save or be Stunned until the end of your next turn.",
         scalingMd:
-            "**Using a Higher-Level Spell Slot.** The extra damage increases by **1d6** per slot level above 4.\n\n*You cast this **immediately after hitting** a creature with a melee weapon or Unarmed Strike.",
+            "**Using a Higher-Level Spell Slot.** The extra damage increases by **1d6** per slot level above 4.",
         imagePath: spellImgUrl("staggeringsmite")
     },
     {
@@ -2317,8 +2346,7 @@ export const LEVEL4 = [
         components: { verbal: true, somatic: true, material: true, materialText: "soft clay" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "Touch a **Medium or smaller** stone object or a section of stone **≤ 5 ft.** in any dimension and shape it as you wish: create a small **passage** through a **5-ft.**-thick wall, form a **weapon/statue/coffer**, or reshape a **door/frame** to seal it. Up to **two hinges and a latch** are possible; **finer mechanisms** aren’t.",
+        descriptionMd: "You touch a stone object of Medium size or smaller or a section of stone no more than 5 feet in any dimension and form it into any shape you like. For example, you could shape a large rock into a weapon, statue, or coffer, or you could make a small passage through a wall that is 5 feet thick. You could also shape a stone door or its frame to seal the door shut. The object you create can have up to two hinges and a latch, but finer mechanical detail isn’t possible.",
         scalingMd: "",
         imagePath: spellImgUrl("stoneshape")
     },
@@ -2601,8 +2629,7 @@ export const LEVEL4 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a drop of bile" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "A glowing **1-ft-diameter** ball of acid streaks to a point and **explodes** in a **20-ft-radius** sphere. Creatures make a **Dexterity** save. On a fail: **10d4 Acid** immediately, and **5d4 Acid** at the **end of the creature’s next turn**. On a success: **half the initial** damage only.",
+        descriptionMd: "You point at a location within range, and a glowing, 1-foot-diameter ball of acid streaks there and explodes in a 20-foot-radius Sphere. Each creature in that area makes a Dexterity saving throw. On a failed save, a creature takes 10d4 Acid damage and another 5d4 Acid damage at the end of its next turn. On a successful save, a creature takes half the initial damage only.",
         scalingMd:
             "**Using a Higher-Level Spell Slot.** The **initial** damage increases by **2d4** per slot level above 4.",
         imagePath: spellImgUrl("vitriolicsphere")
@@ -2625,8 +2652,9 @@ export const LEVEL4 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a piece of charcoal" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "You create an **opaque wall of fire** on a solid surface within range. Choose a **line up to 60×20×1 ft.** or a **ring up to 20-ft. diameter, 20 ft. high, 1 ft. thick**. When the wall appears, each creature in its area makes a **Dexterity** save, taking **5d8 Fire** on a failed save or half as much on a success.\n\nChoose one side of the wall. That side deals **5d8 Fire** to each creature that **ends its turn within 10 ft.** of that side or **inside** the wall. A creature also takes the same damage when it **enters** the wall for the first time on a turn or **ends its turn** there. The **other side** deals **no damage**.",
+        descriptionMd: "You create a wall of fire on a solid surface within range. You can make the wall up to 60 feet long, 20 feet high, and 1 foot thick, or a ringed wall up to 20 feet in diameter, 20 feet high, and 1 foot thick. The wall is opaque and lasts for the duration.\n\n" +
+            "When the wall appears, each creature in its area makes a Dexterity saving throw, taking 5d8 Fire damage on a failed save or half as much damage on a successful one.\n\n" +
+            "One side of the wall, selected by you when you cast this spell, deals 5d8 Fire damage to each creature that ends its turn within 10 feet of that side or inside the wall. A creature takes the same damage when it enters the wall for the first time on a turn or ends its turn there. The other side of the wall deals no damage.",
         scalingMd:
             "**Using a Higher-Level Spell Slot.** The damage increases by **1d8** for each slot level above 4.",
         imagePath: spellImgUrl("walloffire")

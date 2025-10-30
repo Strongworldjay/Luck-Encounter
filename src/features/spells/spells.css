@@ -996,3 +996,58 @@ html:not(.theme-dark) .statblock {
     font-size: inherit;
   }
 }
+
+.refblock {
+  --rb-bg: var(--surface);
+  --rb-text: var(--app-text);
+  --rb-border: var(--border);
+  --rb-shadow: 0 10px 26px rgba(0,0,0,.25);
+
+  background: var(--rb-bg);
+  color: var(--rb-text);
+  border: 1px solid var(--rb-border);
+  border-radius: 12px;
+  box-shadow: var(--rb-shadow);
+  padding: 10px 12px;
+  margin-top: 12px;
+  overflow: auto;
+  max-height: min(50vh, 620px);
+
+  /* hide inner scrollbars but keep scrolling */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.refblock::-webkit-scrollbar { width: 0; height: 0; }
+
+.refblock__title {
+  font-weight: 800;
+  margin: 2px 0 8px;
+  color: var(--rb-text);
+}
+
+/* Tables inside refblock — reuse statblock table look */
+.refblock table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .92rem;
+}
+.refblock th, .refblock td {
+  border: 1px solid var(--rb-border);
+  padding: 6px 8px;
+  vertical-align: middle;
+}
+.refblock th {
+  background: color-mix(in oklch, var(--accent-color) 10%, var(--surface));
+  text-align: left;
+  font-weight: 800;
+}
+.refblock tr:nth-child(even) td {
+  background: color-mix(in oklch, var(--accent-color) 6%, transparent);
+}
+
+/* Dark-mode subtle tweaks */
+.theme-dark .refblock {
+  --rb-bg: color-mix(in oklch, var(--surface) 92%, black 8%);
+  --rb-text: var(--app-text);
+  --rb-border: color-mix(in oklch, var(--border) 80%, #000 20%);
+}

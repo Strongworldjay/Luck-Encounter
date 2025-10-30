@@ -135,7 +135,7 @@ export const LEVEL7 = [
         components: { verbal: true, somatic: true, material: true, materialText: "diamond dust worth 1000 gp, consumed" },
         concentration: true,
         ritual: false,
-        descriptionMd: "You harden a willing creature’s flesh like stone. Until the spell ends, the target has resistance to Bludgeoning, Piercing, and Slashing damage.",
+        descriptionMd: "This spell turns the flesh of a willing creature you touch into unbreakable diamond. Until the spell ends, the target has resistance to Bludgeoning, Piercing, and Slashing damage.",
         scalingMd: "",
         imagePath: spellImgUrl("diamondskin")
     },
@@ -179,7 +179,12 @@ export const LEVEL7 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a statuette of a dragon worth at least 500 gp" },
         concentration: true,
         ritual: false,
-        descriptionMd: "You assume draconic features of a chosen dragon type (gem, chromatic, or metallic). You gain: **Blindsight 30 ft**; **Draconic Resistance** to one of Acid, Cold, Fire, Force, Lightning, Poison, or Thunder (choose on casting); **Breath Weapon**—when you cast this spell and as a bonus action on later turns, exhale energy in a 60-foot cone; creatures in the area make a Dexterity save, taking 6d8 damage of your resistance type on a failure, or half on a success; **Intimidating Presence**—at the start of your turn, force creatures who can see you to make a Wisdom save against your spell save DC; on a failure they are Frightened (repeat save at end of each turn); **Wings**—a flying speed of 60 feet.",
+        descriptionMd: "With a roar, you draw on the magic of dragons to transform yourself, taking on draconic features of any type of gem, chromatic, or metallic dragon. You gain the following benefits until the spell ends:\n\n" +
+            "**Blindsight.** You have blindsight with a range of 30 feet. Within that range, you can effectively see anything that isn’t behind total cover, even if you’re blinded or in darkness. Moreover, you can see an invisible creature, unless the creature successfully hides from you.\n\n" +
+            "**Draconic Resistance.** You gain resistance to acid, cold, fire, force, lightning, poison, or thunder damage upon casting this spell.\n\n" +
+            "**Breath Weapon.** When you cast this spell, and as a bonus action on subsequent turns for the duration, you can exhale shimmering energy in a 60-foot cone. Each creature in that area must make a Dexterity saving throw, taking 6d8 damage of the same type as your resistance on a failed save, or half as much damage on a successful one.\n\n" +
+            "**Intimidating Presence.** At the start of your turn you can force all creatures who can see you to succeed a Wisdom saving throw against your spellcasting DC. On a failure they are frightened and can repeat the save at the end of each of their turns. On a success they are immune to this feature.\n\n" +
+            "**Wings.** Incorporeal wings sprout from your back, giving you a flying speed of 60 feet.",
         scalingMd: "",
         imagePath: spellImgUrl("draconictransformation")
     },
@@ -502,8 +507,10 @@ export const LEVEL7 = [
         components: { verbal: true, somatic: true, material: false, materialText: "" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "Step into the **Border Ethereal** for the duration. You can move in any direction (vertical movement costs +1 ft/ft). You **perceive** your original plane in gray out to **60 ft**. You and your effects **only interact** with the Ethereal Plane. When the spell ends, you return to the corresponding spot (or nearest unoccupied, taking **Force 2× feet shunted**). Ends instantly if cast on a plane not bordering the Ethereal.",
+        descriptionMd: "You step into the border regions of the Ethereal Plane, where it overlaps with your current plane. You remain in the Border Ethereal for the duration. During this time, you can move in any direction. If you move up or down, every foot of movement costs an extra foot. You can perceive the plane you left, which looks gray, and you can’t see anything there more than 60 feet away.\n\n" +
+            "While on the Ethereal Plane, you can affect and be affected only by creatures, objects, and effects on that plane. Creatures that aren’t on the Ethereal Plane can’t perceive or interact with you unless a feature gives them the ability to do so.\n\n" +
+            "When the spell ends, you return to the plane you left in the spot that corresponds to your space in the Border Ethereal. If you appear in an occupied space, you are shunted to the nearest unoccupied space and take Force damage equal to twice the number of feet you are moved.\n\n" +
+            "This spell ends instantly if you cast it while you are on the Ethereal Plane or a plane that doesn’t border it, such as one of the Outer Planes.",
         scalingMd:
             "**Using a Higher-Level Spell Slot.** Target up to **3 willing creatures** (incl. you) **per slot level above 7**; they must be within 10 ft.",
         imagePath: spellImgUrl("etherealness")
@@ -572,8 +579,11 @@ export const LEVEL7 = [
         components: { verbal: true, somatic: true, material: true, materialText: "ruby dust worth 1,500+ GP (consumed)" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "Create an **Invisible prison of force**: either a **cage** (up to **20 ft** on a side, ½-inch bars, ½-inch gaps) or a **solid box** (up to **10 ft** on a side). Creatures entirely inside are **trapped**; partials are pushed out. **No nonmagical exit**. To teleport or use interplanar travel out, the creature must **succeed a CHA save** or the magic is wasted. Extends into the **Ethereal**, blocking ethereal travel. **Not dispellable** by *dispel magic*.",
+        descriptionMd: "An immobile, Invisible, Cube-shaped prison composed of magical force springs into existence around an area you choose within range. The prison can be a cage or a solid box, as you choose.\n\n" +
+            "A prison in the shape of a cage can be up to 20 feet on a side and is made from 1/2-inch diameter bars spaced 1/2 inch apart. A prison in the shape of a box can be up to 10 feet on a side, creating a solid barrier that prevents any matter from passing through it and blocking any spells cast into or out from the area.\n\n" +
+            "When you cast the spell, any creature that is completely inside the cage’s area is trapped. Creatures only partially within the area, or those too large to fit inside it, are pushed away from the center of the area until they are completely outside it.\n\n" +
+            "A creature inside the cage can’t leave it by nonmagical means. If the creature tries to use teleportation or interplanar travel to leave, it must first make a Charisma saving throw. On a successful save, the creature can use that magic to exit the cage. On a failed save, the creature doesn’t exit the cage and wastes the spell or effect. The cage also extends into the Ethereal Plane, blocking ethereal travel.\n\n" +
+            "This spell can’t be dispelled by Dispel Magic.",
         scalingMd: "",
         imagePath: spellImgUrl("forcecage")
     },
@@ -595,8 +605,10 @@ export const LEVEL7 = [
         components: { verbal: true, somatic: true, material: false, materialText: "" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "Transform the **appearance and feel** of terrain in up to a **1-mile square**: visuals, sounds, smells, and **tactile** elements (can create **difficult terrain** or ease it). Can alter or **add structures** (not creatures). Items removed from the area **vanish**. **Truesight** sees true terrain but can still **physically interact** with illusory elements.",
+        descriptionMd: "You make terrain in an area up to 1 mile square look, sound, smell, and even feel like some other sort of terrain. Open fields or a road could be made to resemble a swamp, hill, crevasse, or some other rough or impassable terrain. A pond can be made to seem like a grassy meadow, a precipice like a gentle slope, or a rock-strewn gully like a wide and smooth road.\n\n" +
+            "Similarly, you can alter the appearance of structures or add them where none are present. The spell doesn’t disguise, conceal, or add creatures.\n\n" +
+            "The illusion includes audible, visual, tactile, and olfactory elements, so it can turn clear ground into Difficult Terrain (or vice versa) or otherwise impede movement through the area. Any piece of the illusory terrain (such as a rock or stick) that is removed from the spell’s area disappears immediately.\n\n" +
+            "Creatures with Truesight can see through the illusion to the terrain’s true form; however, all other elements of the illusion remain, so while the creature is aware of the illusion’s presence, the creature can still physically interact with the illusion.",
         scalingMd: "",
         imagePath: spellImgUrl("miragearcane")
     },
@@ -666,8 +678,8 @@ export const LEVEL7 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a forked, metal rod worth 250+ GP attuned to a plane" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "Transport yourself and up to **8 willing creatures** (hand-linked) to **another plane**. Specify a **general destination** (DM places you in/near it) or go directly to a **known teleportation circle’s sigil sequence** on that plane (appearing in/near it if cramped).",
+        descriptionMd: "You and up to eight willing creatures who link hands in a circle are transported to a different plane of existence. You can specify a target destination in general terms, such as the City of Brass on the Elemental Plane of Fire or the palace of Dispater on the second level of the Nine Hells, and you appear in or near that destination, as determined by the DM.\n\n" +
+            "Alternatively, if you know the sigil sequence of a teleportation circle on another plane of existence, this spell can take you to that circle. If the teleportation circle is too small to hold all the creatures you transported, they appear in the closest unoccupied spaces next to the circle.",
         scalingMd: "",
         imagePath: spellImgUrl("planeshift")
     },
@@ -789,8 +801,10 @@ export const LEVEL7 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a diamond worth 1,000+ GP (consumed)" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "Return a creature **dead ≤ 100 years**, not Undead and not of old age, to life with **all HP**. **Neutralizes poisons**, closes mortal wounds, and **restores missing parts**. The creature suffers **−4 to d20 tests**, reduced by **1 per Long Rest**. If dead **≥ 365 days**, casting **exhausts** you: until a Long Rest, you **can’t cast spells** and have **Disadvantage on d20 tests**.",
+        descriptionMd: "With a touch, you revive a dead creature that has been dead for no more than a century, didn’t die of old age, and wasn’t Undead when it died.\n\n" +
+            "The creature returns to life with all its Hit Points. This spell also neutralizes any poisons that affected the creature at the time of death. This spell closes all mortal wounds and restores any missing body parts.\n\n" +
+            "Coming back from the dead is an ordeal. The target takes a −4 penalty to D20 Tests. Every time the target finishes a Long Rest, the penalty is reduced by 1 until it becomes 0.\n\n" +
+            "Casting this spell to revive a creature that has been dead for 365 days or longer taxes you. Until you finish a Long Rest, you can’t cast spells again, and you have Disadvantage on D20 Tests.",
         scalingMd: "",
         imagePath: spellImgUrl("resurrection")
     },
@@ -835,8 +849,9 @@ export const LEVEL7 = [
         components: { verbal: true, somatic: true, material: true, materialText: "gem dust worth 5,000+ GP (consumed)" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "Touch an object or willing creature to **hide it from magic**: it becomes **Invisible**, **untargetable by divinations**, and **undetectable** by magic. If a creature, it enters **suspended animation** (**Unconscious**, no aging, no food/water/air). Set a **condition** within 1 mile that ends the spell early (or it ends if the target takes damage).",
+        descriptionMd: "With a touch, you magically sequester an object or a willing creature. For the duration, the target has the Invisible condition and can’t be targeted by Divination spells, detected by magic, or viewed remotely with magic.\n\n" +
+            "If the target is a creature, it enters a state of suspended animation; it has the Unconscious condition, doesn’t age, and doesn’t need food, water, or air.\n\n" +
+            "You can set a condition for the spell to end early. The condition can be anything you choose, but it must occur or be visible within 1 mile of the target. Examples include “after 1,000 years” or “when the tarrasque awakens.” This spell also ends if the target takes any damage.",
         scalingMd: "",
         imagePath: spellImgUrl("sequester")
     },
@@ -858,8 +873,10 @@ export const LEVEL7 = [
         components: { verbal: true, somatic: true, material: true, materialText: "powdered ruby worth 1,500+ GP (consumed)" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "Create a **Construct** duplicate from **snow/ice** of a Beast or Humanoid you touch (the original must stay within **10 ft** for the casting). It uses the original’s stats at that moment, but is a **Construct**, has **half HP max**, and **can’t cast this spell**. It’s **Friendly** to you and acts on **your turn**. It **can’t gain levels** or take **rests**. Repairs require **100 GP/HP** during **your Long Rest** with the sim within **5 ft**. Casting *simulacrum* again **destroys** the prior one.",
+        descriptionMd: "You create a simulacrum of one Beast or Humanoid that is within 10 feet of you for the entire casting of the spell. You finish the casting by touching both the creature and a pile of ice or snow that is the same size as that creature, and the pile turns into the simulacrum, which is a creature. It uses the game statistics of the original creature at the time of casting, except it is a Construct, its Hit Point maximum is half as much, and it can’t cast this spell.\n\n" +
+            "The simulacrum is Friendly to you and creatures you designate. It obeys your commands and acts on your turn in combat. The simulacrum can’t gain levels, and it can’t take Short or Long Rests.\n\n" +
+            "If the simulacrum takes damage, the only way to restore its Hit Points is to repair it as you take a Long Rest, during which you expend components worth 100 GP per Hit Point restored. The simulacrum must stay within 5 feet of you for the repair.\n\n" +
+            "The simulacrum lasts until it drops to 0 Hit Points, at which point it reverts to snow and melts away. If you cast this spell again, any simulacrum you created with this spell is instantly destroyed.",
         scalingMd: "",
         imagePath: spellImgUrl("simulacrum")
     },
@@ -881,8 +898,18 @@ export const LEVEL7 = [
         components: { verbal: true, somatic: true, material: true, materialText: "powdered diamond worth 1,000+ GP (consumed)" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "Inscribe a **nearly imperceptible glyph** on a surface or within a closable object (must remain in place). Set a **trigger** and choose one effect: **Death (CON; 10d10 Necrotic)**, **Discord (WIS; bickering, Disadvantage on attacks/checks, 1 min)**, **Fear (WIS; Frightened, must move 30 ft away each turn, 1 min)**, **Pain (CON; Incapacitated, 1 min)**, **Sleep (WIS; Unconscious, 10 min; ends on damage/shaken)**, **Stunning (WIS; Stunned, 1 min)**. On trigger, the glyph glows and fills a **60-ft-radius sphere** with dim light for **10 minutes**, targeting creatures **in, entering, or ending their turn** there (**once per turn** each).",
+        descriptionMd: "You inscribe a harmful glyph either on a surface (such as a section of floor or wall) or within an object that can be closed (such as a book or chest). The glyph can cover an area no larger than 10 feet in diameter. If you choose an object, it must remain in place; if it is moved more than 10 feet from where you cast this spell, the glyph is broken, and the spell ends without being triggered.\n\n" +
+            "The glyph is nearly imperceptible and requires a successful Wisdom (Perception) check against your spell save DC to notice.\n\n" +
+            "When you inscribe the glyph, you set its trigger and choose which effect the symbol bears: Death, Discord, Fear, Pain, Sleep, or Stunning. Each one is explained below.\n\n" +
+            "**Set the Trigger.** You decide what triggers the glyph when you cast the spell. For glyphs inscribed on a surface, common triggers include touching or stepping on the glyph, removing another object covering it, or approaching within a certain distance of it. For glyphs inscribed within an object, common triggers include opening that object or seeing the glyph.\n\n" +
+            "You can refine the trigger so that only creatures of certain types activate it (for example, the glyph could be set to affect Aberrations). You can also set conditions for creatures that don’t trigger the glyph, such as those who say a certain password.\n\n" +
+            "Once triggered, the glyph glows, filling a 60-foot-radius Sphere with Dim Light for 10 minutes, after which time the spell ends. Each creature in the Sphere when the glyph activates is targeted by its effect, as is a creature that enters the Sphere for the first time on a turn or ends its turn there. A creature is targeted only once per turn.\n\n" +
+            "**Death.** Each target makes a Constitution saving throw, taking 10d10 Necrotic damage on a failed save or half as much damage on a successful save.\n\n" +
+            "**Discord.** Each target makes a Wisdom saving throw. On a failed save, a target argues with other creatures for 1 minute. During this time, it is incapable of meaningful communication and has Disadvantage on attack rolls and ability checks.\n\n" +
+            "**Fear.** Each target must succeed on a Wisdom saving throw or have the Frightened condition for 1 minute. While Frightened, the target must move at least 30 feet away from the glyph on each of its turns, if able.\n\n" +
+            "**Pain.** Each target must succeed on a Constitution saving throw or have the Incapacitated condition for 1 minute.\n\n" +
+            "**Sleep.** Each target must succeed on a Wisdom saving throw or have the Unconscious condition for 10 minutes. A creature awakens if it takes damage or if someone takes an action to shake it awake.\n\n" +
+            "**Stunning.** Each target must succeed on a Wisdom saving throw or have the Stunned condition for 1 minute.",
         scalingMd: "",
         imagePath: spellImgUrl("symbol")
     },
@@ -904,9 +931,78 @@ export const LEVEL7 = [
         components: { verbal: true, somatic: false, material: false, materialText: "" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "Instantly transport **you and up to eight willing creatures** you can see within range, **or** a **Large-or-smaller object** not held by an unwilling creature, to a destination **on your current plane** that is **known to you**. The DM rolls **1d100** using the **Teleportation Outcome** table based on your **familiarity**:\n\n- **On Target**: You arrive exactly where intended.\n- **Off Target**: Arrive **2d12 miles** away in a random direction (1d8 compass).\n- **Similar Area**: Arrive at the closest **visually/thematically similar** location.\n- **Mishap**: Each creature/object takes **3d10 Force**, then **re-roll** on the table (can chain).\n\n**Familiarity categories**: *Permanent circle* (known sigils), *Linked object* (taken from destination within 6 months), *Very familiar*, *Seen casually*, *Viewed once or described*, *False destination* (place doesn’t exist).",
-        scalingMd: "",
+        descriptionMd: "This spell instantly transports you and up to eight willing creatures that you can see within range, or a single object that you can see within range, to a destination you select. If you target an object, it must be Large or smaller, and it can’t be held or carried by an unwilling creature.\n\n" +
+            "The destination you choose must be known to you, and it must be on the same plane of existence as you. Your familiarity with the destination determines whether you arrive there successfully. The DM rolls 1d100 and consults the Teleportation Outcome table and the explanations after it.\n\n" +
+            "**Familiarity.** Here are the meanings of the terms in the table’s Familiarity column:\n\n" +
+            "“Permanent circle” means a permanent teleportation circle whose sigil sequence you know.\n" +
+            "“Linked object” means you possess an object taken from the desired destination within the last six months, such as a book from a wizard’s library.\n" +
+            "“Very familiar” is a place you have visited often, a place you have carefully studied, or a place you can see when you cast the spell.\n" +
+            "“Seen casually” is a place you have seen more than once but with which you aren’t very familiar.\n" +
+            "“Viewed once or described” is a place you have seen once, possibly using magic, or a place you know through someone else’s description, perhaps from a map.\n" +
+            "“False destination” is a place that doesn’t exist. Perhaps you tried to scry an enemy’s sanctum but instead viewed an illusion, or you are attempting to teleport to a location that no longer exists.\n\n" +
+            "**Mishap.** The spell’s unpredictable magic results in a difficult journey. Each teleporting creature (or the target object) takes 3d10 Force damage, and the DM rerolls on the table to see where you wind up (multiple mishaps can occur, dealing damage each time).\n\n" +
+            "**Similar Area.** You and your group (or the target object) appear in a different area that’s visually or thematically similar to the target area. You appear in the closest similar place. If you are heading for your home laboratory, for example, you might appear in another person’s laboratory in the same city.\n\n" +
+            "**Off Target.** You and your group (or the target object) appear 2d12 miles away from the destination in a random direction. Roll 1d8 for the direction: 1, east; 2, southeast; 3, south; 4, southwest; 5, west; 6, northwest; 7, north; or 8, northeast.\n\n" +
+            "**On Target.** You and your group (or the target object) appear where you intended.",
+        tableHtml: `
+  <div class="rules-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Familiarity</th>
+          <th>Mishap</th>
+          <th>Similar Area</th>
+          <th>Off Target</th>
+          <th>On Target</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Permanent circle</td>
+          <td>&mdash;</td>
+          <td>&mdash;</td>
+          <td>&mdash;</td>
+          <td>01&ndash;00</td>
+        </tr>
+        <tr>
+          <td>Linked object</td>
+          <td>&mdash;</td>
+          <td>&mdash;</td>
+          <td>&mdash;</td>
+          <td>01&ndash;00</td>
+        </tr>
+        <tr>
+          <td>Very familiar</td>
+          <td>01&ndash;05</td>
+          <td>06&ndash;13</td>
+          <td>14&ndash;24</td>
+          <td>25&ndash;00</td>
+        </tr>
+        <tr>
+          <td>Seen casually</td>
+          <td>01&ndash;33</td>
+          <td>34&ndash;43</td>
+          <td>44&ndash;53</td>
+          <td>54&ndash;00</td>
+        </tr>
+        <tr>
+          <td>Viewed once or described</td>
+          <td>01&ndash;43</td>
+          <td>44&ndash;53</td>
+          <td>54&ndash;73</td>
+          <td>74&ndash;00</td>
+        </tr>
+        <tr>
+          <td>False destination</td>
+          <td>01&ndash;50</td>
+          <td>51&ndash;00</td>
+          <td>&mdash;</td>
+          <td>&mdash;</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+`, scalingMd: "",
         imagePath: spellImgUrl("teleport")
     }
 ];

@@ -69,6 +69,64 @@ export default function App() {
     document.documentElement.classList.toggle('theme-dark', isDark);
   }, [isDark]);
 
+  // 🔒 iOS input-zoom lock (prevents zoom when typing even at 75–85% page scale)
+  useEffect(() => {
+    const isiOS =
+      /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    if (!isiOS) return;
+
+    const vp = document.querySelector('meta#viewport');
+    if (!vp) return;
+
+    const lockZoom = () => {
+      const cur =
+        vp.getAttribute('content') ||
+        'width=device-width, initial-scale=1, viewport-fit=cover';
+      if (!/maximum-scale=1/.test(cur)) {
+        vp.setAttribute('content', `${cur}, maximum-scale=1, user-scalable=no`);
+      }
+    };
+
+    const unlockZoom = () => {
+      const cur = vp.getAttribute('content') || '';
+      const next = cur
+        .replace(/,\s*maximum-scale=1/g, '')
+        .replace(/,\s*user-scalable=no/g, '')
+        .trim();
+      if (next) vp.setAttribute('content', next);
+    };
+
+    const onFocusIn = (e) => {
+      const t = e.target;
+      if (!t) return;
+      const isEditable =
+        t.tagName === 'INPUT' ||
+        t.tagName === 'TEXTAREA' ||
+        t.isContentEditable;
+      if (isEditable) lockZoom();
+    };
+
+    const onFocusOut = (e) => {
+      const t = e.target;
+      if (!t) return;
+      const wasEditable =
+        t.tagName === 'INPUT' ||
+        t.tagName === 'TEXTAREA' ||
+        t.isContentEditable;
+      if (wasEditable) setTimeout(unlockZoom, 250);
+    };
+
+    document.addEventListener('focusin', onFocusIn, true);
+    document.addEventListener('focusout', onFocusOut, true);
+
+    return () => {
+      document.removeEventListener('focusin', onFocusIn, true);
+      document.removeEventListener('focusout', onFocusOut, true);
+      unlockZoom();
+    };
+  }, []);
+
   // ---------- Filters state ----------
   const [filtersOpen, setFiltersOpen] = useState(false);
 

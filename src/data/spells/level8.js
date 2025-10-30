@@ -111,7 +111,9 @@ export const LEVEL8 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a scalpel" },
         concentration: true,
         ritual: false,
-        descriptionMd: "Target a creature within range and make a ranged spell attack. On a hit, it takes **8d6 Necrotic** damage. On subsequent turns, you can take a Magic action to force the same target (even if the first attack missed) to make a Constitution save, taking **8d6 Necrotic** on a failure, or half on a success. The spell ends if the target leaves range, drops to 0 HP, or you can’t see it.",
+        descriptionMd: "You target a creature you can see within range, using necromantic force to slice the skin from its body. Make a ranged spell attack against that creature. On a hit, the target takes 8d6 Necrotic damage.\n\n" +
+            "On each of your subsequent turns until the spell ends, you can take a Magic action to force the same target to make a Constitution saving throw, even if the first attack missed. On a failed save, the target takes 8d6 Necrotic damage. On a successful save, the target takes half as much damage.\n\n" +
+            "The spell ends if the target is ever outside the spell’s range, if the target is reduced to 0 Hit Points, or if you can’t see it.",
         scalingMd: "",
         imagePath: spellImgUrl("filet")
     },
@@ -277,8 +279,10 @@ export const LEVEL8 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a sponge soaked in blood" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "As part of casting, **expend eight Hit Dice** or the spell fails. Over **1d6×5 minutes**, **blood rain** falls in a **5-mile radius**. Beasts and Plants **WIS save or become Frightened** until spending **1 minute** outside the area; mundane plants **wither after 10 minutes**. Every **10 minutes** of exposure: creatures take **2d10 Necrotic**, gain **1 level of Exhaustion**, and have their **HP maximum reduced** by the Necrotic taken (restored only after all Exhaustion from this spell is removed). While a creature has any such Exhaustion, it **automatically fails** saves to remove **Poisoned**. When the spell ends, roll the expended Hit Dice total: Beasts/Plants **won’t return/regrow** for that many **days**.",
+        descriptionMd: "As part of casting this spell, you must expend eight Hit Point Dice or the spell automatically fails. Over the course of 1d6 × 5 minutes, the sky darkens and thick droplets of blood rain everywhere within 5 miles of you.\n\n" +
+            "Each Beast and Plant creature in the area must succeed on a Wisdom saving throw or have the Frightened condition until it has spent 1 minute outside the area. Mundane plants exposed to the rain wither and die after 10 minutes.\n\n" +
+            "For every 10 minutes that a creature of any type is directly exposed to the rain, that creature gains 1 Exhaustion level and takes 2d10 Necrotic damage. The creature’s Hit Point maximum decreases by an amount equal to the Necrotic damage dealt. This reduction lasts until the creature removes all levels of Exhaustion gained from this spell. While a creature has any Exhaustion levels from this spell, it automatically fails saving throws against removing the Poisoned condition.\n\n" +
+            "When the spell ends, roll the Hit Point Dice expended to cast the spell. Beast and Plant creatures won’t return and plants won’t regrow in the area for a number of days equal to the roll’s total.",
         scalingMd: "",
         imagePath: spellImgUrl("redrain"),
     },
@@ -300,8 +304,10 @@ export const LEVEL8 = [
         components: { verbal: false, somatic: true, material: false, materialText: "" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "Weave Shadowfell stuff into a **Huge shadowy dragon**. Enemies that can see it **WIS save or become Frightened** (repeat if ending turn out of its sight). As a **bonus action**, move it **60 ft** and have it exhale a **60-ft cone** of a chosen damage type (**acid, cold, fire, lightning, necrotic, or poison**). Creatures in the cone make an **INT save**, taking **7d6** of the chosen type on a fail (half on success). The illusion is tangible but **can’t be harmed**; investigation can reveal it as an illusion.",
+        descriptionMd: "By gathering threads of shadow material from the Shadowfell, you create a Huge shadowy dragon in an unoccupied space that you can see within range. The illusion lasts for the spell’s duration and occupies its space, as if it were a creature.\n\n" +
+            "When the illusion appears, any of your enemies that can see it must succeed on a Wisdom saving throw or become frightened of it for 1 minute. If a frightened creature ends its turn in a location where it doesn’t have line of sight to the illusion, it can repeat the saving throw, ending the effect on itself on a success.\n\n" +
+            "As a bonus action on your turn, you can move the illusion up to 60 feet. At any point during its movement, you can cause it to exhale a blast of energy in a 60-foot cone originating from its space. When you create the dragon, choose a damage type: acid, cold, fire, lightning, necrotic, or poison. Each creature in the cone must make an Intelligence saving throw, taking 7d6 damage of the chosen damage type on a failed save, or half as much damage on a successful one.\n\n" +
+            "The illusion is tangible because of the shadow stuff used to create it, but attacks miss it automatically, it succeeds on all saving throws, and it is immune to all damage and conditions. A creature that uses an action to examine the dragon can determine that it is an illusion by succeeding on an Intelligence (Investigation) check against your spell save DC. If a creature discerns the illusion for what it is, the creature can see through it and has advantage on saving throws against its breath.",
         scalingMd: "",
         imagePath: spellImgUrl("shadowdragon"),
     },
@@ -345,8 +351,9 @@ export const LEVEL8 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a vial of tears" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "Create a wall of swirling gray energy formed of the psychic pain of loss. The wall blocks line of sight and sheds **Dim Light 100 ft**. You and designated creatures can pass or remain near without harm. A creature that moves within **20 ft** of it or starts there must make a Charisma save or be **Incapacitated** for 1 round.\n\nA creature can move through the wall; the first time it enters the wall on a turn or ends its turn there, it must succeed on a Charisma save or gain **1 level of Exhaustion**."
+        descriptionMd: "You create a wall of swirling gray energy, formed of the psychic pain of loss. The wall appears within range on a solid surface and lasts for the duration. You choose to make the wall up to 60 feet long, 10 feet high, and 5 feet thick or a ringed wall that has a 20-foot diameter and is up to 20 feet high and 5 feet thick. The wall blocks line of sight.\n\n" +
+            "The wall sheds Dim Light out to a range of 100 feet. When you cast the spell, you and creatures you designate can pass through and remain near the wall without harm. If a creature moves within 20 feet of it or starts its turn there, the creature must succeed on a Charisma saving throw or have the Incapacitated condition for one round.\n\n" +
+            "A creature can move through the wall, though the attempt is emotionally draining. The first time a creature enters the wall on a turn or ends its turn there, it must succeed on a Charisma saving throw or gain 1 Exhaustion level.",
     },
     {
         slug: slugify("Animal Shapes"),
@@ -438,8 +445,8 @@ export const LEVEL8 = [
         },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "Forms an **inert duplicate** in the vessel that finishes growing after **120 days** (age chosen). If the original dies thereafter, its **soul transfers** to the clone (if free and willing). The clone is physically identical with **same memories and abilities**, but no gear. Original remains become inert and **can’t be revived**.",
+        descriptionMd: "You touch a creature or at least 1 cubic inch of its flesh. An inert duplicate of that creature forms inside the vessel used in the spell’s casting and finishes growing after 120 days; you choose whether the finished clone is the same age as the creature or younger. The clone remains inert and endures indefinitely while its vessel remains undisturbed.\n\n" +
+            "If the original creature dies after the clone finishes forming, the creature’s soul transfers to the clone if the soul is free and willing to return. The clone is physically identical to the original and has the same personality, memories, and abilities, but none of the original’s equipment. The creature’s original remains, if any, become inert and can’t be revived, since the creature’s soul is elsewhere.",
         scalingMd: "",
         imagePath: spellImgUrl("clone")
     },
@@ -461,8 +468,63 @@ export const LEVEL8 = [
         components: { verbal: true, somatic: true, material: true, materialText: "burning incense" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "Outdoors only. **Change precipitation, temperature, and wind** by one stage on provided tables; takes **1d4×10 minutes** to take effect, after which you can change again. On end, weather gradually returns to normal.",
+        descriptionMd: "You take control of the weather within 5 miles of you for the duration. You must be outdoors to cast this spell, and it ends early if you go indoors.\n\n" +
+            "When you cast the spell, you change the current weather conditions, which are determined by the DM. You can change precipitation, temperature, and wind. It takes 1d4 × 10 minutes for the new conditions to take effect. Once they do so, you can change the conditions again. When the spell ends, the weather gradually returns to normal.\n\n" +
+            "When you change the weather conditions, find a current condition on the following tables and change its stage by one, up or down. When changing the wind, you can change its direction.",
+        tableHtml: `
+  <div class="rules-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Stage</th>
+          <th>Condition</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Clear</td></tr>
+        <tr><td>2</td><td>Light clouds</td></tr>
+        <tr><td>3</td><td>Overcast or ground fog</td></tr>
+        <tr><td>4</td><td>Rain, hail, or snow</td></tr>
+        <tr><td>5</td><td>Torrential rain, driving hail, or blizzard</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Temperature</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Stage</th>
+          <th>Condition</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Heat wave</td></tr>
+        <tr><td>2</td><td>Hot</td></tr>
+        <tr><td>3</td><td>Warm</td></tr>
+        <tr><td>4</td><td>Cool</td></tr>
+        <tr><td>5</td><td>Cold</td></tr>
+        <tr><td>6</td><td>Freezing</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Wind</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Stage</th>
+          <th>Condition</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Calm</td></tr>
+        <tr><td>2</td><td>Moderate wind</td></tr>
+        <tr><td>3</td><td>Strong wind</td></tr>
+        <tr><td>4</td><td>Gale</td></tr>
+        <tr><td>5</td><td>Storm</td></tr>
+      </tbody>
+    </table>
+  </div>
+`,
         scalingMd: "",
     },
     {
@@ -506,9 +568,10 @@ export const LEVEL8 = [
         components: { verbal: true, somatic: true, material: false, materialText: "" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "Target makes a **WIS save** (Advantage if you’re fighting it) or is **Charmed**. You gain a **telepathic link** and can issue commands (no action). Damage triggers a new save. You can command a **Reaction** by using yours. With a **9th-level slot**, concentration can last **up to 8 hours**.",
-        scalingMd: "At 9th level: duration up to 8 hours (concentration).",
+        descriptionMd: "One creature you can see within range must succeed on a Wisdom saving throw or have the Charmed condition for the duration. The target has Advantage on the save if you or your allies are fighting it. Whenever the target takes damage, it repeats the save, ending the spell on itself on a success.\n\n" +
+            "You have a telepathic link with the Charmed target while the two of you are on the same plane of existence. On your turn, you can use this link to issue commands to the target (no action required), such as “Attack that creature,” “Move over there,” or “Fetch that object.” The target does its best to obey on its turn. If it completes an order and doesn’t receive further direction from you, it acts and moves as it likes, focusing on protecting itself.\n\n" +
+            "You can command the target to take a Reaction but must take your own Reaction to do so.",
+        scalingMd: "**Using a Higher-Level Spell Slot.** Your Concentration can last longer with a level 9 spell slot (up to 8 hours).",
     },
     {
         slug: slugify("Earthquake"),
@@ -528,8 +591,12 @@ export const LEVEL8 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a fractured rock" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "Intense tremors make the area **Difficult Terrain**. When cast and at each turn’s end, creatures on the ground **DEX save** or fall **Prone** and **lose Concentration**. You can create **1d6 fissures** (depth **1d10×10 ft**, width **10 ft**) not under structures. **Structures** take **50 bludgeoning** when cast and each turn; on collapse, nearby creatures **DEX save** or take **12d6 bludgeoning**, fall **Prone**, and are **buried** (DC 20 Athletics to escape).",
+        descriptionMd: "Choose a point on the ground that you can see within range. For the duration, an intense tremor rips through the ground in a 100-foot-radius circle centered on that point. The ground there is Difficult Terrain.\n\n" +
+            "When you cast this spell and at the end of each of your turns for the duration, each creature on the ground in the area makes a Dexterity saving throw. On a failed save, a creature has the Prone condition, and its Concentration is broken.\n\n" +
+            "You can also cause the effects below.\n\n" +
+            "**Fissures.** A total of 1d6 fissures open in the spell’s area at the end of the turn you cast it. You choose the fissures’ locations, which can’t be under structures. Each fissure is 1d10 × 10 feet deep and 10 feet wide, and it extends from one edge of the spell’s area to another edge. A creature in the same space as a fissure must succeed on a Dexterity saving throw or fall in. A creature that successfully saves moves with the fissure’s edge as it opens.\n\n" +
+            "**Structures.** The tremor deals 50 Bludgeoning damage to any structure in contact with the ground in the area when you cast the spell and at the end of each of your turns until the spell ends. If a structure drops to 0 Hit Points, it collapses.\n\n" +
+            "A creature within a distance from a collapsing structure equal to half the structure’s height makes a Dexterity saving throw. On a failed save, the creature takes 12d6 Bludgeoning damage, has the Prone condition, and is buried in the rubble, requiring a DC 20 Strength (Athletics) check as an action to escape. On a successful save, the creature takes half as much damage only.",
         scalingMd: "",
         imagePath: spellImgUrl("earthquake")
     },
@@ -686,8 +753,9 @@ export const LEVEL8 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a piece of sunstone" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "Brilliant sunlight flashes in a **60-ft-radius sphere**. **CON save**: **12d6 Radiant** and **Blinded 1 minute** on fail (save ends at each turn’s end); half damage only on success. **Dispels magical Darkness** in the area.",
+        descriptionMd: "Brilliant sunlight flashes in a 60-foot-radius Sphere centered on a point you choose within range. Each creature in the Sphere makes a Constitution saving throw. On a failed save, a creature takes 12d6 Radiant damage and has the Blinded condition for 1 minute. On a successful save, it takes half as much damage only.\n\n" +
+            "A creature Blinded by this spell makes another Constitution saving throw at the end of each of its turns, ending the effect on itself on a success.\n\n" +
+            "This spell dispels Darkness in its area that was created by any spell.",
         scalingMd: "",
         imagePath: spellImgUrl("sunburst")
     },

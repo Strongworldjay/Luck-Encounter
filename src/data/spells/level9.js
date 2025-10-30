@@ -48,8 +48,8 @@ export const LEVEL9 = [
         imagePath: spellImgUrl("blankface")
     },
     {
-        slug: slugify("Complete Perfection"),
-        name: "Complete Perfection",
+        slug: slugify("Angelic Perfection"),
+        name: "Angelic Perfection",
         classes: ["Bard", "Cleric"],
         spellLevel: 9,
         school: "Abjuration",
@@ -65,10 +65,12 @@ export const LEVEL9 = [
         components: { verbal: true, somatic: false, material: false, materialText: "" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "Speak a holy word to remake a creature in the image of the Arch Seraphs. End the Poisoned condition on it; suppress curses for the duration; restore it to HP maximum; and set any ability scores below 18 to 18. Then choose one Arch Seraph blessing:\n\nAphaelon. Immune to Charmed; if the target fails a save, it can use a reaction to reroll the save (new result stands).\nEmpyreus. Immune to Frightened; deals +4d6 Force to the first target it hits each turn.\nMiklas. Immune to Poison damage and the Poisoned condition; regains 4d6 HP at the start of each of its turns.\nMorael. Gains 30 temp HP; when an ally within 60 ft would take damage, it can use a reaction to take the damage instead.\nSolyma. Immune to Thunder; when damaged by a creature it can see, use a reaction to deal Fire damage to that creature equal to the damage taken.\nZabriel. Gains Truesight 60 ft; at the end of each of its turns, it can grant Heroic Inspiration to an ally that lacks it.",
+        descriptionMd: "As part of casting this spell, you must expend eight Hit Point Dice or the spell automatically fails. Over the course of 1d6 × 5 minutes, the sky darkens and thick droplets of blood rain everywhere within 5 miles of you.\n\n" +
+            "Each Beast and Plant creature in the area must succeed on a Wisdom saving throw or have the Frightened condition until it has spent 1 minute outside the area. Mundane plants exposed to the rain wither and die after 10 minutes.\n\n" +
+            "For every 10 minutes that a creature of any type is directly exposed to the rain, that creature gains 1 Exhaustion level and takes 2d10 Necrotic damage. The creature’s Hit Point maximum decreases by an amount equal to the Necrotic damage dealt. This reduction lasts until the creature removes all levels of Exhaustion gained from this spell. While a creature has any Exhaustion levels from this spell, it automatically fails saving throws against removing the Poisoned condition.\n\n" +
+            "When the spell ends, roll the Hit Point Dice expended to cast the spell. Beast and Plant creatures won’t return and plants won’t regrow in the area for a number of days equal to the roll’s total.",
         scalingMd: "",
-        imagePath: spellImgUrl("completeperfection")
+        imagePath: spellImgUrl("angelicperfection")
     },
     {
         slug: slugify("Dragonskin"),
@@ -286,11 +288,11 @@ export const LEVEL9 = [
         components: { verbal: true, somatic: true, material: true, materialText: "100 gp of chalk **per participant**" },
         concentration: false,
         ritual: false,
-        descriptionMd:"This spell may only be cast in an area where the lives of over 100 have been lost.\n\n" +
-"You perform a holy ceremony involving up to 26 faithful and willing humanoid creatures that ends when each participating creature chants the mantra and verbal components of this spell while standing in a magical circle drawn with magical chalk.\n\n" +
-"When you finish casting this spell, all the participants other than yourself begin to bleed from all orifices and eventually erupt into flames, their souls consumed and unable to be revived—not even by the Wish spell. You summon a Fiend with a Challenge Rating equal to the number of sacrifices made. This creature lasts for 7 days or until it is killed and cannot be dismissed. It retains all the original stats of the summoned creature, except its total maximum Hit Points become equal to the combined maximum Hit Points of all the sacrificed creatures.\n\n" +
-"If the summoner is killed, or if the summoner or their allies intentionally inflict harm upon the summoned devil, it becomes enraged and is no longer under control.",
-  scalingMd: "",
+        descriptionMd: "This spell may only be cast in an area where the lives of over 100 have been lost.\n\n" +
+            "You perform a holy ceremony involving up to 26 faithful and willing humanoid creatures that ends when each participating creature chants the mantra and verbal components of this spell while standing in a magical circle drawn with magical chalk.\n\n" +
+            "When you finish casting this spell, all the participants other than yourself begin to bleed from all orifices and eventually erupt into flames, their souls consumed and unable to be revived—not even by the Wish spell. You summon a Fiend with a Challenge Rating equal to the number of sacrifices made. This creature lasts for 7 days or until it is killed and cannot be dismissed. It retains all the original stats of the summoned creature, except its total maximum Hit Points become equal to the combined maximum Hit Points of all the sacrificed creatures.\n\n" +
+            "If the summoner is killed, or if the summoner or their allies intentionally inflict harm upon the summoned devil, it becomes enraged and is no longer under control.",
+        scalingMd: "",
     },
     {
         slug: slugify("Astral Projection"),

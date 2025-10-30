@@ -211,8 +211,8 @@ export const LEVEL3 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a vial of blood" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "A wave of blood sweeps out in a 15-foot emanation. Each creature of your choice in the area makes a Dexterity save, taking 3d10 Necrotic on a failed save, or half as much on a success. If you damage at least one Small or larger creature, one creature of your choice you can see within the emanation regains HP equal to half the damage roll.",
+        descriptionMd: "A wave of blood sweeps out from you in a 15-foot Emanation. Each creature of your choice in the wave must make a Dexterity saving throw, taking 3d10 Necrotic damage on a failed save, or half as much on a successful one.\n\n" +
+            "If you damage at least one Small or larger creature, one creature of your choice that you can see within the Emanation regains a number of Hit Points equal to half the damage roll.",
         scalingMd:
             "Using a Higher-Level Spell Slot. Damage increases by 1d10 per slot level above 3.",
         imagePath: spellImgUrl("crimsonharvest")
@@ -259,7 +259,14 @@ export const LEVEL3 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a small humanoid doll worth at least 5 gp and something from the target (blood, hair, or scales); both are consumed" },
         concentration: true,
         ritual: true,
-        descriptionMd: "You bind a creature’s soul to a doll in a sympathetic link. The target makes a Charisma save. On a failure, it becomes bound; on a success, the spell ends. While bound, as part of casting (on the failed save) and as an action on subsequent turns, you can: **Hold** the doll (the creature is Restrained until the start of your next turn); **Force** the doll to move (the creature moves 15 feet in a direction it can move); **Stab** the doll (the creature takes 4d6 Piercing damage); or **Rip** the doll in half (end the spell, destroy the doll, and the creature takes 4d12 Necrotic damage). After the first manipulation, each subsequent manipulation lets the creature repeat the Charisma save with Disadvantage, ending the effect on a success. A creature targeted by this spell can’t be targeted again for 24 hours.",
+        descriptionMd: "You attempt to bind a creature’s soul to a doll, linking the creature to it through a sympathetic connection. The target must make a Charisma saving throw. On a failed save, the creature becomes bound to the doll. On a successful save, the creature is not bound, and the spell ends.\n\n" +
+            "As part of casting the spell when the creature fails the save—and on subsequent turns using your action until the spell ends—you can perform one of the following actions:\n\n" +
+            "• Hold the doll still, causing the creature to be Restrained until the start of your next turn.\n" +
+            "• Force the doll to move, causing the creature to move 15 feet in a direction of your choice that it can move.\n" +
+            "• Stab the doll, causing the creature to take 4d6 Piercing damage.\n" +
+            "• Rip the doll in half, ending the spell, destroying the doll, and dealing 4d12 Necrotic damage to the creature.\n\n" +
+            "Each time after the first that you use an action to manipulate the doll, after the effect takes place, the creature can repeat the Charisma saving throw with Disadvantage, ending the effect on a success.\n\n" +
+            "Once a creature has been targeted by this spell, it cannot be targeted again for 24 hours.",
         scalingMd: "**At Higher Levels.** With a 5th-level slot or higher, the range becomes unlimited provided the target is on the same plane.",
         imagePath: spellImgUrl("cruelpuppetry")
     },
@@ -413,7 +420,13 @@ export const LEVEL3 = [
         components: { verbal: false, somatic: true, material: false, materialText: "" },
         concentration: false,
         ritual: false,
-        descriptionMd: "You exhale destructive elemental energy in a 30-foot cone. Creatures in the area make a Dexterity save, taking **5d6** damage on a failure or half on a success. Choose one effect on casting which sets the damage type and rider on failed saves: **Air (Thunder):** pushed 10 feet away. **Coldfire (Cold):** Frightened until the start of your next turn. **Earth (Bludgeoning):** speed reduced to 0 until the end of its next turn. **Fire (Fire):** ignited; takes **2d6 Fire** at the end of its next turn; can extinguish by dropping Prone and rolling or by being doused/submerged. **Water (Acid):** knocked Prone.",
+        descriptionMd: "When you cast this spell, choose one of the following effects that determine the spell’s damage type:\n\n" +
+            "**Air.** The damage type is Thunder. Each creature that fails the saving throw is pushed 10 feet away from you.\n\n" +
+            "**Coldfire.** The damage type is Cold. Each creature that fails the saving throw has the Frightened condition until the start of your next turn.\n\n" +
+            "**Earth.** The damage type is Bludgeoning. Each creature that fails the saving throw has its Speed reduced to 0 until the end of its next turn.\n\n" +
+            "**Fire.** The damage type is Fire. Each creature that fails the saving throw is engulfed in flames and takes 2d6 Fire damage at the end of its next turn. As an Action, it can extinguish the flames on itself by giving itself the Prone condition and rolling on the ground. The fire also goes out if it is doused, submerged, or suffocated.\n\n" +
+            "**Water.** The damage type is Acid. Each creature that fails the saving throw has the Prone condition.\n\n" +
+            "Each creature within a 30-foot Cone of destructive elemental energy must make a Dexterity saving throw. On a failed save, a target takes 5d6 damage of the chosen type. On a successful save, the target takes half as much damage only.",
         scalingMd: "**Using a Higher-Level Spell Slot.** Damage increases by 1d6 per slot level above 3rd.",
         imagePath: spellImgUrl("elementalexhalation")
     },
@@ -501,7 +514,13 @@ export const LEVEL3 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a diamond vial with at least 1 oz. of blood worth 100+ GP (consumed)" },
         concentration: false,
         ritual: false,
-        descriptionMd: "You infuse a nonmagical weapon with creature-typed essence; the weapon becomes magical and requires Attunement by you. Benefit depends on the blood used: **Aberration:** +1d6 Psychic on hit; telepathically speak with any creature damaged by the weapon in the last 24 hours on the same plane. **Celestial:** +1d6 Radiant; bonus action to shed bright light 30 ft./dim 30 ft. **Dragon:** crits on 19–20; Advantage on saves to avoid/end **Frightened**. **Fey:** +1d4 Force; once per turn on a hit vs. a creature within 30 ft., teleport to within 5 ft. of it. **Fiend:** +1d6 Necrotic; bonus action to change that extra damage to Cold or Fire. The spell lasts while you remain attuned; it is susceptible to **dispel magic** during this time. If you stay attuned for **1 year**, the enchantment becomes permanent and the spell ends.",
+        descriptionMd: "When you cast this spell, you target one nonmagical weapon within range. That weapon becomes magical and gains a special benefit based on the creature type of the blood used as the material component for this spell. The item requires Attunement, and only the creature attuned to this weapon gains these benefits.\n\n" +
+            "**Aberration.** Your attacks with the weapon deal an extra 1d6 Psychic damage on a hit. In addition, you can telepathically speak with any creature that has taken at least 1 point of damage from this weapon in the last 24 hours, provided you are both on the same plane.\n\n" +
+            "**Celestial.** Your attacks with the weapon deal an extra 1d6 Radiant damage on a hit. In addition, you can use a Bonus Action to cause the weapon to shed Bright Light in a 30-foot radius and Dim Light for an additional 30 feet. You can end this effect by using another Bonus Action.\n\n" +
+            "**Dragon.** Your attack rolls with this weapon can score a Critical Hit on a roll of 19 or 20 on the d20. In addition, you have Advantage on saving throws you make to avoid or end the Frightened condition.\n\n" +
+            "**Fey.** Your attacks with the weapon deal an extra 1d4 Force damage on a hit. In addition, once per turn when you hit a creature within 30 feet with this weapon, you can teleport to an unoccupied space you can see within 5 feet of it.\n\n" +
+            "**Fiend.** Your attacks with the weapon deal an extra 1d6 Necrotic damage on a hit. You can use a Bonus Action to change this extra damage to Cold or Fire.\n\n" +
+            "When you cast this spell, you attune to the magic weapon. The spell’s duration lasts as long as you have Attunement to the weapon. During the spell’s duration, the magic item is susceptible to the *Dispel Magic* spell. If you maintain Attunement to the magic weapon for 1 year, the enchantment becomes permanent and this spell ends.",
         scalingMd: "",
         imagePath: spellImgUrl("essenceinfusion")
     },
@@ -611,7 +630,13 @@ export const LEVEL3 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a drop of your blood pressed into a silver thread loop worth 50 gp (consumed)" },
         concentration: true,
         ritual: true,
-        descriptionMd: "You attempt to force a magical contract with a creature you can see. The target makes a Wisdom save (modifiers by condition: **Legendary Resistance**—immune; **Default**—advantage; **Bloodied** ≤50% HP—normal; **Near Death** ≤10% HP—disadvantage; **Willing**—may choose to fail). While you concentrate (up to 1 minute), blue sigils and chains bind you both. If the target fails the save and you maintain concentration for the full minute, the bond seals and it becomes your **Contract-Bound Familiar** (replacing any existing one). Losing concentration ends the spell with no effect.",
+        descriptionMd: "You attempt to force a magical contract between you and one creature you can see within range. The target must succeed on a Wisdom saving throw or become Bound as described below. The save is modified by the target’s current condition:\n\n" +
+            "**Legendary Resistance.** If the target has any uses of Legendary Resistance remaining, it is immune to this spell.\n\n" +
+            "**Default.** The target makes the save with Advantage.\n\n" +
+            "**Bloodied (≤ 50% hit points).** The target makes a normal save.\n\n" +
+            "**Near Death (≤ 10% hit points).** The target makes the save with Disadvantage.\n\n" +
+            "**Willing creature.** A willing target can choose to fail the save.\n\n" +
+            "While you concentrate (up to 1 minute), faint sigils and chains of blue light coil between you and the target. If your concentration ends early, the spell ends with no effect. If the target fails the save and you maintain concentration for the full minute, the bond seals and the creature becomes your Contract-Bound Familiar. If you already have one, you must replace it with the new one.",
         scalingMd: "",
         imagePath: spellImgUrl("forgefamiliarbond")
     },
@@ -935,8 +960,18 @@ export const LEVEL3 = [
         components: { verbal: true, somatic: true, material: true, materialText: "an item from a rare or endangered creature" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "You reshape your body, choosing **three** properties such as malleable form, extra limb, +5 ft reach, hardened flesh (**AC 14 + Dex**), advantage on one save type, gills & swim speed, ablative temp HP (equal to your spellcasting mod each turn), change size, **30-ft fly** speed (wings), or a magical natural weapon (**+1**, uses your spellcasting mod). As an action, you can reselect properties during the duration.",
+        descriptionMd: "You manipulate the nature of your body with magic, temporarily giving it new properties. You can select three of the following properties:\n\n" +
+            "**Malleable Form.** Your body becomes amorphous. You have Advantage on checks and saving throws to resist grapples and the Restrained condition, you don’t suffer Disadvantage from squeezing into smaller spaces, and you can squeeze through openings two sizes smaller than you.\n\n" +
+            "**Extra Appendage.** You grow one additional appendage that functions as an arm and hand (it may appear as an arm, tentacle, or similar limb).\n\n" +
+            "**Extended Reach.** Your limbs lengthen; your reach for melee attacks, touch spells, and object interactions increases by 5 feet.\n\n" +
+            "**Hardened Flesh.** Your base AC becomes 14 + your Dexterity modifier if it isn’t already higher.\n\n" +
+            "**Targeted Resilience.** You gain Advantage on one type of saving throw of your choice.\n\n" +
+            "**Aquatic Adaptation.** You sprout gills and webbing. You can breathe underwater and gain a Swim Speed equal to your Walking Speed.\n\n" +
+            "**Ablative Armor.** You gain Temporary Hit Points equal to your spellcasting ability modifier at the start of each of your turns.\n\n" +
+            "**Size Shift.** You grow one size larger or smaller.\n\n" +
+            "**Wings.** You sprout wings and gain a Fly Speed of 30 feet.\n\n" +
+            "**Natural Weapon.** You grow a natural weapon with the statistics of any martial melee weapon without the thrown property, taking on a form reminiscent of it. You are proficient with this weapon and are considered to be holding it. You may use your spellcasting ability modifier instead of Strength or Dexterity for attack and damage rolls with it; it is magical and has a +1 bonus to attack and damage rolls.\n\n" +
+            "For the duration, you can use an action to change one or all properties, losing any previously selected properties and gaining the new ones.",
         scalingMd:
             "**At Higher Levels.** At 4th level or higher, select **one** additional property per slot level above 3rd.",
         imagePath: spellImgUrl("mutate"),
@@ -982,8 +1017,11 @@ export const LEVEL3 = [
         components: { verbal: true, somatic: true, material: false, materialText: "" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "Target **one creature** already **frightened, charmed, or asleep**. The target takes **1d4 Psychic** damage at the start of each of its turns (can’t reduce it below **1 HP** and doesn’t break its condition). Apply an additional effect: **Frightened:** AC **–2**. **Charmed:** can’t speak a lie (unaware). **Sleep:** can’t be awakened unless a **single hit** deals **10+** damage.",
+        descriptionMd: "One creature you can see within range that is under the effects of the Frightened, Charmed, or Sleep condition becomes afflicted by psychic torment. The creature takes 1d4 Psychic damage at the start of its turns while the condition remains or until this spell ends, whichever occurs first. This damage does not cause the creature to break its condition or repeat its saving throws, and it cannot reduce the creature below 1 Hit Point.\n\n" +
+            "The target also gains an additional effect based on its condition:\n\n" +
+            "**Frightened.** The creature’s Armor Class is reduced by 2 for the duration.\n\n" +
+            "**Charmed.** The creature cannot speak a lie and is unaware of this compulsion.\n\n" +
+            "**Sleep.** The creature falls into a deeper slumber and cannot be awakened unless it takes at least 10 points of damage in a single attack.",
         scalingMd:
             "**Using a Higher-Level Spell Slot.** Duration becomes **10 minutes** at 5th level, **1 hour** at 7th.",
         imagePath: spellImgUrl("psychosomaticmanifestation"),
@@ -1029,8 +1067,14 @@ export const LEVEL3 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a fang from a rabid animal" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "The target becomes a **rabid monster**: gains **20 temp HP**, **AC 17** (if lower), **+5 damage** on **Strength-based** attacks, and can make a **Bite** as a **bonus action** (**1d6 + Str** Slashing). Immune to **Frightened**, but **can’t concentrate or cast spells**. At the **start of each turn**, it makes a **DC 10 WIS save** or **loses control** and must **Attack the nearest creature** (move/Dash to reach).",
+        descriptionMd: "A creature you touch transforms into a rabid monster, filled with primal fury. The target sprouts thick fur and its mouth elongates into a fanged maw. While transformed into a seething monster, the creature gains the following benefits:\n\n" +
+            "• Gains 20 Temporary Hit Points and has an AC of 17 if its AC is lower than that.\n" +
+            "• Deals an additional +5 damage on Strength-based attacks.\n" +
+            "• Can make a **Bite** attack as a Bonus Action.\n" +
+            "• **Bite.** 1d6 + the creature’s Strength modifier Slashing damage.\n" +
+            "• Is Immune to the Frightened condition.\n" +
+            "• Can’t maintain Concentration, and can’t cast spells.\n\n" +
+            "At the start of each of the creature’s turns, it must succeed on a DC 10 Wisdom saving throw or lose control. On a failed save, it must take the Attack action on each of its turns to attack the closest creature within reach, whether ally or enemy. If none are within reach, it must use its movement, and if necessary, a Dash action to move within reach of the nearest creature.",
         scalingMd: "",
         imagePath: spellImgUrl("rabidtransformation"),
     },
@@ -1076,8 +1120,9 @@ export const LEVEL3 = [
         components: { verbal: true, somatic: true, material: true, materialText: "wilted daisies & herbal powders worth 300+ gp, consumed" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "As part of the casting, **expend three Hit Dice** or the spell fails. Touch a creature dead **≤10 minutes**: it returns to life with **1 HP** and gains **temp HP equal to the total of the expended Hit Dice**. At the **start of each of its turns**, it **loses 1** of those temp HP. While it has temp HP from this spell, it gains **+2** on ability checks, attack rolls, and saving throws. When the temp HP are gone, it gains **1 level of Exhaustion**. Doesn’t restore missing parts or reverse old age.",
+        descriptionMd: "As part of casting this spell, you must expend three Hit Point Dice or the spell automatically fails. You touch a creature that has died within the last 10 minutes and return it to life with 1 Hit Point. In addition, roll the Hit Point Dice expended to cast the spell, and the creature gains Temporary Hit Points equal to the roll.\n\n" +
+            "At the start of each of the target’s turns, it loses 1 Temporary Hit Point granted by this spell. While the creature has Temporary Hit Points granted by this spell, it moves with unnatural vigor, gaining a +2 bonus to ability checks, attack rolls, and saving throws. Once it loses the Temporary Hit Points granted by this spell, the creature gains 1 level of Exhaustion.\n\n" +
+            "This spell can’t revive a creature that has died of old age, nor does it restore any missing body parts.",
         scalingMd: "",
         imagePath: spellImgUrl("reanimate"),
     },
@@ -1128,8 +1173,9 @@ export const LEVEL3 = [
         },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "A faint, shimmering **20-ft-radius sphere** forms. You and up to **your spellcasting mod** creatures can draw **empowering magic** from it by finishing a **Short Rest** inside: the sphere vanishes and those creatures gain **2d10 temp HP**, and for the remainder of the duration they have **advantage on Charisma checks** that use one of their **skill proficiencies**. Creatures that don’t finish a **Long Rest in the sphere** gain no benefit.",
+        descriptionMd: "You create a 20-foot-radius Sphere of faint, shimmering light centered on a point within range. You and a number of creatures of your choice up to your spellcasting ability modifier (minimum of 1 other creature) can absorb empowering magic from the Sphere.\n\n" +
+            "When any of the chosen creatures finish a Short Rest in the area, the Sphere vanishes, and those creatures gain 2d10 Temporary Hit Points. For the remainder of the duration, they also have Advantage on Charisma checks that use one of their skill proficiencies.\n\n" +
+            "Chosen creatures who don’t finish a Short Rest in the Sphere gain no benefit.",
         scalingMd: "",
         imagePath: spellImgUrl("sanctumoftheflock"),
     },
@@ -1156,8 +1202,9 @@ export const LEVEL3 = [
         },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "As part of casting, **expend three Hit Dice** or the spell fails. The object becomes a **poppet** under your control (**AC = 10 + PB + casting mod**, **30 HP**). If reduced to **0 HP** or **>1 mile** away, the spell ends. As a **bonus action**, command it to move **30 ft** and you can **see and hear through it** until your next turn. As a **Magic action**, **detonate** it: roll the **Hit Dice expended**; creatures in a **30-ft-radius sphere** make a DEX save, taking **Necrotic equal to the roll** (half on success).",
+        descriptionMd: "As part of casting this spell, you must expend three Hit Point Dice or the spell automatically fails. You smear the spell’s material component with your blood. The object shudders and becomes a poppet under your control.\n\n" +
+            "The poppet’s AC equals 10 plus your Proficiency Bonus and your spellcasting ability modifier, and it has 30 Hit Points. If your poppet is ever reduced to 0 Hit Points or it is more than 1 mile away, the spell ends immediately. As a Bonus Action, you can command your poppet to move 30 feet, and you can see and hear through it until the start of your next turn.\n\n" +
+            "As a Magic Action, you can cause the poppet to detonate in an explosion of blood, ending this spell. Roll the Hit Point Dice expended to cast this spell. Each creature in a 30-foot-radius Sphere centered on the poppet makes a Dexterity saving throw, taking Necrotic damage equal to the roll on a failed save or half as much damage on a successful one.",
         scalingMd:
             "**Using a Higher-Level Spell Slot.** Expend **+1 Hit Die** per slot level above 3rd; **duration +1 hour** per slot level above 3rd.",
         imagePath: spellImgUrl("sanguinepoppet"),
@@ -1180,8 +1227,8 @@ export const LEVEL3 = [
         components: { verbal: true, somatic: true, material: false, materialText: "" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "Crimson light fills a **20-ft-radius, 60-ft-high cylinder**. **Non-Construct/Undead** creatures make a CON save, taking **4d10 Necrotic** on a fail (half on success). **Constructs and Undead** in the area **regain 4d10 HP**. If the area **overlaps Darkness** from a **3rd-level-or-lower** spell, that Darkness is **dispelled**.",
+        descriptionMd: "Crimson light shines down in a 20-foot-radius, 60-foot high Cylinder centered on a point within range. Each creature in that area that isn’t a Construct or Undead must make a Constitution saving throw, taking 4d10 Necrotic damage on a failed save or half as much damage on a successful one. Constructs and Undead in the area regain 4d10 Hit Points.\n\n" +
+            "If any of this spell’s area overlaps with an area of Darkness created by a spell of level 3 or lower, that other spell is dispelled.",
         scalingMd:
             "**Using a Higher-Level Spell Slot.** Damage **+1d10** and dispel threshold **+1 level** per slot level above 3rd.",
         imagePath: spellImgUrl("scarletdawn"),
@@ -1838,8 +1885,7 @@ export const LEVEL3 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a handful of sand" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "Conjure a wall of swirling sand on the ground. You can make the wall up to **30 ft** long, **10 ft** high, and **10 ft** thick. It blocks line of sight but not movement. A creature is **Blinded** while in the wall’s space and must spend **3 ft** of movement for every **1 ft** it moves there."
+        descriptionMd: "You conjure up a wall of swirling sand on the ground at a point you can see within range. You can make the wall up to 30 feet long, 10 feet high, and 10 feet thick, and it vanishes when the spell ends. It blocks line of sight but not movement. A creature is blinded while in the wall’s space and must spend 3 feet of movement for every 1 foot it moves there."
     },
     {
         slug: slugify("Wall of Water"),
@@ -1859,8 +1905,8 @@ export const LEVEL3 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a drop of water" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "Create a wall of water. It is **difficult terrain** in its space. Ranged weapon attacks entering the wall have **disadvantage**; **fire damage is halved** if the effect passes through; **cold spells** that pass through **freeze** at least a 5-ft-square (AC 5, 15 HP). Destroying a frozen section leaves a hole."
+        descriptionMd: "You create a wall of water on the ground at a point you can see within range. You can make the wall up to 30 feet long, 10 feet high, and 1 foot thick, or you can make a ringed wall up to 20 feet in diameter, 20 feet high, and 1 foot thick. The wall vanishes when the spell ends. The wall’s space is difficult terrain.\n\n" +
+            "Any ranged weapon attack that enters the wall’s space has disadvantage on the attack roll, and fire damage is halved if the fire effect passes through the wall to reach its target. Spells that deal cold damage that pass through the wall cause the area of the wall they pass through to freeze solid (at least a 5-foot-square section is frozen). Each 5-foot-square frozen section has AC 5 and 15 hit points. Reducing a frozen section to 0 hit points destroys it. When a section is destroyed, the wall’s water doesn’t fill it."
     },
     {
         slug: slugify("Water Cannon"),
@@ -2067,8 +2113,11 @@ export const LEVEL3 = [
         components: { verbal: true, somatic: true, material: false, materialText: "" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "Touch a creature; on a failed Wisdom save, it is cursed. Choose one effect: (1) Disadvantage on checks and saves using one ability; (2) Disadvantage on attack rolls against you; (3) At the start of each of its turns, on a failed Wisdom save it must **Dodge**; (4) It takes **+1d8 Necrotic** whenever you deal damage to it with an attack or spell.",
+        descriptionMd: "You touch a creature, which must succeed on a Wisdom saving throw or become cursed for the duration. Until the curse ends, the target suffers one of the following effects of your choice:\n\n" +
+            "• Choose one ability. The target has Disadvantage on ability checks and saving throws made with that ability.\n" +
+            "• The target has Disadvantage on attack rolls against you.\n" +
+            "• In combat, the target must succeed on a Wisdom saving throw at the start of each of its turns or be forced to take the Dodge action on that turn.\n" +
+            "• If you deal damage to the target with an attack roll or a spell, the target takes an extra 1d8 Necrotic damage.",
         scalingMd:
             "**Using a Higher-Level Spell Slot.** 4th level: up to **10 minutes**. 5th–6th: **no concentration**, **8 hours**. 7th–8th: **no concentration**, **24 hours**. 9th: lasts **until dispelled**.",
         imagePath: spellImgUrl("bestowcurse")
@@ -2472,8 +2521,9 @@ export const LEVEL3 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a bit of gauze" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "A willing creature (and its gear) becomes a misty cloud. It gains a **fly speed 10 ft. (hover)**, can share spaces and pass through narrow openings, has **resistance to B/P/S**, **immunity to Prone**, and **advantage on STR/DEX/CON saves**. It can’t talk, attack, cast spells, or manipulate objects; carried items can’t be dropped or used. Liquids are solid to it. The target can end the spell on itself with a Magic action; the spell also ends at **0 HP**.",
+        descriptionMd: "A willing creature you touch shape-shifts, along with everything it’s wearing and carrying, into a misty cloud for the duration. The spell ends on the target if it drops to 0 Hit Points or if it takes a Magic action to end the spell on itself.\n\n" +
+            "While in this form, the target’s only method of movement is a Fly Speed of 10 feet, and it can hover. The target can enter and occupy the space of another creature. The target has Resistance to Bludgeoning, Piercing, and Slashing damage; it has Immunity to the Prone condition; and it has Advantage on Strength, Dexterity, and Constitution saving throws. The target can pass through narrow openings, but it treats liquids as though they were solid surfaces.\n\n" +
+            "The target can’t talk or manipulate objects, and any objects it was carrying or holding can’t be dropped, used, or otherwise interacted with. Finally, the target can’t attack or cast spells.",
         scalingMd:
             "**Using a Higher-Level Spell Slot.** Target **+1 creature** per slot level above 3rd.",
         imagePath: spellImgUrl("gaseousform")
@@ -2496,8 +2546,14 @@ export const LEVEL3 = [
         components: { verbal: true, somatic: true, material: true, materialText: "powdered diamond worth 200+ gp (consumed)" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "Inscribe a nearly imperceptible glyph with a custom trigger and optional creature-type filters/exclusions. **Explosive Rune:** when triggered, creatures in a **20-ft-radius sphere** make a DEX save, taking **5d8** of a chosen damage type on a fail (half on success). **Spell Glyph:** store a prepared spell of 3rd level or lower; it triggers on the activator (or is centered on it). If the stored spell normally requires concentration, it lasts its full duration without your concentration.",
+        descriptionMd: "You inscribe a glyph that later unleashes a magical effect. You inscribe it either on a surface (such as a table or a section of floor) or within an object that can be closed (such as a book or chest) to conceal the glyph. The glyph can cover an area no larger than 10 feet in diameter. If the surface or object is moved more than 10 feet from where you cast this spell, the glyph is broken, and the spell ends without being triggered.\n\n" +
+            "The glyph is nearly imperceptible and requires a successful Wisdom (Perception) check against your spell save DC to notice.\n\n" +
+            "When you inscribe the glyph, you set its trigger and choose whether it’s an explosive rune or a spell glyph, as explained below.\n\n" +
+            "**Set the Trigger.** You decide what triggers the glyph when you cast the spell. For glyphs inscribed on a surface, common triggers include touching or stepping on the glyph, removing another object covering it, or approaching within a certain distance of it. For glyphs inscribed within an object, common triggers include opening that object or seeing the glyph. Once a glyph is triggered, this spell ends.\n\n" +
+            "You can refine the trigger so that only creatures of certain types activate it (for example, the glyph could be set to affect Aberrations). You can also set conditions for creatures that don’t trigger the glyph, such as those who say a certain password.\n\n" +
+            "**Explosive Rune.** When triggered, the glyph erupts with magical energy in a 20-foot-radius Sphere centered on the glyph. Each creature in the area makes a Dexterity saving throw. A creature takes 5d8 Acid, Cold, Fire, Lightning, or Thunder damage (your choice when you create the glyph) on a failed save or half as much damage on a successful one.\n\n" +
+            "**Spell Glyph.** You can store a prepared spell of level 3 or lower in the glyph by casting it as part of creating the glyph. The spell must target a single creature or an area. The spell being stored has no immediate effect when cast in this way.\n\n" +
+            "When the glyph is triggered, the stored spell takes effect. If the spell has a target, it targets the creature that triggered the glyph. If the spell affects an area, the area is centered on that creature. If the spell summons Hostile creatures or creates harmful objects or traps, they appear as close as possible to the intruder and attack it. If the spell requires Concentration, it lasts until the end of its full duration.",
         scalingMd:
             "**Using a Higher-Level Spell Slot.** Explosive Rune damage **+1d8** per slot level above 3rd. Spell Glyph can store any spell up to the slot level used.",
         imagePath: spellImgUrl("glyphofwarding")
@@ -2520,8 +2576,8 @@ export const LEVEL3 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a shaving of licorice root" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "The target’s **Speed doubles**, gains **+2 AC**, **advantage on DEX saves**, and an **extra action each turn** (Attack—one attack only, Dash, Disengage, Hide, or Use/Utilize). When the spell ends, the target is **Incapacitated with Speed 0** until the end of its next turn.",
+        descriptionMd: "Choose a willing creature that you can see within range. Until the spell ends, the target’s Speed is doubled, it gains a +2 bonus to Armor Class, it has Advantage on Dexterity saving throws, and it gains an additional action on each of its turns. That action can be used to take only the Attack (one attack only), Dash, Disengage, Hide, or Utilize action.\n\n" +
+            "When the spell ends, the target is Incapacitated and has a Speed of 0 until the end of its next turn, as a wave of lethargy washes over it.",
         scalingMd: "",
         imagePath: spellImgUrl(" haste")
     },
@@ -2613,8 +2669,8 @@ export const LEVEL3 = [
         components: { verbal: true, somatic: true, material: false, materialText: "" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "*Trigger: immediately after you hit or miss with a ranged weapon attack.* Your weapon/ammo becomes lightning: the original attack deals no weapon damage. The main target takes **4d8 Lightning** on a hit (**half on a miss**). Then each creature within **10 ft.** of the target makes a DEX save for **2d8 Lightning** (half on a success).",
+        descriptionMd: "As your attack hits or misses the target, the weapon or ammunition you’re using transforms into a lightning bolt. Instead of taking any damage or other effects from the attack, the target takes 4d8 Lightning damage on a hit or half as much damage on a miss. Each creature within 10 feet of the target then makes a Dexterity saving throw, taking 2d8 Lightning damage on a failed save or half as much damage on a successful one.\n\n" +
+            "The weapon or ammunition then returns to its normal form.",
         scalingMd:
             "**Using a Higher-Level Spell Slot.** Increase both damage values by **1d8** per slot level above 3rd.",
         imagePath: spellImgUrl("lightningarrow")
@@ -2661,8 +2717,12 @@ export const LEVEL3 = [
         components: { verbal: true, somatic: true, material: true, materialText: "salt and powdered silver worth 100+ gp (consumed)" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "Choose any of: **Celestial, Elemental, Fey, Fiend, Undead**. The circle bars such creatures by nonmagical means; teleportation/interplanar entry requires a **CHA save**. They have **disadvantage on attacks** against targets inside, and targets inside can’t be possessed or **Charmed/Frightened** by them. You can invert the effect to trap the chosen type within.",
+        descriptionMd: "You create a 10-foot-radius, 20-foot-tall Cylinder of magical energy centered on a point on the ground that you can see within range. Glowing runes appear wherever the Cylinder intersects with the floor or other surface.\n\n" +
+            "Choose one or more of the following types of creatures: Celestials, Elementals, Fey, Fiends, or Undead. The circle affects a creature of the chosen type in the following ways:\n\n" +
+            "• The creature can’t willingly enter the Cylinder by nonmagical means. If the creature tries to use teleportation or interplanar travel to do so, it must first succeed on a Charisma saving throw.\n" +
+            "• The creature has Disadvantage on attack rolls against targets within the Cylinder.\n" +
+            "• Targets within the Cylinder can’t be possessed by or gain the Charmed or Frightened condition from the creature.\n\n" +
+            "Each time you cast this spell, you can cause its magic to operate in the reverse direction, preventing a creature of the specified type from leaving the Cylinder and protecting targets outside it.",
         scalingMd:
             "**Using a Higher-Level Spell Slot.** Duration **+1 hour** per slot level above 3rd.",
         imagePath: spellImgUrl("magiccircle")
@@ -2685,8 +2745,9 @@ export const LEVEL3 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a bit of fleece" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "Create a realistic multisensory illusion (sight, sound, smell, temperature) up to **20-ft cube**. While within range, you can use a Magic action to move/alter it. Physical interaction reveals the illusion. A creature that studies it can make an **INT (Investigation)** check vs your DC to discern it; thereafter it sees through it and its other qualities are faint.",
+        descriptionMd: "You create the image of an object, a creature, or some other visible phenomenon that is no larger than a 20-foot Cube. The image appears at a spot that you can see within range and lasts for the duration. It seems real, including sounds, smells, and temperature appropriate to the thing depicted, but it can’t deal damage or cause conditions.\n\n" +
+            "**If you are within range of the illusion,** you can take a Magic action to cause the image to move to any other spot within range. As the image changes location, you can alter its appearance so that its movements appear natural for the image. For example, if you create an image of a creature and move it, you can alter the image so that it appears to be walking. Similarly, you can cause the illusion to make different sounds at different times, even making it carry on a conversation, for example.\n\n" +
+            "**Physical interaction with the image** reveals it to be an illusion, for things can pass through it. A creature that takes a Study action to examine the image can determine that it is an illusion with a successful Intelligence (Investigation) check against your spell save DC. If a creature discerns the illusion for what it is, the creature can see through the image, and its other sensory qualities become faint to the creature.",
         scalingMd:
             "**Using a Higher-Level Spell Slot.** With a 4th-level+ slot, the illusion **lasts until dispelled** and **doesn’t require concentration**.",
         imagePath: spellImgUrl("majorimage")
@@ -3324,8 +3385,9 @@ export const LEVEL3 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a fan and a feather" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "A roaring wall of wind rises. Creatures **in its area** when it appears make a STR save, taking **4d8 Bludgeoning** on a fail (**half on success**). The wall **blocks gases/smoke**, stops Small or smaller flying creatures/objects, tosses light materials, and **deflects ordinary arrows/bolts**. Giants’ boulders and similar heavy projectiles are unaffected. **Gaseous form** creatures can’t pass through.",
+        descriptionMd: "A wall of strong wind rises from the ground at a point you choose within range. You can make the wall up to 50 feet long, 15 feet high, and 1 foot thick. You can shape the wall in any way you choose so long as it makes one continuous path along the ground. The wall lasts for the duration.\n\n" +
+            "When the wall appears, each creature in its area makes a Strength saving throw, taking 4d8 Bludgeoning damage on a failed save or half as much damage on a successful one.\n\n" +
+            "The strong wind keeps fog, smoke, and other gases at bay. Small or smaller flying creatures or objects can’t pass through the wall. Loose, lightweight materials brought into the wall fly upward. Arrows, bolts, and other ordinary projectiles launched at targets behind the wall are deflected upward and miss automatically. Boulders hurled by Giants or siege engines, and similar projectiles, are unaffected. Creatures in gaseous form can’t pass through it.",
         scalingMd: "",
         imagePath: spellImgUrl("windwall")
     },

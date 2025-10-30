@@ -696,7 +696,10 @@ export const LEVEL2 = [
         components: { verbal: true, somatic: true, material: false, materialText: "" },
         concentration: false,
         ritual: false,
-        descriptionMd: "You deform and ripple the earth under a creature you can see within range; it makes a Dexterity save or suffers one effect of your choice: **Sink**—pulled into the earth, taking 1d8 Bludgeoning damage and its speed becomes 0 until an adjacent creature uses an action to dig it free; **Slam**—pushed 5 feet in a direction you choose by a wave of earth, taking 2d8 Bludgeoning damage and falling Prone; **Impale**—a spike of earth erupts, dealing 4d8 Piercing damage.",
+        descriptionMd: "You cause the earth to deform and ripple, forcing a target creature to make a Dexterity saving throw or suffer one of the following effects (your choice):\n\n" +
+            "**Pulled Under.** The target is pulled into the earth, taking 1d8 Bludgeoning damage and reducing its movement speed to 0 until a creature spends an action to dig it free.\n\n" +
+            "**Earth Slam.** The target is slammed 5 feet in a direction of your choice by a wave of earth, taking 2d8 Bludgeoning damage and being knocked prone.\n\n" +
+            "**Earthen Spike.** The target is impaled by a spike of earth, taking 4d8 Piercing damage.",
         scalingMd: "",
         imagePath: spellImgUrl("earthripple")
     },
@@ -1085,8 +1088,9 @@ export const LEVEL2 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a single seed" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "Vines erupt to bind a target. **Creature:** it makes a Strength save or gains **Restrained** until the spell ends (repeat save at the end of each of its turns). **Object:** becomes anchored; creatures may climb it without extra movement. A creature can try a Strength (Athletics) check vs your save DC to free the object.",
+        descriptionMd: "When you cast this spell, choose a creature or an object that is Huge or smaller and not being worn or carried within range. Vibrant vines quickly grow around the target, pinning it into place and making it easier to traverse.\n\n" +
+            "If the target is a creature, it must succeed on a Strength saving throw or have the Restrained condition until the spell ends. The creature can repeat the saving throw at the end of each of its turns, ending the Restrained condition on a success.\n\n" +
+            "If the target is an object, it can’t be moved from its current location, and creatures that climb the object don’t spend extra movement. A creature can make a Strength (Athletics) check against your spell save DC to try to wrest the object out of the vines so it can be moved. If the object is too heavy for the creature to move, this action automatically fails.",
         scalingMd:
             "**Using a Higher-Level Spell Slot.** Choose one additional target for each slot level above 2nd.",
         imagePath: spellImgUrl("overgrowth"),
@@ -1205,8 +1209,8 @@ export const LEVEL2 = [
         components: { verbal: true, somatic: true, material: false, materialText: "" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "**Trigger:** You’re targeted by a ranged attack or must make a **Dexterity save** against an area effect (e.g., breath weapon, *fireball*). You raise a **temporary rock wall** granting **three-quarters cover** against the triggering effect. The wall **crumbles at the start of your next turn**.",
+        descriptionMd: "When you are subjected to a ranged attack or forced to make a Dexterity saving throw from an area effect such as a dragon’s breath, the *Fireball* spell, or a large explosion, you can cast this spell as a reaction, raising a temporary rock wall in front of you. The wall grants you three-quarters cover against the triggering effect.\n\n" +
+            "At the start of your next turn, the wall crumbles and falls away.",
         scalingMd: "",
         imagePath: spellImgUrl("raisewall"),
     },
@@ -1520,8 +1524,12 @@ export const LEVEL2 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a rosewood match" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "Choose a **magical effect** you’re aware of within range; it releases a **scent** unique to its creator. If you’re **familiar** with the creator, you **automatically** know who created it. Otherwise, make a check using your casting ability + PB:\n**DC 10** — creature **type**; **DC 15** — **class** (if any); **DC 20** — **alignment**; **DC 25** (or **DC 30** if the creator’s higher level than you) — **name**.",
+        descriptionMd: "As you cast the spell, you draw out the potent scents trapped within all magic. Choose a magical effect you are aware of that’s within range. The effect releases a scent specific to the creature that created it. If you are familiar with the creature, you automatically know that the magical effect was created by them.\n\n" +
+            "If you are not familiar with the creature, you can make an ability check using your spellcasting ability modifier and add your proficiency bonus to it. Refer to the table below to determine what information you are able to glean from the scent. When succeeding on a DC check, you also learn previous information given from lower DCs.\n\n" +
+            "**DC 10 —** You learn the type of creature that created the magical effect.\n" +
+            "**DC 15 —** If the creature has a class, you learn what it is.\n" +
+            "**DC 20 —** You learn the creature’s alignment.\n" +
+            "**DC 25 or DC 30 (if the creature is of a higher level than you) —** You learn the name of the creature.",
         scalingMd: "",
         imagePath: spellImgUrl("spellsignature"),
     },
@@ -1543,8 +1551,9 @@ export const LEVEL2 = [
         components: { verbal: true, somatic: true, material: false, materialText: "" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "Mark yourself with a **glowing sigil**. The first time you must make a **save vs a non-AOE spell of 1st level or lower**, the spell is **absorbed** and **has no effect**. **On your next turn**, you may **cast the absorbed spell** without expending a slot (**action** or **bonus action** per the spell). If you don’t cast it on that turn, the trap **fades**. Only **one** spelltrap can be on a creature at a time.",
+        descriptionMd: "You create a spelltrap, marking it on yourself—typically as a small glowing mark on your skin. The first time you must make a saving throw against a non-AOE spell of 1st level or lower, the spell is absorbed by the spelltrap, and none of the effects of the spell take place.\n\n" +
+            "On your next turn, you can cast the spell absorbed by the spelltrap without expending a spell slot, using either an action or bonus action depending on the spell’s normal casting time. If you do not cast the spell during your next turn, the spelltrap fades and the trapped spell is lost.\n\n" +
+            "You may create multiple spelltraps, but only one can be placed on a single creature at a time. Attempting to place another spelltrap on a creature causes the original to fade away.",
         scalingMd:
             "**Using a Higher-Level Spell Slot.** The **protected spell level** increases by **1** per slot above 2nd.",
         imagePath: spellImgUrl("spelltrap"),
@@ -2106,8 +2115,8 @@ export const LEVEL2 = [
         components: { verbal: true, somatic: false, material: false, materialText: "" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "_Casting Time: Bonus Action, taken immediately after hitting with a Melee weapon or Unarmed Strike._\n\nAs part of casting this spell, expend **two Hit Point Dice** or the spell fails. The target hit by the strike takes extra **Necrotic** damage equal to the dice expended. Additionally, the creature **loses Resistance to damage** until the start of your next turn."
+        descriptionMd: "You use this spell immediately after hitting a creature with a melee weapon or an Unarmed Strike. As part of casting this spell, you must expend two Hit Point Dice or the spell automatically fails. The target hit by the strike takes extra Necrotic damage from the attack equal to the total of the Hit Point Dice expended to cast the spell.\n\n" +
+            "Additionally, the creature loses Resistance to damage until the start of your next turn.",
     },
     {
         slug: slugify("Wind Cutter"),
@@ -2352,7 +2361,7 @@ export const LEVEL2 = [
             "One creature must succeed on a **Constitution save** or become **Blinded or Deafened** (your choice) for the duration. The target repeats the save at the end of each of its turns, ending the effect on a success.",
         scalingMd:
             "**Using a Higher-Level Spell Slot.** Target **+1 creature** per slot level above 2.",
-            imagePath: spellImgUrl("blindnessdeafness")
+        imagePath: spellImgUrl("blindnessdeafness")
     },
     {
         slug: slugify("Blur"),
@@ -2550,8 +2559,11 @@ export const LEVEL2 = [
         components: { verbal: true, somatic: true, material: true, materialText: "1 copper piece" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "**Sense Thoughts.** Detect presence of thoughts within **30 ft** (language-knowing or telepathic creatures).\n**Read Thoughts.** Target a creature within **30 ft** to learn what’s **most on its mind**. As a **Magic action** next turn, you can **probe deeper** (**WIS save**; on failure, you learn reasoning, emotions, and a major concern; on success, the spell ends). The target knows you’re probing and can take an action to make an **Intelligence (Arcana)** check vs. your DC to end the spell. Blocked by 1 ft stone/wood/dirt, 1 inch metal, or thin lead.",
+        descriptionMd: "You activate one of the effects below. Until the spell ends, you can activate either effect as a Magic action on your later turns.\n\n" +
+            "**Sense Thoughts.** You sense the presence of thoughts within 30 feet of yourself that belong to creatures that know languages or are telepathic. You don’t read the thoughts, but you know that a thinking creature is present.\n\n" +
+            "The spell is blocked by 1 foot of stone, dirt, or wood; 1 inch of metal; or a thin sheet of lead.\n\n" +
+            "**Read Thoughts.** Target one creature you can see within 30 feet of yourself or one creature within 30 feet of yourself that you detected with the Sense Thoughts option. You learn what is most on the target’s mind right now. If the target doesn’t know any languages and isn’t telepathic, you learn nothing.\n\n" +
+            "As a Magic action on your next turn, you can try to probe deeper into the target’s mind. If you probe deeper, the target makes a Wisdom saving throw. On a failed save, you discern the target’s reasoning, emotions, and something that looms large in its mind (such as a worry, love, or hate). On a successful save, the spell ends. Either way, the target knows that you are probing into its mind, and until you shift your attention away from the target’s mind, the target can take an action on its turn to make an Intelligence (Arcana) check against your spell save DC, ending the spell on a success.",
         scalingMd: ""
     },
     {
@@ -2664,11 +2676,11 @@ export const LEVEL2 = [
         components: { verbal: true, somatic: true, material: false, materialText: "" },
         concentration: false,
         ritual: false,
-        descriptionMd:"You summon an otherworldly being that appears as a loyal steed in an unoccupied space of your choice within range. This creature uses the Otherworldly Steed stat block. If you already have a steed from this spell, the steed is replaced by the new one.\n\n" +
-"The steed resembles a Large, rideable animal of your choice, such as a horse, a camel, a dire wolf, or an elk. Whenever you cast the spell, choose the steed’s creature type—Celestial, Fey, or Fiend—which determines certain traits in the stat block.\n\n" +
-"**Combat.** The steed is an ally to you and your allies. In combat, it shares your Initiative count, and it functions as a controlled mount while you ride it (as defined in the rules on mounted combat). If you have the Incapacitated condition, the steed takes its turn immediately after yours and acts independently, focusing on protecting you.\n\n" +
-"**Disappearance of the Steed.** The steed disappears if it drops to 0 Hit Points or if you die. When it disappears, it leaves behind anything it was wearing or carrying. If you cast this spell again, you decide whether you summon the steed that disappeared or a different one.",
-    statblockHtml: `
+        descriptionMd: "You summon an otherworldly being that appears as a loyal steed in an unoccupied space of your choice within range. This creature uses the Otherworldly Steed stat block. If you already have a steed from this spell, the steed is replaced by the new one.\n\n" +
+            "The steed resembles a Large, rideable animal of your choice, such as a horse, a camel, a dire wolf, or an elk. Whenever you cast the spell, choose the steed’s creature type—Celestial, Fey, or Fiend—which determines certain traits in the stat block.\n\n" +
+            "**Combat.** The steed is an ally to you and your allies. In combat, it shares your Initiative count, and it functions as a controlled mount while you ride it (as defined in the rules on mounted combat). If you have the Incapacitated condition, the steed takes its turn immediately after yours and acts independently, focusing on protecting you.\n\n" +
+            "**Disappearance of the Steed.** The steed disappears if it drops to 0 Hit Points or if you die. When it disappears, it leaves behind anything it was wearing or carrying. If you cast this spell again, you decide whether you summon the steed that disappeared or a different one.",
+        statblockHtml: `
   <div class="statblock">
     <h2>OTHERWORLDLY STEED</h2>
     <hr>
@@ -2731,7 +2743,7 @@ export const LEVEL2 = [
     <p>None. This steed leaves no physical remains.</p>
   </div>
 `,
-scalingMd:
+        scalingMd:
             "**Using a Higher-Level Spell Slot.** Use the spell slot’s level for the spell level in the steed’s stat block (including granting a fly speed at 4th-level slot or higher).",
         imagePath: spellImgUrl("findsteed")
     },
@@ -3222,10 +3234,11 @@ scalingMd:
         components: { verbal: true, somatic: true, material: true, materialText: "a small square of silk" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "Place an illusion on a willing creature (Mask) or an unattended object (False Aura). **Mask:** choose a creature type; magic treats the target as that type. **False Aura:** alter how the target appears to magic that detects auras; make nonmagical seem magical, magical seem nonmagical, or change the school. Casting on the same target daily for 30 days makes it last until dispelled.",
+        descriptionMd: "With a touch, you place an illusion on a willing creature or an object that isn’t being worn or carried. A creature gains the Mask effect below, and an object gains the False Aura effect below. The effect lasts for the duration. If you cast the spell on the same target every day for 30 days, the illusion lasts until dispelled.\n\n" +
+            "**Mask (Creature).** Choose a creature type other than the target’s actual type. Spells and other magical effects treat the target as if it were a creature of the chosen type.\n\n" +
+            "**False Aura (Object).** You change the way the target appears to spells and magical effects that detect magical auras, such as *Detect Magic*. You can make a nonmagical object appear magical, make a magic item appear nonmagical, or change the object’s aura so that it appears to belong to a school of magic you choose.",
         scalingMd: "",
-        imagePath: spellImgUrl("nystulsmagicaura")
+        imagePath: spellImgUrl("magicaura")
     },
     {
         slug: slugify("Pass without Trace"),

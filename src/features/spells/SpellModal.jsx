@@ -4,6 +4,36 @@ import { slugify, spellImgUrl, schoolImgUrl, genericSpellImgUrl } from "./utils"
 const levelLabel = (lvl) =>
   lvl === 0 ? "Cantrip" : `${lvl}${[, "st", "nd", "rd"][lvl] || "th"}-level`;
 
+// Tiny inline md (**bold**, __bold__, and newlines)
+const mdInlineToHtml = (md) =>
+  String(md ?? "")
+    .replace(/\*\*([\s\S]*?)\*\*/g, "<strong>$1</strong>")
+    .replace(/__([\s\S]*?)__/g, "<strong>$1</strong>")
+    .replace(/\r\n|\r|\n/g, "<br/>");
+
+// JSON-driven reference table (theme-aware via CSS)
+function RefTable({ title, columns = [], rows = [] }) {
+  return (
+    <figure className="refblock">
+      {title ? <figcaption className="refblock__title">{title}</figcaption> : null}
+      <table>
+        {columns.length ? (
+          <thead>
+            <tr>{columns.map((c) => <th key={c}>{c}</th>)}</tr>
+          </thead>
+        ) : null}
+        <tbody>
+          {rows.map((r, i) => (
+            <tr key={i}>
+              {r.map((cell, j) => <td key={j}>{cell}</td>)}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </figure>
+  );
+}
+
 export default function SpellModal({ spell, onClose }) {
   const panelRef = useRef(null);
 
@@ -39,13 +69,6 @@ export default function SpellModal({ spell, onClose }) {
     const s = `${c.verbal ? "V" : ""}${c.somatic ? "S" : ""}${c.material ? "M" : ""}`;
     return s + (c.material && c.materialText ? ` (${c.materialText})` : "") || "—";
   })();
-
-  // Tiny inline md (**bold**, __bold__, newlines)
-  const mdInlineToHtml = (md) =>
-    String(md ?? "")
-      .replace(/\*\*([\s\S]*?)\*\*/g, "<strong>$1</strong>")
-      .replace(/__([\s\S]*?)__/g, "<strong>$1</strong>")
-      .replace(/\r\n|\r|\n/g, "<br/>");
 
   return (
     <div className="spell-modal__backdrop" onClick={onClose} role="presentation">
@@ -188,6 +211,26 @@ export default function SpellModal({ spell, onClose }) {
                       : mdInlineToHtml(spell.statblockMd),
                   }}
                 />
+              </section>
+            )}
+
+            {/* Reference table(s) (HTML drop-in or JSON-driven) */}
+            {(spell.tableHtml || (spell.tables && spell.tables.length)) && (
+              <section className="spell-modal__reftables">
+                {spell.tableHtml && (
+                  <div
+                    className="refblock"
+                    dangerouslySetInnerHTML={{ __html: spell.tableHtml }}
+                  />
+                )}
+                {spell.tables?.map((t, idx) => (
+                  <RefTable
+                    key={idx}
+                    title={t.title}
+                    columns={t.columns}
+                    rows={t.rows}
+                  />
+                ))}
               </section>
             )}
           </div>

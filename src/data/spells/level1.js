@@ -402,8 +402,13 @@ export const LEVEL1 = [
     components: { verbal: true, somatic: true, material: true, materialText: "25 gp powdered silver, consumed" },
     concentration: false,
     ritual: true,
-    descriptionMd:
-      "You perform a sacred rite. Choose one: Atonement (DC 20 Insight to restore prior alignment), Bless Water (create holy water), Upcoming Trial (once-in-a-lifetime 1d4 bonus for 24 hours), Funeral Rite (corpse immune to becoming Undead for 1 year unless via 9th-level spell), or Matrimony (two willing humanoids gain +2 AC while within 30 feet of each other; breaking the vow imposes –2 to AC, checks, and saves for 3 months).",
+    descriptionMd: "You perform a special religious ceremony that is infused with magic. When you cast the spell, choose one of the following rites, the target of which must be within 10 feet of you throughout the casting.\n\n" +
+      "**Atonement.** You touch one willing creature whose alignment has changed, and you make a DC 20 Wisdom (Insight) check. On a successful check, you restore the target to its original alignment.\n\n" +
+      "**Bless Water.** You touch one vial of water and cause it to become holy water.\n\n" +
+      "**Coming of Age.** You touch one humanoid who is a young adult. For the next 24 hours, whenever the target makes an ability check, it can roll a d4 and add the number rolled to the ability check. A creature can benefit from this rite only once.\n\n" +
+      "**Dedication.** You touch one humanoid who wishes to be dedicated to your god’s service. For the next 24 hours, whenever the target makes a saving throw, it can roll a d4 and add the number rolled to the save. A creature can benefit from this rite only once.\n\n" +
+      "**Funeral Rite.** You touch one corpse, and for the next 7 days, the target can’t become undead by any means short of a wish spell.\n\n" +
+      "**Wedding.** You touch adult humanoids willing to be bonded together in marriage. For the next 7 days, each target gains a +2 bonus to AC while they are within 30 feet of each other. A creature can benefit from this rite again only if widowed.",
     scalingMd: "",
     imagePath: spellImgUrl("ceremony")
   },
@@ -1471,8 +1476,10 @@ export const LEVEL1 = [
     components: { verbal: true, somatic: true, material: false, materialText: "" },
     concentration: false,
     ritual: false,
-    descriptionMd:
-      "You create a sphere of swirling water that spins rapidly before you hurl it at a creature within range. Make a ranged spell attack. On a hit, the target takes bludgeoning damage based on distance:\n\n**1–10 ft:** 5d6 • **11–60 ft:** 4d6 • **61–90 ft:** 3d6",
+    descriptionMd: "You create a sphere of swirling water that spins rapidly in your hand or mouth before you hurl it at a creature within range. Make a ranged spell attack against the target. On a hit, the target takes Bludgeoning damage based on how far it is away from you.\n\n" +
+      "**1–10 feet:** 5d6 damage.\n" +
+      "**11–60 feet:** 4d6 damage.\n" +
+      "**61–90 feet:** 3d6 damage.",
     scalingMd:
       "**Using a Higher-Level Spell Slot.** Damage increases by **1d6** per slot level above 1st."
   },
@@ -2855,7 +2862,7 @@ export const LEVEL1 = [
       "At the end of each of its turns and each time it takes damage, it makes another Wisdom saving throw. The target has Advantage on the save if the save is triggered by damage. On a successful save, the spell ends.",
     scalingMd:
       "**Using a Higher-Level Spell Slot.** Target **+1 creature** per slot level above 1.",
-      imagePath: spellImgUrl("hideouslaughter")
+    imagePath: spellImgUrl("hideouslaughter")
   },
   {
     slug: slugify("Tenser's Floating Disk"),

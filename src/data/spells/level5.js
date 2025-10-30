@@ -114,8 +114,42 @@ export const LEVEL5 = [
         components: { verbal: true, somatic: true, material: true, materialText: "the bones of at least one non-animated corpse, which the spell consumes" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "You draw bones from corpses within 20 feet, forming a carapace. You gain temporary hit points per corpse based on its size: Small 1d6+1; Medium 1d8+2; Large 1d10+5; Huge 1d12+12; Gargantuan 1d20+25. As an action later, you can erupt the armor, expending all remaining temp HP. Each other creature within 20 feet makes a DEX save, taking Piercing damage equal to the temp HP expended on a failure, or half on a success. However the temp HP are lost—by damage or eruption—the bones shatter and cannot be reused.",
+        descriptionMd: "You draw the bones from all corpses within range, forming a carapace of ribcages and femurs. You gain temporary hit points for each Small or larger corpse wholly or partly within range, according to its size, that last for the duration.\n\n" +
+            "As an action on a subsequent turn, you can cause your armour of bones to erupt, expending all remaining temporary hit points. Each other creature within range must make a Dexterity saving throw, taking piercing damage equal to your expended temporary hit points on a failure, or half as much damage on a success. Whatever the manner in which the temporary hit points are lost, the bones shatter and can’t be used in this way again.",
+        tableHtml: `
+  <div class="rules-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Size</th>
+          <th>Temporary Hit Points Gained</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Small</td>
+          <td>1d6 + 1</td>
+        </tr>
+        <tr>
+          <td>Medium</td>
+          <td>1d8 + 2</td>
+        </tr>
+        <tr>
+          <td>Large</td>
+          <td>1d10 + 5</td>
+        </tr>
+        <tr>
+          <td>Huge</td>
+          <td>1d12 + 12</td>
+        </tr>
+        <tr>
+          <td>Gargantuan</td>
+          <td>1d20 + 25</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+`,
         scalingMd:
             "**At Higher Levels.** For each slot level above 5th, the radius increases by 10 feet.",
         imagePath: spellImgUrl("bonearmor")
@@ -162,8 +196,10 @@ export const LEVEL5 = [
         components: { verbal: true, somatic: true, material: false, materialText: "" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "Seize the air in a 100-foot cube you can see. Choose one effect; you can use a Magic action on later turns to switch, pause, or restart it:\n\nGusts. Horizontal wind (calm/moderate/strong). Moderate or strong: ranged weapon attacks that enter/leave/pass through have Disadvantage. Strong: moving against the wind costs +1 foot per foot.\nDowndraft. Sustained downward wind. Ranged weapon attacks through or within have Disadvantage. Flying creatures entering or starting their turn in the cube must make a Strength save or be Knocked Prone.\nUpdraft. Falling damage halved for creatures that end a fall within the cube; vertical jumps gain +10 feet.",
+        descriptionMd: "You take control of the air in a 100-foot cube that you can see within range. Choose one of the following effects when you cast the spell. The effect lasts for the spell’s duration. You can use a Magic Action while this spell is active on a later turn to switch to a different effect. You can alternatively use a Magic Action to temporarily halt the effect or to restart one you’ve halted.\n\n" +
+            "**Gusts.** A wind picks up within the cube, continually blowing in a horizontal direction you designate. You choose the intensity of the wind: calm, moderate, or strong. If the wind is moderate or strong, ranged weapon attacks that enter or leave the cube or pass through it have disadvantage on their attack rolls. If the wind is strong, any creature moving against the wind must spend 1 extra foot of movement for each foot moved.\n\n" +
+            "**Downdraft.** You cause a sustained blast of strong wind to blow downward from the top of the cube. Ranged weapon attacks that pass through the cube or that are made against targets within it have disadvantage on their attack rolls. A creature must make a Strength saving throw if it flies into the cube for the first time on a turn or starts its turn there flying. On a failed save, the creature is knocked prone.\n\n" +
+            "**Updraft.** You cause a sustained updraft within the cube, rising upward from the cube’s bottom side. Creatures that end a fall within the cube take only half damage from the fall. When a creature in the cube makes a vertical jump, the creature can jump up to 10 feet higher than normal.",
         scalingMd: "",
         imagePath: spellImgUrl("controlwinds")
     },
@@ -253,7 +289,8 @@ export const LEVEL5 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a finger bone" },
         concentration: false,
         ritual: false,
-        descriptionMd: "You attempt to rip a creature’s skeleton free. The target makes a Constitution save, taking 7d10 Necrotic damage on a failure, or half as much on a success. If this damage kills the target, its flesh sloughs off and the skeleton rises as a **Skeleton** (Basic Rules p. 152) under your control for 24 hours as if by [spells]animate dead[/spells].",
+        descriptionMd: "You point at a creature within range and attempt to make its skeleton rip free of its body. The creature must make a Constitution saving throw. The target takes 7d10 Necrotic damage on a failed save, or half as much damage on a successful one.\n\n" +
+            "If this damage kills the target creature, its flesh falls off its skeleton, collapsing into a pile, and the skeleton becomes a Skeleton (Basic Rules, pg. 152) under your control for 24 hours as if by the Animate Dead spell.",
         scalingMd: "",
         imagePath: spellImgUrl("deglovecreature")
     },
@@ -297,7 +334,11 @@ export const LEVEL5 = [
         components: { verbal: true, somatic: true, material: false, materialText: "" },
         concentration: true,
         ritual: false,
-        descriptionMd: "You create an exact duplicate of yourself in an empty space you can see within 30 feet. At the start of each of your turns, you may switch places with the duplicate. The duplicate has your stats, abilities, and equipment (including magic items). It acts on your initiative and has its own actions, but concentration on this spell is shared; if either of you loses concentration, the spell ends. Your current hit points are divided between you and the duplicate; you share all other resources (limited-use features, magic items), and using a resource by either expends it for both. The duplicate can take any action you can, but can deal a maximum of 15 damage on its turn; excess damage beyond that cap deals no additional damage (area damage is split among targets up to the cap). If either copy is reduced to 0 hit points, the spell ends and you become the remaining copy. When the spell ends with both present, choose which is you; the other vanishes, and any copied items vanish.",
+        descriptionMd: "You create an exact duplicate of yourself in an empty space you can see within 30 feet of you. When you cast this spell at the start of each of your turns for the duration, you can switch places with your duplicate.\n\n" +
+            "The duplicate has all of your stats, abilities, and equipment (including magic items). It acts on your initiative, and has its own actions, though it shares its concentration on this spell, and if either of you lose concentration, the spell ends.\n\n" +
+            "Your current hit points are divided between you and the duplicate and shares all other resources and abilities with you (including limited use magic items), with any usage by either you or the duplicate depleting the resource for both of you.\n\n" +
+            "Your duplicate can take any action you can take, but it can deal a maximum of 15 damage on its turn (any additional damage dealt deals no further damage, when dealing area of effect damage, damage is split between all targets equally up to the maximum).\n\n" +
+            "If either you or the duplicate is reduced to zero hit points, the spell ends and you become the copy that was not reduced to zero hit points. When the spell ends, if both you and the duplicate are still present, decide which is you, and the other vanishes. Anything that was copied during the spell has the copied version vanish.",
         scalingMd: "**Using a Higher-Level Spell Slot.** With a 6th-level slot or higher, both you and the duplicate’s starting hit points increase by 15 (up to, but not exceeding, your current hit points) and the duplicate’s per-turn damage cap increases by 10, for each slot level above 5th.",
         imagePath: spellImgUrl("divideself")
     },
@@ -429,7 +470,9 @@ export const LEVEL5 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a gem-encrusted humanoid skull worth 200+ gp" },
         concentration: true,
         ritual: false,
-        descriptionMd: "As part of casting, expend **five Hit Point Dice** or the spell fails. Roll those dice; a target creature of the listed types must make a Charisma save or have its **current and maximum HP reduced** by the total rolled. For the duration on a failed save: the creature **loses all immunities and resistances**, its creature type becomes **Humanoid**, and it takes an extra **1d4 Necrotic** each time it takes damage. If it’s reduced to 0 HP while affected, these changes become **permanent** and it dies; reversing this requires restoring it to life and a **remove curse** (or similar).",
+        descriptionMd: "As part of casting this spell, you must expend five Hit Point Dice or the spell automatically fails. Roll the Hit Point Dice expended, then choose an Aberration, Celestial, Elemental, Fey, or Fiend within range and condemn it to a taste of mortality. The creature must succeed on a Charisma saving throw or its Hit Point maximum and current Hit Points are reduced by the amount rolled on the Hit Point Dice expended to cast the spell.\n\n" +
+            "For the duration of the spell, a creature that fails the saving throw loses all damage Immunities and Resistances, its creature type changes to Humanoid, and it takes an additional 1d4 Necrotic damage each time it takes damage.\n\n" +
+            "If a creature affected by this spell is reduced to 0 Hit Points, these changes become permanent and the creature dies. This final effect of the spell can only be reversed if the creature is restored to life and targeted by a Remove Curse spell or similar magic.",
         scalingMd: "",
         imagePath: spellImgUrl("forcedmortality")
     },
@@ -528,8 +571,8 @@ export const LEVEL5 = [
         imagePath: spellImgUrl("killingcurse")
     },
     {
-        slug: slugify("Investiture of Venom"),
-        name: "Investiture of Venom",
+        slug: slugify("Form of Venom"),
+        name: "Form of Venom",
         classes: ["Druid", "Ranger"],
         spellLevel: 5,
         school: "Transmutation",
@@ -545,10 +588,13 @@ export const LEVEL5 = [
         components: { verbal: true, somatic: true, material: false, materialText: "" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "Your veins bulge green and your eyes weep poison. **Benefits:** You are Immune to Poison damage and the Poisoned condition. You can detect whether creatures within 30 feet have Resistance/Immunity to Poison damage or Immunity to the Poisoned condition. **Bonus Action:** Choose a creature within 30 feet; it makes a CON save. On a failure, it loses Resistance/Immunity to Poison damage or Immunity to the Poisoned condition (your choice) until the end of your next turn. **Magic action:** Exhale a 15-foot Line of venom (5 feet wide). Each creature in the Line makes a CON save, taking 4d6 Poison damage and becoming Poisoned until the end of your next turn on a failure, or half damage only on a success.",
+        descriptionMd: "Until the spell ends, your veins bulge and become visibly green beneath your skin, your eyes weep constantly with liquid poison, and you gain the following benefits:\n\n" +
+            "You are Immune to Poison damage and the Poisoned condition.\n\n" +
+            "You can determine if creatures you can see within 30 feet of you have Resistance or Immunity to Poison damage or Immunity to the Poisoned condition.\n\n" +
+            "As a Bonus Action, choose a creature you can see within 30 feet of you. That creature makes a Constitution saving throw against your spell save DC. On a failed save, the creature loses Resistance to Poison damage, Immunity to Poison damage, or Immunity to the Poisoned condition until the end of your next turn, you choose when you use this ability.\n\n" +
+            "As a Magic action, a Line of venom 15 feet long and 5 feet wide blasts from you in a direction you choose. Each creature in the Line must make a Constitution saving throw. On a failed save, the creature takes 4d6 Poison damage and has the Poisoned condition until the end of your next turn. On a successful save, the creature takes half as much damage only.",
         scalingMd: "",
-        imagePath: spellImgUrl("investitureofvenom")
+        imagePath: spellImgUrl("formofvenom")
     },
     {
         slug: slugify("Lucky Charm"),
@@ -683,8 +729,80 @@ export const LEVEL5 = [
         components: { verbal: true, somatic: true, material: false, materialText: "" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "Create a brief portal just large enough for **you** (or **one Tiny object** you can see). Step through to a destination you **know** on the same plane, then the portal closes. Arrival outcome depends on **familiarity** (On Target / Off Target / Similar Area / Mishap, with Mishap dealing **3d10 Force** and rerolling).",
+        descriptionMd: "This spell creates a portal large enough just for you, when you step through the portal it instantly transports you, or a single object that you can see within range, to a destination you select and the portal instantly closes. If you target an object, it must be of the tiny size or smaller.\n\n" +
+            "The destination you choose must be known to you, and it must be on the same plane of existence as you. Your familiarity with the destination determines whether you arrive there successfully. The GM rolls d100 and consults the table.\n\n" +
+            "Familiarity. \"Permanent circle\" means a permanent teleportation circle whose sigil sequence you know. \"Associated object\" means that you possess an object taken from the desired destination within the last six months, such as a book from a wizard's library, bed linen from a royal suite, or a chunk of marble from a lich's secret tomb.\n\n" +
+            "\"Very familiar\" is a place you have been very often, a place you have carefully studied, or a place you can see when you cast the spell. \"Seen casually\" is someplace you have seen more than once but with which you aren't very familiar. \"Viewed once\" is a place you have seen once, possibly using magic. \"Description\" is a place whose location and appearance you know through someone else's description, perhaps from a map. \"False destination\" is a place that doesn't exist. Perhaps you tried to scry an enemy's sanctum but instead viewed an illusion, or you are attempting to teleport to a familiar location that no longer exists.\n\n" +
+            "On Target. You (or the target object) appear where you want to.\n\n" +
+            "Off Target. You (or the target object) appear a random distance away from the destination in a random direction. Distance off target is 1d10 × 1d10 percent of the distance that was to be traveled. For example, if you tried to travel 120 miles, landed off target, and rolled a 5 and 3 on the two d10s, then you would be off target by 15 percent, or 18 miles. The GM determines the direction off target randomly by rolling a d8 and designating 1 as north, 2 as northeast, 3 as east, and so on around the points of the compass. If you were teleporting to a coastal city and wound up 18 miles out at sea, you could be in trouble.\n\n" +
+            "Similar Area. You (or the target object) wind up in a different area that's visually or thematically similar to the target area. If you are heading for your home laboratory, for example, you might wind up in another wizard's laboratory or in an alchemical supply shop that has many of the same tools and implements as your laboratory. Generally, you appear in the closest similar place, but since the spell has no range limit, you could conceivably wind up anywhere on the plane.\n\n" +
+            "Mishap. The spell's unpredictable magic results in a difficult journey. You (or the target object) take 3d10 force damage, and the GM rerolls on the table to see where you wind up (multiple mishaps can occur, dealing damage each time).",
+        tableHtml: `
+  <div class="rules-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Familiarity</th>
+          <th>Mishap</th>
+          <th>Similar Area</th>
+          <th>Off Target</th>
+          <th>On Target</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Permanent circle</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>01–100</td>
+        </tr>
+        <tr>
+          <td>Associated object</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>01–100</td>
+        </tr>
+        <tr>
+          <td>Very familiar</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>01–100</td>
+        </tr>
+        <tr>
+          <td>Seen casually</td>
+          <td>01–33</td>
+          <td>34–43</td>
+          <td>44–53</td>
+          <td>54–100</td>
+        </tr>
+        <tr>
+          <td>Viewed once</td>
+          <td>01–43</td>
+          <td>44–53</td>
+          <td>54–73</td>
+          <td>74–100</td>
+        </tr>
+        <tr>
+          <td>Description</td>
+          <td>01–43</td>
+          <td>44–53</td>
+          <td>54–73</td>
+          <td>74–100</td>
+        </tr>
+        <tr>
+          <td>False destination</td>
+          <td>01–50</td>
+          <td>51–100</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+`,
         scalingMd: "",
         imagePath: spellImgUrl("portal"),
     },
@@ -777,8 +895,8 @@ export const LEVEL5 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a red handkerchief" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "Wave the component and choose any number of creatures in range that can see you. Each makes a **WIS save** (with **advantage** if you or your allies are fighting it). On a failure, it is **Charmed** until the spell ends or until you/your allies damage it. While charmed it is **Friendly** to you and must **use its action to make Unarmed Strikes** against the nearest creature other than you/your allies, or move toward the nearest target. It **repeats the save** at the end of each of its turns.",
+        descriptionMd: "When you cast this spell, you wave the red handkerchief used as the material component and choose any number of creatures within range that can see you. Each chosen creature makes a Wisdom saving throw. It does so with Advantage if you or your allies are fighting it. On a failed save, the target has the Charmed condition until the spell ends or until you or your allies damage it. The Charmed creature is Friendly to you and your allies. While Charmed, it must use its action to make Unarmed Strikes against the nearest creature (other than you or your allies) or use its turn to move toward the nearest target.\n\n" +
+            "At the end of each of its turns, the target repeats the save, ending the spell on itself on a success.",
         scalingMd: "",
         imagePath: spellImgUrl("riotrampage"),
     },
@@ -800,8 +918,7 @@ export const LEVEL5 = [
         components: { verbal: true, somatic: true, material: false, materialText: "" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "Shadowy mist envelops **up to six creatures** within **20 ft**; they gain the **Invisible** condition and **+10 ft walking speed**. The spell ends **for everyone** early if you **lose concentration** or if **any affected creature** makes an **attack roll**, **deals damage**, or **casts a spell** (or ends its invisibility voluntarily/accidentally).",
+        descriptionMd: "You exude a wave of shadowy mist that envelops up to six targets of your choice within a 20 foot radius. All of the effected creature's gain the invisible condition and their walking speed increases by 10 ft. for the duration. The spell ends early immediately after an affected creature makes an attack roll, deals damage, or casts a spell. If you fail a concentration check on this spell or a creature ends its invisibility voluntarily or accidentally every creature effected by this spell loses invisibility.",
         scalingMd: "",
         imagePath: spellImgUrl("shroudofshadow"),
     },
@@ -847,8 +964,10 @@ export const LEVEL5 = [
         components: { verbal: false, somatic: true, material: true, materialText: "a sentimental personal item (≥ 1 sp)" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "Upon casting, you **drop to 0 HP and die**. At the start of your next turn, you become a **Ghost** occupying your corpse’s space. Replace your stats with the Ghost’s stat block but retain your **HP, Hit Dice, INT/WIS/CHA, and languages**. Add your **PB** to your **attack rolls** and **ability DCs** as a Ghost.\n\nThe GM secretly rolls **1d8**; after that many **hours**, the spell ends (or ends early if you drop to 0 HP as a Ghost or take a **Magic action** to end it). If the **material component remains** on your corpse, you return to life with **half your HP maximum**; otherwise you make **death saves** as normal. If your body is destroyed while this lasts, the duration becomes **permanent** until you’re reduced to 0 HP or your body is restored by suitable magic.",
+        descriptionMd: "When you cast this spell, you drop to 0 Hit Points and die. At the start of your next turn, you become a Ghost occupying the same space as your corpse. Your game statistics are replaced by the Ghost’s stat block, but you retain your Hit Points; Hit Point Dice; Intelligence, Wisdom, and Charisma scores; and languages.\n\n" +
+            "While you are a Ghost, you can only use abilities detailed in the Ghost’s stat block. In addition, you add your Proficiency Bonus to your attack rolls and the DC of your Ghost abilities.\n\n" +
+            "Your GM secretly rolls 1d8 when you cast the spell. After a number of hours equal to the number rolled, the spell ends. The spell ends early if you are reduced to 0 Hit Points as a Ghost or you take the Magic action to end the spell. If the material component used to cast this spell remains on your corpse, you return to life with a number of Hit Points equal to half your Hit Point maximum. If the material component used to cast this spell is no longer on your corpse, you make Death Saving Throws as normal.\n\n" +
+            "If your body is destroyed or damaged beyond the capacity to survive while you are under the effects of this spell, its duration becomes permanent and you remain a Ghost until you are reduced to 0 Hit Points or your body is targeted by an effect that returns the living to the dead such as Raise Dead or Resurrection.",
         scalingMd: "",
         imagePath: spellImgUrl("spiritprojection"),
     },
@@ -870,8 +989,7 @@ export const LEVEL5 = [
         components: { verbal: true, somatic: false, material: false, materialText: "" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "As part of casting, **expend five Hit Dice** or the spell fails. **Once on each of your turns** when you **hit** with a **Melee weapon or Unarmed Strike**, roll the **expended Hit Dice** and **regain HP** equal to the total.",
+        descriptionMd: "Your strikes drink the splattered blood of your foes. As part of casting this spell, you must expend five Hit Dice or the spell automatically fails. Once on each of your turns when you hit a creature with an attack roll using a Melee weapon or Unarmed Strike, roll the Hit Point Dice expended to cast the spell and regain a number of Hit Points equal to the numbered rolled.",
         scalingMd: "",
         imagePath: spellImgUrl("splatteringsmite"),
     },
@@ -893,8 +1011,7 @@ export const LEVEL5 = [
         components: { verbal: true, somatic: true, material: true, materialText: "" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "Unleash a **120-ft cone** sonic blast. Creatures **beyond 60 ft automatically succeed**. Others make **CON save**: on fail **6d8 Thunder** and **Deafened**; on success **half**, no rider.",
+        descriptionMd: "You emit a sonic blast covering a huge area. Each creature in a 120-foot cone must make a Constitution saving throw. On a failed save, a creature takes 6d8 thunder damage and is deafened. On a successful save, a creature takes half as much damage and no additional effects. A creature automatically succeeds on its saving throw if it is more than 60 feet from you.",
         scalingMd:
             "**Using a Higher-Level Spell Slot.** **+1d8** damage per slot above 5th.",
         imagePath: spellImgUrl("sonicshriek"),
@@ -917,8 +1034,7 @@ export const LEVEL5 = [
         components: { verbal: true, somatic: true, material: false, materialText: "" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "A creature with **CHA 3+** makes a **CHA save**: on fail it takes **8d8 Psychic** and is **Frightened** until the spell ends; on success it takes **half** only.",
+        descriptionMd: "You invite spirits to take their revenge upon a target. A creature you can see within range must make a Charisma saving throw. The target must have a Charisma of 3 or higher. On a failed save, the target takes 8d8 Psychic damage and has the Frightened condition until the spell ends. On a successful save, the creature takes half as much damage only.",
         scalingMd: "",
         imagePath: spellImgUrl("spiritswarm"),
     },
@@ -1146,8 +1262,13 @@ export const LEVEL5 = [
         components: { verbal: true, somatic: true, material: true, materialText: "an eggshell and a glove" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "Create a **Large hand** in an unoccupied space. It has **AC 20** and **HP equal to your maximum HP**; if it drops to 0, the spell ends. It doesn’t occupy its space. When you cast and as a **Bonus Action** later, move it **up to 60 ft.** and choose an effect:\n\n**Clenched Fist.** Melee spell attack vs. a creature within 5 ft.; **5d8 Force** on a hit.\n**Forceful Hand.** **STR save** (Huge or smaller) or be **pushed 5 ft. + 5× your spellcasting mod**; the hand moves to stay adjacent.\n**Grasping Hand.** **DEX save** (Huge or smaller) or **Grappled** (escape = your DC); as a Bonus Action, **crush** for **4d6 + your spellcasting mod Bludgeoning**.\n**Interposing Hand.** Grants you **half cover** against threats from its space/through it; its space is **Difficult Terrain** for enemies.",
+        descriptionMd: "You create a Large hand of shimmering magical energy in an unoccupied space that you can see within range. The hand lasts for the duration, and it moves at your command, mimicking the movements of your own hand.\n\n" +
+            "The hand is an object that has AC 20 and Hit Points equal to your Hit Point maximum. If it drops to 0 Hit Points, the spell ends. The hand doesn’t occupy its space.\n\n" +
+            "When you cast the spell and as a Bonus Action on your later turns, you can move the hand up to 60 feet and then cause one of the following effects:\n\n" +
+            "**Clenched Fist.** The hand strikes a target within 5 feet of it. Make a melee spell attack. On a hit, the target takes 5d8 Force damage.\n\n" +
+            "**Forceful Hand.** The hand attempts to push a Huge or smaller creature within 5 feet of it. The target must succeed on a Strength saving throw, or the hand pushes the target up to 5 feet plus a number of feet equal to five times your spellcasting ability modifier. The hand moves with the target, remaining within 5 feet of it.\n\n" +
+            "**Grasping Hand.** The hand attempts to grapple a Huge or smaller creature within 5 feet of it. The target must succeed on a Dexterity saving throw, or the target has the Grappled condition, with an escape DC equal to your spell save DC. While the hand grapples the target, you can take a Bonus Action to cause the hand to crush it, dealing Bludgeoning damage to the target equal to 4d6 plus your spellcasting ability modifier.\n\n" +
+            "**Interposing Hand.** The hand grants you Half Cover against attacks and other effects that originate from its space or that pass through it. In addition, its space counts as Difficult Terrain for your enemies.",
         scalingMd:
             "**Using a Higher-Level Spell Slot.** **Clenched Fist** damage +**2d8** and **Grasping Hand crush** damage +**2d6** per slot above 5.",
         imagePath: spellImgUrl("bigbyshand")
@@ -1380,8 +1501,42 @@ export const LEVEL5 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a paintbrush" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "Pull shadow-stuff from the **Shadowfell** to create a nonliving object you have seen of **vegetable or mineral matter**, up to **5-foot cube**. Duration by material:\n\n**Vegetable** 24 hours; **Stone/Crystal** 12 hours; **Precious metals** 1 hour; **Gems** 10 minutes; **Adamantine/Mithral** 1 minute. If multiple materials, use the **shortest** duration. Using the object as another spell’s **Material** component causes that spell to **fail**.",
+        descriptionMd: "You pull wisps of shadow material from the Shadowfell to create an object within range. It is either an object of vegetable matter (soft goods, rope, wood, and the like) or mineral matter (stone, crystal, metal, and the like). The object must be no larger than a 5-foot Cube, and the object must be of a form and material that you have seen.\n\n" +
+            "The spell’s duration depends on the object’s material, as shown in the Materials table. If the object is composed of multiple materials, use the shortest duration. Using any object created by this spell as another spell’s Material component causes the other spell to fail.",
+        tableHtml: `
+  <div class="rules-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Material</th>
+          <th>Duration</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Vegetable matter</td>
+          <td>24 hours</td>
+        </tr>
+        <tr>
+          <td>Stone or crystal</td>
+          <td>12 hours</td>
+        </tr>
+        <tr>
+          <td>Precious metals</td>
+          <td>1 hour</td>
+        </tr>
+        <tr>
+          <td>Gems</td>
+          <td>10 minutes</td>
+        </tr>
+        <tr>
+          <td>Adamantine or mithral</td>
+          <td>1 minute</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+`,
         scalingMd:
             "**Using a Higher-Level Spell Slot.** Cube size increases by **5 feet** per slot above 5.",
         imagePath: spellImgUrl("creation")
@@ -1450,8 +1605,9 @@ export const LEVEL5 = [
         components: { verbal: true, somatic: true, material: false, materialText: "" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "One **Humanoid** you can see makes a **Wisdom** save (with **Advantage** if you or allies are fighting it) or becomes **Charmed** for the duration. It repeats the save each time it **takes damage**. You gain a **telepathic link** on the same plane and can issue **commands** (no action), which it follows on its turns. If it completes an order and gets none further, it acts to protect itself. You can command it to take a **Reaction**, but you must use **your Reaction** to do so.",
+        descriptionMd: "One Humanoid you can see within range must succeed on a Wisdom saving throw or have the Charmed condition for the duration. The target has Advantage on the save if you or your allies are fighting it. Whenever the target takes damage, it repeats the save, ending the spell on itself on a success.\n\n" +
+            "You have a telepathic link with the Charmed target while the two of you are on the same plane of existence. On your turn, you can use this link to issue commands to the target (no action required), such as “Attack that creature,” “Move over there,” or “Fetch that object.” The target does its best to obey on its turn. If it completes an order and doesn’t receive further direction from you, it acts and moves as it likes, focusing on protecting itself.\n\n" +
+            "You can command the target to take a Reaction but must take your own Reaction to do so.",
         scalingMd:
             "**Using a Higher-Level Spell Slot.** Concentration can last longer: slot **6** (up to **10 minutes**), **7** (up to **1 hour**), **8+** (up to **8 hours**).",
         imagePath: spellImgUrl("dominateperson")
@@ -1474,8 +1630,10 @@ export const LEVEL5 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a handful of sand" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "You or a willing creature you touch becomes a **dream messenger**, entering a trance (**Incapacitated**, Speed 0). If the target is asleep, the messenger appears in its dreams, can **converse** and **shape the environment**, and the target **recalls the dream perfectly**. If the target is awake, the messenger can end the trance or **wait** until it sleeps. You can make the messenger **terrifying**: deliver a **≤10-word** message, then the target makes a **Wisdom** save; on a fail it **gains no rest benefits** and takes **3d6 Psychic** on waking.",
+        descriptionMd: "You target a creature you know on the same plane of existence. You or a willing creature you touch enters a trance state to act as a dream messenger. While in the trance, the messenger is Incapacitated and has a Speed of 0.\n\n" +
+            "If the target is asleep, the messenger appears in the target’s dreams and can converse with the target as long as it remains asleep, through the spell’s duration. The messenger can also shape the dream’s environment, creating landscapes, objects, and other images. The messenger can emerge from the trance at any time, ending the spell. The target recalls the dream perfectly upon waking.\n\n" +
+            "If the target is awake when you cast the spell, the messenger knows it and can either end the trance (and the spell) or wait for the target to sleep, at which point the messenger enters its dreams.\n\n" +
+            "You can make the messenger terrifying to the target. If you do so, the messenger can deliver a message of no more than ten words, and then the target makes a Wisdom saving throw. On a failed save, the target gains no benefit from its rest, and it takes 3d6 Psychic damage when it wakes up.",
         scalingMd: "",
         imagePath: spellImgUrl("dream")
     },
@@ -1521,8 +1679,10 @@ export const LEVEL5 = [
         components: { verbal: true, somatic: false, material: false, materialText: "" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "You issue a verbal command to a creature you can see within range. The target makes a **Wisdom** saving throw or is **Charmed** for the duration. A target that can’t understand the command **automatically succeeds**. While Charmed, if the creature acts **directly counter** to your command, it takes **5d10 Psychic** damage (no more than **once per day**). You can’t command it to perform an activity that would result in **certain death**; if you do, the spell ends. A **remove curse**, **greater restoration**, or **wish** spell ends this effect.",
+        descriptionMd: "You give a verbal command to a creature that you can see within range, ordering it to carry out some service or refrain from an action or a course of activity as you decide. The target must succeed on a Wisdom saving throw or have the Charmed condition for the duration. The target automatically succeeds if it can’t understand your command.\n\n" +
+            "While Charmed, the creature takes 5d10 Psychic damage if it acts in a manner directly counter to your command. It takes this damage no more than once each day.\n\n" +
+            "You can issue any command you choose, short of an activity that would result in certain death. Should you issue a suicidal command, the spell ends.\n\n" +
+            "A Remove Curse, Greater Restoration, or Wish spell ends this spell.",
         scalingMd:
             "**Using a Higher-Level Spell Slot.** Slot **7–8**: duration **365 days**. Slot **9**: lasts **until ended** by *remove curse*, *greater restoration*, or *wish*.",
         imagePath: spellImgUrl("geas")
@@ -1568,8 +1728,19 @@ export const LEVEL5 = [
         components: { verbal: true, somatic: true, material: true, materialText: "incense worth 1,000+ GP (consumed)" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "You infuse an area you touch (radius up to **60 feet**) with holy or unholy power. **Hallowed Ward:** choose creature types (**Aberration, Celestial, Elemental, Fey, Fiend, Undead**). Those types **can’t willingly enter**, and creatures **possessed/Charmed/Frightened** by them are not affected by those states while in the area. **Extra Effect:** choose one—**Courage, Darkness, Daylight, Peaceful Rest, Extradimensional Interference, Fear, Resistance (chosen type), Silence, Tongues, or Vulnerability (chosen type)**. The spell fails if the radius includes an existing *hallow*.",
+        descriptionMd: "You touch a point and infuse an area around it with holy or unholy power. The area can have a radius up to 60 feet, and the spell fails if the radius includes an area already under the effect of Hallow. The affected area has the following effects.\n\n" +
+            "**Hallowed Ward.** Choose any of these creature types: Aberration, Celestial, Elemental, Fey, Fiend, or Undead. Creatures of the chosen types can’t willingly enter the area, and any creature that is possessed by or that has the Charmed or Frightened condition from such creatures isn’t possessed, Charmed, or Frightened by them while in the area.\n\n" +
+            "**Extra Effect.** You bind an extra effect to the area from the list below:\n\n" +
+            "**Courage.** Creatures of any types you choose can’t gain the Frightened condition while in the area.\n\n" +
+            "**Darkness.** Darkness fills the area. Normal light, as well as magical light created by spells of a level lower than this spell, can’t illuminate the area.\n\n" +
+            "**Daylight.** Bright light fills the area. Magical Darkness created by spells of a level lower than this spell can’t extinguish the light.\n\n" +
+            "**Peaceful Rest.** Dead bodies interred in the area can’t be turned into Undead.\n\n" +
+            "**Extradimensional Interference.** Creatures of any types you choose can’t enter or exit the area using teleportation or interplanar travel.\n\n" +
+            "**Fear.** Creatures of any types you choose have the Frightened condition while in the area.\n\n" +
+            "**Resistance.** Creatures of any types you choose have Resistance to one damage type of your choice while in the area.\n\n" +
+            "**Silence.** No sound can emanate from within the area, and no sound can reach into it.\n\n" +
+            "**Tongues.** Creatures of any types you choose can communicate with any other creature in the area even if they don’t share a common language.\n\n" +
+            "**Vulnerability.** Creatures of any types you choose have Vulnerability to one damage type of your choice while in the area.",
         scalingMd: "",
         imagePath: spellImgUrl("hallow")
     },
@@ -1733,8 +1904,11 @@ export const LEVEL5 = [
         components: { verbal: true, somatic: true, material: false, materialText: "" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "One creature you can see makes a **Wisdom** save (**Advantage** if you’re fighting it). On a fail, it is **Charmed** and **Incapacitated** for the duration, unaware of surroundings but able to hear you. If it takes damage or is targeted by another spell, this spell ends and **no memory is altered**. While the charm lasts, you can alter the target’s memory of an event from the last **24 hours** (lasting **≤10 minutes**): erase, clarify, change details, or implant another memory. You must **speak** the new narrative and be understood. If the spell ends before you finish, nothing changes. Illogical memories may be dismissed by the creature. **Remove curse** or **greater restoration** restores true memory.",
+        descriptionMd: "You attempt to reshape another creature’s memories. One creature that you can see within range makes a Wisdom saving throw. If you are fighting the creature, it has Advantage on the save. On a failed save, the target has the Charmed condition for the duration. While Charmed in this way, the target also has the Incapacitated condition and is unaware of its surroundings, though it can hear you. If it takes any damage or is targeted by another spell, this spell ends, and no memories are modified.\n\n" +
+            "While this charm lasts, you can affect the target’s memory of an event that it experienced within the last 24 hours and that lasted no more than 10 minutes. You can permanently eliminate all memory of the event, allow the target to recall the event with perfect clarity, change its memory of the event’s details, or create a memory of some other event.\n\n" +
+            "You must speak to the target to describe how its memories are affected, and it must be able to understand your language for the modified memories to take root. Its mind fills in any gaps in the details of your description. If the spell ends before you finish describing the modified memories, the creature’s memory isn’t altered. Otherwise, the modified memories take hold when the spell ends.\n\n" +
+            "A modified memory doesn’t necessarily affect how a creature behaves, particularly if the memory contradicts the creature’s natural inclinations, alignment, or beliefs. An illogical modified memory, such as a false memory of how much the creature enjoyed swimming in acid, is dismissed as a bad dream. The DM might deem a modified memory too nonsensical to affect a creature.\n\n" +
+            "A Remove Curse or Greater Restoration spell cast on the target restores the creature’s true memory.",
         scalingMd:
             "**Using a Higher-Level Spell Slot.** Alter events up to **7 days** ago (slot 6), **30 days** (slot 7), **365 days** (slot 8), or **any time** in the target’s past (slot 9).",
         imagePath: spellImgUrl("modifymemory")
@@ -1780,8 +1954,8 @@ export const LEVEL5 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a jewel worth 1,000+ GP (consumed)" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "You attempt to **bind** a **Celestial, Elemental, Fey, or Fiend** within range for the entire casting. At completion, the target makes a **Charisma** save or is **bound to your service** for the duration. If the creature was summoned/created by another spell, that spell’s duration **extends** to match this one. Bound creatures follow your commands (hostile ones will twist them). After completing commands, it **reports back** if on the same plane; otherwise it returns to the binding site.",
+        descriptionMd: "You attempt to bind a Celestial, an Elemental, a Fey, or a Fiend to your service. The creature must be within range for the entire casting of the spell. (Typically, the creature is first summoned into the center of the inverted version of the Magic Circle spell to trap it while this spell is cast.) At the completion of the casting, the target must succeed on a Charisma saving throw or be bound to serve you for the duration. If the creature was summoned or created by another spell, that spell’s duration is extended to match the duration of this spell.\n\n" +
+            "A bound creature must follow your commands to the best of its ability. You might command the creature to accompany you on an adventure, to guard a location, or to deliver a message. If the creature is Hostile, it strives to twist your commands to achieve its own objectives. If the creature carries out your commands completely before the spell ends, it travels to you to report this fact if you are on the same plane of existence. If you are on a different plane, it returns to the place where you bound it and remains there until the spell ends.",
         scalingMd:
             "**Using a Higher-Level Spell Slot.** Duration increases: slot **6** (10 days), **7** (30 days), **8** (180 days), **9** (366 days).",
         imagePath: spellImgUrl("planarbinding")
@@ -1804,8 +1978,10 @@ export const LEVEL5 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a diamond worth 500+ GP (consumed)" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "You revive a creature **dead ≤ 10 days** that wasn’t Undead when it died. It returns to life with **1 HP** and any **poisons are neutralized**. The spell closes mortal wounds but **doesn’t restore missing parts** (and fails if necessary parts—like the head—are missing). Coming back is an ordeal: the target has **−4 to D20 Tests**, reduced by **1** after each **Long Rest** until it reaches **0**.",
+        descriptionMd: "With a touch, you revive a dead creature if it has been dead no longer than 10 days and it wasn’t Undead when it died.\n\n" +
+            "The creature returns to life with 1 Hit Point. This spell also neutralizes any poisons that affected the creature at the time of death.\n\n" +
+            "This spell closes all mortal wounds, but it doesn’t restore missing body parts. If the creature is lacking body parts or organs integral for its survival—its head, for instance—the spell automatically fails.\n\n" +
+            "Coming back from the dead is an ordeal. The target takes a −4 penalty to D20 Tests. Every time the target finishes a Long Rest, the penalty is reduced by 1 until it becomes 0.",
         scalingMd: "",
         imagePath: spellImgUrl("raisedead")
     },
@@ -1850,8 +2026,32 @@ export const LEVEL5 = [
         components: { verbal: true, somatic: true, material: true, materialText: "rare oils worth 1,000+ GP (consumed)" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "Touch a dead **Humanoid** or a piece of one dead **≤ 10 days**. The spell forms a **new body** and calls the soul to enter it. Roll **1d10** (or DM chooses) for species: **1 Aasimar; 2 Dragonborn; 3 Dwarf; 4 Elf; 5 Gnome; 6 Goliath; 7 Halfling; 8 Human; 9 Orc; 10 Tiefling.** The creature makes any species choices, recalls its former life, and **retains capabilities** except it **loses previous species traits** and **gains** new ones.",
+        descriptionMd: "You touch a dead Humanoid or a piece of one. If the creature has been dead no longer than 10 days, the spell forms a new body for it and calls the soul to enter that body. Roll 1d10 and consult the table below to determine the body’s species, or the DM chooses another playable species.\n\n" +
+            "The reincarnated creature makes any choices that a species’ description offers, and the creature recalls its former life. It retains the capabilities it had in its original form, except it loses the traits of its previous species and gains the traits of its new one.",
+        tableHtml: `
+  <div class="rules-table">
+    <table>
+      <thead>
+        <tr>
+          <th>1d10</th>
+          <th>Species</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Aasimar</td></tr>
+        <tr><td>2</td><td>Dragonborn</td></tr>
+        <tr><td>3</td><td>Dwarf</td></tr>
+        <tr><td>4</td><td>Elf</td></tr>
+        <tr><td>5</td><td>Gnome</td></tr>
+        <tr><td>6</td><td>Goliath</td></tr>
+        <tr><td>7</td><td>Halfling</td></tr>
+        <tr><td>8</td><td>Human</td></tr>
+        <tr><td>9</td><td>Orc</td></tr>
+        <tr><td>10</td><td>Tiefling</td></tr>
+      </tbody>
+    </table>
+  </div>
+`,
         scalingMd: "",
         imagePath: spellImgUrl("reincarnate")
     },
@@ -1896,8 +2096,10 @@ export const LEVEL5 = [
         components: { verbal: true, somatic: true, material: false, materialText: "" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "Alter the appearance of any number of creatures you can see within range. **Unwilling** targets make a **Charisma** save to resist. You can change body and equipment appearance, adjust height/weight (**±1 ft.**), but limb arrangement must remain the same. The illusion **fails physical inspection** (objects pass through added items). A creature can **Study** to make an **Intelligence (Investigation)** check vs. your DC to discern the disguise.",
+        descriptionMd: "You give an illusory appearance to each creature of your choice that you can see within range. An unwilling target can make a Charisma saving throw, and if it succeeds, it is unaffected by this spell.\n\n" +
+            "You can give the same appearance or different ones to the targets. The spell can change the appearance of the targets’ bodies and equipment. You can make each creature seem 1 foot shorter or taller and appear heavier or lighter. A target’s new appearance must have the same basic arrangement of limbs as the target, but the extent of the illusion is otherwise up to you. The spell lasts for the duration.\n\n" +
+            "The changes wrought by this spell fail to hold up to physical inspection. For example, if you use this spell to add a hat to a creature’s outfit, objects pass through the hat.\n\n" +
+            "A creature that takes the Study action to examine a target can make an Intelligence (Investigation) check against your spell save DC. If it succeeds, it becomes aware that the target is disguised.",
         scalingMd: "",
         imagePath: spellImgUrl("seeming")
     },
@@ -2223,8 +2425,8 @@ export const LEVEL5 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a shard of glass" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "An **Invisible**, **impervious** wall springs into being in any orientation. Form a **hemispherical dome or globe (10-ft. radius)** or up to **ten contiguous 10-ft.×10-ft. panels** (1/4 inch thick), free-floating or supported. If it appears through a creature’s space, you push the creature to a side of your choice. **Nothing can physically pass**, it is **immune to all damage**, **can’t be dispelled**, and **extends into the Ethereal Plane**. A **disintegrate** spell destroys it instantly.",
+        descriptionMd: "An Invisible wall of force springs into existence at a point you choose within range. The wall appears in any orientation you choose, as a horizontal or vertical barrier or at an angle. It can be free floating or resting on a solid surface. You can form it into a hemispherical dome or a globe with a radius of up to 10 feet, or you can shape a flat surface made up of ten 10-foot-by-10-foot panels. Each panel must be contiguous with another panel. In any form, the wall is 1/4 inch thick and lasts for the duration. If the wall cuts through a creature’s space when it appears, the creature is pushed to one side of the wall (you choose which side).\n\n" +
+            "Nothing can physically pass through the wall. It is immune to all damage and can’t be dispelled by Dispel Magic. A Disintegrate spell destroys the wall instantly, however. The wall also extends into the Ethereal Plane and blocks ethereal travel through the wall.",
         scalingMd: "",
         imagePath: spellImgUrl("wallofforce")
     },
@@ -2246,8 +2448,12 @@ export const LEVEL5 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a cube of granite" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "A **nonmagical** stone wall springs up at a point within range: **ten 10×10 panels, 6 in. thick** (or **10×20 panels, 3 in. thick**), each **contiguous**. It can be shaped, needn’t be vertical, and must **merge with/support** existing stone (bridge chasms, create ramps, etc.). If it appears through a creature’s space, push the creature to one side. If a creature would be **enclosed**, it can use its **Reaction** to make a **Dexterity save** to move up to its Speed to avoid enclosure. Each panel: **AC 15**, **30 HP/inch thickness**, **Immunity** to **Poison** and **Psychic**. Maintain Concentration for the full duration to make the wall **permanent**; otherwise it **vanishes** when the spell ends.",
+        descriptionMd: "A nonmagical wall of solid stone springs into existence at a point you choose within range. The wall is 6 inches thick and is composed of ten 10-foot-by-10-foot panels. Each panel must be contiguous with another panel. Alternatively, you can create 10-foot-by-20-foot panels that are only 3 inches thick.\n\n" +
+            "If the wall cuts through a creature’s space when it appears, the creature is pushed to one side of the wall (you choose which side). If a creature would be surrounded on all sides by the wall (or the wall and another solid surface), that creature can make a Dexterity saving throw. On a success, it can use its Reaction to move up to its Speed so that it is no longer enclosed by the wall.\n\n" +
+            "The wall can have any shape you desire, though it can’t occupy the same space as a creature or object. The wall doesn’t need to be vertical or rest on a firm foundation. It must, however, merge with and be solidly supported by existing stone. Thus, you can use this spell to bridge a chasm or create a ramp.\n\n" +
+            "If you create a span greater than 20 feet in length, you must halve the size of each panel to create supports. You can crudely shape the wall to create battlements and the like.\n\n" +
+            "The wall is an object made of stone that can be damaged and thus breached. Each panel has AC 15 and 30 Hit Points per inch of thickness, and it has Immunity to Poison and Psychic damage. Reducing a panel to 0 Hit Points destroys it and might cause connected panels to collapse at the DM’s discretion.\n\n" +
+            "If you maintain your Concentration on this spell for its full duration, the wall becomes permanent and can’t be dispelled. Otherwise, the wall disappears when the spell ends.",
         scalingMd: "",
         imagePath: spellImgUrl("wallofstone")
     },
@@ -2269,8 +2475,7 @@ export const LEVEL5 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a miniature tiara" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "Unearthly majesty surrounds you in a **10-ft. emanation**. Whenever the emanation **moves into** a creature you can see, and whenever a creature you can see **enters** it or **ends its turn** there, you may force a **Wisdom** save. On a **failed** save, the creature takes **4d6 Psychic**, is **Knocked Prone**, and you may **push it up to 10 ft.** On a **success**, it takes **half damage only**. A creature makes this save **once per turn**.",
+        descriptionMd: "You surround yourself with unearthly majesty in a 10-foot Emanation. Whenever the Emanation enters the space of a creature you can see and whenever a creature you can see enters the Emanation or ends its turn there, you can force that creature to make a Wisdom saving throw. On a failed save, the target takes 4d6 Psychic damage and has the Prone condition, and you can push it up to 10 feet away. On a successful save, the target takes half as much damage only. A creature makes this save only once per turn.",
         scalingMd: "",
         imagePath: spellImgUrl("yolandesregalpresence")
     }

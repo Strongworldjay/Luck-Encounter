@@ -205,7 +205,12 @@ export const LEVEL6 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a piece of metal" },
         concentration: true,
         ritual: false,
-        descriptionMd: "A small portal hovers 5 feet behind you while you concentrate, from which a divine chain snakes at your command. **Portal (Object):** AC 20; hit points equal to your hit point maximum; STR 26 (+8), DEX 10 (+0). If reduced to 0 HP, the spell ends. The chain doesn’t fill a space. When you cast the spell and as a bonus action each turn, choose one effect: **Piercing Shot.** Target a creature or object within 60 feet; make a melee spell attack with the chain. On a hit, the target takes 4d6 Piercing damage and the chain retracts. **Knotted Chain.** Attempt to Grapple a Huge or smaller creature within 60 feet, using the chain’s STR. You have Advantage if the target is Medium or smaller. While Grappling, you can use a bonus action to crush the target for 2d6 + your spellcasting ability modifier Bludgeoning damage. **Reactive Chain.** As a reaction when a creature you can see attempts to attack a creature within 60 feet, lash the chain to impose Disadvantage on the attack roll.",
+        descriptionMd: "You open a small portal that always hovers 5 feet behind you as long as you maintain concentration. In this gate lies a divine chain that moves with snake like mannerisms at your command, but never fully exits the portal.\n\n" +
+            "The portal is an object that has AC 20 and hit points equal to your hit point maximum. If it drops to 0 hit points, the spell ends. It has a Strength of 26 (+8) and a Dexterity of 10 (+0). The chain does not fill a space.\n\n" +
+            "When you cast the spell and as a bonus action on your subsequent turns, you can cause one of the following effects with it.\n\n" +
+            "**Piercing Shot.** The tip of the chain is pointed like a dagger. You can target one creature or object within 60 feet of you. Make a melee spell attack for the chain using your spell to hit. On a hit, the target takes 4d6 piercing damage and the chain returns to you.\n\n" +
+            "**Knotted Chain.** The chain attempts to grapple a Huge or smaller creature within 60 feet of it. You use the chain’s Strength score to resolve the grapple. If the target is Medium or smaller, you have advantage on the check. While the chain is grappling the target, you can use a bonus action to have the chain crush it. When you do so, the target takes bludgeoning damage equal to 2d6 + your spellcasting ability modifier.\n\n" +
+            "**Reactive Chain.** As a reaction when a target you can see attempts to attack a creature within 60 feet of you, you can lash the chain out to impose disadvantage on the attack roll.",
         scalingMd: "**At Higher Levels.** With an 8th-level slot or higher, you gain an additional chain that acts on the same bonus action but can take a different action and target.",
         imagePath: spellImgUrl("divinechain")
     },
@@ -227,7 +232,17 @@ export const LEVEL6 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a magical plant or seed from a druidic forest or grove" },
         concentration: false,
         ritual: false,
-        descriptionMd: "You ward an outdoor/underground area (30–90-foot cube). If cast daily in the same area for a year, the effect lasts until dispelled. You create multiple environmental defenses: **Solid Fog** (heavily obscured squares; movement costs +2 feet per foot), **Grasping Undergrowth** (as [spells]entangle[/spells]), **Grove Guardians** (up to four animated trees acting as awakened trees that can’t speak, obeying you while in the area), plus one **Additional Effect** of your choice among constant *gust of wind* (two locations), *spike growth* (one location), or *wind wall* (two locations). You can name friendly creatures immune to the effects and set a password to grant immunity. A successful [spells]dispel magic[/spells] on the area removes only one effect; only when all are gone does the grove end.",
+        descriptionMd: "You invoke the spirits of nature to protect an area outdoors or underground. The area can be as small as a 30-foot cube or as large as a 90-foot cube. Buildings and other structures are excluded from the affected area. If you cast this spell in the same area every day for a year, the spell lasts until dispelled.\n\n" +
+            "The spell creates the following effects within the area. When you cast this spell, you can specify creatures as friends who are immune to the effects. You can also specify a password that, when spoken aloud, makes the speaker immune to these effects.\n\n" +
+            "The entire warded area radiates magic. A dispel magic cast on the area, if successful, removes only one of the following effects, not the entire area. That spell’s caster chooses which effect to end. Only when all its effects are gone is this spell dispelled.\n\n" +
+            "**Solid Fog.** You can fill any number of 5-foot squares on the ground with thick fog, making them heavily obscured. The fog reaches 10 feet high. In addition, every foot of movement through the fog costs 2 extra feet. To a creature immune to this effect, the fog obscures nothing and looks like soft mist, with motes of green light floating in the air.\n\n" +
+            "**Grasping Undergrowth.** You can fill any number of 5-foot squares on the ground that aren’t filled with fog with grasping weeds and vines, as if they were affected by an entangle spell. To a creature immune to this effect, the weeds and vines feel soft and reshape themselves to serve as temporary seats or beds.\n\n" +
+            "**Grove Guardians.** You can animate up to four trees in the area, causing them to uproot themselves from the ground. These trees have the same statistics as an awakened tree, which appears in the Monster Manual, except they can’t speak, and their bark is covered with druidic symbols. If any creature not immune to this effect enters the warded area, the grove guardians fight until they have driven off or slain the intruders. The grove guardians also obey your spoken commands (no action required by you) that you issue while in the area. If you don’t give them commands and no intruders are present, the grove guardians do nothing. The grove guardians can’t leave the warded area. When the spell ends, the magic animating them disappears, and the trees take root again if possible.\n\n" +
+            "**Additional Spell Effect.** You can place your choice of one of the following magical effects within the warded area:\n\n" +
+            "A constant gust of wind in two locations of your choice\n" +
+            "Spike growth in one location of your choice\n" +
+            "Wind wall in two locations of your choice\n" +
+            "To a creature immune to this effect, the winds are a fragrant, gentle breeze, and the area of spike growth is harmless.",
         scalingMd: "**Using a Higher-Level Spell Slot.** For each slot level above 6th, choose one additional additional effect.",
         imagePath: spellImgUrl("druidgrove")
     },
@@ -249,7 +264,9 @@ export const LEVEL6 = [
         components: { verbal: true, somatic: true, material: false, materialText: "" },
         concentration: true,
         ritual: false,
-        descriptionMd: "You transform the earth into a wormlike maw at an unoccupied point on the ground within range. As a bonus action, make a melee spell attack against a creature within 5 feet of the worm; on a hit, it takes 3d8 + your spellcasting modifier Piercing damage. If the target is Large or smaller, it must make a Dexterity save or be swallowed. A swallowed creature is Blinded and Restrained, has Total Cover from outside effects, and takes 6d6 Bludgeoning damage at the start of each of your turns. A swallowed creature can use an action to make a Strength (Athletics) check against your spell save DC; on a success, it is regurgitated Prone in an unoccupied space within 10 feet. As a bonus action, you can move the worm up to 30 feet.",
+        descriptionMd: "You transform the earth into a wormlike maw at an unoccupied point on the ground within range. As a Bonus Action, make a melee spell attack against a creature within 5 feet of the worm. On a hit, the target takes Piercing damage equal to 3d8 plus your spellcasting ability modifier. If the target is a Large or smaller creature, it must succeed on a Dexterity saving throw or be swallowed by the worm. A swallowed creature has the Blinded and Restrained conditions, it has Total Cover against attacks and other effects outside the worm, and it takes 6d6 Bludgeoning damage at the start of each of your turns.\n\n" +
+            "A creature trapped within the worm can take an action to make a Strength (Athletics) check against your spell save DC. If it succeeds, it is regurgitated and has the Prone condition in an unoccupied space within 10 feet of the worm.\n\n" +
+            "As a Bonus Action, you can move the worm up to 30 feet.",
         scalingMd: "",
         imagePath: spellImgUrl("earthworm")
     },
@@ -271,7 +288,12 @@ export const LEVEL6 = [
         components: { verbal: true, somatic: true, material: false, materialText: "" },
         concentration: true,
         ritual: false,
-        descriptionMd: "You become elemental fire, shedding bright light 30 ft. (dim +30). Benefits: **Immunity** to Fire; you can move through creatures and ignore difficult terrain; the first time each turn you enter a creature’s space, it takes **1d6 Fire**; creatures that hit you in melee take **1d6 Fire**. **Action:** exhale a line of fire **30 ft. × 5 ft.**; creatures in the line make a Dexterity save, taking **6d6 Fire** on a failure, half on a success. During your turn, when you roll Fire damage, you can **maximize one die**.",
+        descriptionMd: "You become elemental fire, shedding bright light in a 30-foot radius and dim light for an additional 30 feet. Until the spell ends, you gain the following benefits:\n\n" +
+            "You are immune to fire damage.\n\n" +
+            "You can move through the space of other creatures and ignore difficult terrain. The first time on your turn when you enter the space of another creature, it takes 1d6 fire damage.\n\n" +
+            "If a creature within 5 feet hits you with a melee attack, it takes 1d6 fire damage.\n\n" +
+            "You can use your action to create a line of fire 30 feet long and 5 feet wide extending from you in a direction of your choice. Each creature in the line must make a Dexterity saving throw. A creature takes 6d6 fire damage on a failed save, or half as much damage on a successful one.\n\n" +
+            "During your turn, if you roll fire damage, you can maximize one die of the fire damage dealt.",
         scalingMd: "",
         imagePath: spellImgUrl("formoffire")
     },
@@ -293,7 +315,12 @@ export const LEVEL6 = [
         components: { verbal: true, somatic: true, material: false, materialText: "" },
         concentration: true,
         ritual: false,
-        descriptionMd: "You take on a form of elemental ice. Benefits: **Immunity** to Cold; ignore difficult terrain from ice/snow; ground in a **10-foot radius** around you is icy and difficult terrain for others (moves with you). **Action:** a **30-foot cone** of freezing wind (CON save) for **4d8 Cold** (half on success); on a failed save, a creature’s speed is **halved** until the start of your next turn. During your turn, when you roll Cold damage, gain **temporary HP** equal to one die rolled (your choice).",
+        descriptionMd: "You freeze over, taking on a form of elemental ice. Until the spell ends, you gain the following benefits:\n\n" +
+            "You are immune to cold damage.\n\n" +
+            "You can move across difficult terrain created by ice or snow without spending extra movement.\n\n" +
+            "The ground in a 10-foot radius around you is icy and is difficult terrain for creatures other than you. The radius moves with you.\n\n" +
+            "You can use your action to create a 30-foot cone of freezing wind extending from your outstretched hand in a direction you choose. Each creature in the cone must make a  Constitution saving throw. A creature takes 4d8 cold damage on a failed save, or half as much damage on a successful one. A creature that fails its save against this effect has its speed halved until the start of your next turn.\n\n" +
+            "During your turn, if you roll cold damage, you gain temporary hit points equal to one die rolled (your choice).",
         scalingMd: "",
         imagePath: spellImgUrl("formofice")
     },
@@ -315,7 +342,10 @@ export const LEVEL6 = [
         components: { verbal: true, somatic: true, material: false, materialText: "" },
         concentration: true,
         ritual: false,
-        descriptionMd: "You become made of stone. Benefits: **Resistance** to Bludgeoning, Piercing, and Slashing from nonmagical attacks; ignore difficult terrain of earth/stone; you can move through solid earth or stone as if it were air without destabilizing it, but can’t end your movement there (if you do, you’re ejected to the nearest space, the spell ends, and you’re **Stunned** until the end of your next turn). **Action:** raise spikes of stone; creatures of your choice within **15 feet** make a DEX save, taking **4d8 Piercing** on a failure (half on success). Their spaces become **difficult terrain** either way.",
+        descriptionMd: "You become made of stone. Until the spell ends, you gain the following benefits:\n\n" +
+            "You have resistance to bludgeoning, piercing, and slashing damage from nonmagical attacks.\n\n" +
+            "You can move across difficult terrain made of earth or stone without spending extra movement. You can move through solid earth or stone as if it were air and without destabilizing it, but you can't end your movement there. If you do so, you are ejected to the nearest unoccupied space, this spell ends, and you are stunned until the end of your next turn.\n\n" +
+            "You can use your action to call forth spikes of stone to raise from the ground. All creatures of your choice within 15 feet of you must make a Dexterity saving throw. A creature takes 4d8 piercing damage on a failed save, or half as much on a successful one. Their space becomes difficult terrain either way.",
         scalingMd: "",
         imagePath: spellImgUrl("formofstone")
     },
@@ -337,7 +367,10 @@ export const LEVEL6 = [
         components: { verbal: true, somatic: true, material: false, materialText: "" },
         concentration: true,
         ritual: false,
-        descriptionMd: "You become a surge of elemental water. Benefits: **Resistance** to Bludgeoning, Piercing, and Slashing from nonmagical attacks; move through creatures and ignore difficult terrain; the first time you pass through a **Large or smaller** creature on your turn, it must succeed on a STR save or fall **Prone**. **Action:** unleash a line of water **15 ft. × 5 ft.** (STR save) for **5d6 Bludgeoning** and **Prone** on a failure (half and not Prone on a success).",
+        descriptionMd: "You become a surge of elemental water. Until the spell ends,  you gain the following benefits:\n\n" +
+            "You have resistance to bludgeoning, piercing, and slashing damage from nonmagical attacks.\n\n" +
+            "You can move through the space of other creatures and ignore difficult terrain; the first time you move through a Large or smaller creature, it must succeed on a Strength saving throw or be knocked prone.\n\n" +
+            "You can use your action to unleash a blast of water 15 feet long and 5 feet wide extending from you in a direction of your choice. Each creature in the line must make a Strength saving  throw. A creature takes 5d6 bludgeoning damage and is knocked prone on a failed save, or half as much and isn't knocked prone on a successful one.",
         scalingMd: "",
         imagePath: spellImgUrl("formofwater")
     },
@@ -427,8 +460,15 @@ export const LEVEL6 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a few hairs from a bull" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "You can’t cast spells for the duration. You gain: **50 Temporary HP**; **Advantage** on attacks with simple and martial weapons; **+2d12 Force** on weapon hits; proficiency with **all armor, shields, simple and martial weapons**; proficiency in **STR and CON saves**; **Extra Attack (2 attacks)** if you don’t already have it; and you can conjure and equip heavy or medium armor and any simple or martial weapon (no STR requirements; items vanish when the spell ends). **After the spell ends**, make a **DC 15 CON save** or gain **one level of exhaustion**.",
+        descriptionMd: "You endow yourself with endurance and martial prowess fueled by magic. Until the spell ends, you can’t cast spells, and you gain the following benefits:\n\n" +
+            "You gain 50 temporary hit points. If any of these remain when the spell ends, they are lost.\n\n" +
+            "You have advantage on attack rolls that you make with simple and martial weapons.\n\n" +
+            "When you hit a target with a weapon attack, that target takes an extra 2d12 force damage.\n\n" +
+            "You have proficiency with all armor, shields, simple weapons, and martial weapons.\n\n" +
+            "You have proficiency in Strength and Constitution saving throws.\n\n" +
+            "You can attack twice, instead of once, when you take the Attack action on your turn. You ignore this benefit if you already have a feature, like Extra Attack, that gives you extra attacks.\n\n" +
+            "You can conjure and equip (as part of the action used to cast the spell) and set of heavy or medium armor and any simple or martial weapon of your choice. These items have no strength requirements and are magical in nature though have the same properties as their nonmagical counterparts, vanishing when the spell ends.\n\n" +
+            "Immediately after the spell ends, you must succeed on a DC 15 Constitution saving throw or suffer one level of exhaustion.",
         scalingMd: "",
         imagePath: spellImgUrl("martialtransformation")
     },
@@ -474,8 +514,8 @@ export const LEVEL6 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a vial of quicksilver" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "Target a creature and a metal object it holds or wears. The creature makes a DEX save. On a failure, it takes **5d8 Fire** damage and the object **melts** and oozes to the ground, returning to normal shape and temperature there. **Magical objects** grant the creature **Advantage** on the save. If the creature later **touches** the object during the spell’s duration, it heats and melts again and the creature takes **5d8 Fire** damage; the object returns to normal once it’s no longer touching it or the spell ends.",
+        descriptionMd: "You target a creature and a metal object held or worn by that creature you can see within range. The creature makes a Dexterity saving throw. On a failed save, the creature takes 5d8 Fire damage and the targeted object melts and oozes to the ground, where it returns to its normal shape and temperature. If the object is magical, the creature has Advantage on the saving throw.\n\n" +
+            "If the creature tries to retrieve or otherwise touch the object for the duration, the object heats and melts, and the creature takes 5d8 Fire damage. The object returns to normal once the creature is no longer touching it or the spell ends.",
         scalingMd:
             "**Using a Higher-Level Spell Slot.** Damage increases by **1d8** per slot level above 6th.",
         imagePath: spellImgUrl("meltingcurse")
@@ -498,8 +538,9 @@ export const LEVEL6 = [
         components: { verbal: false, somatic: true, material: false, materialText: "" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "Attempt to bind a creature in an illusory cell only it perceives. The target makes an Intelligence save (automatic success if immune to Charmed). On a success, it takes **5d10 Psychic** damage and the spell ends. On a failure, it takes **5d10 Psychic** damage and is **Restrained**, perceives deadly hazards, and **can’t see or hear beyond the illusion**. If it is moved out of the illusion, makes a melee attack through it, or reaches any part of its body through it, it takes **10d10 Psychic** damage and the spell ends.",
+        descriptionMd: "You attempt to bind a creature within an illusory cell that only it perceives. One creature you can see within range must make an Intelligence saving throw. The target succeeds automatically if it is immune to being Charmed.\n\n" +
+            "On a successful save, the target takes 5d10 Psychic damage, and the spell ends. On a failed save, the target takes 5d10 Psychic damage, and you make the area immediately around the target’s space appear dangerous to it in some way. You might cause the target to perceive itself as being surrounded by fire, floating razors, or hideous maws filled with dripping teeth.\n\n" +
+            "Whatever form the illusion takes, the target can’t see or hear anything beyond it and is Restrained for the spell’s duration even if they have Truesight or Blindsight as the mental image enters their brain. If the target is moved out of the illusion, makes a melee attack through it, or reaches any part of its body through it, the target takes 10d10 Psychic damage, and the spell ends.",
         scalingMd:
             "**Using a Higher-Level Spell Slot.** Both the initial and trigger damage increase by **1d10** per slot level above 6th.",
         imagePath: spellImgUrl("mentalprison")
@@ -522,8 +563,13 @@ export const LEVEL6 = [
         components: { verbal: true, somatic: true, material: true, materialText: "an object engraved with a symbol of the Outer Planes, worth at least 500 gp" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "You draw on the **Lower** or **Upper** Planes to transform yourself: **immunity** to fire & poison (Lower) **or** radiant & necrotic (Upper); immunity to **poisoned** (Lower) **or** **charmed** (Upper); spectral wings (**fly 40 ft**); **+2 AC**; your weapon attacks are **magical** and use your **spellcasting ability** for attack and damage; you can make **two attacks** when you take the Attack action (doesn’t stack with other Extra Attack features).",
+        descriptionMd: "Uttering an incantation, you draw on the magic of the Lower Planes or Upper Planes (your choice) to transform yourself. You gain the following benefits until the spell ends:\n\n" +
+            "You are immune to fire and poison damage (Lower Planes) or radiant and necrotic damage (Upper Planes).\n\n" +
+            "You are immune to the poisoned condition (Lower Planes) or the charmed condition (Upper Planes).\n\n" +
+            "Spectral wings appear on your back, giving you a flying speed of 40 feet.\n\n" +
+            "You have a +2 bonus to AC.\n\n" +
+            "All your weapon attacks are magical, and when you make a weapon attack, you can use your spellcasting ability modifier, instead of Strength or Dexterity, for the attack and damage rolls.\n\n" +
+            "You can attack twice, instead of once, when you take the Attack action on your turn. You ignore this benefit if you already have a feature, like Extra Attack, that lets you attack more than once when you take the Attack action on your turn.",
         scalingMd: "",
         imagePath: spellImgUrl("otherworldlyguise"),
     },
@@ -808,8 +854,9 @@ export const LEVEL6 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a lodestone and dust" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "A green ray targets a creature, object, or **creation of magical force** (e.g., *wall of force*). The target makes a **Dexterity** save. On a fail, it takes **10d6 + 40 Force**; if reduced to **0 HP**, it and all **nonmagical** gear are **disintegrated to dust** (revivable only by *true resurrection* or *wish*). Automatically disintegrates a **Large or smaller** nonmagical object or a magical-force creation; against **Huge+** objects, affects a **10-ft cube**.",
+        descriptionMd: "You launch a green ray at a target you can see within range. The target can be a creature, a nonmagical object, or a creation of magical force, such as the wall created by Wall of Force.\n\n" +
+            "A creature targeted by this spell makes a Dexterity saving throw. On a failed save, the target takes 10d6 + 40 Force damage. If this damage reduces it to 0 Hit Points, it and everything nonmagical it is wearing and carrying are disintegrated into gray dust. The target can be revived only by a True Resurrection or a Wish spell.\n\n" +
+            "This spell automatically disintegrates a Large or smaller nonmagical object or a creation of magical force. If such a target is Huge or larger, this spell disintegrates a 10-foot-Cube portion of it.",
         scalingMd:
             "**Using a Higher-Level Spell Slot.** Damage increases by **3d6** per slot level above 6.",
         imagePath: spellImgUrl("disintegrate")
@@ -832,8 +879,9 @@ export const LEVEL6 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a sapphire worth 1,000+ GP" },
         concentration: false,
         ritual: true,
-        descriptionMd:
-            "Touch a **sapphire** and an **object** (≤10 lb, ≤6 ft longest dimension). The object gains an **Invisible mark** and its **name** is inscribed on the sapphire. Later, take a **Magic action** to speak the name and **crush the sapphire**: the object appears in your hand **regardless of distance or plane**, and the spell ends. If another creature is holding/carrying the object, you instead learn **who** and **where** it is.",
+        descriptionMd: "You touch the sapphire used in the casting and an object weighing 10 pounds or less whose longest dimension is 6 feet or less. The spell leaves an Invisible mark on that object and invisibly inscribes the object’s name on the sapphire. Each time you cast this spell, you must use a different sapphire.\n\n" +
+            "Thereafter, you can take a Magic action to speak the object’s name and crush the sapphire. The object instantly appears in your hand regardless of physical or planar distances, and the spell ends.\n\n" +
+            "If another creature is holding or carrying the object, crushing the sapphire doesn’t transport it, but instead you learn who that creature is and where that creature is currently located.",
         scalingMd: "",
         imagePath: spellImgUrl("instantsummon")
     },
@@ -855,8 +903,11 @@ export const LEVEL6 = [
         components: { verbal: true, somatic: true, material: false, materialText: "" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "Your eyes become an inky void. **One creature within 60 ft** must make a **Wisdom** save or suffer one effect of your choice **for the duration**: **Asleep (Unconscious)**; **Panicked (Frightened, must Dash away)**; or **Sickened (Poisoned)**. Each turn, you can use a **Magic action** to target a **new** creature; a creature that **succeeds** can’t be targeted again by this casting.",
+        descriptionMd: "For the duration, your eyes become an inky void. One creature of your choice within 60 feet of you that you can see must succeed on a Wisdom saving throw or be affected by one of the following effects of your choice for the duration.\n\n" +
+            "On each of your turns until the spell ends, you can take a Magic action to target another creature but can’t target a creature again if it has succeeded on a save against this casting of the spell.\n\n" +
+            "**Asleep.** The target has the Unconscious condition. It wakes up if it takes any damage or if another creature takes an action to shake it awake.\n\n" +
+            "**Panicked.** The target has the Frightened condition. On each of its turns, the Frightened target must take the Dash action and move away from you by the safest and shortest route available. If the target moves to a space at least 60 feet away from you where it can’t see you, this effect ends.\n\n" +
+            "**Sickened.** The target has the Poisoned condition.",
         scalingMd: "",
         imagePath: spellImgUrl("eyebite")
     },
@@ -901,8 +952,9 @@ export const LEVEL6 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a cockatrice feather" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "Attempt to turn a creature to stone. The target makes a **Constitution** save. On a **fail**, it is **Restrained** for the duration; on a **success**, its **Speed is 0** until the start of your next turn. **Constructs automatically succeed.** At the end of each of its turns, a Restrained target repeats the save: **three successes** end the spell; **three failures** cause **Petrified** for the duration. If you maintain Concentration for the **full duration**, the Petrification lasts until ended by **greater restoration** or similar magic.",
+        descriptionMd: "You attempt to turn one creature that you can see within range into stone. The target makes a Constitution saving throw. On a failed save, it has the Restrained condition for the duration. On a successful save, its Speed is 0 until the start of your next turn. Constructs automatically succeed on the save.\n\n" +
+            "A Restrained target makes another Constitution saving throw at the end of each of its turns. If it successfully saves against this spell three times, the spell ends. If it fails its saves three times, it is turned to stone and has the Petrified condition for the duration. The successes and failures needn’t be consecutive; keep track of both until the target collects three of a kind.\n\n" +
+            "If you maintain your Concentration on this spell for the entire possible duration, the target is Petrified until the condition is ended by Greater Restoration or similar magic.",
         scalingMd: "",
         imagePath: spellImgUrl("fleshtostone")
     },
@@ -924,8 +976,10 @@ export const LEVEL6 = [
         components: { verbal: true, somatic: true, material: true, materialText: "ruby dust worth 1,000+ GP" },
         concentration: false,
         ritual: true,
-        descriptionMd:
-            "Ward an area against **teleportation** and **planar travel** (Astral, Ethereal, Feywild, Shadowfell, *plane shift*, *gate*, etc.). Choose any of: **Aberrations, Celestials, Elementals, Fey, Fiends, Undead**; when a chosen type **enters** or **ends its turn** in the area, it takes **5d10 Radiant or Necrotic** (your choice). You may set a **password** that prevents damage. Areas can’t overlap.",
+        descriptionMd: "You create a ward against magical travel that protects up to 40,000 square feet of floor space to a height of 30 feet above the floor. For the duration, creatures can’t teleport into the area or use portals, such as those created by the Gate spell, to enter the area. The spell proofs the area against planar travel, and therefore prevents creatures from accessing the area by way of the Astral Plane, the Ethereal Plane, the Feywild, the Shadowfell, or the Plane Shift spell.\n\n" +
+            "In addition, the spell damages types of creatures that you choose when you cast it. Choose one or more of the following: Aberrations, Celestials, Elementals, Fey, Fiends, and Undead. When a creature of a chosen type enters the spell’s area for the first time on a turn or ends its turn there, the creature takes 5d10 Radiant or Necrotic damage (your choice when you cast this spell).\n\n" +
+            "You can designate a password when you cast the spell. A creature that speaks the password as it enters the area takes no damage from the spell.\n\n" +
+            "The spell’s area can’t overlap with the area of another Forbiddance spell. If you cast Forbiddance every day for 30 days in the same location, the spell lasts until it is dispelled, and the Material components are consumed on the last casting.",
         scalingMd:
             "Casting **daily for 30 days** in the same location makes the effect **permanent** (components consumed on the last casting).",
         imagePath: spellImgUrl("forbiddance")
@@ -972,8 +1026,18 @@ export const LEVEL6 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a silver rod worth 10+ GP" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "Protect a structure (shape as contiguous squares). You can specify **creatures** unaffected and a **password**. The ward creates: **Fog** in corridors (Heavily Obscured, with 50% misdirection at intersections); **Arcane Lock** on doors (and up to **10** illusory doors); **Web** on stairs (regrows in 10 minutes); plus **one** extra effect: *dancing lights* (4 corridors), *magic mouth* (2 locations), *stinking cloud* (2 locations, regrows in 10 min), *gust of wind* (1 area), or *suggestion* (in one 5-ft square). *Dispel magic* can end each sub-effect; ending all ends the spell.",
+        descriptionMd: "You create a ward that protects up to 2,500 square feet of floor space. The warded area can be up to 20 feet tall, and you shape it as one 50-foot square, one hundred 5-foot squares that are contiguous, or twenty-five 10-foot squares that are contiguous.\n\n" +
+            "When you cast this spell, you can specify individuals that are unaffected by the spell’s effects. You can also specify a password that, when spoken aloud within 5 feet of the warded area, makes the speaker immune to its effects.\n\n" +
+            "The spell creates the effects below within the warded area. Dispel Magic has no effect on Guards and Wards itself, but each of the following effects can be dispelled. If all four are dispelled, Guards and Wards ends. If you cast the spell every day for 365 days on the same area, the spell thereafter lasts until all its effects are dispelled.\n\n" +
+            "**Corridors.** Fog fills all the warded corridors, making them Heavily Obscured. In addition, at each intersection or branching passage offering a choice of direction, there is a 50 percent chance that a creature other than you believes it is going in the opposite direction from the one it chooses.\n\n" +
+            "**Doors.** All doors in the warded area are magically locked, as if sealed by the Arcane Lock spell. In addition, you can cover up to ten doors with an illusion to make them appear as plain sections of wall.\n\n" +
+            "**Stairs.** Webs fill all stairs in the warded area from top to bottom, as in the Web spell. These strands regrow in 10 minutes if they are destroyed while Guards and Wards lasts.\n\n" +
+            "**Other Spell Effect.** Place one of the following magical effects within the warded area:\n\n" +
+            "Dancing Lights in four corridors, with a simple program that the lights repeat as long as Guards and Wards lasts\n" +
+            "Magic Mouth in two locations\n" +
+            "Stinking Cloud in two locations (the vapors return within 10 minutes if dispersed while Guards and Wards lasts)\n" +
+            "Gust of Wind in one corridor or room (the wind blows continuously while the spell lasts)\n" +
+            "Suggestion in one 5-foot square; any creature that enters that square receives the suggestion mentally",
         scalingMd:
             "Cast **daily for 365 days** on the same area to make it last **until dispelled**.",
         imagePath: spellImgUrl("guardsandwards")
@@ -1066,8 +1130,13 @@ export const LEVEL6 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a gem, crystal, or reliquary worth 500+ GP" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "Your body becomes **catatonic** as your soul enters the **container**. You can project your soul **100 ft** to return to your body or attempt to **possess a Humanoid** (blocked by *protection from evil and good*/*magic circle*). Target makes a **Charisma** save; on a **fail**, you **possess** the body and the target’s soul is **trapped** in the container (Incapacitated, perceives via the container). You use the host’s **HP, HD, Str/Dex/Con, Speed, senses**; other stats are yours. You can return to the container as a **Magic action**. If the host body dies, you save vs. your own DC to return to the container (if within 100 ft) or **you die**. Destroying the container or ending the spell returns souls to their bodies if possible; otherwise, they **die**. The container is **destroyed** when the spell ends.",
+        descriptionMd: "Your body falls into a catatonic state as your soul leaves it and enters the container you used for the spell’s Material component. While your soul inhabits the container, you are aware of your surroundings as if you were in the container’s space. You can’t move or take Reactions. The only action you can take is to project your soul up to 100 feet out of the container, either returning to your living body (and ending the spell) or attempting to possess a Humanoid’s body.\n\n" +
+            "You can attempt to possess any Humanoid within 100 feet of you that you can see (creatures warded by a Protection from Evil and Good or Magic Circle spell can’t be possessed). The target makes a Charisma saving throw. On a failed save, your soul enters the target’s body, and the target’s soul becomes trapped in the container. On a successful save, the target resists your efforts to possess it, and you can’t attempt to possess it again for 24 hours.\n\n" +
+            "Once you possess a creature’s body, you control it. Your Hit Points, Hit Point Dice, Strength, Dexterity, Constitution, Speed, and senses are replaced by the creature’s. You otherwise keep your game statistics.\n\n" +
+            "Meanwhile, the possessed creature’s soul can perceive from the container using its own senses, but it can’t move and it is Incapacitated.\n\n" +
+            "While possessing a body, you can take a Magic action to return from the host body to the container if it is within 100 feet of you, returning the host creature’s soul to its body. If the host body dies while you’re in it, the creature dies, and you make a Charisma saving throw against your own spellcasting DC. On a success, you return to the container if it is within 100 feet of you. Otherwise, you die.\n\n" +
+            "If the container is destroyed or the spell ends, your soul returns to your body. If your body is more than 100 feet away from you or if your body is dead, you die. If another creature’s soul is in the container when it is destroyed, the creature’s soul returns to its body if the body is alive and within 100 feet. Otherwise, that creature dies.\n\n" +
+            "When the spell ends, the container is destroyed.",
         scalingMd: "",
         imagePath: spellImgUrl("magicjar")
     },
@@ -1089,8 +1158,8 @@ export const LEVEL6 = [
         components: { verbal: true, somatic: false, material: true, materialText: "a snake’s tongue" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "Suggest a **≤25-word** course of activity to **up to twelve** creatures that can **hear and understand** you. The activity must sound **achievable** and not obviously harmful to the targets or their allies. Each target makes a **Wisdom** save or is **Charmed** for the duration (ends for a target if you or your allies **damage** it). The activity may persist for the full duration or the spell ends on a target when it completes the activity.",
+        descriptionMd: "You suggest a course of activity—described in no more than 25 words—to twelve or fewer creatures you can see within range that can hear and understand you. The suggestion must sound achievable and not involve anything that would obviously deal damage to any of the targets or their allies. For example, you could say, “Walk to the village down that road, and help the villagers there harvest crops until sunset.” Or you could say, “Now is not the time for violence. Drop your weapons, and dance! Stop in an hour.”\n\n" +
+            "Each target must succeed on a Wisdom saving throw or have the Charmed condition for the duration or until you or your allies deal damage to the target. Each Charmed target pursues the suggestion to the best of its ability. The suggested activity can continue for the entire duration, but if the suggested activity can be completed in a shorter time, the spell ends for a target upon completing it.",
         scalingMd:
             "**Using a Higher-Level Spell Slot.** Duration: slot **7** (10 days), **8** (30 days), **9** (366 days).",
         imagePath: spellImgUrl("masssuggestion")
@@ -1113,8 +1182,10 @@ export const LEVEL6 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a miniature shovel" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "Reshape **dirt, sand, or clay** in a **40-foot-on-a-side** area within range. Raise/lower elevation, create/fill trenches, erect/flatten walls, or form pillars—changes up to **half the area’s largest dimension** (e.g., 20 ft for a 40-ft square) and take **10 minutes** to complete. The transformation is slow, so creatures aren’t usually trapped or harmed. Every **10 minutes** of Concentration, you can choose a **new area** within range. The spell can’t manipulate **natural stone** or stone construction; rocks/structures shift to accommodate and might collapse if left unstable. Plants are moved with the earth but not otherwise affected.",
+        descriptionMd: "Choose an area of terrain no larger than 40 feet on a side within range. You can reshape dirt, sand, or clay in the area in any manner you choose for the duration. You can raise or lower the area’s elevation, create or fill in a trench, erect or flatten a wall, or form a pillar. The extent of any such changes can’t exceed half the area’s largest dimension. For example, if you affect a 40-foot square, you can create a pillar up to 20 feet high, raise or lower the square’s elevation by up to 20 feet, dig a trench up to 20 feet deep, and so on. It takes 10 minutes for these changes to complete. Because the terrain’s transformation occurs slowly, creatures in the area can’t usually be trapped or injured by the ground’s movement.\n\n" +
+            "At the end of every 10 minutes you spend concentrating on the spell, you can choose a new area of terrain to affect within range.\n\n" +
+            "This spell can’t manipulate natural stone or stone construction. Rocks and structures shift to accommodate the new terrain. If the way you shape the terrain would make a structure unstable, it might collapse.\n\n" +
+            "Similarly, this spell doesn’t directly affect plant growth. The moved earth carries any plants along with it.",
         scalingMd: "",
         imagePath: spellImgUrl("moveearth")
     },
@@ -1136,8 +1207,9 @@ export const LEVEL6 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a miniature crystal sphere" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "A frigid globe explodes in a **60-foot-radius sphere**. Each creature makes a **Constitution** save, taking **10d6 Cold** on a fail or half on a success. If the globe strikes **water**, it freezes a **30-foot square** to **6 inches** thick for **1 minute**; swimmers on the surface are **Restrained** until they **break free** (action; Strength (Athletics) vs. your save DC). You may complete the casting without firing the globe, creating a **hand-held globe** (throw 40 ft or sling to normal range). It shatters on impact with the spell’s effect, or **after 1 minute** if not used.",
+        descriptionMd: "A frigid globe streaks from you to a point of your choice within range, where it explodes in a 60-foot-radius Sphere. Each creature in that area makes a Constitution saving throw, taking 10d6 Cold damage on failed save or half as much damage on a successful one.\n\n" +
+            "If the globe strikes a body of water, it freezes the water to a depth of 6 inches over an area 30 feet square. This ice lasts for 1 minute. Creatures that were swimming on the surface of frozen water are trapped in the ice and have the Restrained condition. A trapped creature can take an action to make a Strength (Athletics) check against your spell save DC to break free.\n\n" +
+            "You can refrain from firing the globe after completing the spell’s casting. If you do so, a globe about the size of a sling bullet, cool to the touch, appears in your hand. At any time, you or a creature you give the globe to can throw the globe (to a range of 40 feet) or hurl it with a sling (to the sling’s normal range). It shatters on impact, with the same effect as a normal casting of the spell. You can also set the globe down without shattering it. After 1 minute, if the globe hasn’t already shattered, it explodes.",
         scalingMd:
             "**Using a Higher-Level Spell Slot.** Damage increases by **1d6** per slot level above 6.",
         imagePath: spellImgUrl("otilukesfreezingsphere")
@@ -1160,8 +1232,8 @@ export const LEVEL6 = [
         components: { verbal: true, somatic: false, material: false, materialText: "" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "One creature makes a **Wisdom** save. **Success:** the target dances until the **end of its next turn**, spending all movement to dance in place. **Failure:** the target is **Charmed** for the duration, must spend all movement to dance in place, has **Disadvantage** on **Dexterity saves** and **attack rolls**, and **others have Advantage** on attack rolls against it. On each of its turns, it can take an action to **collect itself** and repeat the save, ending the spell on a success.",
+        descriptionMd: "One creature that you can see within range must make a Wisdom saving throw. On a successful save, the target dances comically until the end of its next turn, during which it must spend all its movement to dance in place.\n\n" +
+            "On a failed save, the target has the Charmed condition for the duration. While Charmed, the target dances comically, must use all its movement to dance in place, and has Disadvantage on Dexterity saving throws and attack rolls, and other creatures have Advantage on attack rolls against it. On each of its turns, the target can take an action to collect itself and repeat the save, ending the spell on itself on a success.",
         scalingMd: "",
         imagePath: spellImgUrl("ottosirresistibledance")
     },
@@ -1420,8 +1492,10 @@ export const LEVEL6 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a piece of quartz" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "Create a **1-ft thick** wall of ice as a **hemisphere/globe (10-ft radius)** or **ten 10-ft square panels** (contiguous). If it appears in a creature’s space, the creature is pushed to one side and makes a **Dexterity** save, taking **10d6 Cold** on a fail or half on a success. The wall (object) has **AC 12**, **30 HP per 10-ft section**, **Immunity** to Cold, Poison, Psychic; **Vulnerability** to Fire. Destroying a 10-ft section leaves a **sheet of frigid air**; a creature passing through it for the **first time on a turn** makes a **Constitution** save, taking **5d6 Cold** on a fail or half on a success.",
+        descriptionMd: "You create a wall of ice on a solid surface within range. You can form it into a hemispherical dome or a globe with a radius of up to 10 feet, or you can shape a flat surface made up of ten 10-foot-square panels. Each panel must be contiguous with another panel. In any form, the wall is 1 foot thick and lasts for the duration.\n\n" +
+            "If the wall cuts through a creature’s space when it appears, the creature is pushed to one side of the wall (you choose which side) and makes a Dexterity saving throw, taking 10d6 Cold damage on a failed save or half as much damage on a successful one.\n\n" +
+            "The wall is an object that can be damaged and thus breached. It has AC 12 and 30 Hit Points per 10-foot section, and it has Immunity to Cold, Poison, and Psychic damage and Vulnerability to Fire damage. Reducing a 10-foot section of wall to 0 Hit Points destroys it and leaves behind a sheet of frigid air in the space the wall occupied.\n\n" +
+            "A creature moving through the sheet of frigid air for the first time on a turn makes a Constitution saving throw, taking 5d6 Cold damage on a failed save or half as much damage on a successful one.",
         scalingMd:
             "**Using a Higher-Level Spell Slot.** On creation, damage increases by **2d6**, and the frigid air’s damage increases by **1d6** per slot level above 6.",
         imagePath: spellImgUrl("wallofice")
@@ -1444,8 +1518,9 @@ export const LEVEL6 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a handful of thorns" },
         concentration: true,
         ritual: false,
-        descriptionMd:
-            "Conjure a sight-blocking wall of thorny brush. When it appears, creatures in its area make a **Dexterity** save, taking **7d8 Piercing** on a fail or half on a success. Moving through the wall costs **4 ft of movement per 1 ft** traveled. The **first time** a creature **enters** a space in the wall on a turn or **ends its turn** there, it makes a **Dexterity** save, taking **7d8 Slashing** on a fail or half on a success (**once per turn**).",
+        descriptionMd: "You create a wall of tangled brush bristling with needle-sharp thorns. The wall appears within range on a solid surface and lasts for the duration. You choose to make the wall up to 60 feet long, 10 feet high, and 5 feet thick or a circle that has a 20-foot diameter and is up to 20 feet high and 5 feet thick. The wall blocks line of sight.\n\n" +
+            "When the wall appears, each creature in its area makes a Dexterity saving throw, taking 7d8 Piercing damage on a failed save or half as much damage on a successful one.\n\n" +
+            "A creature can move through the wall, albeit slowly and painfully. For every 1 foot a creature moves through the wall, it must spend 4 feet of movement. Furthermore, the first time a creature enters a space in the wall on a turn or ends its turn there, the creature makes a Dexterity saving throw, taking 7d8 Slashing damage on a failed save or half as much damage on a successful one. A creature makes this save only once per turn.",
         scalingMd:
             "**Using a Higher-Level Spell Slot.** Both damage types increase by **1d8** per slot level above 6.",
         imagePath: spellImgUrl("wallofthorns")
@@ -1468,8 +1543,8 @@ export const LEVEL6 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a candle" },
         concentration: false,
         ritual: false,
-        descriptionMd:
-            "You and up to **10** willing creatures become **cloud-like** for the duration. In cloud form, a target has **Fly 300 ft (hover)**, **Immunity to Prone**, and **Resistance** to **Bludgeoning, Piercing, Slashing** damage. While clouded, a creature can only **Dash** or take a **Magic action** to begin reverting; reverting takes **1 minute** during which it is **Stunned**. A reverted creature can take a Magic action to become cloud form again (also **1 minute** to transform). If in cloud form and flying when the effect ends, it **descends 60 ft per round for 1 minute** to land safely; otherwise it **falls**.",
+        descriptionMd: "You and up to ten willing creatures of your choice within range assume gaseous forms for the duration, appearing as wisps of cloud. While in this cloud form, a target has a Fly Speed of 300 feet and can hover; it has Immunity to the Prone condition; and it has Resistance to Bludgeoning, Piercing, and Slashing damage. The only actions a target can take in this form are the Dash action or a Magic action to begin reverting to its normal form. Reverting takes 1 minute, during which the target has the Stunned condition. Until the spell ends, the target can revert to cloud form, which also requires a Magic action followed by a 1-minute transformation.\n\n" +
+            "If a target is in cloud form and flying when the effect ends, the target descends 60 feet per round for 1 minute until it lands, which it does safely. If it can’t land after 1 minute, it falls the remaining distance.",
         scalingMd: "",
         imagePath: spellImgUrl("windwalk")
     },
