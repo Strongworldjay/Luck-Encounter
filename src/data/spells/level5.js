@@ -1643,7 +1643,7 @@ export const LEVEL5 = [
             "A storm of flashing light and thunder rages in a **10-foot-radius, 40-foot-high** cylinder. Creatures in the area have the **Blinded** and **Deafened** conditions and **can’t cast spells with Verbal components**. When the storm appears, each creature in it makes a **Constitution** save, taking **2d10 Radiant** and **2d10 Thunder** on a fail or half on a success. A creature also saves when it **enters** the area or **ends its turn** there (**once per turn**).",
         scalingMd:
             "**Using a Higher-Level Spell Slot.** Both **Radiant** and **Thunder** damage increase by **1d10** per slot above 5.",
-        imagePath: spellImgUrl("jallarzisstormofradiance")
+        imagePath: spellImgUrl("stormofradiance")
     },
     {
         slug: slugify("Legend Lore"),
