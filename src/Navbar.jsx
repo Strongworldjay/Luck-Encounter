@@ -22,6 +22,7 @@ export default function Navbar({
     { id: 'DungeonCompletion', label: 'Dungeon Completion' },
     { id: 'SPPlanner',         label: 'SP Planner' },
     { id: 'Spells',            label: 'Spells' },
+    { id: 'BountyBoard',            label: 'Insamont Bounty Board' },
   ]), []);
 
   const dmItems = useMemo(() => ([

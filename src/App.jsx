@@ -6,6 +6,7 @@ import RandomWheel from './RandomWheel';
 import Magic from './MagicBingo';
 import CharacterSheets from './CharacterSheets';
 import Chests from './Chests';
+import BountyBoard from './BountyBoard';
 import './App.css';
 import appBackground from './assets/app-background.jpg';
 import darkmodeBackground from './assets/darkmode.jpg';
@@ -397,6 +398,7 @@ export default function App() {
       {currentSection === "Spells" && <SpellsPage />}
       {currentSection === 'JumpCalc' && <JumpCalculator />}
       {currentSection === 'ShopInventory' && <ShopInventory />}
+      {currentSection === 'BountyBoard' && <BountyBoard />}
     </div>
   );
 }
