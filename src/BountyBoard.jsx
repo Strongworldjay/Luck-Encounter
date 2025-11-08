@@ -19,13 +19,7 @@ const bountyData = [
   "blurb": "Coastal songstress on a rocky islet ~1 mile off the docks; hypnotic melody; a few weak water-creatures at her call.",
   "details": "Sailors report a haunting voice rising from a jagged rock formation along the Coastal Way, roughly a mile from the harbor mouth. The Sea Siren’s melody lulls listeners into dazed obedience, drawing them overboard or onto the rocks. She is guarded by minor brine-born allies—slick salamanders and gull-sized tidewhelps—that harry boats and swimmers. Traffic has given the area a wide berth for the past week; standard ‘plug-your-ears’ methods at sea are too risky when orders must be heard. Eliminate the threat and return the siren’s larynx for payment. Harbor Wardens prefer this handled swiftly before the next storm tide amplifies her reach."
 },
-  {
-  "title": "Bounty: Sea Siren",
-  "reward": "450 gp, dead (present larynx as proof)",
-  "blurb": "Coastal songstress on a rocky islet ~1 mile off the docks; hypnotic melody; a few weak water-creatures at her call.",
-  "details": "Sailors report a haunting voice rising from a jagged rock formation along the Coastal Way, roughly a mile from the harbor mouth. The Sea Siren’s melody lulls listeners into dazed obedience, drawing them overboard or onto the rocks. She is guarded by minor brine-born allies—slick salamanders and gull-sized tidewhelps—that harry boats and swimmers. Traffic has given the area a wide berth for the past week; standard ‘plug-your-ears’ methods at sea are too risky when orders must be heard. Eliminate the threat and return the siren’s larynx for payment. Harbor Wardens prefer this handled swiftly before the next storm tide amplifies her reach."
-},
-  {
+   {
   "title": "Bounty: Coral Drake",
   "reward": "500 gp, dead",
   "blurb": "Large pelagic predator along the Coastal Way; venomous tail-barb; brutal bite-and-gnaw behavior; decimating fish stocks.",
@@ -48,7 +42,17 @@ const bountyData = [
   "reward": "575 gp",
   "blurb": "Runaway water-spirit in a separate sewer offshoot; roaring torrent form; warps canal currents. No proof required—flow will normalize upon defeat.",
   "details": "An overcharged water elemental has densified into a tidal core deep within an unconnected sewer branch. Its surges backwash through valves and sluices, bucking boats and jamming gates across the canal grid. In the tunnels it manifests as a pressurized wall of churning water studded with grit and scrap, battering intruders and extinguishing lamps. Tactics: anchor lines and pitons for every fighter; avoid lightning magic (it conducts shock through the flood) and open flame (snuffed instantly). Cold, binding sigils, and earthen barriers work best—sandbag bulwarks can force eddies, and a weighted chain-net can drag the core into a grounding circle. Lure it toward a maintenance chamber with cutoff grates for containment. When dispersed, the canals will settle back to regular flow—Harbor Wardens will confirm by gauge readings; no trophy needed."
-}
+},
+{
+  "title": "Bounty: Sea Hag of the Far Reefs",
+  "reward": "550 gp (present both eyes as proof)",
+  "blurb": "Cunning shoreline predator haunting a small reef out west; dabbles in magic; ambushes lone fishers at low tide.",
+  "details": "An old crone of the deeps prowls a jag of reef and rock on the far west coast, sometimes crawling ashore at dusk to knife nets, foul bait, and drag fishers into tide pools. She is vicious up close—black nails, eel-teeth, and a taste for panic—but her sorcery is crude: hex-laughter, brine illusions, and curses that sour courage. She is not scholarly, yet crafty: uses deadfall shells, urchin beds, and kelp nooses to control footing. Approach at mid-tide with lanterns high and boots greased against slick stone. Salted iron, mirrors, and clear commands break her tricks; keep distance to avoid her grapple and bite. Eliminate the hag and return both eyes—pickled in brine—to claim the reward. Locals believe the reef calms once her gaze is gone."
+},
+
+
+
+
 ];
 
 export default function BountyBoard() {
