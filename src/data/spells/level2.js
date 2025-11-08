@@ -3729,6 +3729,27 @@ export const LEVEL2 = [
         scalingMd: "",
         imagePath: spellImgUrl("wardingbond")
     },
+     {
+        name: "Air Bubble",
+        classes: ["Druid", "Sorcerer", "Wizard", "Ranger", "Artificer"],
+        spellLevel: 2,
+        school: "Conjuration",
+        castingTime: "1 action",
+        duration: "24 Hours",
+        range: "60 feet",
+        area: "20-foot cube",
+        tags: ["Control"],
+        saveRequired: "DEX Save",
+        attackType: "None",
+        damageTypes: [],
+        conditions: ["Restrained"],
+        components: { verbal: true, somatic: true, material: true, materialText: "" },
+        concentration: true,
+        ritual: false,
+        descriptionMd:  "You create a spectral globe around the head of a willing creature you can see within range. The globe is filled with fresh air that lasts until the spell ends. " +
+    "If the creature has more than one head, the globe of air appears around only one of its heads (which is all the creature needs to avoid suffocation, assuming that all its heads share the same respiratory system).",
+        scalingMd:   "**Using a Higher-Level Spell Slot.** When you cast this spell using a spell slot of 3rd level or higher, you can create two additional globes of fresh air for each slot level above 2nd.",
+    },
     {
         slug: slugify("Zone of Truth"),
         name: "Zone of Truth",
@@ -3751,5 +3772,5 @@ export const LEVEL2 = [
             "You create a magical zone that hinders lies. A creature that enters the area for the first time on a turn or starts its turn there must make a Charisma save. On a failed save, it **can’t speak a deliberate lie** while in the area. You know whether each creature succeeds or fails its save. Affected creatures are aware of the spell and can avoid answering, but must remain truthful.",
         scalingMd: "",
         imagePath: spellImgUrl("zoneoftruth")
-    }
+    },
 ];
