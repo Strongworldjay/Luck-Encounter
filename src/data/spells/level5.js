@@ -2478,5 +2478,122 @@ export const LEVEL5 = [
         descriptionMd: "You surround yourself with unearthly majesty in a 10-foot Emanation. Whenever the Emanation enters the space of a creature you can see and whenever a creature you can see enters the Emanation or ends its turn there, you can force that creature to make a Wisdom saving throw. On a failed save, the target takes 4d6 Psychic damage and has the Prone condition, and you can push it up to 10 feet away. On a successful save, the target takes half as much damage only. A creature makes this save only once per turn.",
         scalingMd: "",
         imagePath: spellImgUrl("yolandesregalpresence")
-    }
+    },
+    {
+    slug: slugify("Alustriel’s Mooncloak"),
+    name: "Alustriel’s Mooncloak",
+    classes: ["Bard", "Druid", "Ranger", "Wizard"],
+    spellLevel: 5,
+    school: "Abjuration",
+    castingTime: "1 action",
+    duration: "Concentration, up to 1 minute",
+    range: "Self",
+    area: "20-foot Emanation",
+    tags: ["Buff", "Defense", "Healing"],
+    saveRequired: "None",
+    attackType: "Spell",
+    damageTypes: [],
+    conditions: [],
+    components: { verbal: true, somatic: true, material: true, materialText: "a moonstone worth 50+ gp" },
+    concentration: true,
+    ritual: false,
+    descriptionMd:
+        "For the duration, moonlight fills a 20-foot Emanation originating from you with Dim Light. While in that area, you and your allies have Half Cover and Resistance to Cold, Lightning, and Radiant damage.\n\n" +
+        "While the spell lasts, you can use one of the following options; doing so ends the spell immediately.\n\n" +
+        "**Liberation.** When you fail a saving throw to avoid or end the Frightened, Grappled, or Restrained condition, you can use your Reaction to succeed on the save instead.\n\n" +
+        "**Respite.** As a Magic action, you or an ally within the area regains Hit Points equal to 4d10 + your spellcasting ability modifier.",
+    scalingMd: "",
+    imagePath: spellImgUrl("alustrielsmooncloak")
+},
+{
+    slug: slugify("Songal’s Elemental Suffusion"),
+    name: "Songal’s Elemental Suffusion",
+    classes: ["Druid", "Sorcerer", "Wizard"],
+    spellLevel: 5,
+    school: "Transmutation",
+    castingTime: "1 action",
+    duration: "Concentration, up to 1 minute",
+    range: "Self",
+    area: "15-foot Emanation",
+    tags: ["Damage", "Buff", "Defense", "Control", "Mobility"],
+    saveRequired: "DEX",
+    attackType: "Spell",
+    damageTypes: ["Acid", "Cold", "Fire", "Lightning", "Thunder"],
+    conditions: ["Prone"],
+    components: {
+        verbal: true,
+        somatic: true,
+        material: true,
+        materialText: "a pearl worth 100+ gp"
+    },
+    concentration: true,
+    ritual: false,
+    descriptionMd:
+        "You imbue yourself with the elemental power of genies. You gain the following benefits until the spell ends:\n\n" +
+        "**Elemental Immunity.** When you cast this spell, choose one of the following damage types: Acid, Cold, Fire, Lightning, or Thunder. You have Resistance to the chosen damage type.\n\n" +
+        "**Elemental Pulse.** When you cast this spell and at the start of each of your subsequent turns, you release a burst of elemental energy in a 15-foot Emanation originating from yourself. Each creature of your choice in that area must make a Dexterity saving throw. On a failed save, the creature takes 2d6 Acid, Cold, Fire, Lightning, or Thunder damage (your choice) and has the Prone condition. On a successful save, the creature takes half as much damage only.\n\n" +
+        "**Flight.** You gain a Fly Speed of 30 feet and can hover.",
+    scalingMd: "",
+    imagePath: spellImgUrl("songalselementalsuffusion")
+},
+{
+    slug: slugify("Pyroclastic Lance"),
+    name: "Pyroclastic Lance",
+    classes: ["Druid", "Sorcerer", "Warlock", "Wizard"],
+    spellLevel: 5,
+    school: "Conjuration",
+    castingTime: "1 action",
+    duration: "Instantaneous",
+    range: "120 feet",
+    area: "1 creature; 10-foot-radius Sphere",
+    tags: ["Damage", "Control"],
+    saveRequired: "CON",
+    attackType: "Ranged Spell Attack",
+    damageTypes: ["Fire"],
+    conditions: ["Blinded"],
+    components: {
+        verbal: true,
+        somatic: true,
+        material: true,
+        materialText: ""
+    },
+    concentration: false,
+    ritual: false,
+    descriptionMd:
+        "You conjure a lance of blazing lava before hurling it at a target within range. Make a ranged spell attack. On a hit, the target takes 8d6 Fire damage. Hit or miss, the lance then explodes in a 10-foot-radius Sphere of heavily obscuring pyroclastic ash around the target until the start of your next turn.\n\n" +
+        "Any creature that starts its turn within the ash cloud must make a Constitution saving throw or take 4d6 Fire damage and be Blinded until the start of its next turn.",
+    scalingMd:
+        "**Using a Higher-Level Spell Slot.** The initial damage increases by 1d6 for each spell slot level above 5th.",
+    imagePath: spellImgUrl("pyroclasticlance")
+},
+{
+    slug: slugify("Greater Haste"),
+    name: "Greater Haste",
+    classes: ["Artificer", "Paladin", "Sorcerer", "Wizard"],
+    spellLevel: 5,
+    school: "Transmutation",
+    castingTime: "1 action",
+    duration: "Concentration, up to 1 minute",
+    range: "30 feet",
+    area: "1 willing creature",
+    tags: ["Buff"],
+    saveRequired: "None",
+    attackType: "Spell",
+    damageTypes: [],
+    conditions: ["Paralyzed"],
+    components: {
+        verbal: true,
+        somatic: true,
+        material: true,
+        materialText: "a shaving of quicksilver powder"
+    },
+    concentration: true,
+    ritual: false,
+    descriptionMd:
+        "Choose a willing creature that you can see within range. Until the spell ends, the target’s Speed is multiplied by 2.5, it gains a +3 bonus to Armor Class, it has Advantage on Dexterity saving throws, and it gains an additional action on each of its turns. That action can be used only to take the Attack (two attacks only if the target has the Extra Attack feature), Dash, Disengage, Hide, or Utilize action.\n\n" +
+        "When the spell ends, the target is Paralyzed and has a Speed of 0 until the end of its next turn, as a wave of lethargy washes over it.",
+    scalingMd: "",
+    imagePath: spellImgUrl("greaterhaste")
+},
+
 ];

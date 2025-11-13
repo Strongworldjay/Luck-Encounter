@@ -3001,5 +3001,380 @@ export const LEVEL1 = [
       "The target takes an extra **1d6 Necrotic** damage from the triggering attack and must make a **Wisdom save** or be **Frightened** until the spell ends. At the end of each of its turns, the Frightened target repeats the save, ending the spell on a success.",
     scalingMd:
       "**Using a Higher-Level Spell Slot.** Extra damage increases by **1d6** per slot level above 1."
-  }
+  },
+  {
+  slug: slugify("Summoner’s Brand"),
+  name: "Summoner’s Brand",
+  classes: ["Cleric", "Druid", "Sorcerer", "Warlock", "Wizard"],
+  spellLevel: 1,
+  school: "Evocation",
+  castingTime: "1 action",
+  duration: "1 minute",
+  range: "60 feet",
+  area: "1 creature",
+  tags: ["Damage"],
+  saveRequired: "None",
+  attackType: "Ranged Spell Attack",
+  damageTypes: ["Force"],
+  conditions: [],
+  components: { verbal: true, somatic: true, material: false, materialText: "" },
+  concentration: false,
+  ritual: false,
+  descriptionMd:
+    "Make a Ranged Spell Attack against one creature you can see within range. On a hit, the attack deals no damage, and the target is branded for the duration.\n\n" +
+    "The next time a creature you control that you summoned or reanimated (such as with [spells]animate dead[/spells] or a \"summon\" spell) hits the branded target with an attack, the brand detonates. The target takes 3d6 Force damage, and the brand ends. The detonation doesn’t harm the triggering creature.\n\n" +
+    "A creature can be affected by only one brand from this spell at a time, and you can have only one brand created by this spell active at a time. Casting this spell again ends the previous brand early. The brand ends early if the duration expires or the target dies.",
+  scalingMd:
+    "**Using a Higher-Level Spell Slot.** The detonation’s Force damage increases by 1d6 for each spell slot level above 1st.",
+  imagePath: spellImgUrl("summonersbrand"),
+},
+{
+  slug: slugify("Mercurial Benediction"),
+  name: "Mercurial Benediction",
+  classes: ["Artificer", "Bard", "Cleric", "Druid", "Paladin", "Ranger"],
+  spellLevel: 1,
+  school: "Abjuration",
+  castingTime: "1 action",
+  duration: "Instantaneous",
+  range: "Touch",
+  area: "1 creature",
+  tags: ["Healing"],
+  saveRequired: "None",
+  attackType: "Spell",
+  damageTypes: [],
+  conditions: [],
+  components: { verbal: true, somatic: true, material: false, materialText: "" },
+  concentration: false,
+  ritual: false,
+  descriptionMd:
+    "You channel volatile restorative power. A creature you touch regains 2d10 Hit Points.\n\n" +
+    "Immediately after the primary healing resolves, uncontrolled energy ricochets. The energy leaps to another random target within 120 feet of you. That creature regains the same number of Hit Points restored to the primary target by this casting. This secondary healing can affect a creature you can’t see and ignores cover. If no other creature is within 120 feet, the ricochet fizzles.",
+  scalingMd:
+    "**Using a Higher-Level Spell Slot.** The healing to the primary target increases by 2d10 for each spell slot level above 1st. The secondary healing always equals the amount the primary target regained from this casting.",
+  imagePath: spellImgUrl("mercurialbenediction"),
+},
+{
+    slug: slugify("Spellfire Flare"),
+    name: "Spellfire Flare",
+    classes: ["Sorcerer", "Wizard"],
+    spellLevel: 1,
+    school: "Evocation",
+    castingTime: "1 action",
+    duration: "Instantaneous",
+    range: "60 feet",
+    area: "1 or more creatures within 60 feet",
+    tags: ["Damage"],
+    saveRequired: "None",
+    attackType: "Ranged Spell Attack",
+    damageTypes: ["Radiant"],
+    conditions: [],
+    components: { verbal: true, somatic: true, material: false, materialText: "" },
+    concentration: false,
+    ritual: false,
+    descriptionMd:
+        "You unleash a blast of brilliant fire. Make a ranged spell attack against a target within range; the target gains no benefit from Half Cover or Three-Quarters Cover for this attack roll. On a hit, the target takes 2d10 Radiant damage.",
+    scalingMd:
+        "**Using a Higher-Level Spell Slot.** You create an additional blast for each spell slot level above 1st. You can direct the blasts at the same target or at different ones. Make a separate attack roll for each blast.",
+    imagePath: spellImgUrl("spellfireflare")
+},
+{
+    slug: slugify("Wardaway"),
+    name: "Wardaway",
+    classes: ["Bard", "Cleric", "Paladin", "Wizard"],
+    spellLevel: 1,
+    school: "Abjuration",
+    castingTime: "1 action",
+    duration: "Instantaneous",
+    range: "60 feet",
+    area: "1 creature",
+    tags: ["Damage", "Debuff", "Control"],
+    saveRequired: "CON",
+    attackType: "Spell",
+    damageTypes: ["Force"],
+    conditions: [],
+    components: {
+        verbal: true,
+        somatic: true,
+        material: true,
+        materialText: "a miniature clay hand"
+    },
+    concentration: false,
+    ritual: false,
+    descriptionMd:
+        "You hurl a disorienting magical force toward one creature within range. The target must make a Constitution saving throw; Constructs and Undead automatically succeed on this save.\n\n" +
+        "On a failed save, the target takes 2d4 Force damage, its Speed is halved until the start of your next turn, and on its next turn, it can take only an action or a Bonus Action (but not both). On a successful save, the target takes half as much damage only.",
+    scalingMd:
+        "**Using a Higher-Level Spell Slot.** The damage increases by 2d4 for each spell slot level above 1st.",
+    imagePath: spellImgUrl("wardaway")
+},
+{
+    slug: slugify("Eyes of Immolation"),
+    name: "Eyes of Immolation",
+    classes: ["Sorcerer", "Warlock", "Wizard"],
+    spellLevel: 1,
+    school: "Evocation",
+    castingTime: "1 action",
+    duration: "Instantaneous",
+    range: "30 feet",
+    area: "1 creature within 30 feet",
+    tags: ["Damage"],
+    saveRequired: "None",
+    attackType: "Ranged Spell Attack",
+    damageTypes: ["Fire"],
+    conditions: [],
+    components: {
+        verbal: true,
+        somatic: true,
+        material: false,
+        materialText: ""
+    },
+    concentration: false,
+    ritual: false,
+    descriptionMd:
+        "Your eyes glow with fiery light before focusing on a creature you can see within range, causing a beam of fire to shoot from your eyes. Make a ranged spell attack; on a hit, the target takes 3d6 Fire damage and begins burning.",
+    scalingMd:
+        "**Using a Higher-Level Spell Slot.** The damage increases by 1d6 for each spell slot level above 1st.",
+    imagePath: spellImgUrl("eyesofimmolation")
+},
+{
+    slug: slugify("Arcane Deflection"),
+    name: "Arcane Deflection",
+    classes: ["Sorcerer", "Wizard"],
+    spellLevel: 1,
+    school: "Abjuration",
+    castingTime: "1 reaction (taken when you take damage from an attack)",
+    duration: "Instantaneous",
+    range: "Self",
+    area: "Self; 1 creature (melee attacker)",
+    tags: ["Damage", "Defense"],
+    saveRequired: "None",
+    attackType: "Spell",
+    damageTypes: [],
+    conditions: [],
+    components: {
+        verbal: true,
+        somatic: true,
+        material: false,
+        materialText: ""
+    },
+    concentration: false,
+    ritual: false,
+    descriptionMd:
+        "You release an explosive blast of energy to deflect an attack, reducing the damage by 2d6. If this reduction would reduce the damage to 0 and the triggering attack was a melee attack, the attacker takes damage equal to the remaining amount instead.",
+    scalingMd:
+        "**Using a Higher-Level Spell Slot.** The damage reduction increases by 1d6 for each spell slot level above 1st.",
+    imagePath: spellImgUrl("arcanedeflection")
+},
+{
+    slug: slugify("Heavy Blow"),
+    name: "Heavy Blow",
+    classes: ["Druid", "Sorcerer", "Wizard"],
+    spellLevel: 1,
+    school: "Transmutation",
+    castingTime: "1 bonus action",
+    duration: "Instantaneous",
+    range: "Self",
+    area: "Self (next melee weapon attack)",
+    tags: ["Damage", "Debuff"],
+    saveRequired: "CON",
+    attackType: "Spell",
+    damageTypes: ["Bludgeoning"],
+    conditions: ["Dazed"],
+    components: {
+        verbal: true,
+        somatic: true,
+        material: true,
+        materialText: "a weapon used as part of the casting"
+    },
+    concentration: false,
+    ritual: false,
+    descriptionMd:
+        "You impart great heft to an unarmed strike or weapon you are holding. The first time you hit with a melee weapon attack using that weapon before the start of your next turn, your blow strikes with tremendous force. The attack deals an extra 1d10 Bludgeoning damage to the target, and it must succeed on a Constitution saving throw or become Dazed until the start of its next turn.\n\n" +
+        "While Dazed this way, the target can’t take Reactions, and attack rolls against it have Advantage.",
+    scalingMd:
+        "**Using a Higher-Level Spell Slot.** The extra damage increases by 1d10 for each spell slot level above 1st.",
+    imagePath: spellImgUrl("heavyblow")
+},
+{
+    slug: slugify("Porter’s Might"),
+    name: "Porter’s Might",
+    classes: ["Bard", "Ranger", "Wizard"],
+    spellLevel: 1,
+    school: "Transmutation",
+    castingTime: "1 action",
+    duration: "1 hour",
+    range: "Touch",
+    area: "1 creature",
+    tags: ["Buff", "Utility"],
+    saveRequired: "None",
+    attackType: "Spell",
+    damageTypes: [],
+    conditions: [],
+    components: {
+        verbal: true,
+        somatic: true,
+        material: false,
+        materialText: ""
+    },
+    concentration: false,
+    ritual: false,
+    descriptionMd:
+        "You touch a willing creature. For the duration, the target’s carrying capacity and the weight it can push, drag, or lift are doubled. If the target is Small or Tiny, it ignores the usual size-based reduction to carrying capacity for the duration. This spell doesn’t change the target’s size, space, or reach.",
+    scalingMd:
+        "**Using a Higher-Level Spell Slot.** You can target one additional creature for each spell slot level above 1st.",
+    imagePath: spellImgUrl("portersmight")
+},
+{
+    slug: slugify("Dampen Lock"),
+    name: "Dampen Lock",
+    classes: ["Artificer", "Wizard"],
+    spellLevel: 1,
+    school: "Abjuration",
+    castingTime: "1 action",
+    duration: "Until dispelled",
+    range: "Touch",
+    area: "1 nonmagical lock or fastening",
+    tags: ["Utility", "Warding"],
+    saveRequired: "None",
+    attackType: "Spell",
+    damageTypes: [],
+    conditions: [],
+    components: {
+        verbal: true,
+        somatic: true,
+        material: true,
+        materialText: "a handful of rust"
+    },
+    concentration: false,
+    ritual: false,
+    descriptionMd:
+        "Choose a nonmagical lock, clasp, or similar fastening mechanism you can touch. For the duration, the DC of any ability check made to pick the target with tools or to force it open is reduced by 1 (minimum DC 5). A lock or item can be affected by this spell only once at a time; additional castings on the same target have no effect until the current casting ends. This spell doesn’t change the target’s size, structure, or hit points.",
+    scalingMd:
+        "**Using a Higher-Level Spell Slot.** The reduction to the lock’s DC increases by 1 for each spell slot level above 1st.",
+    imagePath: spellImgUrl("dampenlock")
+},
+{
+    slug: slugify("Corrosion"),
+    name: "Corrosion",
+    classes: ["Bard", "Sorcerer", "Wizard"],
+    spellLevel: 1,
+    school: "Transmutation",
+    castingTime: "1 action",
+    duration: "Concentration, up to 1 minute",
+    range: "60 feet",
+    area: "1 suit of Medium or Heavy armor",
+    tags: ["Utility"],
+    saveRequired: "None",
+    attackType: "Spell",
+    damageTypes: [],
+    conditions: [],
+    components: {
+        verbal: true,
+        somatic: false,
+        material: false,
+        materialText: ""
+    },
+    concentration: true,
+    ritual: false,
+    descriptionMd:
+        "Choose one suit of Medium or Heavy armor you can see within range (worn or unattended). For the duration, the armor is corroded; while a creature wears it, that creature has a −1 penalty to AC. This spell doesn’t affect Light armor or shields, and it doesn’t change the armor’s size, weight, or properties.\n\n" +
+        "An individual suit of armor can be affected by this spell only once at a time; additional castings on the same armor have no effect until the current casting ends.",
+    scalingMd:
+        "**Using a Higher-Level Spell Slot.** For every 2 spell slot levels above 1st, the penalty to AC increases by 1.",
+    imagePath: spellImgUrl("corrosion")
+},
+{
+    slug: slugify("Lifesense"),
+    name: "Lifesense",
+    classes: ["Cleric", "Druid", "Paladin", "Ranger"],
+    spellLevel: 1,
+    school: "Divination",
+    castingTime: "1 action (ritual)",
+    duration: "Concentration, up to 10 minutes",
+    range: "Self (30 feet)",
+    area: "1 creature within 30 feet",
+    tags: ["Detection"],
+    saveRequired: "None",
+    attackType: "Spell",
+    damageTypes: [],
+    conditions: [],
+    components: {
+        verbal: true,
+        somatic: true,
+        material: false,
+        materialText: ""
+    },
+    concentration: true,
+    ritual: true,
+    descriptionMd:
+        "While you concentrate, you can sense the life force of a creature you can see within range. When you cast the spell, and as a Magic action on later turns, choose one creature you can see within 30 feet. You instantly learn its current state from the following:\n\n" +
+        "**Fully Healthy.** The creature is at its Hit Point maximum.\n\n" +
+        "**Wounded.** The creature has half or fewer of its Hit Points remaining.\n\n" +
+        "**Critically Injured.** The creature has 10 percent or fewer of its Hit Point maximum remaining (rounded down).\n\n" +
+        "**Diseased/Poisoned.** The creature is affected by a disease or by poison (including whether it currently has the Poisoned condition), but you don’t learn the specific disease or poison.\n\n" +
+        "**Undead.** The creature is Undead (no discernible pulse).\n\n" +
+        "This spell reveals no information about a creature you can’t see and doesn’t identify other creature types or conditions.",
+    scalingMd: "",
+    imagePath: spellImgUrl("lifesense")
+},
+{
+    slug: slugify("Feynar’s Fin"),
+    name: "Feynar’s Fin",
+    classes: ["Artificer", "Bard", "Druid", "Ranger", "Wizard"],
+    spellLevel: 1,
+    school: "Transmutation",
+    castingTime: "1 action",
+    duration: "Concentration, up to 1 hour",
+    range: "Touch",
+    area: "1 willing creature",
+    tags: ["Buff", "Movement"],
+    saveRequired: "None",
+    attackType: "Spell",
+    damageTypes: [],
+    conditions: [],
+    components: {
+        verbal: true,
+        somatic: true,
+        material: true,
+        materialText: "a fish scale"
+    },
+    concentration: true,
+    ritual: false,
+    descriptionMd:
+        "You touch a willing creature. For the duration, the target gains a Swim Speed equal to its Speed.",
+    scalingMd:
+        "**Using a Higher-Level Spell Slot.** You can target one additional creature for each spell slot level above 1st.",
+    imagePath: spellImgUrl("feynarsfin")
+},
+{
+    slug: slugify("Shockwave Focus"),
+    name: "Shockwave Focus",
+    classes: ["Bard", "Druid", "Sorcerer", "Wizard"],
+    spellLevel: 1,
+    school: "Transmutation",
+    castingTime: "1 bonus action",
+    duration: "Concentration, up to 1 minute",
+    range: "Self",
+    area: "Self (10-foot radius for release)",
+    tags: ["Damage", "Control"],
+    saveRequired: "STR",
+    attackType: "Spell",
+    damageTypes: [],
+    conditions: ["Prone"],
+    components: {
+        verbal: true,
+        somatic: true,
+        material: false,
+        materialText: ""
+    },
+    concentration: true,
+    ritual: false,
+    descriptionMd:
+        "While you concentrate, your melee weapon attacks strike with gathered force. When you hit with a melee weapon attack, the attack deals an extra 1 damage of the weapon’s type.\n\n" +
+        "**Controlled Release.** As a Magic action, you can end the spell early in a controlled release. When you do, each hostile creature within 10 feet of you must make a Strength saving throw or have the Prone condition. Creatures that succeed are unaffected. If your Concentration ends for any other reason, this release doesn’t occur.",
+    scalingMd:
+        "**Using a Higher-Level Spell Slot.** The extra damage increases by 1 for each spell slot level above 1st.",
+    imagePath: spellImgUrl("shockwavefocus")
+},
+
 ];

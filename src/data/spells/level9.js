@@ -733,5 +733,113 @@ export const LEVEL9 = [
             "Finally, there is a 33 percent chance that you are unable to cast Wish ever again if you suffer this stress.",
         scalingMd: "",
         imagePath: spellImgUrl("wish")
-    }
+    },
+    {
+  slug: slugify("Enslave"),
+  name: "Enslave",
+  classes: ["Bard", "Cleric", "Druid", "Paladin", "Wizard"],
+  spellLevel: 9,
+  school: "Enchantment",
+  castingTime: "1 minute",
+  duration: "Until dispelled, up to 30 days",
+  range: "60 feet",
+  area: "1 creature",
+  tags: ["Control"],
+  saveRequired: "WIS",
+  attackType: "Spell",
+  damageTypes: [],
+  conditions: ["Charmed"],
+  components: { verbal: true, somatic: true, material: false, materialText: "" },
+  concentration: false,
+  ritual: false,
+  descriptionMd:
+    "Choose one creature you can see within range. You can target a creature with this spell only if the spell slot you use exceeds the creature’s Challenge Rating (if it has a CR) or the creature’s character level (if it has levels).\n\n" +
+    "The target makes a Wisdom saving throw. It has Advantage on this save; if it is bloodied (half its Hit Points or fewer), it doesn’t have Advantage; if it has exactly 1 Hit Point, it has Disadvantage. On a failed save, the target is charmed by you and falls under your absolute sway until the spell ends. A creature that succeeds on the save is unaffected.\n\n" +
+    "While charmed in this way, the target obeys your verbal commands (no action required). If you issue no commands, it defends itself but otherwise takes no hostile actions. On your turn, you can take a Magic action to assume direct control of the target until the end of its next turn; you decide its movement, actions, and reactions. After the save is failed, the target doesn’t make additional saving throws due to time passing or taking damage.\n\n" +
+    "This spell has no effect on a creature that is immune to the charmed condition. You can have only one creature affected by this spell at a time; if you cast [spells]Enslave[/spells] while another creature is under its effect, you choose whether the new casting fails or the previous effect ends.",
+  scalingMd: "",
+  imagePath: spellImgUrl("enslave"),
+},
+{
+    slug: slugify("Blade of Disaster"),
+    name: "Blade of Disaster",
+    classes: ["Sorcerer", "Warlock", "Wizard"],
+    spellLevel: 9,
+    school: "Conjuration",
+    castingTime: "1 bonus action",
+    duration: "Concentration, up to 1 minute",
+    range: "60 feet",
+    area: "5-foot reach (rift within 60 feet)",
+    tags: ["Damage"],
+    saveRequired: "None",
+    attackType: "Melee Spell Attack",
+    damageTypes: ["Force"],
+    conditions: [],
+    components: { verbal: true, somatic: true, material: false, materialText: "" },
+    concentration: true,
+    ritual: false,
+    descriptionMd:
+        "You create a 3-foot-long, blade-shaped planar rift that lasts for the duration. The rift appears within range in a space of your choice, and you can immediately make up to two melee spell attacks, each one against a creature or object within 5 feet of the rift. On a hit, the target takes 10d6 Force damage. This attack scores a Critical Hit if the number on the d20 is 18 or higher.\n\n" +
+        "As a Bonus Action on your later turns, you can move the rift up to 60 feet and repeat the two attacks against a creature or an object within 5 feet of it. You can direct the attacks at the same target or at different ones.\n\n" +
+        "The blade can harmlessly pass through any barrier, including ones created by spells like Wall of Force.",
+    scalingMd: "",
+    imagePath: spellImgUrl("bladeofdisaster")
+},
+{
+    slug: slugify("Blackhole"),
+    name: "Blackhole",
+    classes: ["Sorcerer", "Wizard"],
+    spellLevel: 9,
+    school: "Transmutation",
+    castingTime: "1 action",
+    duration: "Concentration, up to 1 minute",
+    range: "300 feet",
+    area: "15-foot-radius Sphere (event horizon); 120-foot gravity field",
+    tags: ["Damage", "Control", "Debuff"],
+    saveRequired: "STR",
+    attackType: "Spell",
+    damageTypes: ["Bludgeoning"],
+    conditions: ["Blinded", "Deafened", "Restrained"],
+    components: { verbal: true, somatic: true, material: false, materialText: "" },
+    concentration: true,
+    ritual: false,
+    descriptionMd:
+        "You create a miniature black hole at a point within range. An event horizon forms in a 15-foot radius around that point, blocking anything (including light, sound, and magical effects) from passing through that space without being engulfed into the black hole.\n\n" +
+        "When the black hole appears, each creature within 15 feet of the point must make a Strength saving throw to avoid being engulfed. On a successful save, the creature can immediately move up to its Speed to a space outside the event horizon. If it cannot reach a space outside the event horizon, it automatically fails the save and is engulfed.\n\n" +
+        "All creatures that are engulfed are compressed into the point at the center of the spell, taking 12d12 Bludgeoning damage at the start of each of their turns while engulfed. Their Speed is 0, and they are Blinded, Deafened, and Restrained while engulfed. As an action, an engulfed creature can attempt to forcibly exit the black hole, making a Strength (Athletics) check against your spell save DC. On a success, it appears in an unoccupied space at the edge of the spell’s effect.\n\n" +
+        "All spells, effects, terrain, or items that are not being worn or carried (other than those of Legendary or Artifact rarity) that are engulfed within the event horizon vanish and are destroyed. Magical items of Legendary or Artifact rarity are not destroyed; they reappear on the ground where the sphere was when the spell ends.\n\n" +
+        "While the spell persists, any movement away from the black hole within 120 feet of it is treated as difficult terrain. All ranged attacks that pass within 120 feet of the black hole automatically fail. When a creature starts its turn within 120 feet of the black hole, it must succeed on a Strength saving throw or be pulled 30 feet toward the black hole. At the start of your turn, all unattended objects not attached to the ground and weighing less than 1,000 pounds within 120 feet of the black hole are pulled 20 feet toward it.",
+    scalingMd: "",
+    imagePath: spellImgUrl("blackhole")
+},
+{
+    slug: slugify("Supernova"),
+    name: "Supernova",
+    classes: ["Sorcerer", "Wizard"],
+    spellLevel: 9,
+    school: "Evocation",
+    castingTime: "1 action",
+    duration: "Instantaneous",
+    range: "1 mile",
+    area: "60-foot-radius Sphere",
+    tags: ["Damage"],
+    saveRequired: "CON",
+    attackType: "Spell",
+    damageTypes: ["Radiant"],
+    conditions: ["Blinded"],
+    components: {
+        verbal: true,
+        somatic: true,
+        material: false,
+        materialText: ""
+    },
+    concentration: false,
+    ritual: false,
+    descriptionMd:
+        "You form a fist-sized point of light at a point you can see within range that then explodes into a stellar supernova, unleashing cataclysmic stellar energy. Each creature within a 60-foot radius of that point must make a Constitution saving throw. On a failed save, a creature takes 30d8 Radiant damage and is Blinded for 1 minute. On a successful save, the creature takes half as much damage and isn’t Blinded.\n\n" +
+        "A Blinded creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+    scalingMd: "",
+    imagePath: spellImgUrl("supernova")
+},
+
 ];

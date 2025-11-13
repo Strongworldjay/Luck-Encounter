@@ -256,7 +256,7 @@ export const LEVEL4 = [
         concentration: true,
         ritual: false,
         descriptionMd: "You emit a targeted burst of sonic energy at a creature within range. The target makes a Constitution save, taking 3d8 Thunder damage and becoming Stunned on a failure, or half damage and not Stunned on a success. At the end of each of its turns, the target repeats the save; on a success, the spell ends, on a failure, it takes an additional 1d8 Thunder damage from the echoes.",
-        scalingMd: "**At Higher Levels.** The initial damage increases by 1d8 for each slot level above 4th.",
+        scalingMd: "**Using a Higher-Level Spell Slot.** The initial damage increases by 1d8 for each slot level above 4th.",
         imagePath: spellImgUrl("echoinglance")
     },
     {
@@ -2658,5 +2658,376 @@ export const LEVEL4 = [
         scalingMd:
             "**Using a Higher-Level Spell Slot.** The damage increases by **1d8** for each slot level above 4.",
         imagePath: spellImgUrl("walloffire")
-    }
+    },
+    {
+  slug: slugify("Flame Kindle"),
+  name: "Flame Kindle",
+  classes: ["Druid", "Sorcerer", "Wizard"],
+  spellLevel: 4,
+  school: "Transmutation",
+  castingTime: "1 action",
+  duration: "Concentration, up to 1 minute",
+  range: "Self",
+  area: "Self",
+  tags: ["Damage"],
+  saveRequired: "None",
+  attackType: "Spell",
+  damageTypes: ["Fire"],
+  conditions: [],
+  components: { verbal: true, somatic: true, material: false, materialText: "" },
+  concentration: true,
+  ritual: false,
+  descriptionMd:
+    "Your body kindles with elemental flame, aligning you to fire. For the duration, you can take a Magic action to cast [spells]fire bolt[/spells] (even if you don’t know it). In addition, on each of your turns you can use a Bonus Action to cast [spells]fire bolt[/spells]. You can cast [spells]fire bolt[/spells] with both your Magic action and your Bonus Action on the same turn.\n\n" +
+    "These flames are under your control and don’t ignite unattended objects.",
+  scalingMd: "",
+  imagePath: spellImgUrl("flamekindle"),
+},
+{
+  slug: slugify("Glacial Kindle"),
+  name: "Glacial Kindle",
+  classes: ["Druid", "Sorcerer", "Wizard"],
+  spellLevel: 4,
+  school: "Transmutation",
+  castingTime: "1 action",
+  duration: "Concentration, up to 1 minute",
+  range: "Self",
+  area: "Self",
+  tags: ["Damage"],
+  saveRequired: "None",
+  attackType: "Spell",
+  damageTypes: ["Cold"],
+  conditions: [],
+  components: { verbal: true, somatic: true, material: false, materialText: "" },
+  concentration: true,
+  ritual: false,
+  descriptionMd:
+    "Your body sheathes in elemental rime, aligning you to ice. For the duration, you can take a Magic action to cast [spells]ray of frost[/spells] (even if you don’t know it). In addition, on each of your turns you can use a Bonus Action to cast [spells]ray of frost[/spells]. You can cast [spells]ray of frost[/spells] with both your Magic action and your Bonus Action on the same turn.",
+  scalingMd: "",
+  imagePath: spellImgUrl("glacialkindle"),
+},
+{
+  slug: slugify("Static Kindle"),
+  name: "Static Kindle",
+  classes: ["Druid", "Sorcerer", "Wizard"],
+  spellLevel: 4,
+  school: "Transmutation",
+  castingTime: "1 action",
+  duration: "Concentration, up to 1 minute",
+  range: "Self",
+  area: "Self",
+  tags: ["Damage"],
+  saveRequired: "None",
+  attackType: "Spell",
+  damageTypes: ["Lightning"],
+  conditions: [],
+  components: { verbal: true, somatic: true, material: false, materialText: "" },
+  concentration: true,
+  ritual: false,
+  descriptionMd:
+    "Your body crackles with caged lightning, aligning you to storm. For the duration, you can take a Magic action to cast [spells]shocking grasp[/spells] (even if you don’t know it). In addition, on each of your turns you can use a Bonus Action to cast [spells]shocking grasp[/spells]. You can cast [spells]shocking grasp[/spells] with both your Magic action and your Bonus Action on the same turn.\n\n" +
+    "These sparks are under your control and don’t harm unattended objects.",
+  scalingMd: "",
+  imagePath: spellImgUrl("statickindle"),
+},
+{
+  slug: slugify("Torrential Kindle"),
+  name: "Torrential Kindle",
+  classes: ["Druid", "Sorcerer", "Wizard"],
+  spellLevel: 4,
+  school: "Transmutation",
+  castingTime: "1 action",
+  duration: "Concentration, up to 1 minute",
+  range: "Self",
+  area: "Self",
+  tags: ["Damage"],
+  saveRequired: "None",
+  attackType: "Spell",
+  damageTypes: [],
+  conditions: [],
+  components: { verbal: true, somatic: true, material: false, materialText: "" },
+  concentration: true,
+  ritual: false,
+  descriptionMd:
+    "Your body swirls with rapid waters. For the duration, you can take a Magic action to cast [spells]water blast[/spells] (even if you don’t know it). In addition, on each of your turns you can use a Bonus Action to cast [spells]water blast[/spells]. You can cast [spells]water blast[/spells] with both your Magic action and your Bonus Action on the same turn.",
+  scalingMd: "",
+  imagePath: spellImgUrl("torrentialkindle"),
+},
+{
+  slug: slugify("Gravefeast"),
+  name: "Gravefeast",
+  classes: ["Cleric", "Druid", "Warlock"],
+  spellLevel: 4,
+  school: "Transmutation",
+  castingTime: "1 action",
+  duration: "Instantaneous",
+  range: "Touch",
+  area: "1 corpse",
+  tags: ["Healing"],
+  saveRequired: "None",
+  attackType: "Spell",
+  damageTypes: [],
+  conditions: [],
+  components: { verbal: true, somatic: true, material: false, materialText: "" },
+  concentration: false,
+  ritual: false,
+  descriptionMd:
+    "You touch the corpse of a non-Undead, non-Construct creature that is mostly intact. The remains crumble to ash and are destroyed, and vital essence flows into you. You regain Hit Points based on the corpse’s size:\n\n" +
+    "Tiny: 1d8\n" +
+    "Small: 2d8\n" +
+    "Medium: 3d8\n" +
+    "Large: 5d8\n" +
+    "Huge: 8d8\n" +
+    "Gargantuan: 12d8\n\n" +
+    "A corpse can’t be affected by this spell more than once. Destroying the corpse in this way prevents the creature from being returned to life by [spells]revivify[/spells] or [spells]raise dead[/spells]. More powerful magic, such as [spells]resurrection[/spells], [spells]true resurrection[/spells], or [spells]wish[/spells], can still restore it.",
+  scalingMd: "",
+  imagePath: spellImgUrl("gravefeast"),
+},
+{
+  slug: slugify("Mind Fog"),
+  name: "Mind Fog",
+  classes: ["Bard", "Wizard"],
+  spellLevel: 4,
+  school: "Enchantment",
+  castingTime: "1 action",
+  duration: "Concentration, up to 1 minute",
+  range: "60 feet",
+  area: "1 creature",
+  tags: ["Debuff"],
+  saveRequired: "WIS",
+  attackType: "Spell",
+  damageTypes: [],
+  conditions: [],
+  components: { verbal: true, somatic: true, material: false, materialText: "" },
+  concentration: true,
+  ritual: false,
+  descriptionMd:
+    "Choose one creature you can see within range. Until the spell ends, whenever the target attempts to cast a spell (using an Action, Bonus Action, or Reaction) or takes the Magic action, it must first make a Wisdom saving throw.\n\n" +
+    "**On a failed save,** the attempt fizzles: the spell has no effect, and the creature expends the Action, Bonus Action, or Reaction it used for the attempt. The spell slot or prepared use isn’t expended.\n\n" +
+    "**On a successful save,** the attempt proceeds normally, and the target records one success against this spell. After the target accumulates three such successes, the spell ends.\n\n" +
+    "A creature that doesn’t cast spells is affected only if it takes the Magic action. This saving throw is made at most once per casting attempt; rerolls or advantage/disadvantage apply to that single save.",
+  scalingMd: "",
+  imagePath: spellImgUrl("mindfog"),
+},
+{
+    slug: slugify("Backlash"),
+    name: "Backlash",
+    classes: ["Bard", "Sorcerer", "Warlock", "Wizard"],
+    spellLevel: 4,
+    school: "Abjuration",
+    castingTime: "1 reaction (taken in response to taking damage)",
+    duration: "Instantaneous",
+    range: "60 feet",
+    area: "Self; 1 creature within 60 feet",
+    tags: ["Damage", "Defense"],
+    saveRequired: "CON",
+    attackType: "Spell",
+    damageTypes: ["Force"],
+    conditions: [],
+    components: { verbal: true, somatic: false, material: false, materialText: "" },
+    concentration: false,
+    ritual: false,
+    descriptionMd:
+        "You ward yourself against destructive energy, reducing the triggering damage by 4d6 + your spellcasting ability modifier.\n\n" +
+        "If the triggering damage was from a creature within range, you can force that creature to make a Constitution saving throw. The creature takes 4d6 Force damage on a failed save, or half as much damage on a successful one.",
+    scalingMd:
+        "Using a Higher-Level Spell Slot. The damage reduction and Force damage from this spell both increase by 1d6 for each spell slot level above 4th.",
+    imagePath: spellImgUrl("backlash")
+},
+{
+    slug: slugify("Doomtide"),
+    name: "Doomtide",
+    classes: ["Bard", "Cleric", "Warlock"],
+    spellLevel: 4,
+    school: "Conjuration",
+    castingTime: "1 action",
+    duration: "Concentration, up to 1 minute",
+    range: "120 feet",
+    area: "20-foot-radius Sphere",
+    tags: ["Damage", "Control", "Debuff"],
+    saveRequired: "WIS",
+    attackType: "Spell",
+    damageTypes: ["Psychic"],
+    conditions: [],
+    components: { verbal: true, somatic: true, material: true, materialText: "soot and a dried eel" },
+    concentration: true,
+    ritual: false,
+    descriptionMd:
+        "You create a 20-foot-radius Sphere of inky fog within range. The fog is magical Darkness and lasts for the duration or until a strong wind (such as the one created by the [spells]gust of wind[/spells] spell) disperses it, ending the spell.\n\n" +
+        "Each creature in the Sphere when it appears makes a Wisdom saving throw. On a failed save, the creature takes 5d6 Psychic damage and subtracts 1d6 from its saving throws until the end of its next turn. On a successful save, the creature takes half as much damage only. A creature also makes this save when the Sphere moves into its space, when it enters the Sphere, or when it ends its turn inside the Sphere. A creature makes this save only once per turn.\n\n" +
+        "The Sphere moves 10 feet away from you at the start of each of your turns.",
+    scalingMd: "",
+    imagePath: spellImgUrl("doomtide")
+},
+{
+    slug: slugify("Spellfire Storm"),
+    name: "Spellfire Storm",
+    classes: ["Sorcerer", "Wizard"],
+    spellLevel: 4,
+    school: "Evocation",
+    castingTime: "1 action",
+    duration: "Concentration, up to 1 minute",
+    range: "60 feet",
+    area: "20-foot-radius, 20-foot-high Cylinder",
+    tags: ["Damage", "Control", "Anti-Magic"],
+    saveRequired: "CON",
+    attackType: "Spell",
+    damageTypes: ["Radiant"],
+    conditions: [],
+    components: { verbal: true, somatic: true, material: false, materialText: "" },
+    concentration: true,
+    ritual: false,
+    descriptionMd:
+        "You conjure a pillar of spellfire in a 20-foot-radius, 20-foot-high Cylinder centered on a point within range. The area of the Cylinder is Bright Light, and each creature in it when it appears must make a Constitution saving throw, taking 4d10 Radiant damage on a failed save, or half as much damage on a successful one. A creature also makes this save when it enters the spell’s area for the first time on a turn or ends its turn there. A creature makes this save only once per turn.\n\n" +
+        "In addition, whenever a creature in the Cylinder casts a spell, that creature must make a Constitution saving throw. On a failed save, the spell dissipates with no effect, and the action, Bonus Action, or Reaction used to cast it is wasted. If that spell was cast with a spell slot, the slot isn’t expended.\n\n" +
+        "When you cast this spell, you can designate creatures to be unaffected by it.",
+    scalingMd:
+        "**Using a Higher-Level Spell Slot.** The damage increases by 1d10 for each spell slot level above 4th.",
+    imagePath: spellImgUrl("spellfirestorm")
+},
+{
+    slug: slugify("Quicksilver Step"),
+    name: "Quicksilver Step",
+    classes: ["Bard", "Ranger", "Sorcerer", "Wizard"],
+    spellLevel: 4,
+    school: "Transmutation",
+    castingTime: "1 action",
+    duration: "Concentration, up to 1 minute",
+    range: "Self",
+    area: "Self",
+    tags: ["Buff", "Mobility", "Defense"],
+    saveRequired: "None",
+    attackType: "Spell",
+    damageTypes: [],
+    conditions: [],
+    components: { verbal: true, somatic: true, material: false, materialText: "" },
+    concentration: true,
+    ritual: false,
+    descriptionMd:
+        "For the duration, your movement does not provoke Opportunity Attacks, and you can move up to 10 feet each time another creature you can see or hear ends its turn (no action required). You can move in this way up to 4 times per round, and you regain all expended uses at the start of your turn. The first attack made against you each time you move in this way has Disadvantage.",
+    scalingMd:
+        "**Using a Higher-Level Spell Slot.** You can move in this way one additional time per round for each spell slot level above 4th.",
+    imagePath: spellImgUrl("quicksilverstep")
+},
+{
+    slug: slugify("Detect Life"),
+    name: "Detect Life",
+    classes: ["Cleric", "Druid", "Paladin", "Ranger"],
+    spellLevel: 4,
+    school: "Divination",
+    castingTime: "1 action (ritual)",
+    duration: "Concentration, up to 10 minutes",
+    range: "Self (120 feet)",
+    area: "120-foot radius",
+    tags: ["Detection"],
+    saveRequired: "None",
+    attackType: "Spell",
+    damageTypes: [],
+    conditions: [],
+    components: {
+        verbal: true,
+        somatic: true,
+        material: false,
+        materialText: ""
+    },
+    concentration: true,
+    ritual: true,
+    descriptionMd:
+        "While you concentrate, you perceive the faint life-aura of living creatures within 120 feet of you—even through walls and total cover. Each living creature (neither Undead nor Construct) appears to you as a softly outlined silhouette in its space. You learn each outlined creature’s exact location and size category, and you can tell whether it is moving.\n\n" +
+        "This perception does not grant line of sight and can’t be used to target a creature with an effect that requires you to see it or that can’t target a creature behind total cover. The spell doesn’t reveal identity, creature type, or hit points, and it doesn’t outline nonliving objects or creatures that aren’t alive.",
+    scalingMd: "",
+    imagePath: spellImgUrl("detectlife")
+},
+{
+    slug: slugify("Wildfire"),
+    name: "Wildfire",
+    classes: ["Cleric", "Druid", "Sorcerer", "Warlock", "Wizard"],
+    spellLevel: 4,
+    school: "Evocation",
+    castingTime: "1 action",
+    duration: "Concentration, up to 1 minute",
+    range: "60 feet",
+    area: "1 creature; hopping flame within 30 feet",
+    tags: ["Damage"],
+    saveRequired: "DEX",
+    attackType: "Spell",
+    damageTypes: ["Fire"],
+    conditions: [],
+    components: {
+        verbal: true,
+        somatic: true,
+        material: false,
+        materialText: ""
+    },
+    concentration: true,
+    ritual: false,
+    descriptionMd:
+        "You launch a condensed, living flame at a creature you can see within range. The target must make a Dexterity saving throw, taking 6d6 Fire damage on a failed save, or half as much damage on a success. On a failed save, the flame latches onto the target and remains attached while you maintain Concentration. On a successful save, it deals half damage and falls to the ground in the target’s space, remaining there as a fist-sized ember.\n\n" +
+        "**Hopping Blaze.** At the start of each of your turns, the flame (whether attached to a creature or resting on the ground) chooses one other random creature within 30 feet of its current location and leaps to that creature’s space. The new creature then makes a Dexterity saving throw, taking 6d6 Fire damage on a failed save, or half as much damage on a success. On a failed save, the flame latches onto that creature; on a success, it deals half damage and falls to the ground in that creature’s space. If there is no other creature within 30 feet, the flame stays where it is (remaining attached to its current bearer, if any). If the flame is attached to a creature, at the start of that creature’s turn it takes 3d6 Fire damage.\n\n" +
+        "**Tearing It Free.** A creature that has the flame attached, or a creature within 5 feet of it, can use an Action to make a Strength saving throw. On a success, the flame is torn free and falls to the ground in the creature’s space.\n\n" +
+        "The flame is magical, sheds Bright Light in a 10-foot radius and Dim Light for an additional 10 feet, and doesn’t ignite unattended objects.",
+    scalingMd:
+        "**Using a Higher-Level Spell Slot.** The flame’s initial damage increases by 1d6 for each spell slot level above 4th.",
+    imagePath: spellImgUrl("wildfire")
+},
+{
+    slug: slugify("Cure"),
+    name: "Cure",
+    classes: ["Artificer", "Bard", "Cleric", "Druid", "Paladin", "Ranger", "Warlock", "Sorcerer"],
+    spellLevel: 4,
+    school: "Abjuration",
+    castingTime: "1 action",
+    duration: "Instantaneous",
+    range: "60 feet",
+    area: "1 creature",
+    tags: ["Healing"],
+    saveRequired: "None",
+    attackType: "Spell",
+    damageTypes: [],
+    conditions: ["Poisoned"],
+    components: {
+        verbal: true,
+        somatic: true,
+        material: false,
+        materialText: ""
+    },
+    concentration: false,
+    ritual: false,
+    descriptionMd:
+        "Choose a creature you can see within range. Positive energy washes through the target, restoring 35 Hit Points. The spell also ends the Poisoned condition on the target and ends one disease affecting it.",
+    scalingMd:
+        "**Using a Higher-Level Spell Slot.** The healing increases by 5 Hit Points for each spell slot level above 4th.",
+    imagePath: spellImgUrl("cure")
+},
+{
+    slug: slugify("Destructive Echo"),
+    name: "Destructive Echo",
+    classes: ["Bard", "Sorcerer", "Wizard"],
+    spellLevel: 4,
+    school: "Transmutation",
+    castingTime: "1 action",
+    duration: "Concentration, up to 1 minute",
+    range: "Self",
+    area: "Self",
+    tags: ["Damage"],
+    saveRequired: "None",
+    attackType: "Spell",
+    damageTypes: [],
+    conditions: [],
+    components: {
+        verbal: true,
+        somatic: true,
+        material: false,
+        materialText: ""
+    },
+    concentration: true,
+    ritual: false,
+    descriptionMd:
+        "When you cast this spell, choose a 1st-level Evocation spell you have prepared or that you know. The chosen spell must have a casting time of 1 action and can’t require Concentration. For the duration, on each of your turns you can take a Magic action to cast the chosen spell at 1st level without expending a spell slot. You must provide the spell’s components as normal.\n\n" +
+        "You can’t change the chosen spell after you cast **Destructive Echo**.",
+    scalingMd: "",
+    imagePath: spellImgUrl("destructiveecho")
+},
+
+
 ];

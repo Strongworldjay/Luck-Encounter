@@ -3738,7 +3738,7 @@ export const LEVEL2 = [
         duration: "24 Hours",
         range: "60 feet",
         area: "20-foot cube",
-        tags: ["Control"],
+        tags: ["Control", "Breathe"],
         saveRequired: "DEX Save",
         attackType: "None",
         damageTypes: [],
@@ -3773,4 +3773,473 @@ export const LEVEL2 = [
         scalingMd: "",
         imagePath: spellImgUrl("zoneoftruth")
     },
+    {
+    slug: slugify("Ripplestone Ward"),
+    name: "Ripplestone Ward",
+    classes: ["Druid", "Ranger", "Sorcerer", "Warlock"],
+    spellLevel: 2,
+    school: "Abjuration",
+    castingTime: "1 action",
+    duration: "Concentration, up to 1 minute",
+    range: "Self (60 feet)",
+    area: "1 creature within 60 feet",
+    tags: ["Damage", "Control"],
+    saveRequired: "None",
+    attackType: "Spell",
+    damageTypes: ["Force"],
+    conditions: [],
+    components: { verbal: true, somatic: true, material: false, materialText: "" },
+    concentration: true,
+    ritual: false,
+    descriptionMd:
+        "You conjure a hovering, incorporeal stone that orbits you and can’t be damaged or moved. While you concentrate, when a hostile creature you can see within 60 feet first gains the prone condition on a turn, ripples of force lash out at it. The creature takes 2d6 Force damage. A creature can take this damage only once per turn.\n\nThe stone provides no cover and doesn’t hinder movement or vision.",
+    scalingMd:
+        "**Using a Higher-Level Spell Slot.** The damage increases by 1d6 for each spell slot level above 2nd.",
+    imagePath: spellImgUrl("ripplestoneward"),
+},
+{
+  slug: slugify("Undying Vermin"),
+  name: "Undying Vermin",
+  classes: ["Druid", "Ranger"],
+  spellLevel: 2,
+  school: "Conjuration",
+  castingTime: "1 action",
+  duration: "Concentration, up to 10 minutes",
+  range: "30 feet",
+  area: "1 Giant Rat",
+  tags: ["Summoning"],
+  saveRequired: "None",
+  attackType: "Spell",
+  damageTypes: [],
+  conditions: [],
+  components: { verbal: true, somatic: true, material: true, materialText: "a chunk of rat fur" },
+  concentration: true,
+  ritual: false,
+  descriptionMd:
+    "You summon a Giant Rat that appears in an unoccupied space you can see within range. The rat uses the Giant Rat stat block (the GM has the creature’s statistics). It is friendly to you and your companions. In combat, it acts immediately after your turn. It can move and use its reaction on its own, and it takes the Dodge action unless you use a Bonus Action to command it to take another action (Attack, Dash, Disengage, Help, or Hide). If you are incapacitated, it can take only the Dodge action.\n\n" +
+    "**Scurry Back.** If the rat is reduced to 0 Hit Points, it disappears. At the start of your next turn, while you maintain concentration, it reappears with its Hit Points restored in an unoccupied space you can see within 30 feet of you. Conditions and effects on it don’t persist through this reappearance. You can dismiss the rat as a Magic action. You can have only one rat summoned by this spell at a time; casting it again ends the previous rat.",
+  scalingMd: "",
+  imagePath: spellImgUrl("undyingvermin"),
+},
+{
+  slug: slugify("Bolide Shot"),
+  name: "Bolide Shot",
+  classes: ["Sorcerer", "Wizard"],
+  spellLevel: 2,
+  school: "Evocation",
+  castingTime: "1 action",
+  duration: "Instantaneous",
+  range: "150 feet",
+  area: "1 creature",
+  tags: ["Damage"],
+  saveRequired: "None",
+  attackType: "Ranged Spell Attack",
+  damageTypes: ["Fire"],
+  conditions: [],
+  components: { verbal: true, somatic: true, material: false, materialText: "" },
+  concentration: false,
+  ritual: false,
+  descriptionMd:
+    "You hurl a growing ember that accretes into a blazing meteor as it flies. Make a Ranged Spell Attack against one creature you can see within range. On a hit, the target takes 2d6 Fire damage, plus an additional 1d4 Fire damage for each full 30 feet between you and the target when the attack hits (minimum +0; e.g., +1d4 at 30–59 ft., +2d4 at 60–89 ft., up to +5d4 at 150 ft.).",
+  scalingMd:
+    "**Using a Higher-Level Spell Slot.** The base hit damage (the 2d6) increases by 1d6 for each spell slot level above 2nd.",
+  imagePath: spellImgUrl("bolideshot"),
+},
+{
+  slug: slugify("Ghostwalk"),
+  name: "Ghostwalk",
+  classes: ["Artificer", "Bard", "Sorcerer", "Warlock", "Wizard"],
+  spellLevel: 2,
+  school: "Illusion",
+  castingTime: "1 action",
+  duration: "Concentration, up to 1 minute",
+  range: "Touch",
+  area: "1 willing creature",
+  tags: ["Buff"],
+  saveRequired: "None",
+  attackType: "Spell",
+  damageTypes: [],
+  conditions: ["Invisible"],
+  components: { verbal: true, somatic: true, material: false, materialText: "" },
+  concentration: true,
+  ritual: false,
+  descriptionMd:
+    "You touch a willing creature. Until the spell ends, the target has the invisible condition. The spell ends early immediately after the target makes an attack roll, deals damage, or casts a spell.\n\n" +
+    "**Return Step.** When the spell ends for any reason, the target teleports to the space on the same plane where you cast this spell on it. If that space is occupied or unsafe, the target appears in the nearest unoccupied space to that location. If an effect prevents teleportation (such as [spells]forbiddance[/spells]), the spell ends and the target doesn’t move.",
+  scalingMd:
+    "**Using a Higher-Level Spell Slot.** When you cast this spell using a spell slot of 3rd level or higher, you can target one additional willing creature for each slot level above 2nd. Each target returns to its own original space when the spell ends.",
+  imagePath: spellImgUrl("ghostwalk"),
+},
+{
+  slug: slugify("Sanguine Seed"),
+  name: "Sanguine Seed",
+  classes: ["Bard", "Druid", "Warlock"],
+  spellLevel: 2,
+  school: "Necromancy",
+  castingTime: "1 action",
+  duration: "Concentration, up to 1 minute",
+  range: "120 feet",
+  area: "1 living creature",
+  tags: ["Sangromancy"],
+  saveRequired: "None",
+  attackType: "Ranged Spell Attack",
+  damageTypes: ["Necrotic"],
+  conditions: [],
+  components: { verbal: true, somatic: true, material: false, materialText: "" },
+  concentration: true,
+  ritual: false,
+  descriptionMd:
+    "Make a Ranged Spell Attack against one living creature you can see within range (the target can’t be a Construct, Elemental, Ooze, or Undead). On a hit, a tiny arcane seed lodges under the target’s skin; the attack deals no damage, and the spell lasts for the duration.\n\n" +
+    "**Bloodied Trigger.** The first time during the spell’s duration that the target becomes bloodied (half its Hit Points or fewer), and at the start of each of its turns while it remains bloodied, the seed flares. The target takes 1d4 Necrotic damage that ignores resistance and immunity and can’t be reduced or prevented, and you regain Hit Points equal to the damage the target takes from this effect. If the target rises above half its Hit Point maximum, the seed becomes dormant until it becomes bloodied again before the spell ends.\n\n" +
+    "**Removing the Seed.** A creature that is aware of the seed can use an Action to remove it from itself or from a creature within 5 feet, ending the spell on that target.\n\n" +
+    "A creature can be affected by only one seed from this spell at a time.",
+  scalingMd:
+    "**Using a Higher-Level Spell Slot.** The start-of-turn damage increases by 1d4 for every spell slot level above 2nd.",
+  imagePath: spellImgUrl("sanguineseed"),
+},
+{
+    slug: slugify("Death Armor"),
+    name: "Death Armor",
+    classes: ["Sorcerer", "Wizard"],
+    spellLevel: 2,
+    school: "Necromancy",
+    castingTime: "1 action",
+    duration: "1 hour",
+    range: "Touch",
+    area: "1 creature",
+    tags: ["Buff", "Damage", "Defense"],
+    saveRequired: "None",
+    attackType: "Spell",
+    damageTypes: ["Necrotic"],
+    conditions: [],
+    components: { verbal: true, somatic: true, material: true, materialText: "an onyx worth 50+ gp, which the spell consumes" },
+    concentration: false,
+    ritual: false,
+    descriptionMd:
+        "For the duration, an inky aura surrounds one creature you touch. The target has Advantage on Death Saving Throws, and once per turn, when a creature within 5 feet of the target hits it with a melee attack roll, the attacker takes 2d4 Necrotic damage.",
+    scalingMd: "",
+    imagePath: spellImgUrl("deatharmor")
+},
+{
+    slug: slugify("Deryan’s Helpful Homunculi"),
+    name: "Deryan’s Helpful Homunculi",
+    classes: ["Cleric", "Wizard"],
+    spellLevel: 2,
+    school: "Conjuration",
+    castingTime: "1 action (ritual)",
+    duration: "8 hours",
+    range: "Self",
+    area: "Self",
+    tags: ["Summoning", "Utility"],
+    saveRequired: "None",
+    attackType: "Spell",
+    damageTypes: [],
+    conditions: [],
+    components: {
+        verbal: true,
+        somatic: true,
+        material: true,
+        materialText: "powdered gemstones worth 100+ gp, which the spell consumes, and one set of Artisan’s Tools with which you have proficiency"
+    },
+    concentration: false,
+    ritual: true,
+    descriptionMd:
+        "You summon a group of helpful spirits, which lasts for the duration. The spirits appear as homunculi or as another Construct of your choice but are intangible and invulnerable, and they are considered to have proficiency in the Arcana skill and with the set of Artisan’s Tools used in the spell’s casting.\n\n" +
+        "If you are crafting an item, the spirits function as a single assistant for your crafting, halving the crafting time.",
+    scalingMd: "",
+    imagePath: spellImgUrl("deryanshelpfulhomunculi")
+},
+{
+    slug: slugify("Elminster’s Elusion"),
+    name: "Elminster’s Elusion",
+    classes: ["Wizard"],
+    spellLevel: 2,
+    school: "Abjuration",
+    castingTime: "1 bonus action",
+    duration: "Concentration, up to 10 minutes",
+    range: "Self",
+    area: "Self",
+    tags: ["Defense", "Buff"],
+    saveRequired: "None",
+    attackType: "Spell",
+    damageTypes: [],
+    conditions: [],
+    components: { verbal: true, somatic: true, material: false, materialText: "" },
+    concentration: true,
+    ritual: false,
+    descriptionMd:
+        "Arcane wards protect you against magic for the duration. You have Advantage on saving throws against spells and magical effects. Additionally, if you succeed on a saving throw against a spell or magical effect and would normally take half as much damage, you instead take no damage.",
+    scalingMd: "",
+    imagePath: spellImgUrl("elminsterselusion")
+},
+{
+    slug: slugify("Haste Mount"),
+    name: "Haste Mount",
+    classes: ["Paladin", "Ranger"],
+    spellLevel: 2,
+    school: "Transmutation",
+    castingTime: "1 action",
+    duration: "Concentration, up to 1 hour",
+    range: "Touch",
+    area: "1 willing mount",
+    tags: ["Buff", "Mobility", "Defense"],
+    saveRequired: "None",
+    attackType: "Spell",
+    damageTypes: [],
+    conditions: ["Incapacitated"],
+    components: {
+        verbal: true,
+        somatic: true,
+        material: false,
+        materialText: ""
+    },
+    concentration: true,
+    ritual: false,
+    descriptionMd:
+        "Choose a willing creature you can see within range that is serving as a mount (either a controlled mount you are riding or a creature conjured to serve as a mount, such as by the [spells]find steed[/spells] spell). Until the spell ends, the target’s Speed is doubled, it gains a +2 bonus to AC, it has Advantage on Dexterity saving throws, and it gains one additional action on each of its turns. That additional action can be used only to take the Dash or Disengage action. If the target is a controlled mount, the rider chooses how the target uses this additional action.\n\n" +
+        "When the spell ends, the target is Incapacitated and has a Speed of 0 until the end of its next turn, as lethargy washes over it.",
+    scalingMd:
+        "**Using a Higher-Level Spell Slot.** You can target one additional mount for each spell slot level above 2nd. Each target must qualify as a mount as described above.",
+    imagePath: spellImgUrl("hastemount")
+},
+{
+    slug: slugify("Farsafe Coffer"),
+    name: "Farsafe Coffer",
+    classes: ["Artificer", "Wizard"],
+    spellLevel: 2,
+    school: "Conjuration",
+    castingTime: "1 action",
+    duration: "Concentration, up to 1 minute",
+    range: "5 feet",
+    area: "1 chest in an unoccupied space on the ground within 5 feet",
+    tags: ["Utility"],
+    saveRequired: "None",
+    attackType: "Spell",
+    damageTypes: [],
+    conditions: [],
+    components: {
+        verbal: true,
+        somatic: true,
+        material: true,
+        materialText: "a small brass key worth 5 gp, not consumed"
+    },
+    concentration: true,
+    ritual: false,
+    descriptionMd:
+        "You summon a sturdy chest bound to you into an unoccupied space on the ground that you can see within range. It is the same chest each time you cast this spell. The chest’s interior is roughly that of a typical traveling chest (about 3 feet by 2 feet by 2 feet), and it can hold up to 250 pounds. While present, the chest is a nonmagical object.\n\n" +
+        "When the spell ends, or when you take a Magic action to dismiss it early, the chest and everything inside it return to a secure extradimensional space linked to you, where they remain until you summon the chest again with this spell. Only you can summon or dismiss this chest. Creatures can interact with the chest normally while it is present.\n\n" +
+        "The chest occupies its space and is an object (AC 15; 20 Hit Points; immunity to Poison and Psychic damage). If the chest is reduced to 0 Hit Points, the spell ends and the chest and its contents return to the extradimensional space.",
+    scalingMd: "",
+    imagePath: spellImgUrl("farsafecoffer")
+},
+{
+    slug: slugify("Alert"),
+    name: "Alert",
+    classes: ["Artificer", "Ranger", "Wizard", "Paladin", "Sorcerer"],
+    spellLevel: 2,
+    school: "Abjuration",
+    castingTime: "1 minute",
+    duration: "8 hours",
+    range: "60 feet",
+    area: "Invisible dome, 120-foot radius",
+    tags: ["Detection", "Utility"],
+    saveRequired: "None",
+    attackType: "Spell",
+    damageTypes: [],
+    conditions: [],
+    components: {
+        verbal: true,
+        somatic: true,
+        material: true,
+        materialText: "a bell and silver wire"
+    },
+    concentration: false,
+    ritual: false,
+    descriptionMd:
+        "You create an invisible, intangible dome centered on a point on the ground you can see within range. The dome offers no protection and doesn’t impede movement, vision, or sound.\n\n" +
+        "While the spell lasts, whenever any Tiny or larger creature enters the dome’s area or leaves it, you receive a mental alert (no action required), and you instantly learn that creature’s size category (Tiny, Small, Medium, Large, Huge, or Gargantuan). The alert reaches you if you are within 1 mile of the dome. When you cast the spell, you can designate any number of creatures to ignore; those creatures don’t trigger the alert.\n\n" +
+        "You can have only one Alert spell active at a time; casting it again ends the previous casting.",
+    scalingMd:
+        "**Using a Higher-Level Spell Slot.** The dome’s radius increases by 30 feet for each spell slot level above 2nd.",
+    imagePath: spellImgUrl("alert")
+},
+{
+    slug: slugify("Empower"),
+    name: "Empower",
+    classes: ["Artificer", "Bard", "Druid", "Sorcerer", "Wizard"],
+    spellLevel: 2,
+    school: "Transmutation",
+    castingTime: "1 action",
+    duration: "Concentration, up to 10 minutes",
+    range: "Self",
+    area: "Self",
+    tags: ["Buff"],
+    saveRequired: "None",
+    attackType: "Spell",
+    damageTypes: [],
+    conditions: [],
+    components: {
+        verbal: true,
+        somatic: true,
+        material: true,
+        materialText: "a pinch of powdered iron"
+    },
+    concentration: true,
+    ritual: false,
+    descriptionMd:
+        "While you concentrate, your Strength surges. Your Strength score increases by 1 for the duration (maximum 30). This change affects your Strength modifier and anything that relies on it, such as attack and damage rolls that use Strength, Strength checks and saving throws, and carrying capacity.",
+    scalingMd:
+        "**Using a Higher-Level Spell Slot.** When you cast this spell using a spell slot of 3rd level or higher, your Strength score increases by an additional 1 for each slot level above 2nd.",
+    imagePath: spellImgUrl("empower")
+},
+{
+    slug: slugify("Ember Burst"),
+    name: "Ember Burst",
+    classes: ["Druid", "Ranger", "Sorcerer", "Wizard"],
+    spellLevel: 2,
+    school: "Evocation",
+    castingTime: "1 action",
+    duration: "Concentration, up to 1 minute",
+    range: "Self",
+    area: "10-foot cone",
+    tags: ["Damage"],
+    saveRequired: "DEX",
+    attackType: "Spell",
+    damageTypes: ["Fire"],
+    conditions: [],
+    components: {
+        verbal: true,
+        somatic: true,
+        material: false,
+        materialText: ""
+    },
+    concentration: true,
+    ritual: false,
+    descriptionMd:
+        "When you cast the spell, scorching flames erupt from you in a 10-foot cone. Each creature in the area must make a Dexterity saving throw, taking 2d6 Fire damage on a failed save, or half as much damage on a success. While the spell lasts, you can take a Magic action on later turns to create the cone again. The cone originates from you.",
+    scalingMd:
+        "**Using a Higher-Level Spell Slot.** The damage of each cone increases by 1d6 for each spell slot level above 2nd.",
+    imagePath: spellImgUrl("emberburst")
+},
+{
+    slug: slugify("Rime Burst"),
+    name: "Rime Burst",
+    classes: ["Druid", "Ranger", "Sorcerer", "Wizard"],
+    spellLevel: 2,
+    school: "Evocation",
+    castingTime: "1 action",
+    duration: "Concentration, up to 1 minute",
+    range: "Self",
+    area: "10-foot cone",
+    tags: ["Damage"],
+    saveRequired: "CON",
+    attackType: "Spell",
+    damageTypes: ["Cold"],
+    conditions: [],
+    components: {
+        verbal: true,
+        somatic: true,
+        material: false,
+        materialText: ""
+    },
+    concentration: true,
+    ritual: false,
+    descriptionMd:
+        "When you cast the spell, freezing air erupts from you in a 10-foot cone. Each creature in the area must make a Constitution saving throw, taking 2d6 Cold damage on a failed save, or half as much damage on a success. While the spell lasts, you can take a Magic action on later turns to create the cone again. The cone originates from you.",
+    scalingMd:
+        "**Using a Higher-Level Spell Slot.** The damage of each cone increases by 1d6 for each spell slot level above 2nd.",
+    imagePath: spellImgUrl("rimeburst")
+},
+{
+    slug: slugify("Static Burst"),
+    name: "Static Burst",
+    classes: ["Druid", "Ranger", "Sorcerer", "Wizard"],
+    spellLevel: 2,
+    school: "Evocation",
+    castingTime: "1 action",
+    duration: "Concentration, up to 1 minute",
+    range: "Self",
+    area: "10-foot cone",
+    tags: ["Damage"],
+    saveRequired: "DEX",
+    attackType: "Spell",
+    damageTypes: ["Lightning"],
+    conditions: [],
+    components: {
+        verbal: true,
+        somatic: true,
+        material: false,
+        materialText: ""
+    },
+    concentration: true,
+    ritual: false,
+    descriptionMd:
+        "When you cast the spell, crackling energy erupts from you in a 10-foot cone. Each creature in the area must make a Dexterity saving throw, taking 2d6 Lightning damage on a failed save, or half as much damage on a success. While the spell lasts, you can take a Magic action on later turns to create the cone again. The cone originates from you.",
+    scalingMd:
+        "**Using a Higher-Level Spell Slot.** The damage of each cone increases by 1d6 for each spell slot level above 2nd.",
+    imagePath: spellImgUrl("staticburst")
+},
+{
+    slug: slugify("Mute"),
+    name: "Mute",
+    classes: ["Bard", "Cleric", "Sorcerer", "Wizard"],
+    spellLevel: 2,
+    school: "Transmutation",
+    castingTime: "1 action",
+    duration: "1 minute",
+    range: "60 feet",
+    area: "1 creature",
+    tags: ["Debuff"],
+    saveRequired: "CON",
+    attackType: "Spell",
+    damageTypes: [],
+    conditions: ["Muted"],
+    components: {
+        verbal: true,
+        somatic: false,
+        material: false,
+        materialText: ""
+    },
+    concentration: false,
+    ritual: false,
+    descriptionMd:
+        "Choose one creature you can see within range. The target must succeed on a Constitution saving throw or have the Muted condition for the duration.\n\n" +
+        "A Muted creature can’t speak or produce audible vocalizations, can’t cast spells with Verbal components, automatically fails ability checks that require speaking, and can’t activate items or features that require a command word. Sounds not produced by the creature’s voice (such as footsteps or weapon clashes) are unaffected.\n\n" +
+        "At the end of each of its turns, the target repeats the saving throw, ending the spell on itself on a success.",
+    scalingMd:
+        "**Using a Higher-Level Spell Slot.** You can target one additional creature for each spell slot level above 2nd.",
+    imagePath: spellImgUrl("mute")
+},
+{
+    slug: slugify("Landing Zone"),
+    name: "Landing Zone",
+    classes: ["Artificer", "Bard", "Sorcerer", "Wizard"],
+    spellLevel: 2,
+    school: "Transmutation",
+    castingTime: "1 action",
+    duration: "Concentration, up to 10 minutes",
+    range: "300 feet",
+    area: "30-foot-radius, 30-foot-high Cylinder",
+    tags: ["Utility", "Exploration"],
+    saveRequired: "None",
+    attackType: "Spell",
+    damageTypes: [],
+    conditions: [],
+    components: {
+        verbal: true,
+        somatic: false,
+        material: true,
+        materialText: "a cotton from a pillow"
+    },
+    concentration: true,
+    ritual: false,
+    descriptionMd:
+        "Choose a point on the ground you can see within range. You create an invisible cushion of force in a 30-foot-radius, 30-foot-high cylinder centered on that point. A creature that would take damage from falling and lands within the cylinder takes no falling damage and lands on its feet instead.\n\n" +
+        "If a falling creature enters the cylinder while descending, its fall slows enough that, if it lands within the cylinder, it takes no falling damage and lands on its feet. This spell doesn’t reduce damage from sources other than falling and doesn’t impede movement.",
+    scalingMd: "",
+    imagePath: spellImgUrl("landingzone")
+},
+
+
+
 ];

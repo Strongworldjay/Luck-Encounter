@@ -807,5 +807,55 @@ export const LEVEL8 = [
         scalingMd: "",
         imagePath: spellImgUrl("tsunami")
     },
+{
+  slug: slugify("Wrathstorm"),
+  name: "Wrathstorm",
+  classes: ["Druid"],
+  spellLevel: 8,
+  school: "Conjuration",
+  castingTime: "1 action",
+  duration: "Concentration, up to 1 minute",
+  range: "300 feet",
+  area: "120-foot radius",
+  tags: ["Damage"],
+  saveRequired: "DEX",
+  attackType: "Spell",
+  damageTypes: ["Lightning"],
+  conditions: [],
+  components: { verbal: true, somatic: true, material: false, materialText: "" },
+  concentration: true,
+  ritual: false,
+  descriptionMd:
+    "You call an overwhelming tempest over the area. While the spell lasts, at the start of each creature’s turn that is within the area (including allies), roll a d6. On a 1–3, a lightning bolt smites that creature. The creature makes a Dexterity saving throw, taking 7d10 Lightning damage on a failed save, or half as much damage on a success.\n\n" +
+    "The bolt descends from above and ignores cover: a creature can’t gain the benefit of cover for this save, and the bolt can strike a creature you can’t see, including one that is invisible or behind total cover. The storm targets creatures only and doesn’t ignite unattended objects.",
+  scalingMd:
+    "**Using a Higher-Level Spell Slot.** The Lightning damage increases by 1d10 for each spell slot level above 8th.",
+  imagePath: spellImgUrl("wrathstorm"),
+},
+{
+    slug: slugify("Holy Star of Mystra"),
+    name: "Holy Star of Mystra",
+    classes: ["Cleric", "Wizard"],
+    spellLevel: 8,
+    school: "Evocation",
+    castingTime: "1 bonus action",
+    duration: "Concentration, up to 1 minute",
+    range: "Self",
+    area: "Self; 1 creature within 120 feet",
+    tags: ["Damage", "Defense", "Buff"],
+    saveRequired: "None",
+    attackType: "Ranged Spell Attack",
+    damageTypes: ["Force", "Radiant"],
+    conditions: [],
+    components: { verbal: true, somatic: true, material: false, materialText: "" },
+    concentration: true,
+    ritual: false,
+    descriptionMd:
+        "You create a glowing mote of energy that hovers above you for the duration. The mote sheds Bright Light in a 5-foot radius and Dim Light for an additional 5 feet.\n\n" +
+        "When you cast this spell and as a Bonus Action on later turns, you can unleash a shining bolt from the mote, targeting one creature within 120 feet of yourself. Make a ranged spell attack. On a hit, the target takes Force or Radiant damage (your choice) equal to 4d10 + your spellcasting ability modifier.\n\n" +
+        "In addition, while the mote is present, you have Three-Quarters Cover, and if you succeed on a saving throw against a spell of level 7 or lower that targeted only you and didn’t create an area of effect, you can use your Reaction to deflect that spell back at the spell’s caster; the caster makes a saving throw against that spell using that caster’s own spell save DC.",
+    scalingMd: "",
+    imagePath: spellImgUrl("holystarofmystra")
+},
 
 ];

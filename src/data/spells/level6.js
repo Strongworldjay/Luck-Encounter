@@ -1571,5 +1571,203 @@ export const LEVEL6 = [
         scalingMd: "",
         imagePath: spellImgUrl("wordofrecall")
     },
+{
+  slug: slugify("Shadebind"),
+  name: "Shadebind",
+  classes: ["Cleric", "Wizard"],
+  spellLevel: 6,
+  school: "Necromancy",
+  castingTime: "1 minute",
+  duration: "Instantaneous",
+  range: "10 feet",
+  area: "1 Humanoid corpse",
+  tags: ["Creation"],
+  saveRequired: "None",
+  attackType: "Spell",
+  damageTypes: [],
+  conditions: [],
+  components: { verbal: true, somatic: true, material: true, materialText: "incense" },
+  concentration: false,
+  ritual: false,
+  descriptionMd:
+    "Choose a Humanoid corpse you can touch. You wrench its spirit from the veil and manifest it as a Ghost in an unoccupied space you can see within 10 feet of the corpse. The Ghost uses the Ghost stat block (the GM has the creature’s statistics). It is friendly to you and your companions. In combat, it acts immediately after your turn; it can move and use its reaction on its own, and it takes the Dodge action unless you use a Bonus Action to command it to take another action (Attack, Dash, Disengage, Help, or Hide). If you are incapacitated, it can take only the Dodge action.\n\n" +
+    "**Quick Binding (1 Action).** The Ghost remains for 1 minute, then vanishes.\n\n" +
+    "**Full Rite (10 Minutes).** The Ghost remains for 24 hours or until it drops to 0 Hit Points, then vanishes. You can dismiss the Ghost as a Magic action. You can have only one Ghost created by this spell at a time; casting this spell again ends the previous Ghost.\n\n" +
+    "**Soul Sundering.** A creature turned into a Ghost by this spell has its soul shattered and trapped in limbo when the spell ends or the Ghost is destroyed. While sundered in this way, that creature can’t be returned to life by [spells]revivify[/spells], [spells]raise dead[/spells], [spells]resurrection[/spells], or [spells]true resurrection[/spells]; only [spells]wish[/spells] or equally potent divine intervention can restore it. Most good-aligned faiths consider this act a grievous sin.",
+  scalingMd: "",
+  imagePath: spellImgUrl("shadebind"),
+},
+{
+    slug: slugify("Dirge"),
+    name: "Dirge",
+    classes: ["Bard", "Cleric"],
+    spellLevel: 6,
+    school: "Enchantment",
+    castingTime: "1 action",
+    duration: "Concentration, up to 1 minute",
+    range: "Self",
+    area: "60-foot Emanation",
+    tags: ["Damage", "Control", "Debuff"],
+    saveRequired: "CON",
+    attackType: "Spell",
+    damageTypes: ["Necrotic"],
+    conditions: ["Prone"],
+    components: { verbal: true, somatic: false, material: false, materialText: "" },
+    concentration: true,
+    ritual: false,
+    descriptionMd:
+        "Deathly power fills a 60-foot Emanation originating from you for the duration.\n\n" +
+        "When you cast this spell, you can designate creatures to be unaffected by it. Any other creature can’t regain Hit Points while in the Emanation. Whenever the Emanation enters a creature’s space and whenever a creature enters the Emanation or ends its turn there, the creature makes a Constitution saving throw. On a failed save, the creature takes 3d10 Necrotic damage and has the Prone condition. On a successful save, the creature takes half as much damage and its Speed is halved. A creature makes this save only once per turn.",
+    scalingMd: "",
+    imagePath: spellImgUrl("dirge")
+},
+{
+    slug: slugify("Elminster’s Effulgent Spheres"),
+    name: "Elminster’s Effulgent Spheres",
+    classes: ["Druid", "Sorcerer", "Wizard"],
+    spellLevel: 6,
+    school: "Evocation",
+    castingTime: "1 action",
+    duration: "1 hour",
+    range: "Self",
+    area: "Self; 1 creature within 120 feet (Energy Blast)",
+    tags: ["Damage", "Defense", "Buff"],
+    saveRequired: "None",
+    attackType: "Ranged Spell Attack",
+    damageTypes: ["Acid", "Cold", "Fire", "Lightning", "Thunder"],
+    conditions: [],
+    components: {
+        verbal: true,
+        somatic: true,
+        material: true,
+        materialText: "an opal worth 1,000+ gp"
+    },
+    concentration: false,
+    ritual: false,
+    descriptionMd:
+        "Six chromatic spheres orbit you for the duration.\n\n" +
+        "While the spheres are present, you can expend spheres to create the following effects:\n\n" +
+        "**Absorb Energy.** When you take Acid, Cold, Fire, Lightning, or Thunder damage, you can use your Reaction to expend one sphere and give yourself Resistance to the triggering damage type until the start of your next turn.\n\n" +
+        "**Energy Blast.** As a Bonus Action, you send one sphere hurtling toward a target within 120 feet of yourself. Make a ranged spell attack. On a hit, the target takes 3d6 Acid, Cold, Fire, Lightning, or Thunder damage (your choice). Regardless of whether you hit, the sphere is expended.\n\n" +
+        "The spell ends early if you have no more spheres remaining.",
+    scalingMd:
+        "**Using a Higher-Level Spell Slot.** The number of spheres increases by 1 for each spell slot level above 6th.",
+    imagePath: spellImgUrl("elminsterseffulgentspheres")
+},
+{
+    slug: slugify("Avalanche"),
+    name: "Avalanche",
+    classes: ["Druid", "Sorcerer"],
+    spellLevel: 6,
+    school: "Transmutation",
+    castingTime: "1 action",
+    duration: "Instantaneous",
+    range: "Self (60 feet)",
+    area: "60-foot-long, 15-foot-wide Line; 15-foot-square difficult terrain at the end",
+    tags: ["Damage", "Control"],
+    saveRequired: "DEX",
+    attackType: "Spell",
+    damageTypes: ["Bludgeoning"],
+    conditions: ["Prone", "Stunned"],
+    components: { verbal: true, somatic: true, material: false, materialText: "" },
+    concentration: false,
+    ritual: false,
+    descriptionMd:
+        "You cause the earth to ripple, triggering an avalanche of rock and stone to surge forward in a 60-foot-long, 15-foot-wide line. Creatures caught in the surging tumble of rocks must make a Dexterity saving throw. On a failed save, a creature takes 6d10 Bludgeoning damage and is knocked Prone. If the creature fails the save by 5 or more, it is also Stunned until the end of its next turn. On a successful save, a creature takes half as much damage and suffers none of the spell’s other effects.\n\n" +
+        "The spell creates a 15-by-15-foot area of difficult terrain at the end of the line created by the spell.",
+    scalingMd:
+        "**Using a Higher-Level Spell Slot.** The damage increases by 1d10 for each spell slot level above 6th.",
+    imagePath: spellImgUrl("avalanche")
+},
+{
+    slug: slugify("Aether Torrent"),
+    name: "Aether Torrent",
+    classes: ["Sorcerer"],
+    spellLevel: 6,
+    school: "Evocation",
+    castingTime: "1 action",
+    duration: "Instantaneous",
+    range: "Self (60 feet)",
+    area: "60-foot-long, 15-foot-wide Line",
+    tags: ["Damage", "Anti-Magic"],
+    saveRequired: "None",
+    attackType: "Spell",
+    damageTypes: ["Force"],
+    conditions: [],
+    components: {
+        verbal: true,
+        somatic: true,
+        material: false,
+        materialText: ""
+    },
+    concentration: false,
+    ritual: false,
+    descriptionMd:
+        "You unleash a massive torrent of raw arcane energy, blasting a 60-foot-long, 15-foot-wide line with overwhelmingly raw magic. This spell deals double damage to structures and unattended objects. All creatures in the area take 4d12 + 4 Force damage.\n\n" +
+        "All active spells or spell effects of 2nd level or lower on a creature that takes this damage are dispelled, and Constitution saving throws to maintain Concentration on spells triggered by this damage are made with Disadvantage.",
+    scalingMd:
+        "**Using a Higher-Level Spell Slot.** The damage increases by 1d12 + 1 for each spell slot level above 6th.",
+    imagePath: spellImgUrl("aethertorrent")
+},
+{
+    slug: slugify("Shellshock"),
+    name: "Shellshock",
+    classes: ["Sorcerer", "Wizard"],
+    spellLevel: 6,
+    school: "Enchantment",
+    castingTime: "1 action",
+    duration: "Concentration, up to 1 minute",
+    range: "Self (120 feet)",
+    area: "Hostile creatures within 120 feet",
+    tags: ["Warding", "Debuff", "Buff"],
+    saveRequired: "CHA",
+    attackType: "Spell",
+    damageTypes: [],
+    conditions: [],
+    components: {
+        verbal: true,
+        somatic: true,
+        material: false,
+        materialText: ""
+    },
+    concentration: true,
+    ritual: false,
+    descriptionMd:
+        "You draw off the defenses of nearby foes. When you cast the spell, each hostile creature within 120 feet of you must make a Charisma saving throw. On a failed save, the creature has a −1 penalty to AC for the duration. For each creature that fails, you gain a +1 bonus to AC for the duration. A creature that succeeds is unaffected.\n\n" +
+        "This spell affects only creatures that are within range when you cast it; creatures that enter the area later aren’t affected. A given creature’s penalty from this spell can’t be increased by additional castings.",
+    scalingMd: "",
+    imagePath: spellImgUrl("shellshock")
+},
+{
+    slug: slugify("Anchor Warp"),
+    name: "Anchor Warp",
+    classes: ["Sorcerer", "Wizard"],
+    spellLevel: 6,
+    school: "Conjuration",
+    castingTime: "1 action",
+    duration: "Until dispelled",
+    range: "5 feet",
+    area: "One solid surface at least a 5-foot square you can touch",
+    tags: ["Teleportation", "Utility"],
+    saveRequired: "None",
+    attackType: "Spell",
+    damageTypes: [],
+    conditions: [],
+    components: {
+        verbal: true,
+        somatic: true,
+        material: true,
+        materialText: "a small rune-stone or silvered chalk worth 25 gp, not consumed"
+    },
+    concentration: false,
+    ritual: false,
+    descriptionMd:
+        "You inscribe an invisible teleportation rune on a solid surface at least a 5-foot square that you can touch. The rune is invisible but detectable by magic (such as the [spells]detect magic[/spells] spell) and can be ended by [spells]dispel magic[/spells] (DC equals your spell save DC). You can have up to five active runes you created with this spell at a time. If you cast this spell when you already have five, the casting fails unless you choose one of your existing runes to end as part of the casting.\n\n" +
+        "**Recall.** While at least one of your runes exists, you can take a Magic action to teleport yourself (and gear you’re wearing or carrying) to one of your runes, provided you are on the same plane of existence. You appear in the rune’s space or the nearest unoccupied space to it. After you teleport to a given rune, you can’t teleport to that same rune again for 7 days (other runes are unaffected).\n\n" +
+        "This teleportation fails if the destination is blocked by an effect that prevents teleportation (such as the [spells]forbiddance[/spells] spell); if it fails, the action is spent and you aren’t moved.",
+    scalingMd:
+        "**Using a Higher-Level Spell Slot.** For each spell slot level above 6th, your maximum number of active runes increases by 1.",
+    imagePath: spellImgUrl("anchorwarp")
+},
 
 ];

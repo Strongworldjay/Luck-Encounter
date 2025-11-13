@@ -1788,7 +1788,7 @@ export const LEVEL3 = [
         tags: ["Damage"],
         saveRequired: "CON Save",
         attackType: "None",
-        damageTypes: ["Thunder"],
+        damageTypes: ["Thunder", "Knockback"],
         conditions: [],
         components: { verbal: true, somatic: true, material: false, materialText: "" },
         concentration: true,
@@ -3391,4 +3391,319 @@ export const LEVEL3 = [
         scalingMd: "",
         imagePath: spellImgUrl("windwall")
     },
+    {
+  slug: slugify("Conjure Flock"),
+  name: "Conjure Flock",
+  classes: ["Druid", "Ranger"],
+  spellLevel: 3,
+  school: "Conjuration",
+  castingTime: "1 action",
+  duration: "Concentration, up to 1 minute",
+  range: "60 feet",
+  area: "20-foot-radius, 20-foot-high cylinder",
+  tags: ["Summoning"],
+  saveRequired: "CON",
+  attackType: "Spell",
+  damageTypes: [],
+  conditions: ["Blinded"],
+  components: { verbal: true, somatic: true, material: false, materialText: "" },
+  concentration: true,
+  ritual: false,
+  descriptionMd:
+    "You conjure a circling murder of spectral ravens that continually dive through the area, which becomes lightly obscured. Choose a point on the ground you can see within range; the swarm fills a 20-foot-radius, 20-foot-high cylinder centered on that point.\n\n" +
+    "**Eye-Pecking Swarm.** Each hostile creature that starts its turn in the area and isn’t wearing a helmet or fully enclosing headgear must make a Constitution saving throw. On a failed save, the creature has the blinded condition until the start of its next turn. The blinded condition from this spell ends early if the creature leaves the area. Creatures wearing a helmet or similar eye-protective headgear are immune to this effect.\n\n" +
+    "**Shift the Murder.** As a Bonus Action, you can move the area up to 40 feet to a point you can see. The swarm’s obscuring effect and saving throws apply in the new area starting immediately.",
+  scalingMd: "",
+  imagePath: spellImgUrl("conjureflock"),
+},
+{
+  slug: slugify("Conjure Venom Pit"),
+  name: "Conjure Venom Pit",
+  classes: ["Druid", "Ranger"],
+  spellLevel: 3,
+  school: "Conjuration",
+  castingTime: "1 action",
+  duration: "Concentration, up to 1 minute",
+  range: "60 feet",
+  area: "20-foot-radius, 10-foot-high cylinder",
+  tags: ["Summoning"],
+  saveRequired: "CON",
+  attackType: "Spell",
+  damageTypes: ["Poison"],
+  conditions: ["Poisoned"],
+  components: { verbal: true, somatic: true, material: false, materialText: "" },
+  concentration: true,
+  ritual: false,
+  descriptionMd:
+    "You conjure a writhing swarm of rattlesnakes that churn across the ground, making the area difficult terrain. Choose a point on the ground you can see within range; the swarm fills a 20-foot-radius, 10-foot-high cylinder centered on that point.\n\n" +
+    "When a creature enters the area for the first time on a turn or ends its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 2d4 Poison damage and has the poisoned condition until the end of its next turn. On a successful save, the creature takes half as much damage and isn’t poisoned. A creature makes this save at most once per turn.\n\n" +
+    "**Shift the Nest.** As a Bonus Action, you can move the area up to 20 feet to a point you can see. The difficult terrain and saving throws apply in the new area immediately.",
+  scalingMd:
+    "**Using a Higher-Level Spell Slot.** The damage increases by 1d4 for each spell slot level above 3rd.",
+  imagePath: spellImgUrl("conjurevenompit"),
+},
+{
+    slug: slugify("Cacophonic Shield"),
+    name: "Cacophonic Shield",
+    classes: ["Bard", "Sorcerer", "Wizard"],
+    spellLevel: 3,
+    school: "Evocation",
+    castingTime: "1 action",
+    duration: "Concentration, up to 10 minutes",
+    range: "Self",
+    area: "10-foot Emanation",
+    tags: ["Damage", "Control", "Defense"],
+    saveRequired: "CON",
+    attackType: "Spell",
+    damageTypes: ["Thunder"],
+    conditions: ["Deafened"],
+    components: { verbal: true, somatic: true, material: false, materialText: "" },
+    concentration: true,
+    ritual: false,
+    descriptionMd:
+        "Thunderous reverberations fill a 10-foot Emanation originating from you for the duration. Whenever the Emanation enters a creature’s space and whenever a creature enters the Emanation or ends its turn there, the creature must make a Constitution saving throw. On a failed save, the creature takes 3d6 Thunder damage and has the Deafened condition until the start of your next turn. On a successful save, the creature takes half as much damage only. A creature makes this save only once per turn. When you cast this spell, you can designate creatures to be unaffected by it.\n\n" +
+        "In addition, you have Resistance to Thunder damage, and ranged attack rolls against you are made with Disadvantage.",
+    scalingMd:
+        "**Using a Higher-Level Spell Slot.** The damage increases by 1d6 for each spell slot level above 3rd.",
+    imagePath: spellImgUrl("cacophonicshield")
+},
+{
+    slug: slugify("Conjure Constructs"),
+    name: "Conjure Constructs",
+    classes: ["Wizard"],
+    spellLevel: 3,
+    school: "Conjuration",
+    castingTime: "1 action",
+    duration: "Concentration, up to 10 minutes",
+    range: "60 feet",
+    area: "Medium group; 1 target within 5 feet of the spirits",
+    tags: ["Damage", "Summoning", "Buff"],
+    saveRequired: "DEX",
+    attackType: "Spell",
+    damageTypes: ["Force"],
+    conditions: [],
+    components: { verbal: true, somatic: true, material: true, materialText: "a brass cog" },
+    concentration: true,
+    ritual: false,
+    descriptionMd:
+        "You conjure a group of intangible, orderly spirits that appear as a Medium group of modrons or other Constructs in an unoccupied space you can see within range. The spirits last for the duration.\n\n" +
+        "When you cast this spell and as a Magic action on subsequent turns, you can command the spirits to target one creature or object you can see within 5 feet of the spirits and create one of the following effects:\n\n" +
+        "**Clockwork Force.** The target must make a Dexterity saving throw, taking 3d6 Force damage on a failed save, or half as much damage on a successful one.\n\n" +
+        "**Orderly Ward.** The target gains Temporary Hit Points equal to 1d6 + your spellcasting ability modifier.\n\n" +
+        "When you move on your turn, you can also move the spirits up to 30 feet to an unoccupied space you can see.",
+    scalingMd:
+        "**Using a Higher-Level Spell Slot.** The damage and Temporary Hit Points both increase by 1d6 for each spell slot level above 3rd.",
+    imagePath: spellImgUrl("conjureconstructs")
+},
+{
+    slug: slugify("Laeral’s Silver Lance"),
+    name: "Laeral’s Silver Lance",
+    classes: ["Cleric", "Sorcerer", "Wizard"],
+    spellLevel: 3,
+    school: "Evocation",
+    castingTime: "1 action",
+    duration: "Instantaneous",
+    range: "Self",
+    area: "120-foot-long, 5-foot-wide Line",
+    tags: ["Damage", "Control"],
+    saveRequired: "STR",
+    attackType: "Spell",
+    damageTypes: ["Force"],
+    conditions: ["Prone"],
+    components: {
+        verbal: true,
+        somatic: true,
+        material: true,
+        materialText: "a silver pin worth 250+ gp"
+    },
+    concentration: false,
+    ritual: false,
+    descriptionMd:
+        "Silver energy bursts out from you in a 120-foot-long, 5-foot-wide Line. Each creature of your choice in the Line must make a Strength saving throw. On a failed save, the creature takes 3d10 Force damage and has the Prone condition. On a successful save, the creature takes half as much damage only.",
+    scalingMd:
+        "**Using a Higher-Level Spell Slot.** The damage increases by 1d10 for each spell slot level above 3rd.",
+    imagePath: spellImgUrl("laeralssilverlance")
+},
+{
+    slug: slugify("Syluné’s Viper"),
+    name: "Syluné’s Viper",
+    classes: ["Druid", "Wizard"],
+    spellLevel: 3,
+    school: "Conjuration",
+    castingTime: "1 bonus action",
+    duration: "1 hour",
+    range: "Self",
+    area: "Self; 1 creature within 50 feet",
+    tags: ["Buff", "Damage", "Debuff", "Control"],
+    saveRequired: "None",
+    attackType: "Ranged Spell Attack",
+    damageTypes: ["Force"],
+    conditions: ["Poisoned", "Incapacitated"],
+    components: {
+        verbal: true,
+        somatic: true,
+        material: true,
+        materialText: "a snake fang"
+    },
+    concentration: false,
+    ritual: false,
+    descriptionMd:
+        "A shimmering, spectral snake encircles your body for the duration. You gain 15 Temporary Hit Points; the spell ends early if you have no Temporary Hit Points left.\n\n" +
+        "While the spell is active, you gain the following benefits:\n\n" +
+        "**Climbing.** You gain a Climb Speed equal to your Speed.\n\n" +
+        "**Venomous Bite.** As a Magic action, you can make a ranged spell attack using the snake against one creature within 50 feet. On a hit, the target takes 1d6 Force damage and has the Poisoned condition until the start of your next turn. While Poisoned, the target has the Incapacitated condition.",
+    scalingMd:
+        "**Using a Higher-Level Spell Slot.** For each spell slot level above 3rd, the number of Temporary Hit Points you gain from this spell increases by 5, and the damage of Venomous Bite increases by 1d6.",
+    imagePath: spellImgUrl("sylunesviper")
+},
+{
+    slug: slugify("Blade Vortex"),
+    name: "Blade Vortex",
+    classes: ["Bard", "Sorcerer", "Warlock", "Wizard"],
+    spellLevel: 3,
+    school: "Conjuration",
+    castingTime: "1 action",
+    duration: "Until the start of your next turn",
+    range: "Self",
+    area: "10-foot radius",
+    tags: ["Damage", "Defense"],
+    saveRequired: "None",
+    attackType: "Spell",
+    damageTypes: ["Slashing"],
+    conditions: [],
+    components: {
+        verbal: true,
+        somatic: true,
+        material: true,
+        materialText: "a spinning top"
+    },
+    concentration: false,
+    ritual: false,
+    descriptionMd:
+        "You fill the air in a 10-foot radius centered on you with spinning blades until the start of your next turn. A creature that starts its turn in the area or enters the area for the first time on its turn takes 4d4 Slashing damage. Until the spell ends, you have Half Cover against all ranged attacks.",
+    scalingMd:
+        "**Using a Higher-Level Spell Slot.** The damage increases by 1d4 for each spell slot level above 3rd.",
+    imagePath: spellImgUrl("bladevortex")
+},
+{
+    slug: slugify("Grave Sight"),
+    name: "Grave Sight",
+    classes: ["Cleric", "Druid", "Paladin", "Ranger"],
+    spellLevel: 3,
+    school: "Divination",
+    castingTime: "1 action (ritual)",
+    duration: "Concentration, up to 10 minutes",
+    range: "Self (120 feet)",
+    area: "120-foot radius",
+    tags: ["Detection"],
+    saveRequired: "None",
+    attackType: "Spell",
+    damageTypes: [],
+    conditions: [],
+    components: {
+        verbal: true,
+        somatic: true,
+        material: false,
+        materialText: ""
+    },
+    concentration: true,
+    ritual: true,
+    descriptionMd:
+        "While you concentrate, you perceive the stark aura of Undead within 120 feet of you—even through walls and total cover. Each Undead creature appears to you as an outlined silhouette in its space. You learn each outlined creature’s exact location and size category, and you can tell whether it is moving.\n\n" +
+        "This perception doesn’t grant line of sight and can’t be used to target a creature with an effect that requires you to see it or that can’t target a creature behind total cover. The spell doesn’t reveal identity, statistics, or Hit Points, and it doesn’t outline living creatures, Constructs, or objects.",
+    scalingMd: "",
+    imagePath: spellImgUrl("gravesight")
+},
+{
+    slug: slugify("Flame Cloak"),
+    name: "Flame Cloak",
+    classes: ["Cleric", "Druid", "Sorcerer", "Warlock", "Wizard"],
+    spellLevel: 3,
+    school: "Evocation",
+    castingTime: "1 action",
+    duration: "Concentration, up to 1 minute",
+    range: "Self",
+    area: "5-foot aura",
+    tags: ["Damage", "Buff", "Defense"],
+    saveRequired: "DEX",
+    attackType: "Spell",
+    damageTypes: ["Fire"],
+    conditions: [],
+    components: {
+        verbal: true,
+        somatic: true,
+        material: false,
+        materialText: ""
+    },
+    concentration: true,
+    ritual: false,
+    descriptionMd:
+        "Scalding flames wreath you in a 5-foot aura that moves with you. When a creature enters the aura for the first time on a turn or starts its turn there, it must make a Dexterity saving throw, taking 5d6 Fire damage on a failed save, or half as much damage on a success. A creature takes this damage only once per turn.\n\n" +
+        "When you cast the spell, you can designate any number of creatures you can see to be unaffected by the aura for the duration. While this spell is active, you have Resistance to Fire damage.",
+    scalingMd:
+        "**Using a Higher-Level Spell Slot.** The damage increases by 1d6 for each spell slot level above 3rd.",
+    imagePath: spellImgUrl("flamecloak")
+},
+{
+    slug: slugify("Storm Cloak"),
+    name: "Storm Cloak",
+    classes: ["Cleric", "Druid", "Sorcerer", "Warlock", "Wizard"],
+    spellLevel: 3,
+    school: "Evocation",
+    castingTime: "1 action",
+    duration: "Concentration, up to 1 minute",
+    range: "Self",
+    area: "5-foot aura",
+    tags: ["Damage", "Buff", "Defense"],
+    saveRequired: "DEX",
+    attackType: "Spell",
+    damageTypes: ["Lightning"],
+    conditions: [],
+    components: {
+        verbal: true,
+        somatic: true,
+        material: false,
+        materialText: ""
+    },
+    concentration: true,
+    ritual: false,
+    descriptionMd:
+        "Crackling electricity wreathes you in a 5-foot aura that moves with you. When a creature enters the aura for the first time on a turn or starts its turn there, it must make a Dexterity saving throw, taking 5d6 Lightning damage on a failed save, or half as much damage on a success. A creature takes this damage only once per turn.\n\n" +
+        "When you cast the spell, you can designate any number of creatures you can see to be unaffected by the aura for the duration. While this spell is active, you have Resistance to Lightning damage.",
+    scalingMd:
+        "**Using a Higher-Level Spell Slot.** The damage increases by 1d6 for each spell slot level above 3rd.",
+    imagePath: spellImgUrl("stormcloak")
+},
+{
+    slug: slugify("Swirling Cloak"),
+    name: "Swirling Cloak",
+    classes: ["Cleric", "Druid", "Ranger", "Sorcerer", "Warlock", "Wizard"],
+    spellLevel: 3,
+    school: "Evocation",
+    castingTime: "1 action",
+    duration: "Concentration, up to 1 minute",
+    range: "Self",
+    area: "5-foot aura",
+    tags: ["Damage", "Buff", "Control"],
+    saveRequired: "STR",
+    attackType: "Spell",
+    damageTypes: ["Bludgeoning"],
+    conditions: ["Prone"],
+    components: {
+        verbal: true,
+        somatic: true,
+        material: false,
+        materialText: ""
+    },
+    concentration: true,
+    ritual: false,
+    descriptionMd:
+        "Turbulent winds wreath you in a 5-foot aura that moves with you. When a creature enters the aura for the first time on a turn or starts its turn there, it must make a Strength saving throw, taking 3d6 Bludgeoning damage on a failed save, or half as much damage on a success. On a failed save, the creature is also pushed up to 15 feet straight away from you and has the Prone condition. A creature takes this damage only once per turn.\n\n" +
+        "When you cast the spell, you can designate any number of creatures you can see to be unaffected by the aura for the duration. While this effect is active, a creature within the aura that is targeted by a ranged weapon attack imposes Disadvantage on that attack roll.",
+    scalingMd:
+        "**Using a Higher-Level Spell Slot.** The damage increases by 1d6 for each spell slot level above 3rd.",
+    imagePath: spellImgUrl("swirlingcloak")
+},
+
+
 ];

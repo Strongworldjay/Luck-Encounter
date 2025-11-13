@@ -1004,5 +1004,318 @@ export const LEVEL7 = [
   </div>
 `, scalingMd: "",
         imagePath: spellImgUrl("teleport")
-    }
+    },
+    {
+  slug: slugify("Ruinous Apotheosis"),
+  name: "Ruinous Apotheosis",
+  classes: ["Cleric", "Warlock", "Wizard"],
+  spellLevel: 7,
+  school: "Necromancy",
+  castingTime: "1 action",
+  duration: "Concentration, up to 1 minute",
+  range: "30 feet",
+  area: "1 willing Undead",
+  tags: ["Creation", "Control"],
+  saveRequired: "None",
+  attackType: "Spell",
+  damageTypes: ["Force"],
+  conditions: [],
+  components: { verbal: true, somatic: true, material: false, materialText: "" },
+  concentration: true,
+  ritual: false,
+  descriptionMd:
+    "Choose a willing Undead you can see within range. Until the spell ends, ravening power tears through the target’s form.\n\n" +
+    "- The target has Advantage on attack rolls.\n" +
+    "- The target’s walking Speed is doubled.\n" +
+    "- When the target hits with an attack, it deals an extra 2d10 Force damage.\n" +
+    "- At the start of each of the target’s turns, it gains 2d12 temporary Hit Points (these replace any temporary Hit Points it already has).\n\n" +
+    "**Final Dissolution.** When this spell ends the target is destroyed as its body and animating essence disintegrate. A creature destroyed this way can’t be returned to undeath again or to life by [spells]revivify[/spells], [spells]raise dead[/spells], [spells]resurrection[/spells], or [spells]true resurrection[/spells]; only [spells]wish[/spells] or equally potent divine aid can restore it.",
+  scalingMd: "",
+  imagePath: spellImgUrl("ruinousapotheosis"),
+},
+{
+    slug: slugify("Simbul’s Synostodweomer"),
+    name: "Simbul’s Synostodweomer",
+    classes: ["Sorcerer", "Wizard"],
+    spellLevel: 7,
+    school: "Transmutation",
+    castingTime: "1 action",
+    duration: "1 hour",
+    range: "Touch",
+    area: "1 creature",
+    tags: ["Healing", "Buff"],
+    saveRequired: "None",
+    attackType: "Spell",
+    damageTypes: [],
+    conditions: [],
+    components: { verbal: true, somatic: true, material: false, materialText: "" },
+    concentration: false,
+    ritual: false,
+    descriptionMd:
+        "You imbue one creature you touch with magical healing energy for the duration. Whenever the target casts a spell using a spell slot, it can immediately roll a number of unexpended Hit Point Dice equal to the spell slot’s level and regain Hit Points equal to the roll’s total + your spellcasting ability modifier; those dice are then expended.",
+    scalingMd: "",
+    imagePath: spellImgUrl("simbulssynostodweomer")
+},
+{
+    slug: slugify("Blade Storm"),
+    name: "Blade Storm",
+    classes: ["Sorcerer", "Wizard"],
+    spellLevel: 7,
+    school: "Conjuration",
+    castingTime: "1 action",
+    duration: "Instantaneous",
+    range: "120 feet",
+    area: "20-foot-radius, 40-foot-high Cylinder",
+    tags: ["Damage", "Combat"],
+    saveRequired: "DEX",
+    attackType: "Spell",
+    damageTypes: ["Slashing"],
+    conditions: [],
+    components: { verbal: true, somatic: true, material: false, materialText: "" },
+    concentration: false,
+    ritual: false,
+    descriptionMd:
+        "A rain of swords begins to fall in a 20-foot-radius, 40-foot-high Cylinder centered on a point within range. Each creature that starts its turn in the area or enters it for the first time on a turn must succeed on a Dexterity saving throw. On a failed save, the creature takes 6d10 Slashing damage. On a successful save, the creature takes half as much damage.\n\n" +
+        "The swords remain plunged into the ground and can be removed and used by anyone within 5 feet of the radius; they are normal longswords. All swords vanish when the spell ends.",
+    scalingMd: "",
+    imagePath: spellImgUrl("bladestorm")
+},
+{
+    slug: slugify("Glacial Crash"),
+    name: "Glacial Crash",
+    classes: ["Druid", "Sorcerer", "Wizard"],
+    spellLevel: 7,
+    school: "Evocation",
+    castingTime: "1 action",
+    duration: "Instantaneous",
+    range: "300 feet",
+    area: "30-foot-radius Sphere",
+    tags: ["Damage", "Control"],
+    saveRequired: "DEX",
+    attackType: "Spell",
+    damageTypes: ["Cold", "Bludgeoning"],
+    conditions: [],
+    components: {
+        verbal: true,
+        somatic: true,
+        material: false,
+        materialText: ""
+    },
+    concentration: false,
+    ritual: false,
+    descriptionMd:
+        "A huge chunk of ice appears in the sky before crashing down at a point within range and shattering into an explosion of ice. Each creature within 30 feet of that point must make a Dexterity saving throw. On a failed save, the creature takes 6d6 Cold damage, and if it was within 10 feet of the point, it takes an additional 6d8 Bludgeoning damage. On a successful save, the creature takes half as much Cold damage, and half as much Bludgeoning damage (if applicable).\n\n" +
+        "The spell’s area becomes difficult terrain until the end of your next turn.",
+    scalingMd: "",
+    imagePath: spellImgUrl("glacialcrash")
+},
+{
+    slug: slugify("Mass Hold"),
+    name: "Mass Hold",
+    classes: ["Bard", "Cleric", "Druid", "Sorcerer", "Warlock", "Wizard"],
+    spellLevel: 7,
+    school: "Enchantment",
+    castingTime: "1 action",
+    duration: "Concentration, up to 1 minute",
+    range: "60 feet",
+    area: "Up to six Humanoids within 60 feet",
+    tags: ["Control"],
+    saveRequired: "WIS",
+    attackType: "Spell",
+    damageTypes: [],
+    conditions: ["Paralyzed"],
+    components: {
+        verbal: true,
+        somatic: true,
+        material: false,
+        materialText: ""
+    },
+    concentration: true,
+    ritual: false,
+    descriptionMd:
+        "Choose up to six Humanoids you can see within range. Each target must succeed on a Wisdom saving throw or have the Paralyzed condition for the duration. At the end of each of its turns, a target repeats the save, ending the spell on itself on a success.",
+    scalingMd:
+        "**Using a Higher-Level Spell Slot.** You can target one additional Humanoid for each spell slot level above 7th.",
+    imagePath: spellImgUrl("masshold")
+},
+{
+    slug: slugify("Pyrobrand"),
+    name: "Pyrobrand",
+    classes: ["Sorcerer", "Wizard"],
+    spellLevel: 7,
+    school: "Evocation",
+    castingTime: "1 action",
+    duration: "Concentration, up to 1 minute",
+    range: "5 feet",
+    area: "1 creature within 5 feet",
+    tags: ["Damage"],
+    saveRequired: "DEX",
+    attackType: "Melee Spell Attack",
+    damageTypes: ["Fire"],
+    conditions: [],
+    components: {
+        verbal: true,
+        somatic: false,
+        material: false,
+        materialText: ""
+    },
+    concentration: true,
+    ritual: false,
+    descriptionMd:
+        "Make a Melee Spell Attack against one creature within your reach. On a hit, the target takes 10d10 Fire damage and ignites for the duration. At the end of each of its turns, the ignited target must make a Dexterity saving throw, taking 3d10 Fire damage on a failed save or ending the spell on itself on a success.\n\n" +
+        "An ignited creature, or a creature within 5 feet of it, can take a Magic action to douse the flames (smothering them or using sufficient water), ending the spell on that target. These flames are magical and don’t spread to other creatures or objects.",
+    scalingMd:
+        "**Using a Higher-Level Spell Slot.** The initial hit’s damage increases by 1d10 for each spell slot level above 7th.",
+    imagePath: spellImgUrl("pyrobrand")
+},
+{
+    slug: slugify("Rimebrand"),
+    name: "Rimebrand",
+    classes: ["Sorcerer", "Wizard"],
+    spellLevel: 7,
+    school: "Evocation",
+    castingTime: "1 action",
+    duration: "Concentration, up to 1 minute",
+    range: "5 feet",
+    area: "1 creature within 5 feet",
+    tags: ["Damage", "Debuff"],
+    saveRequired: "CON",
+    attackType: "Melee Spell Attack",
+    damageTypes: ["Cold"],
+    conditions: [],
+    components: {
+        verbal: true,
+        somatic: false,
+        material: false,
+        materialText: ""
+    },
+    concentration: true,
+    ritual: false,
+    descriptionMd:
+        "Make a Melee Spell Attack against one creature within your reach. On a hit, the target takes 10d10 Cold damage, and its Speed is reduced by 15 feet while you maintain this spell’s effect. At the end of each of its turns, the target must make a Constitution saving throw, ending this effect on a success.",
+    scalingMd:
+        "**Using a Higher-Level Spell Slot.** The initial hit’s damage increases by 1d10 for each spell slot level above 7th.",
+    imagePath: spellImgUrl("rimebrand")
+},
+{
+    slug: slugify("Venombrand"),
+    name: "Venombrand",
+    classes: ["Sorcerer", "Wizard"],
+    spellLevel: 7,
+    school: "Evocation",
+    castingTime: "1 action",
+    duration: "Concentration, up to 1 minute",
+    range: "5 feet",
+    area: "1 creature within 5 feet",
+    tags: ["Damage", "Debuff"],
+    saveRequired: "CON",
+    attackType: "Melee Spell Attack",
+    damageTypes: ["Poison"],
+    conditions: ["Poisoned"],
+    components: {
+        verbal: true,
+        somatic: false,
+        material: false,
+        materialText: ""
+    },
+    concentration: true,
+    ritual: false,
+    descriptionMd:
+        "Make a Melee Spell Attack against one creature within your reach. On a hit, the target takes 10d10 Poison damage and has the Poisoned condition while you maintain this spell’s effect. At the end of each of its turns, the target must make a Constitution saving throw, ending this effect on a success.",
+    scalingMd:
+        "**Using a Higher-Level Spell Slot.** The initial hit’s damage increases by 1d10 for each spell slot level above 7th.",
+    imagePath: spellImgUrl("venombrand")
+},
+{
+    slug: slugify("Flame Seed"),
+    name: "Flame Seed",
+    classes: ["Cleric", "Sorcerer", "Warlock", "Wizard"],
+    spellLevel: 7,
+    school: "Evocation",
+    castingTime: "1 action",
+    duration: "Instantaneous",
+    range: "60 feet",
+    area: "30-foot-radius Sphere (detonates at start of your next turn)",
+    tags: ["Damage"],
+    saveRequired: "DEX",
+    attackType: "Spell",
+    damageTypes: ["Fire"],
+    conditions: [],
+    components: {
+        verbal: true,
+        somatic: true,
+        material: false,
+        materialText: ""
+    },
+    concentration: false,
+    ritual: false,
+    descriptionMd:
+        "You launch a seed of coalescing flame to a point you can see within range, where it hovers visibly until it detonates. At the start of your next turn, the seed explodes. Each creature in a 30-foot-radius Sphere centered on the seed must make a Dexterity saving throw, taking 10d12 Fire damage on a failed save, or half as much on a success.\n\n" +
+        "The seed is obvious (shedding Dim Light in a 5-foot radius) and remains fixed in place until it explodes.",
+    scalingMd:
+        "**Using a Higher-Level Spell Slot.** The damage increases by 1d12 for each spell slot level above 7th.",
+    imagePath: spellImgUrl("flameseed")
+},
+{
+    slug: slugify("Glacier Seed"),
+    name: "Glacier Seed",
+    classes: ["Cleric", "Sorcerer", "Warlock", "Wizard"],
+    spellLevel: 7,
+    school: "Evocation",
+    castingTime: "1 action",
+    duration: "Instantaneous",
+    range: "60 feet",
+    area: "30-foot-radius Sphere (detonates at start of your next turn)",
+    tags: ["Damage"],
+    saveRequired: "CON",
+    attackType: "Spell",
+    damageTypes: ["Cold"],
+    conditions: [],
+    components: {
+        verbal: true,
+        somatic: true,
+        material: false,
+        materialText: ""
+    },
+    concentration: false,
+    ritual: false,
+    descriptionMd:
+        "You launch a seed of subzero frost to a point you can see within range, where it hovers visibly until it detonates. At the start of your next turn, the seed explodes. Each creature in a 30-foot-radius Sphere centered on the seed must make a Constitution saving throw, taking 10d12 Cold damage on a failed save, or half as much on a success.\n\n" +
+        "The seed is obvious (shedding Dim Light in a 5-foot radius) and remains fixed in place until it explodes.",
+    scalingMd:
+        "**Using a Higher-Level Spell Slot.** The damage increases by 1d12 for each spell slot level above 7th.",
+    imagePath: spellImgUrl("glacierseed")
+},
+{
+    slug: slugify("Shocking Seed"),
+    name: "Shocking Seed",
+    classes: ["Cleric", "Sorcerer", "Warlock", "Wizard"],
+    spellLevel: 7,
+    school: "Evocation",
+    castingTime: "1 action",
+    duration: "Instantaneous",
+    range: "60 feet",
+    area: "30-foot-radius Sphere (detonates at start of your next turn)",
+    tags: ["Damage"],
+    saveRequired: "DEX",
+    attackType: "Spell",
+    damageTypes: ["Lightning"],
+    conditions: [],
+    components: {
+        verbal: true,
+        somatic: true,
+        material: false,
+        materialText: ""
+    },
+    concentration: false,
+    ritual: false,
+    descriptionMd:
+        "You launch a seed of destructive lightning to a point you can see within range, where it hovers visibly until it detonates. At the start of your next turn, the seed explodes. Each creature in a 30-foot-radius Sphere centered on the seed must make a Dexterity saving throw, taking 10d12 Lightning damage on a failed save, or half as much on a success.\n\n" +
+        "The seed is obvious (shedding Dim Light in a 5-foot radius) and remains fixed in place until it explodes.",
+    scalingMd:
+        "**Using a Higher-Level Spell Slot.** The damage increases by 1d12 for each spell slot level above 7th.",
+    imagePath: spellImgUrl("shockingseed")
+},
+
+
 ];
