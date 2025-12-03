@@ -277,3 +277,46 @@
   .modal-image { max-height: 42vh; }
   .modal-right { padding: 14px; }
 }
+/* Allow scrolling behind the centered modal on small screens */
+.bountyboard-modal-backdrop {
+  overflow-y: auto;            /* <-- new */
+}
+
+/* Phones */
+@media (max-width: 640px) {
+  .bountyboard-modal {
+    grid-template-columns: 1fr;           /* stack image over text */
+    width: min(560px, 94vw);              /* a bit narrower = zoomed out */
+    max-height: none;                     /* let content define height */
+    margin: 24px 0;                       /* vertical breathing room for backdrop scroll */
+  }
+
+  .modal-left { padding: 10px 12px; }
+
+  /* Smaller poster so it fully fits on screen */
+  .modal-image {
+    max-height: 38vh;                     /* was ~42vh; shows full poster more reliably */
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .modal-right {
+    padding: 14px; 
+    /* Make the text area scroll independently only if it exceeds space */
+    max-height: none;
+  }
+
+  /* Slightly smaller type on phones for better fit */
+  .modal-header h2 { font-size: clamp(16px, 5.4vw, 22px); }
+  .modal-blurb, .modal-details { font-size: 13px; line-height: 1.5; }
+  .pill { font-size: 11px; padding: 5px 8px; }
+}
+
+/* Small phones */
+@media (max-width: 420px) {
+  .bountyboard-modal { width: 94vw; margin: 18px 0; }
+  .modal-image { max-height: 32vh; }      /* shrink a bit more */
+  .modal-header h2 { font-size: clamp(15px, 5.6vw, 20px); }
+  .modal-blurb, .modal-details { font-size: 12.5px; }
+  .pill { font-size: 10.5px; }
+}

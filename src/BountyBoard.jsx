@@ -14,17 +14,17 @@ const bountyPaths = [
 // sample text—swap for your real data 0..5
 const bountyData = [
  {
-  "title": "Bounty: Sea Siren",
+  "title": "Bounty: Sea Siren (Failed)",
   "reward": "450 gp, dead (present larynx as proof)",
-  "blurb": "Coastal songstress on a rocky islet ~1 mile off the docks; hypnotic melody; a few weak water-creatures at her call.",
-  "details": "Sailors report a haunting voice rising from a jagged rock formation along the Coastal Way, roughly a mile from the harbor mouth. The Sea Siren’s melody lulls listeners into dazed obedience, drawing them overboard or onto the rocks. She is guarded by minor brine-born allies—slick salamanders and gull-sized tidewhelps—that harry boats and swimmers. Traffic has given the area a wide berth for the past week; standard ‘plug-your-ears’ methods at sea are too risky when orders must be heard. Eliminate the threat and return the siren’s larynx for payment. Harbor Wardens prefer this handled swiftly before the next storm tide amplifies her reach."
+  "blurb": "Will send scouts to revise new CI after it achieved Victory against adventuring party.",
+  "details": "Succesfully evaded an Adventuring party where 1 member perished, most likely gained enough EXP to evolve and will be monitored and upgraded Carnage Index."
 },
    {
-  "title": "Bounty: Coral Drake",
-  "reward": "500 gp, dead",
-  "blurb": "Large pelagic predator along the Coastal Way; venomous tail-barb; brutal bite-and-gnaw behavior; decimating fish stocks.",
-  "details": "A hulking drake armored in reef-crusted plates has been prowling beneath the Coastal Way, surfacing at dusk to strike nets and snap at anything that splashes. Its barbed tail carries a slow-acting toxin that weakens limbs before the bite finishes the work. While attacks on sailors are rare, the creature has heavily thinned local shoals, slashing weekly hauls and stirring panic among trawlers. Reports place it cruising the drop-off where the green shallows fall to deep blue—watch for telltale coral-scored wake and floating scales. Harpoon teams should avoid trailing wounded prey; the drake circles back to worry and gnaw. Terminate the beast to restore the grounds. (If possible, present the venomous barb or jaw-plate as confirmation.)"
-},
+  "title": "Bounty: Coral Drake (Completed)",
+  "reward": "500 GP has been paid",
+  "blurb": "Successfully slain by Sword & Shield.",
+  "details": "Has been slain and confirmed."
+   },
  {
   "title": "Bounty: The Sahuagin Baron",
   "reward": "420 gp",
