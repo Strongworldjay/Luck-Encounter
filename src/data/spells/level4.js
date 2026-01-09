@@ -2151,31 +2151,36 @@ export const LEVEL4 = [
         scalingMd: "",
         imagePath: spellImgUrl("leomundssecretchest")
     },
-    {
-        slug: slugify("Locate Creature"),
-        name: "Locate Creature",
-        classes: ["Bard", "Cleric", "Druid", "Paladin", "Ranger", "Wizard", "Illrigger"],
-        spellLevel: 4,
-        school: "Divination",
-        castingTime: "1 action",
-        duration: "Concentration, up to 1 hour",
-        range: "Self",
-        area: "Self",
-        tags: ["Detection"],
-        saveRequired: "None",
-        attackType: "None",
-        damageTypes: [],
-        conditions: [],
-        components: { verbal: true, somatic: true, material: true, materialText: "fur from a bloodhound" },
-        concentration: true,
-        ritual: false,
-        descriptionMd: "You attempt to transform a creature that you can see within range into a Beast. The target must succeed on a Wisdom saving throw or shape-shift into Beast form for the duration. That form can be any Beast you choose that has a Challenge Rating equal to or less than the target’s (or the target’s level if it doesn’t have a Challenge Rating). The target’s game statistics are replaced by the stat block of the chosen Beast, but the target retains its alignment, personality, creature type, Hit Points, and Hit Point Dice.\n\n" +
-            "The target gains a number of Temporary Hit Points equal to the Hit Points of the Beast form. These Temporary Hit Points vanish if any remain when the spell ends. The spell ends early on the target if it has no Temporary Hit Points left.\n\n" +
-            "The target is limited in the actions it can perform by the anatomy of its new form, and it can’t speak or cast spells.\n\n" +
-            "The target’s gear melds into the new form. The creature can’t use or otherwise benefit from any of that equipment.",
-        scalingMd: "",
-        imagePath: spellImgUrl("locatecreature")
+   {
+    slug: slugify("Locate Creature"),
+    name: "Locate Creature",
+    classes: ["Bard", "Cleric", "Druid", "Paladin", "Ranger", "Wizard", "Illrigger"],
+    spellLevel: 4,
+    school: "Divination",
+    castingTime: "1 action",
+    duration: "Concentration, up to 1 hour",
+    range: "Self",
+    area: "1,000-foot radius",
+    tags: ["Detection"],
+    saveRequired: "None",
+    attackType: "Spell",
+    damageTypes: [],
+    conditions: [],
+    components: {
+        verbal: true,
+        somatic: true,
+        material: true,
+        materialText: "fur from a bloodhound"
     },
+    concentration: true,
+    ritual: false,
+    descriptionMd:
+        "Describe or name a creature that is familiar to you. You sense the direction to the creature’s location if that creature is within 1,000 feet of you. If the creature is moving, you know the direction of its movement.\n\n" +
+        "The spell can locate a specific creature known to you or the nearest creature of a specific kind (such as a Human or a Unicorn) if you have seen such a creature up close—within 30 feet—at least once. If the creature you described or named is in a different form, such as under the effects of a [spells]flesh to stone[/spells] or [spells]polymorph[/spells] spell, this spell doesn’t locate the creature.\n\n" +
+        "This spell can’t locate a creature if any thickness of lead blocks a direct path between you and the creature.",
+    scalingMd: "",
+    imagePath: spellImgUrl("locatecreature")
+},
     {
         slug: slugify("Mordenkainen's Faithful Hound"),
         name: "Mordenkainen's Faithful Hound",
