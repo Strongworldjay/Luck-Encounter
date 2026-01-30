@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./BountyBoard.css";
 
-const board = "/assets/bountyboard.png"; // new detailed board
+const board = "/assets/bountyboard.png"; 
 const bountyPaths = [
   "/assets/bounty1.png",
   "/assets/bounty2.png",
@@ -11,7 +11,6 @@ const bountyPaths = [
   "/assets/bounty6.png",
 ];
 
-// sample text—swap for your real data 0..5
 const bountyData = [
  {
   "title": "Bounty: Sea Siren (Failed)",
@@ -26,10 +25,10 @@ const bountyData = [
   "details": "Has been slain and confirmed."
    },
  {
-  "title": "Bounty: The Sahuagin Baron",
-  "reward": "420 gp",
-  "blurb": "Runaway sahuagin leader entrenched in city sewers; typically travels with a small retinue. Base CI ~1.5, elevated by entourage and terrain.",
-  "details": "Formerly of a coastal raiding clan, the so-called 'Baron' has severed ties and slipped inland, fortifying a lair amid storm culverts and canal junctions. His presence—and that of two to five scale-brothers at any given time—has stalled sanitation crews and made routine sluice maintenance dangerous. Expect tridents, nets, and hooked lines from grates above dark water; the Baron favors hit-and-fade strikes synchronized with surge flows from the tidegates. Reports note crude barnacle shields, scavenged guard gear, and a habit of spiking passages with caltrop shells. Pursuit is challenging due to submerged escape routes and flood releases. Recommended approach: lantern oil on the water to reveal wakes, grapnels to rip netting, and chokepoint barricades to split his escort. Capture or eliminate to restore sewer access and canal upkeep; confirmation by crest-marked trident head or the Baron's shell-crowned gorget."
+  "title": "Bounty: Silver-Fox Bandit",
+  "reward": "220 pp",
+  "blurb": "A night stalker who has killed nad robbed many higher financial individuals within the city, estimated 4 C.I.",
+  "details": "Not much is known, uses special daggers and lurks in the fogs."
 },
 {
   "title": "Bounty: Lake Troll",
@@ -44,13 +43,11 @@ const bountyData = [
   "details": "An overcharged water elemental has densified into a tidal core deep within an unconnected sewer branch. Its surges backwash through valves and sluices, bucking boats and jamming gates across the canal grid. In the tunnels it manifests as a pressurized wall of churning water studded with grit and scrap, battering intruders with destructive blows and extinguishing lamps. Tactics: Avoid lightning magic (it conducts shock through the flood) and open flame (snuffed instantly). Cold, binding sigils, and earthen barriers work best. When dispersed, the canals will settle back to regular flow—Harbor Wardens will confirm by gauge readings; no trophy needed."
 },
 {
-  "title": "Bounty: Sea Hag of the Far Reefs",
-  "reward": "550 gp (present both eyes as proof)",
-  "blurb": "Cunning shoreline predator haunting a small reef out west; dabbles in magic; ambushes lone fishers at low tide.",
-  "details": "An old crone of the deeps prowls a jag of reef and rock on the far west coast, sometimes crawling ashore at dusk to knife nets, foul bait, and drag fishers into tide pools. She is vicious up close—black nails, eel-teeth, and a taste for panic—but her sorcery is crude: hex-laughter, brine illusions, and curses that sour courage. She is not scholarly, yet crafty: uses deadfall shells, urchin beds, and kelp nooses to control footing. Approach at mid-tide with lanterns high and boots greased against slick stone. Salted iron, mirrors, and clear commands break her tricks; keep distance to avoid her grapple and bite. Eliminate the hag and return both eyes—pickled in brine—to claim the reward. Locals believe the reef calms once her gaze is gone."
+  "title": "Bounty: Kobold Krew",
+  "reward": "820 gp",
+  "blurb": "Group of Kobolds who have raided and taken up residence in a Tavern/Inn outskirts.",
+  "details": "A group of inventor Kobolds have taken up residence wqithin a semi-popular Inn and has setup many traps and are chaotic but simpletons in wisdom."
 },
-
-
 
 
 ];
