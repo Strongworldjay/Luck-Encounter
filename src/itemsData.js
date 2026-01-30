@@ -592,31 +592,31 @@ export const itemNames = {
 
     PassiveArt: {
         Common: ["Vital Harvest F", "Unbound Instrument F", "Red Skull F", "Fortitude F", "Grit F", "Fleetfoot F",
-            "Threshold F", "A Thousand Cuts F", "Fuel the Fire F", "Return F", "Bloodsense F","Bloodsense F","Bloodsense F","Bloodsense F","Bloodsense F","Bloodsense F","Bloodsense F","Bloodsense F",
+            "Threshold F", "A Thousand Cuts F", "Fuel the Fire F", "Return F", 
         ],
         Uncommon: ["Blood Bump D", "Dark Embrace D", "Vital Harvest D", "Unbound Instrument D", "Red Skull D", "Grit D", "Fleetfoot D", "Endurance D", "Return D", "Fortitude D", "Lock On D",
-            "Blade Dance D", "Threshold D", "Bloodlust D", "Fuel the Fire D", "Folkvangr D", "Folkvangr D", "Folkvangr D", "A Thousand Cuts D","Bloodsense D","Bloodsense D","Bloodsense D","Bloodsense D","Bloodsense D","Bloodsense D","Bloodsense D","Bloodsense D",],
+            "Blade Dance D", "Threshold D", "Bloodlust D", "Fuel the Fire D", "Folkvangr D",  "A Thousand Cuts D",],
 
-        Rare: ["Blood Bump C", "Dark Embrace C", "Vital Harvest C", "Unbound Instrument C", "Red Skull C", "Fire Resistance", "Acid Resistance", "Cold Resistance","Bloodsense C", "Bloodsense C","Bloodsense C","Bloodsense C","Bloodsense C","Bloodsense C","Bloodsense C","Bloodsense C","Bloodsense C",
+        Rare: ["Blood Bump C", "Dark Embrace C", "Vital Harvest C", "Unbound Instrument C", "Red Skull C", "Fire Resistance", "Acid Resistance", "Cold Resistance", 
             "Bludgeoning Resistance", "Piercing Resistance", "Poison Resistance", "Slashing Resistance", "Thunder Resistance", "Lightning Resistance", "Necrotic Resistance", "Poison Resistance",
             "Titan's Stature", "Fortitude C", "Grit C", "Fleetfoot C", "Endurance C", "Return C", "Lock On C", "Threshold C",
             "Blade Dance C", "Lucky Living", "Lucky Defense", "Lucky Landings", "Bloodlust C", "Fuel the Fire C", "Folkvangr C", "A Thousand Cuts C", "God Slayer C"
         ],
         VeryRare: ["Blood Bump B", "Dark Embrace B", "Vital Harvest B", "Unbound Instrument B", "Red Skull B", "Grit B", "Fleetfoot B", "Endurance B", "Return B", "Lock On B", "Folkvangr B",
-            "Blade Dance B", "Fleetfoot B", "Threshold B", "Bloodlust B", "Recycle", "Fuel the Fire B", "Folkvangr B", "A Thousand Cuts B", "God Slayer B", "Bloodsense B", "Bloodsense B","Bloodsense B","Bloodsense B","Bloodsense B","Bloodsense B","Bloodsense B","Bloodsense B","Bloodsense B","Bloodsense B","Bloodsense B",
+            "Blade Dance B", "Fleetfoot B", "Threshold B", "Bloodlust B", "Recycle", "Fuel the Fire B", "Folkvangr B", "A Thousand Cuts B", "God Slayer B",  
         ],
         Legendary: ["Blood Bump A", "Dark Embrace A", "Vital Harvest A", "Unbound Instrument A", "Red Skull A", "Fortitude A", "Grit A", "Fleetfoot A", "Endurance A", "Return A", "Lock On A", "Folkvangr A",
-            "Blade Dance A", "Fleetfoot A", "Threshold A", "Bloodlust A", "Fuel the Fire A", "Folkvangr A", "Folkvangr A", "A Thousand Cuts A", "God Slayer A", "Bloodsense A", "Bloodsense A","Bloodsense A","Bloodsense A","Bloodsense A","Bloodsense A","Bloodsense A",
+            "Blade Dance A", "Fleetfoot A", "Threshold A", "Bloodlust A", "Fuel the Fire A", "Folkvangr A", "A Thousand Cuts A", "God Slayer A",  
         ],
         Unique: ["Blood Bump S", "Dark Embrace S", "Vital Harvest S", "Unbound Instrument S", "Red Skull S", "Fortitude S", "Grit S", "Fleetfoot S", "Endurance S", "Return S", "Lock On S", "Folkvangr S",
-            "Blade Dance S", "Fleetfoot S", "Threshold S", "Bloodlust S", "Fuel the Fire S", "Folkvangr S", "Folkvangr S", "A Thousand Cuts S", "God Slayer S", "Bloodsense S", "Bloodsense S","Bloodsense S","Bloodsense S","Bloodsense S","Bloodsense S","Bloodsense S","Bloodsense S","Bloodsense S",
+            "Blade Dance S", "Fleetfoot S", "Threshold S", "Bloodlust S", "Fuel the Fire S", "Folkvangr S", "A Thousand Cuts S", "God Slayer S",  
         ]
     },
     BoostArt: {
         Common: ["Flash Step F", "Rampage F", "Dream Catcher F", "Regeneration F", "Blazing Rush F",
             "Evade F", "Summoner's Wave F", "Digestive Overflow F", "Goblin Frenzy F", "Aura Fist (Blue) F", "Aura Fist (Green) F", "Aura Fist (Silver) F", "Aura Fist (Gold) F",
             "Piercing Sight F", "Trade-Off F", "Fabricator’s Touch F", "Aura Fist (Black) F",
-            "Aura Fist (Red) F", "Iron Body F", "Gravitational Attraction F", "Trace F", "Slipwire F", "Jurassic Stampede F", "Jurassic Stampede F","Jurassic Stampede F","Jurassic Stampede F","Jurassic Stampede F","Jurassic Stampede F","Jurassic Stampede F","Jurassic Stampede F",
+            "Aura Fist (Red) F", "Iron Body F", "Gravitational Attraction F", "Trace F", "Slipwire F",  
 
         ],
         Uncommon: ["Skuld D", "Warcry D", "Envenom D", "Predator D", "Flash Step D", "Rampage D", "Dream Catcher D", "Enhance Armaments D",
@@ -624,7 +624,7 @@ export const itemNames = {
             "Weight of Burden D", "Weight of Feather D", "Piercing Sight D", "Tremor Pulse D", "Trade-Off D", "Fabricator’s Touch D", "Aura Fist (Black) D",
             "Aura Fist (Blue) D", "Aura Fist (Green) D", "Aura Fist (Silver) D", "Aura Fist (Gold) D", "Aura Fist (Red) D",
             "Trade-Off D", "Iron Body D", "Gravitational Repulsion D", "Gravitational Attraction D", "Obfuscation D", "Trace D", "Folkvangr D", "Malice D",
-            "Weight of Burden D", "Summoner's Wave D", "Goblin Frenzy D", "Blazing Rush D", "Slipwire D", "Jurassic Stampede D",  "Jurassic Stampede D", "Jurassic Stampede D", "Jurassic Stampede D", "Jurassic Stampede D", "Jurassic Stampede D", "Jurassic Stampede D",
+            "Weight of Burden D", "Summoner's Wave D", "Goblin Frenzy D", "Blazing Rush D", "Slipwire D",        
         ],
 
         Rare: ["Skuld C", "Warcry C", "Envenom C", "Predator C", "Flash Step C", "Rampage C", "Dream Catcher C", "Enhance Armaments C",
@@ -632,27 +632,28 @@ export const itemNames = {
             "Flex C", "Weight of Burden C", "Weight of Feather C", "Piercing Sight C", "Tremor Pulse C", "Fabricator’s Touch C", "Aura Fist (Black) C", "Folkvangr C",
             "Aura Fist (Blue) C", "Aura Fist (Green) C", "Aura Fist (Silver) C", "Aura Fist (Gold) C", "Aura Fist (Red) C",
             "Trade-Off C", "Iron Body C", "Gravitational Repulsion C", "Gravitational Attraction C", "Obfuscation C", "Trace C", "Folkvangr C", "Malice C",
-            "Regeneration C", "Summoner's Wave C", "Goblin Frenzy C", "Blazing Rush C", "Slipwire C",  "Jurassic Stampede C","Jurassic Stampede C","Jurassic Stampede C","Jurassic Stampede C","Jurassic Stampede C","Jurassic Stampede C","Jurassic Stampede C","Jurassic Stampede C",],
+            "Regeneration C", "Summoner's Wave C", "Goblin Frenzy C", "Blazing Rush C", "Slipwire C",  ],
 
         VeryRare: ["Skuld B", "Warcry B", "Envenom B", "Predator B", "Flash Step B", "Rampage B", "Dream Catcher B", "Enhance Armaments B",
             "Skate Foot B", "Buffer B", "Leap B", "Doppelganger B", "Evade B", "Limit Break B", "Spot Weakness B", "Fire Breathing B",
             "Flex B", "Weight of Burden B", "Weight of Feather B", "Piercing Sight B", "Tremor Pulse B", "Trade-Off B", "Fabricator’s Touch B", "Aura Fist (Black) B",
             "Aura Fist (Blue) B", "Aura Fist (Green) B", "Aura Fist (Silver) B", "Aura Fist (Gold) B", "Aura Fist (Red) B",
             "Trade-Off B", "Iron Body B", "Gravitational Repulsion B", "Gravitational Attraction B", "Obfuscation B", "Trace B", "Folkvangr B", "Malice B",
-            "Regeneration B", "Summoner's Wave B", "Folkvangr B", "Goblin Frenzy B", "Blazing Rush B", "Slipwire B", "Jurassic Stampede B","Jurassic Stampede B","Jurassic Stampede B","Jurassic Stampede B","Jurassic Stampede B","Jurassic Stampede B","Jurassic Stampede B",
+            "Regeneration B", "Summoner's Wave B", "Folkvangr B", "Goblin Frenzy B", "Blazing Rush B", "Slipwire B", 
         ],
         Legendary: ["Skuld A", "Warcry A", "Envenom A", "Predator A", "Flash Step A", "Rampage A", "Dream Catcher A", "Enhance Armaments A",
             "Skate FootA", "Buffer A", "Leap A", "Doppelganger A", "Evade A", "Limit Break A", "Spot Weakness A", "Fire Breathing A",
             "Flex A", "Weight of Burden A", "Weight of Feather A", "Piercing Sight A", "Tremor Pulse A", "Trade-Off A", "Fabricator’s Touch A", "Aura Fist (Black) A",
             "Aura Fist (Blue) A", "Aura Fist (Green) A", "Aura Fist (Silver) A", "Aura Fist (Gold) A", "Aura Fist (Red) A", "Imbue Armament (Fire) A", "Imbue Armament (Cold) A", "Imbue Armament (Acid) A",
             "Imbue Armament (Thunder) A", "Imbue Armament (Lightning) A", "Trade-Off A", "Iron Body A", "Gravitational Repulsion A", "Gravitational Attraction A", "Obfuscation A", "Trace A", "Folkvangr A", "Malice A",
-            "Regeneration A", "Summoner's Wave A", "Goblin Frenzy A", "Blazing Rush A", "Slipwire A","Jurassic Stampede A","Jurassic Stampede A","Jurassic Stampede A","Jurassic Stampede A","Jurassic Stampede A","Jurassic Stampede A","Jurassic Stampede A","Jurassic Stampede A",],
+            "Regeneration A", "Summoner's Wave A", "Goblin Frenzy A", "Blazing Rush A", "Slipwire A",],
+
         Unique: ["Skuld S", "Warcry S", "Envenom S", "Predator S", "Flash Step S", "Rampage S", "Dream Catcher S", "Enhance Armaments S",
             "Skate Foot S", "Buffer S", "Leap S", "Doppelganger S", "Evade S", "Limit Break S", "Spot Weakness S", "Fire Breathing S",
             "Flex S", "Weight of Burden S", "Weight of Feather S", "Piercing Sight S", "Tremor Pulse S", "Trade-Off S", "Fabricator’s Touch S", "Aura Fist (Black) S",
             "Aura Fist (Blue) S", "Aura Fist (Green) S", "Aura Fist (Silver) S", "Aura Fist (Gold) S", "Aura Fist (Red) S", "Imbue Armament (Fire) S", "Imbue Armament (Cold) S", "Imbue Armament (Acid) S",
             "Imbue Armament (Thunder) S", "Imbue Armament (Lightning) S", "Trade-Off S", "Iron Body S", "Gravitational Repulsion S", "Gravitational Attraction S", "Obfuscation S", "Trace S", "Folkvangr S", "Malice S",
-            "Regeneration S", "Summoner's Wave S", "Goblin Frenzy S", "Blazing Rush S", "Slipwire S", "Jurassic Stampede S","Jurassic Stampede S","Jurassic Stampede S","Jurassic Stampede S","Jurassic Stampede S","Jurassic Stampede S","Jurassic Stampede S",
+            "Regeneration S", "Summoner's Wave S", "Goblin Frenzy S", "Blazing Rush S", "Slipwire S", 
             ,]
     },
     SkillPoints: {
@@ -664,12 +665,12 @@ export const itemNames = {
         Unique: [+35]
     },
     Mana: {
-        Common: [+1],
-        Uncommon: [+2],
-        Rare: [+3],
-        VeryRare: [+5],
-        Legendary: [+10],
-        Unique: [+20]
+        Common: [+1, +2, +3],
+        Uncommon: [+3, +5],
+        Rare: [+5, +7, +10],
+        VeryRare: [+12, +15],
+        Legendary: [+20],
+        Unique: [+30, +35]
     },
     Crossbow: {
         Common: ["Hand Crossbow of Showmanship", "Heavy Crossbow of Showmanship", "Light Crossbow of Showmanship", "Rope Caster Hand Crossbow", "Silvered Hand Crossbow", "Silvered Heavy Crossbow", "Silvered Light Crossbow"
@@ -1076,7 +1077,7 @@ export const itemNames = {
         ],
         Uncommon: ["Arcanomatic Railgun",
         ],
-        Rare: ["Crossbow Bolts, +2", "Sling Bullets, +2", "Acidlight Arrow", "Arrow of Slaying", "Arrows, +2", "Hardened Delerium-Tipped Arrows", "Phoenix Arrow"
+        Rare: ["Crossbow Bolts, +2", "Sling Bullets, +2", "Acidlight Arrow", "Arrow of Slaying", "Arrows, +2", "Sharpest Shot Mark 2", "Hardened Delerium-Tipped Arrows", "Phoenix Arrow"
         ],
         VeryRare: ["Sharkbones"
         ],
