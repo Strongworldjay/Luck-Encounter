@@ -1073,11 +1073,11 @@ export const itemNames = {
         Unique: ["Aevumnail, the World-Pin"]
     },
     Firearms: {
-        Common: ["Arrows, Walloping", "Torpedo Arrow", "Unbreakable Arrow", "Sling Bullets, Walloping", "Bird's Eye Bolt", "Rope Dart"
+        Common: [
         ],
         Uncommon: ["Arcanomatic Railgun",
         ],
-        Rare: ["Crossbow Bolts, +2", "Sling Bullets, +2", "Acidlight Arrow", "Arrow of Slaying", "Arrows, +2", "Sharpest Shot Mark 2", "Hardened Delerium-Tipped Arrows", "Phoenix Arrow"
+        Rare: [ "Sharpest Shot Mark 2", "Hardened Delerium-Tipped Arrows", "Phoenix Arrow"
         ],
         VeryRare: ["Sharkbones"
         ],
