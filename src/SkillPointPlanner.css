@@ -4,22 +4,44 @@
 
 /* Accent defaults (gold) */
 :root {
-  --sp-accent: #ffd700; /* gold */
-  --sp-accent-glow: rgba(255, 215, 0, 0.45);
+  --sp-accent: #fbf0d7; /* gold */
+  --sp-accent-glow: #f3e3be;
+
+  /* ADDED: light-mode surface palette */
+  --sp-bg: #fdfbf7;           /* your requested off-white */
+  --sp-surface: rgba(254,250,241,.92);
+  --sp-surface-2: rgba(254,250,241,.78);
+  --sp-border: rgba(0,0,0,.10);
+  --sp-text: #1f1f1f;
+  --sp-muted: rgba(0,0,0,.70);
+  --sp-input: rgba(255,255,255,.85);
 }
 
-/* Dark mode: swap to blue */
+/* Dark mode: swap to blue + dark surfaces */
 .theme-dark {
   --sp-accent: #1f3adf; /* deep blue */
   --sp-accent-glow: rgba(31, 58, 223, 0.45);
+
+  /* ADDED: dark-mode surface palette */
+  --sp-bg: transparent;
+  --sp-surface: rgba(0,0,0,.45);
+  --sp-surface-2: rgba(255,255,255,.06);
+  --sp-border: rgba(255,255,255,.18);
+  --sp-text: #fff;
+  --sp-muted: rgba(255,255,255,.85);
+  --sp-input: #1f1f1f;
 }
 
 .sp-planner {
   width: min(1100px, 94vw);
   margin: 8px auto 20px;
-  color: #fff;
+  color: var(--sp-text); /* CHANGED */
+  background: var(--sp-bg); /* ADDED (optional: remove if you only want cards light) */
+  border-radius: 14px;       /* ADDED */
+  padding: 10px;             /* ADDED */
 }
 
+/* Tabs */
 .sp-tabs {
   display: flex;
   gap: 8px;
@@ -28,46 +50,46 @@
 }
 
 .sp-tab {
-  background: #3a3a3a;
-  border: 1px solid #4a4a4a;
-  color: #fff;
+  background: var(--sp-surface-2);          /* CHANGED */
+  border: 1px solid var(--sp-border);       /* CHANGED */
+  color: var(--sp-text);                    /* CHANGED */
   padding: 8px 12px;
   border-radius: 10px;
   cursor: pointer;
-  transition: box-shadow .15s ease, outline-color .15s ease, filter .15s ease;
+  transition: box-shadow .15s ease, outline-color .15s ease, filter .15s ease, background .15s ease;
 }
 .sp-tab:hover {
-  filter: brightness(1.05);
+  filter: brightness(1.02);
 }
 
 /* <-- ACCENT & GLOW LIVE HERE */
 .sp-tab.active {
-  background: #565656;
+  background: var(--sp-surface); /* CHANGED */
   outline: 2px solid var(--sp-accent);
-  /* soft glow that automatically turns blue in dark mode */
   box-shadow:
     0 0 8px var(--sp-accent),
     0 0 16px var(--sp-accent-glow);
 }
 
+/* Main card */
 .sp-card {
-  background: rgba(0,0,0,.45);
-  border: 1px solid rgba(255,255,255,.18);
+  background: var(--sp-surface);            /* CHANGED */
+  border: 1px solid var(--sp-border);       /* CHANGED */
   border-radius: 12px;
   padding: 14px;
-  box-shadow: 0 10px 20px rgba(0,0,0,.35);
+  box-shadow: 0 10px 20px rgba(0,0,0,.18);  /* CHANGED (lighter shadow) */
   backdrop-filter: blur(2px);
 }
 
 .sp-card h2 {
   margin: 0 0 10px;
   text-align: center;
-  /* subtle title glow that tracks accent too (nice touch) */
   text-shadow:
     0 0 6px var(--sp-accent-glow),
     0 0 10px var(--sp-accent-glow);
 }
 
+/* Layout */
 .sp-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0,1fr));
@@ -79,31 +101,42 @@
 }
 
 .sp-field { display: flex; flex-direction: column; gap: 6px; }
-.sp-field label { font-size: .95rem; opacity: .9; color: #eee; }
+.sp-field label {
+  font-size: .95rem;
+  opacity: .95;
+  color: var(--sp-muted); /* CHANGED */
+}
+
 .sp-field select,
 .sp-field input {
-  background: #1f1f1f;
-  color: #fff;
-  border: 1px solid #444;
+  background: var(--sp-input);              /* CHANGED */
+  color: var(--sp-text);                    /* CHANGED */
+  border: 1px solid var(--sp-border);       /* CHANGED */
   border-radius: 8px;
   padding: 8px 10px;
 }
 
+/* Warning */
 .sp-warning {
   margin: 8px 0;
-  background: rgba(255,90,90,.15);
-  border: 1px solid rgba(255,90,90,.4);
-  color: #ffdede;
+  background: rgba(255,90,90,.12);
+  border: 1px solid rgba(255,90,90,.35);
+  color: #7a1f1f; /* CHANGED: readable on cream */
   padding: 8px 10px;
   border-radius: 8px;
 }
+.theme-dark .sp-warning {
+  color: #ffdede; /* keep your original dark-mode look */
+}
 
+/* Results */
 .sp-result { margin-top: 8px; }
 .sp-total {
   font-size: 1.1rem;
   margin-bottom: 6px;
   text-align: center;
 }
+
 .sp-steps {
   list-style: none;
   padding: 0;
@@ -112,11 +145,13 @@
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 6px;
 }
+
 .sp-steps li {
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.12);
+  background: var(--sp-surface-2);          /* CHANGED */
+  border: 1px solid var(--sp-border);       /* CHANGED */
   border-radius: 8px;
   padding: 8px 10px;
+  color: var(--sp-text);                    /* ADDED */
 }
 
 .sp-notes { margin-top: 10px; }

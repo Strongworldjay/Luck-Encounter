@@ -136,7 +136,7 @@ export const LEVEL8 = [
         concentration: false,
         ritual: false,
         descriptionMd:
-            "A fortress of stone erupts from a 120-foot-square area of ground you can see within range, harmlessly lifting creatures in the area. Four 20-by-20-by-30-foot corner turrets connect via 80-foot stone walls (1-foot thick, paneled in 10-by-20-foot sections). Up to four stone doors can be placed. A 50-foot-square keep with three 10-foot-high floors stands inside, divided as you wish (min 5-foot rooms), with stairs, 6-inch walls, and doors/archways as you choose. It’s furnished and decorated, and contains food for a nine-course banquet for up to 100 people daily (objects crumble to dust if removed).\n\nA staff of 100 invisible servants obeys creatures you designate (as *unseen servant*). Each 10-by-10-foot stone section has AC 15 and 30 HP per inch of thickness, immune to Poison and Psychic. Sections reduced to 0 HP are destroyed and may cause nearby sections to buckle at the DM’s discretion. After 7 days or when you cast this spell elsewhere, the fortress crumbles and sinks back, leaving creatures safely on the ground. Casting on the same spot once every 7 days for a year makes it permanent.",
+            "A fortress of stone erupts from a 120-foot-square area of ground you can see within range, harmlessly lifting creatures in the area. Four 20-by-20-by-30-foot corner turrets connect via 80-foot stone walls (1-foot thick, paneled in 10-by-20-foot sections). Up to four stone doors can be placed. A 50-foot-square keep with three 10-foot-high floors stands inside, divided as you wish (min 5-foot rooms), with stairs, 6-inch walls, and doors/archways as you choose. It’s furnished and decorated, and contains food for a nine-course banquet for up to 100 people daily (objects crumble to dust if removed).\n\nA staff of 100 invisible servants obeys creatures you designate (as unseen servant). Each 10-by-10-foot stone section has AC 15 and 30 HP per inch of thickness, immune to Poison and Psychic. Sections reduced to 0 HP are destroyed and may cause nearby sections to buckle at the DM’s discretion. After 7 days or when you cast this spell elsewhere, the fortress crumbles and sinks back, leaving creatures safely on the ground. Casting on the same spot once every 7 days for a year makes it permanent.",
         scalingMd: "",
         imagePath: spellImgUrl("impenetrablefortress")
     },
@@ -159,7 +159,7 @@ export const LEVEL8 = [
         concentration: false,
         ritual: false,
         descriptionMd:
-            "As part of casting this spell, you must expend nine Hit Point Dice or the spell automatically fails. Roll the expended dice and gain Temporary Hit Points equal to twice the total. You gain the creature type of the spell’s target, in addition to your own type. While the spell lasts, you have Immunity to the Poisoned condition; you no longer need to eat, drink, or breathe; you have Resistance to Bludgeoning, Piercing, and Slashing damage; and you gain benefits based on your new type:\n\n**Celestial.** Resistance to Radiant and Necrotic; Fly speed 60 ft.\n**Elemental.** Resistance to Acid, Cold, Fire, Lightning, and Thunder.\n**Fey.** As a Bonus Action, become Invisible until the start of your next turn, or teleport up to 60 feet to a space you can see.\n**Fiend.** Resistance to Cold and Fire; Fly speed 60 ft.\n**Undead.** Immunity to Necrotic; Immunity to the Charmed and Frightened conditions.\n\nYou retain the type and benefits until you cast the spell again or you are reduced to 0 HP.\n\n**Trigger.** You take this reaction when a Celestial, Elemental, Fey, Fiend, or Undead within range that you can see is reduced to 0 HP.",
+            "As part of casting this spell, you must expend nine Hit Point Dice or the spell automatically fails. Roll the expended dice and gain Temporary Hit Points equal to twice the total. You gain the creature type of the spell’s target, in addition to your own type. While the spell lasts, you have Immunity to the Poisoned condition; you no longer need to eat, drink, or breathe; you have Resistance to Bludgeoning, Piercing, and Slashing damage; and you gain benefits based on your new type:\n\nCelestial. Resistance to Radiant and Necrotic; Fly speed 60 ft.\nElemental. Resistance to Acid, Cold, Fire, Lightning, and Thunder.\nFey. As a Bonus Action, become Invisible until the start of your next turn, or teleport up to 60 feet to a space you can see.\nFiend. Resistance to Cold and Fire; Fly speed 60 ft.\nUndead. Immunity to Necrotic; Immunity to the Charmed and Frightened conditions.\n\nYou retain the type and benefits until you cast the spell again or you are reduced to 0 HP.\n\nTrigger. You take this reaction when a Celestial, Elemental, Fey, Fiend, or Undead within range that you can see is reduced to 0 HP.",
         scalingMd: "",
         imagePath: spellImgUrl("immortaltheft")
     },
@@ -205,7 +205,7 @@ export const LEVEL8 = [
         concentration: true,
         ritual: false,
         descriptionMd:
-            "Magical darkness spreads to fill a 60-foot-radius sphere, spreading around corners. Darkvision cannot see through it, and nonmagical light and light from **8th-level spells or lower** can’t illuminate it. Echoes of shrieks and mad laughter fill the sphere. Whenever a creature **starts its turn** in the area, it makes a Wisdom save, taking **8d8 Psychic** on a failure, or half on a success.",
+            "Magical darkness spreads to fill a 60-foot-radius sphere, spreading around corners. Darkvision cannot see through it, and nonmagical light and light from 8th-level spells or lower can’t illuminate it. Echoes of shrieks and mad laughter fill the sphere. Whenever a creature starts its turn in the area, it makes a Wisdom save, taking 8d8 Psychic on a failure, or half on a success.",
         scalingMd: "",
         imagePath: spellImgUrl("maddeningdarkness")
     },
@@ -253,11 +253,11 @@ export const LEVEL8 = [
         ritual: false,
         descriptionMd: "You shatter the barriers between realities and timelines, thrusting a creature into turmoil and madness. The target must succeed on a Wisdom saving throw, or it can’t take reactions until the spell ends. The affected target must also roll a d10 at the start of each of its turns; the number rolled determines what happens to the target, as shown on the Reality Break Effects table.\n\n" +
             "At the end of each of its turns, the affected target can repeat the Wisdom saving throw, ending the spell on itself on a success.\n\n" +
-            "**Reality Break Effects**\n" +
-            "**1–2. Vision of the Far Realm.** The target takes 6d12 Psychic damage and is Stunned until the end of the turn.\n" +
-            "**3–5. Rending Rift.** The target must make a Dexterity saving throw, taking 8d12 Force damage on a failed save or half as much damage on a successful one.\n" +
-            "**6–8. Wormhole.** The target is teleported, along with everything it is wearing and carrying, up to 30 feet to an unoccupied space of your choice that you can see. The target also takes 10d12 Force damage and is knocked Prone.\n" +
-            "**9–10. Chill of the Dark Void.** The target takes 10d12 Cold damage and is Blinded until the end of the turn.",
+            "Reality Break Effects\n" +
+            "1–2. Vision of the Far Realm. The target takes 6d12 Psychic damage and is Stunned until the end of the turn.\n" +
+            "3–5. Rending Rift. The target must make a Dexterity saving throw, taking 8d12 Force damage on a failed save or half as much damage on a successful one.\n" +
+            "6–8. Wormhole. The target is teleported, along with everything it is wearing and carrying, up to 30 feet to an unoccupied space of your choice that you can see. The target also takes 10d12 Force damage and is knocked Prone.\n" +
+            "9–10. Chill of the Dark Void. The target takes 10d12 Cold damage and is Blinded until the end of the turn.",
         scalingMd: "",
         imagePath: spellImgUrl("realitybreak"),
     },
@@ -330,7 +330,7 @@ export const LEVEL8 = [
         concentration: false,
         ritual: false,
         descriptionMd:
-            "Choose a corpse, or a number or corpses, within range that are equivalent to the size of the creature you are animating (the GM determines how many corpses are required). Your spell imbues the target with a foul mimicry of life, raising it as an Undead creature. You can choose for the target to become an Undead creature of **CR 3 or lower** (the GM has the creature’s game statistics).\n\nOn each of your turns, you can use a Bonus Action to mentally command any creature you made with this spell if the creature is within 60 feet of you. (If you control multiple creatures, you can command any or all of them at the same time, issuing the same command to each one.) You decide what action the creature will take and where it will move during its next turn, or you can issue a general command, such as to guard a particular chamber or corridor. If you issue no commands, the creature takes the Dodge Action. Once given an order, the creature continues to follow it until its task is complete. The creature is under your control for **24 hours**, after which it stops obeying any command you’ve given it.\n\nTo maintain control of the creature for another **24 hours**, you must cast this spell on the creature again before the current 24-hour period ends. This use of the spell reasserts your control over **1 creature** you have animated with this spell, rather than animating a new one. Any creature you have maintained with this spell for **30 days** remains **permanently** under your control. You may only control a maximum of **four** creatures with this spell.",
+            "Choose a corpse, or a number or corpses, within range that are equivalent to the size of the creature you are animating (the GM determines how many corpses are required). Your spell imbues the target with a foul mimicry of life, raising it as an Undead creature. You can choose for the target to become an Undead creature of CR 3 or lower (the GM has the creature’s game statistics).\n\nOn each of your turns, you can use a Bonus Action to mentally command any creature you made with this spell if the creature is within 60 feet of you. (If you control multiple creatures, you can command any or all of them at the same time, issuing the same command to each one.) You decide what action the creature will take and where it will move during its next turn, or you can issue a general command, such as to guard a particular chamber or corridor. If you issue no commands, the creature takes the Dodge Action. Once given an order, the creature continues to follow it until its task is complete. The creature is under your control for 24 hours, after which it stops obeying any command you’ve given it.\n\nTo maintain control of the creature for another 24 hours, you must cast this spell on the creature again before the current 24-hour period ends. This use of the spell reasserts your control over 1 creature you have animated with this spell, rather than animating a new one. Any creature you have maintained with this spell for 30 days remains permanently under your control. You may only control a maximum of four creatures with this spell.",
         scalingMd: ""
     },
     {
@@ -397,7 +397,7 @@ export const LEVEL8 = [
         concentration: true,
         ritual: false,
         descriptionMd:
-            "A **10-foot antimagic aura** surrounds you. Spells and magical effects **can’t be cast or function** within, and can’t target anything inside. **Magic items are suppressed**. Areas of magic can’t extend in, teleportation/planar travel fails, and portals close while in the aura. Ongoing magic is **suppressed** (time counts toward duration). **Dispel Magic** doesn’t end the field.",
+            "A 10-foot antimagic aura surrounds you. Spells and magical effects can’t be cast or function within, and can’t target anything inside. Magic items are suppressed. Areas of magic can’t extend in, teleportation/planar travel fails, and portals close while in the aura. Ongoing magic is suppressed (time counts toward duration). Dispel Magic doesn’t end the field.",
         scalingMd: "",
     },
     {
@@ -546,7 +546,7 @@ export const LEVEL8 = [
         concentration: false,
         ritual: false,
         descriptionMd:
-            "Create a **shadowy door** leading to a **30-ft cube demiplane** (wood or stone). Objects left inside remain when the door vanishes. Creatures inside may opt to be **shunted out Prone** as the door disappears. Each casting can make a new room or connect to an existing one you created (or a known other’s).",
+            "Create a shadowy door leading to a 30-ft cube demiplane (wood or stone). Objects left inside remain when the door vanishes. Creatures inside may opt to be shunted out Prone as the door disappears. Each casting can make a new room or connect to an existing one you created (or a known other’s).",
         scalingMd: "",
         imagePath: spellImgUrl("demiplane")
     },
@@ -594,8 +594,8 @@ export const LEVEL8 = [
         descriptionMd: "Choose a point on the ground that you can see within range. For the duration, an intense tremor rips through the ground in a 100-foot-radius circle centered on that point. The ground there is Difficult Terrain.\n\n" +
             "When you cast this spell and at the end of each of your turns for the duration, each creature on the ground in the area makes a Dexterity saving throw. On a failed save, a creature has the Prone condition, and its Concentration is broken.\n\n" +
             "You can also cause the effects below.\n\n" +
-            "**Fissures.** A total of 1d6 fissures open in the spell’s area at the end of the turn you cast it. You choose the fissures’ locations, which can’t be under structures. Each fissure is 1d10 × 10 feet deep and 10 feet wide, and it extends from one edge of the spell’s area to another edge. A creature in the same space as a fissure must succeed on a Dexterity saving throw or fall in. A creature that successfully saves moves with the fissure’s edge as it opens.\n\n" +
-            "**Structures.** The tremor deals 50 Bludgeoning damage to any structure in contact with the ground in the area when you cast the spell and at the end of each of your turns until the spell ends. If a structure drops to 0 Hit Points, it collapses.\n\n" +
+            "Fissures. A total of 1d6 fissures open in the spell’s area at the end of the turn you cast it. You choose the fissures’ locations, which can’t be under structures. Each fissure is 1d10 × 10 feet deep and 10 feet wide, and it extends from one edge of the spell’s area to another edge. A creature in the same space as a fissure must succeed on a Dexterity saving throw or fall in. A creature that successfully saves moves with the fissure’s edge as it opens.\n\n" +
+            "Structures. The tremor deals 50 Bludgeoning damage to any structure in contact with the ground in the area when you cast the spell and at the end of each of your turns until the spell ends. If a structure drops to 0 Hit Points, it collapses.\n\n" +
             "A creature within a distance from a collapsing structure equal to half the structure’s height makes a Dexterity saving throw. On a failed save, the creature takes 12d6 Bludgeoning damage, has the Prone condition, and is buried in the rubble, requiring a DC 20 Strength (Athletics) check as an action to escape. On a successful save, the creature takes half as much damage only.",
         scalingMd: "",
         imagePath: spellImgUrl("earthquake")
@@ -619,7 +619,7 @@ export const LEVEL8 = [
         concentration: false,
         ritual: false,
         descriptionMd:
-            "For the duration, when you make a **Charisma check**, you can treat the roll as **15**. **Truth-detecting magic** indicates you are **truthful**, regardless of what you say.",
+            "For the duration, when you make a Charisma check, you can treat the roll as 15. Truth-detecting magic indicates you are truthful, regardless of what you say.",
         scalingMd: "",
         imagePath: spellImgUrl("glibness")
     },
@@ -642,7 +642,7 @@ export const LEVEL8 = [
         concentration: true,
         ritual: false,
         descriptionMd:
-            "Allies you choose in your **30-ft aura** have **Advantage on all saving throws**; enemies have **Disadvantage on attack rolls** against them. When a **Fiend or Undead** hits an affected creature in melee, it must **CON save** or become **Blinded** until end of its next turn.",
+            "Allies you choose in your 30-ft aura have Advantage on all saving throws; enemies have Disadvantage on attack rolls against them. When a Fiend or Undead hits an affected creature in melee, it must CON save or become Blinded until end of its next turn.",
         scalingMd: "",
     },
     {
@@ -664,7 +664,7 @@ export const LEVEL8 = [
         concentration: true,
         ritual: false,
         descriptionMd:
-            "A swirling cloud of embers/smoke fills a **20-ft-radius sphere** (Heavily Obscured). **DEX save** on entry, start, or move-into (once/turn): **10d8 Fire**, half on success. The cloud **moves 10 ft away from you** each turn. Strong wind disperses it.",
+            "A swirling cloud of embers/smoke fills a 20-ft-radius sphere (Heavily Obscured). DEX save on entry, start, or move-into (once/turn): 10d8 Fire, half on success. The cloud moves 10 ft away from you each turn. Strong wind disperses it.",
         scalingMd: "",
     },
     {
@@ -710,7 +710,7 @@ export const LEVEL8 = [
         concentration: false,
         ritual: false,
         descriptionMd:
-            "Target gains **Immunity to Psychic damage** and the **Charmed** condition. The target can’t be sensed for emotions/alignment, read, detected, or controlled by magic, and **no spell (even Wish)** can gather information about or remotely observe the target.",
+            "Target gains Immunity to Psychic damage and the Charmed condition. The target can’t be sensed for emotions/alignment, read, detected, or controlled by magic, and no spell (even Wish) can gather information about or remotely observe the target.",
         scalingMd: "",
     },
     {
@@ -732,7 +732,7 @@ export const LEVEL8 = [
         concentration: false,
         ritual: false,
         descriptionMd:
-            "If the target has **150 HP or fewer**, it is **Stunned**. Otherwise, its **Speed is 0** until the start of your next turn. A Stunned target makes a **CON save at each turn’s end** to end the condition.",
+            "If the target has 150 HP or fewer, it is Stunned. Otherwise, its Speed is 0 until the start of your next turn. A Stunned target makes a CON save at each turn’s end to end the condition.",
         scalingMd: "",
     },
     {
@@ -778,7 +778,7 @@ export const LEVEL8 = [
         concentration: false,
         ritual: false,
         descriptionMd:
-            "Create a **two-way telepathic link** with a familiar willing creature **anywhere on the same plane**. Instantly share words, images, sounds, and other sensory messages; the target recognizes you through the link. Ends if you’re no longer on the same plane.",
+            "Create a two-way telepathic link with a familiar willing creature anywhere on the same plane. Instantly share words, images, sounds, and other sensory messages; the target recognizes you through the link. Ends if you’re no longer on the same plane.",
         scalingMd: "",
         imagePath: spellImgUrl("telepathy")
     },

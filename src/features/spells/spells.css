@@ -100,7 +100,7 @@ html, body, .spells-page {
 
 /* --- Poster card look --- */
 .spell-card--poster {
-  background: var(--poster-bg);
+  background: #fdfbf7;
   color: var(--poster-text);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg, 16px);
@@ -153,8 +153,8 @@ html, body, .spells-page {
 .spell-poster__img {
   width: auto;
   height: auto;
-  max-width: var(--card-img-max, 180px);
-  max-height: var(--card-img-max, 180px);
+  max-width: var(--card-img-max, 250px);
+  max-height: var(--card-img-max, 250px);
   object-fit: contain;
   border-radius: 0;
   margin: 0 auto;
@@ -204,13 +204,13 @@ html, body, .spells-page {
 }
 
 /* Optional: ensure the card face itself isn't painting a dark square behind the art */
-.spell-card--poster { background: var(--poster-bg); }
+.spell-card--poster { background: #fdfbf7; }
 .spell-poster { background: transparent; }
 
 /* ==== Themed hover borders for cards ==== */
 html:not(.theme-dark) .spell-card:hover {
-  border-color: #ffd700; /* gold */
-  box-shadow: 0 0 8px rgba(255, 215, 0, 0.45);
+  border-color: #f8e8c9; /* gold */
+  box-shadow: 0 0 8px rgba(255, 239, 147, 0.45);
   transform: translateY(-2px);
 }
 .theme-dark .spell-card:hover {
@@ -340,7 +340,7 @@ html:not(.theme-dark) .spell-card:hover {
   position: static;
   top: auto;
   z-index: auto;
-  background: var(--surface, var(--poster-bg, #fff));
+  background: var(--surface, var(--poster-bg, #fdfbf7));
   border: 1px solid var(--border, rgba(255,255,255,.15));
   border-radius: 14px;
   box-shadow: var(--shadow, 0 6px 18px rgba(0,0,0,.15));
@@ -508,10 +508,11 @@ html:not(.theme-dark) .spell-card:hover {
 .spell-modal__panel {
   width: min(960px, 96vw);
   background: var(--surface, #1a1a1a);
-  color: var(--text, #fff);
+  color: var(--text, #fdfbf7);
   border: 1px solid var(--border, rgba(255,255,255,.15));
   border-radius: 16px;
   box-shadow: 0 18px 40px rgba(0,0,0,.45);
+  overflow: hidden;
 }
 
 /* NEW: slimmer modal on phones so there’s tappable gutter */
@@ -739,7 +740,7 @@ html:not(.theme-dark) .spell-card:hover {
   border-radius: 8px;
   border: 1px solid var(--border);
   background: var(--elevated, #111);
-  color: var(--app-text, #fff);
+  color: var(--app-text, #fdfbf7);
   cursor: pointer;
 }
 .page-btn:hover { border-color: color-mix(in oklch, var(--accent-color) 60%, var(--border)); }
@@ -874,7 +875,7 @@ html, body, .spells-page { overscroll-behavior-x: none; }
 
 /* Day / light mode */
 html:not(.theme-dark) .statblock {
-  --sb-bg: #ffffff;
+  --sb-bg: #fdfbf7;
   --sb-text: #111318;
   --sb-border: #e4e6eb;
   --sb-rule: color-mix(in oklch, var(--accent-color) 60%, #bfc6d0);
@@ -1050,4 +1051,42 @@ html:not(.theme-dark) .statblock {
   --rb-bg: color-mix(in oklch, var(--surface) 92%, black 8%);
   --rb-text: var(--app-text);
   --rb-border: color-mix(in oklch, var(--border) 80%, #000 20%);
+}
+
+/* ==========================
+   Light mode overrides: filters
+   ========================== */
+html:not(.theme-dark) {
+  /* pick your daytime accent (gold/cream vibe) */
+  --filters-accent: #c9a227;          /* warm gold */
+  --filters-accent-soft: rgba(201,162,39,.22);
+  --filters-link: #8a6a12;            /* darker gold/brown for readable links */
+}
+
+/* RESET ALL FILTERS (and any link-style buttons) */
+html:not(.theme-dark) .btn-link {
+  color: var(--filters-link) !important;
+}
+html:not(.theme-dark) .btn-link:hover {
+  color: #5f470a !important;
+}
+
+/* "Show advanced filters" (if it's a <summary>) */
+html:not(.theme-dark) .advanced summary,
+html:not(.theme-dark) .advanced summary a {
+  color: var(--filters-link) !important;
+}
+html:not(.theme-dark) .advanced summary:hover {
+  color: #5f470a !important;
+}
+
+/* FILTER SPELLS button: stop the blue */
+html:not(.theme-dark) .btn-primary {
+  border-color: color-mix(in oklch, var(--filters-accent) 60%, rgba(0,0,0,.18)) !important;
+  background: color-mix(in oklch, var(--filters-accent) 40%, #fdfbf7) !important;
+  color: #1b1b1b !important;
+}
+html:not(.theme-dark) .btn-primary:hover {
+  background: color-mix(in oklch, var(--filters-accent) 52%, #fdfbf7) !important;
+  box-shadow: 0 0 0 3px var(--filters-accent-soft) !important;
 }

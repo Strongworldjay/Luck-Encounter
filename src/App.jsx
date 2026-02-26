@@ -22,6 +22,13 @@ import SkillPointPlanner from './SkillPointPlanner';
 import SpellsPage from "./pages/SpellsPage";
 import JumpCalculator from "./pages/JumpCalculator";
 import ShopInventory from "./pages/ShopInventory";
+import Feats from "./feats/Feats";
+import { originFeats } from "./data/feats/originFeats";
+import { generalFeats } from "./data/feats/generalFeats";
+import { masteryFeats } from "./data/feats/masteryFeats";
+import { racialFeats } from "./data/feats/racialFeats";
+import { mavenArms } from "./data/feats/mavenArms";
+import { epicBoons } from "./data/feats/epicBoons";
 
 const rarities = [
   { name: 'Common',    color: 'white',  range: [-100, 5] },
@@ -51,6 +58,16 @@ export default function App() {
   const [selectedCard, setSelectedCard] = useState(null);
   const [isDrawing, setIsDrawing] = useState(false);
   const [currentSection, setCurrentSection] = useState('DungeonCompletion');
+    // ✅ Feat page routing (matches Navbar ids)
+  const FEAT_SECTIONS = useMemo(() => ({
+    OriginFeats:  { title: "Origin Feats",  data: originFeats },
+    GeneralFeats: { title: "General Feats", data: generalFeats },
+    MasteryFeats: { title: "Mastery Feats", data: masteryFeats },
+    RacialFeats:  { title: "Racial Feats",  data: racialFeats },
+    EpicBoons:        { title: "Epic Boons",  data: epicBoons },
+    MavenArms:    { title: "Maven Arms",   data: mavenArms },
+  }), []);
+
   const cardRefs = useRef([]);
 
   const isMobile = useBreakpoint('(max-width: 640px)');
@@ -233,7 +250,7 @@ export default function App() {
       {currentSection === 'DungeonCompletion' && (
         <>
           <div className="top-center-container panel">
-            <h1>Why Not Test Your Luck?</h1>
+            <h1>Congratulations, you have survived the Dungeon!</h1>
 
             {/* ---------- Filters bar ---------- */}
             <div className="filters-bar">
@@ -399,6 +416,14 @@ export default function App() {
       {currentSection === 'JumpCalc' && <JumpCalculator />}
       {currentSection === 'ShopInventory' && <ShopInventory />}
       {currentSection === 'BountyBoard' && <BountyBoard />}
+      {/* ✅ FEATS (Origin/General/Mastery/Racial) */}
+      {FEAT_SECTIONS[currentSection] && (
+        <Feats
+          title={FEAT_SECTIONS[currentSection].title}
+          feats={FEAT_SECTIONS[currentSection].data}
+        />
+      )}
+
     </div>
   );
 }

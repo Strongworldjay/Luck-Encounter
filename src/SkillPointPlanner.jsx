@@ -14,6 +14,15 @@ const WORLD_ART_RULES = {
   S: { levelUp: 15, evolve: null }, // cannot evolve normally
 };
 
+/** Forbidden Arts (Stages only) */
+const FORBIDDEN_ART_STAGE_COSTS = {
+  1: 15,   // 1 -> 2
+  2: 30,   // 2 -> 3
+  3: 50,   // 3 -> 4
+  4: 80,   // 4 -> 5
+  5: null, // 5 -> 6 = special quests
+};
+
 function tierIndex(t) { return TIER_ORDER.indexOf(t); }
 
 /** Ability score per-step cost */
@@ -124,6 +133,35 @@ function calcSkillValueCost(fromValue, toValue) {
   return { total, steps, warning: null };
 }
 
+/** Forbidden Arts: stages 1 → 6, but 5 → 6 is quest-gated */
+function calcForbiddenArtCost(fromStage, toStage) {
+  if (toStage <= fromStage) {
+    return { total: 0, steps: [], warning: "Target must be greater than current.", questGate: false };
+  }
+  if (fromStage < 1 || toStage > 6) {
+    return { total: 0, steps: [], warning: "Stages must be between 1 and 6.", questGate: false };
+  }
+
+  const steps = [];
+  let total = 0;
+  let questGate = false;
+
+  for (let s = fromStage; s < toStage; s++) {
+    const cost = FORBIDDEN_ART_STAGE_COSTS[s];
+
+    if (cost == null) {
+      steps.push(`${s} → ${s + 1}: Special Quests (no SP cost)`);
+      questGate = true;
+      break;
+    }
+
+    total += cost;
+    steps.push(`${s} → ${s + 1}: ${cost} SP`);
+  }
+
+  return { total, steps, warning: null, questGate };
+}
+
 /** ===============================
  *  UI
  *  =============================== */
@@ -145,6 +183,10 @@ export default function SkillPointPlanner() {
   const [skFrom, setSkFrom] = useState(10);
   const [skTo, setSkTo] = useState(18);
 
+  // Forbidden Arts state
+  const [faFrom, setFaFrom] = useState(1);
+  const [faTo, setFaTo] = useState(4);
+
   const worldArtResult = useMemo(
     () => calcWorldArtCost(waFromTier, waFromLvl, waToTier, waToLvl),
     [waFromTier, waFromLvl, waToTier, waToLvl]
@@ -156,6 +198,10 @@ export default function SkillPointPlanner() {
   const skillResult = useMemo(
     () => calcSkillValueCost(Number(skFrom), Number(skTo)),
     [skFrom, skTo]
+  );
+  const forbiddenResult = useMemo(
+    () => calcForbiddenArtCost(Number(faFrom), Number(faTo)),
+    [faFrom, faTo]
   );
 
   return (
@@ -179,6 +225,12 @@ export default function SkillPointPlanner() {
         >
           Skill Value
         </button>
+        <button
+          className={`sp-tab ${tab === "forbidden" ? "active" : ""}`}
+          onClick={() => setTab("forbidden")}
+        >
+          Forbidden Arts
+        </button>
       </div>
 
       {/* WORLD ART */}
@@ -195,7 +247,7 @@ export default function SkillPointPlanner() {
             <div className="sp-field">
               <label>Current Level</label>
               <select value={waFromLvl} onChange={(e) => setWaFromLvl(Number(e.target.value))}>
-                {[1,2,3].map(n => <option key={n} value={n}>{n}</option>)}
+                {[1, 2, 3].map(n => <option key={n} value={n}>{n}</option>)}
               </select>
             </div>
             <div className="sp-field">
@@ -207,7 +259,7 @@ export default function SkillPointPlanner() {
             <div className="sp-field">
               <label>Target Level</label>
               <select value={waToLvl} onChange={(e) => setWaToLvl(Number(e.target.value))}>
-                {[1,2,3].map(n => <option key={n} value={n}>{n}</option>)}
+                {[1, 2, 3].map(n => <option key={n} value={n}>{n}</option>)}
               </select>
             </div>
           </div>
@@ -215,7 +267,9 @@ export default function SkillPointPlanner() {
           {worldArtResult.warning && <div className="sp-warning">{worldArtResult.warning}</div>}
 
           <div className="sp-result">
-            <div className="sp-total">Total SP Required: <strong>{worldArtResult.total}</strong></div>
+            <div className="sp-total">
+              Total SP Required: <strong>{worldArtResult.total}</strong>
+            </div>
             <ul className="sp-steps">
               {worldArtResult.steps.map((s, i) => <li key={i}>{s}</li>)}
             </ul>
@@ -261,7 +315,9 @@ export default function SkillPointPlanner() {
           {abilityResult.warning && <div className="sp-warning">{abilityResult.warning}</div>}
 
           <div className="sp-result">
-            <div className="sp-total">Total SP Required: <strong>{abilityResult.total}</strong></div>
+            <div className="sp-total">
+              Total SP Required: <strong>{abilityResult.total}</strong>
+            </div>
             <ul className="sp-steps">
               {abilityResult.steps.map((s, i) => <li key={i}>{s}</li>)}
             </ul>
@@ -305,7 +361,9 @@ export default function SkillPointPlanner() {
           {skillResult.warning && <div className="sp-warning">{skillResult.warning}</div>}
 
           <div className="sp-result">
-            <div className="sp-total">Total SP Required: <strong>{skillResult.total}</strong></div>
+            <div className="sp-total">
+              Total SP Required: <strong>{skillResult.total}</strong>
+            </div>
             <ul className="sp-steps">
               {skillResult.steps.map((s, i) => <li key={i}>{s}</li>)}
             </ul>
@@ -319,6 +377,58 @@ export default function SkillPointPlanner() {
               <li>11–15: 5 SP each</li>
               <li>16–20: 10 SP each</li>
               <li>21+: 20 SP each</li>
+            </ul>
+          </details>
+        </div>
+      )}
+
+      {/* FORBIDDEN ARTS */}
+      {tab === "forbidden" && (
+        <div className="sp-card">
+          <h2>Forbidden Arts Planner</h2>
+
+          <div className="sp-grid two">
+            <div className="sp-field">
+              <label>Current Stage</label>
+              <select value={faFrom} onChange={(e) => setFaFrom(Number(e.target.value))}>
+                {[1, 2, 3, 4, 5, 6].map(n => <option key={n} value={n}>{n}</option>)}
+              </select>
+            </div>
+
+            <div className="sp-field">
+              <label>Target Stage</label>
+              <select value={faTo} onChange={(e) => setFaTo(Number(e.target.value))}>
+                {[1, 2, 3, 4, 5, 6].map(n => <option key={n} value={n}>{n}</option>)}
+              </select>
+            </div>
+          </div>
+
+          {forbiddenResult.warning && <div className="sp-warning">{forbiddenResult.warning}</div>}
+
+          {/* Quest gate notice */}
+          {forbiddenResult.questGate && (
+            <div className="sp-warning">
+              Stage 6 is quest-gated. SP total covers only stages up to the quest requirement.
+            </div>
+          )}
+
+          <div className="sp-result">
+            <div className="sp-total">
+              Total SP Required: <strong>{forbiddenResult.total}</strong>
+            </div>
+            <ul className="sp-steps">
+              {forbiddenResult.steps.map((s, i) => <li key={i}>{s}</li>)}
+            </ul>
+          </div>
+
+          <details className="sp-notes">
+            <summary>Stage Costs</summary>
+            <ul>
+              <li>1→2: 15 SP</li>
+              <li>2→3: 30 SP</li>
+              <li>3→4: 50 SP</li>
+              <li>4→5: 80 SP</li>
+              <li>5→6: Special Quests</li>
             </ul>
           </details>
         </div>

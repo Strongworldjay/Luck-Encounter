@@ -116,7 +116,7 @@ export const LEVEL6 = [
         descriptionMd:
             "From a point you can see, barbed chains erupt in a 20-foot-radius sphere. Each creature makes a Dexterity save. On a failed save, it takes 8d6 Piercing and has the Restrained condition. The first time a creature enters the area on a turn or starts its turn there, it must succeed on a Dexterity save or be Restrained while in the area or until it breaks free (action: Strength (Athletics) vs. your spell save DC). A creature Restrained by the chains takes 3d6 Bludgeoning at the end of its turn.",
         scalingMd:
-            "Using a Higher-Level Spell Slot. Increase the initial and subsequent damage by 1d6 per slot level above 6th.",
+            "**Using a Higher-Level Spell Slot.** Increase the initial and subsequent damage by 1d6 per slot level above 6th.",
         imagePath: spellImgUrl("chaindevilschains")
     },
     {
@@ -183,7 +183,7 @@ export const LEVEL6 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a rust crab shell" },
         concentration: true,
         ritual: false,
-        descriptionMd: "A large ethereal crustacean form surrounds you. Your AC becomes 20 (if not already higher), you gain a 40-foot swim speed and blindsight to 30 feet. You can replace any attack with a claw strike or use a bonus action to make a claw attack using your spell attack bonus; on a hit, it deals 1d10 + your spellcasting modifier Bludgeoning damage. Your ethereal shell has a **damage threshold** of 15: you ignore any instance of damage below 15; damage that meets or exceeds 15 affects you normally.",
+        descriptionMd: "A large ethereal crustacean form surrounds you. Your AC becomes 20 (if not already higher), you gain a 40-foot swim speed and blindsight to 30 feet. You can replace any attack with a claw strike or use a bonus action to make a claw attack using your spell attack bonus; on a hit, it deals 1d10 + your spellcasting modifier Bludgeoning damage. Your ethereal shell has a damage threshold of 15: you ignore any instance of damage below 15; damage that meets or exceeds 15 affects you normally.",
         scalingMd: "**Using a Higher-Level Spell Slot.** Damage die becomes 1d12 (7th), 2d6 (8th), and 2d8 (9th). The damage threshold increases by +2 for each slot level above 6th.",
         imagePath: spellImgUrl("crustaceanform")
     },
@@ -208,10 +208,10 @@ export const LEVEL6 = [
         descriptionMd: "You open a small portal that always hovers 5 feet behind you as long as you maintain concentration. In this gate lies a divine chain that moves with snake like mannerisms at your command, but never fully exits the portal.\n\n" +
             "The portal is an object that has AC 20 and hit points equal to your hit point maximum. If it drops to 0 hit points, the spell ends. It has a Strength of 26 (+8) and a Dexterity of 10 (+0). The chain does not fill a space.\n\n" +
             "When you cast the spell and as a bonus action on your subsequent turns, you can cause one of the following effects with it.\n\n" +
-            "**Piercing Shot.** The tip of the chain is pointed like a dagger. You can target one creature or object within 60 feet of you. Make a melee spell attack for the chain using your spell to hit. On a hit, the target takes 4d6 piercing damage and the chain returns to you.\n\n" +
-            "**Knotted Chain.** The chain attempts to grapple a Huge or smaller creature within 60 feet of it. You use the chain’s Strength score to resolve the grapple. If the target is Medium or smaller, you have advantage on the check. While the chain is grappling the target, you can use a bonus action to have the chain crush it. When you do so, the target takes bludgeoning damage equal to 2d6 + your spellcasting ability modifier.\n\n" +
-            "**Reactive Chain.** As a reaction when a target you can see attempts to attack a creature within 60 feet of you, you can lash the chain out to impose disadvantage on the attack roll.",
-        scalingMd: "**At Higher Levels.** With an 8th-level slot or higher, you gain an additional chain that acts on the same bonus action but can take a different action and target.",
+            "Piercing Shot. The tip of the chain is pointed like a dagger. You can target one creature or object within 60 feet of you. Make a melee spell attack for the chain using your spell to hit. On a hit, the target takes 4d6 piercing damage and the chain returns to you.\n\n" +
+            "Knotted Chain. The chain attempts to grapple a Huge or smaller creature within 60 feet of it. You use the chain’s Strength score to resolve the grapple. If the target is Medium or smaller, you have advantage on the check. While the chain is grappling the target, you can use a bonus action to have the chain crush it. When you do so, the target takes bludgeoning damage equal to 2d6 + your spellcasting ability modifier.\n\n" +
+            "Reactive Chain. As a reaction when a target you can see attempts to attack a creature within 60 feet of you, you can lash the chain out to impose disadvantage on the attack roll.",
+        scalingMd: "**Using a Higher-Level Spell Slot.** With an 8th-level slot or higher, you gain an additional chain that acts on the same bonus action but can take a different action and target.",
         imagePath: spellImgUrl("divinechain")
     },
     {
@@ -235,10 +235,10 @@ export const LEVEL6 = [
         descriptionMd: "You invoke the spirits of nature to protect an area outdoors or underground. The area can be as small as a 30-foot cube or as large as a 90-foot cube. Buildings and other structures are excluded from the affected area. If you cast this spell in the same area every day for a year, the spell lasts until dispelled.\n\n" +
             "The spell creates the following effects within the area. When you cast this spell, you can specify creatures as friends who are immune to the effects. You can also specify a password that, when spoken aloud, makes the speaker immune to these effects.\n\n" +
             "The entire warded area radiates magic. A dispel magic cast on the area, if successful, removes only one of the following effects, not the entire area. That spell’s caster chooses which effect to end. Only when all its effects are gone is this spell dispelled.\n\n" +
-            "**Solid Fog.** You can fill any number of 5-foot squares on the ground with thick fog, making them heavily obscured. The fog reaches 10 feet high. In addition, every foot of movement through the fog costs 2 extra feet. To a creature immune to this effect, the fog obscures nothing and looks like soft mist, with motes of green light floating in the air.\n\n" +
-            "**Grasping Undergrowth.** You can fill any number of 5-foot squares on the ground that aren’t filled with fog with grasping weeds and vines, as if they were affected by an entangle spell. To a creature immune to this effect, the weeds and vines feel soft and reshape themselves to serve as temporary seats or beds.\n\n" +
-            "**Grove Guardians.** You can animate up to four trees in the area, causing them to uproot themselves from the ground. These trees have the same statistics as an awakened tree, which appears in the Monster Manual, except they can’t speak, and their bark is covered with druidic symbols. If any creature not immune to this effect enters the warded area, the grove guardians fight until they have driven off or slain the intruders. The grove guardians also obey your spoken commands (no action required by you) that you issue while in the area. If you don’t give them commands and no intruders are present, the grove guardians do nothing. The grove guardians can’t leave the warded area. When the spell ends, the magic animating them disappears, and the trees take root again if possible.\n\n" +
-            "**Additional Spell Effect.** You can place your choice of one of the following magical effects within the warded area:\n\n" +
+            "Solid Fog. You can fill any number of 5-foot squares on the ground with thick fog, making them heavily obscured. The fog reaches 10 feet high. In addition, every foot of movement through the fog costs 2 extra feet. To a creature immune to this effect, the fog obscures nothing and looks like soft mist, with motes of green light floating in the air.\n\n" +
+            "Grasping Undergrowth. You can fill any number of 5-foot squares on the ground that aren’t filled with fog with grasping weeds and vines, as if they were affected by an entangle spell. To a creature immune to this effect, the weeds and vines feel soft and reshape themselves to serve as temporary seats or beds.\n\n" +
+            "Grove Guardians. You can animate up to four trees in the area, causing them to uproot themselves from the ground. These trees have the same statistics as an awakened tree, which appears in the Monster Manual, except they can’t speak, and their bark is covered with druidic symbols. If any creature not immune to this effect enters the warded area, the grove guardians fight until they have driven off or slain the intruders. The grove guardians also obey your spoken commands (no action required by you) that you issue while in the area. If you don’t give them commands and no intruders are present, the grove guardians do nothing. The grove guardians can’t leave the warded area. When the spell ends, the magic animating them disappears, and the trees take root again if possible.\n\n" +
+            "Additional Spell Effect. You can place your choice of one of the following magical effects within the warded area:\n\n" +
             "A constant gust of wind in two locations of your choice\n" +
             "Spike growth in one location of your choice\n" +
             "Wind wall in two locations of your choice\n" +
@@ -392,8 +392,8 @@ export const LEVEL6 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a scrap of a banner" },
         concentration: false,
         ritual: false,
-        descriptionMd: "Spectral knights charge in a **90-foot line** (20-ft wide). Each chosen creature makes a Wisdom save. **On a failure:** **5d12 Necrotic**, it is **Frightened** until the start of your next turn, and must **use its Reaction** to move as far from you as it can by a safe route. **On a success:** half damage only.",
-        scalingMd: "**Using a Higher-Level Spell Slot.** Damage increases by **1d12** per slot level above 6th.",
+        descriptionMd: "Spectral knights charge in a 90-foot line (20-ft wide). Each chosen creature makes a Wisdom save. On a failure: 5d12 Necrotic, it is Frightened until the start of your next turn, and must use its Reaction to move as far from you as it can by a safe route. On a success: half damage only.",
+        scalingMd: "**Using a Higher-Level Spell Slot.** Damage increases by 1d12 per slot level above 6th.",
         imagePath: spellImgUrl("ghastlycharge")
     },
     {
@@ -414,7 +414,7 @@ export const LEVEL6 = [
         components: { verbal: true, somatic: true, material: true, materialText: "a ruby worth at least 100 gp" },
         concentration: true,
         ritual: false,
-        descriptionMd: "As part of casting, expend **six Hit Point Dice** or the spell fails. Make a ranged spell attack; on a hit, roll the expended dice and the target takes **Piercing** damage equal to the total. Until the spell ends, the **first successful attack** against the target **after its turn ends** each round is an **automatic Critical Hit**. At the end of each of its turns, the target makes a CON save: **on a success**, it takes **3d8 Necrotic** and the spell ends; **on a failure**, the effect continues.",
+        descriptionMd: "As part of casting, expend six Hit Point Dice or the spell fails. Make a ranged spell attack; on a hit, roll the expended dice and the target takes Piercing damage equal to the total. Until the spell ends, the first successful attack against the target after its turn ends each round is an automatic Critical Hit. At the end of each of its turns, the target makes a CON save: on a success, it takes 3d8 Necrotic and the spell ends; on a failure, the effect continues.",
         scalingMd: "",
         imagePath: spellImgUrl("heartseeker")
     },
@@ -437,9 +437,9 @@ export const LEVEL6 = [
         concentration: false,
         ritual: false,
         descriptionMd:
-            "Radiant power ripples out in a 60-foot emanation. **Hostile creatures** make a Constitution save, taking **3d8 Necrotic** damage on a failure, or half on a success. **Allies** within range instead **heal 3d8** hit points.",
+            "Radiant power ripples out in a 60-foot emanation. Hostile creatures make a Constitution save, taking 3d8 Necrotic damage on a failure, or half on a success. Allies within range instead heal 3d8 hit points.",
         scalingMd:
-            "**Using a Higher-Level Spell Slot.** Both damage and healing increase by **1d8** per slot level above 6th.",
+            "**Using a Higher-Level Spell Slot.** Both damage and healing increase by 1d8 per slot level above 6th.",
         imagePath: spellImgUrl("luminousedict")
     },
     {
@@ -491,9 +491,9 @@ export const LEVEL6 = [
         concentration: true,
         ritual: false,
         descriptionMd:
-            "You sense magic within **120 feet**, seeing faint auras and learning schools. You gain **13 threads** you can spend (no action unless noted):\n\n• **Enhance:** When you cast a spell, expend 1 thread to treat it as if cast using a slot **1 level higher** and gain Temporary HP equal to **1 + the spell’s level**.\n• **Counter:** As a **Reaction** when a creature you can see casts a spell, expend 1 thread to interrupt it. If the spell is **3rd level or lower**, it fails. If **4th+**, make a check using your spellcasting ability (DC **10 + spell level**); on a success it fails.\n• **Amplify:** When your spell heals or damages, expend up to **6 threads** to increase the effect on **one creature by 4×threads**.\n\nYou lose any remaining threads when the spell ends; if you spend them all, the spell ends immediately.",
+            "You sense magic within 120 feet, seeing faint auras and learning schools. You gain 13 threads you can spend (no action unless noted):\n\n• Enhance: When you cast a spell, expend 1 thread to treat it as if cast using a slot 1 level higher and gain Temporary HP equal to 1 + the spell’s level.\n• Counter: As a Reaction when a creature you can see casts a spell, expend 1 thread to interrupt it. If the spell is 3rd level or lower, it fails. If 4th+, make a check using your spellcasting ability (DC 10 + spell level); on a success it fails.\n• Amplify: When your spell heals or damages, expend up to 6 threads to increase the effect on one creature by 4×threads.\n\nYou lose any remaining threads when the spell ends; if you spend them all, the spell ends immediately.",
         scalingMd:
-            "**Using a Higher-Level Spell Slot.** Gain **+2 threads** per slot level above 6th.",
+            "**Using a Higher-Level Spell Slot.** Gain +2 threads per slot level above 6th.",
         imagePath: spellImgUrl("masteroftheweave")
     },
     {
@@ -517,7 +517,7 @@ export const LEVEL6 = [
         descriptionMd: "You target a creature and a metal object held or worn by that creature you can see within range. The creature makes a Dexterity saving throw. On a failed save, the creature takes 5d8 Fire damage and the targeted object melts and oozes to the ground, where it returns to its normal shape and temperature. If the object is magical, the creature has Advantage on the saving throw.\n\n" +
             "If the creature tries to retrieve or otherwise touch the object for the duration, the object heats and melts, and the creature takes 5d8 Fire damage. The object returns to normal once the creature is no longer touching it or the spell ends.",
         scalingMd:
-            "**Using a Higher-Level Spell Slot.** Damage increases by **1d8** per slot level above 6th.",
+            "**Using a Higher-Level Spell Slot.** Damage increases by 1d8 per slot level above 6th.",
         imagePath: spellImgUrl("meltingcurse")
     },
     {
@@ -542,7 +542,7 @@ export const LEVEL6 = [
             "On a successful save, the target takes 5d10 Psychic damage, and the spell ends. On a failed save, the target takes 5d10 Psychic damage, and you make the area immediately around the target’s space appear dangerous to it in some way. You might cause the target to perceive itself as being surrounded by fire, floating razors, or hideous maws filled with dripping teeth.\n\n" +
             "Whatever form the illusion takes, the target can’t see or hear anything beyond it and is Restrained for the spell’s duration even if they have Truesight or Blindsight as the mental image enters their brain. If the target is moved out of the illusion, makes a melee attack through it, or reaches any part of its body through it, the target takes 10d10 Psychic damage, and the spell ends.",
         scalingMd:
-            "**Using a Higher-Level Spell Slot.** Both the initial and trigger damage increase by **1d10** per slot level above 6th.",
+            "**Using a Higher-Level Spell Slot.** Both the initial and trigger damage increase by 1d10 per slot level above 6th.",
         imagePath: spellImgUrl("mentalprison")
     },
     {
@@ -592,9 +592,9 @@ export const LEVEL6 = [
         concentration: false,
         ritual: false,
         descriptionMd:
-            "You call down **four** radiant lances at points you can see within range. Each creature in a **10-ft-radius, 100-ft-high cylinder** makes a Dexterity save, taking **8d8 Radiant** damage and being **knocked prone** on a fail, or half damage and not prone on a success. A creature in overlapping areas is affected **only once**.",
+            "You call down four radiant lances at points you can see within range. Each creature in a 10-ft-radius, 100-ft-high cylinder makes a Dexterity save, taking 8d8 Radiant damage and being knocked prone on a fail, or half damage and not prone on a success. A creature in overlapping areas is affected only once.",
         scalingMd:
-            "**Using a Higher-Level Spell Slot.** Damage increases by **1d8** per slot level above 6th.",
+            "**Using a Higher-Level Spell Slot.** Damage increases by 1d8 per slot level above 6th.",
         imagePath: spellImgUrl("platinumlances"),
     },
     {
@@ -621,7 +621,7 @@ export const LEVEL6 = [
         concentration: true,
         ritual: false,
         descriptionMd:
-            "A silvery field encases a creature (shedding **dim light 5 ft**). While protected: **Half Cover**; **Resistance** to **Acid, Cold, Fire, Lightning, Poison**; and **Evasion** (Dex-save half-damage effects: **no damage** on a success, **half** on a failure). As a **bonus action** on later turns, move the field to another creature within **60 ft** of it.",
+            "A silvery field encases a creature (shedding dim light 5 ft). While protected: Half Cover; Resistance to Acid, Cold, Fire, Lightning, Poison; and Evasion (Dex-save half-damage effects: no damage on a success, half on a failure). As a bonus action on later turns, move the field to another creature within 60 ft of it.",
         scalingMd: "",
         imagePath: spellImgUrl("platinumshield"),
     },
@@ -644,7 +644,7 @@ export const LEVEL6 = [
         concentration: true,
         ritual: false,
         descriptionMd:
-            "The target gains **resistance** to **Acid, Cold, Fire, Lightning,** and **Thunder**. When it takes one of those damage types, it may use its **reaction** to gain **immunity** to that type **(including the triggering damage)** until the end of your next turn; if it does, the resistances end and the spell then ends at that time.",
+            "The target gains resistance to Acid, Cold, Fire, Lightning, and Thunder. When it takes one of those damage types, it may use its reaction to gain immunity to that type (including the triggering damage) until the end of your next turn; if it does, the resistances end and the spell then ends at that time.",
         scalingMd: "",
         imagePath: spellImgUrl("primordialward"),
     },
@@ -667,7 +667,7 @@ export const LEVEL6 = [
         concentration: false,
         ritual: false,
         descriptionMd:
-            "Create an **illusory duplicate** for each chosen ally within **60 ft**. Duplicates **move and act** with their originals, making it hard to track the real one. When an ally with a duplicate **deals damage**, it deals an additional **1d6 Psychic**. Each time a creature **targets** an affected ally with an attack, **roll a d6**; on **3+**, the **duplicate is targeted** instead. If an attack **hits** a duplicate, it is **destroyed**. A creature that **can’t see** or **perceives illusions** as false (e.g., **truesight**) is unaffected.",
+            "Create an illusory duplicate for each chosen ally within 60 ft. Duplicates move and act with their originals, making it hard to track the real one. When an ally with a duplicate deals damage, it deals an additional 1d6 Psychic. Each time a creature targets an affected ally with an attack, roll a d6; on 3+, the duplicate is targeted instead. If an attack hits a duplicate, it is destroyed. A creature that can’t see or perceives illusions as false (e.g., truesight) is unaffected.",
         scalingMd: "",
         imagePath: spellImgUrl("spectralwarband"),
     },
@@ -690,7 +690,7 @@ export const LEVEL6 = [
         concentration: true,
         ritual: false,
         descriptionMd:
-            "Create two linked **Large** circular portals: one **within 10 feet** of you and one **within range**. Each ring hovers inches above the ground and is open on only **one side** (your choice). Entering the open side of one portal exits from the open side of the other **as if adjacent**. As a **Bonus Action**, you can change the **facing** of the open sides.",
+            "Create two linked Large circular portals: one within 10 feet of you and one within range. Each ring hovers inches above the ground and is open on only one side (your choice). Entering the open side of one portal exits from the open side of the other as if adjacent. As a Bonus Action, you can change the facing of the open sides.",
         scalingMd: "",
         imagePath: spellImgUrl("arcanegate")
     },
@@ -713,7 +713,7 @@ export const LEVEL6 = [
         concentration: true,
         ritual: false,
         descriptionMd:
-            "A wall of **whirling blades** appears, providing **Three-Quarters Cover** and making its space **Difficult Terrain**. When the wall appears, a creature in its space makes a **Dexterity** save, taking **6d10 Force** on a fail or half on a success. A creature also saves when it **enters** the wall’s space or **ends its turn** there (**once per turn**).",
+            "A wall of whirling blades appears, providing Three-Quarters Cover and making its space Difficult Terrain. When the wall appears, a creature in its space makes a Dexterity save, taking 6d10 Force on a fail or half on a success. A creature also saves when it enters the wall’s space or ends its turn there (once per turn).",
         scalingMd: "",
         imagePath: spellImgUrl("bladebarrier")
     },
@@ -736,9 +736,9 @@ export const LEVEL6 = [
         concentration: false,
         ritual: false,
         descriptionMd:
-            "Hurl a bolt at a target you can see; **three** more bolts leap to **up to three** other targets **within 30 feet** of the first. Each target makes a **Dexterity** save, taking **10d8 Lightning** on a fail or half on a success.",
+            "Hurl a bolt at a target you can see; three more bolts leap to up to three other targets within 30 feet of the first. Each target makes a Dexterity save, taking 10d8 Lightning on a fail or half on a success.",
         scalingMd:
-            "**Using a Higher-Level Spell Slot.** One **additional bolt** leaps to another target per slot level above 6.",
+            "**Using a Higher-Level Spell Slot.** One additional bolt leaps to another target per slot level above 6.",
         imagePath: spellImgUrl("chainlightning")
     },
     {
@@ -760,9 +760,9 @@ export const LEVEL6 = [
         concentration: false,
         ritual: false,
         descriptionMd:
-            "Negative energy ripples out in a **60-foot-radius sphere** from a point you choose within range. Creatures in the area make a **Constitution** save, taking **8d8 Necrotic** on a fail or half on a success.",
+            "Negative energy ripples out in a 60-foot-radius sphere from a point you choose within range. Creatures in the area make a Constitution save, taking 8d8 Necrotic on a fail or half on a success.",
         scalingMd:
-            "**Using a Higher-Level Spell Slot.** Damage increases by **2d8** per slot level above 6.",
+            "**Using a Higher-Level Spell Slot.** Damage increases by 2d8 per slot level above 6.",
         imagePath: spellImgUrl("circleofdeath")
     },
     {
@@ -784,9 +784,9 @@ export const LEVEL6 = [
         concentration: true,
         ritual: false,
         descriptionMd:
-            "Conjure a **Medium fey spirit** in an unoccupied space you can see. When it appears, make a **melee spell attack** against a creature within 5 feet of it: on a hit, it takes **3d12 + your spellcasting ability modifier Psychic**, and is **Frightened** until the start of your next turn (**you and the spirit** are the fear sources). As a **Bonus Action** on later turns, you can **teleport** the spirit **30 ft.** and repeat the attack.",
+            "Conjure a Medium fey spirit in an unoccupied space you can see. When it appears, make a melee spell attack against a creature within 5 feet of it: on a hit, it takes 3d12 + your spellcasting ability modifier Psychic, and is Frightened until the start of your next turn (you and the spirit are the fear sources). As a Bonus Action on later turns, you can teleport the spirit 30 ft. and repeat the attack.",
         scalingMd:
-            "**Using a Higher-Level Spell Slot.** The initial/bonus-attack **damage increases by 1d12** per slot level above 6.",
+            "**Using a Higher-Level Spell Slot.** The initial/bonus-attack damage increases by 1d12 per slot level above 6.",
         imagePath: spellImgUrl("conjurefey")
     },
     {
@@ -808,7 +808,7 @@ export const LEVEL6 = [
         concentration: false,
         ritual: false,
         descriptionMd:
-            "Cast a **level 5 or lower** spell (casting time 1 action, targets **you**) as a **contingent spell** alongside *contingency*, expending both slots. Define a **trigger**; when it occurs **for the first time** within 10 days, the contingent spell **immediately takes effect on you**, then *contingency* ends. You can have only **one** *contingency* active; it ends if its material component leaves your person.",
+            "Cast a level 5 or lower spell (casting time 1 action, targets you) as a contingent spell alongside contingency, expending both slots. Define a trigger; when it occurs for the first time within 10 days, the contingent spell immediately takes effect on you, then contingency ends. You can have only one contingency active; it ends if its material component leaves your person.",
         scalingMd: "",
         imagePath: spellImgUrl("contingency")
     },
@@ -831,9 +831,9 @@ export const LEVEL6 = [
         concentration: false,
         ritual: false,
         descriptionMd:
-            "Cast **at night** to animate up to **three** Medium or Small **Humanoid** corpses as **Ghouls** under your control (see stat blocks). As a **Bonus Action**, issue mental commands to any creatures made by this spell within **120 ft**; uncommanded, they **Dodge** and avoid harm. Control lasts **24 hours**; re-cast on them before it ends to **reassert control** (affects up to the number your slot allows).",
+            "Cast at night to animate up to three Medium or Small Humanoid corpses as Ghouls under your control (see stat blocks). As a Bonus Action, issue mental commands to any creatures made by this spell within 120 ft; uncommanded, they Dodge and avoid harm. Control lasts 24 hours; re-cast on them before it ends to reassert control (affects up to the number your slot allows).",
         scalingMd:
-            "**Using a Higher-Level Spell Slot.** Slot **7**: animate/reassert **4 Ghouls**. Slot **8**: **5 Ghouls** or **2 Ghasts/Wights**. Slot **9**: **6 Ghouls**, **3 Ghasts/Wights**, or **2 Mummies**.",
+            "**Using a Higher-Level Spell Slot.** Slot 7: animate/reassert 4 Ghouls. Slot 8: 5 Ghouls or 2 Ghasts/Wights. Slot 9: 6 Ghouls, 3 Ghasts/Wights, or 2 Mummies.",
         imagePath: spellImgUrl("createundead")
     },
     {
@@ -858,7 +858,7 @@ export const LEVEL6 = [
             "A creature targeted by this spell makes a Dexterity saving throw. On a failed save, the target takes 10d6 + 40 Force damage. If this damage reduces it to 0 Hit Points, it and everything nonmagical it is wearing and carrying are disintegrated into gray dust. The target can be revived only by a True Resurrection or a Wish spell.\n\n" +
             "This spell automatically disintegrates a Large or smaller nonmagical object or a creation of magical force. If such a target is Huge or larger, this spell disintegrates a 10-foot-Cube portion of it.",
         scalingMd:
-            "**Using a Higher-Level Spell Slot.** Damage increases by **3d6** per slot level above 6.",
+            "**Using a Higher-Level Spell Slot.** Damage increases by 3d6 per slot level above 6.",
         imagePath: spellImgUrl("disintegrate")
     },
     {
@@ -905,9 +905,9 @@ export const LEVEL6 = [
         ritual: false,
         descriptionMd: "For the duration, your eyes become an inky void. One creature of your choice within 60 feet of you that you can see must succeed on a Wisdom saving throw or be affected by one of the following effects of your choice for the duration.\n\n" +
             "On each of your turns until the spell ends, you can take a Magic action to target another creature but can’t target a creature again if it has succeeded on a save against this casting of the spell.\n\n" +
-            "**Asleep.** The target has the Unconscious condition. It wakes up if it takes any damage or if another creature takes an action to shake it awake.\n\n" +
-            "**Panicked.** The target has the Frightened condition. On each of its turns, the Frightened target must take the Dash action and move away from you by the safest and shortest route available. If the target moves to a space at least 60 feet away from you where it can’t see you, this effect ends.\n\n" +
-            "**Sickened.** The target has the Poisoned condition.",
+            "Asleep. The target has the Unconscious condition. It wakes up if it takes any damage or if another creature takes an action to shake it awake.\n\n" +
+            "Panicked. The target has the Frightened condition. On each of its turns, the Frightened target must take the Dash action and move away from you by the safest and shortest route available. If the target moves to a space at least 60 feet away from you where it can’t see you, this effect ends.\n\n" +
+            "Sickened. The target has the Poisoned condition.",
         scalingMd: "",
         imagePath: spellImgUrl("eyebite")
     },
@@ -930,7 +930,7 @@ export const LEVEL6 = [
         concentration: true,
         ritual: false,
         descriptionMd:
-            "Name a **familiar location**; you sense the most **direct physical route** to it while on the same plane. For the duration, you know **distance and direction**, and at each choice of paths, which is **most direct**. Fails if the destination is on another plane, **moving**, or **unspecific**.",
+            "Name a familiar location; you sense the most direct physical route to it while on the same plane. For the duration, you know distance and direction, and at each choice of paths, which is most direct. Fails if the destination is on another plane, moving, or unspecific.",
         scalingMd: "",
         imagePath: spellImgUrl("findthepath")
     },
@@ -981,7 +981,7 @@ export const LEVEL6 = [
             "You can designate a password when you cast the spell. A creature that speaks the password as it enters the area takes no damage from the spell.\n\n" +
             "The spell’s area can’t overlap with the area of another Forbiddance spell. If you cast Forbiddance every day for 30 days in the same location, the spell lasts until it is dispelled, and the Material components are consumed on the last casting.",
         scalingMd:
-            "Casting **daily for 30 days** in the same location makes the effect **permanent** (components consumed on the last casting).",
+            "Casting daily for 30 days in the same location makes the effect permanent (components consumed on the last casting).",
         imagePath: spellImgUrl("forbiddance")
     },
     {
@@ -1003,9 +1003,9 @@ export const LEVEL6 = [
         concentration: true,
         ritual: false,
         descriptionMd:
-            "An **immobile shimmering barrier** surrounds you in a **10-foot emanation**. **Spells of level 5 or lower** cast from **outside** the barrier **can’t affect** anything within it, and areas of effect from such spells **exclude** the interior.",
+            "An immobile shimmering barrier surrounds you in a 10-foot emanation. Spells of level 5 or lower cast from outside the barrier can’t affect anything within it, and areas of effect from such spells exclude the interior.",
         scalingMd:
-            "**Using a Higher-Level Spell Slot.** The barrier blocks spells **one level higher** per slot level above 6.",
+            "**Using a Higher-Level Spell Slot.** The barrier blocks spells one level higher per slot level above 6.",
         imagePath: spellImgUrl("globeofinvulnerability")
     },
     {
@@ -1029,17 +1029,17 @@ export const LEVEL6 = [
         descriptionMd: "You create a ward that protects up to 2,500 square feet of floor space. The warded area can be up to 20 feet tall, and you shape it as one 50-foot square, one hundred 5-foot squares that are contiguous, or twenty-five 10-foot squares that are contiguous.\n\n" +
             "When you cast this spell, you can specify individuals that are unaffected by the spell’s effects. You can also specify a password that, when spoken aloud within 5 feet of the warded area, makes the speaker immune to its effects.\n\n" +
             "The spell creates the effects below within the warded area. Dispel Magic has no effect on Guards and Wards itself, but each of the following effects can be dispelled. If all four are dispelled, Guards and Wards ends. If you cast the spell every day for 365 days on the same area, the spell thereafter lasts until all its effects are dispelled.\n\n" +
-            "**Corridors.** Fog fills all the warded corridors, making them Heavily Obscured. In addition, at each intersection or branching passage offering a choice of direction, there is a 50 percent chance that a creature other than you believes it is going in the opposite direction from the one it chooses.\n\n" +
-            "**Doors.** All doors in the warded area are magically locked, as if sealed by the Arcane Lock spell. In addition, you can cover up to ten doors with an illusion to make them appear as plain sections of wall.\n\n" +
-            "**Stairs.** Webs fill all stairs in the warded area from top to bottom, as in the Web spell. These strands regrow in 10 minutes if they are destroyed while Guards and Wards lasts.\n\n" +
-            "**Other Spell Effect.** Place one of the following magical effects within the warded area:\n\n" +
+            "Corridors. Fog fills all the warded corridors, making them Heavily Obscured. In addition, at each intersection or branching passage offering a choice of direction, there is a 50 percent chance that a creature other than you believes it is going in the opposite direction from the one it chooses.\n\n" +
+            "Doors. All doors in the warded area are magically locked, as if sealed by the Arcane Lock spell. In addition, you can cover up to ten doors with an illusion to make them appear as plain sections of wall.\n\n" +
+            "Stairs. Webs fill all stairs in the warded area from top to bottom, as in the Web spell. These strands regrow in 10 minutes if they are destroyed while Guards and Wards lasts.\n\n" +
+            "Other Spell Effect. Place one of the following magical effects within the warded area:\n\n" +
             "Dancing Lights in four corridors, with a simple program that the lights repeat as long as Guards and Wards lasts\n" +
             "Magic Mouth in two locations\n" +
             "Stinking Cloud in two locations (the vapors return within 10 minutes if dispersed while Guards and Wards lasts)\n" +
             "Gust of Wind in one corridor or room (the wind blows continuously while the spell lasts)\n" +
             "Suggestion in one 5-foot square; any creature that enters that square receives the suggestion mentally",
         scalingMd:
-            "Cast **daily for 365 days** on the same area to make it last **until dispelled**.",
+            "Cast daily for 365 days on the same area to make it last until dispelled.",
         imagePath: spellImgUrl("guardsandwards")
     },
     {
@@ -1061,7 +1061,7 @@ export const LEVEL6 = [
         concentration: false,
         ritual: false,
         descriptionMd:
-            "A creature makes a **Constitution** save, taking **14d6 Necrotic** on a fail or half on a success. On a failed save, its **Hit Point maximum** is reduced by the Necrotic damage taken (**can’t** reduce below **1**).",
+            "A creature makes a Constitution save, taking 14d6 Necrotic on a fail or half on a success. On a failed save, its Hit Point maximum is reduced by the Necrotic damage taken (can’t reduce below 1).",
         scalingMd: "",
         imagePath: spellImgUrl("harm")
     },
@@ -1084,9 +1084,9 @@ export const LEVEL6 = [
         concentration: false,
         ritual: false,
         descriptionMd:
-            "Positive energy restores **70 HP** to a creature you can see within range and **ends** the **Blinded**, **Deafened**, and **Poisoned** conditions on the target.",
+            "Positive energy restores 70 HP to a creature you can see within range and ends the Blinded, Deafened, and Poisoned conditions on the target.",
         scalingMd:
-            "**Using a Higher-Level Spell Slot.** Healing increases by **10** per slot level above 6.",
+            "**Using a Higher-Level Spell Slot.** Healing increases by 10 per slot level above 6.",
         imagePath: spellImgUrl("heal")
     },
     {
@@ -1108,7 +1108,7 @@ export const LEVEL6 = [
         concentration: false,
         ritual: false,
         descriptionMd:
-            "Conjure a feast in a **10-ft cube**. Up to **12** creatures partake over **1 hour**; after eating, for **24 hours** each gains: **Resistance to Poison damage**; **Immunity to Frightened and Poisoned**; and **+2d10 to Hit Point maximum** and gains that many **HP**.",
+            "Conjure a feast in a 10-ft cube. Up to 12 creatures partake over 1 hour; after eating, for 24 hours each gains: Resistance to Poison damage; Immunity to Frightened and Poisoned; and +2d10 to Hit Point maximum and gains that many HP.",
         scalingMd: "",
         imagePath: spellImgUrl("heroesfeast")
     },
@@ -1161,7 +1161,7 @@ export const LEVEL6 = [
         descriptionMd: "You suggest a course of activity—described in no more than 25 words—to twelve or fewer creatures you can see within range that can hear and understand you. The suggestion must sound achievable and not involve anything that would obviously deal damage to any of the targets or their allies. For example, you could say, “Walk to the village down that road, and help the villagers there harvest crops until sunset.” Or you could say, “Now is not the time for violence. Drop your weapons, and dance! Stop in an hour.”\n\n" +
             "Each target must succeed on a Wisdom saving throw or have the Charmed condition for the duration or until you or your allies deal damage to the target. Each Charmed target pursues the suggestion to the best of its ability. The suggested activity can continue for the entire duration, but if the suggested activity can be completed in a shorter time, the spell ends for a target upon completing it.",
         scalingMd:
-            "**Using a Higher-Level Spell Slot.** Duration: slot **7** (10 days), **8** (30 days), **9** (366 days).",
+            "**Using a Higher-Level Spell Slot.** Duration: slot 7 (10 days), 8 (30 days), 9 (366 days).",
         imagePath: spellImgUrl("masssuggestion")
     },
     {
@@ -1211,7 +1211,7 @@ export const LEVEL6 = [
             "If the globe strikes a body of water, it freezes the water to a depth of 6 inches over an area 30 feet square. This ice lasts for 1 minute. Creatures that were swimming on the surface of frozen water are trapped in the ice and have the Restrained condition. A trapped creature can take an action to make a Strength (Athletics) check against your spell save DC to break free.\n\n" +
             "You can refrain from firing the globe after completing the spell’s casting. If you do so, a globe about the size of a sling bullet, cool to the touch, appears in your hand. At any time, you or a creature you give the globe to can throw the globe (to a range of 40 feet) or hurl it with a sling (to the sling’s normal range). It shatters on impact, with the same effect as a normal casting of the spell. You can also set the globe down without shattering it. After 1 minute, if the globe hasn’t already shattered, it explodes.",
         scalingMd:
-            "**Using a Higher-Level Spell Slot.** Damage increases by **1d6** per slot level above 6.",
+            "**Using a Higher-Level Spell Slot.** Damage increases by 1d6 per slot level above 6.",
         imagePath: spellImgUrl("otilukesfreezingsphere")
     },
     {
@@ -1256,7 +1256,7 @@ export const LEVEL6 = [
         concentration: false,
         ritual: false,
         descriptionMd:
-            "Beseech a known otherworldly entity to send aid: a **Celestial, Elemental, or Fiend** appears within range. The creature isn’t compelled; you must **negotiate payment** (typical rates: **100 GP/minute**, **1,000 GP/hour**, **10,000 GP/day**, up to **10 days**; DM may adjust). If terms are agreed, it performs the task and then returns to its home plane, reporting back if possible. If no agreement is reached, it departs immediately.",
+            "Beseech a known otherworldly entity to send aid: a Celestial, Elemental, or Fiend appears within range. The creature isn’t compelled; you must negotiate payment (typical rates: 100 GP/minute, 1,000 GP/hour, 10,000 GP/day, up to 10 days; DM may adjust). If terms are agreed, it performs the task and then returns to its home plane, reporting back if possible. If no agreement is reached, it departs immediately.",
         scalingMd: "",
         imagePath: spellImgUrl("planarally")
     },
@@ -1279,7 +1279,7 @@ export const LEVEL6 = [
         concentration: false,
         ritual: false,
         descriptionMd:
-            "Create a **scripted illusion** (visual + audible) up to a **30-foot cube**, **imperceptible** until a **trigger** occurs (based on visual/audible events within 30 feet). When triggered, the illusion performs for up to **5 minutes**, then vanishes and lies **dormant for 10 minutes** before it can trigger again. Physical interaction reveals the image; a creature can take the **Study** action for an **Intelligence (Investigation)** check vs. your save DC to discern it, seeing through it and hearing its sounds as hollow thereafter.",
+            "Create a scripted illusion (visual + audible) up to a 30-foot cube, imperceptible until a trigger occurs (based on visual/audible events within 30 feet). When triggered, the illusion performs for up to 5 minutes, then vanishes and lies dormant for 10 minutes before it can trigger again. Physical interaction reveals the image; a creature can take the Study action for an Intelligence (Investigation) check vs. your save DC to discern it, seeing through it and hearing its sounds as hollow thereafter.",
         scalingMd: "",
         imagePath: spellImgUrl("programmedillusion")
     },
@@ -1379,7 +1379,7 @@ export const LEVEL6 = [
 `
         ,
         scalingMd:
-            "**Using a Higher-Level Spell Slot.** Use the **slot’s level** for the stat block; HP also increases by the spell’s rules.",
+            "**Using a Higher-Level Spell Slot.** Use the slot’s level for the stat block; HP also increases by the spell’s rules.",
         imagePath: spellImgUrl("summonfiend")
     },
     {
@@ -1401,7 +1401,7 @@ export const LEVEL6 = [
         concentration: true,
         ritual: false,
         descriptionMd:
-            "Project a **5-ft-wide, 60-ft line** of searing light. Creatures in the line make a **Constitution** save, taking **6d8 Radiant** and becoming **Blinded** until the start of your next turn on a fail (half damage only on a success). Until the spell ends, you can take a **Magic action each turn** to create a new line. A radiant **mote** hovers above you, shedding **sunlight** (Bright 30 ft, Dim +30 ft).",
+            "Project a 5-ft-wide, 60-ft line of searing light. Creatures in the line make a Constitution save, taking 6d8 Radiant and becoming Blinded until the start of your next turn on a fail (half damage only on a success). Until the spell ends, you can take a Magic action each turn to create a new line. A radiant mote hovers above you, shedding sunlight (Bright 30 ft, Dim +30 ft).",
         scalingMd: "",
         imagePath: spellImgUrl("sunbeam")
     },
@@ -1424,7 +1424,7 @@ export const LEVEL6 = [
         concentration: false,
         ritual: false,
         descriptionMd:
-            "Conjure a claw-footed **cauldron** that can’t be moved and vanishes with the spell. Its liquid duplicates a **Common or Uncommon potion** you choose (e.g., *potion of healing*). As a **Bonus Action**, you or an ally can draw a potion (in a temporary vial). The cauldron can produce **potions equal to your spellcasting ability modifier** (min 1); when the last is drawn, the cauldron disappears and the spell ends. Unused potions **vanish** when you cast this spell again.",
+            "Conjure a claw-footed cauldron that can’t be moved and vanishes with the spell. Its liquid duplicates a Common or Uncommon potion you choose (e.g., potion of healing). As a Bonus Action, you or an ally can draw a potion (in a temporary vial). The cauldron can produce potions equal to your spellcasting ability modifier (min 1); when the last is drawn, the cauldron disappears and the spell ends. Unused potions vanish when you cast this spell again.",
         scalingMd: "",
         imagePath: spellImgUrl("tashasbubblingcauldron")
     },
@@ -1447,7 +1447,7 @@ export const LEVEL6 = [
         concentration: false,
         ritual: false,
         descriptionMd:
-            "Link a **Large or larger** inanimate plant within range to another plant **on the same plane** that you have **seen or touched**. For the duration, creatures can step into the first plant and exit from the destination plant, spending **5 feet of movement**.",
+            "Link a Large or larger inanimate plant within range to another plant on the same plane that you have seen or touched. For the duration, creatures can step into the first plant and exit from the destination plant, spending 5 feet of movement.",
         scalingMd: "",
         imagePath: spellImgUrl("transportviaplants")
     },
@@ -1470,7 +1470,7 @@ export const LEVEL6 = [
         concentration: false,
         ritual: false,
         descriptionMd:
-            "A willing creature gains **Truesight 120 ft.** for the duration.",
+            "A willing creature gains Truesight 120 ft. for the duration.",
         scalingMd: "",
         imagePath: spellImgUrl("trueseeing")
     },
@@ -1497,7 +1497,7 @@ export const LEVEL6 = [
             "The wall is an object that can be damaged and thus breached. It has AC 12 and 30 Hit Points per 10-foot section, and it has Immunity to Cold, Poison, and Psychic damage and Vulnerability to Fire damage. Reducing a 10-foot section of wall to 0 Hit Points destroys it and leaves behind a sheet of frigid air in the space the wall occupied.\n\n" +
             "A creature moving through the sheet of frigid air for the first time on a turn makes a Constitution saving throw, taking 5d6 Cold damage on a failed save or half as much damage on a successful one.",
         scalingMd:
-            "**Using a Higher-Level Spell Slot.** On creation, damage increases by **2d6**, and the frigid air’s damage increases by **1d6** per slot level above 6.",
+            "**Using a Higher-Level Spell Slot.** On creation, damage increases by 2d6, and the frigid air’s damage increases by 1d6 per slot level above 6.",
         imagePath: spellImgUrl("wallofice")
     },
     {
@@ -1522,7 +1522,7 @@ export const LEVEL6 = [
             "When the wall appears, each creature in its area makes a Dexterity saving throw, taking 7d8 Piercing damage on a failed save or half as much damage on a successful one.\n\n" +
             "A creature can move through the wall, albeit slowly and painfully. For every 1 foot a creature moves through the wall, it must spend 4 feet of movement. Furthermore, the first time a creature enters a space in the wall on a turn or ends its turn there, the creature makes a Dexterity saving throw, taking 7d8 Slashing damage on a failed save or half as much damage on a successful one. A creature makes this save only once per turn.",
         scalingMd:
-            "**Using a Higher-Level Spell Slot.** Both damage types increase by **1d8** per slot level above 6.",
+            "**Using a Higher-Level Spell Slot.** Both damage types increase by 1d8 per slot level above 6.",
         imagePath: spellImgUrl("wallofthorns")
     },
     {
@@ -1567,7 +1567,7 @@ export const LEVEL6 = [
         concentration: false,
         ritual: false,
         descriptionMd:
-            "You and up to **five** willing creatures within 5 feet **teleport** to a **sanctuary** you previously prepared by casting this spell there. You arrive in the **nearest unoccupied space** to the designated spot. If you haven’t prepared a sanctuary, the spell has **no effect**.",
+            "You and up to five willing creatures within 5 feet teleport to a sanctuary you previously prepared by casting this spell there. You arrive in the nearest unoccupied space to the designated spot. If you haven’t prepared a sanctuary, the spell has no effect.",
         scalingMd: "",
         imagePath: spellImgUrl("wordofrecall")
     },
@@ -1591,9 +1591,9 @@ export const LEVEL6 = [
   ritual: false,
   descriptionMd:
     "Choose a Humanoid corpse you can touch. You wrench its spirit from the veil and manifest it as a Ghost in an unoccupied space you can see within 10 feet of the corpse. The Ghost uses the Ghost stat block (the GM has the creature’s statistics). It is friendly to you and your companions. In combat, it acts immediately after your turn; it can move and use its reaction on its own, and it takes the Dodge action unless you use a Bonus Action to command it to take another action (Attack, Dash, Disengage, Help, or Hide). If you are incapacitated, it can take only the Dodge action.\n\n" +
-    "**Quick Binding (1 Action).** The Ghost remains for 1 minute, then vanishes.\n\n" +
-    "**Full Rite (10 Minutes).** The Ghost remains for 24 hours or until it drops to 0 Hit Points, then vanishes. You can dismiss the Ghost as a Magic action. You can have only one Ghost created by this spell at a time; casting this spell again ends the previous Ghost.\n\n" +
-    "**Soul Sundering.** A creature turned into a Ghost by this spell has its soul shattered and trapped in limbo when the spell ends or the Ghost is destroyed. While sundered in this way, that creature can’t be returned to life by [spells]revivify[/spells], [spells]raise dead[/spells], [spells]resurrection[/spells], or [spells]true resurrection[/spells]; only [spells]wish[/spells] or equally potent divine intervention can restore it. Most good-aligned faiths consider this act a grievous sin.",
+    "Quick Binding (1 Action). The Ghost remains for 1 minute, then vanishes.\n\n" +
+    "Full Rite (10 Minutes). The Ghost remains for 24 hours or until it drops to 0 Hit Points, then vanishes. You can dismiss the Ghost as a Magic action. You can have only one Ghost created by this spell at a time; casting this spell again ends the previous Ghost.\n\n" +
+    "Soul Sundering. A creature turned into a Ghost by this spell has its soul shattered and trapped in limbo when the spell ends or the Ghost is destroyed. While sundered in this way, that creature can’t be returned to life by revivify, raise dead, resurrection, or true resurrection; only wish or equally potent divine intervention can restore it. Most good-aligned faiths consider this act a grievous sin.",
   scalingMd: "",
   imagePath: spellImgUrl("shadebind"),
 },
@@ -1647,8 +1647,8 @@ export const LEVEL6 = [
     descriptionMd:
         "Six chromatic spheres orbit you for the duration.\n\n" +
         "While the spheres are present, you can expend spheres to create the following effects:\n\n" +
-        "**Absorb Energy.** When you take Acid, Cold, Fire, Lightning, or Thunder damage, you can use your Reaction to expend one sphere and give yourself Resistance to the triggering damage type until the start of your next turn.\n\n" +
-        "**Energy Blast.** As a Bonus Action, you send one sphere hurtling toward a target within 120 feet of yourself. Make a ranged spell attack. On a hit, the target takes 3d6 Acid, Cold, Fire, Lightning, or Thunder damage (your choice). Regardless of whether you hit, the sphere is expended.\n\n" +
+        "Absorb Energy. When you take Acid, Cold, Fire, Lightning, or Thunder damage, you can use your Reaction to expend one sphere and give yourself Resistance to the triggering damage type until the start of your next turn.\n\n" +
+        "Energy Blast. As a Bonus Action, you send one sphere hurtling toward a target within 120 feet of yourself. Make a ranged spell attack. On a hit, the target takes 3d6 Acid, Cold, Fire, Lightning, or Thunder damage (your choice). Regardless of whether you hit, the sphere is expended.\n\n" +
         "The spell ends early if you have no more spheres remaining.",
     scalingMd:
         "**Using a Higher-Level Spell Slot.** The number of spheres increases by 1 for each spell slot level above 6th.",
@@ -1762,9 +1762,9 @@ export const LEVEL6 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-        "You inscribe an invisible teleportation rune on a solid surface at least a 5-foot square that you can touch. The rune is invisible but detectable by magic (such as the [spells]detect magic[/spells] spell) and can be ended by [spells]dispel magic[/spells] (DC equals your spell save DC). You can have up to five active runes you created with this spell at a time. If you cast this spell when you already have five, the casting fails unless you choose one of your existing runes to end as part of the casting.\n\n" +
-        "**Recall.** While at least one of your runes exists, you can take a Magic action to teleport yourself (and gear you’re wearing or carrying) to one of your runes, provided you are on the same plane of existence. You appear in the rune’s space or the nearest unoccupied space to it. After you teleport to a given rune, you can’t teleport to that same rune again for 7 days (other runes are unaffected).\n\n" +
-        "This teleportation fails if the destination is blocked by an effect that prevents teleportation (such as the [spells]forbiddance[/spells] spell); if it fails, the action is spent and you aren’t moved.",
+        "You inscribe an invisible teleportation rune on a solid surface at least a 5-foot square that you can touch. The rune is invisible but detectable by magic (such as the detect magic spell) and can be ended by dispel magic (DC equals your spell save DC). You can have up to five active runes you created with this spell at a time. If you cast this spell when you already have five, the casting fails unless you choose one of your existing runes to end as part of the casting.\n\n" +
+        "Recall. While at least one of your runes exists, you can take a Magic action to teleport yourself (and gear you’re wearing or carrying) to one of your runes, provided you are on the same plane of existence. You appear in the rune’s space or the nearest unoccupied space to it. After you teleport to a given rune, you can’t teleport to that same rune again for 7 days (other runes are unaffected).\n\n" +
+        "This teleportation fails if the destination is blocked by an effect that prevents teleportation (such as the forbiddance spell); if it fails, the action is spent and you aren’t moved.",
     scalingMd:
         "**Using a Higher-Level Spell Slot.** For each spell slot level above 6th, your maximum number of active runes increases by 1.",
     imagePath: spellImgUrl("anchorwarp")

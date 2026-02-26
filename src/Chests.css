@@ -22,16 +22,41 @@
   text-shadow: 0 1px 0 rgba(255,255,255,.5);
 }
 
-/* Large chest art (scaled + capped) */
-.chest-icon {
-  display: block;
+/* =====================================================
+   Chest art (RESERVED SPACE + cross-fade)
+   Fixes overlay issue by giving the wrapper real height.
+   ===================================================== */
+.chest-art {
+  position: relative;
   width: clamp(220px, 45vw, var(--chest-max));
+  height: clamp(220px, 45vw, var(--chest-max)); /* ✅ reserve space so buttons don't slide under */
   max-width: 100%;
-  max-height: 42vh;
-  height: auto;
+  max-height: 42vh;                              /* respects viewport cap */
+  display: grid;
+  place-items: center;
+  margin: 0 auto 6px;
+}
+
+/* Both chest images stack in the same reserved box */
+.chest-art .chest-icon {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;               /* ✅ fill the reserved box */
   object-fit: contain;
   filter: drop-shadow(0 10px 18px rgba(0,0,0,.35));
+  pointer-events: none;       /* ✅ chest never blocks button clicks */
+  transition: opacity 260ms ease, transform 260ms ease;
+  will-change: opacity, transform;
 }
+
+/* start state */
+.chest-art.closed .chest-icon--closed { opacity: 1; transform: scale(1); }
+.chest-art.closed .chest-icon--open   { opacity: 0; transform: scale(0.98); }
+
+/* open state */
+.chest-art.open .chest-icon--closed { opacity: 0; transform: scale(0.98); }
+.chest-art.open .chest-icon--open   { opacity: 1; transform: scale(1); }
 
 /* Rows of filter buttons */
 .chest-buttons {
@@ -44,38 +69,52 @@
   margin-top: 6px;
 }
 
-/* Generic button styling for this page (scoped) */
+/* =====================================================
+   Generic button styling for this page (scoped)
+   Daytime = cream buttons (except rarity colors)
+   ===================================================== */
 .chests-container button {
   appearance: none;
-  border: 1px solid rgba(255,255,255,.28);
-  background: rgba(34,34,34,.85);
-  color: #fff;
+  border: 1px solid rgba(0,0,0,.14);   /* CHANGED: dark border for light bg */
+  background: #fdfbf7;                 /* CHANGED: daytime cream */
+  color: #151515;                      /* CHANGED: readable dark text */
   padding: 8px 10px;
   border-radius: 8px;
   font-size: 0.95rem;
   line-height: 1.1;
   cursor: pointer;
-  transition: transform .12s ease, background-color .2s ease, box-shadow .2s ease;
-  box-shadow: 0 2px 6px rgba(0,0,0,.25);
+  transition: transform .12s ease, background-color .2s ease, box-shadow .2s ease, border-color .2s ease, filter .15s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,.12); /* CHANGED: softer shadow */
   white-space: nowrap;
 }
+
 .chests-container button:hover { 
-  background: rgba(68,68,68,.92); 
+  background: #f7f1e6;                 /* CHANGED: slightly darker cream */
   transform: translateY(-1px);
-}
-.chests-container button.selected {
-  outline: 2px solid gold;
-  box-shadow: 0 0 0 3px rgba(255,215,0,.25);
+  border-color: rgba(0,0,0,.22);
 }
 
-/* Rarity button accents (optional) */
-.rarity-button.wooden   { background: #5a4636; }
-.rarity-button.steel    { background: #68707a; }
-.rarity-button.bronze   { background: #8b5e34; }
-.rarity-button.silver   { background: #9ba4b5; color: #111; }
-.rarity-button.gold     { background: #c9a227; color: #111; }
-.rarity-button.platinum { background: #b0c4de; color: #111; }
-.rarity-button.emerald  { background: #0d8b6a; }
+.chests-container button.selected {
+  outline: 2px solid #f6ecd8;
+  box-shadow: 0 0 0 3px #e5c991;
+}
+
+/* =====================================================
+   Rarity button accents (KEEP COLORS)
+   ===================================================== */
+.rarity-button.wooden   { background: #5a4636; border-color: rgba(255,255,255,.22); color: #111; }
+.rarity-button.steel    { background: #68707a; border-color: rgba(255,255,255,.22); color: #111; }
+.rarity-button.bronze   { background: #8b5e34; border-color: rgba(255,255,255,.22); color: #111; }
+.rarity-button.silver   { background: #9ba4b5; border-color: rgba(0,0,0,.18);       color: #111; }
+.rarity-button.gold     { background: #c9a227; border-color: rgba(0,0,0,.18);       color: #111; }
+.rarity-button.platinum { background: #b0c4de; border-color: rgba(0,0,0,.18);       color: #111; }
+.rarity-button.emerald  { background: #0d8b6a; border-color: rgba(255,255,255,.22); color: #111; }
+
+/* Optional: rarity hover keeps its tone instead of turning cream */
+.rarity-button:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
 
 /* Primary action row */
 .chests-actions {
@@ -84,9 +123,11 @@
   gap: 10px;
   justify-content: center;
 }
+
 .open-chest-btn {
   background: #78a851;
   border: 1px solid rgba(255,255,255,.35);
+  color: #111;
 }
 .open-chest-btn:hover { background: #6c9b49; }
 
@@ -98,7 +139,7 @@
   background: transparent;   /* keep the world art visible */
   border: none;
   border-radius: 10px;
-  color: #fff;
+  color: #fdfbf7;
   box-shadow: none;
 }
 
@@ -106,7 +147,7 @@
 .loot-lockdc {
   margin: 4px 0 8px;
   font-weight: 700;
-  color: #fff;
+  color: #fdfbf7;
 }
 
 /* Tight, wrap-around item pills */
@@ -157,7 +198,7 @@
 }
 .loot-item.unique {
   background: #530c16;       /* soft rose */
-  color: #5a0b19;
+  color: #d5bfc3;
 }
 
 /* Gold total — gold fill + gold outline + soft glow */
@@ -168,7 +209,7 @@
   letter-spacing: .3px;
 
   color: #ffd700 !important;
-  -webkit-text-fill-color: black !important;
+  -webkit-text-fill-color: #fdfbf7 !important;
   -webkit-text-stroke: 1px #d4af37;          /* gold outline */
   text-shadow:
     0 0 6px rgba(255,215,0,.55),
@@ -184,8 +225,14 @@
     gap: 10px;
   }
 
-  .chest-icon {
+  /* keep the reserved box in sync with mobile sizing */
+  .chest-art {
     width: clamp(200px, 70vw, var(--chest-max));
+    height: clamp(200px, 70vw, var(--chest-max));
+    max-height: 36vh;
+  }
+
+  .chest-art .chest-icon {
     max-height: 36vh;
     filter: drop-shadow(0 8px 14px rgba(0,0,0,.35));
   }
@@ -202,8 +249,16 @@
 /* ----------------- Tablet (641–1024px) ----------------- */
 @media (min-width: 641px) and (max-width: 1024px) {
   .chests-container { --chest-max: 380px; }
-  .chest-icon { width: clamp(220px, 52vw, var(--chest-max)); max-height: 40vh; }
+
+  .chest-art {
+    width: clamp(220px, 52vw, var(--chest-max));
+    height: clamp(220px, 52vw, var(--chest-max));
+    max-height: 40vh;
+  }
+
+  .chest-art .chest-icon { max-height: 40vh; }
 }
+
 /* =====================================
    Automatic Dark Mode (Night Theme)
    ===================================== */
@@ -213,6 +268,23 @@
   .chest-title {
     color: #bfc3c9;
     text-shadow: none;
+  }
+
+  /* ✅ Dark-mode buttons revert to dark */
+  .chests-container button {
+    background: rgba(34,34,34,.85);
+    color: #fdfbf7;
+    border: 1px solid rgba(255,255,255,.28);
+    box-shadow: 0 2px 6px rgba(0,0,0,.25);
+  }
+  .chests-container button:hover {
+    background: rgba(68,68,68,.92);
+    border-color: rgba(255,255,255,.32);
+  }
+
+  /* keep rarity buttons as-is (they already override backgrounds) */
+  .rarity-button:hover {
+    filter: brightness(1.05);
   }
 
   /* selection outline & glow — blue instead of gold */

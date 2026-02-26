@@ -1,27 +1,42 @@
 // Chests.jsx
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { getRandomItem } from "./ItemGenerator";
 import { itemNames } from "./itemsData";
 
-import treasureChestIcon from "./assets/wooden.png";
-import woodenChestIcon from "./assets/wooden.png";
-import steelChestIcon from "./assets/steel.png";
-import bronzeChestIcon from "./assets/bronze.png";
-import silverChestIcon from "./assets/silver.png";
-import goldChestIcon from "./assets/gold.png";
-import platinumChestIcon from "./assets/platinum.png";
-import emeraldChestIcon from "./assets/emerald.png";
+import treasureChestIcon from "./assets/wooden.jpg";
+
+import woodenChestIcon from "./assets/wooden.jpg";
+import woodenChestOpenIcon from "./assets/wooden2.jpg";
+
+import steelChestIcon from "./assets/steel.jpg";
+import steelChestOpenIcon from "./assets/steel2.jpg";
+
+import bronzeChestIcon from "./assets/bronze.jpg";
+import bronzeChestOpenIcon from "./assets/bronze2.jpg";
+
+import silverChestIcon from "./assets/silver.jpg";
+import silverChestOpenIcon from "./assets/silver2.jpg";
+
+import goldChestIcon from "./assets/gold.jpg";
+import goldChestOpenIcon from "./assets/gold2.jpg";
+
+import platinumChestIcon from "./assets/platinum.jpg";
+import platinumChestOpenIcon from "./assets/platinum2.jpg";
+
+import emeraldChestIcon from "./assets/emerald.jpg";
+import emeraldChestOpenIcon from "./assets/emerald2.jpg";
 
 import "./Chests.css";
 
+/** Closed/open art per rarity */
 const chestIcons = {
-  wooden: woodenChestIcon,
-  steel: steelChestIcon,
-  bronze: bronzeChestIcon,
-  silver: silverChestIcon,
-  gold: goldChestIcon,
-  platinum: platinumChestIcon,
-  emerald: emeraldChestIcon,
+  wooden:   { closed: woodenChestIcon,   open: woodenChestOpenIcon },
+  steel:    { closed: steelChestIcon,    open: steelChestOpenIcon },
+  bronze:   { closed: bronzeChestIcon,   open: bronzeChestOpenIcon },
+  silver:   { closed: silverChestIcon,   open: silverChestOpenIcon },
+  gold:     { closed: goldChestIcon,     open: goldChestOpenIcon },
+  platinum: { closed: platinumChestIcon, open: platinumChestOpenIcon },
+  emerald:  { closed: emeraldChestIcon,  open: emeraldChestOpenIcon },
 };
 
 const chestSettings = {
@@ -96,6 +111,14 @@ export default function Chests() {
   const [selectedChestType, setSelectedChestType] = useState("");
   const [loot, setLoot]                           = useState(null);
 
+  // NEW: chest open animation state
+  const [isOpen, setIsOpen] = useState(false);
+
+  // When you change rarity, snap back to closed (feels natural)
+  useEffect(() => {
+    setIsOpen(false);
+  }, [selectedRarity]);
+
   function openChest(rarity, chestType) {
     const { goldRange, rarityWeights, dcRange } = chestSettings[rarity];
 
@@ -130,7 +153,7 @@ export default function Chests() {
 
     // Gold only for Random type
     const gold   = chestType === "Random" ? getRandomInt(goldRange[0], goldRange[1]) : null;
-    // NEW: Lockpicking DC based on rarity
+    // Lockpicking DC based on rarity
     const lockDC = getRandomInt(dcRange[0], dcRange[1]);
 
     setLoot({ items, gold, lockDC });
@@ -141,20 +164,45 @@ export default function Chests() {
       alert("Please select both a rarity and a chest type first.");
       return;
     }
+
+    // NEW: animate closed -> open
+    setIsOpen(false);
+    // small delay so the transition can play even if it was already open
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => setIsOpen(true));
+    });
+
     openChest(selectedRarity, selectedChestType);
   }
 
-  const currentChestIcon = chestIcons[selectedRarity] || treasureChestIcon;
+  const rarityKey = selectedRarity ? selectedRarity.toLowerCase() : "";
+  const currentIcons = chestIcons[rarityKey] || { closed: treasureChestIcon, open: treasureChestIcon };
+
+  const closedSrc = currentIcons.closed;
+  const openSrc   = currentIcons.open;
+
+  // If you want fallback safety when open art doesn't exist:
+  const openSafeSrc = openSrc || closedSrc;
 
   return (
     <div className="chests-container">
       <h1 className="chest-title">Chest Loot</h1>
 
-      <img
-        src={currentChestIcon}
-        className={`chest-icon ${selectedRarity || ""}`}
-        alt={`${selectedRarity ? `${selectedRarity} chest` : "Chest"}`}
-      />
+      {/* NEW: Cross-fade between closed/open chest art */}
+      <div className={`chest-art ${isOpen ? "open" : "closed"}`}>
+        <img
+          src={closedSrc}
+          className={`chest-icon chest-icon--closed ${rarityKey}`}
+          alt={`${selectedRarity ? `${selectedRarity} chest` : "Chest"} (closed)`}
+          draggable={false}
+        />
+        <img
+          src={openSafeSrc}
+          className={`chest-icon chest-icon--open ${rarityKey}`}
+          alt={`${selectedRarity ? `${selectedRarity} chest` : "Chest"} (open)`}
+          draggable={false}
+        />
+      </div>
 
       <div className="chest-buttons">
         {Object.keys(chestSettings).map((r) => {
@@ -197,7 +245,6 @@ export default function Chests() {
             Loot from {selectedRarity.charAt(0).toUpperCase() + selectedRarity.slice(1)} – {selectedChestType} Chest
           </h2>
 
-          {/* NEW: Lockpicking DC display */}
           {loot.lockDC != null && (
             <p className="loot-lockdc">
               Lockpicking DC: <strong>{loot.lockDC}</strong>

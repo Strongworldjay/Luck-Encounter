@@ -2,9 +2,10 @@ import React, { useMemo, useState } from 'react';
 import './Navbar.css';
 
 /**
- * Navbar component with two dropdowns: Player Tools and DM Tools.
- * - Player Tools: Dungeon Completion, SP Planner, Spells
- * - DM Tools: Jump Calc, Wheel, Magic, Shop, Chests
+ * Navbar component with dropdowns:
+ * - Player Tools
+ * - DM Tools
+ * - Character Mapping
  */
 export default function Navbar({
   onNavClick,
@@ -16,21 +17,30 @@ export default function Navbar({
   const [open, setOpen] = useState(false);       // Mobile menu toggle
   const [playerOpen, setPlayerOpen] = useState(false);
   const [dmOpen, setDmOpen] = useState(false);
+  const [mappingOpen, setMappingOpen] = useState(false);
 
   // Define grouped items
   const playerItems = useMemo(() => ([
     { id: 'DungeonCompletion', label: 'Dungeon Completion' },
     { id: 'SPPlanner',         label: 'SP Planner' },
     { id: 'Spells',            label: 'Spells' },
-    { id: 'BountyBoard',            label: 'Insamont Bounty Board' },
+    { id: 'BountyBoard',       label: 'Insamont Bounty Board' },
   ]), []);
 
   const dmItems = useMemo(() => ([
     { id: 'JumpCalc',      label: 'Jump Calc' },
-    { id: 'RandomWheel',   label: 'Wheel' },
-    { id: 'MagicBingo',    label: 'Magic' },
     { id: 'ShopInventory', label: 'Shop' },
     { id: 'Chests',        label: 'Chests' },
+  ]), []);
+
+  // UPDATED: Origin Feats + General Feats, and Mastery Feats (renamed from Midan Exclusive Feats)
+  const mappingItems = useMemo(() => ([
+    { id: 'OriginFeats',   label: 'Origin Feats' },
+    { id: 'GeneralFeats',  label: 'General Feats' },
+    { id: 'EpicBoons',         label: 'Epic Boons' },
+    { id: 'MasteryFeats',  label: 'Mastery Feats' },
+    { id: 'RacialFeats',   label: 'Racial Feats' },
+    { id: 'MavenArms',     label: 'Maven Arms' },
   ]), []);
 
   const go = (id) => {
@@ -38,6 +48,7 @@ export default function Navbar({
     setOpen(false);
     setPlayerOpen(false);
     setDmOpen(false);
+    setMappingOpen(false);
   };
 
   const parentActive = (items) => items.some(i => i.id === currentSection);
@@ -45,10 +56,19 @@ export default function Navbar({
   const togglePlayer = () => {
     setPlayerOpen(v => !v);
     setDmOpen(false);
+    setMappingOpen(false);
   };
+
   const toggleDm = () => {
     setDmOpen(v => !v);
     setPlayerOpen(false);
+    setMappingOpen(false);
+  };
+
+  const toggleMapping = () => {
+    setMappingOpen(v => !v);
+    setPlayerOpen(false);
+    setDmOpen(false);
   };
 
   return (
@@ -112,6 +132,30 @@ export default function Navbar({
             </button>
             <ul id="dm-menu" className={`dropdown-menu ${dmOpen ? 'open' : ''}`}>
               {dmItems.map(({ id, label }) => (
+                <li
+                  key={id}
+                  className={`dropdown-item ${currentSection === id ? 'active' : ''}`}
+                  onClick={() => go(id)}
+                >
+                  {label}
+                </li>
+              ))}
+            </ul>
+          </li>
+
+          {/* CHARACTER MAPPING */}
+          <li className={`nav-item dropdown ${mappingOpen ? 'open' : ''} ${parentActive(mappingItems) ? 'active' : ''}`}>
+            <button
+              type="button"
+              className="dropdown-trigger"
+              aria-expanded={mappingOpen}
+              aria-controls="mapping-menu"
+              onClick={toggleMapping}
+            >
+              Character Mapping ▾
+            </button>
+            <ul id="mapping-menu" className={`dropdown-menu ${mappingOpen ? 'open' : ''}`}>
+              {mappingItems.map(({ id, label }) => (
                 <li
                   key={id}
                   className={`dropdown-item ${currentSection === id ? 'active' : ''}`}

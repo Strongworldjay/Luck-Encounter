@@ -43,7 +43,7 @@ export const LEVEL7 = [
         concentration: false,
         ritual: false,
         descriptionMd:
-            "You attempt to turn a creature you can see into wood. The target makes a Constitution saving throw. On a failure, it becomes Restrained as its flesh hardens into bark. On a success, its speed becomes 0 until the start of your next turn.\n\nA creature Restrained by this spell repeats the Constitution saving throw at the end of each of its turns. On three successes, the effect ends. On three failures, the creature becomes a tree and gains the Petrified condition. Track successes and failures until one set reaches three. If the petrified tree is destroyed, the creature dies.\n\nThe transformation remains unless reversed within 1 year by [spells]greater restoration[/spells], [spells]wish[/spells], or similar magic. After 1 year and 1 day, the change becomes permanent.",
+            "You attempt to turn a creature you can see into wood. The target makes a Constitution saving throw. On a failure, it becomes Restrained as its flesh hardens into bark. On a success, its speed becomes 0 until the start of your next turn.\n\nA creature Restrained by this spell repeats the Constitution saving throw at the end of each of its turns. On three successes, the effect ends. On three failures, the creature becomes a tree and gains the Petrified condition. Track successes and failures until one set reaches three. If the petrified tree is destroyed, the creature dies.\n\nThe transformation remains unless reversed within 1 year by greater restoration, wish, or similar magic. After 1 year and 1 day, the change becomes permanent.",
         scalingMd: "",
         imagePath: spellImgUrl("arborealcurse")
     },
@@ -114,7 +114,7 @@ export const LEVEL7 = [
         descriptionMd:
             "Seven star-like motes orbit your head. As a bonus action, send one mote to strike a creature or object within 120 feet; make a ranged spell attack. On a hit, the target takes 4d12 Radiant; hit or miss, that mote is expended. The spell ends early if you expend the last mote. With 4+ motes remaining, you shed bright light 30 ft and dim 30 ft; with 1–3 motes, you shed dim light 30 ft.",
         scalingMd:
-            "Using a Higher-Level Spell Slot. Create two additional motes per slot level above 7th.",
+            "**Using a Higher-Level Spell Slot.** Create two additional motes per slot level above 7th.",
         imagePath: spellImgUrl("crownofstars")
     },
     {
@@ -180,11 +180,11 @@ export const LEVEL7 = [
         concentration: true,
         ritual: false,
         descriptionMd: "With a roar, you draw on the magic of dragons to transform yourself, taking on draconic features of any type of gem, chromatic, or metallic dragon. You gain the following benefits until the spell ends:\n\n" +
-            "**Blindsight.** You have blindsight with a range of 30 feet. Within that range, you can effectively see anything that isn’t behind total cover, even if you’re blinded or in darkness. Moreover, you can see an invisible creature, unless the creature successfully hides from you.\n\n" +
-            "**Draconic Resistance.** You gain resistance to acid, cold, fire, force, lightning, poison, or thunder damage upon casting this spell.\n\n" +
-            "**Breath Weapon.** When you cast this spell, and as a bonus action on subsequent turns for the duration, you can exhale shimmering energy in a 60-foot cone. Each creature in that area must make a Dexterity saving throw, taking 6d8 damage of the same type as your resistance on a failed save, or half as much damage on a successful one.\n\n" +
-            "**Intimidating Presence.** At the start of your turn you can force all creatures who can see you to succeed a Wisdom saving throw against your spellcasting DC. On a failure they are frightened and can repeat the save at the end of each of their turns. On a success they are immune to this feature.\n\n" +
-            "**Wings.** Incorporeal wings sprout from your back, giving you a flying speed of 60 feet.",
+            "Blindsight. You have blindsight with a range of 30 feet. Within that range, you can effectively see anything that isn’t behind total cover, even if you’re blinded or in darkness. Moreover, you can see an invisible creature, unless the creature successfully hides from you.\n\n" +
+            "Draconic Resistance. You gain resistance to acid, cold, fire, force, lightning, poison, or thunder damage upon casting this spell.\n\n" +
+            "Breath Weapon. When you cast this spell, and as a bonus action on subsequent turns for the duration, you can exhale shimmering energy in a 60-foot cone. Each creature in that area must make a Dexterity saving throw, taking 6d8 damage of the same type as your resistance on a failed save, or half as much damage on a successful one.\n\n" +
+            "Intimidating Presence. At the start of your turn you can force all creatures who can see you to succeed a Wisdom saving throw against your spellcasting DC. On a failure they are frightened and can repeat the save at the end of each of their turns. On a success they are immune to this feature.\n\n" +
+            "Wings. Incorporeal wings sprout from your back, giving you a flying speed of 60 feet.",
         scalingMd: "",
         imagePath: spellImgUrl("draconictransformation")
     },
@@ -207,8 +207,8 @@ export const LEVEL7 = [
         concentration: false,
         ritual: false,
         descriptionMd: "You target one creature within range. It must succeed on a Strength saving throw or be trapped in a field of gravity that compresses it and forces it to fold in on itself.\n\n" +
-            "**On a failed save.** The target takes 12d10 Bludgeoning damage, falls Prone, and its Speed is reduced to 0 until the start of your next turn as it reels from the pain.\n\n" +
-            "**On a successful save.** The target takes half as much damage and no additional effects.",
+            "On a failed save. The target takes 12d10 Bludgeoning damage, falls Prone, and its Speed is reduced to 0 until the start of your next turn as it reels from the pain.\n\n" +
+            "On a successful save. The target takes half as much damage and no additional effects.",
         scalingMd: "**Using a Higher-Level Spell Slot.** Target one additional creature within range for each slot level above 7th.",
         imagePath: spellImgUrl("crush")
     },
@@ -230,7 +230,7 @@ export const LEVEL7 = [
         components: { verbal: true, somatic: true, material: false, materialText: "" },
         concentration: true,
         ritual: false,
-        descriptionMd: "A creature you can see makes a Constitution save. On a failure, it takes **8d10 Necrotic** and is **flayed**, its skin animating into a **Fleshling Construct** (see stat block) that acts immediately after you, obeying your verbal commands (no action). On a success, it takes half damage only. The construct disappears at 0 HP or when the spell ends.",
+        descriptionMd: "A creature you can see makes a Constitution save. On a failure, it takes 8d10 Necrotic and is flayed, its skin animating into a Fleshling Construct (see stat block) that acts immediately after you, obeying your verbal commands (no action). On a success, it takes half damage only. The construct disappears at 0 HP or when the spell ends.",
         statblockHtml: `
   <div class="statblock">
     <h2>FLESHLING CONSTRUCT</h2>
@@ -309,7 +309,7 @@ export const LEVEL7 = [
         concentration: false,
         ritual: false,
         descriptionMd:
-            "Command the target’s body to twist. If it has **125 HP or fewer**, it takes **8d10 Necrotic** damage and falls **Prone**. Otherwise, its **Speed is 0** until the start of your next turn. A Prone target repeats a **CON save** at the end of each of its turns, ending the condition on a success.",
+            "Command the target’s body to twist. If it has 125 HP or fewer, it takes 8d10 Necrotic damage and falls Prone. Otherwise, its Speed is 0 until the start of your next turn. A Prone target repeats a CON save at the end of each of its turns, ending the condition on a success.",
         scalingMd: "",
         imagePath: spellImgUrl("powerwordmaim"),
     },
@@ -332,7 +332,7 @@ export const LEVEL7 = [
         concentration: false,
         ritual: false,
         descriptionMd:
-            "Speak a word of power wracking one creature you see with agony if it has **100 HP or fewer** (no effect otherwise; unaffected if **immune to charmed**). While in pain, its **Speed can’t exceed 10 ft**; it has **disadvantage** on **attack rolls, ability checks, and saving throws** (other than CON saves). If it tries to cast a spell, it must first succeed on a **CON save** or the spell fails. It repeats a **CON save** at the end of each of its turns, ending the pain on a success.",
+            "Speak a word of power wracking one creature you see with agony if it has 100 HP or fewer (no effect otherwise; unaffected if immune to charmed). While in pain, its Speed can’t exceed 10 ft; it has disadvantage on attack rolls, ability checks, and saving throws (other than CON saves). If it tries to cast a spell, it must first succeed on a CON save or the spell fails. It repeats a CON save at the end of each of its turns, ending the pain on a success.",
         scalingMd: "",
         imagePath: spellImgUrl("powerwordpain"),
     },
@@ -358,7 +358,7 @@ export const LEVEL7 = [
             "The spell’s base damage is 8d8, and the damage increases by 2d8 whenever your turn ends and the spell hasn’t ended.\n\n" +
             "If a creature is Undead, it has disadvantage on saving throws against this spell.",
         scalingMd:
-            "**Using a Higher-Level Spell Slot.** Base damage increases by **1d8** per slot level above 7th.",
+            "**Using a Higher-Level Spell Slot.** Base damage increases by 1d8 per slot level above 7th.",
         imagePath: spellImgUrl("psalmsofretribution"),
     },
     {
@@ -408,7 +408,7 @@ export const LEVEL7 = [
         concentration: true,
         ritual: false,
         descriptionMd:
-            "You summon multiple voids above your head that emit a hail of meteorites. Select **3 creatures** that you can see within range, they must succeed on a Dexterity saving throw or take **6d6 Bludgeoning** damage. You can target a single creature multiple times, forcing it to repeat the Dexterity saving throw each time. You can use an action on subsequent turn to keep the meteorite shower going, selecting new targets within range to target with the spell. The spell ends if you use your action to do anything else. While casting this spell your movement speed becomes 0.",
+            "You summon multiple voids above your head that emit a hail of meteorites. Select 3 creatures that you can see within range, they must succeed on a Dexterity saving throw or take 6d6 Bludgeoning damage. You can target a single creature multiple times, forcing it to repeat the Dexterity saving throw each time. You can use an action on subsequent turn to keep the meteorite shower going, selecting new targets within range to target with the spell. The spell ends if you use your action to do anything else. While casting this spell your movement speed becomes 0.",
         scalingMd: ""
     },
     {
@@ -430,11 +430,11 @@ export const LEVEL7 = [
         concentration: true,
         ritual: false,
         descriptionMd: "You conjure a spirit from the Upper Planes, which manifests as a pillar of light in a 10-foot-radius, 40-foot-high Cylinder centered on a point within range. For each creature you can see in the Cylinder, choose which of these lights shines on it:\n\n" +
-            "**Healing Light.** The target regains Hit Points equal to 4d12 plus your spellcasting ability modifier.\n\n" +
-            "**Searing Light.** The target makes a Dexterity saving throw, taking 6d12 Radiant damage on a failed save or half as much damage on a successful one.\n\n" +
+            "Healing Light. The target regains Hit Points equal to 4d12 plus your spellcasting ability modifier.\n\n" +
+            "Searing Light. The target makes a Dexterity saving throw, taking 6d12 Radiant damage on a failed save or half as much damage on a successful one.\n\n" +
             "Until the spell ends, Bright Light fills the Cylinder, and when you move on your turn, you can also move the Cylinder up to 30 feet.\n\n" +
             "Whenever the Cylinder moves into the space of a creature you can see and whenever a creature you can see enters the Cylinder or ends its turn there, you can bathe it in one of the lights. A creature can be affected by this spell only once per turn.",
-        scalingMd: "**Using a Higher-Level Spell Slot.** Healing and damage each increase by **1d12** per slot level above 7.",
+        scalingMd: "**Using a Higher-Level Spell Slot.** Healing and damage each increase by 1d12 per slot level above 7.",
         imagePath: spellImgUrl("conjurecelestial")
     },
     {
@@ -460,7 +460,7 @@ export const LEVEL7 = [
             "If a creature touches the glowing bead before the spell ends, that creature makes a Dexterity saving throw. On a failed save, the spell ends, causing the bead to explode. On a successful save, the creature can throw the bead up to 40 feet. If the thrown bead enters a creature’s space or collides with a solid object, the spell ends, and the bead explodes.\n\n" +
             "When the bead explodes, flammable objects in the explosion that aren’t being worn or carried start burning.",
         scalingMd:
-            "**Using a Higher-Level Spell Slot.** Base damage increases by **1d6** per slot level above 7.",
+            "**Using a Higher-Level Spell Slot.** Base damage increases by 1d6 per slot level above 7.",
     },
     {
         slug: slugify("Divine Word"),
@@ -481,11 +481,11 @@ export const LEVEL7 = [
         concentration: false,
         ritual: false,
         descriptionMd: "You utter a word imbued with power from the Upper Planes. Each creature of your choice in range makes a Charisma saving throw. On a failed save, a target that has 50 Hit Points or fewer suffers an effect based on its current Hit Points, as shown in the Divine Word Effects table. Regardless of its Hit Points, a Celestial, an Elemental, a Fey, or a Fiend target that fails its save is forced back to its plane of origin (if it isn’t there already) and can’t return to the current plane for 24 hours by any means short of a Wish spell.\n\n" +
-            "**Divine Word Effects**\n" +
-            "**0–20 HP:** The target dies.\n" +
-            "**21–30 HP:** The target has the Blinded, Deafened, and Stunned conditions for 1 hour.\n" +
-            "**31–40 HP:** The target has the Blinded and Deafened conditions for 10 minutes.\n" +
-            "**41–50 HP:** The target has the Deafened condition for 1 minute.",
+            "Divine Word Effects\n" +
+            "0–20 HP: The target dies.\n" +
+            "21–30 HP: The target has the Blinded, Deafened, and Stunned conditions for 1 hour.\n" +
+            "31–40 HP: The target has the Blinded and Deafened conditions for 10 minutes.\n" +
+            "41–50 HP: The target has the Deafened condition for 1 minute.",
         scalingMd: "",
         imagePath: spellImgUrl("divineword")
     },
@@ -512,7 +512,7 @@ export const LEVEL7 = [
             "When the spell ends, you return to the plane you left in the spot that corresponds to your space in the Border Ethereal. If you appear in an occupied space, you are shunted to the nearest unoccupied space and take Force damage equal to twice the number of feet you are moved.\n\n" +
             "This spell ends instantly if you cast it while you are on the Ethereal Plane or a plane that doesn’t border it, such as one of the Outer Planes.",
         scalingMd:
-            "**Using a Higher-Level Spell Slot.** Target up to **3 willing creatures** (incl. you) **per slot level above 7**; they must be within 10 ft.",
+            "**Using a Higher-Level Spell Slot.** Target up to 3 willing creatures (incl. you) per slot level above 7; they must be within 10 ft.",
         imagePath: spellImgUrl("etherealness")
     },
     {
@@ -557,7 +557,7 @@ export const LEVEL7 = [
         concentration: false,
         ritual: false,
         descriptionMd:
-            "Create up to **ten contiguous 10-ft cubes** of raging fire within range. Creatures in the area make **DEX saves**, taking **7d10 Fire** (half on success). Unattended flammables ignite.",
+            "Create up to ten contiguous 10-ft cubes of raging fire within range. Creatures in the area make DEX saves, taking 7d10 Fire (half on success). Unattended flammables ignite.",
         scalingMd: "",
         imagePath: spellImgUrl("firestorm")
     },
@@ -656,7 +656,7 @@ export const LEVEL7 = [
         concentration: true,
         ritual: false,
         descriptionMd:
-            "Conjure a hovering **spectral sword**. When it appears, make a **melee spell attack** vs. a creature within **5 ft**: on hit, **4d12 + your spellcasting mod Force**. On later turns, **Bonus Action** to move it **30 ft** and repeat the attack.",
+            "Conjure a hovering spectral sword. When it appears, make a melee spell attack vs. a creature within 5 ft: on hit, 4d12 + your spellcasting mod Force. On later turns, Bonus Action to move it 30 ft and repeat the attack.",
         scalingMd: "",
         imagePath: spellImgUrl("mordenkainenssword")
     },
@@ -702,7 +702,7 @@ export const LEVEL7 = [
         concentration: false,
         ritual: false,
         descriptionMd:
-            "Bestow **120 Temporary Hit Points**, divided as you choose among **up to six** creatures you can see within range.",
+            "Bestow 120 Temporary Hit Points, divided as you choose among up to six creatures you can see within range.",
         scalingMd: "",
         imagePath: spellImgUrl("powerwordfortify")
     },
@@ -725,15 +725,15 @@ export const LEVEL7 = [
         concentration: false,
         ritual: false,
         descriptionMd: "Eight rays of light flash from you in a 60-foot cone. Each creature in the cone makes a Dexterity saving throw. For each target, roll 1d8 to determine which color ray affects it, consulting the Prismatic Rays table.\n\n" +
-            "**Prismatic Rays**\n" +
-            "**1. Red.** Failed Save: 12d6 Fire damage. Successful Save: Half as much damage.\n" +
-            "**2. Orange.** Failed Save: 12d6 Acid damage. Successful Save: Half as much damage.\n" +
-            "**3. Yellow.** Failed Save: 12d6 Lightning damage. Successful Save: Half as much damage.\n" +
-            "**4. Green.** Failed Save: 12d6 Poison damage. Successful Save: Half as much damage.\n" +
-            "**5. Blue.** Failed Save: 12d6 Cold damage. Successful Save: Half as much damage.\n" +
-            "**6. Indigo.** Failed Save: The target has the Restrained condition and makes a Constitution saving throw at the end of each of its turns. If it successfully saves three times, the condition ends. If it fails three times, it has the Petrified condition until it is freed by an effect like the Greater Restoration spell. The successes and failures needn’t be consecutive; keep track of both until the target collects three of a kind.\n" +
-            "**7. Violet.** Failed Save: The target has the Blinded condition and makes a Wisdom saving throw at the start of your next turn. On a successful save, the condition ends. On a failed save, the condition ends, and the creature teleports to another plane of existence (DM’s choice).\n" +
-            "**8. Special.** The target is struck by two rays. Roll twice, rerolling any 8.",
+            "Prismatic Rays\n" +
+            "1. Red. Failed Save: 12d6 Fire damage. Successful Save: Half as much damage.\n" +
+            "2. Orange. Failed Save: 12d6 Acid damage. Successful Save: Half as much damage.\n" +
+            "3. Yellow. Failed Save: 12d6 Lightning damage. Successful Save: Half as much damage.\n" +
+            "4. Green. Failed Save: 12d6 Poison damage. Successful Save: Half as much damage.\n" +
+            "5. Blue. Failed Save: 12d6 Cold damage. Successful Save: Half as much damage.\n" +
+            "6. Indigo. Failed Save: The target has the Restrained condition and makes a Constitution saving throw at the end of each of its turns. If it successfully saves three times, the condition ends. If it fails three times, it has the Petrified condition until it is freed by an effect like the Greater Restoration spell. The successes and failures needn’t be consecutive; keep track of both until the target collects three of a kind.\n" +
+            "7. Violet. Failed Save: The target has the Blinded condition and makes a Wisdom saving throw at the start of your next turn. On a successful save, the condition ends. On a failed save, the condition ends, and the creature teleports to another plane of existence (DM’s choice).\n" +
+            "8. Special. The target is struck by two rays. Roll twice, rerolling any 8.",
         scalingMd: "",
         imagePath: spellImgUrl("prismaticspray")
     },
@@ -756,7 +756,7 @@ export const LEVEL7 = [
         concentration: true,
         ritual: false,
         descriptionMd:
-            "Create an **intangible duplicate** of yourself at any **location within 500 miles** that you’ve seen. You can **see/hear through it**, **move it 60 ft** (Magic action), and make it **gesture and speak**. If it takes any damage, the illusion ends. Physical interaction or **Study (Investigation vs. save DC)** reveals the illusion; discerners see through it and hear **hollow** sound.",
+            "Create an intangible duplicate of yourself at any location within 500 miles that you’ve seen. You can see/hear through it, move it 60 ft (Magic action), and make it gesture and speak. If it takes any damage, the illusion ends. Physical interaction or Study (Investigation vs. save DC) reveals the illusion; discerners see through it and hear hollow sound.",
         scalingMd: "",
         imagePath: spellImgUrl("projectimage")
     },
@@ -779,7 +779,7 @@ export const LEVEL7 = [
         concentration: false,
         ritual: false,
         descriptionMd:
-            "Target regains **4d8 + 15 HP** and then **regains 1 HP at the start of each of its turns** for the duration. **Severed body parts** **regrow** after **2 minutes**.",
+            "Target regains 4d8 + 15 HP and then regains 1 HP at the start of each of its turns for the duration. Severed body parts regrow after 2 minutes.",
         scalingMd: "",
         imagePath: spellImgUrl("regenerate")
     },
@@ -827,7 +827,7 @@ export const LEVEL7 = [
         concentration: true,
         ritual: false,
         descriptionMd:
-            "Reverse gravity in a **50-ft-radius, 100-ft-high cylinder**. Creatures/objects not anchored **fall upward** to the top. A creature can **DEX save** to grab a fixed object. Colliding with a ceiling/anchored object deals normal fall impacts. If nothing is struck, targets **hover at the top** until the spell ends, then **fall**.",
+            "Reverse gravity in a 50-ft-radius, 100-ft-high cylinder. Creatures/objects not anchored fall upward to the top. A creature can DEX save to grab a fixed object. Colliding with a ceiling/anchored object deals normal fall impacts. If nothing is struck, targets hover at the top until the spell ends, then fall.",
         scalingMd: "",
         imagePath: spellImgUrl("reversegravity")
     },
@@ -901,15 +901,15 @@ export const LEVEL7 = [
         descriptionMd: "You inscribe a harmful glyph either on a surface (such as a section of floor or wall) or within an object that can be closed (such as a book or chest). The glyph can cover an area no larger than 10 feet in diameter. If you choose an object, it must remain in place; if it is moved more than 10 feet from where you cast this spell, the glyph is broken, and the spell ends without being triggered.\n\n" +
             "The glyph is nearly imperceptible and requires a successful Wisdom (Perception) check against your spell save DC to notice.\n\n" +
             "When you inscribe the glyph, you set its trigger and choose which effect the symbol bears: Death, Discord, Fear, Pain, Sleep, or Stunning. Each one is explained below.\n\n" +
-            "**Set the Trigger.** You decide what triggers the glyph when you cast the spell. For glyphs inscribed on a surface, common triggers include touching or stepping on the glyph, removing another object covering it, or approaching within a certain distance of it. For glyphs inscribed within an object, common triggers include opening that object or seeing the glyph.\n\n" +
+            "Set the Trigger. You decide what triggers the glyph when you cast the spell. For glyphs inscribed on a surface, common triggers include touching or stepping on the glyph, removing another object covering it, or approaching within a certain distance of it. For glyphs inscribed within an object, common triggers include opening that object or seeing the glyph.\n\n" +
             "You can refine the trigger so that only creatures of certain types activate it (for example, the glyph could be set to affect Aberrations). You can also set conditions for creatures that don’t trigger the glyph, such as those who say a certain password.\n\n" +
             "Once triggered, the glyph glows, filling a 60-foot-radius Sphere with Dim Light for 10 minutes, after which time the spell ends. Each creature in the Sphere when the glyph activates is targeted by its effect, as is a creature that enters the Sphere for the first time on a turn or ends its turn there. A creature is targeted only once per turn.\n\n" +
-            "**Death.** Each target makes a Constitution saving throw, taking 10d10 Necrotic damage on a failed save or half as much damage on a successful save.\n\n" +
-            "**Discord.** Each target makes a Wisdom saving throw. On a failed save, a target argues with other creatures for 1 minute. During this time, it is incapable of meaningful communication and has Disadvantage on attack rolls and ability checks.\n\n" +
-            "**Fear.** Each target must succeed on a Wisdom saving throw or have the Frightened condition for 1 minute. While Frightened, the target must move at least 30 feet away from the glyph on each of its turns, if able.\n\n" +
-            "**Pain.** Each target must succeed on a Constitution saving throw or have the Incapacitated condition for 1 minute.\n\n" +
-            "**Sleep.** Each target must succeed on a Wisdom saving throw or have the Unconscious condition for 10 minutes. A creature awakens if it takes damage or if someone takes an action to shake it awake.\n\n" +
-            "**Stunning.** Each target must succeed on a Wisdom saving throw or have the Stunned condition for 1 minute.",
+            "Death. Each target makes a Constitution saving throw, taking 10d10 Necrotic damage on a failed save or half as much damage on a successful save.\n\n" +
+            "Discord. Each target makes a Wisdom saving throw. On a failed save, a target argues with other creatures for 1 minute. During this time, it is incapable of meaningful communication and has Disadvantage on attack rolls and ability checks.\n\n" +
+            "Fear. Each target must succeed on a Wisdom saving throw or have the Frightened condition for 1 minute. While Frightened, the target must move at least 30 feet away from the glyph on each of its turns, if able.\n\n" +
+            "Pain. Each target must succeed on a Constitution saving throw or have the Incapacitated condition for 1 minute.\n\n" +
+            "Sleep. Each target must succeed on a Wisdom saving throw or have the Unconscious condition for 10 minutes. A creature awakens if it takes damage or if someone takes an action to shake it awake.\n\n" +
+            "Stunning. Each target must succeed on a Wisdom saving throw or have the Stunned condition for 1 minute.",
         scalingMd: "",
         imagePath: spellImgUrl("symbol")
     },
@@ -933,17 +933,17 @@ export const LEVEL7 = [
         ritual: false,
         descriptionMd: "This spell instantly transports you and up to eight willing creatures that you can see within range, or a single object that you can see within range, to a destination you select. If you target an object, it must be Large or smaller, and it can’t be held or carried by an unwilling creature.\n\n" +
             "The destination you choose must be known to you, and it must be on the same plane of existence as you. Your familiarity with the destination determines whether you arrive there successfully. The DM rolls 1d100 and consults the Teleportation Outcome table and the explanations after it.\n\n" +
-            "**Familiarity.** Here are the meanings of the terms in the table’s Familiarity column:\n\n" +
+            "Familiarity. Here are the meanings of the terms in the table’s Familiarity column:\n\n" +
             "“Permanent circle” means a permanent teleportation circle whose sigil sequence you know.\n" +
             "“Linked object” means you possess an object taken from the desired destination within the last six months, such as a book from a wizard’s library.\n" +
             "“Very familiar” is a place you have visited often, a place you have carefully studied, or a place you can see when you cast the spell.\n" +
             "“Seen casually” is a place you have seen more than once but with which you aren’t very familiar.\n" +
             "“Viewed once or described” is a place you have seen once, possibly using magic, or a place you know through someone else’s description, perhaps from a map.\n" +
             "“False destination” is a place that doesn’t exist. Perhaps you tried to scry an enemy’s sanctum but instead viewed an illusion, or you are attempting to teleport to a location that no longer exists.\n\n" +
-            "**Mishap.** The spell’s unpredictable magic results in a difficult journey. Each teleporting creature (or the target object) takes 3d10 Force damage, and the DM rerolls on the table to see where you wind up (multiple mishaps can occur, dealing damage each time).\n\n" +
-            "**Similar Area.** You and your group (or the target object) appear in a different area that’s visually or thematically similar to the target area. You appear in the closest similar place. If you are heading for your home laboratory, for example, you might appear in another person’s laboratory in the same city.\n\n" +
-            "**Off Target.** You and your group (or the target object) appear 2d12 miles away from the destination in a random direction. Roll 1d8 for the direction: 1, east; 2, southeast; 3, south; 4, southwest; 5, west; 6, northwest; 7, north; or 8, northeast.\n\n" +
-            "**On Target.** You and your group (or the target object) appear where you intended.",
+            "Mishap. The spell’s unpredictable magic results in a difficult journey. Each teleporting creature (or the target object) takes 3d10 Force damage, and the DM rerolls on the table to see where you wind up (multiple mishaps can occur, dealing damage each time).\n\n" +
+            "Similar Area. You and your group (or the target object) appear in a different area that’s visually or thematically similar to the target area. You appear in the closest similar place. If you are heading for your home laboratory, for example, you might appear in another person’s laboratory in the same city.\n\n" +
+            "Off Target. You and your group (or the target object) appear 2d12 miles away from the destination in a random direction. Roll 1d8 for the direction: 1, east; 2, southeast; 3, south; 4, southwest; 5, west; 6, northwest; 7, north; or 8, northeast.\n\n" +
+            "On Target. You and your group (or the target object) appear where you intended.",
         tableHtml: `
   <div class="rules-table">
     <table>
@@ -1029,7 +1029,7 @@ export const LEVEL7 = [
     "- The target’s walking Speed is doubled.\n" +
     "- When the target hits with an attack, it deals an extra 2d10 Force damage.\n" +
     "- At the start of each of the target’s turns, it gains 2d12 temporary Hit Points (these replace any temporary Hit Points it already has).\n\n" +
-    "**Final Dissolution.** When this spell ends the target is destroyed as its body and animating essence disintegrate. A creature destroyed this way can’t be returned to undeath again or to life by [spells]revivify[/spells], [spells]raise dead[/spells], [spells]resurrection[/spells], or [spells]true resurrection[/spells]; only [spells]wish[/spells] or equally potent divine aid can restore it.",
+    "Final Dissolution. When this spell ends the target is destroyed as its body and animating essence disintegrate. A creature destroyed this way can’t be returned to undeath again or to life by revivify, raise dead, resurrection, or true resurrection; only wish or equally potent divine aid can restore it.",
   scalingMd: "",
   imagePath: spellImgUrl("ruinousapotheosis"),
 },

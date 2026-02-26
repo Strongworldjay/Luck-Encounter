@@ -121,11 +121,11 @@ export const CANTRIPS = [
     ritual: false,
     descriptionMd:
       "Whispering to the spirits of nature, you create one of the following effects within range.\n\n" +
-      "**Weather Sensor.** You create a Tiny, harmless sensory effect that predicts what the weather will be at your location for the next 24 hours. " +
+      "Weather Sensor. You create a Tiny, harmless sensory effect that predicts what the weather will be at your location for the next 24 hours. " +
       "The effect might manifest as a golden orb for clear skies, a cloud for rain, falling snowflakes for snow, and so on. This effect persists for 1 round.\n\n" +
-      "**Bloom.** You instantly make a flower blossom, a seed pod open, or a leaf bud bloom.\n\n" +
-      "**Sensory Effect.** You create a harmless sensory effect, such as falling leaves, spectral dancing fairies, a gentle breeze, the sound of an animal, or the faint odor of skunk. The effect must fit in a 5-foot Cube.\n\n" +
-      "**Fire Play.** You light or snuff out a candle, a torch, or a campfire.",
+      "Bloom. You instantly make a flower blossom, a seed pod open, or a leaf bud bloom.\n\n" +
+      "Sensory Effect. You create a harmless sensory effect, such as falling leaves, spectral dancing fairies, a gentle breeze, the sound of an animal, or the faint odor of skunk. The effect must fit in a 5-foot Cube.\n\n" +
+      "Fire Play. You light or snuff out a candle, a torch, or a campfire.",
     scalingMd: "",
     imagePath: spellImgUrl("druidcraft")
   },
@@ -175,15 +175,15 @@ export const CANTRIPS = [
     ritual: false,
     descriptionMd:
       "You exert control over the elements, creating one of the following effects within range.\n\n" +
-      "**Beckon Air.** You create a breeze strong enough to ripple cloth, stir dust, rustle leaves, and close open doors and shutters, all in a 5-foot Cube. " +
+      "Beckon Air. You create a breeze strong enough to ripple cloth, stir dust, rustle leaves, and close open doors and shutters, all in a 5-foot Cube. " +
       "Doors and shutters being held open by someone or something aren’t affected.\n\n" +
-      "**Beckon Earth.** You create a thin shroud of dust or sand that covers surfaces in a 5-foot-square area, " +
+      "Beckon Earth. You create a thin shroud of dust or sand that covers surfaces in a 5-foot-square area, " +
       "or you cause a single word to appear in your handwriting in a patch of dirt or sand.\n\n" +
-      "**Beckon Fire.** You create a thin cloud of harmless embers and colored, scented smoke in a 5-foot Cube. " +
+      "Beckon Fire. You create a thin cloud of harmless embers and colored, scented smoke in a 5-foot Cube. " +
       "You choose the color and scent, and the embers can light candles, torches, or lamps in that area. The smoke’s scent lingers for 1 minute.\n\n" +
-      "**Beckon Water.** You create a spray of cool mist that lightly dampens creatures and objects in a 5-foot Cube. " +
+      "Beckon Water. You create a spray of cool mist that lightly dampens creatures and objects in a 5-foot Cube. " +
       "Alternatively, you create 1 cup of clean water either in an open container or on a surface, and the water evaporates in 1 minute.\n\n" +
-      "**Sculpt Element.** You cause dirt, sand, fire, smoke, mist, or water that can fit in a 1-foot Cube to assume a crude shape (such as that of a creature) for 1 hour.",
+      "Sculpt Element. You cause dirt, sand, fire, smoke, mist, or water that can fit in a 1-foot Cube to assume a crude shape (such as that of a creature) for 1 hour.",
     scalingMd: "",
     imagePath: spellImgUrl("elementalism")
   },
@@ -401,8 +401,8 @@ export const CANTRIPS = [
     descriptionMd:
       "You create a sound or an image of an object within range that lasts for the duration. See the descriptions below for the effects of each. The illusion ends if you cast this spell again.\n\n" +
       "If a creature takes a Study action to examine the sound or image, the creature can determine that it is an illusion with a successful Intelligence (Investigation) check against your spell save DC. If a creature discerns the illusion for what it is, the illusion becomes faint to the creature.\n\n" +
-      "**Sound.** If you create a sound, its volume can range from a whisper to a scream. It can be your voice, someone else’s voice, a lion’s roar, a beating of drums, or any other sound you choose. The sound continues unabated throughout the duration, or you can make discrete sounds at different times before the spell ends.\n\n" +
-      "**Image.** If you create an image of an object—such as a chair, muddy footprints, or a small chest—it must be no larger than a 5-foot Cube. The image can’t create sound, light, smell, or any other sensory effect. Physical interaction with the image reveals it to be an illusion, since things can pass through it.",
+      "Sound. If you create a sound, its volume can range from a whisper to a scream. It can be your voice, someone else’s voice, a lion’s roar, a beating of drums, or any other sound you choose. The sound continues unabated throughout the duration, or you can make discrete sounds at different times before the spell ends.\n\n" +
+      "Image. If you create an image of an object—such as a chair, muddy footprints, or a small chest—it must be no larger than a 5-foot Cube. The image can’t create sound, light, smell, or any other sensory effect. Physical interaction with the image reveals it to be an illusion, since things can pass through it.",
     scalingMd: "",
     imagePath: spellImgUrl("minorillusion")
   },
@@ -449,12 +449,12 @@ export const CANTRIPS = [
     ritual: false,
     descriptionMd:
       "You create a magical effect within range. Choose the effect from the options below. If you cast this spell multiple times, you can have up to three of its non-instantaneous effects active at a time.\n\n" +
-      "**Sensory Effect.** You create an instantaneous, harmless sensory effect, such as a shower of sparks, a puff of wind, faint musical notes, or an odd odor.\n\n" +
-      "**Fire Play.** You instantaneously light or snuff out a candle, a torch, or a small campfire.\n\n" +
-      "**Clean or Soil.** You instantaneously clean or soil an object no larger than 1 cubic foot.\n\n" +
-      "**Minor Sensation.** You chill, warm, or flavor up to 1 cubic foot of nonliving material for 1 hour.\n\n" +
-      "**Magic Mark.** You make a color, a small mark, or a symbol appear on an object or a surface for 1 hour.\n\n" +
-      "**Minor Creation.** You create a nonmagical trinket or an illusory image that can fit in your hand. It lasts until the end of your next turn. A trinket can deal no damage and has no monetary worth.",
+      "Sensory Effect. You create an instantaneous, harmless sensory effect, such as a shower of sparks, a puff of wind, faint musical notes, or an odd odor.\n\n" +
+      "Fire Play. You instantaneously light or snuff out a candle, a torch, or a small campfire.\n\n" +
+      "Clean or Soil. You instantaneously clean or soil an object no larger than 1 cubic foot.\n\n" +
+      "Minor Sensation. You chill, warm, or flavor up to 1 cubic foot of nonliving material for 1 hour.\n\n" +
+      "Magic Mark. You make a color, a small mark, or a symbol appear on an object or a surface for 1 hour.\n\n" +
+      "Minor Creation. You create a nonmagical trinket or an illusory image that can fit in your hand. It lasts until the end of your next turn. A trinket can deal no damage and has no monetary worth.",
     scalingMd: "",
     imagePath: spellImgUrl("prestidigitation")
   },
@@ -688,12 +688,12 @@ export const CANTRIPS = [
     ritual: false,
     descriptionMd:
       "You manifest a minor wonder within range. You create one of the effects below within range. If you cast this spell multiple times, you can have up to three of its 1-minute effects active at a time.\n\n" +
-      "**Altered Eyes.** You alter the appearance of your eyes for 1 minute.\n\n" +
-      "**Booming Voice.** Your voice booms up to three times as loud as normal for 1 minute. For the duration, you have Advantage on Charisma (Intimidation) checks.\n\n" +
-      "**Fire Play.** You cause flames to flicker, brighten, dim, or change color for 1 minute.\n\n" +
-      "**Invisible Hand.** You instantaneously cause an unlocked door or window to fly open or slam shut.\n\n" +
-      "**Phantom Sound.** You create an instantaneous sound that originates from a point of your choice within range, such as a rumble of thunder, the cry of a raven, or ominous whispers.\n\n" +
-      "**Tremors.** You cause harmless tremors in the ground for 1 minute.",
+      "Altered Eyes. You alter the appearance of your eyes for 1 minute.\n\n" +
+      "Booming Voice. Your voice booms up to three times as loud as normal for 1 minute. For the duration, you have Advantage on Charisma (Intimidation) checks.\n\n" +
+      "Fire Play. You cause flames to flicker, brighten, dim, or change color for 1 minute.\n\n" +
+      "Invisible Hand. You instantaneously cause an unlocked door or window to fly open or slam shut.\n\n" +
+      "Phantom Sound. You create an instantaneous sound that originates from a point of your choice within range, such as a rumble of thunder, the cry of a raven, or ominous whispers.\n\n" +
+      "Tremors. You cause harmless tremors in the ground for 1 minute.",
     scalingMd: "",
     imagePath: spellImgUrl("thaumaturgy")
   },
@@ -946,7 +946,7 @@ export const CANTRIPS = [
     components: { verbal: true, somatic: true, material: true, materialText: "a smear of camphor" },
     concentration: false,
     ritual: false,
-    descriptionMd: "Trigger: a creature you can see within range targets you with an attack. The target makes a Constitution save (a creature with Blindsight or immunity to Blinded automatically succeeds). On a failure, it is **Blinded** until the end of the turn. On a success, subtract **1d4** from the triggering attack roll. The target automatically succeeds on saves against your subsequent castings of this spell for 24 hours.",
+    descriptionMd: "Trigger: a creature you can see within range targets you with an attack. The target makes a Constitution save (a creature with Blindsight or immunity to Blinded automatically succeeds). On a failure, it is Blinded until the end of the turn. On a success, subtract 1d4 from the triggering attack roll. The target automatically succeeds on saves against your subsequent castings of this spell for 24 hours.",
     scalingMd: "",
     imagePath: spellImgUrl("eyeburn")
   },
@@ -968,7 +968,7 @@ export const CANTRIPS = [
     components: { verbal: true, somatic: true, material: false, materialText: "" },
     concentration: false,
     ritual: false,
-    descriptionMd: "Your fists erupt in flame and become simple natural weapons for the duration. They deal **1d6 Fire** damage on a hit (replacing normal unarmed damage). You’re proficient with them and they have the Light property. Flammable objects you hold ignite. If you end your turn Grappling a creature with your hands, it takes **1d4 Fire** damage. You can end the spell early (no action).",
+    descriptionMd: "Your fists erupt in flame and become simple natural weapons for the duration. They deal 1d6 Fire damage on a hit (replacing normal unarmed damage). You’re proficient with them and they have the Light property. Flammable objects you hold ignite. If you end your turn Grappling a creature with your hands, it takes 1d4 Fire damage. You can end the spell early (no action).",
     scalingMd: "",
     imagePath: spellImgUrl("fistsoffire")
   },
@@ -1012,7 +1012,7 @@ export const CANTRIPS = [
     components: { verbal: true, somatic: true, material: false, materialText: "" },
     concentration: false,
     ritual: false,
-    descriptionMd: "You hurl a mote of arcane energy at a creature or object within range. Make a ranged spell attack; on a hit, the target takes **2d4 Force** damage.",
+    descriptionMd: "You hurl a mote of arcane energy at a creature or object within range. Make a ranged spell attack; on a hit, the target takes 2d4 Force damage.",
     scalingMd: "**Cantrip Upgrade.** The damage increases by 2d4 at levels 5 (4d4), 11 (6d4), and 17 (8d4).",
     imagePath: spellImgUrl("forcebolt")
   },
@@ -1034,7 +1034,7 @@ export const CANTRIPS = [
     components: { verbal: true, somatic: true, material: false, materialText: "" },
     concentration: false,
     ritual: false,
-    descriptionMd: "Make a melee spell attack against a creature. On a hit, it takes **1d8 Cold** damage and its speed is reduced by **10 feet** until the end of its turn.",
+    descriptionMd: "Make a melee spell attack against a creature. On a hit, it takes 1d8 Cold damage and its speed is reduced by 10 feet until the end of its turn.",
     scalingMd: "**Cantrip Upgrade.** Damage increases by 1d8 at levels 5 (2d8), 11 (3d8), and 17 (4d8).",
     imagePath: spellImgUrl("freeze")
   },
@@ -1056,7 +1056,7 @@ export const CANTRIPS = [
     components: { verbal: true, somatic: true, material: false, materialText: "" },
     concentration: false,
     ritual: false,
-    descriptionMd: "Numbing frost coats a creature you can see. It must make a Constitution save. On a failure, it takes **1d6 Cold** damage and has **Disadvantage** on the next weapon attack it makes before the end of its next turn.",
+    descriptionMd: "Numbing frost coats a creature you can see. It must make a Constitution save. On a failure, it takes 1d6 Cold damage and has Disadvantage on the next weapon attack it makes before the end of its next turn.",
     scalingMd: "**Cantrip Upgrade.** Damage increases by 1d6 at levels 5 (2d6), 11 (3d6), and 17 (4d6).",
     imagePath: spellImgUrl("frostbite")
   },
@@ -1078,7 +1078,7 @@ export const CANTRIPS = [
     components: { verbal: true, somatic: true, material: false, materialText: "" },
     concentration: false,
     ritual: false,
-    descriptionMd: "Make a melee spell attack against a creature within range. On a hit, it takes **1d4 Bludgeoning** damage, is pushed **10 feet** in a straight line, and its speed is reduced by **5 feet** until the start of your next turn.",
+    descriptionMd: "Make a melee spell attack against a creature within range. On a hit, it takes 1d4 Bludgeoning damage, is pushed 10 feet in a straight line, and its speed is reduced by 5 feet until the start of your next turn.",
     scalingMd: "**Cantrip Upgrade.** Damage increases by 1d4 at levels 5 (2d4), 11 (3d4), and 17 (4d4).",
     imagePath: spellImgUrl("gravitywhip")
   },
@@ -1100,7 +1100,7 @@ export const CANTRIPS = [
     components: { verbal: true, somatic: true, material: false, materialText: "" },
     concentration: false,
     ritual: false,
-    descriptionMd: "Smoldering hellfire erupts around a creature you can see. The target makes a Charisma save or takes **1d4 Fire** damage **plus 1d4 Necrotic** damage.",
+    descriptionMd: "Smoldering hellfire erupts around a creature you can see. The target makes a Charisma save or takes 1d4 Fire damage plus 1d4 Necrotic damage.",
     scalingMd: "**Cantrip Upgrade.** Both damage dice increase by 1d4 at levels 5 (2d4 each), 11 (3d4 each), and 17 (4d4 each).",
     imagePath: spellImgUrl("hellflames")
   },
@@ -1313,7 +1313,7 @@ export const CANTRIPS = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "You grasp up to five small stones, imbuing them with magic. You or an ally can make a ranged spell attack by throwing a stone (range 60 feet) or hurling it with a sling. If an ally throws or uses it as ammunition, they use your spell attack bonus. On a hit, the target takes **1d6 + your spellcasting ability modifier** Magical Bludgeoning damage. Hit or miss, the magic ends on that stone. Casting this spell again ends it on any remaining stones.",
+      "You grasp up to five small stones, imbuing them with magic. You or an ally can make a ranged spell attack by throwing a stone (range 60 feet) or hurling it with a sling. If an ally throws or uses it as ammunition, they use your spell attack bonus. On a hit, the target takes 1d6 + your spellcasting ability modifier Magical Bludgeoning damage. Hit or miss, the magic ends on that stone. Casting this spell again ends it on any remaining stones.",
     scalingMd:
       "**Cantrip Upgrade.** Damage becomes 1d8 at 5th level, 1d10 at 11th, and 1d12 at 17th.",
     imagePath: spellImgUrl("magicstone")
@@ -1337,7 +1337,7 @@ export const CANTRIPS = [
     concentration: true,
     ritual: false,
     descriptionMd:
-      "You shroud a willing creature’s presence. Until the spell ends, other creatures subtract **1d4** from Wisdom (**Insight** and **Perception**) checks made against the target.",
+      "You shroud a willing creature’s presence. Until the spell ends, other creatures subtract 1d4 from Wisdom (Insight and Perception) checks made against the target.",
     scalingMd: "",
     imagePath: spellImgUrl("mysteriouspresence"),
   },
@@ -1365,7 +1365,7 @@ export const CANTRIPS = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "Food and other perishable items weighing **5 pounds or less** that you place in a sack don’t age or decay for the duration.",
+      "Food and other perishable items weighing 5 pounds or less that you place in a sack don’t age or decay for the duration.",
     scalingMd: "",
     imagePath: spellImgUrl("preserve"),
   },
@@ -1388,9 +1388,9 @@ export const CANTRIPS = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "Your teeth or nails sharpen with primal magic. Make a melee spell attack against a creature within 5 feet. On a hit, the target takes **1d10 Acid** damage; after the attack, your features return to normal.",
+      "Your teeth or nails sharpen with primal magic. Make a melee spell attack against a creature within 5 feet. On a hit, the target takes 1d10 Acid damage; after the attack, your features return to normal.",
     scalingMd:
-      "**Cantrip Upgrade.** Damage becomes **2d10** at 5th level, **3d10** at 11th, and **4d10** at 17th.",
+      "**Cantrip Upgrade.** Damage becomes 2d10 at 5th level, 3d10 at 11th, and 4d10 at 17th.",
     imagePath: spellImgUrl("primalsavagery"),
   },
   {
@@ -1412,7 +1412,7 @@ export const CANTRIPS = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "**Trigger:** A creature provokes an **opportunity attack** from you. Roots lash out; that creature’s **Speed is reduced by 10 ft** until the start of your next turn.",
+      "Trigger: A creature provokes an opportunity attack from you. Roots lash out; that creature’s Speed is reduced by 10 ft until the start of your next turn.",
     scalingMd: "",
     imagePath: spellImgUrl("rootgrab"),
   },
@@ -1435,9 +1435,9 @@ export const CANTRIPS = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "Sap a visible creature’s vitality. The target makes a Constitution save or takes **1d4 Necrotic** and **falls prone**.",
+      "Sap a visible creature’s vitality. The target makes a Constitution save or takes 1d4 Necrotic and falls prone.",
     scalingMd:
-      "**Cantrip Upgrade.** Damage becomes **2d4** at 5th level, **3d4** at 11th, and **4d4** at 17th.",
+      "**Cantrip Upgrade.** Damage becomes 2d4 at 5th level, 3d4 at 11th, and 4d4 at 17th.",
     imagePath: spellImgUrl("sappingsting"),
   },
   {
@@ -1459,7 +1459,7 @@ export const CANTRIPS = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "Touch stone and shape it into a rough **Small or Tiny item** (including simple/martial melee weapons sized for Medium or smaller). After **1 hour** the item loses its magical sturdiness and becomes easy to break if not a viable mundane shape.",
+      "Touch stone and shape it into a rough Small or Tiny item (including simple/martial melee weapons sized for Medium or smaller). After 1 hour the item loses its magical sturdiness and becomes easy to break if not a viable mundane shape.",
     scalingMd: "",
     imagePath: spellImgUrl("stoneforming"),
   },
@@ -1484,7 +1484,7 @@ export const CANTRIPS = [
     descriptionMd:
       "Choose a target within range; a cloud of minuscule poisonous spiders floats on gossamer strands towards it. The target must succeed on a Constitution saving throw as the painless but lethal bites of the spiders seep venom into the creature, on a failure they become poisoned until the end of their next turn.",
     scalingMd:
-      "**Cantrip Upgrade.** This spell deals poison damage on a failed saving throw when you reach certain levels. At 5th level, **1d10** poison damage; at 11th, **2d10**; and at 17th, **3d10**.",
+      "**Cantrip Upgrade.** This spell deals poison damage on a failed saving throw when you reach certain levels. At 5th level, 1d10 poison damage; at 11th, 2d10; and at 17th, 3d10.",
     imagePath: spellImgUrl("swarm")
   },
   {
@@ -1506,9 +1506,9 @@ export const CANTRIPS = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "You create a momentary circle of spectral blades that sweep around you. All creatures within 5 feet must make a Dexterity saving throw or take **1d6 force** damage.",
+      "You create a momentary circle of spectral blades that sweep around you. All creatures within 5 feet must make a Dexterity saving throw or take 1d6 force damage.",
     scalingMd:
-      "**Cantrip Upgrade.** Damage increases by **1d6** at 5th (2d6), 11th (3d6), and 17th (4d6) levels.",
+      "**Cantrip Upgrade.** Damage increases by 1d6 at 5th (2d6), 11th (3d6), and 17th (4d6) levels.",
     imagePath: spellImgUrl("swordburst")
   },
   {
@@ -1530,9 +1530,9 @@ export const CANTRIPS = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "You emit a crashing bang targeting a creature within range. The target must succeed on a Constitution saving throw or take **1d8 thunder** damage and become **deafened** until the start of its next turn. Concentration checks triggered by this damage are made with disadvantage.",
+      "You emit a crashing bang targeting a creature within range. The target must succeed on a Constitution saving throw or take 1d8 thunder damage and become deafened until the start of its next turn. Concentration checks triggered by this damage are made with disadvantage.",
     scalingMd:
-      "**Cantrip Upgrade.** Damage increases by **1d8** at 5th (2d8), 11th (3d8), and 17th (4d8) levels.",
+      "**Cantrip Upgrade.** Damage increases by 1d8 at 5th (2d8), 11th (3d8), and 17th (4d8) levels.",
     imagePath: spellImgUrl("thundernote")
   },
   {
@@ -1556,7 +1556,7 @@ export const CANTRIPS = [
     descriptionMd:
       "You create an invisible aura around you in a 15ft sphere syncing your magical weave with the air. For the rest of the turn you cannot move. As long as you retain concentration, when a creature enters the radius for the first time on its turn (even with Flyby), you lash out, making a melee weapon attack with advantage and moving to the point it entered. On a hit the creature takes additional damage based on the spell; on a miss the creature takes no damage.",
     scalingMd:
-      "Cantrip Upgrade. At 5th level the extra damage becomes **2d8** and the radius becomes **20 ft**; at 11th level **3d8** and **25 ft**; at 17th level **4d8** and **30 ft**."
+      "**Cantrip Upgrade.** At 5th level the extra damage becomes 2d8 and the radius becomes 20 ft; at 11th level 3d8 and 25 ft; at 17th level 4d8 and 30 ft."
   },
   {
     slug: slugify("Windborne Weapon"),
@@ -1577,9 +1577,9 @@ export const CANTRIPS = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "Make an attack using this spell's material component as part of the action used to cast this spell, turning it into a ranged spell attack. This attack ignores cover. On a hit, it deals **1d8** damage of the weapon's damage type.",
+      "Make an attack using this spell's material component as part of the action used to cast this spell, turning it into a ranged spell attack. This attack ignores cover. On a hit, it deals 1d8 damage of the weapon's damage type.",
     scalingMd:
-      "Cantrip Upgrade. Damage increases by **1d8** at 5th (**2d8**), 11th (**3d8**), and 17th (**4d8**)."
+      "**Cantrip Upgrade.** Damage increases by 1d8 at 5th (2d8), 11th (3d8), and 17th (4d8)."
   },
   {
     slug: slugify("Illusory Instrument"),
@@ -1600,7 +1600,7 @@ export const CANTRIPS = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "You create an illusionary copy of a mundane musical instrument. The copy of the instrument takes on the shape of your fondest memory of the instrument, such as the first flute you owned or the half harp gifted to you by a loved one. This illusion moves as its physical counterpart would, but it is weightless and is tangible only to you. This instrument can be used as a Spellcasting Focus. This illusory instrument dissipates if you move 10 feet away from it or choose to end the spell (no action required by you).\n\n**Bonus Action:** You can command your instrument to create one of the following effects:\n- Mimic basic sounds heard on a daily basis, such as a bird chirping, footsteps, or a slamming door.\n- Automatically play a basic beat at the tempo of your choice.\n- Record anything played on it, and play it back on a loop.\n- Record and playback any noise that it could pick up within 15 feet, such as conversation, a royal decree, or a snoring party member who swears that they don’t snore.",
+      "You create an illusionary copy of a mundane musical instrument. The copy of the instrument takes on the shape of your fondest memory of the instrument, such as the first flute you owned or the half harp gifted to you by a loved one. This illusion moves as its physical counterpart would, but it is weightless and is tangible only to you. This instrument can be used as a Spellcasting Focus. This illusory instrument dissipates if you move 10 feet away from it or choose to end the spell (no action required by you).\n\nBonus Action: You can command your instrument to create one of the following effects:\n- Mimic basic sounds heard on a daily basis, such as a bird chirping, footsteps, or a slamming door.\n- Automatically play a basic beat at the tempo of your choice.\n- Record anything played on it, and play it back on a loop.\n- Record and playback any noise that it could pick up within 15 feet, such as conversation, a royal decree, or a snoring party member who swears that they don’t snore.",
     scalingMd: "",
     imagePath: spellImgUrl("illusoryinstrument")
   },

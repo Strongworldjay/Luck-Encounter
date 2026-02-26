@@ -175,21 +175,25 @@
   padding: 16px;
 }
 
+/* ======================================================
+   DAY MODE (default): cream panel + black text
+   ====================================================== */
 .bountyboard-modal {
   width: min(1100px, 96vw);
   max-height: min(88vh, 1000px);
-  background: rgba(18,18,20,0.82);
+  background: #fdfbf7;                 /* CHANGED */
+  color: #111;                          /* CHANGED */
   backdrop-filter: blur(8px) saturate(105%);
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(0,0,0,0.10);  /* CHANGED */
   border-radius: 18px;
   overflow: hidden;
   display: grid;
   grid-template-columns: 1.1fr 1.4fr;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.22); /* CHANGED */
 }
 
 .modal-left {
-  background: rgba(0,0,0,0.35);
+  background: rgba(0,0,0,0.05);        /* CHANGED */
   display: grid;
   place-items: center;
   padding: 16px;
@@ -199,7 +203,7 @@
   height: auto;
   max-height: 80vh;
   object-fit: contain;
-  filter: drop-shadow(0 12px 22px rgba(0,0,0,0.6));
+  filter: drop-shadow(0 12px 22px rgba(0,0,0,0.25)); /* CHANGED */
   border-radius: 10px;
 }
 
@@ -208,8 +212,9 @@
   grid-template-rows: auto auto auto 1fr auto;
   padding: 20px 22px;
   gap: 10px;
-  color: #f3f4f6;
+  color: #111;                          /* CHANGED */
 }
+
 .modal-header {
   display: flex;
   align-items: center;
@@ -221,18 +226,20 @@
   font-size: clamp(18px, 2.2vw, 28px);
   line-height: 1.2;
   font-weight: 700;
+  color: #111;                          /* CHANGED */
 }
+
 .modal-close {
   background: transparent;
   border: none;
-  color: #e5e7eb;
+  color: #111;                          /* CHANGED */
   font-size: 28px;
   line-height: 1;
   cursor: pointer;
   padding: 4px 8px;
   border-radius: 8px;
 }
-.modal-close:hover { background: rgba(255,255,255,0.08); }
+.modal-close:hover { background: rgba(0,0,0,0.06); } /* CHANGED */
 
 .modal-meta { display: flex; gap: 8px; flex-wrap: wrap; }
 .pill {
@@ -241,12 +248,19 @@
   letter-spacing: 0.3px;
   padding: 6px 10px;
   border-radius: 999px;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(0,0,0,0.06);         /* CHANGED */
+  border: 1px solid rgba(0,0,0,0.10);   /* CHANGED */
+  color: #111;                          /* CHANGED */
 }
 
-.modal-blurb { margin: 0; color: #d1d5db; font-size: 14px; }
-.modal-details { overflow: auto; padding-right: 4px; color: #e5e7eb; line-height: 1.5; font-size: 14px; }
+.modal-blurb { margin: 0; color: rgba(0,0,0,0.75); font-size: 14px; } /* CHANGED */
+.modal-details {
+  overflow: auto;
+  padding-right: 4px;
+  color: rgba(0,0,0,0.82);              /* CHANGED */
+  line-height: 1.5;
+  font-size: 14px;
+}
 
 .modal-actions {
   display: flex;
@@ -254,18 +268,65 @@
   gap: 10px;
   padding-top: 8px;
 }
+
 .btn {
   padding: 9px 14px;
   border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(255,255,255,0.06);
-  color: #f3f4f6;
+  border: 1px solid rgba(0,0,0,0.12);   /* CHANGED */
+  background: rgba(0,0,0,0.04);         /* CHANGED */
+  color: #111;                          /* CHANGED */
   cursor: pointer;
 }
-.btn:hover { background: rgba(255,255,255,0.12); }
-.btn-primary { background: #2563eb; border-color: #1d4ed8; }
+.btn:hover { background: rgba(0,0,0,0.08); } /* CHANGED */
+
+/* Keep your primary button color (optional: swap to gold if you want) */
+.btn-primary { background: #2563eb; border-color: #1d4ed8; color: #fff; }
 .btn-primary:hover { background: #1d4ed8; }
+
 .btn-ghost { background: transparent; }
+
+/* ======================================================
+   NIGHT MODE: restore your dark glass look
+   ====================================================== */
+@media (prefers-color-scheme: dark) {
+  .bountyboard-modal {
+    background: rgba(18,18,20,0.82);
+    color: #f3f4f6;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+  }
+
+  .modal-left { background: rgba(0,0,0,0.35); }
+
+  .modal-image {
+    filter: drop-shadow(0 12px 22px rgba(0,0,0,0.6));
+  }
+
+  .modal-right { color: #f3f4f6; }
+  .modal-header h2 { color: #f3f4f6; }
+
+  .modal-close { color: #e5e7eb; }
+  .modal-close:hover { background: rgba(255,255,255,0.08); }
+
+  .pill {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #f3f4f6;
+  }
+
+  .modal-blurb { color: #d1d5db; }
+  .modal-details { color: #e5e7eb; }
+
+  .btn {
+    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.06);
+    color: #f3f4f6;
+  }
+  .btn:hover { background: rgba(255,255,255,0.12); }
+
+  .btn-primary { background: #2563eb; border-color: #1d4ed8; color: #fff; }
+  .btn-primary:hover { background: #1d4ed8; }
+}
 
 /* Stack modal on phones */
 @media (max-width: 640px) {
@@ -277,6 +338,7 @@
   .modal-image { max-height: 42vh; }
   .modal-right { padding: 14px; }
 }
+
 /* Allow scrolling behind the centered modal on small screens */
 .bountyboard-modal-backdrop {
   overflow-y: auto;            /* <-- new */

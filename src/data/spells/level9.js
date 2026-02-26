@@ -11,7 +11,7 @@ export const LEVEL9 = [
         duration: "Concentration, up to 1 minute",
         range: "30 feet",
         area: "Unoccupied space within range",
-        tags: ["Summoning", "Fey", "Roleplay"],
+        tags: ["Homebrew", "Summoning", "Fey", "Roleplay"],
         saveRequired: "None",
         attackType: "Spell",
         damageTypes: [],
@@ -27,7 +27,7 @@ export const LEVEL9 = [
     {
         slug: slugify("Blank Face"),
         name: "Blank Face",
-        classes: ["Cleric", "Wizard"],
+        classes: ["Grim Hollow", "Cleric", "Wizard"],
         spellLevel: 9,
         school: "Necromancy",
         castingTime: "1 action",
@@ -57,7 +57,7 @@ export const LEVEL9 = [
         duration: "1 minute",
         range: "60 feet",
         area: "1 creature",
-        tags: ["Buff", "Healing"],
+        tags: ["Grim Hollow", "Buff", "Healing"],
         saveRequired: "None",
         attackType: "Spell",
         damageTypes: ["Fire", "Force", "Thunder"],
@@ -82,7 +82,7 @@ export const LEVEL9 = [
         duration: "Concentration, up to 1 hour",
         range: "Touch",
         area: "1 willing creature",
-        tags: ["Buff"],
+        tags: ["Homebrew", "Buff"],
         saveRequired: "None",
         attackType: "None",
         damageTypes: [],
@@ -104,7 +104,7 @@ export const LEVEL9 = [
         duration: "Until dispelled",
         range: "30 feet",
         area: "1 creature",
-        tags: ["Control", "Warding"],
+        tags: ["Player's Handbook", "Control", "Warding"],
         saveRequired: "WIS",
         attackType: "Spell",
         damageTypes: [],
@@ -114,12 +114,12 @@ export const LEVEL9 = [
         ritual: false,
         descriptionMd: "You create a magical restraint to hold a creature that you can see within range. Roll 12d6; if the total is greater than the target’s current Hit Points and the target doesn’t have a Mythic Form that has not been used yet, the target is imprisoned. While imprisoned, the target doesn’t need to breathe, eat, or drink, and it doesn’t age. Divination spells can’t locate or perceive the imprisoned target, and the target can’t teleport.\n\n" +
             "Until the spell ends, the target is also affected by one of the following effects of your choice:\n\n" +
-            "**Burial.** The target is entombed beneath the earth in a hollow globe of magical force that is just large enough to contain the target. Nothing can pass into or out of the globe.\n\n" +
-            "**Chaining.** Chains firmly rooted in the ground hold the target in place. The target has the Restrained condition and can’t be moved by any means.\n\n" +
-            "**Hedged Prison.** The target is trapped in a demiplane that is warded against teleportation and planar travel. The demiplane is your choice of a labyrinth, a cage, a tower, or the like.\n\n" +
-            "**Minimus Containment.** The target becomes 1 inch tall and is trapped inside an indestructible gemstone or a similar object. Light can pass through the gemstone (allowing the target to see out and other creatures to see in), but nothing else can pass through by any means.\n\n" +
-            "**Slumber.** The target has the Unconscious condition and can’t be awoken.\n\n" +
-            "**Ending the Spell.** When you cast the spell, specify a trigger that will end it. The trigger can be as simple or as elaborate as you choose, but the DM must agree that it has a high likelihood of happening within the next decade. The trigger must be an observable action, such as someone making a particular offering at the temple of your god, saving your true love, or defeating a specific monster.\n\n" +
+            "Burial. The target is entombed beneath the earth in a hollow globe of magical force that is just large enough to contain the target. Nothing can pass into or out of the globe.\n\n" +
+            "Chaining. Chains firmly rooted in the ground hold the target in place. The target has the Restrained condition and can’t be moved by any means.\n\n" +
+            "Hedged Prison. The target is trapped in a demiplane that is warded against teleportation and planar travel. The demiplane is your choice of a labyrinth, a cage, a tower, or the like.\n\n" +
+            "Minimus Containment. The target becomes 1 inch tall and is trapped inside an indestructible gemstone or a similar object. Light can pass through the gemstone (allowing the target to see out and other creatures to see in), but nothing else can pass through by any means.\n\n" +
+            "Slumber. The target has the Unconscious condition and can’t be awoken.\n\n" +
+            "Ending the Spell. When you cast the spell, specify a trigger that will end it. The trigger can be as simple or as elaborate as you choose, but the DM must agree that it has a high likelihood of happening within the next decade. The trigger must be an observable action, such as someone making a particular offering at the temple of your god, saving your true love, or defeating a specific monster.\n\n" +
             "A Dispel Magic spell can end the spell only if it is cast with a level 9 spell slot, targeting either the prison or the component used to create it.",
         scalingMd: "",
         imagePath: spellImgUrl("eternalimprisonment")
@@ -134,7 +134,7 @@ export const LEVEL9 = [
         duration: "Concentration, up to 10 minutes",
         range: "Self",
         area: "Self; multiple selectable effects",
-        tags: ["Damage", "Shapechanging"],
+        tags: ["Homebrew", "Damage", "Shapechanging"],
         saveRequired: "Varies",
         attackType: "Spell",
         damageTypes: ["Fire", "Cold", "Bludgeoning", "Piercing"],
@@ -147,12 +147,12 @@ export const LEVEL9 = [
             "You have resistance to bludgeoning, piercing, and slashing damage from nonmagical attacks.\n\n" +
             "You have a flying speed of 60 ft. You can move through the space of other creatures and ignore difficult terrain, as well as move through solid earth or stone as if it were air and without destabilizing it, but you can't end your movement there. If you do so, you are ejected to the nearest unoccupied space, this spell ends, and you are stunned until the end of your next turn. The first time on your turn when you enter the space of another creature, it takes 1d6 fire damage and must make a Strength saving throw or be knocked prone.\n\n" +
             "If a creature within 5 feet hits you with a melee attack, it takes 1d6 fire damage.\n\n" +
-            "**Action Options.** You can use your action to do one of the following:\n\n" +
-            "**Line of Fire.** Create a line of fire 30 feet long and 5 feet wide extending from you in a direction of your choice. Each creature in the line must make a Dexterity saving throw. A creature takes 6d6 fire damage on a failed save, or half as much damage on a successful one.\n\n" +
-            "**Stone Spikes.** Call forth spikes of stone to rise from the ground. All creatures of your choice within 15 feet of you must make a Dexterity saving throw. A creature takes 4d8 piercing damage on a failed save, or half as much on a successful one. Their space becomes difficult terrain either way.\n\n" +
-            "**Freezing Wind (Cone).** Create a 30-foot cone of freezing wind extending from your outstretched hand in a direction you choose. Each creature in the cone must make a Constitution saving throw. A creature takes 4d8 cold damage on a failed save, or half as much damage on a successful one. A creature that fails its save against this effect has its speed halved until the start of your next turn.\n\n" +
-            "**Crushing Gust (Cone).** Unleash a powerful blast of wind in a 30-foot cone. Each creature in the cone must make a Strength saving throw. A creature takes 4d8 bludgeoning damage and is knocked 15 feet away from you on a failed save, or takes half as much damage and isn't knocked backward on a successful one.\n\n" +
-            "**Burst of Water (Line).** Unleash a blast of water 15 feet long and 5 feet wide extending from you in a direction of your choice. Each creature in the line must make a Strength saving throw. A creature takes 5d6 bludgeoning damage and is knocked prone on a failed save, or half as much and isn't knocked prone on a successful one.\n\n" +
+            "Action Options. You can use your action to do one of the following:\n\n" +
+            "Line of Fire. Create a line of fire 30 feet long and 5 feet wide extending from you in a direction of your choice. Each creature in the line must make a Dexterity saving throw. A creature takes 6d6 fire damage on a failed save, or half as much damage on a successful one.\n\n" +
+            "Stone Spikes. Call forth spikes of stone to rise from the ground. All creatures of your choice within 15 feet of you must make a Dexterity saving throw. A creature takes 4d8 piercing damage on a failed save, or half as much on a successful one. Their space becomes difficult terrain either way.\n\n" +
+            "Freezing Wind (Cone). Create a 30-foot cone of freezing wind extending from your outstretched hand in a direction you choose. Each creature in the cone must make a Constitution saving throw. A creature takes 4d8 cold damage on a failed save, or half as much damage on a successful one. A creature that fails its save against this effect has its speed halved until the start of your next turn.\n\n" +
+            "Crushing Gust (Cone). Unleash a powerful blast of wind in a 30-foot cone. Each creature in the cone must make a Strength saving throw. A creature takes 4d8 bludgeoning damage and is knocked 15 feet away from you on a failed save, or takes half as much damage and isn't knocked backward on a successful one.\n\n" +
+            "Burst of Water (Line). Unleash a blast of water 15 feet long and 5 feet wide extending from you in a direction of your choice. Each creature in the line must make a Strength saving throw. A creature takes 5d6 bludgeoning damage and is knocked prone on a failed save, or half as much and isn't knocked prone on a successful one.\n\n" +
             "When rolling Cold or Fire damage, you can choose to maximize one of the damage dice.",
         scalingMd: "",
         imagePath: spellImgUrl("formoftheelements")
@@ -167,7 +167,7 @@ export const LEVEL9 = [
         duration: "Concentration, up to 10 minutes",
         range: "Self",
         area: "Self",
-        tags: ["Warding"],
+        tags: ["Player's Handbook", "Warding"],
         saveRequired: "None",
         attackType: "None",
         damageTypes: [],
@@ -190,7 +190,7 @@ export const LEVEL9 = [
         duration: "Concentration, up to 1 minute",
         range: "Self",
         area: "60-foot radius (interactions via reaction)",
-        tags: ["Control", "Buff"],
+        tags: ["Homebrew", "Control", "Buff"],
         saveRequired: "None",
         attackType: "None",
         damageTypes: [],
@@ -200,7 +200,7 @@ export const LEVEL9 = [
         ritual: false,
         descriptionMd: "You reach out and grasp the imperceptible threads of fate, subtly manipulating them. Whenever a creature within 60 feet of you makes an attack roll, saving throw, or ability check, you can use your reaction to tweak their fate, altering the value of the roll. You can choose to manipulate fate after the die is rolled, but before the outcome is determined.\n\n" +
             "You can alter the roll of the die to an adjacent number to the number rolled (outcomes listed on the table below).\n\n" +
-            "**D20 Rolled — Tweaked Fates**\n" +
+            "D20 Rolled — Tweaked Fates\n" +
             "1 → 17, 13, 19\n" +
             "2 → 12, 18, 20\n" +
             "3 → 17, 16, 19\n" +
@@ -221,7 +221,7 @@ export const LEVEL9 = [
             "18 → 2, 4, 5\n" +
             "19 → 1, 3, 9\n" +
             "20 → 2, 8, 14\n\n" +
-            "When you alter a roll, you can choose to cast aside subtly and yank the thread of fate, selecting any value of the d20 as the outcome of the result. The backlash causes you to take a number of d6 equal to the difference between the value selected and the value rolled as Necrotic damage. The spell immediately ends after the result is changed in this more drastic way.", scalingMd: "**Editor's Note.** The numbers you can pick are the adjacent sides of a d20 to the number rolled. This represents literally nudging the die of fate.",
+            "When you alter a roll, you can choose to cast aside subtly and yank the thread of fate, selecting any value of the d20 as the outcome of the result. The backlash causes you to take a number of d6 equal to the difference between the value selected and the value rolled as Necrotic damage. The spell immediately ends after the result is changed in this more drastic way.", scalingMd: "Editor's Note. The numbers you can pick are the adjacent sides of a d20 to the number rolled. This represents literally nudging the die of fate.",
         imagePath: spellImgUrl("manipulatefate")
     },
     {
@@ -234,7 +234,7 @@ export const LEVEL9 = [
         duration: "Instantaneous (self immolation); revival after 10 minutes",
         range: "Self (20 feet)",
         area: "20-foot radius around you",
-        tags: ["Damage", "Healing"],
+        tags: ["Grim Hollow", "Damage", "Healing"],
         saveRequired: "CON Save",
         attackType: "None",
         damageTypes: ["Radiant"],
@@ -257,7 +257,7 @@ export const LEVEL9 = [
         duration: "Instantaneous",
         range: "90 feet",
         area: "up to ten creatures you can see",
-        tags: ["Damage", "Debuff"],
+        tags: ["Xanathar's Guide to Everything", "Damage", "Debuff"],
         saveRequired: "INT Save",
         attackType: "None",
         damageTypes: ["Psychic"],
@@ -266,7 +266,7 @@ export const LEVEL9 = [
         concentration: false,
         ritual: false,
         descriptionMd:
-            "Assault the minds of up to **ten** creatures you can see (Intelligence **2 or lower** are unaffected). On a failed Intelligence save, a target takes **14d6 Psychic** damage and is **Stunned**; on a success, half and not stunned. A Stunned target repeats the save at the end of each of its turns, ending the effect on a success. If a target is **killed** by this damage, its **head explodes** (if it has one).",
+            "Assault the minds of up to ten creatures you can see (Intelligence 2 or lower are unaffected). On a failed Intelligence save, a target takes 14d6 Psychic damage and is Stunned; on a success, half and not stunned. A Stunned target repeats the save at the end of each of its turns, ending the effect on a success. If a target is killed by this damage, its head explodes (if it has one).",
         scalingMd: "",
         imagePath: spellImgUrl("psychicscream"),
     },
@@ -280,12 +280,12 @@ export const LEVEL9 = [
         duration: "7 Days",
         range: "150 feet",
         area: "Ritual circle; up to 26 participants",
-        tags: ["Summoning", "Ritual", "Dark"],
+        tags: ["Dungeons of Drakkenheim", "Summoning", "Ritual", "Dark"],
         saveRequired: "None",
         attackType: "None",
         damageTypes: [],
         conditions: [],
-        components: { verbal: true, somatic: true, material: true, materialText: "100 gp of chalk **per participant**" },
+        components: { verbal: true, somatic: true, material: true, materialText: "100 gp of chalk per participant" },
         concentration: false,
         ritual: false,
         descriptionMd: "This spell may only be cast in an area where the lives of over 100 have been lost.\n\n" +
@@ -304,7 +304,7 @@ export const LEVEL9 = [
         duration: "Until dispelled",
         range: "10 feet",
         area: "You and up to eight willing creatures",
-        tags: ["Teleportation"],
+        tags: ["Player's Handbook", "Teleportation"],
         saveRequired: "None",
         attackType: "None",
         damageTypes: [],
@@ -337,7 +337,7 @@ export const LEVEL9 = [
         duration: "8 hours",
         range: "Touch",
         area: "One willing creature",
-        tags: ["Buff", "Debuff", "Foreknowledge"],
+        tags: ["Player's Handbook", "Buff", "Debuff", "Foreknowledge"],
         saveRequired: "None",
         attackType: "None",
         damageTypes: [],
@@ -346,7 +346,7 @@ export const LEVEL9 = [
         concentration: false,
         ritual: false,
         descriptionMd:
-            "Target gains **Advantage on all d20 Tests**, and **attack rolls against it have Disadvantage** for the duration. Ends early if you cast **Foresight** again.",
+            "Target gains Advantage on all d20 Tests, and attack rolls against it have Disadvantage for the duration. Ends early if you cast Foresight again.",
         scalingMd: "",
         imagePath: spellImgUrl("foresight")
     },
@@ -360,7 +360,7 @@ export const LEVEL9 = [
         duration: "Concentration, up to 1 minute",
         range: "60 feet",
         area: "Circular portal (5–20 ft diameter)",
-        tags: ["Teleportation", "Control"],
+        tags: ["Player's Handbook", "Teleportation", "Control"],
         saveRequired: "None",
         attackType: "None",
         damageTypes: [],
@@ -386,7 +386,7 @@ export const LEVEL9 = [
         duration: "Until dispelled",
         range: "30 feet",
         area: "One creature you can see",
-        tags: ["Control", "Warding"],
+        tags: ["Player's Handbook", "Control", "Warding"],
         saveRequired: "WIS",
         attackType: "None",
         damageTypes: [],
@@ -400,12 +400,12 @@ export const LEVEL9 = [
         descriptionMd:
             "You create a magical restraint to hold a creature that you can see within range. The target must make a Wisdom saving throw. On a successful save, the target is unaffected, and it is immune to this spell for the next 24 hours. On a failed save, the target is imprisoned. While imprisoned, the target doesn’t need to breathe, eat, or drink, and it doesn’t age. Divination spells can’t locate or perceive the imprisoned target, and the target can’t teleport.\n\n" +
             "Until the spell ends, the target is also affected by one of the following effects of your choice:\n\n" +
-            "**Burial.** The target is entombed beneath the earth in a hollow globe of magical force that is just large enough to contain the target. Nothing can pass into or out of the globe.\n\n" +
-            "**Chaining.** Chains firmly rooted in the ground hold the target in place. The target has the Restrained condition and can’t be moved by any means.\n\n" +
-            "**Hedged Prison.** The target is trapped in a demiplane that is warded against teleportation and planar travel. The demiplane is your choice of a labyrinth, a cage, a tower, or the like.\n\n" +
-            "**Minimus Containment.** The target becomes 1 inch tall and is trapped inside an indestructible gemstone or a similar object. Light can pass through the gemstone (allowing the target to see out and other creatures to see in), but nothing else can pass through by any means.\n\n" +
-            "**Slumber.** The target has the Unconscious condition and can’t be awoken.\n\n" +
-            "**Ending the Spell.** When you cast the spell, specify a trigger that will end it. The trigger can be as simple or as elaborate as you choose, but the DM must agree that it has a high likelihood of happening within the next decade. The trigger must be an observable action, such as someone making a particular offering at the temple of your god, saving your true love, or defeating a specific monster.\n\n" +
+            "Burial. The target is entombed beneath the earth in a hollow globe of magical force that is just large enough to contain the target. Nothing can pass into or out of the globe.\n\n" +
+            "Chaining. Chains firmly rooted in the ground hold the target in place. The target has the Restrained condition and can’t be moved by any means.\n\n" +
+            "Hedged Prison. The target is trapped in a demiplane that is warded against teleportation and planar travel. The demiplane is your choice of a labyrinth, a cage, a tower, or the like.\n\n" +
+            "Minimus Containment. The target becomes 1 inch tall and is trapped inside an indestructible gemstone or a similar object. Light can pass through the gemstone (allowing the target to see out and other creatures to see in), but nothing else can pass through by any means.\n\n" +
+            "Slumber. The target has the Unconscious condition and can’t be awoken.\n\n" +
+            "Ending the Spell. When you cast the spell, specify a trigger that will end it. The trigger can be as simple or as elaborate as you choose, but the DM must agree that it has a high likelihood of happening within the next decade. The trigger must be an observable action, such as someone making a particular offering at the temple of your god, saving your true love, or defeating a specific monster.\n\n" +
             "A Dispel Magic spell can end the spell only if it is cast with a level 9 spell slot, targeting either the prison or the component used to create it.",
         scalingMd: "",
         imagePath: spellImgUrl("imprisonment")
@@ -420,7 +420,7 @@ export const LEVEL9 = [
         duration: "Instantaneous",
         range: "60 feet",
         area: "Any number of creatures you can see",
-        tags: ["Healing"],
+        tags: ["Player's Handbook", "Healing"],
         saveRequired: "None",
         attackType: "None",
         damageTypes: [],
@@ -429,7 +429,7 @@ export const LEVEL9 = [
         concentration: false,
         ritual: false,
         descriptionMd:
-            "Distribute **up to 700 HP** among creatures in range; also **ends Blinded, Deafened, and Poisoned** on each creature healed.",
+            "Distribute up to 700 HP among creatures in range; also ends Blinded, Deafened, and Poisoned on each creature healed.",
         scalingMd: "",
         imagePath: spellImgUrl("mass-heal")
     },
@@ -443,7 +443,7 @@ export const LEVEL9 = [
         duration: "Instantaneous",
         range: "1 mile",
         area: "Four 40-foot-radius spheres",
-        tags: ["Damage"],
+        tags: ["Player's Handbook", "Damage"],
         saveRequired: "DEX",
         attackType: "None",
         damageTypes: ["Fire", "Bludgeoning"],
@@ -467,7 +467,7 @@ export const LEVEL9 = [
         duration: "Instantaneous",
         range: "60 feet",
         area: "One creature you can see",
-        tags: ["Healing", "Buff"],
+        tags: ["Player's Handbook", "Healing", "Buff"],
         saveRequired: "None",
         attackType: "None",
         damageTypes: [],
@@ -476,7 +476,7 @@ export const LEVEL9 = [
         concentration: false,
         ritual: false,
         descriptionMd:
-            "Target **regains all HP** and ends **Charmed, Frightened, Paralyzed, Poisoned, and Stunned**. If **Prone**, it can use its **Reaction to stand**.",
+            "Target regains all HP and ends Charmed, Frightened, Paralyzed, Poisoned, and Stunned. If Prone, it can use its Reaction to stand.",
         scalingMd: "",
         imagePath: spellImgUrl("power-word-heal")
     },
@@ -490,7 +490,7 @@ export const LEVEL9 = [
         duration: "Instantaneous",
         range: "60 feet",
         area: "One creature you can see",
-        tags: ["Damage", "Control"],
+        tags: ["Player's Handbook", "Damage", "Control"],
         saveRequired: "None",
         attackType: "None",
         damageTypes: ["Psychic"],
@@ -499,7 +499,7 @@ export const LEVEL9 = [
         concentration: false,
         ritual: false,
         descriptionMd:
-            "If the target has **100 HP or fewer**, it **dies**. Otherwise, it takes **12d12 Psychic**.",
+            "If the target has 100 HP or fewer, it dies. Otherwise, it takes 12d12 Psychic.",
         scalingMd: "",
         imagePath: spellImgUrl("power-word-kill")
     },
@@ -513,7 +513,7 @@ export const LEVEL9 = [
         duration: "10 minutes",
         range: "60 feet",
         area: "Wall up to 90×30×1 inch or globe up to 30-ft diameter",
-        tags: ["Damage", "Control"],
+        tags: ["Player's Handbook", "Damage", "Control"],
         saveRequired: "CON (nearby blindness); DEX per layer effects",
         attackType: "None",
         damageTypes: ["Fire", "Acid", "Lightning", "Poison", "Cold"],
@@ -526,14 +526,14 @@ export const LEVEL9 = [
             "The wall sheds Bright Light within 100 feet and Dim Light for an additional 100 feet. You and creatures you designate when you cast the spell can pass through and be near the wall without harm. If another creature that can see the wall moves within 20 feet of it or starts its turn there, the creature must succeed on a Constitution saving throw or have the Blinded condition for 1 minute.\n\n" +
             "The wall consists of seven layers, each with a different color. When a creature reaches into or passes through the wall, it does so one layer at a time through all the layers. Each layer forces the creature to make a Dexterity saving throw or be affected by that layer’s properties as described in the Prismatic Layers table.\n\n" +
             "The wall, which has AC 10, can be destroyed one layer at a time, in order from red to violet, by means specific to each layer. If a layer is destroyed, it is gone for the duration. Antimagic Field has no effect on the wall, and Dispel Magic can affect only the violet layer.\n\n" +
-            "**Prismatic Layers**\n" +
-            "**1. Red.** Failed Save: 12d6 Fire damage. Successful Save: Half as much damage. Additional Effects: Nonmagical ranged attacks can’t pass through this layer, which is destroyed if it takes at least 25 Cold damage.\n" +
-            "**2. Orange.** Failed Save: 12d6 Acid damage. Successful Save: Half as much damage. Additional Effects: Magical ranged attacks can’t pass through this layer, which is destroyed by a strong wind (such as the one created by Gust of Wind).\n" +
-            "**3. Yellow.** Failed Save: 12d6 Lightning damage. Successful Save: Half as much damage. Additional Effects: The layer is destroyed if it takes at least 60 Force damage.\n" +
-            "**4. Green.** Failed Save: 12d6 Poison damage. Successful Save: Half as much damage. Additional Effects: A Passwall spell, or another spell of equal or greater level that can open a portal on a solid surface, destroys this layer.\n" +
-            "**5. Blue.** Failed Save: 12d6 Cold damage. Successful Save: Half as much damage. Additional Effects: The layer is destroyed if it takes at least 25 Fire damage.\n" +
-            "**6. Indigo.** Failed Save: The target has the Restrained condition and makes a Constitution saving throw at the end of each of its turns. If it successfully saves three times, the condition ends. If it fails three times, it has the Petrified condition until it is freed by an effect like the Greater Restoration spell. The successes and failures needn’t be consecutive; keep track of both until the target collects three of a kind. Additional Effects: Spells can’t be cast through this layer, which is destroyed by Bright Light shed by the Daylight spell.\n" +
-            "**7. Violet.** Failed Save: The target has the Blinded condition and makes a Wisdom saving throw at the start of your next turn. On a successful save, the condition ends. On a failed save, the condition ends, and the creature teleports to another plane of existence (DM’s choice). Additional Effects: This layer is destroyed by Dispel Magic.",
+            "Prismatic Layers\n" +
+            "1. Red. Failed Save: 12d6 Fire damage. Successful Save: Half as much damage. Additional Effects: Nonmagical ranged attacks can’t pass through this layer, which is destroyed if it takes at least 25 Cold damage.\n" +
+            "2. Orange. Failed Save: 12d6 Acid damage. Successful Save: Half as much damage. Additional Effects: Magical ranged attacks can’t pass through this layer, which is destroyed by a strong wind (such as the one created by Gust of Wind).\n" +
+            "3. Yellow. Failed Save: 12d6 Lightning damage. Successful Save: Half as much damage. Additional Effects: The layer is destroyed if it takes at least 60 Force damage.\n" +
+            "4. Green. Failed Save: 12d6 Poison damage. Successful Save: Half as much damage. Additional Effects: A Passwall spell, or another spell of equal or greater level that can open a portal on a solid surface, destroys this layer.\n" +
+            "5. Blue. Failed Save: 12d6 Cold damage. Successful Save: Half as much damage. Additional Effects: The layer is destroyed if it takes at least 25 Fire damage.\n" +
+            "6. Indigo. Failed Save: The target has the Restrained condition and makes a Constitution saving throw at the end of each of its turns. If it successfully saves three times, the condition ends. If it fails three times, it has the Petrified condition until it is freed by an effect like the Greater Restoration spell. The successes and failures needn’t be consecutive; keep track of both until the target collects three of a kind. Additional Effects: Spells can’t be cast through this layer, which is destroyed by Bright Light shed by the Daylight spell.\n" +
+            "7. Violet. Failed Save: The target has the Blinded condition and makes a Wisdom saving throw at the start of your next turn. On a successful save, the condition ends. On a failed save, the condition ends, and the creature teleports to another plane of existence (DM’s choice). Additional Effects: This layer is destroyed by Dispel Magic.",
         scalingMd: "",
         imagePath: spellImgUrl("prismatic-wall")
     },
@@ -547,7 +547,7 @@ export const LEVEL9 = [
         duration: "Concentration, up to 1 hour",
         range: "Self",
         area: "Self",
-        tags: ["Shapechanging"],
+        tags: ["Player's Handbook", "Shapechanging"],
         saveRequired: "None",
         attackType: "None",
         damageTypes: [],
@@ -573,7 +573,7 @@ export const LEVEL9 = [
         duration: "Concentration, up to 1 minute",
         range: "1 mile",
         area: "300-foot-radius cloud",
-        tags: ["Damage", "Control", "Debuff"],
+        tags: ["Player's Handbook", "Damage", "Control", "Debuff"],
         saveRequired: "CON (T1 deafening), DEX (T3 lightning)",
         attackType: "None",
         damageTypes: ["Thunder", "Acid", "Lightning", "Bludgeoning", "Cold"],
@@ -584,10 +584,10 @@ export const LEVEL9 = [
         descriptionMd:
             "A churning storm cloud forms for the duration, centered on a point within range and spreading to a radius of 300 feet. Each creature under the cloud when it appears must succeed on a Constitution saving throw or take 2d6 Thunder damage and have the Deafened condition for the duration.\n\n" +
             "At the start of each of your later turns, the storm produces different effects, as detailed below.\n\n" +
-            "**Turn 2.** Acidic rain falls. Each creature and object under the cloud takes 4d6 Acid damage.\n\n" +
-            "**Turn 3.** You call six bolts of lightning from the cloud to strike six different creatures or objects beneath it. Each target makes a Dexterity saving throw, taking 10d6 Lightning damage on a failed save or half as much damage on a successful one.\n\n" +
-            "**Turn 4.** Hailstones rain down. Each creature under the cloud takes 2d6 Bludgeoning damage.\n\n" +
-            "**Turns 5–10.** Gusts and freezing rain assail the area under the cloud. Each creature there takes 1d6 Cold damage. Until the spell ends, the area is Difficult Terrain and Heavily Obscured, ranged attacks with weapons are impossible there, and strong wind blows through the area.",
+            "Turn 2. Acidic rain falls. Each creature and object under the cloud takes 4d6 Acid damage.\n\n" +
+            "Turn 3. You call six bolts of lightning from the cloud to strike six different creatures or objects beneath it. Each target makes a Dexterity saving throw, taking 10d6 Lightning damage on a failed save or half as much damage on a successful one.\n\n" +
+            "Turn 4. Hailstones rain down. Each creature under the cloud takes 2d6 Bludgeoning damage.\n\n" +
+            "Turns 5–10. Gusts and freezing rain assail the area under the cloud. Each creature there takes 1d6 Cold damage. Until the spell ends, the area is Difficult Terrain and Heavily Obscured, ranged attacks with weapons are impossible there, and strong wind blows through the area.",
         scalingMd: "",
         imagePath: spellImgUrl("storm-of-vengeance")
     },
@@ -601,7 +601,7 @@ export const LEVEL9 = [
         duration: "Instantaneous",
         range: "Self",
         area: "Self",
-        tags: ["Control"],
+        tags: ["Player's Handbook", "Control"],
         saveRequired: "None",
         attackType: "None",
         damageTypes: [],
@@ -625,7 +625,7 @@ export const LEVEL9 = [
         duration: "Concentration, up to 1 hour (or until dispelled)",
         range: "30 feet",
         area: "One creature or nonmagical object",
-        tags: ["Control", "Buff", "Shapechanging"],
+        tags: ["Player' Handbook", "Control", "Buff", "Shapechanging"],
         saveRequired: "WIS (unwilling creature)",
         attackType: "None",
         damageTypes: [],
@@ -639,13 +639,13 @@ export const LEVEL9 = [
         descriptionMd:
             "Choose one creature or nonmagical object that you can see within range. The creature shape-shifts into a different creature or a nonmagical object, or the object shape-shifts into a creature (the object must be neither worn nor carried). The transformation lasts for the duration or until the target dies or is destroyed, but if you maintain Concentration on this spell for the full duration, the spell lasts until dispelled.\n\n" +
             "An unwilling creature can make a Wisdom saving throw, and if it succeeds, it isn’t affected by this spell.\n\n" +
-            "**Creature into Creature.** If you turn a creature into another kind of creature, the new form can be any kind you choose that has a Challenge Rating equal to or less than the target’s Challenge Rating or level. The target’s game statistics are replaced by the stat block of the new form, but it retains its Hit Points, Hit Point Dice, alignment, and personality.\n\n" +
+            "Creature into Creature. If you turn a creature into another kind of creature, the new form can be any kind you choose that has a Challenge Rating equal to or less than the target’s Challenge Rating or level. The target’s game statistics are replaced by the stat block of the new form, but it retains its Hit Points, Hit Point Dice, alignment, and personality.\n\n" +
             "The target gains a number of Temporary Hit Points equal to the Hit Points of the new form. These Temporary Hit Points vanish if any remain when the spell ends.\n\n" +
             "The target is limited in the actions it can perform by the anatomy of its new form, and it can’t speak or cast spells.\n\n" +
             "The target’s gear melds into the new form. The creature can’t use or otherwise benefit from any of that equipment.\n\n" +
-            "**Object into Creature.** You can turn an object into any kind of creature, as long as the creature’s size is no larger than the object’s size and the creature has a Challenge Rating of 9 or lower. The creature is Friendly to you and your allies. In combat, it takes its turns immediately after yours, and it obeys your commands.\n\n" +
+            "Object into Creature. You can turn an object into any kind of creature, as long as the creature’s size is no larger than the object’s size and the creature has a Challenge Rating of 9 or lower. The creature is Friendly to you and your allies. In combat, it takes its turns immediately after yours, and it obeys your commands.\n\n" +
             "If the spell lasts more than an hour, you no longer control the creature. It might remain Friendly to you, depending on how you have treated it.\n\n" +
-            "**Creature into Object.** If you turn a creature into an object, it transforms along with whatever it is wearing and carrying into that form, as long as the object’s size is no larger than the creature’s size. The creature’s statistics become those of the object, and the creature has no memory of time spent in this form after the spell ends and it returns to normal.", scalingMd: "",
+            "Creature into Object. If you turn a creature into an object, it transforms along with whatever it is wearing and carrying into that form, as long as the object’s size is no larger than the creature’s size. The creature’s statistics become those of the object, and the creature has no memory of time spent in this form after the spell ends and it returns to normal.", scalingMd: "",
         imagePath: spellImgUrl("true-polymorph")
     },
     {
@@ -658,7 +658,7 @@ export const LEVEL9 = [
         duration: "Instantaneous",
         range: "Touch",
         area: "One creature dead ≤ 200 years (not of old age)",
-        tags: ["Healing"],
+        tags: ["Player's Handbook", "Healing"],
         saveRequired: "None",
         attackType: "None",
         damageTypes: [],
@@ -686,7 +686,7 @@ export const LEVEL9 = [
         duration: "Concentration, up to 1 minute",
         range: "120 feet",
         area: "30-foot-radius sphere",
-        tags: ["Damage", "Control"],
+        tags: ["Player's Handbook", "Damage", "Control"],
         saveRequired: "WIS",
         attackType: "None",
         damageTypes: ["Psychic"],
@@ -710,7 +710,7 @@ export const LEVEL9 = [
         duration: "Instantaneous",
         range: "Self",
         area: "Self",
-        tags: ["Creation", "Healing", "Buff"],
+        tags: ["Player's Handbook", "Creation", "Healing", "Buff"],
         saveRequired: "None",
         attackType: "None",
         damageTypes: [],
@@ -721,13 +721,13 @@ export const LEVEL9 = [
         descriptionMd:
             "The basic use of this spell is to duplicate any other spell of level 8 or lower. If you use it this way, you don’t need to meet any requirements to cast that spell, including costly components. The spell simply takes effect.\n\n" +
             "Alternatively, you can create one of the following effects of your choice:\n\n" +
-            "**Object Creation.** You create one object of up to 25,000 GP in value that isn’t a magic item. The object can be no more than 300 feet in any dimension, and it appears in an unoccupied space that you can see on the ground.\n\n" +
-            "**Instant Health.** You allow yourself and up to twenty creatures that you can see to regain all Hit Points, and you end all effects on them listed in the Greater Restoration spell.\n\n" +
-            "**Resistance.** You grant up to ten creatures that you can see Resistance to one damage type that you choose. This Resistance is permanent.\n\n" +
-            "**Spell Immunity.** You grant up to ten creatures you can see immunity to a single spell or other magical effect for 8 hours.\n\n" +
-            "**Sudden Learning.** You replace one of your feats with another feat for which you are eligible. You lose all the benefits of the old feat and gain the benefits of the new one. You can’t replace a feat that is a prerequisite for any of your other feats or features.\n\n" +
-            "**Roll Redo.** You undo a single recent event by forcing a reroll of any die roll made within the last round (including your last turn). Reality reshapes itself to accommodate the new result. For example, a Wish spell could undo an ally’s failed saving throw or a foe’s Critical Hit. You can force the reroll to be made with Advantage or Disadvantage, and you choose whether to use the reroll or the original roll.\n\n" +
-            "**Reshape Reality.** You may wish for something not included in any of the other effects. To do so, state your wish to the DM as precisely as possible. The DM has great latitude in ruling what occurs in such an instance; the greater the wish, the greater the likelihood that something goes wrong.\n\n" +
+            "Object Creation. You create one object of up to 25,000 GP in value that isn’t a magic item. The object can be no more than 300 feet in any dimension, and it appears in an unoccupied space that you can see on the ground.\n\n" +
+            "Instant Health. You allow yourself and up to twenty creatures that you can see to regain all Hit Points, and you end all effects on them listed in the Greater Restoration spell.\n\n" +
+            "Resistance. You grant up to ten creatures that you can see Resistance to one damage type that you choose. This Resistance is permanent.\n\n" +
+            "Spell Immunity. You grant up to ten creatures you can see immunity to a single spell or other magical effect for 8 hours.\n\n" +
+            "Sudden Learning. You replace one of your feats with another feat for which you are eligible. You lose all the benefits of the old feat and gain the benefits of the new one. You can’t replace a feat that is a prerequisite for any of your other feats or features.\n\n" +
+            "Roll Redo. You undo a single recent event by forcing a reroll of any die roll made within the last round (including your last turn). Reality reshapes itself to accommodate the new result. For example, a Wish spell could undo an ally’s failed saving throw or a foe’s Critical Hit. You can force the reroll to be made with Advantage or Disadvantage, and you choose whether to use the reroll or the original roll.\n\n" +
+            "Reshape Reality. You may wish for something not included in any of the other effects. To do so, state your wish to the DM as precisely as possible. The DM has great latitude in ruling what occurs in such an instance; the greater the wish, the greater the likelihood that something goes wrong.\n\n" +
             "The stress of casting Wish to produce any effect other than duplicating another spell weakens you. After enduring that stress, each time you cast a spell until you finish a Long Rest, you take 1d10 Necrotic damage per level of that spell. This damage can’t be reduced or prevented in any way.\n\n" +
             "In addition, your Strength score becomes 3 for 2d4 days. For each of those days that you spend resting and doing nothing more than light activity, your remaining recovery time decreases by 2 days.\n\n" +
             "Finally, there is a 33 percent chance that you are unable to cast Wish ever again if you suffer this stress.",
@@ -744,7 +744,7 @@ export const LEVEL9 = [
   duration: "Until dispelled, up to 30 days",
   range: "60 feet",
   area: "1 creature",
-  tags: ["Control", "New"],
+  tags: ["Homebrew", "Control", "New"],
   saveRequired: "WIS",
   attackType: "Spell",
   damageTypes: [],
@@ -756,7 +756,7 @@ export const LEVEL9 = [
     "Choose one creature you can see within range. You can target a creature with this spell only if the spell slot you use exceeds the creature’s Challenge Rating (if it has a CR) or the creature’s character level (if it has levels).\n\n" +
     "The target makes a Wisdom saving throw. It has Advantage on this save; if it is bloodied (half its Hit Points or fewer), it doesn’t have Advantage; if it has exactly 1 Hit Point, it has Disadvantage. On a failed save, the target is charmed by you and falls under your absolute sway until the spell ends. A creature that succeeds on the save is unaffected.\n\n" +
     "While charmed in this way, the target obeys your verbal commands (no action required). If you issue no commands, it defends itself but otherwise takes no hostile actions. On your turn, you can take a Magic action to assume direct control of the target until the end of its next turn; you decide its movement, actions, and reactions. After the save is failed, the target doesn’t make additional saving throws due to time passing or taking damage.\n\n" +
-    "This spell has no effect on a creature that is immune to the charmed condition. You can have only one creature affected by this spell at a time; if you cast [spells]Enslave[/spells] while another creature is under its effect, you choose whether the new casting fails or the previous effect ends.",
+    "This spell has no effect on a creature that is immune to the charmed condition. You can have only one creature affected by this spell at a time; if you cast Enslave while another creature is under its effect, you choose whether the new casting fails or the previous effect ends.",
   scalingMd: "",
   imagePath: spellImgUrl("enslave"),
 },
@@ -770,7 +770,7 @@ export const LEVEL9 = [
     duration: "Concentration, up to 1 minute",
     range: "60 feet",
     area: "5-foot reach (rift within 60 feet)",
-    tags: ["Damage", "New"],
+    tags: ["Homebrew", "Damage", "New"],
     saveRequired: "None",
     attackType: "Melee Spell Attack",
     damageTypes: ["Force"],
@@ -795,7 +795,7 @@ export const LEVEL9 = [
     duration: "Concentration, up to 1 minute",
     range: "300 feet",
     area: "15-foot-radius Sphere (event horizon); 120-foot gravity field",
-    tags: ["Damage", "Control", "Debuff", "New"],
+    tags: ["Homebrew", "Damage", "Control", "Debuff", "New"],
     saveRequired: "STR",
     attackType: "Spell",
     damageTypes: ["Bludgeoning"],
@@ -822,7 +822,7 @@ export const LEVEL9 = [
     duration: "Instantaneous",
     range: "1 mile",
     area: "60-foot-radius Sphere",
-    tags: ["Damage", "New"],
+    tags: ["Homebrew", "Damage", "New"],
     saveRequired: "CON",
     attackType: "Spell",
     damageTypes: ["Radiant"],

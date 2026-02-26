@@ -1,0 +1,317 @@
+/* Keep it consistent with your spells page sizing */
+html, body, .feats-page {
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.feats-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 16px 24px;
+  overflow: hidden;
+}
+
+.feats-scroll {
+  height: calc(100dvh - var(--nav-h, 56px) - 16px);
+  overflow: auto;
+  padding-bottom: 20px;
+  scroll-behavior: smooth;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.feats-scroll::-webkit-scrollbar { width: 0; height: 0; }
+
+.feats-headerbar {
+  margin-bottom: 10px;
+}
+.feats-title {
+  margin: 0;
+  font-weight: 800;
+  color: var(--app-text);
+}
+
+/* ===== Compact list ===== */
+.feat-list { display: grid; gap: 8px; }
+.feat-list::after { content: ""; display: block; height: 60px; }
+
+.feat-list__header {
+  display: grid;
+  grid-template-columns: 140px 1.4fr 1.2fr 1.2fr 1fr;
+  gap: 8px;
+  padding: 10px 12px;
+  color: var(--muted);
+  font-weight: 700;
+  border-bottom: 1px solid var(--border);
+}
+
+.feat-row {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.feat-row > summary { list-style: none; }
+.feat-row__summary {
+  display: grid;
+  grid-template-columns: 140px 1.4fr 1.2fr 1.2fr 1fr 36px;
+  gap: 8px;
+  align-items: center;
+  padding: 10px 12px;
+  cursor: pointer;
+}
+.feat-row__summary::-webkit-details-marker { display: none; }
+
+.feat-row .cell { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.feat-row .cell.name { display: flex; align-items: center; gap: 10px; }
+.feat-row .cell.name .icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--elevated);
+}.icon--blank {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: transparent;
+}
+
+.feat-row .namewrap .title { font-weight: 700; }
+.feat-row .namewrap .sub { color: var(--muted); font-size: .9rem; }
+
+.feat-row .cell.chevron { text-align: center; color: var(--accent-color); font-weight: 800; }
+
+.feat-row__details {
+  border-top: 1px solid var(--border);
+  background: color-mix(in oklch, var(--surface) 85%, transparent);
+  padding: 12px;
+}
+
+.detailgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 8px 12px;
+}
+.detailgrid .cap { color: var(--muted); font-size: .8rem; font-weight: 700; display:block; }
+.detailgrid span:last-child { display:block; }
+
+.rowrule { border: 0; border-top: 2px solid var(--accent-color); margin: 10px 0; }
+
+.rowdesc .desc, .rowdesc .sub {
+  color: var(--app-text);
+  line-height: 1.55;
+}
+.rowdesc .sub {
+  border-top: 1px dashed var(--border);
+  padding-top: 6px;
+  margin-top: 6px;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .feat-list__header,
+  .feat-row__summary {
+    grid-template-columns: 110px 1.4fr 1.2fr 1fr 36px;
+  }
+  .feat-list__header > :nth-child(5),
+  .feat-row__summary > :nth-child(5) { display: none; }
+}
+@media (max-width: 820px) {
+  .feat-list__header,
+  .feat-row__summary {
+    grid-template-columns: 100px 1.6fr 1fr 36px;
+  }
+  .feat-list__header > :nth-child(3),
+  .feat-list__header > :nth-child(4),
+  .feat-row__summary > :nth-child(3),
+  .feat-row__summary > :nth-child(4) { display: none; }
+}
+@media (max-width: 560px) {
+  .feat-list__header { display: none; }
+  .feat-row__summary { grid-template-columns: 1fr 36px; }
+  .feat-row .cell.type,
+  .feat-row .cell:nth-child(n+3):not(.chevron) { display: none; }
+}
+
+/* Prevent horizontal touch dragging */
+.feats-scroll, .feat-list, .feat-row, .feat-row__summary {
+  touch-action: pan-y;
+  overflow-x: hidden;
+}
+html, body, .feats-page { overscroll-behavior-x: none; }
+/* ===== Feat Modal (mirrors spell modal) ===== */
+.feat-modal__backdrop {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.55);
+  backdrop-filter: blur(2px);
+  z-index: 3000;
+  display: flex; align-items: flex-start; justify-content: center;
+  overflow: auto;
+  padding: 32px 16px;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.feat-modal__backdrop::-webkit-scrollbar { width: 0; height: 0; }
+
+.feat-modal__panel {
+  width: min(960px, 96vw);
+  background: var(--surface, #1a1a1a);
+  color: var(--text, #fdfbf7);
+  border: 1px solid var(--border, rgba(255,255,255,.15));
+  border-radius: 16px;
+  box-shadow: 0 18px 40px rgba(0,0,0,.45);
+  overflow: hidden;
+}
+
+.feat-modal__panel--responsive { width: min(960px, 96vw); }
+@media (max-width: 560px) {
+  .feat-modal__panel--responsive {
+    width: 88vw;
+    border-radius: 14px;
+  }
+  .feat-modal__body {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 12px;
+  }
+}
+
+.feat-modal__header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in oklch, var(--surface) 80%, transparent);
+}
+
+.feat-modal__title { margin: 0; color: var(--app-text); font-weight: 800; }
+.feat-modal__subtitle { margin-top: 4px; color: color-mix(in oklch, var(--app-text), transparent 30%); }
+
+.feat-modal__close {
+  border: 1px solid var(--border);
+  background: var(--elevated, #111);
+  color: var(--text);
+  border-radius: 10px;
+  width: 36px;
+  height: 34px;
+  cursor: pointer;
+}
+
+.feat-modal__infobar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px 14px;
+  padding: 12px 16px 6px;
+}
+.infocell .cap { font-size: .75rem; letter-spacing: .02em; color: var(--muted); font-weight: 700; }
+
+.feat-modal__rule { border: 0; border-top: 2px solid var(--accent-color); margin: 6px 16px 0; }
+
+.feat-modal__body {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 16px;
+  padding: 14px 16px 18px;
+}
+@media (max-width: 720px) { .feat-modal__body { grid-template-columns: 1fr; } }
+
+.feat-modal__artwrap { display:flex; align-items:flex-start; justify-content:center; }
+
+/* Mirror your spell “no tile/border” art rules */
+.feat-image--transparent,
+.feat-modal__art {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  outline: none !important;
+}
+
+.feat-modal__art {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+}
+
+.feat-modal__desc, .feat-modal__sub { color: var(--app-text); }
+.feat-modal__desc { white-space: pre-line; line-height: 1.6; }
+
+.feat-modal__benefits { margin-top: 10px; display: grid; gap: 8px; }
+.feat-modal__benefit { margin: 0; line-height: 1.55; color: var(--app-text); }
+
+.feat-modal__sub {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border);
+  line-height: 1.55;
+}
+
+.feat-modal__chips { margin-top: 14px; display: grid; gap: 8px; }
+.chiprow { display:flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.chipcap { font-weight: 700; color: var(--muted); margin-right: 2px; }
+.chip {
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: .85rem;
+  background: color-mix(in oklch, var(--accent-color) 25%, var(--elevated));
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+.chip--hollow {
+  background: transparent;
+  border: 1px solid color-mix(in oklch, var(--accent-color) 55%, var(--border));
+  color: var(--text);
+}
+
+/* Make rows feel clickable like your spell list “zoom” interaction */
+.feat-row { cursor: pointer; }
+.feat-row:focus { outline: none; }
+.feat-row:focus-visible {
+  box-shadow: 0 0 0 3px color-mix(in oklch, var(--accent-color) 25%, transparent);
+}
+
+/* Add to feats.css (type header styling) */
+
+.feat-typeheader {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: color-mix(in oklch, var(--surface) 88%, transparent);
+  box-shadow: var(--shadow);
+  padding: 12px 14px;
+  margin-top: 10px;
+}
+
+.feat-typeheader__kicker {
+  font-size: .72rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: color-mix(in oklch, var(--muted) 85%, transparent);
+  margin-bottom: 4px;
+}
+
+.feat-typeheader__title {
+  font-weight: 950;
+  font-size: 1.05rem;
+  color: var(--app-text);
+  letter-spacing: .02em;
+  margin-bottom: 6px;
+}
+
+.feat-typeheader__desc {
+  color: var(--muted);
+  line-height: 1.5;
+  font-size: .95rem;
+}
+
+@media (max-width: 560px) {
+  .feat-typeheader { padding: 10px 12px; }
+  .feat-typeheader__desc { font-size: .92rem; }
+}
+
+.icon--clickable { cursor: zoom-in; }

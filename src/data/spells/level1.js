@@ -435,7 +435,7 @@ export const LEVEL1 = [
     descriptionMd:
       "Choose a loose object weighing 5 pounds or less. It flies in a straight line up to 90 feet toward a target you can see. If the object would strike a creature, that creature makes a Dexterity saving throw. On a failed save, the object hits and stops; upon any impact (creature or surface), the object and the target each take 3d8 Bludgeoning damage.",
     scalingMd:
-      "Using a Higher-Level Spell Slot. For each slot above 1st, the maximum weight increases by 5 lb. and the damage increases by 1d8.",
+      "**Using a Higher-Level Spell Slot.** For each slot above 1st, the maximum weight increases by 5 lb. and the damage increases by 1d8.",
     imagePath: spellImgUrl("catapult")
   },
   {
@@ -457,12 +457,12 @@ export const LEVEL1 = [
     concentration: false,
     ritual: true,
     descriptionMd: "You perform a special religious ceremony that is infused with magic. When you cast the spell, choose one of the following rites, the target of which must be within 10 feet of you throughout the casting.\n\n" +
-      "**Atonement.** You touch one willing creature whose alignment has changed, and you make a DC 20 Wisdom (Insight) check. On a successful check, you restore the target to its original alignment.\n\n" +
-      "**Bless Water.** You touch one vial of water and cause it to become holy water.\n\n" +
-      "**Coming of Age.** You touch one humanoid who is a young adult. For the next 24 hours, whenever the target makes an ability check, it can roll a d4 and add the number rolled to the ability check. A creature can benefit from this rite only once.\n\n" +
-      "**Dedication.** You touch one humanoid who wishes to be dedicated to your god’s service. For the next 24 hours, whenever the target makes a saving throw, it can roll a d4 and add the number rolled to the save. A creature can benefit from this rite only once.\n\n" +
-      "**Funeral Rite.** You touch one corpse, and for the next 7 days, the target can’t become undead by any means short of a wish spell.\n\n" +
-      "**Wedding.** You touch adult humanoids willing to be bonded together in marriage. For the next 7 days, each target gains a +2 bonus to AC while they are within 30 feet of each other. A creature can benefit from this rite again only if widowed.",
+      "Atonement. You touch one willing creature whose alignment has changed, and you make a DC 20 Wisdom (Insight) check. On a successful check, you restore the target to its original alignment.\n\n" +
+      "Bless Water. You touch one vial of water and cause it to become holy water.\n\n" +
+      "Coming of Age. You touch one humanoid who is a young adult. For the next 24 hours, whenever the target makes an ability check, it can roll a d4 and add the number rolled to the ability check. A creature can benefit from this rite only once.\n\n" +
+      "Dedication. You touch one humanoid who wishes to be dedicated to your god’s service. For the next 24 hours, whenever the target makes a saving throw, it can roll a d4 and add the number rolled to the save. A creature can benefit from this rite only once.\n\n" +
+      "Funeral Rite. You touch one corpse, and for the next 7 days, the target can’t become undead by any means short of a wish spell.\n\n" +
+      "Wedding. You touch adult humanoids willing to be bonded together in marriage. For the next 7 days, each target gains a +2 bonus to AC while they are within 30 feet of each other. A creature can benefit from this rite again only if widowed.",
     scalingMd: "",
     imagePath: spellImgUrl("ceremony")
   },
@@ -588,7 +588,7 @@ export const LEVEL1 = [
     descriptionMd:
       "Spit a globule of phlegm at a creature. Make a ranged spell attack; on a hit, the target takes 2d8 Necrotic damage. Until it uses its action to wipe off the phlegm, it takes 1d4 Necrotic damage at the start of each of its turns and any Hit Points it regains are halved.",
     scalingMd:
-      "Using a Higher-Level Spell Slot. The start-of-turn damage increases by 1d4 for each slot level above 1st.",
+      "**Using a Higher-Level Spell Slot.** The start-of-turn damage increases by 1d4 for each slot level above 1st.",
     imagePath: spellImgUrl("corruptingichor")
   },
   {
@@ -845,7 +845,7 @@ export const LEVEL1 = [
     components: { verbal: true, somatic: true, material: false, materialText: "" },
     concentration: true,
     ritual: false,
-    descriptionMd: "You encase a visible Medium or smaller creature in ice. The target makes a Strength save or is **Restrained** for the duration. At the end of each of its turns it takes **1d8 Cold** damage and can repeat the save, ending the effect on a success. If the creature takes **more than 5** Fire or Bludgeoning damage from a single roll while restrained, the ice breaks and the spell ends for that target.",
+    descriptionMd: "You encase a visible Medium or smaller creature in ice. The target makes a Strength save or is Restrained for the duration. At the end of each of its turns it takes 1d8 Cold damage and can repeat the save, ending the effect on a success. If the creature takes more than 5 Fire or Bludgeoning damage from a single roll while restrained, the ice breaks and the spell ends for that target.",
     scalingMd: "**Using a Higher-Level Spell Slot.** The damage increases by 1d8 per slot level above 1st, and the damage needed to break the ice increases by 5 for each level above 1st.",
     imagePath: spellImgUrl("entomb")
   },
@@ -867,7 +867,7 @@ export const LEVEL1 = [
     components: { verbal: true, somatic: true, material: true, materialText: "flower seeds" },
     concentration: false,
     ritual: false,
-    descriptionMd: "Leafy foliage sprouts to cover you. While prone and motionless, you are indistinguishable from a normal bush (creatures that haven’t seen you move must succeed on an Intelligence (Investigation) check vs. your spell save DC to discern you). For the duration, you can take an action to hurl a pinecone, berry, or bud at a creature within 30 feet; make a ranged spell attack, dealing **1d6 + your spellcasting modifier** Bludgeoning damage on a hit.",
+    descriptionMd: "Leafy foliage sprouts to cover you. While prone and motionless, you are indistinguishable from a normal bush (creatures that haven’t seen you move must succeed on an Intelligence (Investigation) check vs. your spell save DC to discern you). For the duration, you can take an action to hurl a pinecone, berry, or bud at a creature within 30 feet; make a ranged spell attack, dealing 1d6 + your spellcasting modifier Bludgeoning damage on a hit.",
     scalingMd: "",
     imagePath: spellImgUrl("foliagearmor")
   },
@@ -889,7 +889,7 @@ export const LEVEL1 = [
     components: { verbal: true, somatic: true, material: false, materialText: "" },
     concentration: false,
     ritual: false,
-    descriptionMd: "A blast of concentrated wind streaks toward a creature. Make a ranged spell attack; on a hit, it takes **2d8 Bludgeoning** damage and, if Large or smaller, is pushed **10 feet** away from you.",
+    descriptionMd: "A blast of concentrated wind streaks toward a creature. Make a ranged spell attack; on a hit, it takes 2d8 Bludgeoning damage and, if Large or smaller, is pushed 10 feet away from you.",
     scalingMd: "**Using a Higher-Level Spell Slot.** Damage increases by 1d8 per slot level above 1st.",
     imagePath: spellImgUrl("galebolt")
   },
@@ -940,7 +940,7 @@ export const LEVEL1 = [
     components: { verbal: true, somatic: true, material: true, materialText: "a clear marble" },
     concentration: false,
     ritual: false,
-    descriptionMd: "You touch an object. It sheds silvery **Bright Light (20 ft.)** and **Dim Light (+20 ft.)** that is **visible only to creatures you specify** within 10 feet at casting; all others perceive the area normally.",
+    descriptionMd: "You touch an object. It sheds silvery Bright Light (20 ft.) and Dim Light (+20 ft.) that is visible only to creatures you specify within 10 feet at casting; all others perceive the area normally.",
     scalingMd: "",
     imagePath: spellImgUrl("ghostlight")
   },
@@ -962,7 +962,7 @@ export const LEVEL1 = [
     components: { verbal: true, somatic: true, material: true, materialText: "Arc-Anomon" },
     concentration: false,
     ritual: false,
-    descriptionMd: "Choose a creature you can see. You take **1d20 Necrotic** damage (ignores resistance/immunity), and the target **regains HP equal to the damage you took**.",
+    descriptionMd: "Choose a creature you can see. You take 1d20 Necrotic damage (ignores resistance/immunity), and the target regains HP equal to the damage you took.",
     scalingMd: "",
     imagePath: spellImgUrl("gift")
   },
@@ -985,8 +985,8 @@ export const LEVEL1 = [
     components: { verbal: true, somatic: true, material: false, materialText: "" },
     concentration: false,
     ritual: false,
-    descriptionMd: "Twisting roots launch toward a target. It makes a Strength save. **On a failure:** you move it **20 feet** in a direction you choose. **On a success:** you move it **5 feet**. A creature can choose to fail.",
-    scalingMd: "**Using a Higher-Level Spell Slot.** Move the target an extra **5 feet** per slot level above 1st.",
+    descriptionMd: "Twisting roots launch toward a target. It makes a Strength save. On a failure: you move it 20 feet in a direction you choose. On a success: you move it 5 feet. A creature can choose to fail.",
+    scalingMd: "**Using a Higher-Level Spell Slot.** Move the target an extra 5 feet per slot level above 1st.",
     imagePath: spellImgUrl("graspingroots")
   },
   {
@@ -1171,9 +1171,9 @@ export const LEVEL1 = [
     concentration: true,
     ritual: false,
     descriptionMd:
-      "Crackling beams of blue energy leap from your hands. For the duration, as an action, you can target a creature within range and make a ranged spell attack, dealing **1d12 Lightning** damage on a hit.",
+      "Crackling beams of blue energy leap from your hands. For the duration, as an action, you can target a creature within range and make a ranged spell attack, dealing 1d12 Lightning damage on a hit.",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** At 3rd or 4th level: **2d12** damage and 30-foot range. At 5th or 6th: **3d12** and 60-foot range. At 7th level or higher: **4d12** and 120-foot range.",
+      "**Using a Higher-Level Spell Slot.** At 3rd or 4th level: 2d12 damage and 30-foot range. At 5th or 6th: 3d12 and 60-foot range. At 7th level or higher: 4d12 and 120-foot range.",
     imagePath: spellImgUrl("lightningtendril")
   },
   {
@@ -1195,9 +1195,9 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "Hurl a glob of acid at a creature within range. Make a ranged spell attack. On a hit, the target takes **4d4 Acid** damage and begins melting: at the **end of each of its turns** for 1 minute it takes **1d4 Acid** damage. A creature can use its action to clear the acid and end the effect early.",
+      "Hurl a glob of acid at a creature within range. Make a ranged spell attack. On a hit, the target takes 4d4 Acid damage and begins melting: at the end of each of its turns for 1 minute it takes 1d4 Acid damage. A creature can use its action to clear the acid and end the effect early.",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** Initial damage increases by **2d4** per slot level above 1st.",
+      "**Using a Higher-Level Spell Slot.** Initial damage increases by 2d4 per slot level above 1st.",
     imagePath: spellImgUrl("meltingglob")
   },
   {
@@ -1219,7 +1219,7 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "You touch a piece of ammunition or a thrown weapon, overlaying a magical duplicate. The first time you attack with it before the end of your next turn, choose a **second** target in range and make a separate attack roll for the duplicate projectile. On a hit, the duplicate deals **2d8 Force** damage (no ability or item modifiers). The spell then ends.",
+      "You touch a piece of ammunition or a thrown weapon, overlaying a magical duplicate. The first time you attack with it before the end of your next turn, choose a second target in range and make a separate attack roll for the duplicate projectile. On a hit, the duplicate deals 2d8 Force damage (no ability or item modifiers). The spell then ends.",
     scalingMd:
       "**Using a Higher-Level Spell Slot.** Choose one additional target for each slot level above 1st.",
     imagePath: spellImgUrl("multishot"),
@@ -1243,7 +1243,7 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "You shroud your hand, a wielded weapon, or a natural weapon in ichorous miasma. The next time you hit with a **melee** attack before your next turn, it deals an extra **1d12 Poison** damage and the target must succeed on a Constitution save or be **Poisoned** until the end of your next turn. The spell ends after dealing damage or at the start of your next turn.",
+      "You shroud your hand, a wielded weapon, or a natural weapon in ichorous miasma. The next time you hit with a melee attack before your next turn, it deals an extra 1d12 Poison damage and the target must succeed on a Constitution save or be Poisoned until the end of your next turn. The spell ends after dealing damage or at the start of your next turn.",
     scalingMd: "",
     imagePath: spellImgUrl("nauseatingpoison"),
   },
@@ -1266,7 +1266,7 @@ export const LEVEL1 = [
     concentration: true,
     ritual: false,
     descriptionMd:
-      "You neutralize a willing creature’s supernatural signature. Until the spell ends, the target can’t be perceived by **Fey, Fiends, Celestials,** or **Undead**. The spell ends immediately if the target **makes an attack roll, deals damage, casts a spell,** or **moves within 5 feet** of one of those creature types.",
+      "You neutralize a willing creature’s supernatural signature. Until the spell ends, the target can’t be perceived by Fey, Fiends, Celestials, or Undead. The spell ends immediately if the target makes an attack roll, deals damage, casts a spell, or moves within 5 feet of one of those creature types.",
     scalingMd:
       "**Using a Higher-Level Spell Slot.** Target one additional creature for each slot level above 1st.",
     imagePath: spellImgUrl("neutralizeaura"),
@@ -1290,7 +1290,7 @@ export const LEVEL1 = [
     concentration: true,
     ritual: false,
     descriptionMd:
-      "A rotting decay afflicts a creature (Charisma save negates). For the duration, **whenever it takes damage**, it takes an additional **1d4 Necrotic** and **healing on it is halved**. The target repeats the save at the end of each of its turns. It also has **disadvantage on Charisma checks** for social interaction.",
+      "A rotting decay afflicts a creature (Charisma save negates). For the duration, whenever it takes damage, it takes an additional 1d4 Necrotic and healing on it is halved. The target repeats the save at the end of each of its turns. It also has disadvantage on Charisma checks for social interaction.",
     scalingMd: "",
     imagePath: spellImgUrl("rottingcurse"),
   },
@@ -1318,9 +1318,9 @@ export const LEVEL1 = [
     concentration: true,
     ritual: false,
     descriptionMd:
-      "Fortify planar fabric in a **30-ft cube**. When cast and as a **Magic action** on later turns, make a check using your spellcasting ability vs. the portal’s DC. On a success, the rift gains a success; on a failure (or if you lose concentration) it **resets one success**. After **3 consecutive successes**, the portal **closes**.",
+      "Fortify planar fabric in a 30-ft cube. When cast and as a Magic action on later turns, make a check using your spellcasting ability vs. the portal’s DC. On a success, the rift gains a success; on a failure (or if you lose concentration) it resets one success. After 3 consecutive successes, the portal closes.",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** Add **+1** to these ability checks per slot level above 1st.",
+      "**Using a Higher-Level Spell Slot.** Add +1 to these ability checks per slot level above 1st.",
     imagePath: spellImgUrl("sealportal"),
   },
   {
@@ -1342,7 +1342,7 @@ export const LEVEL1 = [
     concentration: true,
     ritual: false,
     descriptionMd:
-      "Imbue a missile with seeking power. When you make the ranged attack with it, **add your spellcasting modifier to the d20**. If that makes the **die** show **20 or more** (before normal weapon bonuses), the attack is a **critical hit**. The spell then ends.",
+      "Imbue a missile with seeking power. When you make the ranged attack with it, add your spellcasting modifier to the d20. If that makes the die show 20 or more (before normal weapon bonuses), the attack is a critical hit. The spell then ends.",
     scalingMd: "",
     imagePath: spellImgUrl("seekingprojectile"),
   },
@@ -1388,7 +1388,7 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "**Trigger:** A **leveled spell** cast by another creature **fails to affect you**. You absorb its latent magic and choose one: **regain 1d4 + your casting mod HP**, **or** your **Speed increases by 15 ft** until the end of your next turn.",
+      "Trigger: A leveled spell cast by another creature fails to affect you. You absorb its latent magic and choose one: regain 1d4 + your casting mod HP, or your Speed increases by 15 ft until the end of your next turn.",
     scalingMd: "",
     imagePath: spellImgUrl("siphonmagic"),
   },
@@ -1411,9 +1411,9 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "Your forearm turns to **stone** until the start of your next turn. As part of casting, make a **melee spell attack** against a creature in reach; on hit, it takes **2d10 Bludgeoning**. Until your next turn starts, when you take **slashing or piercing** damage from an attack, you can use your **reaction** to gain **resistance** to that attack’s damage.",
+      "Your forearm turns to stone until the start of your next turn. As part of casting, make a melee spell attack against a creature in reach; on hit, it takes 2d10 Bludgeoning. Until your next turn starts, when you take slashing or piercing damage from an attack, you can use your reaction to gain resistance to that attack’s damage.",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** **+1d10** damage per slot level above 1st.",
+      "**Using a Higher-Level Spell Slot.** +1d10 damage per slot level above 1st.",
 
   },
   {
@@ -1485,7 +1485,7 @@ export const LEVEL1 = [
   </div>
 `,
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** Use the **higher slot level** wherever the spell’s level appears in the stat block.",
+      "**Using a Higher-Level Spell Slot.** Use the higher slot level wherever the spell’s level appears in the stat block.",
     imagePath: spellImgUrl("summonooze"),
   },
   {
@@ -1507,9 +1507,9 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "You charge your hand with thunderous power. Make a melee spell attack; on a hit, a thunderous crash rings out (audible within 300 feet), the target takes **3d8 thunder** damage, and is pushed 10 feet away.",
+      "You charge your hand with thunderous power. Make a melee spell attack; on a hit, a thunderous crash rings out (audible within 300 feet), the target takes 3d8 thunder damage, and is pushed 10 feet away.",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** Damage increases by **1d8** per slot level above 1st.",
+      "**Using a Higher-Level Spell Slot.** Damage increases by 1d8 per slot level above 1st.",
     imagePath: spellImgUrl("thunderpunch")
   },
   {
@@ -1553,7 +1553,7 @@ export const LEVEL1 = [
     concentration: true,
     ritual: false,
     descriptionMd:
-      "You sprout wicked claws. When you use your Unarmed Strike to deal damage with the new growth, it deals **1d6 Slashing** damage instead of dealing the normal damage for your Unarmed Strike, and you use your spellcasting ability modifier for the attack and damage rolls rather than using Strength.\n\nWhen you deal damage with an Unarmed Strike, you gain a number of Temporary Hit Points equal to your spellcasting ability modifier. Temporary Hit Points from the spell are lost when the spell ends.",
+      "You sprout wicked claws. When you use your Unarmed Strike to deal damage with the new growth, it deals 1d6 Slashing damage instead of dealing the normal damage for your Unarmed Strike, and you use your spellcasting ability modifier for the attack and damage rolls rather than using Strength.\n\nWhen you deal damage with an Unarmed Strike, you gain a number of Temporary Hit Points equal to your spellcasting ability modifier. Temporary Hit Points from the spell are lost when the spell ends.",
     scalingMd: ""
   },
   {
@@ -1577,7 +1577,7 @@ export const LEVEL1 = [
     descriptionMd:
       "When you cast the spell, a willing creature within range makes a promise, swears an oath, or enters into a contract. For the duration of the spell, you immediately know if the creature breaks that promise, oath, or contract. If this happens, for the remainder of the duration of the spell, you know the distance and direction to the creature. If this spell is dispelled, you immediately know it but don’t learn the distance and direction to the creature.",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** The duration becomes **30 days** (level 3–4 slot) or **1 year** (level 5–6 slot). If you use a level **7+** spell slot, the spell lasts until dispelled."
+      "**Using a Higher-Level Spell Slot.** The duration becomes 30 days (level 3–4 slot) or 1 year (level 5–6 slot). If you use a level 7+ spell slot, the spell lasts until dispelled."
   },
   {
     slug: slugify("Water Blast"),
@@ -1598,9 +1598,9 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "You conjure a ball of water before hurling it at a target. Make a ranged spell attack. On a hit, the target takes **3d6 Bludgeoning** damage and if it is Large or smaller must make a Strength saving throw or be knocked prone.",
+      "You conjure a ball of water before hurling it at a target. Make a ranged spell attack. On a hit, the target takes 3d6 Bludgeoning damage and if it is Large or smaller must make a Strength saving throw or be knocked prone.",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** Damage increases by **1d6** per slot level above 1st."
+      "**Using a Higher-Level Spell Slot.** Damage increases by 1d6 per slot level above 1st."
   },
   {
     slug: slugify("Water Bullet"),
@@ -1621,11 +1621,11 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd: "You create a sphere of swirling water that spins rapidly in your hand or mouth before you hurl it at a creature within range. Make a ranged spell attack against the target. On a hit, the target takes Bludgeoning damage based on how far it is away from you.\n\n" +
-      "**1–10 feet:** 5d6 damage.\n" +
-      "**11–60 feet:** 4d6 damage.\n" +
-      "**61–90 feet:** 3d6 damage.",
+      "1–10 feet: 5d6 damage.\n" +
+      "11–60 feet: 4d6 damage.\n" +
+      "61–90 feet: 3d6 damage.",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** Damage increases by **1d6** per slot level above 1st."
+      "**Using a Higher-Level Spell Slot.** Damage increases by 1d6 per slot level above 1st."
   },
   {
     slug: slugify("Whelm Weapon"),
@@ -1646,9 +1646,9 @@ export const LEVEL1 = [
     concentration: true,
     ritual: false,
     descriptionMd:
-      "Up to three weapons you can see within range become enveloped by water. Roll a **d4**; for the duration, any damage dealt by the targeted weapons is reduced by the number rolled (minimum 1).",
+      "Up to three weapons you can see within range become enveloped by water. Roll a d4; for the duration, any damage dealt by the targeted weapons is reduced by the number rolled (minimum 1).",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** Target **two** additional weapons per slot level above 1st."
+      "**Using a Higher-Level Spell Slot.** Target two additional weapons per slot level above 1st."
   },
   {
     slug: slugify("Wind Slash"),
@@ -1669,9 +1669,9 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "You sweep your hand and send a razor-edged crescent of compressed air scything forward. Each creature in the line must make a Dexterity saving throw. On a failed save, a creature takes **2d6 Slashing** damage and is pushed **5 feet** away; on a success, it takes half as much and isn’t pushed.\n\nThe slash can snuff unprotected flames it passes through and briefly parts smoke, fog, or gas in the line until the start of your next turn.",
+      "You sweep your hand and send a razor-edged crescent of compressed air scything forward. Each creature in the line must make a Dexterity saving throw. On a failed save, a creature takes 2d6 Slashing damage and is pushed 5 feet away; on a success, it takes half as much and isn’t pushed.\n\nThe slash can snuff unprotected flames it passes through and briefly parts smoke, fog, or gas in the line until the start of your next turn.",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** Damage increases by **1d6** per slot level above 1st."
+      "**Using a Higher-Level Spell Slot.** Damage increases by 1d6 per slot level above 1st."
   },
   {
     slug: slugify("Zephyr Strike"),
@@ -1692,9 +1692,9 @@ export const LEVEL1 = [
     concentration: true,
     ritual: false,
     descriptionMd:
-      "You move like the wind. Until the spell ends, your movement doesn’t provoke opportunity attacks.\n\nOnce before the spell ends, you can give yourself advantage on one weapon attack roll on your turn. That attack deals an extra **1d8 Force** damage on a hit.",
+      "You move like the wind. Until the spell ends, your movement doesn’t provoke opportunity attacks.\n\nOnce before the spell ends, you can give yourself advantage on one weapon attack roll on your turn. That attack deals an extra 1d8 Force damage on a hit.",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** You gain an additional **+5 ft. movement speed** while this spell is active for every spell slot used above 1st."
+      "**Using a Higher-Level Spell Slot.** You gain an additional +5 ft. movement speed while this spell is active for every spell slot used above 1st."
   },
   {
     slug: slugify("Alarm"),
@@ -1715,7 +1715,7 @@ export const LEVEL1 = [
     concentration: false,
     ritual: true,
     descriptionMd:
-      "You set an alarm against intrusion. Choose a door, a window, or an area within range that is no larger than a 20-foot Cube. Until the spell ends, an alarm alerts you whenever a creature touches or enters the warded area. When you cast the spell, you can designate creatures that won’t set off the alarm. You also choose whether the alarm is audible or mental:\n\n**Audible Alarm.** The alarm produces the sound of a handbell for 10 seconds within 60 feet of the warded area.\n\n**Mental Alarm.** You are alerted by a mental ping if you are within 1 mile of the warded area. This ping awakens you if you’re asleep.",
+      "You set an alarm against intrusion. Choose a door, a window, or an area within range that is no larger than a 20-foot Cube. Until the spell ends, an alarm alerts you whenever a creature touches or enters the warded area. When you cast the spell, you can designate creatures that won’t set off the alarm. You also choose whether the alarm is audible or mental:\n\nAudible Alarm. The alarm produces the sound of a handbell for 10 seconds within 60 feet of the warded area.\n\nMental Alarm. You are alerted by a mental ping if you are within 1 mile of the warded area. This ping awakens you if you’re asleep.",
     scalingMd: ""
   },
    {
@@ -1762,7 +1762,7 @@ export const LEVEL1 = [
     descriptionMd:
       "Target a Beast that you can see within range. The target must succeed on a Wisdom saving throw or have the Charmed condition for the duration. If you or one of your allies deals damage to the target, the spell ends.",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** You can target **one additional Beast** for each spell slot level above 1."
+      "**Using a Higher-Level Spell Slot.** You can target one additional Beast for each spell slot level above 1."
   },
   {
     slug: slugify("Armor of Agathys"),
@@ -1783,9 +1783,9 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "Protective magical frost surrounds you. You gain **5 Temporary Hit Points**. If a creature hits you with a melee attack roll before the spell ends, the creature takes **5 Cold** damage. The spell ends early if you have no Temporary Hit Points.",
+      "Protective magical frost surrounds you. You gain 5 Temporary Hit Points. If a creature hits you with a melee attack roll before the spell ends, the creature takes 5 Cold damage. The spell ends early if you have no Temporary Hit Points.",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** The Temporary Hit Points and the Cold damage both increase by **5** for each slot level above 1."
+      "**Using a Higher-Level Spell Slot.** The Temporary Hit Points and the Cold damage both increase by 5 for each slot level above 1."
   },
   {
     slug: slugify("Arms of Hadar"),
@@ -1806,9 +1806,9 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "Invoking Hadar, you cause tendrils to erupt from yourself. Each creature in a 10-foot Emanation originating from you makes a Strength saving throw. On a failed save, a target takes **2d6 Necrotic** damage and **can’t take Reactions** until the start of its next turn. On a successful save, a target takes half as much damage only.",
+      "Invoking Hadar, you cause tendrils to erupt from yourself. Each creature in a 10-foot Emanation originating from you makes a Strength saving throw. On a failed save, a target takes 2d6 Necrotic damage and can’t take Reactions until the start of its next turn. On a successful save, a target takes half as much damage only.",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** Damage increases by **1d6** per slot level above 1."
+      "**Using a Higher-Level Spell Slot.** Damage increases by 1d6 per slot level above 1."
   },
   {
     slug: slugify("Bane"),
@@ -1829,9 +1829,9 @@ export const LEVEL1 = [
     concentration: true,
     ritual: false,
     descriptionMd:
-      "Up to three creatures of your choice that you can see within range must each make a Charisma saving throw. Whenever a target that fails this save makes an attack roll or a saving throw before the spell ends, the target must **subtract 1d4** from the roll.",
+      "Up to three creatures of your choice that you can see within range must each make a Charisma saving throw. Whenever a target that fails this save makes an attack roll or a saving throw before the spell ends, the target must subtract 1d4 from the roll.",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** Target **one additional creature** per slot level above 1."
+      "**Using a Higher-Level Spell Slot.** Target one additional creature per slot level above 1."
   },
   {
     slug: slugify("Bless"),
@@ -1852,9 +1852,9 @@ export const LEVEL1 = [
     concentration: true,
     ritual: false,
     descriptionMd:
-      "You bless up to three creatures within range. Whenever a target makes an attack roll or a saving throw before the spell ends, the target **adds 1d4** to the roll.",
+      "You bless up to three creatures within range. Whenever a target makes an attack roll or a saving throw before the spell ends, the target adds 1d4 to the roll.",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** Target **one additional creature** per slot level above 1."
+      "**Using a Higher-Level Spell Slot.** Target one additional creature per slot level above 1."
   },
   {
     slug: slugify("Burning Hands"),
@@ -1875,9 +1875,9 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "A thin sheet of flames shoots forth from you. Each creature in a 15-foot Cone makes a Dexterity saving throw, taking **3d6 Fire** damage on a failed save or half as much on a successful one. Flammable objects in the Cone that aren’t being worn or carried start burning.",
+      "A thin sheet of flames shoots forth from you. Each creature in a 15-foot Cone makes a Dexterity saving throw, taking 3d6 Fire damage on a failed save or half as much on a successful one. Flammable objects in the Cone that aren’t being worn or carried start burning.",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** Damage increases by **1d6** per slot level above 1."
+      "**Using a Higher-Level Spell Slot.** Damage increases by 1d6 per slot level above 1."
   },
   {
     slug: slugify("Charm Person"),
@@ -1898,9 +1898,9 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "One Humanoid you can see within range makes a Wisdom saving throw (with Advantage if you or your allies are fighting it). On a failed save, the target has the **Charmed** condition until the spell ends or until you or your allies damage it. The Charmed creature is **Friendly** to you. When the spell ends, the target **knows** it was Charmed by you.",
+      "One Humanoid you can see within range makes a Wisdom saving throw (with Advantage if you or your allies are fighting it). On a failed save, the target has the Charmed condition until the spell ends or until you or your allies damage it. The Charmed creature is Friendly to you. When the spell ends, the target knows it was Charmed by you.",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** Target **one additional creature** per slot level above 1."
+      "**Using a Higher-Level Spell Slot.** Target one additional creature per slot level above 1."
   },
   {
     slug: slugify("Chromatic Orb"),
@@ -1921,9 +1921,9 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "You hurl an orb of energy at a target within range. Choose **Acid, Cold, Fire, Lightning, Poison, or Thunder** for the orb, then make a ranged spell attack. On a hit, the target takes **3d8** damage of the chosen type.\n\nIf you roll the same number on two or more of the d8s, the orb **leaps** to a different target of your choice within **30 feet** of the target. Make an attack roll against the new target and a new damage roll. The orb can’t leap again unless you cast with a **level 2+** slot.",
+      "You hurl an orb of energy at a target within range. Choose Acid, Cold, Fire, Lightning, Poison, or Thunder for the orb, then make a ranged spell attack. On a hit, the target takes 3d8 damage of the chosen type.\n\nIf you roll the same number on two or more of the d8s, the orb leaps to a different target of your choice within 30 feet of the target. Make an attack roll against the new target and a new damage roll. The orb can’t leap again unless you cast with a level 2+ slot.",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** Damage increases by **1d8** per slot level above 1. The orb can leap a maximum number of times equal to the **slot level**; a creature can be targeted only once per casting."
+      "**Using a Higher-Level Spell Slot.** Damage increases by 1d8 per slot level above 1. The orb can leap a maximum number of times equal to the slot level; a creature can be targeted only once per casting."
   },
   {
     slug: slugify("Color Spray"),
@@ -1944,7 +1944,7 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "You launch a dazzling array of flashing, colorful light. Each creature in a 15-foot Cone originating from you must succeed on a Constitution saving throw or have the **Blinded** condition until the end of your next turn.",
+      "You launch a dazzling array of flashing, colorful light. Each creature in a 15-foot Cone originating from you must succeed on a Constitution saving throw or have the Blinded condition until the end of your next turn.",
     scalingMd: ""
   },
   {
@@ -1966,7 +1966,7 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "Speak a one-word command to a creature you can see within range. The target must succeed on a Wisdom saving throw or follow the command on its next turn. Choose one:\n\n**Approach.** Moves toward you by the shortest route, ending its turn within 5 feet if possible.\n**Drop.** Drops what it’s holding and ends its turn.\n**Flee.** Spends its turn moving away from you by the fastest means.\n**Grovel.** Gains the **Prone** condition and ends its turn.\n**Halt.** On its turn, the target doesn’t move and takes no action or Bonus Action.",
+      "Speak a one-word command to a creature you can see within range. The target must succeed on a Wisdom saving throw or follow the command on its next turn. Choose one:\n\nApproach. Moves toward you by the shortest route, ending its turn within 5 feet if possible.\nDrop. Drops what it’s holding and ends its turn.\nFlee. Spends its turn moving away from you by the fastest means.\nGrovel. Gains the Prone condition and ends its turn.\nHalt. On its turn, the target doesn’t move and takes no action or Bonus Action.",
     scalingMd:
       "**Using a Higher-Level Spell Slot.** Affect one additional creature per slot level above 1."
   },
@@ -1989,7 +1989,7 @@ export const LEVEL1 = [
     concentration: true,
     ritual: false,
     descriptionMd:
-      "You try to compel a creature into a duel. One creature within range makes a Wisdom saving throw. On a failed save, the target has **Disadvantage** on attack rolls against creatures other than you, and it can’t willingly move to a space more than **30 feet** away from you.\n\nThe spell ends if you attack a creature other than the target, cast a spell on an enemy other than the target, an ally damages the target, or you end your turn more than 30 feet from it.",
+      "You try to compel a creature into a duel. One creature within range makes a Wisdom saving throw. On a failed save, the target has Disadvantage on attack rolls against creatures other than you, and it can’t willingly move to a space more than 30 feet away from you.\n\nThe spell ends if you attack a creature other than the target, cast a spell on an enemy other than the target, an ally damages the target, or you end your turn more than 30 feet from it.",
     scalingMd: ""
   },
   {
@@ -2011,7 +2011,7 @@ export const LEVEL1 = [
     concentration: false,
     ritual: true,
     descriptionMd:
-      "For the duration, you understand the **literal meaning** of any language that you hear or see signed. You also understand **written** language you see, but you must be touching the surface; it takes about **1 minute per page**. This spell doesn’t decode symbols or secret messages.",
+      "For the duration, you understand the literal meaning of any language that you hear or see signed. You also understand written language you see, but you must be touching the surface; it takes about 1 minute per page. This spell doesn’t decode symbols or secret messages.",
     scalingMd: ""
   },
   {
@@ -2033,9 +2033,9 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "Do one of the following:\n\n**Create Water.** Create up to **10 gallons** of clean water in an open container, or make rain in a **30-foot Cube**, extinguishing exposed flames there.\n\n**Destroy Water.** Destroy up to **10 gallons** of water in an open container, or destroy fog in a **30-foot Cube** within range.",
+      "Do one of the following:\n\nCreate Water. Create up to 10 gallons of clean water in an open container, or make rain in a 30-foot Cube, extinguishing exposed flames there.\n\nDestroy Water. Destroy up to 10 gallons of water in an open container, or destroy fog in a 30-foot Cube within range.",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** Create/destroy **+10 gallons**, or increase the Cube by **+5 feet**, per slot level above 1."
+      "**Using a Higher-Level Spell Slot.** Create/destroy +10 gallons, or increase the Cube by +5 feet, per slot level above 1."
   },
   {
     slug: slugify("Cure Wounds"),
@@ -2056,9 +2056,9 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "A creature you touch regains **2d8 +** your spellcasting ability modifier Hit Points.",
+      "A creature you touch regains 2d8 + your spellcasting ability modifier Hit Points.",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** Healing increases by **2d8** per slot level above 1."
+      "**Using a Higher-Level Spell Slot.** Healing increases by 2d8 per slot level above 1."
   },
   {
     slug: slugify("Detect Evil and Good"),
@@ -2079,7 +2079,7 @@ export const LEVEL1 = [
     concentration: true,
     ritual: false,
     descriptionMd:
-      "For the duration, you sense the location of any **Aberration, Celestial, Elemental, Fey, Fiend, or Undead** within **30 feet** of yourself. You also sense whether **Hallow** is active there and where. Blocked by 1 ft stone/dirt/wood, 1 in. metal, or thin lead.",
+      "For the duration, you sense the location of any Aberration, Celestial, Elemental, Fey, Fiend, or Undead within 30 feet of yourself. You also sense whether Hallow is active there and where. Blocked by 1 ft stone/dirt/wood, 1 in. metal, or thin lead.",
     scalingMd: ""
   },
   {
@@ -2101,7 +2101,7 @@ export const LEVEL1 = [
     concentration: true,
     ritual: true,
     descriptionMd:
-      "For the duration, you sense the presence of **magical effects** within **30 feet**. If you sense such effects, you can take the Magic action to see a **faint aura** around visible creatures/objects bearing magic; if created by a spell, you learn the spell’s **school**. Blocked by 1 ft stone/dirt/wood, 1 in. metal, or thin lead.",
+      "For the duration, you sense the presence of magical effects within 30 feet. If you sense such effects, you can take the Magic action to see a faint aura around visible creatures/objects bearing magic; if created by a spell, you learn the spell’s school. Blocked by 1 ft stone/dirt/wood, 1 in. metal, or thin lead.",
     scalingMd: ""
   },
   {
@@ -2123,7 +2123,7 @@ export const LEVEL1 = [
     concentration: true,
     ritual: true,
     descriptionMd:
-      "For the duration, you sense the location of **poisons**, **poisonous/venomous creatures**, and **magical contagions** within **30 feet**. You sense the **kind** in each case. Blocked by 1 ft stone/dirt/wood, 1 in. metal, or thin lead.",
+      "For the duration, you sense the location of poisons, poisonous/venomous creatures, and magical contagions within 30 feet. You sense the kind in each case. Blocked by 1 ft stone/dirt/wood, 1 in. metal, or thin lead.",
     scalingMd: ""
   },
   {
@@ -2145,7 +2145,7 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "You make yourself—including your clothing, armor, weapons, and other belongings on your person—look different. You can seem **1 foot shorter or taller** and appear heavier or lighter, but must keep the same basic limb arrangement. The illusion doesn’t hold up to **physical inspection**. To discern the disguise, a creature must take the **Study** action and succeed on an **Intelligence (Investigation)** check vs. your spell save DC.",
+      "You make yourself—including your clothing, armor, weapons, and other belongings on your person—look different. You can seem 1 foot shorter or taller and appear heavier or lighter, but must keep the same basic limb arrangement. The illusion doesn’t hold up to physical inspection. To discern the disguise, a creature must take the Study action and succeed on an Intelligence (Investigation) check vs. your spell save DC.",
     scalingMd: ""
   },
   {
@@ -2167,9 +2167,9 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "One creature of your choice that you can see within range hears a discordant melody in its mind. The target makes a Wisdom saving throw. On a failed save, it takes **3d6 Psychic** damage and must immediately use its **Reaction** (if available) to move as far away from you as it can by the safest route. On a successful save, the target takes **half** as much damage only.",
+      "One creature of your choice that you can see within range hears a discordant melody in its mind. The target makes a Wisdom saving throw. On a failed save, it takes 3d6 Psychic damage and must immediately use its Reaction (if available) to move as far away from you as it can by the safest route. On a successful save, the target takes half as much damage only.",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** Damage increases by **1d6** per slot level above 1."
+      "**Using a Higher-Level Spell Slot.** Damage increases by 1d6 per slot level above 1."
   },
   {
     slug: slugify("Divine Favor"),
@@ -2190,7 +2190,7 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "Until the spell ends, your attacks with weapons deal an extra **1d4 Radiant** damage on a hit.",
+      "Until the spell ends, your attacks with weapons deal an extra 1d4 Radiant damage on a hit.",
     scalingMd: ""
   },
   {
@@ -2212,9 +2212,9 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "The target takes an extra **2d8 Radiant** damage from the attack. The damage increases by **1d8** if the target is a Fiend or an Undead.",
+      "The target takes an extra 2d8 Radiant damage from the attack. The damage increases by 1d8 if the target is a Fiend or an Undead.",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** Extra damage increases by **1d8** per slot level above 1."
+      "**Using a Higher-Level Spell Slot.** Extra damage increases by 1d8 per slot level above 1."
   },
   {
     slug: slugify("Ensnaring Strike"),
@@ -2235,9 +2235,9 @@ export const LEVEL1 = [
     concentration: true,
     ritual: false,
     descriptionMd:
-      "On a hit, grasping vines appear and the target makes a Strength save. **Fail:** target is **Restrained** until the spell ends. While Restrained, it takes **1d6 Piercing** at the start of each of its turns. The target or a creature within reach can use an action to make a Strength (Athletics) check vs. your DC, ending the effect on a success.",
+      "On a hit, grasping vines appear and the target makes a Strength save. Fail: target is Restrained until the spell ends. While Restrained, it takes 1d6 Piercing at the start of each of its turns. The target or a creature within reach can use an action to make a Strength (Athletics) check vs. your DC, ending the effect on a success.",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** Ongoing damage increases by **1d6** per slot level above 1."
+      "**Using a Higher-Level Spell Slot.** Ongoing damage increases by 1d6 per slot level above 1."
   },
   {
     slug: slugify("Entangle"),
@@ -2258,7 +2258,7 @@ export const LEVEL1 = [
     concentration: true,
     ritual: false,
     descriptionMd:
-      "Grasping plants sprout in a 20-foot square, making the ground **Difficult Terrain**. Creatures in the area when cast must succeed on a Strength save or be **Restrained**. A Restrained creature can use an action to make a Strength (Athletics) check vs. your DC, ending the effect on a success.",
+      "Grasping plants sprout in a 20-foot square, making the ground Difficult Terrain. Creatures in the area when cast must succeed on a Strength save or be Restrained. A Restrained creature can use an action to make a Strength (Athletics) check vs. your DC, ending the effect on a success.",
     scalingMd: ""
   },
   {
@@ -2280,7 +2280,7 @@ export const LEVEL1 = [
     concentration: true,
     ritual: false,
     descriptionMd:
-      "You take the **Dash** action, and until the spell ends, you can take Dash again as a **Bonus Action** each turn.",
+      "You take the Dash action, and until the spell ends, you can take Dash again as a Bonus Action each turn.",
     scalingMd: ""
   },
   {
@@ -2302,7 +2302,7 @@ export const LEVEL1 = [
     concentration: true,
     ritual: false,
     descriptionMd:
-      "Objects in a 20-foot cube are outlined in light. Each creature in the cube that fails a Dexterity save is outlined. Affected targets **shed Dim Light (10 ft)**, **can’t benefit from Invisible**, and attack rolls against them have **Advantage** if the attacker can see them.",
+      "Objects in a 20-foot cube are outlined in light. Each creature in the cube that fails a Dexterity save is outlined. Affected targets shed Dim Light (10 ft), can’t benefit from Invisible, and attack rolls against them have Advantage if the attacker can see them.",
     scalingMd: ""
   },
   {
@@ -2324,9 +2324,9 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "You gain **2d4 + 4 Temporary Hit Points**.",
+      "You gain 2d4 + 4 Temporary Hit Points.",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** Gain **+5** Temporary Hit Points per slot level above 1."
+      "**Using a Higher-Level Spell Slot.** Gain +5 Temporary Hit Points per slot level above 1."
   },
   {
     slug: slugify("Feather Fall"),
@@ -2347,7 +2347,7 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "Choose up to five falling creatures within range. Their falling speed is reduced to **60 ft/round** for the duration. If a creature lands before the spell ends, it **takes no fall damage**, and the effect ends for it.",
+      "Choose up to five falling creatures within range. Their falling speed is reduced to 60 ft/round for the duration. If a creature lands before the spell ends, it takes no fall damage, and the effect ends for it.",
     scalingMd: ""
   },
   {
@@ -2369,11 +2369,11 @@ export const LEVEL1 = [
     concentration: false,
     ritual: true,
     descriptionMd: "You gain the service of a familiar, a spirit that takes an animal form you choose: Bat, Cat, Frog, Hawk, Lizard, Octopus, Owl, Rat, Raven, Spider, Weasel, or another Beast that has a Challenge Rating of 0. Appearing in an unoccupied space within range, the familiar has the statistics of the chosen form, though it is a Celestial, Fey, or Fiend (your choice) instead of a Beast. Your familiar acts independently of you, but it obeys your commands.\n\n" +
-      "**Telepathic Connection.** While your familiar is within 100 feet of you, you can communicate with it telepathically. Additionally, as a Bonus Action, you can see through the familiar’s eyes and hear what it hears until the start of your next turn, gaining the benefits of any special senses it has.\n\n" +
+      "Telepathic Connection. While your familiar is within 100 feet of you, you can communicate with it telepathically. Additionally, as a Bonus Action, you can see through the familiar’s eyes and hear what it hears until the start of your next turn, gaining the benefits of any special senses it has.\n\n" +
       "Finally, when you cast a spell with a range of touch, your familiar can deliver the touch. Your familiar must be within 100 feet of you, and it must take a Reaction to deliver the touch when you cast the spell.\n\n" +
-      "**Combat.** The familiar is an ally to you and your allies. It rolls its own Initiative and acts on its own turn. A familiar can’t attack, but it can take other actions as normal.\n\n" +
-      "**Disappearance of the Familiar.** When the familiar drops to 0 Hit Points, it disappears. It reappears after you cast this spell again. As a Magic action, you can temporarily dismiss the familiar to a pocket dimension. Alternatively, you can dismiss it forever. As a Magic action while it is temporarily dismissed, you can cause it to reappear in an unoccupied space within 30 feet of you. Whenever the familiar drops to 0 Hit Points or disappears into the pocket dimension, it leaves behind in its space anything it was wearing or carrying.\n\n" +
-      "**One Familiar Only.** You can’t have more than one familiar at a time. If you cast this spell while you have a familiar, you instead cause it to adopt a new eligible form.",
+      "Combat. The familiar is an ally to you and your allies. It rolls its own Initiative and acts on its own turn. A familiar can’t attack, but it can take other actions as normal.\n\n" +
+      "Disappearance of the Familiar. When the familiar drops to 0 Hit Points, it disappears. It reappears after you cast this spell again. As a Magic action, you can temporarily dismiss the familiar to a pocket dimension. Alternatively, you can dismiss it forever. As a Magic action while it is temporarily dismissed, you can cause it to reappear in an unoccupied space within 30 feet of you. Whenever the familiar drops to 0 Hit Points or disappears into the pocket dimension, it leaves behind in its space anything it was wearing or carrying.\n\n" +
+      "One Familiar Only. You can’t have more than one familiar at a time. If you cast this spell while you have a familiar, you instead cause it to adopt a new eligible form.",
     scalingMd: ""
   },
   {
@@ -2395,9 +2395,9 @@ export const LEVEL1 = [
     concentration: true,
     ritual: false,
     descriptionMd:
-      "Create a **Heavily Obscured** 20-foot-radius sphere of fog centered on a point. It lasts for the duration or until dispersed by a strong wind (e.g., **Gust of Wind**).",
+      "Create a Heavily Obscured 20-foot-radius sphere of fog centered on a point. It lasts for the duration or until dispersed by a strong wind (e.g., Gust of Wind).",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** Radius increases by **20 ft** per slot level above 1."
+      "**Using a Higher-Level Spell Slot.** Radius increases by 20 ft per slot level above 1."
   },
   {
     slug: slugify("Goodberry"),
@@ -2418,7 +2418,7 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "Ten berries appear in your hand and are infused for the duration. A creature can use a **Bonus Action** to eat one berry: it restores **1 HP** and provides **a day’s nourishment**. Uneaten berries **disappear** when the spell ends.",
+      "Ten berries appear in your hand and are infused for the duration. A creature can use a Bonus Action to eat one berry: it restores 1 HP and provides a day’s nourishment. Uneaten berries disappear when the spell ends.",
     scalingMd: ""
   },
   {
@@ -2440,7 +2440,7 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "Nonflammable grease covers a 10-foot square, making it **Difficult Terrain**. When it appears, each creature in the area must succeed on a Dexterity save or fall **Prone**. A creature that enters or ends its turn there must also save or fall Prone.",
+      "Nonflammable grease covers a 10-foot square, making it Difficult Terrain. When it appears, each creature in the area must succeed on a Dexterity save or fall Prone. A creature that enters or ends its turn there must also save or fall Prone.",
     scalingMd: ""
   },
   {
@@ -2462,9 +2462,9 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "Make a ranged spell attack. On a hit, the target takes **4d6 Radiant** damage, and the **next attack** against it before the end of your next turn has **Advantage**.",
+      "Make a ranged spell attack. On a hit, the target takes 4d6 Radiant damage, and the next attack against it before the end of your next turn has Advantage.",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** Damage increases by **1d6** per slot level above 1."
+      "**Using a Higher-Level Spell Slot.** Damage increases by 1d6 per slot level above 1."
   },
   {
     slug: slugify("Hail of Thorns"),
@@ -2485,9 +2485,9 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "On a hit with a ranged weapon, thorns erupt. The target and each creature within **5 feet** make a Dexterity save, taking **1d10 Piercing** on a failed save, or half as much on a success.",
+      "On a hit with a ranged weapon, thorns erupt. The target and each creature within 5 feet make a Dexterity save, taking 1d10 Piercing on a failed save, or half as much on a success.",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** Damage increases by **1d10** per slot level above 1."
+      "**Using a Higher-Level Spell Slot.** Damage increases by 1d10 per slot level above 1."
   },
   {
     slug: slugify("Healing Word"),
@@ -2508,9 +2508,9 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "A creature you can see within range regains **2d4 +** your spellcasting ability modifier Hit Points.",
+      "A creature you can see within range regains 2d4 + your spellcasting ability modifier Hit Points.",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** Healing increases by **2d4** per slot level above 1."
+      "**Using a Higher-Level Spell Slot.** Healing increases by 2d4 per slot level above 1."
   },
   {
     slug: slugify("Hellish Rebuke"),
@@ -2531,9 +2531,9 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "The creature that damaged you is wreathed in green flames. It makes a Dexterity save, taking **2d10 Fire** on a failed save, or half as much on a success.",
+      "The creature that damaged you is wreathed in green flames. It makes a Dexterity save, taking 2d10 Fire on a failed save, or half as much on a success.",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** Damage increases by **1d10** per slot level above 1."
+      "**Using a Higher-Level Spell Slot.** Damage increases by 1d10 per slot level above 1."
   },
   {
     slug: slugify("Heroism"),
@@ -2554,9 +2554,9 @@ export const LEVEL1 = [
     concentration: true,
     ritual: false,
     descriptionMd:
-      "A willing creature you touch is imbued with bravery. It is **immune to the Frightened** condition and gains **Temporary Hit Points equal to your spellcasting ability modifier** at the start of each of its turns.",
+      "A willing creature you touch is imbued with bravery. It is immune to the Frightened condition and gains Temporary Hit Points equal to your spellcasting ability modifier at the start of each of its turns.",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** Target **one additional creature** per slot level above 1."
+      "**Using a Higher-Level Spell Slot.** Target one additional creature per slot level above 1."
   },
   {
     slug: slugify("Hex"),
@@ -2577,9 +2577,9 @@ export const LEVEL1 = [
     concentration: true,
     ritual: false,
     descriptionMd:
-      "Curse a creature you can see. Until the spell ends, you deal an extra **1d6 Necrotic** to it whenever you hit with an attack. Choose one ability when you cast the spell; the target has **Disadvantage** on ability checks using that ability. If the target drops to 0 HP, you can use a **Bonus Action** on a later turn to curse a new creature.",
+      "Curse a creature you can see. Until the spell ends, you deal an extra 1d6 Necrotic to it whenever you hit with an attack. Choose one ability when you cast the spell; the target has Disadvantage on ability checks using that ability. If the target drops to 0 HP, you can use a Bonus Action on a later turn to curse a new creature.",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** Concentration can last longer: level **2 (4 hours)**, **3–4 (8 hours)**, **5+ (24 hours)**."
+      "**Using a Higher-Level Spell Slot.** Concentration can last longer: level 2 (4 hours), 3–4 (8 hours), 5+ (24 hours)."
   },
   {
     slug: slugify("Hunter's Mark"),
@@ -2600,9 +2600,9 @@ export const LEVEL1 = [
     concentration: true,
     ritual: false,
     descriptionMd:
-      "Mark one creature you can see. Until the spell ends, you deal an extra **1d6 Force** damage to it whenever you hit with an attack, and you have **Advantage** on Wisdom (Perception or Survival) checks to find it. If it drops to 0 HP, you can **Bonus Action** move the mark to another visible creature.",
+      "Mark one creature you can see. Until the spell ends, you deal an extra 1d6 Force damage to it whenever you hit with an attack, and you have Advantage on Wisdom (Perception or Survival) checks to find it. If it drops to 0 HP, you can Bonus Action move the mark to another visible creature.",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** Concentration can last longer: **3–4 (8 hours)**, **5+ (24 hours)**."
+      "**Using a Higher-Level Spell Slot.** Concentration can last longer: 3–4 (8 hours), 5+ (24 hours)."
   },
   {
     slug: slugify("Ice Knife"),
@@ -2623,9 +2623,9 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "Make a ranged spell attack: on a hit, the target takes **1d10 Piercing**. Hit or miss, the shard then **explodes**; the target and each creature within **5 feet** must make a Dexterity save, taking **2d6 Cold** on a failed save, or half as much on a success.",
+      "Make a ranged spell attack: on a hit, the target takes 1d10 Piercing. Hit or miss, the shard then explodes; the target and each creature within 5 feet must make a Dexterity save, taking 2d6 Cold on a failed save, or half as much on a success.",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** **Cold** damage increases by **1d6** per slot level above 1."
+      "**Using a Higher-Level Spell Slot.** Cold damage increases by 1d6 per slot level above 1."
   },
   {
     slug: slugify("Identify"),
@@ -2668,7 +2668,7 @@ export const LEVEL1 = [
     concentration: false,
     ritual: true,
     descriptionMd:
-      "You write and imbue text with an illusion. You and designated creatures see the true message; others see unintelligible or altered text (language must be one you know). **Truesight** reads the hidden message. If dispelled, both texts vanish.",
+      "You write and imbue text with an illusion. You and designated creatures see the true message; others see unintelligible or altered text (language must be one you know). Truesight reads the hidden message. If dispelled, both texts vanish.",
     scalingMd: ""
   },
   {
@@ -2690,9 +2690,9 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "A creature you touch makes a Constitution saving throw, taking **2d10 Necrotic** on a failed save or half as much on a success.",
+      "A creature you touch makes a Constitution saving throw, taking 2d10 Necrotic on a failed save or half as much on a success.",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** Damage increases by **1d10** per slot level above 1."
+      "**Using a Higher-Level Spell Slot.** Damage increases by 1d10 per slot level above 1."
   },
   {
     slug: slugify("Jump"),
@@ -2713,9 +2713,9 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "Touch a willing creature. Once on each of its turns, it can jump **up to 30 feet** by spending **10 feet of movement**.",
+      "Touch a willing creature. Once on each of its turns, it can jump up to 30 feet by spending 10 feet of movement.",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** Target **+1 creature** per slot level above 1."
+      "**Using a Higher-Level Spell Slot.** Target +1 creature per slot level above 1."
   },
   {
     slug: slugify("Longstrider"),
@@ -2736,9 +2736,9 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "Touch a creature. Its Speed increases by **10 feet** for the duration.",
+      "Touch a creature. Its Speed increases by 10 feet for the duration.",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** Target **+1 creature** per slot level above 1."
+      "**Using a Higher-Level Spell Slot.** Target +1 creature per slot level above 1."
   },
   {
     slug: slugify("Mage Armor"),
@@ -2759,7 +2759,7 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "Touch a willing creature who isn’t wearing armor. Until the spell ends, the target’s **base AC becomes 13 + Dex modifier**. The spell ends early if the target dons armor.",
+      "Touch a willing creature who isn’t wearing armor. Until the spell ends, the target’s base AC becomes 13 + Dex modifier. The spell ends early if the target dons armor.",
     scalingMd: ""
   },
   {
@@ -2781,9 +2781,9 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "Create **three** glowing darts of force. Each dart hits a creature you choose within range for **1d4 + 1 Force** damage. Darts strike simultaneously and can hit one or multiple targets.",
+      "Create three glowing darts of force. Each dart hits a creature you choose within range for 1d4 + 1 Force damage. Darts strike simultaneously and can hit one or multiple targets.",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** Create **+1 dart** per slot level above 1."
+      "**Using a Higher-Level Spell Slot.** Create +1 dart per slot level above 1."
   },
   {
     slug: slugify("Protection from Evil and Good"),
@@ -2804,7 +2804,7 @@ export const LEVEL1 = [
     concentration: true,
     ritual: false,
     descriptionMd:
-      "The target is protected against **Aberrations, Celestials, Elementals, Fey, Fiends, and Undead**: such creatures have **Disadvantage** on attack rolls against the target; the target **can’t be charmed, frightened, or possessed** by them; if already affected, it has **Advantage** on new saves against the effect.",
+      "The target is protected against Aberrations, Celestials, Elementals, Fey, Fiends, and Undead: such creatures have Disadvantage on attack rolls against the target; the target can’t be charmed, frightened, or possessed by them; if already affected, it has Advantage on new saves against the effect.",
     scalingMd: ""
   },
   {
@@ -2826,7 +2826,7 @@ export const LEVEL1 = [
     concentration: false,
     ritual: true,
     descriptionMd:
-      "Remove **poison** and **rot** from nonmagical food and drink in a **5-foot-radius sphere** centered on a point within range.",
+      "Remove poison and rot from nonmagical food and drink in a 5-foot-radius sphere centered on a point within range.",
     scalingMd: ""
   },
   {
@@ -2848,9 +2848,9 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "Make a ranged spell attack. On a hit, the target takes **2d8 Poison** damage and is **Poisoned** until the end of your next turn.",
+      "Make a ranged spell attack. On a hit, the target takes 2d8 Poison damage and is Poisoned until the end of your next turn.",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** Damage increases by **1d8** per slot level above 1."
+      "**Using a Higher-Level Spell Slot.** Damage increases by 1d8 per slot level above 1."
   },
   {
     slug: slugify("Sanctuary"),
@@ -2871,7 +2871,7 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "Ward a creature. A creature targeting it with an attack or damaging spell must make a **Wisdom save** or choose a new target or lose the attack/spell. Doesn’t protect from area effects. The spell ends if the warded creature **attacks, casts a spell, or deals damage**.",
+      "Ward a creature. A creature targeting it with an attack or damaging spell must make a Wisdom save or choose a new target or lose the attack/spell. Doesn’t protect from area effects. The spell ends if the warded creature attacks, casts a spell, or deals damage.",
     scalingMd: ""
   },
   {
@@ -2893,9 +2893,9 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "On a hit, the target takes **+1d6 Fire**. At the **start of each of its turns** until the spell ends, it takes **1d6 Fire** and then makes a **Constitution save**; on a success, the spell ends.",
+      "On a hit, the target takes +1d6 Fire. At the start of each of its turns until the spell ends, it takes 1d6 Fire and then makes a Constitution save; on a success, the spell ends.",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** **All damage** increases by **1d6** per slot level above 1."
+      "**Using a Higher-Level Spell Slot.** All damage increases by 1d6 per slot level above 1."
   },
   {
     slug: slugify("Shield"),
@@ -2916,7 +2916,7 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "An invisible barrier protects you until the start of your next turn: you gain **+5 AC**, including against the triggering attack, and you take **no damage from Magic Missile**.",
+      "An invisible barrier protects you until the start of your next turn: you gain +5 AC, including against the triggering attack, and you take no damage from Magic Missile.",
     scalingMd: ""
   },
   {
@@ -2938,7 +2938,7 @@ export const LEVEL1 = [
     concentration: true,
     ritual: false,
     descriptionMd:
-      "A shimmering field surrounds a creature you choose within range, granting **+2 AC** for the duration.",
+      "A shimmering field surrounds a creature you choose within range, granting +2 AC for the duration.",
     scalingMd: ""
   },
   {
@@ -2960,7 +2960,7 @@ export const LEVEL1 = [
     concentration: true,
     ritual: false,
     descriptionMd:
-      "Create a silent, visual image no larger than a **15-foot cube** within range. As a **Magic action**, move and alter it naturally. Physical interaction reveals the illusion. A creature that **Studies** it and succeeds on an **Intelligence (Investigation)** check vs. your DC sees through it.",
+      "Create a silent, visual image no larger than a 15-foot cube within range. As a Magic action, move and alter it naturally. Physical interaction reveals the illusion. A creature that Studies it and succeeds on an Intelligence (Investigation) check vs. your DC sees through it.",
     scalingMd: ""
   },
   {
@@ -2982,7 +2982,7 @@ export const LEVEL1 = [
     concentration: true,
     ritual: false,
     descriptionMd:
-      "Creatures of your choice in a **5-foot-radius** sphere must make a **Wisdom save** or become **Incapacitated** until the end of their next turn, then repeat the save. On a second failure, the target becomes **Unconscious** for the duration. The spell ends on a target if it takes damage or a creature within 5 ft takes an action to shake it awake. Creatures that don’t sleep or are immune to **Exhaustion** automatically succeed.",
+      "Creatures of your choice in a 5-foot-radius sphere must make a Wisdom save or become Incapacitated until the end of their next turn, then repeat the save. On a second failure, the target becomes Unconscious for the duration. The spell ends on a target if it takes damage or a creature within 5 ft takes an action to shake it awake. Creatures that don’t sleep or are immune to Exhaustion automatically succeed.",
     scalingMd: ""
   },
   {
@@ -3004,7 +3004,7 @@ export const LEVEL1 = [
     concentration: false,
     ritual: true,
     descriptionMd:
-      "For the duration, you can **comprehend and verbally communicate** with Beasts and use Influence-based skills with them. They can share info about nearby locations and creatures, especially within the past day.",
+      "For the duration, you can comprehend and verbally communicate with Beasts and use Influence-based skills with them. They can share info about nearby locations and creatures, especially within the past day.",
     scalingMd: ""
   },
   {
@@ -3028,7 +3028,7 @@ export const LEVEL1 = [
     descriptionMd: "One creature of your choice that you can see within range makes a Wisdom saving throw. On a failed save, it has the Prone and Incapacitated conditions for the duration. During that time, it laughs uncontrollably if it’s capable of laughter, and it can’t end the Prone condition on itself.\n\n" +
       "At the end of each of its turns and each time it takes damage, it makes another Wisdom saving throw. The target has Advantage on the save if the save is triggered by damage. On a successful save, the spell ends.",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** Target **+1 creature** per slot level above 1.",
+      "**Using a Higher-Level Spell Slot.** Target +1 creature per slot level above 1.",
     imagePath: spellImgUrl("hideouslaughter")
   },
   {
@@ -3050,7 +3050,7 @@ export const LEVEL1 = [
     concentration: false,
     ritual: true,
     descriptionMd:
-      "Create a hovering **force disk** that follows within **20 feet** of you (ends if >100 feet away). It carries up to **500 lb**; exceeding that ends the spell. It navigates stairs/slopes but not elevation changes of **10+ feet**.",
+      "Create a hovering force disk that follows within 20 feet of you (ends if >100 feet away). It carries up to 500 lb; exceeding that ends the spell. It navigates stairs/slopes but not elevation changes of 10+ feet.",
     scalingMd: "",
     imagePath: spellImgUrl("floatingdisk")
   },
@@ -3073,9 +3073,9 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "Your strike peals with thunder audible to **300 ft**. On a hit, add **2d6 Thunder**. The target must make a **Strength save** or be **pushed 10 ft** and knocked **Prone**.",
+      "Your strike peals with thunder audible to 300 ft. On a hit, add 2d6 Thunder. The target must make a Strength save or be pushed 10 ft and knocked Prone.",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** Extra damage increases by **1d6** per slot level above 1."
+      "**Using a Higher-Level Spell Slot.** Extra damage increases by 1d6 per slot level above 1."
   },
   {
     slug: slugify("Thunderwave"),
@@ -3096,9 +3096,9 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "You unleash a wave of thunderous energy. Each creature in a **15-foot cube** originating from you makes a Constitution save. **Fail:** **2d8 Thunder** damage and pushed **10 ft** away from you. **Success:** half damage only.\n\nUnsecured objects entirely within the cube are pushed **10 ft** away, and a thunderous boom is audible within **300 ft**.",
+      "You unleash a wave of thunderous energy. Each creature in a 15-foot cube originating from you makes a Constitution save. Fail: 2d8 Thunder damage and pushed 10 ft away from you. Success: half damage only.\n\nUnsecured objects entirely within the cube are pushed 10 ft away, and a thunderous boom is audible within 300 ft.",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** Damage increases by **1d8** per slot level above 1."
+      "**Using a Higher-Level Spell Slot.** Damage increases by 1d8 per slot level above 1."
   },
   {
     slug: slugify("Unseen Servant"),
@@ -3119,7 +3119,7 @@ export const LEVEL1 = [
     concentration: false,
     ritual: true,
     descriptionMd:
-      "Create an **Invisible, mindless, shapeless Medium force** in an unoccupied space on the ground within range. It has **AC 10**, **1 HP**, **STR 2**, and **can’t attack**. If it drops to 0 HP, the spell ends.\n\nAs a **Bonus Action** once each turn, you command it to move **15 ft** and interact with an object, performing simple tasks (fetching, cleaning, mending, lighting fires, serving, pouring, etc.). If commanded beyond **60 ft** from you, the spell ends.",
+      "Create an Invisible, mindless, shapeless Medium force in an unoccupied space on the ground within range. It has AC 10, 1 HP, STR 2, and can’t attack. If it drops to 0 HP, the spell ends.\n\nAs a Bonus Action once each turn, you command it to move 15 ft and interact with an object, performing simple tasks (fetching, cleaning, mending, lighting fires, serving, pouring, etc.). If commanded beyond 60 ft from you, the spell ends.",
     scalingMd: ""
   },
   {
@@ -3144,7 +3144,7 @@ export const LEVEL1 = [
       "On each of your subsequent turns, you can take a Bonus Action to deal 1d12 Lightning damage to the target automatically, even if the first attack missed.\n\n" +
       "The spell ends if the target is ever outside the spell’s range or if it has Total Cover from you.",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** Initial damage increases by **1d12** per slot level above 1."
+      "**Using a Higher-Level Spell Slot.** Initial damage increases by 1d12 per slot level above 1."
   },
   {
     slug: slugify("Wrathful Smite"),
@@ -3165,9 +3165,9 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-      "The target takes an extra **1d6 Necrotic** damage from the triggering attack and must make a **Wisdom save** or be **Frightened** until the spell ends. At the end of each of its turns, the Frightened target repeats the save, ending the spell on a success.",
+      "The target takes an extra 1d6 Necrotic damage from the triggering attack and must make a Wisdom save or be Frightened until the spell ends. At the end of each of its turns, the Frightened target repeats the save, ending the spell on a success.",
     scalingMd:
-      "**Using a Higher-Level Spell Slot.** Extra damage increases by **1d6** per slot level above 1."
+      "**Using a Higher-Level Spell Slot.** Extra damage increases by 1d6 per slot level above 1."
   },
   {
   slug: slugify("Summoner’s Brand"),
@@ -3189,7 +3189,7 @@ export const LEVEL1 = [
   ritual: false,
   descriptionMd:
     "Make a Ranged Spell Attack against one creature you can see within range. On a hit, the attack deals no damage, and the target is branded for the duration.\n\n" +
-    "The next time a creature you control that you summoned or reanimated (such as with [spells]animate dead[/spells] or a \"summon\" spell) hits the branded target with an attack, the brand detonates. The target takes 3d6 Force damage, and the brand ends. The detonation doesn’t harm the triggering creature.\n\n" +
+    "The next time a creature you control that you summoned or reanimated (such as with animate dead or a \"summon\" spell) hits the branded target with an attack, the brand detonates. The target takes 3d6 Force damage, and the brand ends. The detonation doesn’t harm the triggering creature.\n\n" +
     "A creature can be affected by only one brand from this spell at a time, and you can have only one brand created by this spell active at a time. Casting this spell again ends the previous brand early. The brand ends early if the duration expires or the target dies.",
   scalingMd:
     "**Using a Higher-Level Spell Slot.** The detonation’s Force damage increases by 1d6 for each spell slot level above 1st.",
@@ -3475,11 +3475,11 @@ export const LEVEL1 = [
     ritual: true,
     descriptionMd:
         "While you concentrate, you can sense the life force of a creature you can see within range. When you cast the spell, and as a Magic action on later turns, choose one creature you can see within 30 feet. You instantly learn its current state from the following:\n\n" +
-        "**Fully Healthy.** The creature is at its Hit Point maximum.\n\n" +
-        "**Wounded.** The creature has half or fewer of its Hit Points remaining.\n\n" +
-        "**Critically Injured.** The creature has 10 percent or fewer of its Hit Point maximum remaining (rounded down).\n\n" +
-        "**Diseased/Poisoned.** The creature is affected by a disease or by poison (including whether it currently has the Poisoned condition), but you don’t learn the specific disease or poison.\n\n" +
-        "**Undead.** The creature is Undead (no discernible pulse).\n\n" +
+        "Fully Healthy. The creature is at its Hit Point maximum.\n\n" +
+        "Wounded. The creature has half or fewer of its Hit Points remaining.\n\n" +
+        "Critically Injured. The creature has 10 percent or fewer of its Hit Point maximum remaining (rounded down).\n\n" +
+        "Diseased/Poisoned. The creature is affected by a disease or by poison (including whether it currently has the Poisoned condition), but you don’t learn the specific disease or poison.\n\n" +
+        "Undead. The creature is Undead (no discernible pulse).\n\n" +
         "This spell reveals no information about a creature you can’t see and doesn’t identify other creature types or conditions.",
     scalingMd: "",
     imagePath: spellImgUrl("lifesense")
@@ -3538,7 +3538,7 @@ export const LEVEL1 = [
     ritual: false,
     descriptionMd:
         "While you concentrate, your melee weapon attacks strike with gathered force. When you hit with a melee weapon attack, the attack deals an extra 1 damage of the weapon’s type.\n\n" +
-        "**Controlled Release.** As a Magic action, you can end the spell early in a controlled release. When you do, each hostile creature within 10 feet of you must make a Strength saving throw or have the Prone condition. Creatures that succeed are unaffected. If your Concentration ends for any other reason, this release doesn’t occur.",
+        "Controlled Release. As a Magic action, you can end the spell early in a controlled release. When you do, each hostile creature within 10 feet of you must make a Strength saving throw or have the Prone condition. Creatures that succeed are unaffected. If your Concentration ends for any other reason, this release doesn’t occur.",
     scalingMd:
         "**Using a Higher-Level Spell Slot.** The extra damage increases by 1 for each spell slot level above 1st.",
     imagePath: spellImgUrl("shockwavefocus")

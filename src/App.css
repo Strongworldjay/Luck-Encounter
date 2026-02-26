@@ -3,19 +3,19 @@
 --------------------------------------- */
 :root {
   /* accents */
-  --accent-color: #ffd700;                 /* gold */
-  --accent-glow: rgba(255, 215, 0, 0.45);
+  --accent-color: #f6f0e2;                 /* gold */
+  --accent-glow: #fdde98;
 
   /* app chrome */
-  --app-bg: #ffffff;                       /* light background */
+  --app-bg: #fdfbf7;                       /* light background */
   --app-text: #111111;                     /* light text */
 
   /* card face (used elsewhere too) */
-  --poster-bg:   #ffffff;
+  --poster-bg:   #fdfbf7;
   --poster-text: #111111;
 
   /* surfaces */
-  --surface: #ffffff;
+  --surface: #fdfbf7;
   --elevated: #f6f7f9;
   --text: var(--app-text);
   --border: rgba(0,0,0,.12);
@@ -175,17 +175,17 @@ input[type="text"] {
   font-size: 0.95rem;
   border: none;
   border-radius: 8px;
-  background-color: #333;
-  color: #fff;
+  background-color: #fdfbf7;
+  color: #000000;
   cursor: pointer;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   touch-action: manipulation;
 }
 
-.dungeon-difficulty button:hover { background-color: #555; }
+.dungeon-difficulty button:hover { background-color: #e9d8b5; }
 
 .dungeon-difficulty button.selected {
-  background-color: #555;
+  background-color: #fdfbf7;
   box-shadow: 0 0 10px 4px var(--accent-color);
   color: var(--accent-color);
 }
