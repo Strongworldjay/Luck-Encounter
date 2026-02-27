@@ -259,3 +259,41 @@
 }
 .theme-toggle:hover { transform: translateY(-1px); }
 @media (max-width: 768px) { .theme-toggle { display: none; } }
+
+/* ======================================================
+   🌙 DARK MODE (app theme class)
+   ====================================================== */
+html.theme-dark .navbar {
+  background-color: #000 !important;
+  color: #aaa !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+html.theme-dark .navbar-inner { background-color: #000 !important; }
+html.theme-dark .navbar-brand { color: #bbb !important; }
+
+html.theme-dark .dropdown-menu {
+  background-color: #111 !important;              /* ✅ fixes offwhite */
+  border-color: rgba(255,255,255,0.10) !important;
+}
+
+html.theme-dark .dropdown-item,
+html.theme-dark .dropdown-trigger {
+  color: #aaa !important;
+  background: transparent !important;
+}
+
+html.theme-dark .dropdown-trigger:hover,
+html.theme-dark .dropdown-item:hover {
+  background-color: #111 !important;
+  color: #fff !important;
+}
+
+html.theme-dark .dropdown-item.active,
+html.theme-dark .nav-item.active > .dropdown-trigger {
+  background-color: #111 !important;
+  color: #fff !important;
+  text-decoration: underline;
+}
+
+html.theme-dark .navbar-toggle span { background: #aaa !important; }
