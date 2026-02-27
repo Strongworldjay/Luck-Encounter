@@ -878,8 +878,8 @@ export const LEVEL5 = [
         imagePath: spellImgUrl("pullofsingularity"),
     },
     {
-        slug: slugify("Riot Rampage"),
-        name: "Riot Rampage",
+        slug: slugify("Riot"),
+        name: "Riot",
         classes: ["Bard", "Sorcerer", "Warlock", "Wizard"],
         spellLevel: 5,
         school: "Enchantment",
