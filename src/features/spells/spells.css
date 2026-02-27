@@ -99,9 +99,10 @@ html, body, .spells-page {
 }
 
 /* --- Poster card look --- */
+/* --- Poster card look (theme-aware) --- */
 .spell-card--poster {
-  background: #fdfbf7;
-  color: var(--poster-text);
+  background: var(--poster-bg);   /* ✅ follows theme */
+  color: var(--poster-text);      /* ✅ follows theme */
   border: 1px solid var(--border);
   border-radius: var(--radius-lg, 16px);
   box-shadow: var(--shadow);
@@ -203,9 +204,7 @@ html, body, .spells-page {
   border-radius: 0 !important;
 }
 
-/* Optional: ensure the card face itself isn't painting a dark square behind the art */
-.spell-card--poster { background: #fdfbf7; }
-.spell-poster { background: transparent; }
+
 
 /* ==== Themed hover borders for cards ==== */
 html:not(.theme-dark) .spell-card:hover {

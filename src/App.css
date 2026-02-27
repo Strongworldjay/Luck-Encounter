@@ -204,6 +204,18 @@ input[type="text"] {
   color: var(--accent-color);
 }
 
+/* Dark mode: fix button text */
+.theme-dark .dungeon-difficulty button {
+  background-color: #000 !important;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #cfcfcf !important;            /* ✅ add this */
+}
+
+.theme-dark .dungeon-difficulty button:hover {
+  background-color: #111 !important;
+  color: #e6e6e6 !important;            /* optional */
+}
+
 /* ---------------------------------------
    Decks
 --------------------------------------- */
