@@ -2,7 +2,7 @@
 import React, { useMemo, useState } from "react";
 import FeatRow from "./FeatRow";
 import FeatModal from "./FeatModal";
-import "./feats.css";
+import "./Feats.css";
 
 /* Normalize for stable grouping + lookup */
 const normType = (t) =>
