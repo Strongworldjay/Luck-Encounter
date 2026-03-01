@@ -2,7 +2,7 @@
 :root {
   /* light defaults */
   color-scheme: light;
-  --bg: #ffffff;
+  --bg: #fdfbf7;
   --text: #111111;
   --muted: #444;
   --panel: rgba(0,0,0,.06);

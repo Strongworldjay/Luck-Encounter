@@ -883,7 +883,7 @@ export const LEVEL6 = [
             "Thereafter, you can take a Magic action to speak the object’s name and crush the sapphire. The object instantly appears in your hand regardless of physical or planar distances, and the spell ends.\n\n" +
             "If another creature is holding or carrying the object, crushing the sapphire doesn’t transport it, but instead you learn who that creature is and where that creature is currently located.",
         scalingMd: "",
-        imagePath: spellImgUrl("instantsummon")
+        imagePath: spellImgUrl("instantsummons")
     },
     {
         slug: slugify("Eyebite"),

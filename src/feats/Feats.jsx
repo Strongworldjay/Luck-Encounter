@@ -42,6 +42,8 @@ const TYPE_ALIAS = {
   // Maven Arms
   "maven arms": "Maven Arms",
   "maven arm": "Maven Arms",
+  "weapon feat": "Maven Arms",
+"weapon feats": "Maven Arms",
 };
 
 export default function Feats({ feats = [], title = "Feats", typeDescriptions: typeDescriptionsProp }) {
