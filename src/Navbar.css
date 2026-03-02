@@ -1,15 +1,18 @@
 /* ======================================================
-   BASE NAVBAR STYLING
+   NAVBAR (token-based, theme-safe)
+   Uses your app theme tokens:
+   --surface, --elevated, --app-text, --muted, --border, --accent-color
    ====================================================== */
+
 .navbar {
   width: 100%;
-  background-color: #fdfbf7; /* CHANGED: light cream */
-  color: #2b2b2b;           /* CHANGED: dark text for contrast */
+  background-color: var(--surface) !important;
+  color: var(--app-text) !important;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 2000;
-  border-bottom: 1px solid rgba(0,0,0,0.08); /* ADDED: subtle separation */
+  border-bottom: 1px solid var(--border) !important;
 }
 
 .navbar-inner {
@@ -20,7 +23,7 @@
   align-items: center;
   justify-content: space-between;
   height: 44px;
-  background-color: transparent; /* keeps inner from forcing dark bg */
+  background-color: transparent !important;
 }
 
 /* BRAND */
@@ -31,7 +34,7 @@
   cursor: pointer;
   user-select: none;
   font-size: 1rem;
-  color: inherit; /* CHANGED: inherit dark text in light mode */
+  color: inherit !important;
 }
 
 /* HAMBURGER */
@@ -48,7 +51,7 @@
   display: block;
   height: 3px;
   margin: 6px 0;
-  background: #2b2b2b; /* CHANGED: dark lines in light mode */
+  background: color-mix(in oklch, var(--app-text) 80%, transparent) !important;
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
 .navbar-toggle.open span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
@@ -76,7 +79,7 @@
 }
 
 .nav-item.active > .dropdown-trigger {
-  background-color: rgba(0,0,0,0.08); /* CHANGED: light-mode active */
+  background-color: color-mix(in oklch, var(--app-text) 10%, transparent) !important;
   text-decoration: underline;
   font-weight: 600;
 }
@@ -93,37 +96,46 @@
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.2s ease;
-  color: inherit; /* CHANGED: dark text in light mode */
+  color: inherit !important;
 }
-.dropdown-trigger:hover { background-color: rgba(0,0,0,0.06); } /* CHANGED */
+
+.dropdown-trigger:hover {
+  background-color: color-mix(in oklch, var(--app-text) 8%, transparent) !important;
+}
 
 .dropdown-menu {
   position: absolute;
   top: calc(100% + 6px);
   left: 0;
-  background-color: #fdfbf7; /* CHANGED: cream dropdown */
-  border: 1px solid rgba(0,0,0,0.10); /* CHANGED */
+
+  background-color: var(--surface) !important;
+  border: 1px solid var(--border) !important;
   border-radius: 8px;
   padding: 6px;
   margin: 0;
   list-style: none;
   min-width: 220px;
   display: none;
-  box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.20); /* CHANGED: softer shadow */
+
+  box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.20);
   z-index: 1;
 }
 .dropdown-menu.open { display: block; }
 
 .dropdown-item {
-  color: #2b2b2b; /* CHANGED: dark text */
+  color: var(--app-text) !important;
   padding: 8px 10px;
   cursor: pointer;
   border-radius: 6px;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
-.dropdown-item:hover { background-color: rgba(0,0,0,0.06); } /* CHANGED */
+
+.dropdown-item:hover {
+  background-color: color-mix(in oklch, var(--app-text) 8%, transparent) !important;
+}
+
 .dropdown-item.active {
-  background-color: rgba(0,0,0,0.08); /* CHANGED */
+  background-color: color-mix(in oklch, var(--app-text) 12%, transparent) !important;
   font-weight: 600;
 }
 
@@ -156,14 +168,19 @@
     top: 44px;
     left: 0;
     right: 0;
-    background: rgba(244,234,215,0.98); /* CHANGED: cream mobile sheet */
+
+    /* Mobile sheet follows theme */
+    background: color-mix(in oklch, var(--surface) 94%, transparent) !important;
     backdrop-filter: blur(2px);
+
     flex-direction: column;
     align-items: stretch;
     padding: 8px;
     gap: 10px;
-    border-top: 1px solid rgba(0,0,0,0.08); /* CHANGED */
-    box-shadow: 0 10px 20px rgba(0,0,0,.20); /* CHANGED */
+
+    border-top: 1px solid var(--border) !important;
+    box-shadow: 0 10px 20px rgba(0,0,0,.20);
+
     display: none;
     max-height: calc(100dvh - 44px);
     overflow-y: auto;
@@ -171,7 +188,7 @@
   .nav-list.open { display: flex; }
 
   .dropdown-trigger {
-    background-color: rgba(0,0,0,0.04); /* CHANGED: subtle pill */
+    background-color: color-mix(in oklch, var(--app-text) 6%, transparent) !important;
     padding: 10px 12px;
     border-radius: 8px;
   }
@@ -184,8 +201,9 @@
     width: 100%;
     min-width: unset;
     display: none;
-    background: #fff7e8; /* CHANGED: cream */
-    border-color: rgba(0,0,0,0.10); /* CHANGED */
+
+    background: var(--surface) !important;
+    border-color: var(--border) !important;
     border-radius: 8px;
     padding: 6px;
   }
@@ -201,45 +219,6 @@
 }
 
 /* ======================================================
-   🌙 DARK MODE
-   ====================================================== */
-@media (prefers-color-scheme: dark) {
-  .navbar {
-    background-color: #000 !important;
-    color: #aaa !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  .navbar-inner { background-color: #000; }
-  .navbar-brand { color: #bbb !important; }
-
-  .dropdown-trigger,
-  .dropdown-item {
-    color: #aaa !important;
-    background: transparent;
-  }
-
-  .dropdown-trigger:hover,
-  .dropdown-item:hover {
-    background-color: #111 !important;
-    color: #fff !important;
-  }
-
-  .dropdown-item.active,
-  .nav-item.active > .dropdown-trigger {
-    background-color: #111 !important;
-    color: #fff !important;
-    text-decoration: underline;
-  }
-
-  .dropdown-menu {
-    background-color: #111 !important;
-    border-color: rgba(255,255,255,0.1);
-  }
-
-  .navbar-toggle span { background: #aaa !important; }
-}
-
-/* ======================================================
    THEME TOGGLE (OPTIONAL)
    ====================================================== */
 .theme-toggle {
@@ -251,49 +230,11 @@
   width: 36px;
   height: 32px;
   border-radius: 8px;
-  border: 1px solid var(--border, rgba(255,255,255,.15));
-  background: var(--elevated, #1a1a1a);
-  color: var(--app-text, #fff);
+  border: 1px solid var(--border);
+  background: var(--elevated);
+  color: var(--app-text);
   cursor: pointer;
   transition: transform .15s ease, background .2s ease, border-color .2s ease;
 }
 .theme-toggle:hover { transform: translateY(-1px); }
 @media (max-width: 768px) { .theme-toggle { display: none; } }
-
-/* ======================================================
-   🌙 DARK MODE (app theme class)
-   ====================================================== */
-html.theme-dark .navbar {
-  background-color: #000 !important;
-  color: #aaa !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-html.theme-dark .navbar-inner { background-color: #000 !important; }
-html.theme-dark .navbar-brand { color: #bbb !important; }
-
-html.theme-dark .dropdown-menu {
-  background-color: #111 !important;              /* ✅ fixes offwhite */
-  border-color: rgba(255,255,255,0.10) !important;
-}
-
-html.theme-dark .dropdown-item,
-html.theme-dark .dropdown-trigger {
-  color: #aaa !important;
-  background: transparent !important;
-}
-
-html.theme-dark .dropdown-trigger:hover,
-html.theme-dark .dropdown-item:hover {
-  background-color: #111 !important;
-  color: #fff !important;
-}
-
-html.theme-dark .dropdown-item.active,
-html.theme-dark .nav-item.active > .dropdown-trigger {
-  background-color: #111 !important;
-  color: #fff !important;
-  text-decoration: underline;
-}
-
-html.theme-dark .navbar-toggle span { background: #aaa !important; }
