@@ -652,9 +652,9 @@ export const LEVEL2 = [
         concentration: false,
         ritual: false,
         descriptionMd: "You cause the earth to deform and ripple, forcing a target creature to make a Dexterity saving throw or suffer one of the following effects (your choice):\n\n" +
-            "Pulled Under. The target is pulled into the earth, taking 1d8 Bludgeoning damage and reducing its movement speed to 0 until a creature spends an action to dig it free.\n\n" +
-            "Earth Slam. The target is slammed 5 feet in a direction of your choice by a wave of earth, taking 2d8 Bludgeoning damage and being knocked prone.\n\n" +
-            "Earthen Spike. The target is impaled by a spike of earth, taking 4d8 Piercing damage.",
+            "**Pulled Under.** The target is pulled into the earth, taking 1d8 Bludgeoning damage and reducing its movement speed to 0 until a creature spends an action to dig it free.\n\n" +
+            "**Earth Slam.** The target is slammed 5 feet in a direction of your choice by a wave of earth, taking 2d8 Bludgeoning damage and being knocked prone.\n\n" +
+            "**Earthen Spike.** The target is impaled by a spike of earth, taking 4d8 Piercing damage.",
         scalingMd: "",
         imagePath: spellImgUrl("earthripple")
     },
@@ -1481,10 +1481,10 @@ export const LEVEL2 = [
         ritual: false,
         descriptionMd: "As you cast the spell, you draw out the potent scents trapped within all magic. Choose a magical effect you are aware of that’s within range. The effect releases a scent specific to the creature that created it. If you are familiar with the creature, you automatically know that the magical effect was created by them.\n\n" +
             "If you are not familiar with the creature, you can make an ability check using your spellcasting ability modifier and add your proficiency bonus to it. Refer to the table below to determine what information you are able to glean from the scent. When succeeding on a DC check, you also learn previous information given from lower DCs.\n\n" +
-            "DC 10 — You learn the type of creature that created the magical effect.\n" +
-            "DC 15 — If the creature has a class, you learn what it is.\n" +
-            "DC 20 — You learn the creature’s alignment.\n" +
-            "DC 25 or DC 30 (if the creature is of a higher level than you) — You learn the name of the creature.",
+            "**DC 10** — You learn the type of creature that created the magical effect.\n" +
+            "**DC 15** — If the creature has a class, you learn what it is.\n" +
+            "**DC 20** — You learn the creature’s alignment.\n" +
+            "**DC 25** or **DC 30** (if the creature is of a higher level than you) — You learn the name of the creature.",
         scalingMd: "",
         imagePath: spellImgUrl("spellsignature"),
     },

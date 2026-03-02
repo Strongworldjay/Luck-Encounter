@@ -450,7 +450,7 @@ export const LEVEL5 = [
         ritual: false,
         descriptionMd: "You flourish a weapon and vanish, instantly teleporting to strike up to five targets within 30 feet. Make a melee weapon attack against each. On a hit, the target takes normal weapon damage + 6d6 Force. Then you can teleport to an unoccupied space within 5 feet of any target you attacked.",
         scalingMd: "",
-        imagePath: spellImgUrl("flickeringstrikes")
+        imagePath: spellImgUrl("steelwindstrike")
     },
     {
         slug: slugify("Forced Mortality"),
@@ -686,7 +686,7 @@ export const LEVEL5 = [
         descriptionMd:
             "You flourish the weapon used to cast the spell and vanish to strike like the wind. Choose up to five creatures you can see within range. Make a melee spell attack against each target; on a hit, a target takes 6d10 Force damage. You can then teleport to an unoccupied space you can see within 5 feet of one of the targets you hit or missed.",
         scalingMd: "",
-        imagePath: spellImgUrl("martialsteelwindstrike")
+        imagePath: spellImgUrl("steelwindstrike")
     },
     {
         slug: slugify("Mirrored Agony"),
