@@ -56,13 +56,21 @@ html, body {
   margin: 0;
 }
 
-body {
-  background-color: var(--app-bg);
-  color: var(--app-text);
-  overflow-x: hidden;   /* ✅ prevent side scroll */
-  overflow-y: auto;     /* ✅ always allow vertical scroll */
+/* ✅ iOS bounce uses html background, so paint it here */
+html {
+  background-image: var(--bg-url, none); /* ✅ fallback */
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-color: var(--app-bg);       /* ✅ always visible */
 }
-
+/* ✅ let html show through */
+body {
+  background-color: var(--app-bg); /* ✅ fallback so page never goes black */
+  color: var(--app-text);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
 /* Lock scroll ONLY when you intentionally apply body.no-scroll (e.g. drawers) */
 body.no-scroll { overflow: hidden; }
 

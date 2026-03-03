@@ -88,7 +88,7 @@ export default function App() {
     document.documentElement.classList.toggle('theme-dark', isDark);
   }, [isDark]);
 
-  // 🔒 iOS input-zoom lock (prevents zoom when typing even at 75–85% page scale)
+  // 🔒 iOS input-zoom lock
   useEffect(() => {
     const isiOS =
       /iPad|iPhone|iPod/.test(navigator.userAgent) ||
@@ -230,23 +230,27 @@ export default function App() {
 
   const handleNavClick = (section) => setCurrentSection(section);
 
-  if (isLoading) return <LoadingScreen />;
-
   // Deck image logic
   const darkDecks = [darkDeck1, darkDeck2, darkDeck3, darkDeck4];
   const deckArt = isDark ? darkDecks[Math.floor(Math.random() * darkDecks.length)] : deckImage;
 
-  // Fixed background: choose image and pass as CSS variable
+  // Fixed background: choose image
   const bgUrl = isDark ? darkmodeBackground : appBackground;
 
-  // ✅ Void deck art: blackhole in dark mode, whitehole in light mode
+  // ✅ MUST be above the early return so hooks count stays constant
+  useEffect(() => {
+    document.documentElement.style.setProperty('--bg-url', `url(${bgUrl})`);
+    return () => document.documentElement.style.removeProperty('--bg-url');
+  }, [bgUrl]);
+
+  // Void deck art: blackhole in dark mode, whitehole in light mode
   const voidArt = isDark ? blackholeImage : whiteholeImage;
 
+  // ✅ NOW it’s safe to early-return
+  if (isLoading) return <LoadingScreen />;
+
   return (
-    <div
-      className={`app-container ${isMobile ? 'mobile' : 'desktop'}`}
-      style={{ '--bg-url': `url(${bgUrl})` }}
-    >
+    <div className={`app-container ${isMobile ? 'mobile' : 'desktop'}`}>
       {/* Fixed background layer that never scrolls */}
       <div className="app-bg-fixed" aria-hidden />
 
@@ -262,23 +266,23 @@ export default function App() {
           <div className="top-center-container panel">
             <h1>Congratulations, you have survived the Dungeon!</h1>
 
-            {/* ---------- Filters bar ---------- */}
-           <div className="filters-bar">
-  <button className="btn btn-filters" onClick={() => setFiltersOpen(true)}>
-    Filters
-    {enabledTypes.size > 0 && (
-      <span className="filters-badge" aria-label={`${enabledTypes.size} filters enabled`}>
-        {enabledTypes.size}
-      </span>
-    )}
-  </button>
-</div>
+            {/* Filters bar */}
+            <div className="filters-bar">
+              <button className="btn btn-filters" onClick={() => setFiltersOpen(true)}>
+                Filters
+                {enabledTypes.size > 0 && (
+                  <span className="filters-badge" aria-label={`${enabledTypes.size} filters enabled`}>
+                    {enabledTypes.size}
+                  </span>
+                )}
+              </button>
+            </div>
 
             <div className="luck-section">
               <div className="luck-row">
                 <div className="luck-input">
                   <label>
-                    Character's Luck:
+                    Character&apos;s Luck:
                     <input
                       type="text"
                       inputMode="numeric"
@@ -340,13 +344,10 @@ export default function App() {
             </div>
           </div>
 
-          {/* ---------- Filters Drawer ---------- */}
+          {/* Filters Drawer */}
           {filtersOpen && (
             <div className="filter-drawer" role="dialog" aria-modal="true" onClick={() => setFiltersOpen(false)}>
-              <div
-                className="filter-drawer__panel"
-                onClick={(e) => e.stopPropagation()}
-              >
+              <div className="filter-drawer__panel" onClick={(e) => e.stopPropagation()}>
                 <div className="filter-drawer__header">
                   <h3>Item Filters</h3>
                   <button className="icon-btn" onClick={() => setFiltersOpen(false)} aria-label="Close">✕</button>
@@ -393,7 +394,7 @@ export default function App() {
             </div>
           )}
 
-          {/* Draw Deck (stacked look; hover only top slice) */}
+          {/* Draw Deck */}
           <div className="deck-container deck-stack" onClick={generateCards} role="button" aria-label="Draw cards">
             {[...Array(5)].map((_, i) => (
               <img
@@ -424,7 +425,7 @@ export default function App() {
             ))}
           </div>
 
-          {/* Void Deck (single, slow rotating image) */}
+          {/* Void Deck */}
           <div className="deck-container second-deck" onClick={resetCards} role="button" aria-label="Reset cards">
             <img src={voidArt} alt="Void Deck" className="deck-image blackhole-spin" />
           </div>
@@ -444,7 +445,6 @@ export default function App() {
       {currentSection === 'ShopInventory' && <ShopInventory />}
       {currentSection === 'BountyBoard' && <BountyBoard />}
 
-      {/* ✅ FEATS (Origin/General/Mastery/Racial/Epic/Maven Arms) */}
       {FEAT_SECTIONS[currentSection] && (
         <Feats
           title={FEAT_SECTIONS[currentSection].title}
