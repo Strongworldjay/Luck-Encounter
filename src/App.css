@@ -4,7 +4,7 @@
 :root {
   /* accents */
   --accent-color: #f6f0e2;                 /* gold */
-  --accent-glow: #fdde98;
+  --accent-glow: #fde6ae;
 
   /* app chrome */
   --app-bg: #fdfbf7;                       /* light background */
@@ -49,37 +49,54 @@
 }
 
 /* ---------------------------------------
-   Base
+   Base (iOS-safe scrolling + full-height)
 --------------------------------------- */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
 body {
   background-color: var(--app-bg);
   color: var(--app-text);
-  margin: 0;
-  overflow: hidden;
+  overflow-x: hidden;   /* ✅ prevent side scroll */
+  overflow-y: auto;     /* ✅ always allow vertical scroll */
 }
 
-/* Fixed, non-scrolling background layer (iOS-safe) */
+/* Lock scroll ONLY when you intentionally apply body.no-scroll (e.g. drawers) */
+body.no-scroll { overflow: hidden; }
+
+/* ---------------------------------------
+   App wrapper + fixed background (iOS-safe)
+--------------------------------------- */
+:root { --nav-h: 60px; }
+@media (max-width: 640px) { :root { --nav-h: 56px; } }
 .app-container {
   position: relative;
+  isolation: isolate;   /* ✅ contains the -1 layer safely */
+  z-index: 0;           /* (can be 0; no need for 1) */
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  width: 100vw;
-  height: 100vh;
 
-  /* the app itself no longer sets a background image;
-     we draw it with .app-bg-fixed below */
+  width: 100%;
+  height: auto;
+  min-height: calc(100vh - var(--nav-h));
+  min-height: calc(100svh - var(--nav-h));
+  min-height: calc(100dvh - var(--nav-h));
   background-image: none !important;
-
   color: var(--app-text);
-  padding-top: 60px; /* room for fixed navbar */
+  padding-top: 60px;
 }
 
 .app-bg-fixed {
   position: fixed;
   inset: 0;
-  z-index: -1;
+  z-index: -1;          /* ✅ truly behind content now */
+  pointer-events: none;
+
   background-image: var(--bg-url);
   background-size: cover;
   background-position: center top;
@@ -182,7 +199,7 @@ input[type="text"] {
   touch-action: manipulation;
 }
 
-.dungeon-difficulty button:hover { background-color: #e9d8b5; }
+.dungeon-difficulty button:hover { background-color: #f8efdc; }
 
 .dungeon-difficulty button.selected {
   background-color: #fdfbf7;
@@ -194,26 +211,16 @@ input[type="text"] {
 .theme-dark .dungeon-difficulty button {
   background-color: #000 !important;
   border: 1px solid rgba(255,255,255,0.15);
+  color: #cfcfcf !important;            /* ✅ */
 }
 .theme-dark .dungeon-difficulty button:hover {
   background-color: #111 !important;
+  color: #e6e6e6 !important;            /* optional */
 }
 .theme-dark .dungeon-difficulty button.selected {
   background-color: #111 !important;
   box-shadow: 0 0 10px 4px var(--accent-color);
   color: var(--accent-color);
-}
-
-/* Dark mode: fix button text */
-.theme-dark .dungeon-difficulty button {
-  background-color: #000 !important;
-  border: 1px solid rgba(255,255,255,0.15);
-  color: #cfcfcf !important;            /* ✅ add this */
-}
-
-.theme-dark .dungeon-difficulty button:hover {
-  background-color: #111 !important;
-  color: #e6e6e6 !important;            /* optional */
 }
 
 /* ---------------------------------------
@@ -309,11 +316,9 @@ input[type="text"] {
     overflow-x: hidden;
   }
 
-  body { overflow-y: auto; }
+  /* body stays scrollable globally now; no override needed */
 
   .app-container {
-    height: auto;
-    min-height: 100dvh;
     padding-top: 56px; /* smaller navbar space */
   }
 
@@ -488,6 +493,10 @@ input[type="text"] {
   }
   .filter-drawer__panel { width: min(460px, 96vw); }
 }
+
+/* ---------------------------------------
+   Input theming (shared)
+--------------------------------------- */
 :root {
   --input-bg: #ffffff;
   --input-fg: #111111;
@@ -512,4 +521,41 @@ input[type="text"],
 input[type="text"]::placeholder,
 .spell-input::placeholder {
   color: color-mix(in oklch, var(--input-fg) 60%, transparent);
+}
+
+/* --- Filters badge (theme-aware) --- */
+.btn-filters {
+  position: relative;
+  padding-right: 18px;   /* you don’t need huge padding now */
+}
+
+.filters-badge {
+  position: absolute;
+  top: -7px;             /* lift it into the corner */
+  right: -6px;
+
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1;
+
+  background: #f6f0e4;
+  color: #000000;
+  border: 1px solid #fcedd1;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.18);
+}
+
+/* dark mode */
+.theme-dark .filters-badge {
+  background: rgba(31, 58, 223, 0.9);
+  color: #000000;
+  border: 1px solid rgba(255,255,255,0.25);
+  box-shadow: 0 2px 10px rgba(31,58,223,0.25);
 }

@@ -10,12 +10,13 @@ import BountyBoard from './BountyBoard';
 import './App.css';
 import appBackground from './assets/app-background.jpg';
 import darkmodeBackground from './assets/darkmode.jpg';
-import deckImage from './assets/card-design.jpg';
+import deckImage from './assets/card-design.png';
 import darkDeck1 from './assets/darkmodecard1.png';
 import darkDeck2 from './assets/darkmodecard2.png';
 import darkDeck3 from './assets/darkmodecard3.png';
 import darkDeck4 from './assets/darkmodecard4.png';
 import blackholeImage from './assets/blackhole.png';
+import whiteholeImage from './assets/whitehole.png';
 import { getRandomItem } from './ItemGenerator';
 import { useBreakpoint } from './hooks/useBreakpoint';
 import SkillPointPlanner from './SkillPointPlanner';
@@ -45,7 +46,7 @@ const itemTypes = [
   'Grimoire','WeaponArt','Scythe','Dagger','Sword',
   'PassiveArt','BoostArt','SkillPoints','Robe','Ring','LightArmor',
   'MediumArmor','WondrousItem','Shield','Crossbow','Spear','Halberd','Club','Whip','Mace',
-  'Warpick','Lance','Pike','Mana','Sword'
+  'Warpick','Lance','Pike','Mana','Sword','Stamina'
 ];
 
 export default function App() {
@@ -58,18 +59,18 @@ export default function App() {
   const [selectedCard, setSelectedCard] = useState(null);
   const [isDrawing, setIsDrawing] = useState(false);
   const [currentSection, setCurrentSection] = useState('DungeonCompletion');
-    // ✅ Feat page routing (matches Navbar ids)
+
+  // ✅ Feat page routing (matches Navbar ids)
   const FEAT_SECTIONS = useMemo(() => ({
     OriginFeats:  { title: "Origin Feats",  data: originFeats },
     GeneralFeats: { title: "General Feats", data: generalFeats },
     MasteryFeats: { title: "Mastery Feats", data: masteryFeats },
     RacialFeats:  { title: "Racial Feats",  data: racialFeats },
-    EpicBoons:        { title: "Epic Boons",  data: epicBoons },
-    MavenArms:    { title: "Maven Arms",   data: mavenArms },
+    EpicBoons:    { title: "Epic Boons",    data: epicBoons },
+    MavenArms:    { title: "Maven Arms",    data: mavenArms },
   }), []);
 
   const cardRefs = useRef([]);
-
   const isMobile = useBreakpoint('(max-width: 640px)');
 
   // 🌙 Detect system dark mode
@@ -183,7 +184,9 @@ export default function App() {
   }, [filtersOpen]);
 
   const totalLuck = characterLuck + dungeonLuck;
-  const filteredItemTypes = enabledTypes.size ? itemTypes.filter(t => enabledTypes.has(t)) : itemTypes;
+  const filteredItemTypes = enabledTypes.size
+    ? itemTypes.filter(t => enabledTypes.has(t))
+    : itemTypes;
 
   const generateCards = () => {
     if (isDrawing) return;
@@ -196,7 +199,8 @@ export default function App() {
     const newCards = Array.from({ length: count }, (_, index) => {
       const baseRoll = Math.floor(Math.random() * 100) + 1;
       const totalRoll = baseRoll + totalLuck;
-      const rarity = rarities.find(r => totalRoll >= r.range[0] && totalRoll <= r.range[1]) || rarities[0];
+      const rarity =
+        rarities.find(r => totalRoll >= r.range[0] && totalRoll <= r.range[1]) || rarities[0];
       const itemType = pool[Math.floor(Math.random() * pool.length)];
       const itemName = getRandomItem(itemType, null, rarity.name.replace(' ', ''));
       return { id: index, rarity, itemType, item: itemName, revealed: false, fadeAway: false };
@@ -209,7 +213,9 @@ export default function App() {
   const revealCard = (index) => {
     const selected = cards[index];
     setSelectedCard(selected);
-    setCards(prev => prev.map((c, i) => (i === index ? { ...c, revealed: true } : { ...c, fadeAway: true })));
+    setCards(prev =>
+      prev.map((c, i) => (i === index ? { ...c, revealed: true } : { ...c, fadeAway: true }))
+    );
     console.log(`You have obtained the ${selected.rarity.name} ${selected.itemType}: ${selected.item}`);
   };
 
@@ -223,6 +229,7 @@ export default function App() {
   };
 
   const handleNavClick = (section) => setCurrentSection(section);
+
   if (isLoading) return <LoadingScreen />;
 
   // Deck image logic
@@ -231,6 +238,9 @@ export default function App() {
 
   // Fixed background: choose image and pass as CSS variable
   const bgUrl = isDark ? darkmodeBackground : appBackground;
+
+  // ✅ Void deck art: blackhole in dark mode, whitehole in light mode
+  const voidArt = isDark ? blackholeImage : whiteholeImage;
 
   return (
     <div
@@ -253,12 +263,16 @@ export default function App() {
             <h1>Congratulations, you have survived the Dungeon!</h1>
 
             {/* ---------- Filters bar ---------- */}
-            <div className="filters-bar">
-              <button className="btn" onClick={() => setFiltersOpen(true)}>Filters</button>
-              {enabledTypes.size > 0 && (
-                <span className="filters-hint">{enabledTypes.size} enabled</span>
-              )}
-            </div>
+           <div className="filters-bar">
+  <button className="btn btn-filters" onClick={() => setFiltersOpen(true)}>
+    Filters
+    {enabledTypes.size > 0 && (
+      <span className="filters-badge" aria-label={`${enabledTypes.size} filters enabled`}>
+        {enabledTypes.size}
+      </span>
+    )}
+  </button>
+</div>
 
             <div className="luck-section">
               <div className="luck-row">
@@ -286,28 +300,40 @@ export default function App() {
               </div>
 
               <div className="dungeon-difficulty">
-                <button onClick={() => { setDungeonLuck(-50); setSelectedDungeon('F'); }}
-                        className={selectedDungeon === 'F' ? 'selected' : ''}>
+                <button
+                  onClick={() => { setDungeonLuck(-50); setSelectedDungeon('F'); }}
+                  className={selectedDungeon === 'F' ? 'selected' : ''}
+                >
                   F Class Dungeon (-50 Luck)
                 </button>
-                <button onClick={() => { setDungeonLuck(-25); setSelectedDungeon('D'); }}
-                        className={selectedDungeon === 'D' ? 'selected' : ''}>
+                <button
+                  onClick={() => { setDungeonLuck(-25); setSelectedDungeon('D'); }}
+                  className={selectedDungeon === 'D' ? 'selected' : ''}
+                >
                   D Class Dungeon (-25 Luck)
                 </button>
-                <button onClick={() => { setDungeonLuck(0); setSelectedDungeon('C'); }}
-                        className={selectedDungeon === 'C' ? 'selected' : ''}>
+                <button
+                  onClick={() => { setDungeonLuck(0); setSelectedDungeon('C'); }}
+                  className={selectedDungeon === 'C' ? 'selected' : ''}
+                >
                   C Class Dungeon (0 Luck)
                 </button>
-                <button onClick={() => { setDungeonLuck(25); setSelectedDungeon('B'); }}
-                        className={selectedDungeon === 'B' ? 'selected' : ''}>
+                <button
+                  onClick={() => { setDungeonLuck(25); setSelectedDungeon('B'); }}
+                  className={selectedDungeon === 'B' ? 'selected' : ''}
+                >
                   B Class Dungeon (+25 Luck)
                 </button>
-                <button onClick={() => { setDungeonLuck(45); setSelectedDungeon('A'); }}
-                        className={selectedDungeon === 'A' ? 'selected' : ''}>
+                <button
+                  onClick={() => { setDungeonLuck(45); setSelectedDungeon('A'); }}
+                  className={selectedDungeon === 'A' ? 'selected' : ''}
+                >
                   A Class Dungeon (+45 Luck)
                 </button>
-                <button onClick={() => { setDungeonLuck(75); setSelectedDungeon('S'); }}
-                        className={selectedDungeon === 'S' ? 'selected' : ''}>
+                <button
+                  onClick={() => { setDungeonLuck(75); setSelectedDungeon('S'); }}
+                  className={selectedDungeon === 'S' ? 'selected' : ''}
+                >
                   S Class Dungeon (+75 Luck)
                 </button>
               </div>
@@ -346,7 +372,8 @@ export default function App() {
                           onChange={() =>
                             setEnabledTypes(prev => {
                               const next = new Set(prev);
-                              if (next.has(t)) next.delete(t); else next.add(t);
+                              if (next.has(t)) next.delete(t);
+                              else next.add(t);
                               return next;
                             })
                           }
@@ -399,7 +426,7 @@ export default function App() {
 
           {/* Void Deck (single, slow rotating image) */}
           <div className="deck-container second-deck" onClick={resetCards} role="button" aria-label="Reset cards">
-            <img src={blackholeImage} alt="Void Deck" className="deck-image blackhole-spin" />
+            <img src={voidArt} alt="Void Deck" className="deck-image blackhole-spin" />
           </div>
         </>
       )}
@@ -416,14 +443,14 @@ export default function App() {
       {currentSection === 'JumpCalc' && <JumpCalculator />}
       {currentSection === 'ShopInventory' && <ShopInventory />}
       {currentSection === 'BountyBoard' && <BountyBoard />}
-      {/* ✅ FEATS (Origin/General/Mastery/Racial) */}
+
+      {/* ✅ FEATS (Origin/General/Mastery/Racial/Epic/Maven Arms) */}
       {FEAT_SECTIONS[currentSection] && (
         <Feats
           title={FEAT_SECTIONS[currentSection].title}
           feats={FEAT_SECTIONS[currentSection].data}
         />
       )}
-
     </div>
   );
 }

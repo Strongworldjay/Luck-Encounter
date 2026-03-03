@@ -2,7 +2,7 @@ import React from 'react';
 import './Card.css';
 
 /* Light-mode back (shared) */
-import cardBack from './assets/card-design.jpg';
+import cardBack from './assets/card-design.png';
 
 /* Dark-mode back (use one or map by rarity if you like) */
 import darkCardBack from './assets/darkmodecard1.png';
@@ -59,6 +59,7 @@ import warpickSymbol from './assets/warpick.png';
 import lanceSymbol from './assets/lance.png';
 import mapSymbol from './assets/map-symbol.png';
 import manaSymbol from './assets/mana-symbol.png';
+import staminaSymbol from './assets/stamina-symbol.png';
 import scythesymbol from './assets/scythe-symbol.png';
 
 const rarityFrontMap = {
@@ -76,12 +77,13 @@ const Card = ({ card, onClick, isDark = false }) => {
 
   // FRONT: rarity image + solid color behind it (white light / black dark)
   const frontImg = rarityFrontMap[card.rarity.name] || commonFront;
-  const frontBackground = isDark ? '#000' : '#fff';
+  const frontBackground = isDark ? '#000' : '#f8f3e9';
 
   const getOverlayImage = (itemType) => {
     const [mainType, subtype] = itemType.split(' ');
     switch (subtype || mainType) {
       case 'Mana': return manaSymbol;
+      case 'Stamina': return staminaSymbol;
       case 'Scythe': return scythesymbol;
       case 'Sword': return swordSymbol;
       case 'TreasureMap': return mapSymbol;

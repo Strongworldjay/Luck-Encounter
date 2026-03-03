@@ -672,6 +672,14 @@ export const itemNames = {
         Legendary: [+20],
         Unique: [+30, +35]
     },
+      Stamina: {
+        Common: [+1, +2, +3],
+        Uncommon: [+3, +5],
+        Rare: [+5, +7, +10],
+        VeryRare: [+12, +15],
+        Legendary: [+20],
+        Unique: [+30, +35]
+    },
     Crossbow: {
         Common: ["Hand Crossbow of Showmanship", "Heavy Crossbow of Showmanship", "Light Crossbow of Showmanship", "Rope Caster Hand Crossbow", "Silvered Hand Crossbow", "Silvered Heavy Crossbow", "Silvered Light Crossbow"
         ],
