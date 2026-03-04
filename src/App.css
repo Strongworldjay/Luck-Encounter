@@ -1,17 +1,24 @@
+/* =======================================
+   APP.CSS (cleaned + Option B scroll-container)
+   - Body does NOT scroll (prevents iOS white/bounce band)
+   - .app-container is the only scroll area
+   - Background painted on html/body + fixed layer (same --bg-url)
+======================================= */
+
 /* ---------------------------------------
    THEME TOKENS (light defaults)
 --------------------------------------- */
 :root {
   /* accents */
-  --accent-color: #f6f0e2;                 /* gold */
+  --accent-color: #f6f0e2;
   --accent-glow: #fde6ae;
 
   /* app chrome */
-  --app-bg: #fdfbf7;                       /* light background */
-  --app-text: #111111;                     /* light text */
+  --app-bg: #fdfbf7;
+  --app-text: #111111;
 
-  /* card face (used elsewhere too) */
-  --poster-bg:   #fdfbf7;
+  /* card face */
+  --poster-bg: #fdfbf7;
   --poster-text: #111111;
 
   /* surfaces */
@@ -19,11 +26,19 @@
   --elevated: #f6f7f9;
   --text: var(--app-text);
   --border: rgba(0,0,0,.12);
+
+  /* layout */
+  --nav-h: 60px;
+
+  /* inputs */
+  --input-bg: #ffffff;
+  --input-fg: #111111;
+  --input-border: rgba(0,0,0,.15);
 }
 
-/* Dark mode overrides (apply .theme-dark to <html> or <body>) */
+/* Dark mode overrides */
 .theme-dark {
-  --accent-color: #1f3adf;                 /* deep blue */
+  --accent-color: #1f3adf;
   --accent-glow: rgba(31, 58, 223, 0.5);
 
   --app-bg: #000000;
@@ -34,8 +49,12 @@
   --text: var(--app-text);
   --border: rgba(255,255,255,.14);
 
-  --poster-bg:   #000000;
+  --poster-bg: #000000;
   --poster-text: #f3f3f3;
+
+  --input-bg: #111111;
+  --input-fg: #f3f3f3;
+  --input-border: rgba(255,255,255,.15);
 }
 
 /* Optional: auto-follow system when no explicit theme is set */
@@ -45,44 +64,52 @@
     --app-text: #f3f3f3;
     --accent-color: #1f3adf;
     --accent-glow: rgba(31, 58, 223, 0.5);
+
+    --input-bg: #111111;
+    --input-fg: #f3f3f3;
+    --input-border: rgba(255,255,255,.15);
   }
 }
 
+/* Mobile navbar height token */
+@media (max-width: 640px) {
+  :root { --nav-h: 56px; }
+}
+
 /* ---------------------------------------
-   Base (iOS-safe scrolling + full-height)
+   BASE (Option B: lock page scroll)
 --------------------------------------- */
 html, body {
   height: 100%;
   margin: 0;
+  overflow: hidden; /* ✅ page never scrolls */
 }
 
-/* ✅ iOS bounce uses html background, so paint it here */
-html {
-  background-image: var(--bg-url, none); /* ✅ fallback */
+/* Paint background on both html + body so nothing shows white */
+html, body {
+  background-image: var(--bg-url, none);
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
-  background-color: var(--app-bg);       /* ✅ always visible */
-}
-/* ✅ let html show through */
-body {
-  background-color: var(--app-bg); /* ✅ fallback so page never goes black */
+  background-color: var(--app-bg);
   color: var(--app-text);
-  overflow-x: hidden;
-  overflow-y: auto;
 }
-/* Lock scroll ONLY when you intentionally apply body.no-scroll (e.g. drawers) */
-body.no-scroll { overflow: hidden; }
+
+/* Root should fill viewport */
+#root {
+  height: 100%;
+}
+
+/* If you want a temporary scroll lock (e.g., drawer), lock the container */
+body.no-scroll .app-container { overflow: hidden; }
 
 /* ---------------------------------------
-   App wrapper + fixed background (iOS-safe)
+   APP WRAPPER (only scroll container)
 --------------------------------------- */
-:root { --nav-h: 60px; }
-@media (max-width: 640px) { :root { --nav-h: 56px; } }
 .app-container {
   position: relative;
-  isolation: isolate;   /* ✅ contains the -1 layer safely */
-  z-index: 0;           /* (can be 0; no need for 1) */
+  isolation: isolate;
+  z-index: 0;
 
   display: flex;
   flex-direction: column;
@@ -90,19 +117,28 @@ body.no-scroll { overflow: hidden; }
   justify-content: flex-start;
 
   width: 100%;
-  height: auto;
-  min-height: calc(100vh - var(--nav-h));
-  min-height: calc(100svh - var(--nav-h));
-  min-height: calc(100dvh - var(--nav-h));
+
+  /* ✅ App scroll container */
+  height: 100vh;   /* fallback */
+  height: 100svh;  /* stable on iOS */
+  height: 100dvh;  /* dynamic on iOS */
+
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+
   background-image: none !important;
   color: var(--app-text);
-  padding-top: 60px;
+
+  /* space for fixed navbar */
+  padding-top: var(--nav-h);
 }
 
+/* Fixed background layer behind everything */
 .app-bg-fixed {
   position: fixed;
   inset: 0;
-  z-index: -1;          /* ✅ truly behind content now */
+  z-index: -1;
   pointer-events: none;
 
   background-image: var(--bg-url);
@@ -112,8 +148,6 @@ body.no-scroll { overflow: hidden; }
   will-change: transform;
 }
 
-.content-wrap { width: 100%; }
-
 /* Transparent wrapper (hook class, no styling) */
 .panel {
   background: transparent !important;
@@ -122,8 +156,10 @@ body.no-scroll { overflow: hidden; }
   box-shadow: none !important;
 }
 
+.content-wrap { width: 100%; }
+
 /* ---------------------------------------
-   Top section
+   TOP SECTION
 --------------------------------------- */
 .top-center-container {
   display: block;
@@ -145,7 +181,7 @@ body.no-scroll { overflow: hidden; }
 }
 
 .top-center-container label {
-  margin-top: 0px;
+  margin-top: 0;
   color: var(--app-text);
   display: flex;
   flex-direction: column;
@@ -166,26 +202,35 @@ body.no-scroll { overflow: hidden; }
 .theme-dark .luck-input label { color: #ccc !important; }
 .theme-dark .total-luck { color: #ccc !important; }
 
-input[type="text"] {
+/* Inputs (theme vars) */
+input[type="text"],
+.spell-input {
   margin-top: 5px;
   padding: 10px 12px;
   font-size: 1rem;
   border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.15);
-  background-color: #111;
-  color: var(--app-text);
+
+  background-color: var(--input-bg) !important;
+  color: var(--input-fg) !important;
+  border: 1px solid var(--input-border) !important;
+
   text-align: center;
 }
 
+input[type="text"]::placeholder,
+.spell-input::placeholder {
+  color: color-mix(in oklch, var(--input-fg) 60%, transparent);
+}
+
 .total-luck {
-  margin-top: 0px;
+  margin-top: 0;
   color: var(--app-text);
   font-weight: bold;
   font-size: 1.2em;
 }
 
 /* ---------------------------------------
-   Dungeon difficulty buttons
+   DUNGEON DIFFICULTY BUTTONS
 --------------------------------------- */
 .dungeon-difficulty {
   display: flex;
@@ -219,11 +264,11 @@ input[type="text"] {
 .theme-dark .dungeon-difficulty button {
   background-color: #000 !important;
   border: 1px solid rgba(255,255,255,0.15);
-  color: #cfcfcf !important;            /* ✅ */
+  color: #cfcfcf !important;
 }
 .theme-dark .dungeon-difficulty button:hover {
   background-color: #111 !important;
-  color: #e6e6e6 !important;            /* optional */
+  color: #e6e6e6 !important;
 }
 .theme-dark .dungeon-difficulty button.selected {
   background-color: #111 !important;
@@ -232,7 +277,7 @@ input[type="text"] {
 }
 
 /* ---------------------------------------
-   Decks
+   DECKS
 --------------------------------------- */
 .deck-container {
   position: fixed;
@@ -246,7 +291,7 @@ input[type="text"] {
 /* Raise the draw deck ~1 inch on desktop */
 @media (min-width: 641px) {
   .deck-container.deck-stack:not(.second-deck) {
-    margin-top: -96px; /* ~1 inch upward */
+    margin-top: -96px;
   }
 }
 
@@ -286,7 +331,7 @@ input[type="text"] {
   filter: brightness(1.1);
 }
 
-/* Slow rotation for blackhole void deck image */
+/* Slow rotation for void deck image */
 .blackhole-spin {
   animation: blackholeRotate 28s linear infinite;
   transform-origin: 50% 50%;
@@ -297,7 +342,7 @@ input[type="text"] {
 }
 
 /* ---------------------------------------
-   Card fade animation (flip is in Card.css)
+   CARD FADE ANIMATION (Card.css flip is separate)
 --------------------------------------- */
 .card.fade-away { animation: fadeOut 0.5s ease forwards; }
 @keyframes fadeOut {
@@ -305,10 +350,152 @@ input[type="text"] {
   100% { opacity: 0; transform: scale(0.8); }
 }
 
-/* Disable hover-scale on touch devices (prevents overflow during gestures) */
+/* Disable hover-scale on touch devices */
 @media (hover: none) and (pointer: coarse) {
   .card:hover { transform: none; }
 }
+
+/* ---------------------------------------
+   FILTERS BAR + BADGE
+--------------------------------------- */
+.filters-bar {
+  width: min(1100px, 94vw);
+  margin: 6px auto 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+/* Badge */
+.btn-filters {
+  position: relative;
+  padding-right: 18px;
+}
+
+.filters-badge {
+  position: absolute;
+  top: -7px;
+  right: -6px;
+
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1;
+
+  background: #f6f0e4;
+  color: #000000;
+  border: 1px solid #fcedd1;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.18);
+}
+
+.theme-dark .filters-badge {
+  background: rgba(31, 58, 223, 0.9);
+  color: #000000;
+  border: 1px solid rgba(255,255,255,0.25);
+  box-shadow: 0 2px 10px rgba(31,58,223,0.25);
+}
+
+/* ---------------------------------------
+   FILTER DRAWER
+--------------------------------------- */
+.filter-drawer { position: fixed; inset: 0; z-index: 3000; }
+
+.filter-drawer__backdrop {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,.45);
+  backdrop-filter: blur(2px);
+  z-index: 1;
+}
+
+.filter-drawer__panel {
+  position: absolute; top: 0; right: 0; height: 100%;
+  width: min(420px, 92vw);
+  background: #222;
+  color: #fff;
+  box-shadow: -12px 0 28px rgba(0,0,0,.45);
+  display: flex;
+  flex-direction: column;
+  animation: slideIn .18s ease-out both;
+  z-index: 2;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(12px); opacity: 0; }
+  to   { transform: none; opacity: 1; }
+}
+
+.filter-drawer__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-bottom: 1px solid #444;
+}
+
+.icon-btn {
+  background: transparent;
+  border: 0;
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.filter-actions {
+  display: flex;
+  gap: 8px;
+  padding: 10px 14px;
+  border-bottom: 1px solid #333;
+}
+
+.filter-list {
+  padding: 10px 14px;
+  overflow: auto;
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 8px;
+}
+
+.filter-row {
+  background: #2e2e2e;
+  border: 1px solid #3e3e3e;
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filter-row input { transform: translateY(1px); }
+
+.filter-footer {
+  padding: 12px 14px;
+  border-top: 1px solid #333;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Buttons reused */
+.btn {
+  background: #444;
+  color: #fff;
+  border: 1px solid #5a5a5a;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.btn:hover { background: #565656; }
+.btn.small { padding: 6px 10px; font-size: 0.92rem; }
+.btn.primary { background: #7aa4ff; border-color: #89adff; color: #111; }
+.btn.primary:hover { background: #6b96f4; }
 
 /* ---------------------------------------
    MOBILE (≤640px)
@@ -316,18 +503,12 @@ input[type="text"] {
 @media (max-width: 640px) {
   :root {
     --deck-size: 60px;
-    --deck-lift: 32px; /* raise buttons a bit higher */
+    --deck-lift: 32px;
   }
 
   html, body, #root, .app-container {
     max-width: 100%;
     overflow-x: hidden;
-  }
-
-  /* body stays scrollable globally now; no override needed */
-
-  .app-container {
-    padding-top: 56px; /* smaller navbar space */
   }
 
   .top-center-container {
@@ -381,12 +562,7 @@ input[type="text"] {
     gap: 14px !important;
     flex-wrap: wrap;
     justify-content: center;
-    min-height: 58vw; /* ~one row of cards reserved */
-  }
-
-  /* Move the draw deck up ~1 inch on mobile too */
-  .deck-container.deck-stack {
-    bottom: calc(var(--deck-lift) + 96px + env(safe-area-inset-bottom)) !important;
+    min-height: 58vw;
   }
 
   /* Deck buttons pinned in corners, lifted above browser chrome */
@@ -407,6 +583,14 @@ input[type="text"] {
     width: 100% !important;
     height: auto !important;
   }
+
+  .filters-bar {
+    width: min(92vw, 680px);
+    justify-content: flex-end;
+    margin-top: 6px;
+  }
+
+  .filter-drawer__panel { width: min(460px, 96vw); }
 }
 
 /* ---------------------------------------
@@ -415,155 +599,5 @@ input[type="text"] {
 @media (min-width: 641px) and (max-width: 1024px) {
   .top-center-container { width: min(92vw, 900px); }
   .deck-image { width: 80px; }
-}
-
-/* ---------------------------------------
-   Filters bar & Drawer
---------------------------------------- */
-.filters-bar {
-  width: min(1100px, 94vw);
-  margin: 6px auto 0;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  justify-content: flex-end;
-}
-.filters-bar .filters-hint {
-  font-size: 0.9rem;
-  opacity: .9;
-  color: var(--app-text);
-}
-
-/* Drawer */
-.filter-drawer { position: fixed; inset: 0; z-index: 3000; }
-
-/* Backdrop below panel */
-.filter-drawer__backdrop {
-  position: absolute; inset: 0;
-  background: rgba(0,0,0,.45);
-  backdrop-filter: blur(2px);
-  z-index: 1;
-}
-
-/* Panel above backdrop */
-.filter-drawer__panel {
-  position: absolute; top: 0; right: 0; height: 100%;
-  width: min(420px, 92vw);
-  background: #222;
-  color: #fff;
-  box-shadow: -12px 0 28px rgba(0,0,0,.45);
-  display: flex; flex-direction: column;
-  animation: slideIn .18s ease-out both;
-  z-index: 2;
-}
-@keyframes slideIn { from { transform: translateX(12px); opacity: 0; } to { transform: none; opacity: 1; } }
-
-.filter-drawer__header {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 12px 14px; border-bottom: 1px solid #444;
-}
-.icon-btn { background: transparent; border: 0; color: #fff; font-size: 1.1rem; cursor: pointer; }
-
-.filter-actions {
-  display: flex; gap: 8px; padding: 10px 14px; border-bottom: 1px solid #333;
-}
-
-.filter-list {
-  padding: 10px 14px; overflow: auto; flex: 1;
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 8px;
-}
-.filter-row {
-  background: #2e2e2e; border: 1px solid #3e3e3e; border-radius: 8px;
-  padding: 8px; display: flex; align-items: center; gap: 8px;
-}
-.filter-row input { transform: translateY(1px); }
-
-.filter-footer {
-  padding: 12px 14px; border-top: 1px solid #333; display: flex; justify-content: flex-end;
-}
-
-/* Buttons reused */
-.btn {
-  background: #444; color: #fff; border: 1px solid #5a5a5a;
-  padding: 8px 12px; border-radius: 8px; cursor: pointer;
-}
-.btn:hover { background: #565656; }
-.btn.small { padding: 6px 10px; font-size: 0.92rem; }
-.btn.primary { background: #7aa4ff; border-color: #89adff; color: #111; }
-.btn.primary:hover { background: #6b96f4; }
-
-/* Mobile: comfy drawer width */
-@media (max-width: 640px) {
-  .filters-bar {
-    width: min(92vw, 680px);
-    justify-content: flex-end;
-    margin-top: 6px;
-  }
-  .filter-drawer__panel { width: min(460px, 96vw); }
-}
-
-/* ---------------------------------------
-   Input theming (shared)
---------------------------------------- */
-:root {
-  --input-bg: #ffffff;
-  --input-fg: #111111;
-  --input-border: rgba(0,0,0,.15);
-}
-
-.theme-dark {
-  --input-bg: #111111;
-  --input-fg: #f3f3f3;
-  --input-border: rgba(255,255,255,.15);
-}
-
-/* Apply to all text inputs (and your custom classes) */
-input[type="text"],
-.spell-input {
-  background-color: var(--input-bg) !important;
-  color: var(--input-fg) !important;
-  border: 1px solid var(--input-border) !important;
-}
-
-/* Make placeholders readable too */
-input[type="text"]::placeholder,
-.spell-input::placeholder {
-  color: color-mix(in oklch, var(--input-fg) 60%, transparent);
-}
-
-/* --- Filters badge (theme-aware) --- */
-.btn-filters {
-  position: relative;
-  padding-right: 18px;   /* you don’t need huge padding now */
-}
-
-.filters-badge {
-  position: absolute;
-  top: -7px;             /* lift it into the corner */
-  right: -6px;
-
-  width: 20px;
-  height: 20px;
-  border-radius: 999px;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 12px;
-  font-weight: 800;
-  line-height: 1;
-
-  background: #f6f0e4;
-  color: #000000;
-  border: 1px solid #fcedd1;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.18);
-}
-
-/* dark mode */
-.theme-dark .filters-badge {
-  background: rgba(31, 58, 223, 0.9);
-  color: #000000;
-  border: 1px solid rgba(255,255,255,0.25);
-  box-shadow: 0 2px 10px rgba(31,58,223,0.25);
+  .filter-drawer__panel { width: min(460px, 92vw); }
 }
