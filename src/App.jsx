@@ -412,7 +412,7 @@ export default function App() {
           </div>
 
           {/* Cards */}
-          <div className={`card-container ${isDrawing ? 'drawing' : ''}`}>
+         <div className={`card-container ${isDrawing ? 'drawing' : ''} ${cards.length ? 'has-cards' : ''}`}>
             {cards.map((card, index) => (
               <Card
                 key={card.id}

@@ -1,8 +1,5 @@
 /* =======================================
-   APP.CSS (cleaned + Option B scroll-container)
-   - Body does NOT scroll (prevents iOS white/bounce band)
-   - .app-container is the only scroll area
-   - Background painted on html/body + fixed layer (same --bg-url)
+   APP.CSS (Option B + container background + no empty bottom space)
 ======================================= */
 
 /* ---------------------------------------
@@ -118,7 +115,7 @@ body.no-scroll .app-container { overflow: hidden; }
 
   width: 100%;
 
-  /* ✅ App scroll container */
+  /* ✅ App is the ONLY scroll container */
   height: 100vh;   /* fallback */
   height: 100svh;  /* stable on iOS */
   height: 100dvh;  /* dynamic on iOS */
@@ -127,14 +124,24 @@ body.no-scroll .app-container { overflow: hidden; }
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
 
-  background-image: none !important;
+  /* ✅ IMPORTANT: give the scroll container the same background
+     so iOS bounce never reveals a flat color */
+  background-image: var(--bg-url, none);
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-color: var(--app-bg);
+
   color: var(--app-text);
 
   /* space for fixed navbar */
   padding-top: var(--nav-h);
+
+  /* helps non-iOS browsers clamp overscroll */
+  overscroll-behavior-y: none;
 }
 
-/* Fixed background layer behind everything */
+/* Fixed background layer behind everything (still fine to keep) */
 .app-bg-fixed {
   position: fixed;
   inset: 0;
@@ -312,7 +319,7 @@ input[type="text"]::placeholder,
   transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Stacked slices (non-top are slightly offset inline) */
+/* Stacked slices */
 .deck-slice {
   display: block;
   border-radius: 8px;
@@ -367,7 +374,6 @@ input[type="text"]::placeholder,
   justify-content: flex-end;
 }
 
-/* Badge */
 .btn-filters {
   position: relative;
   padding-right: 18px;
@@ -506,11 +512,6 @@ input[type="text"]::placeholder,
     --deck-lift: 32px;
   }
 
-  html, body, #root, .app-container {
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-
   .top-center-container {
     max-width: 680px;
     width: min(92vw, 680px);
@@ -554,18 +555,23 @@ input[type="text"]::placeholder,
     line-height: 1.2;
   }
 
-  /* Reserve vertical space for cards so the screen doesn't jump */
+  /* ✅ IMPORTANT: remove big “reserved” empty space when no cards */
   .card-container {
     width: 100%;
     box-sizing: border-box;
-    padding: 14px 10px calc(148px + (var(--deck-lift) - 18px));
+    padding: 14px 10px 24px; /* small bottom padding when empty */
     gap: 14px !important;
     flex-wrap: wrap;
     justify-content: center;
+    min-height: 0;
+  }
+
+  .card-container.has-cards {
+    padding-bottom: calc(148px + (var(--deck-lift) - 18px));
     min-height: 58vw;
   }
 
-  /* Deck buttons pinned in corners, lifted above browser chrome */
+  /* Deck buttons pinned in corners */
   .deck-container,
   .deck-container.second-deck {
     position: fixed !important;
