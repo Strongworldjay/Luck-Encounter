@@ -513,3 +513,8 @@ input[type="text"]::placeholder,
 .spell-input::placeholder {
   color: color-mix(in oklch, var(--input-fg) 100%, transparent);
 }
+@media (max-width: 640px) {
+  .app-bg-fixed {
+    background-position: center center;
+  }
+}

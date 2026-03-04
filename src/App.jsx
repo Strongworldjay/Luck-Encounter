@@ -10,6 +10,8 @@ import BountyBoard from './BountyBoard';
 import './App.css';
 import appBackground from './assets/app-background.jpg';
 import darkmodeBackground from './assets/darkmode.jpg';
+import mobileLightBackground from './assets/mobilelight.jpg';
+import mobileDarkBackground from './assets/mobiledark.jpg';
 import deckImage from './assets/card-design.png';
 import darkDeck1 from './assets/darkmodecard1.png';
 import darkDeck2 from './assets/darkmodecard2.png';
@@ -231,7 +233,9 @@ export default function App() {
   const deckArt = isDark ? darkDecks[Math.floor(Math.random() * darkDecks.length)] : deckImage;
 
   // Fixed background: choose image and pass as CSS variable
-  const bgUrl = isDark ? darkmodeBackground : appBackground;
+ const bgUrl = isMobile
+  ? (isDark ? mobileDarkBackground : mobileLightBackground)
+  : (isDark ? darkmodeBackground : appBackground);
 
   // ✅ Void deck art: blackhole in dark mode, whitehole in light mode
   const voidArt = isDark ? blackholeImage : whiteholeImage;
