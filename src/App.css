@@ -607,3 +607,23 @@ input[type="text"]::placeholder,
   .deck-image { width: 80px; }
   .filter-drawer__panel { width: min(460px, 92vw); }
 }
+
+/* iOS bottom toolbar / safe-area buffer so you can scroll past it */
+.app-container {
+  padding-bottom: calc(24px + env(safe-area-inset-bottom));
+}
+
+/* General bottom breathing room for content sections */
+.top-center-container {
+  padding-bottom: 16px;
+}
+
+@media (max-width: 640px) {
+  .card-container {
+    padding-bottom: calc(24px + env(safe-area-inset-bottom));
+  }
+
+  .card-container.has-cards {
+    padding-bottom: calc(148px + (var(--deck-lift) - 18px) + env(safe-area-inset-bottom));
+  }
+}
