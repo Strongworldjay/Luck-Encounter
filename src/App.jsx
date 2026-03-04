@@ -46,7 +46,7 @@ const itemTypes = [
   'Grimoire','WeaponArt','Scythe','Dagger','Sword',
   'PassiveArt','BoostArt','SkillPoints','Robe','Ring','LightArmor',
   'MediumArmor','WondrousItem','Shield','Crossbow','Spear','Halberd','Club','Whip','Mace',
-  'Warpick','Lance','Pike','Mana','Sword','Stamina'
+  'Warpick','Lance','Pike','Mana','Sword','Stamina','MagicArt'
 ];
 
 export default function App() {
@@ -59,18 +59,18 @@ export default function App() {
   const [selectedCard, setSelectedCard] = useState(null);
   const [isDrawing, setIsDrawing] = useState(false);
   const [currentSection, setCurrentSection] = useState('DungeonCompletion');
-
-  // ✅ Feat page routing (matches Navbar ids)
+    // ✅ Feat page routing (matches Navbar ids)
   const FEAT_SECTIONS = useMemo(() => ({
     OriginFeats:  { title: "Origin Feats",  data: originFeats },
     GeneralFeats: { title: "General Feats", data: generalFeats },
     MasteryFeats: { title: "Mastery Feats", data: masteryFeats },
     RacialFeats:  { title: "Racial Feats",  data: racialFeats },
-    EpicBoons:    { title: "Epic Boons",    data: epicBoons },
-    MavenArms:    { title: "Maven Arms",    data: mavenArms },
+    EpicBoons:        { title: "Epic Boons",  data: epicBoons },
+    MavenArms:    { title: "Maven Arms",   data: mavenArms },
   }), []);
 
   const cardRefs = useRef([]);
+
   const isMobile = useBreakpoint('(max-width: 640px)');
 
   // 🌙 Detect system dark mode
@@ -88,7 +88,7 @@ export default function App() {
     document.documentElement.classList.toggle('theme-dark', isDark);
   }, [isDark]);
 
-  // 🔒 iOS input-zoom lock
+  // 🔒 iOS input-zoom lock (prevents zoom when typing even at 75–85% page scale)
   useEffect(() => {
     const isiOS =
       /iPad|iPhone|iPod/.test(navigator.userAgent) ||
@@ -184,9 +184,7 @@ export default function App() {
   }, [filtersOpen]);
 
   const totalLuck = characterLuck + dungeonLuck;
-  const filteredItemTypes = enabledTypes.size
-    ? itemTypes.filter(t => enabledTypes.has(t))
-    : itemTypes;
+  const filteredItemTypes = enabledTypes.size ? itemTypes.filter(t => enabledTypes.has(t)) : itemTypes;
 
   const generateCards = () => {
     if (isDrawing) return;
@@ -199,8 +197,7 @@ export default function App() {
     const newCards = Array.from({ length: count }, (_, index) => {
       const baseRoll = Math.floor(Math.random() * 100) + 1;
       const totalRoll = baseRoll + totalLuck;
-      const rarity =
-        rarities.find(r => totalRoll >= r.range[0] && totalRoll <= r.range[1]) || rarities[0];
+      const rarity = rarities.find(r => totalRoll >= r.range[0] && totalRoll <= r.range[1]) || rarities[0];
       const itemType = pool[Math.floor(Math.random() * pool.length)];
       const itemName = getRandomItem(itemType, null, rarity.name.replace(' ', ''));
       return { id: index, rarity, itemType, item: itemName, revealed: false, fadeAway: false };
@@ -213,9 +210,7 @@ export default function App() {
   const revealCard = (index) => {
     const selected = cards[index];
     setSelectedCard(selected);
-    setCards(prev =>
-      prev.map((c, i) => (i === index ? { ...c, revealed: true } : { ...c, fadeAway: true }))
-    );
+    setCards(prev => prev.map((c, i) => (i === index ? { ...c, revealed: true } : { ...c, fadeAway: true })));
     console.log(`You have obtained the ${selected.rarity.name} ${selected.itemType}: ${selected.item}`);
   };
 
@@ -229,28 +224,23 @@ export default function App() {
   };
 
   const handleNavClick = (section) => setCurrentSection(section);
+  if (isLoading) return <LoadingScreen />;
 
   // Deck image logic
   const darkDecks = [darkDeck1, darkDeck2, darkDeck3, darkDeck4];
   const deckArt = isDark ? darkDecks[Math.floor(Math.random() * darkDecks.length)] : deckImage;
 
-  // Fixed background: choose image
+  // Fixed background: choose image and pass as CSS variable
   const bgUrl = isDark ? darkmodeBackground : appBackground;
 
-  // ✅ MUST be above the early return so hooks count stays constant
-  useEffect(() => {
-    document.documentElement.style.setProperty('--bg-url', `url(${bgUrl})`);
-    return () => document.documentElement.style.removeProperty('--bg-url');
-  }, [bgUrl]);
-
-  // Void deck art: blackhole in dark mode, whitehole in light mode
+  // ✅ Void deck art: blackhole in dark mode, whitehole in light mode
   const voidArt = isDark ? blackholeImage : whiteholeImage;
 
-  // ✅ NOW it’s safe to early-return
-  if (isLoading) return <LoadingScreen />;
-
   return (
-    <div className={`app-container ${isMobile ? 'mobile' : 'desktop'}`}>
+    <div
+      className={`app-container ${isMobile ? 'mobile' : 'desktop'}`}
+      style={{ '--bg-url': `url(${bgUrl})` }}
+    >
       {/* Fixed background layer that never scrolls */}
       <div className="app-bg-fixed" aria-hidden />
 
@@ -266,23 +256,19 @@ export default function App() {
           <div className="top-center-container panel">
             <h1>Congratulations, you have survived the Dungeon!</h1>
 
-            {/* Filters bar */}
+            {/* ---------- Filters bar ---------- */}
             <div className="filters-bar">
-              <button className="btn btn-filters" onClick={() => setFiltersOpen(true)}>
-                Filters
-                {enabledTypes.size > 0 && (
-                  <span className="filters-badge" aria-label={`${enabledTypes.size} filters enabled`}>
-                    {enabledTypes.size}
-                  </span>
-                )}
-              </button>
+              <button className="btn" onClick={() => setFiltersOpen(true)}>Filters</button>
+              {enabledTypes.size > 0 && (
+                <span className="filters-hint">{enabledTypes.size} enabled</span>
+              )}
             </div>
 
             <div className="luck-section">
               <div className="luck-row">
                 <div className="luck-input">
                   <label>
-                    Character&apos;s Luck:
+                    Character's Luck:
                     <input
                       type="text"
                       inputMode="numeric"
@@ -304,50 +290,41 @@ export default function App() {
               </div>
 
               <div className="dungeon-difficulty">
-                <button
-                  onClick={() => { setDungeonLuck(-50); setSelectedDungeon('F'); }}
-                  className={selectedDungeon === 'F' ? 'selected' : ''}
-                >
+                <button onClick={() => { setDungeonLuck(-50); setSelectedDungeon('F'); }}
+                        className={selectedDungeon === 'F' ? 'selected' : ''}>
                   F Class Dungeon (-50 Luck)
                 </button>
-                <button
-                  onClick={() => { setDungeonLuck(-25); setSelectedDungeon('D'); }}
-                  className={selectedDungeon === 'D' ? 'selected' : ''}
-                >
+                <button onClick={() => { setDungeonLuck(-25); setSelectedDungeon('D'); }}
+                        className={selectedDungeon === 'D' ? 'selected' : ''}>
                   D Class Dungeon (-25 Luck)
                 </button>
-                <button
-                  onClick={() => { setDungeonLuck(0); setSelectedDungeon('C'); }}
-                  className={selectedDungeon === 'C' ? 'selected' : ''}
-                >
+                <button onClick={() => { setDungeonLuck(0); setSelectedDungeon('C'); }}
+                        className={selectedDungeon === 'C' ? 'selected' : ''}>
                   C Class Dungeon (0 Luck)
                 </button>
-                <button
-                  onClick={() => { setDungeonLuck(25); setSelectedDungeon('B'); }}
-                  className={selectedDungeon === 'B' ? 'selected' : ''}
-                >
+                <button onClick={() => { setDungeonLuck(25); setSelectedDungeon('B'); }}
+                        className={selectedDungeon === 'B' ? 'selected' : ''}>
                   B Class Dungeon (+25 Luck)
                 </button>
-                <button
-                  onClick={() => { setDungeonLuck(45); setSelectedDungeon('A'); }}
-                  className={selectedDungeon === 'A' ? 'selected' : ''}
-                >
+                <button onClick={() => { setDungeonLuck(45); setSelectedDungeon('A'); }}
+                        className={selectedDungeon === 'A' ? 'selected' : ''}>
                   A Class Dungeon (+45 Luck)
                 </button>
-                <button
-                  onClick={() => { setDungeonLuck(75); setSelectedDungeon('S'); }}
-                  className={selectedDungeon === 'S' ? 'selected' : ''}
-                >
+                <button onClick={() => { setDungeonLuck(75); setSelectedDungeon('S'); }}
+                        className={selectedDungeon === 'S' ? 'selected' : ''}>
                   S Class Dungeon (+75 Luck)
                 </button>
               </div>
             </div>
           </div>
 
-          {/* Filters Drawer */}
+          {/* ---------- Filters Drawer ---------- */}
           {filtersOpen && (
             <div className="filter-drawer" role="dialog" aria-modal="true" onClick={() => setFiltersOpen(false)}>
-              <div className="filter-drawer__panel" onClick={(e) => e.stopPropagation()}>
+              <div
+                className="filter-drawer__panel"
+                onClick={(e) => e.stopPropagation()}
+              >
                 <div className="filter-drawer__header">
                   <h3>Item Filters</h3>
                   <button className="icon-btn" onClick={() => setFiltersOpen(false)} aria-label="Close">✕</button>
@@ -373,8 +350,7 @@ export default function App() {
                           onChange={() =>
                             setEnabledTypes(prev => {
                               const next = new Set(prev);
-                              if (next.has(t)) next.delete(t);
-                              else next.add(t);
+                              if (next.has(t)) next.delete(t); else next.add(t);
                               return next;
                             })
                           }
@@ -394,7 +370,7 @@ export default function App() {
             </div>
           )}
 
-          {/* Draw Deck */}
+          {/* Draw Deck (stacked look; hover only top slice) */}
           <div className="deck-container deck-stack" onClick={generateCards} role="button" aria-label="Draw cards">
             {[...Array(5)].map((_, i) => (
               <img
@@ -412,7 +388,7 @@ export default function App() {
           </div>
 
           {/* Cards */}
-         <div className={`card-container ${isDrawing ? 'drawing' : ''} ${cards.length ? 'has-cards' : ''}`}>
+          <div className={`card-container ${isDrawing ? 'drawing' : ''}`}>
             {cards.map((card, index) => (
               <Card
                 key={card.id}
@@ -425,7 +401,7 @@ export default function App() {
             ))}
           </div>
 
-          {/* Void Deck */}
+            {/* Void Deck (single, slow rotating image) */}
           <div className="deck-container second-deck" onClick={resetCards} role="button" aria-label="Reset cards">
             <img src={voidArt} alt="Void Deck" className="deck-image blackhole-spin" />
           </div>
@@ -444,13 +420,14 @@ export default function App() {
       {currentSection === 'JumpCalc' && <JumpCalculator />}
       {currentSection === 'ShopInventory' && <ShopInventory />}
       {currentSection === 'BountyBoard' && <BountyBoard />}
-
+      {/* ✅ FEATS (Origin/General/Mastery/Racial) */}
       {FEAT_SECTIONS[currentSection] && (
         <Feats
           title={FEAT_SECTIONS[currentSection].title}
           feats={FEAT_SECTIONS[currentSection].data}
         />
       )}
+
     </div>
   );
 }

@@ -1,21 +1,17 @@
-/* =======================================
-   APP.CSS (Option B + container background + no empty bottom space)
-======================================= */
-
 /* ---------------------------------------
    THEME TOKENS (light defaults)
 --------------------------------------- */
 :root {
   /* accents */
-  --accent-color: #f6f0e2;
-  --accent-glow: #fde6ae;
+  --accent-color: #f6f0e2;                 /* gold */
+  --accent-glow: #fdde98;
 
   /* app chrome */
-  --app-bg: #fdfbf7;
-  --app-text: #111111;
+  --app-bg: #fdfbf7;                       /* light background */
+  --app-text: #111111;                     /* light text */
 
-  /* card face */
-  --poster-bg: #fdfbf7;
+  /* card face (used elsewhere too) */
+  --poster-bg:   #fdfbf7;
   --poster-text: #111111;
 
   /* surfaces */
@@ -23,19 +19,11 @@
   --elevated: #f6f7f9;
   --text: var(--app-text);
   --border: rgba(0,0,0,.12);
-
-  /* layout */
-  --nav-h: 60px;
-
-  /* inputs */
-  --input-bg: #ffffff;
-  --input-fg: #111111;
-  --input-border: rgba(0,0,0,.15);
 }
 
-/* Dark mode overrides */
+/* Dark mode overrides (apply .theme-dark to <html> or <body>) */
 .theme-dark {
-  --accent-color: #1f3adf;
+  --accent-color: #1f3adf;                 /* deep blue */
   --accent-glow: rgba(31, 58, 223, 0.5);
 
   --app-bg: #000000;
@@ -46,12 +34,8 @@
   --text: var(--app-text);
   --border: rgba(255,255,255,.14);
 
-  --poster-bg: #000000;
+  --poster-bg:   #000000;
   --poster-text: #f3f3f3;
-
-  --input-bg: #111111;
-  --input-fg: #f3f3f3;
-  --input-border: rgba(255,255,255,.15);
 }
 
 /* Optional: auto-follow system when no explicit theme is set */
@@ -61,99 +45,49 @@
     --app-text: #f3f3f3;
     --accent-color: #1f3adf;
     --accent-glow: rgba(31, 58, 223, 0.5);
-
-    --input-bg: #111111;
-    --input-fg: #f3f3f3;
-    --input-border: rgba(255,255,255,.15);
   }
 }
 
-/* Mobile navbar height token */
-@media (max-width: 640px) {
-  :root { --nav-h: 56px; }
-}
-
 /* ---------------------------------------
-   BASE (Option B: lock page scroll)
+   Base
 --------------------------------------- */
-html, body {
-  height: 100%;
-  margin: 0;
-  overflow: hidden; /* ✅ page never scrolls */
-}
-
-/* Paint background on both html + body so nothing shows white */
-html, body {
-  background-image: var(--bg-url, none);
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
+body {
   background-color: var(--app-bg);
   color: var(--app-text);
+  margin: 0;
+  overflow: hidden;
 }
 
-/* Root should fill viewport */
-#root {
-  height: 100%;
-}
-
-/* If you want a temporary scroll lock (e.g., drawer), lock the container */
-body.no-scroll .app-container { overflow: hidden; }
-
-/* ---------------------------------------
-   APP WRAPPER (only scroll container)
---------------------------------------- */
+/* Fixed, non-scrolling background layer (iOS-safe) */
 .app-container {
   position: relative;
-  isolation: isolate;
-  z-index: 0;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  width: 100vw;
+  height: 100vh;
 
-  width: 100%;
-
-  /* ✅ App is the ONLY scroll container */
-  height: 100vh;   /* fallback */
-  height: 100svh;  /* stable on iOS */
-  height: 100dvh;  /* dynamic on iOS */
-
-  overflow-y: auto;
-  overflow-x: hidden;
-  -webkit-overflow-scrolling: touch;
-
-  /* ✅ IMPORTANT: give the scroll container the same background
-     so iOS bounce never reveals a flat color */
-  background-image: var(--bg-url, none);
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-color: var(--app-bg);
+  /* the app itself no longer sets a background image;
+     we draw it with .app-bg-fixed below */
+  background-image: none !important;
 
   color: var(--app-text);
-
-  /* space for fixed navbar */
-  padding-top: var(--nav-h);
-
-  /* helps non-iOS browsers clamp overscroll */
-  overscroll-behavior-y: none;
+  padding-top: 60px; /* room for fixed navbar */
 }
 
-/* Fixed background layer behind everything (still fine to keep) */
 .app-bg-fixed {
   position: fixed;
   inset: 0;
   z-index: -1;
-  pointer-events: none;
-
   background-image: var(--bg-url);
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
   will-change: transform;
 }
+
+.content-wrap { width: 100%; }
 
 /* Transparent wrapper (hook class, no styling) */
 .panel {
@@ -163,10 +97,8 @@ body.no-scroll .app-container { overflow: hidden; }
   box-shadow: none !important;
 }
 
-.content-wrap { width: 100%; }
-
 /* ---------------------------------------
-   TOP SECTION
+   Top section
 --------------------------------------- */
 .top-center-container {
   display: block;
@@ -188,7 +120,7 @@ body.no-scroll .app-container { overflow: hidden; }
 }
 
 .top-center-container label {
-  margin-top: 0;
+  margin-top: 0px;
   color: var(--app-text);
   display: flex;
   flex-direction: column;
@@ -209,35 +141,26 @@ body.no-scroll .app-container { overflow: hidden; }
 .theme-dark .luck-input label { color: #ccc !important; }
 .theme-dark .total-luck { color: #ccc !important; }
 
-/* Inputs (theme vars) */
-input[type="text"],
-.spell-input {
+input[type="text"] {
   margin-top: 5px;
   padding: 10px 12px;
   font-size: 1rem;
   border-radius: 10px;
-
-  background-color: var(--input-bg) !important;
-  color: var(--input-fg) !important;
-  border: 1px solid var(--input-border) !important;
-
+  border: 1px solid rgba(255,255,255,0.15);
+  background-color: #111;
+  color: var(--app-text);
   text-align: center;
 }
 
-input[type="text"]::placeholder,
-.spell-input::placeholder {
-  color: color-mix(in oklch, var(--input-fg) 60%, transparent);
-}
-
 .total-luck {
-  margin-top: 0;
+  margin-top: 0px;
   color: var(--app-text);
   font-weight: bold;
   font-size: 1.2em;
 }
 
 /* ---------------------------------------
-   DUNGEON DIFFICULTY BUTTONS
+   Dungeon difficulty buttons
 --------------------------------------- */
 .dungeon-difficulty {
   display: flex;
@@ -259,7 +182,7 @@ input[type="text"]::placeholder,
   touch-action: manipulation;
 }
 
-.dungeon-difficulty button:hover { background-color: #f8efdc; }
+.dungeon-difficulty button:hover { background-color: #e9d8b5; }
 
 .dungeon-difficulty button.selected {
   background-color: #fdfbf7;
@@ -271,11 +194,9 @@ input[type="text"]::placeholder,
 .theme-dark .dungeon-difficulty button {
   background-color: #000 !important;
   border: 1px solid rgba(255,255,255,0.15);
-  color: #cfcfcf !important;
 }
 .theme-dark .dungeon-difficulty button:hover {
   background-color: #111 !important;
-  color: #e6e6e6 !important;
 }
 .theme-dark .dungeon-difficulty button.selected {
   background-color: #111 !important;
@@ -283,8 +204,20 @@ input[type="text"]::placeholder,
   color: var(--accent-color);
 }
 
+/* Dark mode: fix button text */
+.theme-dark .dungeon-difficulty button {
+  background-color: #000 !important;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #cfcfcf !important;            /* ✅ add this */
+}
+
+.theme-dark .dungeon-difficulty button:hover {
+  background-color: #111 !important;
+  color: #e6e6e6 !important;            /* optional */
+}
+
 /* ---------------------------------------
-   DECKS
+   Decks
 --------------------------------------- */
 .deck-container {
   position: fixed;
@@ -298,7 +231,7 @@ input[type="text"]::placeholder,
 /* Raise the draw deck ~1 inch on desktop */
 @media (min-width: 641px) {
   .deck-container.deck-stack:not(.second-deck) {
-    margin-top: -96px;
+    margin-top: -96px; /* ~1 inch upward */
   }
 }
 
@@ -319,7 +252,7 @@ input[type="text"]::placeholder,
   transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Stacked slices */
+/* Stacked slices (non-top are slightly offset inline) */
 .deck-slice {
   display: block;
   border-radius: 8px;
@@ -338,7 +271,7 @@ input[type="text"]::placeholder,
   filter: brightness(1.1);
 }
 
-/* Slow rotation for void deck image */
+/* Slow rotation for blackhole void deck image */
 .blackhole-spin {
   animation: blackholeRotate 28s linear infinite;
   transform-origin: 50% 50%;
@@ -349,7 +282,7 @@ input[type="text"]::placeholder,
 }
 
 /* ---------------------------------------
-   CARD FADE ANIMATION (Card.css flip is separate)
+   Card fade animation (flip is in Card.css)
 --------------------------------------- */
 .card.fade-away { animation: fadeOut 0.5s ease forwards; }
 @keyframes fadeOut {
@@ -357,151 +290,10 @@ input[type="text"]::placeholder,
   100% { opacity: 0; transform: scale(0.8); }
 }
 
-/* Disable hover-scale on touch devices */
+/* Disable hover-scale on touch devices (prevents overflow during gestures) */
 @media (hover: none) and (pointer: coarse) {
   .card:hover { transform: none; }
 }
-
-/* ---------------------------------------
-   FILTERS BAR + BADGE
---------------------------------------- */
-.filters-bar {
-  width: min(1100px, 94vw);
-  margin: 6px auto 0;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  justify-content: flex-end;
-}
-
-.btn-filters {
-  position: relative;
-  padding-right: 18px;
-}
-
-.filters-badge {
-  position: absolute;
-  top: -7px;
-  right: -6px;
-
-  width: 20px;
-  height: 20px;
-  border-radius: 999px;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 12px;
-  font-weight: 800;
-  line-height: 1;
-
-  background: #f6f0e4;
-  color: #000000;
-  border: 1px solid #fcedd1;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.18);
-}
-
-.theme-dark .filters-badge {
-  background: rgba(31, 58, 223, 0.9);
-  color: #000000;
-  border: 1px solid rgba(255,255,255,0.25);
-  box-shadow: 0 2px 10px rgba(31,58,223,0.25);
-}
-
-/* ---------------------------------------
-   FILTER DRAWER
---------------------------------------- */
-.filter-drawer { position: fixed; inset: 0; z-index: 3000; }
-
-.filter-drawer__backdrop {
-  position: absolute; inset: 0;
-  background: rgba(0,0,0,.45);
-  backdrop-filter: blur(2px);
-  z-index: 1;
-}
-
-.filter-drawer__panel {
-  position: absolute; top: 0; right: 0; height: 100%;
-  width: min(420px, 92vw);
-  background: #222;
-  color: #fff;
-  box-shadow: -12px 0 28px rgba(0,0,0,.45);
-  display: flex;
-  flex-direction: column;
-  animation: slideIn .18s ease-out both;
-  z-index: 2;
-}
-
-@keyframes slideIn {
-  from { transform: translateX(12px); opacity: 0; }
-  to   { transform: none; opacity: 1; }
-}
-
-.filter-drawer__header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 14px;
-  border-bottom: 1px solid #444;
-}
-
-.icon-btn {
-  background: transparent;
-  border: 0;
-  color: #fff;
-  font-size: 1.1rem;
-  cursor: pointer;
-}
-
-.filter-actions {
-  display: flex;
-  gap: 8px;
-  padding: 10px 14px;
-  border-bottom: 1px solid #333;
-}
-
-.filter-list {
-  padding: 10px 14px;
-  overflow: auto;
-  flex: 1;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 8px;
-}
-
-.filter-row {
-  background: #2e2e2e;
-  border: 1px solid #3e3e3e;
-  border-radius: 8px;
-  padding: 8px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.filter-row input { transform: translateY(1px); }
-
-.filter-footer {
-  padding: 12px 14px;
-  border-top: 1px solid #333;
-  display: flex;
-  justify-content: flex-end;
-}
-
-/* Buttons reused */
-.btn {
-  background: #444;
-  color: #fff;
-  border: 1px solid #5a5a5a;
-  padding: 8px 12px;
-  border-radius: 8px;
-  cursor: pointer;
-}
-.btn:hover { background: #565656; }
-.btn.small { padding: 6px 10px; font-size: 0.92rem; }
-.btn.primary { background: #7aa4ff; border-color: #89adff; color: #111; }
-.btn.primary:hover { background: #6b96f4; }
 
 /* ---------------------------------------
    MOBILE (≤640px)
@@ -509,7 +301,20 @@ input[type="text"]::placeholder,
 @media (max-width: 640px) {
   :root {
     --deck-size: 60px;
-    --deck-lift: 32px;
+    --deck-lift: 32px; /* raise buttons a bit higher */
+  }
+
+  html, body, #root, .app-container {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  body { overflow-y: auto; }
+
+  .app-container {
+    height: auto;
+    min-height: 100dvh;
+    padding-top: 56px; /* smaller navbar space */
   }
 
   .top-center-container {
@@ -555,23 +360,23 @@ input[type="text"]::placeholder,
     line-height: 1.2;
   }
 
-  /* ✅ IMPORTANT: remove big “reserved” empty space when no cards */
+  /* Reserve vertical space for cards so the screen doesn't jump */
   .card-container {
     width: 100%;
     box-sizing: border-box;
-    padding: 14px 10px 24px; /* small bottom padding when empty */
+    padding: 14px 10px calc(148px + (var(--deck-lift) - 18px));
     gap: 14px !important;
     flex-wrap: wrap;
     justify-content: center;
-    min-height: 0;
+    min-height: 58vw; /* ~one row of cards reserved */
   }
 
-  .card-container.has-cards {
-    padding-bottom: calc(148px + (var(--deck-lift) - 18px));
-    min-height: 58vw;
+  /* Move the draw deck up ~1 inch on mobile too */
+  .deck-container.deck-stack {
+    bottom: calc(var(--deck-lift) + 96px + env(safe-area-inset-bottom)) !important;
   }
 
-  /* Deck buttons pinned in corners */
+  /* Deck buttons pinned in corners, lifted above browser chrome */
   .deck-container,
   .deck-container.second-deck {
     position: fixed !important;
@@ -589,14 +394,6 @@ input[type="text"]::placeholder,
     width: 100% !important;
     height: auto !important;
   }
-
-  .filters-bar {
-    width: min(92vw, 680px);
-    justify-content: flex-end;
-    margin-top: 6px;
-  }
-
-  .filter-drawer__panel { width: min(460px, 96vw); }
 }
 
 /* ---------------------------------------
@@ -605,25 +402,114 @@ input[type="text"]::placeholder,
 @media (min-width: 641px) and (max-width: 1024px) {
   .top-center-container { width: min(92vw, 900px); }
   .deck-image { width: 80px; }
-  .filter-drawer__panel { width: min(460px, 92vw); }
 }
 
-/* iOS bottom toolbar / safe-area buffer so you can scroll past it */
-.app-container {
-  padding-bottom: calc(24px + env(safe-area-inset-bottom));
+/* ---------------------------------------
+   Filters bar & Drawer
+--------------------------------------- */
+.filters-bar {
+  width: min(1100px, 94vw);
+  margin: 6px auto 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-end;
+}
+.filters-bar .filters-hint {
+  font-size: 0.9rem;
+  opacity: .9;
+  color: var(--app-text);
 }
 
-/* General bottom breathing room for content sections */
-.top-center-container {
-  padding-bottom: 16px;
+/* Drawer */
+.filter-drawer { position: fixed; inset: 0; z-index: 3000; }
+
+/* Backdrop below panel */
+.filter-drawer__backdrop {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,.45);
+  backdrop-filter: blur(2px);
+  z-index: 1;
 }
 
+/* Panel above backdrop */
+.filter-drawer__panel {
+  position: absolute; top: 0; right: 0; height: 100%;
+  width: min(420px, 92vw);
+  background: #222;
+  color: #fff;
+  box-shadow: -12px 0 28px rgba(0,0,0,.45);
+  display: flex; flex-direction: column;
+  animation: slideIn .18s ease-out both;
+  z-index: 2;
+}
+@keyframes slideIn { from { transform: translateX(12px); opacity: 0; } to { transform: none; opacity: 1; } }
+
+.filter-drawer__header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 14px; border-bottom: 1px solid #444;
+}
+.icon-btn { background: transparent; border: 0; color: #fff; font-size: 1.1rem; cursor: pointer; }
+
+.filter-actions {
+  display: flex; gap: 8px; padding: 10px 14px; border-bottom: 1px solid #333;
+}
+
+.filter-list {
+  padding: 10px 14px; overflow: auto; flex: 1;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 8px;
+}
+.filter-row {
+  background: #2e2e2e; border: 1px solid #3e3e3e; border-radius: 8px;
+  padding: 8px; display: flex; align-items: center; gap: 8px;
+}
+.filter-row input { transform: translateY(1px); }
+
+.filter-footer {
+  padding: 12px 14px; border-top: 1px solid #333; display: flex; justify-content: flex-end;
+}
+
+/* Buttons reused */
+.btn {
+  background: #444; color: #fff; border: 1px solid #5a5a5a;
+  padding: 8px 12px; border-radius: 8px; cursor: pointer;
+}
+.btn:hover { background: #565656; }
+.btn.small { padding: 6px 10px; font-size: 0.92rem; }
+.btn.primary { background: #7aa4ff; border-color: #89adff; color: #111; }
+.btn.primary:hover { background: #6b96f4; }
+
+/* Mobile: comfy drawer width */
 @media (max-width: 640px) {
-  .card-container {
-    padding-bottom: calc(24px + env(safe-area-inset-bottom));
+  .filters-bar {
+    width: min(92vw, 680px);
+    justify-content: flex-end;
+    margin-top: 6px;
   }
+  .filter-drawer__panel { width: min(460px, 96vw); }
+}
+:root {
+  --input-bg: #ffffff;
+  --input-fg: #111111;
+  --input-border: rgba(0,0,0,.15);
+}
 
-  .card-container.has-cards {
-    padding-bottom: calc(148px + (var(--deck-lift) - 18px) + env(safe-area-inset-bottom));
-  }
+.theme-dark {
+  --input-bg: #111111;
+  --input-fg: #f3f3f3;
+  --input-border: rgba(255,255,255,.15);
+}
+
+/* Apply to all text inputs (and your custom classes) */
+input[type="text"],
+.spell-input {
+  background-color: var(--input-bg) !important;
+  color: var(--input-fg) !important;
+  border: 1px solid var(--input-border) !important;
+}
+
+/* Make placeholders readable too */
+input[type="text"]::placeholder,
+.spell-input::placeholder {
+  color: color-mix(in oklch, var(--input-fg) 100%, transparent);
 }

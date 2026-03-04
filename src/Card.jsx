@@ -77,12 +77,13 @@ const Card = ({ card, onClick, isDark = false }) => {
 
   // FRONT: rarity image + solid color behind it (white light / black dark)
   const frontImg = rarityFrontMap[card.rarity.name] || commonFront;
-  const frontBackground = isDark ? '#000' : '#f8f3e9';
+  const frontBackground = isDark ? '#000' : '#fef7e7';
 
   const getOverlayImage = (itemType) => {
     const [mainType, subtype] = itemType.split(' ');
     switch (subtype || mainType) {
       case 'Mana': return manaSymbol;
+     case 'MagicArt': return magicSkillSymbol;
       case 'Stamina': return staminaSymbol;
       case 'Scythe': return scythesymbol;
       case 'Sword': return swordSymbol;
