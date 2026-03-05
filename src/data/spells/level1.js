@@ -26,7 +26,7 @@ export const LEVEL1 = [
       "**Using a Higher-Level Spell Slot.** When cast using a spell slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.",
     imagePath: spellImgUrl("arcticbreath")
   },
-{
+  {
     slug: slugify("Frost Fingers"),
     name: "Frost Fingers",
     classes: ["Wizard"],
@@ -42,20 +42,20 @@ export const LEVEL1 = [
     damageTypes: ["Cold"],
     conditions: [],
     components: {
-        verbal: true,
-        somatic: true,
-        material: false,
-        materialText: ""
+      verbal: true,
+      somatic: true,
+      material: false,
+      materialText: ""
     },
     concentration: false,
     ritual: false,
     descriptionMd:
-        "Freezing cold blasts from your fingertips in a 15-foot cone. Each creature in that area must make a Constitution saving throw, taking 2d8 Cold damage on a failed save, or half as much damage on a successful one.\n\n" +
-        "The cold freezes nonmagical liquids in the area that aren’t being worn or carried.",
+      "Freezing cold blasts from your fingertips in a 15-foot cone. Each creature in that area must make a Constitution saving throw, taking 2d8 Cold damage on a failed save, or half as much damage on a successful one.\n\n" +
+      "The cold freezes nonmagical liquids in the area that aren’t being worn or carried.",
     scalingMd:
-        "**Using a Higher-Level Spell Slot.** When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.",
+      "**Using a Higher-Level Spell Slot.** When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.",
     imagePath: spellImgUrl("frostfingers")
-},
+  },
   {
     slug: slugify("Arcane Weapon"),
     name: "Arcane Weapon",
@@ -162,7 +162,7 @@ export const LEVEL1 = [
     duration: "Concentration, up to 10 minutes",
     range: "Touch",
     area: "1 creature",
-    tags: ["Heliana's Guide to Monster Hunting","Biomancy"],
+    tags: ["Heliana's Guide to Monster Hunting", "Biomancy"],
     saveRequired: "None",
     attackType: "Spell",
     damageTypes: [],
@@ -342,30 +342,30 @@ export const LEVEL1 = [
       "**Using a Higher-Level Spell Slot.** You can expend one additional Hit Point Die for each slot level above 1st. Concentration duration increases to 10 minutes (2nd) or 1 hour (3rd+).",
     imagePath: spellImgUrl("bloodbanerune")
   },
-    {
-        slug: slugify("Boil Blood"),
-        name: "Boil Blood",
-        classes: ["Blood Hunter"],
-        spellLevel: 2,
-        school: "Necromancy",
-        castingTime: "1 action",
-        duration: "Concentration, up to 1 minute",
-        range: "60 feet",
-        area: "1 creature that took slashing or piercing damage in the last minute",
-        tags: ["Grim Hollow", "Damage"],
-        saveRequired: "CON",
-        attackType: "Spell",
-        damageTypes: ["Fire"],
-        conditions: [],
-        components: { verbal: true, somatic: true, material: false, materialText: "" },
-        concentration: true,
-        ritual: false,
-        descriptionMd:
-            "Choose a creature that has taken slashing or piercing damage in the last minute. The target makes a Constitution save. On a failed save, its blood heats and boils. At the start of each of its turns while affected, it takes 3d4 Fire and is wracked with agony—all terrain is difficult terrain for that creature. At the end of each of its turns, it repeats the save, ending the spell on a success.",
-        scalingMd:
-            "**Using a Higher-Level Spell Slot.** When cast using a slot of 3rd level or higher, the damage increases by 2d4 for each slot level above 2nd.",
-        imagePath: spellImgUrl("boilblood")
-    },
+  {
+    slug: slugify("Boil Blood"),
+    name: "Boil Blood",
+    classes: ["Blood Hunter"],
+    spellLevel: 2,
+    school: "Necromancy",
+    castingTime: "1 action",
+    duration: "Concentration, up to 1 minute",
+    range: "60 feet",
+    area: "1 creature that took slashing or piercing damage in the last minute",
+    tags: ["Grim Hollow", "Damage"],
+    saveRequired: "CON",
+    attackType: "Spell",
+    damageTypes: ["Fire"],
+    conditions: [],
+    components: { verbal: true, somatic: true, material: false, materialText: "" },
+    concentration: true,
+    ritual: false,
+    descriptionMd:
+      "Choose a creature that has taken slashing or piercing damage in the last minute. The target makes a Constitution save. On a failed save, its blood heats and boils. At the start of each of its turns while affected, it takes 3d4 Fire and is wracked with agony—all terrain is difficult terrain for that creature. At the end of each of its turns, it repeats the save, ending the spell on a success.",
+    scalingMd:
+      "**Using a Higher-Level Spell Slot.** When cast using a slot of 3rd level or higher, the damage increases by 2d4 for each slot level above 2nd.",
+    imagePath: spellImgUrl("boilblood")
+  },
   {
     slug: slugify("Bramble Binding"),
     name: "Bramble Binding",
@@ -482,19 +482,19 @@ export const LEVEL1 = [
     damageTypes: [],
     conditions: ["Frightened"],
     components: {
-        verbal: true,
-        somatic: false,
-        material: false,
-        materialText: ""
+      verbal: true,
+      somatic: false,
+      material: false,
+      materialText: ""
     },
     concentration: true,
     ritual: false,
     descriptionMd:
-        "You awaken the sense of mortality in one creature you can see within range. A Construct or an Undead is immune to this effect. The target must succeed on a Wisdom saving throw or become Frightened of you until the spell ends. The Frightened target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
+      "You awaken the sense of mortality in one creature you can see within range. A Construct or an Undead is immune to this effect. The target must succeed on a Wisdom saving throw or become Frightened of you until the spell ends. The Frightened target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.",
     scalingMd:
-        "**Using a Higher-Level Spell Slot.** When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them.",
+      "**Using a Higher-Level Spell Slot.** When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them.",
     imagePath: spellImgUrl("causefear")
-},
+  },
 
   {
     slug: slugify("Chaos Bolt"),
@@ -740,7 +740,7 @@ export const LEVEL1 = [
     duration: "Instantaneous",
     range: "30 feet",
     area: "Self",
-    tags: ["Crooked Moon","Healing"],
+    tags: ["Crooked Moon", "Healing"],
     saveRequired: "None",
     attackType: "None",
     damageTypes: [],
@@ -768,20 +768,20 @@ export const LEVEL1 = [
     damageTypes: ["Acid", "Cold", "Fire", "Lightning", "Thunder"],
     conditions: [],
     components: {
-        verbal: false,
-        somatic: true,
-        material: false,
-        materialText: ""
+      verbal: false,
+      somatic: true,
+      material: false,
+      materialText: ""
     },
     concentration: false,
     ritual: false,
     descriptionMd:
-        "You cast this spell as a reaction when you take Acid, Cold, Fire, Lightning, or Thunder damage. The spell captures some of the incoming energy, lessening its effect on you and storing it for your next melee attack. You have Resistance to the triggering damage type until the start of your next turn.\n\n" +
-        "In addition, the first time you hit with a melee attack on your next turn, the target takes an extra 1d6 damage of the triggering type, and the spell ends.",
+      "You cast this spell as a reaction when you take Acid, Cold, Fire, Lightning, or Thunder damage. The spell captures some of the incoming energy, lessening its effect on you and storing it for your next melee attack. You have Resistance to the triggering damage type until the start of your next turn.\n\n" +
+      "In addition, the first time you hit with a melee attack on your next turn, the target takes an extra 1d6 damage of the triggering type, and the spell ends.",
     scalingMd:
-        "**Using a Higher-Level Spell Slot.** When you cast this spell using a spell slot of 2nd level or higher, the extra damage increases by 1d6 for each slot level above 1st.",
+      "**Using a Higher-Level Spell Slot.** When you cast this spell using a spell slot of 2nd level or higher, the extra damage increases by 1d6 for each slot level above 1st.",
     imagePath: spellImgUrl("absorbelements")
-},
+  },
 
   {
     slug: slugify("Earth Tremor"),
@@ -909,19 +909,19 @@ export const LEVEL1 = [
     damageTypes: ["Acid"],
     conditions: [],
     components: {
-        verbal: true,
-        somatic: true,
-        material: true,
-        materialText: "a bit of rotten food"
+      verbal: true,
+      somatic: true,
+      material: true,
+      materialText: "a bit of rotten food"
     },
     concentration: true,
     ritual: false,
     descriptionMd:
-        "A stream of acid emanates from you in a line 30 feet long and 5 feet wide in a direction you choose. Each creature in the line must succeed on a Dexterity saving throw or be covered in acid for the spell’s duration or until a creature uses its action to scrape or wash the acid off itself or another creature. A creature covered in the acid takes 2d4 Acid damage at the start of each of its turns.",
+      "A stream of acid emanates from you in a line 30 feet long and 5 feet wide in a direction you choose. Each creature in the line must succeed on a Dexterity saving throw or be covered in acid for the spell’s duration or until a creature uses its action to scrape or wash the acid off itself or another creature. A creature covered in the acid takes 2d4 Acid damage at the start of each of its turns.",
     scalingMd:
-        "**Using a Higher-Level Spell Slot.** When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 2d4 for each slot level above 1st.",
+      "**Using a Higher-Level Spell Slot.** When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 2d4 for each slot level above 1st.",
     imagePath: spellImgUrl("tashascausticbrew")
-},
+  },
   {
     slug: slugify("Ghost Light"),
     name: "Ghost Light",
@@ -1718,29 +1718,29 @@ export const LEVEL1 = [
       "You set an alarm against intrusion. Choose a door, a window, or an area within range that is no larger than a 20-foot Cube. Until the spell ends, an alarm alerts you whenever a creature touches or enters the warded area. When you cast the spell, you can designate creatures that won’t set off the alarm. You also choose whether the alarm is audible or mental:\n\nAudible Alarm. The alarm produces the sound of a handbell for 10 seconds within 60 feet of the warded area.\n\nMental Alarm. You are alerted by a mental ping if you are within 1 mile of the warded area. This ping awakens you if you’re asleep.",
     scalingMd: ""
   },
-   {
-        slug: slugify("Beast Bond"),
-        name: "Beast Bond",
-        classes: ["Druid", "Ranger"],
-        spellLevel: 2,
-        school: "Divination",
-        castingTime: "1 action",
-        duration: "Concentration, up to 10 minutes",
-        range: "Touch",
-        area: "1 beast",
-        tags: ["Elemental Evil Player's Companion", "Communication", "Buff"],
-        saveRequired: "WIS",
-        attackType: "Spell",
-        damageTypes: [],
-        conditions: ["Charmed (on failed save)"],
-        components: { verbal: true, somatic: true, material: true, materialText: "a bit of fur wrapped in a cloth" },
-        concentration: true,
-        ritual: false,
-        descriptionMd:
-            "You establish a telepathic link with one beast you touch that is friendly to you. If it is not friendly, it must succeed on a Wisdom saving throw or become Charmed for the duration and linked to you. Through the link, the beast understands your telepathic messages, and it can telepathically communicate simple emotions and concepts back. While linked and within line of sight, the beast has advantage on attack rolls against any creature within 5 feet of you that you can see. On a successful initial save, the creature becomes hostile toward you and is immune to being charmed by you for 24 hours. When the spell ends, the beast may become hostile.",
-        scalingMd: "",
-        imagePath: spellImgUrl("beastbond")
-    },
+  {
+    slug: slugify("Beast Bond"),
+    name: "Beast Bond",
+    classes: ["Druid", "Ranger"],
+    spellLevel: 2,
+    school: "Divination",
+    castingTime: "1 action",
+    duration: "Concentration, up to 10 minutes",
+    range: "Touch",
+    area: "1 beast",
+    tags: ["Elemental Evil Player's Companion", "Communication", "Buff"],
+    saveRequired: "WIS",
+    attackType: "Spell",
+    damageTypes: [],
+    conditions: ["Charmed (on failed save)"],
+    components: { verbal: true, somatic: true, material: true, materialText: "a bit of fur wrapped in a cloth" },
+    concentration: true,
+    ritual: false,
+    descriptionMd:
+      "You establish a telepathic link with one beast you touch that is friendly to you. If it is not friendly, it must succeed on a Wisdom saving throw or become Charmed for the duration and linked to you. Through the link, the beast understands your telepathic messages, and it can telepathically communicate simple emotions and concepts back. While linked and within line of sight, the beast has advantage on attack rolls against any creature within 5 feet of you that you can see. On a successful initial save, the creature becomes hostile toward you and is immune to being charmed by you for 24 hours. When the spell ends, the beast may become hostile.",
+    scalingMd: "",
+    imagePath: spellImgUrl("beastbond")
+  },
   {
     slug: slugify("Animal Friendship"),
     name: "Animal Friendship",
@@ -2880,7 +2880,7 @@ export const LEVEL1 = [
     classes: ["Paladin",],
     spellLevel: 1,
     school: "Evocation",
-    castingTime: "1 bonus action", 
+    castingTime: "1 bonus action",
     duration: "1 minute",
     range: "Self",
     area: "Self",
@@ -3087,7 +3087,7 @@ export const LEVEL1 = [
     duration: "Instantaneous",
     range: "Self (15 feet)",
     area: "15-foot cube",
-    tags: ["Player's Handbook","Damage", "Control"],
+    tags: ["Player's Handbook", "Damage", "Control"],
     saveRequired: "CON Save",
     attackType: "None",
     damageTypes: ["Thunder"],
@@ -3132,7 +3132,7 @@ export const LEVEL1 = [
     duration: "Concentration, up to 1 minute",
     range: "60 feet",
     area: "1 creature",
-    tags: ["Player's Handbook","Damage"],
+    tags: ["Player's Handbook", "Damage"],
     saveRequired: "None",
     attackType: "Ranged Spell Attack",
     damageTypes: ["Lightning"],
@@ -3170,57 +3170,57 @@ export const LEVEL1 = [
       "**Using a Higher-Level Spell Slot.** Extra damage increases by 1d6 per slot level above 1."
   },
   {
-  slug: slugify("Summoner’s Brand"),
-  name: "Summoner’s Brand",
-  classes: ["Cleric", "Druid", "Sorcerer", "Warlock", "Wizard"],
-  spellLevel: 1,
-  school: "Evocation",
-  castingTime: "1 action",
-  duration: "1 minute",
-  range: "60 feet",
-  area: "1 creature",
-  tags: ["Homebrew", "Damage", "New"],
-  saveRequired: "None",
-  attackType: "Ranged Spell Attack",
-  damageTypes: ["Force"],
-  conditions: [],
-  components: { verbal: true, somatic: true, material: false, materialText: "" },
-  concentration: false,
-  ritual: false,
-  descriptionMd:
-    "Make a Ranged Spell Attack against one creature you can see within range. On a hit, the attack deals no damage, and the target is branded for the duration.\n\n" +
-    "The next time a creature you control that you summoned or reanimated (such as with animate dead or a \"summon\" spell) hits the branded target with an attack, the brand detonates. The target takes 3d6 Force damage, and the brand ends. The detonation doesn’t harm the triggering creature.\n\n" +
-    "A creature can be affected by only one brand from this spell at a time, and you can have only one brand created by this spell active at a time. Casting this spell again ends the previous brand early. The brand ends early if the duration expires or the target dies.",
-  scalingMd:
-    "**Using a Higher-Level Spell Slot.** The detonation’s Force damage increases by 1d6 for each spell slot level above 1st.",
-  imagePath: spellImgUrl("summonersbrand"),
-},
-{
-  slug: slugify("Mercurial Benediction"),
-  name: "Mercurial Benediction",
-  classes: ["Artificer", "Bard", "Cleric", "Druid", "Paladin", "Ranger"],
-  spellLevel: 1,
-  school: "Abjuration",
-  castingTime: "1 action",
-  duration: "Instantaneous",
-  range: "Touch",
-  area: "1 creature",
-  tags: ["Homebrew", "Healing", "New"],
-  saveRequired: "None",
-  attackType: "Spell",
-  damageTypes: [],
-  conditions: [],
-  components: { verbal: true, somatic: true, material: false, materialText: "" },
-  concentration: false,
-  ritual: false,
-  descriptionMd:
-    "You channel volatile restorative power. A creature you touch regains 2d10 Hit Points.\n\n" +
-    "Immediately after the primary healing resolves, uncontrolled energy ricochets. The energy leaps to another random target within 120 feet of you. That creature regains the same number of Hit Points restored to the primary target by this casting. This secondary healing can affect a creature you can’t see and ignores cover. If no other creature is within 120 feet, the ricochet fizzles.",
-  scalingMd:
-    "**Using a Higher-Level Spell Slot.** The healing to the primary target increases by 2d10 for each spell slot level above 1st. The secondary healing always equals the amount the primary target regained from this casting.",
-  imagePath: spellImgUrl("mercurialbenediction"),
-},
-{
+    slug: slugify("Summoner’s Brand"),
+    name: "Summoner’s Brand",
+    classes: ["Cleric", "Druid", "Sorcerer", "Warlock", "Wizard"],
+    spellLevel: 1,
+    school: "Evocation",
+    castingTime: "1 action",
+    duration: "1 minute",
+    range: "60 feet",
+    area: "1 creature",
+    tags: ["Homebrew", "Damage", "New"],
+    saveRequired: "None",
+    attackType: "Ranged Spell Attack",
+    damageTypes: ["Force"],
+    conditions: [],
+    components: { verbal: true, somatic: true, material: false, materialText: "" },
+    concentration: false,
+    ritual: false,
+    descriptionMd:
+      "Make a Ranged Spell Attack against one creature you can see within range. On a hit, the attack deals no damage, and the target is branded for the duration.\n\n" +
+      "The next time a creature you control that you summoned or reanimated (such as with animate dead or a \"summon\" spell) hits the branded target with an attack, the brand detonates. The target takes 3d6 Force damage, and the brand ends. The detonation doesn’t harm the triggering creature.\n\n" +
+      "A creature can be affected by only one brand from this spell at a time, and you can have only one brand created by this spell active at a time. Casting this spell again ends the previous brand early. The brand ends early if the duration expires or the target dies.",
+    scalingMd:
+      "**Using a Higher-Level Spell Slot.** The detonation’s Force damage increases by 1d6 for each spell slot level above 1st.",
+    imagePath: spellImgUrl("summonersbrand"),
+  },
+  {
+    slug: slugify("Mercurial Benediction"),
+    name: "Mercurial Benediction",
+    classes: ["Artificer", "Bard", "Cleric", "Druid", "Paladin", "Ranger"],
+    spellLevel: 1,
+    school: "Abjuration",
+    castingTime: "1 action",
+    duration: "Instantaneous",
+    range: "Touch",
+    area: "1 creature",
+    tags: ["Homebrew", "Healing", "New"],
+    saveRequired: "None",
+    attackType: "Spell",
+    damageTypes: [],
+    conditions: [],
+    components: { verbal: true, somatic: true, material: false, materialText: "" },
+    concentration: false,
+    ritual: false,
+    descriptionMd:
+      "You channel volatile restorative power. A creature you touch regains 2d10 Hit Points.\n\n" +
+      "Immediately after the primary healing resolves, uncontrolled energy ricochets. The energy leaps to another random target within 120 feet of you. That creature regains the same number of Hit Points restored to the primary target by this casting. This secondary healing can affect a creature you can’t see and ignores cover. If no other creature is within 120 feet, the ricochet fizzles.",
+    scalingMd:
+      "**Using a Higher-Level Spell Slot.** The healing to the primary target increases by 2d10 for each spell slot level above 1st. The secondary healing always equals the amount the primary target regained from this casting.",
+    imagePath: spellImgUrl("mercurialbenediction"),
+  },
+  {
     slug: slugify("Spellfire Flare"),
     name: "Spellfire Flare",
     classes: ["Sorcerer", "Wizard"],
@@ -3239,12 +3239,12 @@ export const LEVEL1 = [
     concentration: false,
     ritual: false,
     descriptionMd:
-        "You unleash a blast of brilliant fire. Make a ranged spell attack against a target within range; the target gains no benefit from Half Cover or Three-Quarters Cover for this attack roll. On a hit, the target takes 2d10 Radiant damage.",
+      "You unleash a blast of brilliant fire. Make a ranged spell attack against a target within range; the target gains no benefit from Half Cover or Three-Quarters Cover for this attack roll. On a hit, the target takes 2d10 Radiant damage.",
     scalingMd:
-        "**Using a Higher-Level Spell Slot.** You create an additional blast for each spell slot level above 1st. You can direct the blasts at the same target or at different ones. Make a separate attack roll for each blast.",
+      "**Using a Higher-Level Spell Slot.** You create an additional blast for each spell slot level above 1st. You can direct the blasts at the same target or at different ones. Make a separate attack roll for each blast.",
     imagePath: spellImgUrl("spellfireflare")
-},
-{
+  },
+  {
     slug: slugify("Wardaway"),
     name: "Wardaway",
     classes: ["Bard", "Cleric", "Paladin", "Wizard"],
@@ -3260,21 +3260,21 @@ export const LEVEL1 = [
     damageTypes: ["Force"],
     conditions: [],
     components: {
-        verbal: true,
-        somatic: true,
-        material: true,
-        materialText: "a miniature clay hand"
+      verbal: true,
+      somatic: true,
+      material: true,
+      materialText: "a miniature clay hand"
     },
     concentration: false,
     ritual: false,
     descriptionMd:
-        "You hurl a disorienting magical force toward one creature within range. The target must make a Constitution saving throw; Constructs and Undead automatically succeed on this save.\n\n" +
-        "On a failed save, the target takes 2d4 Force damage, its Speed is halved until the start of your next turn, and on its next turn, it can take only an action or a Bonus Action (but not both). On a successful save, the target takes half as much damage only.",
+      "You hurl a disorienting magical force toward one creature within range. The target must make a Constitution saving throw; Constructs and Undead automatically succeed on this save.\n\n" +
+      "On a failed save, the target takes 2d4 Force damage, its Speed is halved until the start of your next turn, and on its next turn, it can take only an action or a Bonus Action (but not both). On a successful save, the target takes half as much damage only.",
     scalingMd:
-        "**Using a Higher-Level Spell Slot.** The damage increases by 2d4 for each spell slot level above 1st.",
+      "**Using a Higher-Level Spell Slot.** The damage increases by 2d4 for each spell slot level above 1st.",
     imagePath: spellImgUrl("wardaway")
-},
-{
+  },
+  {
     slug: slugify("Eyes of Immolation"),
     name: "Eyes of Immolation",
     classes: ["Sorcerer", "Warlock", "Wizard"],
@@ -3290,20 +3290,20 @@ export const LEVEL1 = [
     damageTypes: ["Fire"],
     conditions: [],
     components: {
-        verbal: true,
-        somatic: true,
-        material: false,
-        materialText: ""
+      verbal: true,
+      somatic: true,
+      material: false,
+      materialText: ""
     },
     concentration: false,
     ritual: false,
     descriptionMd:
-        "Your eyes glow with fiery light before focusing on a creature you can see within range, causing a beam of fire to shoot from your eyes. Make a ranged spell attack; on a hit, the target takes 3d6 Fire damage and begins burning.",
+      "Your eyes glow with fiery light before focusing on a creature you can see within range, causing a beam of fire to shoot from your eyes. Make a ranged spell attack; on a hit, the target takes 3d6 Fire damage and begins burning.",
     scalingMd:
-        "**Using a Higher-Level Spell Slot.** The damage increases by 1d6 for each spell slot level above 1st.",
+      "**Using a Higher-Level Spell Slot.** The damage increases by 1d6 for each spell slot level above 1st.",
     imagePath: spellImgUrl("eyesofimmolation")
-},
-{
+  },
+  {
     slug: slugify("Arcane Deflection"),
     name: "Arcane Deflection",
     classes: ["Sorcerer", "Wizard"],
@@ -3319,20 +3319,20 @@ export const LEVEL1 = [
     damageTypes: [],
     conditions: [],
     components: {
-        verbal: true,
-        somatic: true,
-        material: false,
-        materialText: ""
+      verbal: true,
+      somatic: true,
+      material: false,
+      materialText: ""
     },
     concentration: false,
     ritual: false,
     descriptionMd:
-        "You release an explosive blast of energy to deflect an attack, reducing the damage by 2d6. If this reduction would reduce the damage to 0 and the triggering attack was a melee attack, the attacker takes damage equal to the remaining amount instead.",
+      "You release an explosive blast of energy to deflect an attack, reducing the damage by 2d6. If this reduction would reduce the damage to 0 and the triggering attack was a melee attack, the attacker takes damage equal to the remaining amount instead.",
     scalingMd:
-        "**Using a Higher-Level Spell Slot.** The damage reduction increases by 1d6 for each spell slot level above 1st.",
+      "**Using a Higher-Level Spell Slot.** The damage reduction increases by 1d6 for each spell slot level above 1st.",
     imagePath: spellImgUrl("arcanedeflection")
-},
-{
+  },
+  {
     slug: slugify("Heavy Blow"),
     name: "Heavy Blow",
     classes: ["Druid", "Sorcerer", "Wizard"],
@@ -3348,21 +3348,21 @@ export const LEVEL1 = [
     damageTypes: ["Bludgeoning"],
     conditions: ["Dazed"],
     components: {
-        verbal: true,
-        somatic: true,
-        material: true,
-        materialText: "a weapon used as part of the casting"
+      verbal: true,
+      somatic: true,
+      material: true,
+      materialText: "a weapon used as part of the casting"
     },
     concentration: false,
     ritual: false,
     descriptionMd:
-        "You impart great heft to an unarmed strike or weapon you are holding. The first time you hit with a melee weapon attack using that weapon before the start of your next turn, your blow strikes with tremendous force. The attack deals an extra 1d10 Bludgeoning damage to the target, and it must succeed on a Constitution saving throw or become Dazed until the start of its next turn.\n\n" +
-        "While Dazed this way, the target can’t take Reactions, and attack rolls against it have Advantage.",
+      "You impart great heft to an unarmed strike or weapon you are holding. The first time you hit with a melee weapon attack using that weapon before the start of your next turn, your blow strikes with tremendous force. The attack deals an extra 1d10 Bludgeoning damage to the target, and it must succeed on a Constitution saving throw or become Dazed until the start of its next turn.\n\n" +
+      "While Dazed this way, the target can’t take Reactions, and attack rolls against it have Advantage.",
     scalingMd:
-        "**Using a Higher-Level Spell Slot.** The extra damage increases by 1d10 for each spell slot level above 1st.",
+      "**Using a Higher-Level Spell Slot.** The extra damage increases by 1d10 for each spell slot level above 1st.",
     imagePath: spellImgUrl("heavyblow")
-},
-{
+  },
+  {
     slug: slugify("Porter’s Might"),
     name: "Porter’s Might",
     classes: ["Bard", "Ranger", "Wizard"],
@@ -3378,20 +3378,20 @@ export const LEVEL1 = [
     damageTypes: [],
     conditions: [],
     components: {
-        verbal: true,
-        somatic: true,
-        material: false,
-        materialText: ""
+      verbal: true,
+      somatic: true,
+      material: false,
+      materialText: ""
     },
     concentration: false,
     ritual: false,
     descriptionMd:
-        "You touch a willing creature. For the duration, the target’s carrying capacity and the weight it can push, drag, or lift are doubled. If the target is Small or Tiny, it ignores the usual size-based reduction to carrying capacity for the duration. This spell doesn’t change the target’s size, space, or reach.",
+      "You touch a willing creature. For the duration, the target’s carrying capacity and the weight it can push, drag, or lift are doubled. If the target is Small or Tiny, it ignores the usual size-based reduction to carrying capacity for the duration. This spell doesn’t change the target’s size, space, or reach.",
     scalingMd:
-        "**Using a Higher-Level Spell Slot.** You can target one additional creature for each spell slot level above 1st.",
+      "**Using a Higher-Level Spell Slot.** You can target one additional creature for each spell slot level above 1st.",
     imagePath: spellImgUrl("portersmight")
-},
-{
+  },
+  {
     slug: slugify("Dampen Lock"),
     name: "Dampen Lock",
     classes: ["Artificer", "Wizard"],
@@ -3407,20 +3407,20 @@ export const LEVEL1 = [
     damageTypes: [],
     conditions: [],
     components: {
-        verbal: true,
-        somatic: true,
-        material: true,
-        materialText: "a handful of rust"
+      verbal: true,
+      somatic: true,
+      material: true,
+      materialText: "a handful of rust"
     },
     concentration: false,
     ritual: false,
     descriptionMd:
-        "Choose a nonmagical lock, clasp, or similar fastening mechanism you can touch. For the duration, the DC of any ability check made to pick the target with tools or to force it open is reduced by 1 (minimum DC 5). A lock or item can be affected by this spell only once at a time; additional castings on the same target have no effect until the current casting ends. This spell doesn’t change the target’s size, structure, or hit points.",
+      "Choose a nonmagical lock, clasp, or similar fastening mechanism you can touch. For the duration, the DC of any ability check made to pick the target with tools or to force it open is reduced by 1 (minimum DC 5). A lock or item can be affected by this spell only once at a time; additional castings on the same target have no effect until the current casting ends. This spell doesn’t change the target’s size, structure, or hit points.",
     scalingMd:
-        "**Using a Higher-Level Spell Slot.** The reduction to the lock’s DC increases by 1 for each spell slot level above 1st.",
+      "**Using a Higher-Level Spell Slot.** The reduction to the lock’s DC increases by 1 for each spell slot level above 1st.",
     imagePath: spellImgUrl("dampenlock")
-},
-{
+  },
+  {
     slug: slugify("Corrosion"),
     name: "Corrosion",
     classes: ["Bard", "Sorcerer", "Wizard"],
@@ -3436,21 +3436,21 @@ export const LEVEL1 = [
     damageTypes: [],
     conditions: [],
     components: {
-        verbal: true,
-        somatic: false,
-        material: false,
-        materialText: ""
+      verbal: true,
+      somatic: false,
+      material: false,
+      materialText: ""
     },
     concentration: true,
     ritual: false,
     descriptionMd:
-        "Choose one suit of Medium or Heavy armor you can see within range (worn or unattended). For the duration, the armor is corroded; while a creature wears it, that creature has a −1 penalty to AC. This spell doesn’t affect Light armor or shields, and it doesn’t change the armor’s size, weight, or properties.\n\n" +
-        "An individual suit of armor can be affected by this spell only once at a time; additional castings on the same armor have no effect until the current casting ends.",
+      "Choose one suit of Medium or Heavy armor you can see within range (worn or unattended). For the duration, the armor is corroded; while a creature wears it, that creature has a −1 penalty to AC. This spell doesn’t affect Light armor or shields, and it doesn’t change the armor’s size, weight, or properties.\n\n" +
+      "An individual suit of armor can be affected by this spell only once at a time; additional castings on the same armor have no effect until the current casting ends.",
     scalingMd:
-        "**Using a Higher-Level Spell Slot.** For every 2 spell slot levels above 1st, the penalty to AC increases by 1.",
+      "**Using a Higher-Level Spell Slot.** For every 2 spell slot levels above 1st, the penalty to AC increases by 1.",
     imagePath: spellImgUrl("corrosion")
-},
-{
+  },
+  {
     slug: slugify("Lifesense"),
     name: "Lifesense",
     classes: ["Cleric", "Druid", "Paladin", "Ranger"],
@@ -3466,25 +3466,25 @@ export const LEVEL1 = [
     damageTypes: [],
     conditions: [],
     components: {
-        verbal: true,
-        somatic: true,
-        material: false,
-        materialText: ""
+      verbal: true,
+      somatic: true,
+      material: false,
+      materialText: ""
     },
     concentration: true,
     ritual: true,
     descriptionMd:
-        "While you concentrate, you can sense the life force of a creature you can see within range. When you cast the spell, and as a Magic action on later turns, choose one creature you can see within 30 feet. You instantly learn its current state from the following:\n\n" +
-        "Fully Healthy. The creature is at its Hit Point maximum.\n\n" +
-        "Wounded. The creature has half or fewer of its Hit Points remaining.\n\n" +
-        "Critically Injured. The creature has 10 percent or fewer of its Hit Point maximum remaining (rounded down).\n\n" +
-        "Diseased/Poisoned. The creature is affected by a disease or by poison (including whether it currently has the Poisoned condition), but you don’t learn the specific disease or poison.\n\n" +
-        "Undead. The creature is Undead (no discernible pulse).\n\n" +
-        "This spell reveals no information about a creature you can’t see and doesn’t identify other creature types or conditions.",
+      "While you concentrate, you can sense the life force of a creature you can see within range. When you cast the spell, and as a Magic action on later turns, choose one creature you can see within 30 feet. You instantly learn its current state from the following:\n\n" +
+      "Fully Healthy. The creature is at its Hit Point maximum.\n\n" +
+      "Wounded. The creature has half or fewer of its Hit Points remaining.\n\n" +
+      "Critically Injured. The creature has 10 percent or fewer of its Hit Point maximum remaining (rounded down).\n\n" +
+      "Diseased/Poisoned. The creature is affected by a disease or by poison (including whether it currently has the Poisoned condition), but you don’t learn the specific disease or poison.\n\n" +
+      "Undead. The creature is Undead (no discernible pulse).\n\n" +
+      "This spell reveals no information about a creature you can’t see and doesn’t identify other creature types or conditions.",
     scalingMd: "",
     imagePath: spellImgUrl("lifesense")
-},
-{
+  },
+  {
     slug: slugify("Feynar’s Fin"),
     name: "Feynar’s Fin",
     classes: ["Artificer", "Bard", "Druid", "Ranger", "Wizard"],
@@ -3500,20 +3500,20 @@ export const LEVEL1 = [
     damageTypes: [],
     conditions: [],
     components: {
-        verbal: true,
-        somatic: true,
-        material: true,
-        materialText: "a fish scale"
+      verbal: true,
+      somatic: true,
+      material: true,
+      materialText: "a fish scale"
     },
     concentration: true,
     ritual: false,
     descriptionMd:
-        "You touch a willing creature. For the duration, the target gains a Swim Speed equal to its Speed.",
+      "You touch a willing creature. For the duration, the target gains a Swim Speed equal to its Speed.",
     scalingMd:
-        "**Using a Higher-Level Spell Slot.** You can target one additional creature for each spell slot level above 1st.",
+      "**Using a Higher-Level Spell Slot.** You can target one additional creature for each spell slot level above 1st.",
     imagePath: spellImgUrl("feynarsfin")
-},
-{
+  },
+  {
     slug: slugify("Shockwave Focus"),
     name: "Shockwave Focus",
     classes: ["Bard", "Druid", "Sorcerer", "Wizard"],
@@ -3529,19 +3529,19 @@ export const LEVEL1 = [
     damageTypes: [],
     conditions: ["Prone"],
     components: {
-        verbal: true,
-        somatic: true,
-        material: false,
-        materialText: ""
+      verbal: true,
+      somatic: true,
+      material: false,
+      materialText: ""
     },
     concentration: true,
     ritual: false,
     descriptionMd:
-        "While you concentrate, your melee weapon attacks strike with gathered force. When you hit with a melee weapon attack, the attack deals an extra 1 damage of the weapon’s type.\n\n" +
-        "Controlled Release. As a Magic action, you can end the spell early in a controlled release. When you do, each hostile creature within 10 feet of you must make a Strength saving throw or have the Prone condition. Creatures that succeed are unaffected. If your Concentration ends for any other reason, this release doesn’t occur.",
+      "While you concentrate, your melee weapon attacks strike with gathered force. When you hit with a melee weapon attack, the attack deals an extra 1 damage of the weapon’s type.\n\n" +
+      "Controlled Release. As a Magic action, you can end the spell early in a controlled release. When you do, each hostile creature within 10 feet of you must make a Strength saving throw or have the Prone condition. Creatures that succeed are unaffected. If your Concentration ends for any other reason, this release doesn’t occur.",
     scalingMd:
-        "**Using a Higher-Level Spell Slot.** The extra damage increases by 1 for each spell slot level above 1st.",
+      "**Using a Higher-Level Spell Slot.** The extra damage increases by 1 for each spell slot level above 1st.",
     imagePath: spellImgUrl("shockwavefocus")
-},
+  },
 
 ];

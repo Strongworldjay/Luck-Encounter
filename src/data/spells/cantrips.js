@@ -1605,31 +1605,31 @@ export const CANTRIPS = [
     imagePath: spellImgUrl("illusoryinstrument")
   },
   {
-  slug: slugify("Whisper Spark"),
-  name: "Whisper Spark",
-  classes: ["Cleric", "Druid", "Sorcerer", "Wizard"],
-  spellLevel: 0,
-  school: "Evocation",
-  castingTime: "1 action",
-  duration: "Instantaneous",
-  range: "120 feet",
-  area: "1 creature",
-  tags: ["Homebrew", "Damage", "Homebrew"],
-  saveRequired: "None",
-  attackType: "Ranged Spell Attack",
-  damageTypes: ["Lightning"],
-  conditions: [],
-  components: { verbal: false, somatic: true, material: false, materialText: "" },
-  concentration: false,
-  ritual: false,
-  descriptionMd:
-    "You loose a hair-thin lance of lightning toward a creature you can see within range. Make a Ranged Spell Attack. On a hit, the target takes 1d4 Lightning damage.\n\n" +
-    "This spell doesn’t shed light and doesn’t reveal your position if you are hidden when you cast it, whether the attack hits or misses.",
-  scalingMd:
-    "**Cantrip Upgrade.** This spell’s damage increases by 1d4 when you reach 5th level (2d4), 11th level (3d4), and 17th level (4d4).",
-  imagePath: spellImgUrl("whisperspark"),
-},
-{
+    slug: slugify("Whisper Spark"),
+    name: "Whisper Spark",
+    classes: ["Cleric", "Druid", "Sorcerer", "Wizard"],
+    spellLevel: 0,
+    school: "Evocation",
+    castingTime: "1 action",
+    duration: "Instantaneous",
+    range: "120 feet",
+    area: "1 creature",
+    tags: ["Homebrew", "Damage", "Homebrew"],
+    saveRequired: "None",
+    attackType: "Ranged Spell Attack",
+    damageTypes: ["Lightning"],
+    conditions: [],
+    components: { verbal: false, somatic: true, material: false, materialText: "" },
+    concentration: false,
+    ritual: false,
+    descriptionMd:
+      "You loose a hair-thin lance of lightning toward a creature you can see within range. Make a Ranged Spell Attack. On a hit, the target takes 1d4 Lightning damage.\n\n" +
+      "This spell doesn’t shed light and doesn’t reveal your position if you are hidden when you cast it, whether the attack hits or misses.",
+    scalingMd:
+      "**Cantrip Upgrade.** This spell’s damage increases by 1d4 when you reach 5th level (2d4), 11th level (3d4), and 17th level (4d4).",
+    imagePath: spellImgUrl("whisperspark"),
+  },
+  {
     slug: slugify("Stride"),
     name: "Stride",
     classes: ["Bard", "Druid", "Ranger", "Sorcerer", "Wizard"],
@@ -1645,19 +1645,19 @@ export const CANTRIPS = [
     damageTypes: [],
     conditions: [],
     components: {
-        verbal: true,
-        somatic: true,
-        material: false,
-        materialText: ""
+      verbal: true,
+      somatic: true,
+      material: false,
+      materialText: ""
     },
     concentration: true,
     ritual: false,
     descriptionMd:
-        "For the duration, your walking Speed increases by 10 feet.",
+      "For the duration, your walking Speed increases by 10 feet.",
     scalingMd: "",
     imagePath: spellImgUrl("stride")
-},
-{
+  },
+  {
     slug: slugify("Beacon"),
     name: "Beacon",
     classes: ["Artificer", "Bard", "Cleric", "Sorcerer", "Wizard"],
@@ -1673,18 +1673,18 @@ export const CANTRIPS = [
     damageTypes: [],
     conditions: [],
     components: {
-        verbal: true,
-        somatic: false,
-        material: true,
-        materialText: "a firefly or phosphorescent moss"
+      verbal: true,
+      somatic: false,
+      material: true,
+      materialText: "a firefly or phosphorescent moss"
     },
     concentration: false,
     ritual: false,
     descriptionMd:
-        "Make a ranged spell attack against one creature you can see within range. On a hit, a fuzzy mote of light adheres to the target and moves with it. The mote sheds Bright Light in a 5-foot radius and Dim Light for an additional 5 feet. The target or a creature within 5 feet of it can use an Action to remove the mote, ending the spell. The spell ends early if the mote is removed.\n\n" +
-        "If the target is Invisible, the light originates from the target’s space but doesn’t outline the creature or end that condition.",
+      "Make a ranged spell attack against one creature you can see within range. On a hit, a fuzzy mote of light adheres to the target and moves with it. The mote sheds Bright Light in a 5-foot radius and Dim Light for an additional 5 feet. The target or a creature within 5 feet of it can use an Action to remove the mote, ending the spell. The spell ends early if the mote is removed.\n\n" +
+      "If the target is Invisible, the light originates from the target’s space but doesn’t outline the creature or end that condition.",
     scalingMd: "",
     imagePath: spellImgUrl("beacon")
-},
+  },
 
 ];
