@@ -34,7 +34,7 @@ export const LEVEL9 = [
         duration: "Concentration, up to 10 minutes",
         range: "60 feet",
         area: "1 creature",
-        tags: ["Control", "Debuff"],
+        tags: ["Grim Hollow", "Control", "Debuff"],
         saveRequired: "None",
         attackType: "Spell",
         damageTypes: [],

@@ -1,36 +1,7 @@
 import { spellImgUrl, slugify } from "../../features/spells/utils";
 
 export const LEVEL3 = [
-    {
-        slug: slugify("Acid Rain"),
-        name: "Acid Rain",
-        classes: ["Druid", "Wizard", "Cleric", "Paladin"],
-        spellLevel: 5,
-        school: "Conjuration",
-        castingTime: "1 action",
-        duration: "Concentration, up to 1 minute",
-        range: "300 feet",
-        area: "40-foot-radius, 60-foot-high Cylinder",
-        tags: ["Heliana's guide to Monster Hunting", "Damage", "Control"],
-        saveRequired: "DEX",
-        attackType: "Spell",
-        damageTypes: ["Acid"],
-        conditions: [],
-        components: {
-            verbal: true,
-            somatic: true,
-            material: false,
-            materialText: ""
-        },
-        concentration: true,
-        ritual: false,
-        descriptionMd:
-            "Acid rain begins falling within a 40-foot-radius, 60-foot-high Cylinder centered on a point you choose within range. When a creature moves into the spell’s area for the first time on a turn or starts its turn there, it must succeed on a Dexterity saving throw or take 6d4 Acid damage and become covered in acid. On a successful save, the creature takes half the initial damage and isn’t covered in acid.\n\n" +
-            "A creature takes 3d4 Acid damage if it ends its turn while covered with acid. The target or a creature within 5 feet of it can end this damage by using its action to clear away the acid.",
-        scalingMd:
-            "**Using a Higher-Level Spell Slot.** When you cast this spell using a spell slot of 6th level or higher, the damage increases by 1d4 for each slot level above 5th.",
-        imagePath: spellImgUrl("acidrain")
-    },
+    
     {
         slug: slugify("Blood Iron"),
         name: "Blood Iron",

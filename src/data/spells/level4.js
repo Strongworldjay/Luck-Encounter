@@ -452,7 +452,7 @@ export const LEVEL4 = [
         duration: "1 hour",
         range: "60 feet",
         area: "You and 1 creature",
-        tags: ["Homebrew", "Enchantment", "Social", "Ritual", "Damage"],
+        tags: ["Valda's Spire of Secrets", "Enchantment", "Social", "Ritual", "Damage"],
         saveRequired: "WIS",
         attackType: "Spell",
         damageTypes: ["Psychic"],
