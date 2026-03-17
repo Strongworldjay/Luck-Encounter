@@ -11,7 +11,7 @@ export const LEVEL2 = [
         duration: "Concentration, up to 1 minute",
         range: "Self",
         area: "20-ft. radius around you",
-        tags: ["Heliana's guide to Monster Hunting", "Control", "Warding"],
+        tags: ["Heliana's Guide to Monster Hunting", "Control", "Warding"],
         saveRequired: "Strength",
         attackType: "Spell",
         damageTypes: ["Force"],

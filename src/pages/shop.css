@@ -7,31 +7,44 @@
 :root {
   --shop-surface: #ffffff;
   --shop-elevated: #f6f7f9;
+  --shop-elevated-2: #eef2f7;
   --shop-text: #111213;
   --shop-muted: #667085;
-  --shop-border: rgba(0,0,0,.12);
-  --shop-shadow: 0 10px 24px rgba(0,0,0,.15);
+  --shop-border: rgba(0, 0, 0, 0.12);
+  --shop-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
   --shop-accent: var(--accent-color, #ffd700);
-}
-.theme-dark {
-  --shop-surface: #17181b;
-  --shop-elevated: #0f1013;
-  --shop-text: #eef1f5;
-  --shop-muted: #b8c0cc;
-  --shop-border: rgba(255,255,255,.14);
-  --shop-shadow: 0 14px 34px rgba(0,0,0,.45);
-  --shop-accent: var(--accent-color, #1f3adf); /* deep blue */
+  --shop-accent-soft: color-mix(in oklch, var(--shop-accent) 18%, transparent);
+  --shop-accent-mid: color-mix(in oklch, var(--shop-accent) 38%, transparent);
+  --shop-accent-strong: color-mix(in oklch, var(--shop-accent) 68%, transparent);
 }
 
-/* -------- Page / isolation -------- */
+.theme-dark {
+  --shop-surface: #17181b;
+  --shop-elevated: #111318;
+  --shop-elevated-2: #171b22;
+  --shop-text: #eef1f5;
+  --shop-muted: #b8c0cc;
+  --shop-border: rgba(255, 255, 255, 0.14);
+  --shop-shadow: 0 14px 34px rgba(0, 0, 0, 0.45);
+  --shop-accent: var(--accent-color, #1f3adf);
+  --shop-accent-soft: color-mix(in oklch, var(--shop-accent) 22%, transparent);
+  --shop-accent-mid: color-mix(in oklch, var(--shop-accent) 42%, transparent);
+  --shop-accent-strong: color-mix(in oklch, var(--shop-accent) 75%, transparent);
+}
+
 .shop-page.shop-page--isolate {
   max-width: 1100px;
   margin: 0 auto;
   padding: 16px;
   box-sizing: border-box;
   isolation: isolate;
+  min-height: 100vh;
 }
-.shop-page.shop-page--isolate *, .shop-card * { box-sizing: border-box; }
+
+.shop-page.shop-page--isolate *,
+.shop-card * {
+  box-sizing: border-box;
+}
 
 /* -------- Card -------- */
 .shop-card {
@@ -53,6 +66,7 @@
   align-items: center;
   margin-bottom: 8px;
 }
+
 .shop-header h2 {
   margin: 0;
   font-weight: 800;
@@ -60,11 +74,21 @@
   color: var(--shop-text);
   text-shadow: 0 0 8px color-mix(in oklch, var(--shop-accent) 18%, transparent);
 }
-.row { display: inline-flex; gap: 10px; }
-.row.gap { flex-wrap: wrap; }
-.row.align { align-items: center; }
 
-/* -------- Toolbar (collapsed filters) -------- */
+.row {
+  display: inline-flex;
+  gap: 10px;
+}
+
+.row.gap {
+  flex-wrap: wrap;
+}
+
+.row.align {
+  align-items: center;
+}
+
+/* -------- Toolbar -------- */
 .shop-toolbar {
   display: flex;
   align-items: center;
@@ -73,7 +97,10 @@
   padding: 6px 0 10px;
   border-top: 1px dashed var(--shop-border);
 }
-.filter-btn { min-width: 210px; }
+
+.filter-btn {
+  min-width: 210px;
+}
 
 /* -------- Buttons -------- */
 .btn {
@@ -84,18 +111,46 @@
   height: 34px;
   padding: 0 12px;
   cursor: pointer;
-  transition: transform .08s ease, filter .18s ease, border-color .18s ease, box-shadow .18s ease;
+  transition:
+    transform 0.08s ease,
+    filter 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
 }
-.btn:hover { filter: brightness(1.06); }
-.btn:active { transform: translateY(1px); }
+
+.btn:hover {
+  filter: brightness(1.06);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
 .btn.primary {
   border-color: var(--shop-accent);
-  box-shadow: 0 0 0 3px color-mix(in oklch, var(--shop-accent) 25%, transparent);
+  background: color-mix(in oklch, var(--shop-elevated) 80%, var(--shop-accent-soft));
+  color: #fff;
+  box-shadow:
+    0 0 0 3px color-mix(in oklch, var(--shop-accent) 25%, transparent),
+    0 0 18px color-mix(in oklch, var(--shop-accent) 20%, transparent);
 }
-.size-toggle .btn { min-width: 84px; }
 
-.switch { display: inline-flex; gap: 8px; align-items: center; font-size: .95rem; color: var(--shop-text); }
-.switch input { accent-color: var(--shop-accent); }
+.size-toggle .btn {
+  min-width: 84px;
+}
+
+.switch {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 0.95rem;
+  color: var(--shop-text);
+}
+
+.switch input {
+  accent-color: var(--shop-accent);
+}
 
 /* -------- Results -------- */
 .shop-results {
@@ -103,124 +158,405 @@
   background: color-mix(in oklch, var(--shop-surface) 85%, transparent);
   border: 1px solid var(--shop-border);
   border-radius: 12px;
-  overflow: hidden;
+  overflow: auto;
   position: relative;
+  max-height: 65vh;
+  scrollbar-width: thin;
+  scrollbar-color:
+    color-mix(in oklch, var(--shop-accent) 32%, var(--shop-border))
+    color-mix(in oklch, var(--shop-elevated) 78%, transparent);
 }
-.results-header, .rowline {
+
+.shop-results::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+
+.shop-results::-webkit-scrollbar-track {
+  background: color-mix(in oklch, var(--shop-elevated) 82%, transparent);
+  border-left: 1px solid color-mix(in oklch, var(--shop-border) 70%, transparent);
+  border-radius: 999px;
+}
+
+.shop-results::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklch, var(--shop-accent) 30%, var(--shop-elevated)),
+    color-mix(in oklch, var(--shop-accent) 48%, var(--shop-border))
+  );
+  border: 3px solid transparent;
+  background-clip: padding-box;
+  border-radius: 999px;
+  min-height: 48px;
+  box-shadow:
+    inset 0 0 0 1px color-mix(in oklch, white 8%, transparent),
+    0 0 10px color-mix(in oklch, var(--shop-accent) 14%, transparent);
+}
+
+.shop-results::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklch, var(--shop-accent) 42%, var(--shop-elevated)),
+    color-mix(in oklch, var(--shop-accent) 62%, var(--shop-border))
+  );
+  background-clip: padding-box;
+  box-shadow:
+    inset 0 0 0 1px color-mix(in oklch, white 10%, transparent),
+    0 0 14px color-mix(in oklch, var(--shop-accent) 20%, transparent);
+}
+
+.shop-results::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.results-header,
+.rowline {
   display: grid;
   grid-template-columns: 1.6fr 1.1fr 1fr 0.7fr;
   gap: 8px;
   align-items: center;
   padding: 10px 12px;
 }
+
 .results-header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
   color: var(--shop-muted);
   font-weight: 800;
   border-bottom: 1px solid var(--shop-border);
   background: color-mix(in oklch, var(--shop-elevated) 60%, transparent);
 }
+
 .rowline {
   background: color-mix(in oklch, var(--shop-elevated) 30%, transparent);
   border-top: 1px solid color-mix(in oklch, var(--shop-border), transparent 40%);
 }
-.rowline:nth-child(odd) { background: color-mix(in oklch, var(--shop-elevated) 15%, transparent); }
-.rowline .name { font-weight: 700; }
-.right { text-align: right; }
 
-.empty { padding: 16px; color: var(--shop-muted); }
-.shop-foot { margin-top: 10px; }
-.muted { color: var(--shop-muted); font-size: .92rem; }
+.rowline:nth-child(odd) {
+  background: color-mix(in oklch, var(--shop-elevated) 15%, transparent);
+}
 
-/* ===== Modal (forced sizing/spacing) ===== */
-.shop-modal { position: fixed !important; inset: 0 !important; z-index: 5000 !important; }
+.rowline .name {
+  font-weight: 700;
+}
+
+.right {
+  text-align: right;
+}
+
+.empty {
+  padding: 16px;
+  color: var(--shop-muted);
+}
+
+.shop-foot {
+  margin-top: 10px;
+}
+
+.muted {
+  color: var(--shop-muted);
+  font-size: 0.92rem;
+}
+
+/* ===== Modal ===== */
+.shop-modal {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 5000 !important;
+}
+
 .shop-modal__backdrop {
   position: absolute !important;
   inset: 0 !important;
-  background: rgba(0,0,0,.55) !important;
-  backdrop-filter: blur(2px) !important;
+  background: rgba(0, 0, 0, 0.58) !important;
+  backdrop-filter: blur(4px) !important;
 }
+
 .shop-modal__panel {
   position: absolute !important;
   left: 50% !important;
   top: 50% !important;
   transform: translate(-50%, -50%) !important;
-  width: min(1200px, 96vw) !important;  /* bigger dialog */
-  max-height: 90vh !important;
+  width: min(1320px, 97vw) !important;
+  max-height: 92vh !important;
   background: var(--shop-surface) !important;
   color: var(--shop-text) !important;
   border: 1px solid var(--shop-border) !important;
-  border-radius: 16px !important;
-  box-shadow: 0 25px 60px rgba(0,0,0,.55) !important;
+  border-radius: 20px !important;
+  box-shadow:
+    0 28px 70px rgba(0, 0, 0, 0.55) !important,
+    0 0 0 1px color-mix(in oklch, var(--shop-accent) 10%, transparent) inset !important;
   display: flex !important;
   flex-direction: column !important;
   overflow: hidden !important;
 }
-.shop-modal__panel * { box-sizing: border-box !important; }
+
+.shop-modal__panel * {
+  box-sizing: border-box !important;
+}
 
 .shop-modal__header,
 .shop-modal__footer {
-  background: inherit !important;
+  background: color-mix(in oklch, var(--shop-surface) 88%, var(--shop-elevated)) !important;
   border-color: var(--shop-border) !important;
-  padding: 14px 16px !important;
+  padding: 18px 20px !important;
   position: sticky !important;
   z-index: 2 !important;
 }
-.shop-modal__header { top: 0 !important; border-bottom: 1px solid var(--shop-border) !important; }
-.shop-modal__footer { bottom: 0 !important; border-top: 1px solid var(--shop-border) !important; }
-.shop-modal__footer .spacer { flex: 1 1 auto !important; }
+
+.shop-modal__header {
+  top: 0 !important;
+  border-bottom: 1px solid var(--shop-border) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+}
+
+.shop-modal__header h3 {
+  margin: 0 !important;
+  font-size: 1.6rem !important;
+  font-weight: 800 !important;
+  color: var(--shop-text) !important;
+}
+
+.shop-modal__footer {
+  bottom: 0 !important;
+  border-top: 1px solid var(--shop-border) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+.shop-modal__footer .spacer {
+  flex: 1 1 auto !important;
+}
 
 .shop-modal__content {
-  padding: 18px !important;          /* more breathing room */
+  padding: 24px !important;
   overflow: auto !important;
   display: flex !important;
   flex-direction: column !important;
-  gap: 22px !important;               /* larger section gaps */
+  gap: 26px !important;
+  background: color-mix(in oklch, var(--shop-surface) 92%, var(--shop-elevated)) !important;
 }
 
 /* Field titles + mini actions */
-.field { display: flex !important; flex-direction: column !important; gap: 12px !important; min-width: 0 !important; }
-.field-head { display: flex !important; align-items: center !important; justify-content: space-between !important; gap: 12px !important; }
-.field label { font-size: .95rem !important; font-weight: 800 !important; color: var(--shop-muted) !important; }
-.mini-actions { display: inline-flex !important; gap: 6px !important; }
-.mini {
-  height: 26px !important; padding: 0 10px !important; border-radius: 999px !important;
-  border: 1px solid var(--shop-border) !important; background: var(--shop-elevated) !important;
-  color: var(--shop-text) !important; cursor: pointer !important;
+.field {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 14px !important;
+  min-width: 0 !important;
 }
-.mini:hover { border-color: var(--shop-accent) !important; }
 
-/* Chip container and chips — roomier and forced */
-.pillbox {
+.field-head {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  flex-wrap: wrap !important;
+}
+
+.field label {
+  font-size: 1rem !important;
+  font-weight: 800 !important;
+  color: var(--shop-text) !important;
+}
+
+.mini-actions {
+  display: inline-flex !important;
+  gap: 8px !important;
+  flex-wrap: wrap !important;
+}
+
+.mini {
+  height: 30px !important;
+  padding: 0 12px !important;
+  border-radius: 999px !important;
+  border: 1px solid var(--shop-border) !important;
+  background: var(--shop-elevated) !important;
+  color: var(--shop-text) !important;
+  cursor: pointer !important;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.15s ease,
+    filter 0.15s ease !important;
+}
+
+.mini:hover {
+  border-color: var(--shop-accent) !important;
+  box-shadow: 0 0 0 2px var(--shop-accent-soft) !important;
+}
+
+/* Presets */
+.presetbox {
   width: 100% !important;
-  min-height: 56px !important;        /* prevents first row crowding */
   display: flex !important;
   flex-wrap: wrap !important;
-  gap: 12px 14px !important;          /* row gap | column gap */
-  padding: 12px !important;
+  gap: 12px !important;
+  padding: 14px !important;
   border: 1px solid var(--shop-border) !important;
-  border-radius: 10px !important;
-  background: var(--shop-elevated) !important;
+  border-radius: 14px !important;
+  background: var(--shop-elevated-2) !important;
 }
-.pill {
-  height: 34px !important;
-  padding: 0 14px !important;
-  font-size: .95rem !important;
+
+.preset-pill {
+  min-height: 40px !important;
+  padding: 0 16px !important;
+  font-size: 0.98rem !important;
   line-height: 1 !important;
   display: inline-flex !important;
   align-items: center !important;
-  border: 1px solid var(--shop-border) !important;
+  justify-content: center !important;
+  border: 1px solid color-mix(in oklch, var(--shop-border) 75%, transparent) !important;
   border-radius: 999px !important;
-  background: color-mix(in oklch, var(--shop-elevated) 90%, transparent) !important;
+  background: color-mix(in oklch, var(--shop-surface) 55%, var(--shop-elevated-2)) !important;
   color: var(--shop-text) !important;
   cursor: pointer !important;
-  transition: border-color .15s ease, box-shadow .15s ease, background .15s ease !important;
-}
-.pill.on {
-  border-color: var(--shop-accent) !important;
-  box-shadow: 0 0 0 2px color-mix(in oklch, var(--shop-accent) 25%, transparent) !important;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease,
+    transform 0.08s ease !important;
 }
 
-/* Inputs (if any get shown later) */
+.preset-pill:hover {
+  border-color: color-mix(in oklch, var(--shop-accent) 55%, var(--shop-border)) !important;
+  background: color-mix(in oklch, var(--shop-elevated-2) 72%, var(--shop-accent-soft)) !important;
+  box-shadow:
+    0 0 0 2px color-mix(in oklch, var(--shop-accent) 18%, transparent),
+    0 0 14px color-mix(in oklch, var(--shop-accent) 14%, transparent) !important;
+}
+
+.preset-pill.on {
+  border-color: color-mix(in oklch, var(--shop-accent) 88%, white 0%) !important;
+  background: color-mix(in oklch, var(--shop-elevated-2) 50%, var(--shop-accent-soft)) !important;
+  color: var(--shop-text) !important;
+  box-shadow:
+    0 0 0 2px color-mix(in oklch, var(--shop-accent) 30%, transparent),
+    0 0 0 5px color-mix(in oklch, var(--shop-accent) 12%, transparent),
+    0 0 18px color-mix(in oklch, var(--shop-accent) 34%, transparent),
+    0 0 34px color-mix(in oklch, var(--shop-accent) 18%, transparent) !important;
+}
+
+/* Chip container */
+.pillbox {
+  width: 100% !important;
+  min-height: 180px !important;
+  max-height: 48vh !important;
+  overflow: auto !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-content: flex-start !important;
+  gap: 14px 14px !important;
+  padding: 16px !important;
+  border: 1px solid var(--shop-border) !important;
+  border-radius: 14px !important;
+  background: var(--shop-elevated-2) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.03),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.02) !important;
+  scrollbar-width: thin;
+  scrollbar-color:
+    color-mix(in oklch, var(--shop-accent) 32%, var(--shop-border))
+    color-mix(in oklch, var(--shop-elevated) 78%, transparent);
+}
+
+.pillbox::-webkit-scrollbar {
+  width: 14px !important;
+}
+
+.pillbox::-webkit-scrollbar-track {
+  background: color-mix(in oklch, var(--shop-elevated) 82%, transparent) !important;
+  border-radius: 999px !important;
+}
+
+.pillbox::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklch, var(--shop-accent) 30%, var(--shop-elevated)),
+    color-mix(in oklch, var(--shop-accent) 48%, var(--shop-border))
+  ) !important;
+  border: 3px solid transparent !important;
+  background-clip: padding-box !important;
+  border-radius: 999px !important;
+  box-shadow:
+    inset 0 0 0 1px color-mix(in oklch, white 8%, transparent),
+    0 0 10px color-mix(in oklch, var(--shop-accent) 14%, transparent) !important;
+}
+
+.pillbox::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklch, var(--shop-accent) 42%, var(--shop-elevated)),
+    color-mix(in oklch, var(--shop-accent) 62%, var(--shop-border))
+  ) !important;
+  background-clip: padding-box !important;
+  box-shadow:
+    inset 0 0 0 1px color-mix(in oklch, white 10%, transparent),
+    0 0 14px color-mix(in oklch, var(--shop-accent) 20%, transparent) !important;
+}
+
+/* Chips */
+.pill {
+  min-height: 40px !important;
+  padding: 0 16px !important;
+  font-size: 1rem !important;
+  line-height: 1 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: 1px solid color-mix(in oklch, var(--shop-border) 75%, transparent) !important;
+  border-radius: 999px !important;
+  background: color-mix(in oklch, var(--shop-surface) 55%, var(--shop-elevated-2)) !important;
+  color: var(--shop-text) !important;
+  cursor: pointer !important;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease,
+    transform 0.08s ease,
+    filter 0.18s ease !important;
+}
+
+.pill:hover {
+  border-color: color-mix(in oklch, var(--shop-accent) 55%, var(--shop-border)) !important;
+  background: color-mix(in oklch, var(--shop-elevated-2) 72%, var(--shop-accent-soft)) !important;
+  box-shadow:
+    0 0 0 2px color-mix(in oklch, var(--shop-accent) 18%, transparent),
+    0 0 14px color-mix(in oklch, var(--shop-accent) 14%, transparent) !important;
+}
+
+.pill:active,
+.preset-pill:active {
+  transform: translateY(1px) !important;
+}
+
+.pill.on {
+  border-color: color-mix(in oklch, var(--shop-accent) 88%, white 0%) !important;
+  background: color-mix(in oklch, var(--shop-elevated-2) 50%, var(--shop-accent-soft)) !important;
+  color: var(--shop-text) !important;
+  box-shadow:
+    0 0 0 2px color-mix(in oklch, var(--shop-accent) 30%, transparent),
+    0 0 0 5px color-mix(in oklch, var(--shop-accent) 12%, transparent),
+    0 0 18px color-mix(in oklch, var(--shop-accent) 34%, transparent),
+    0 0 34px color-mix(in oklch, var(--shop-accent) 18%, transparent),
+    inset 0 0 0 1px color-mix(in oklch, white 18%, transparent) !important;
+}
+
+.pill.on:hover {
+  border-color: color-mix(in oklch, var(--shop-accent) 96%, white 0%) !important;
+  box-shadow:
+    0 0 0 2px color-mix(in oklch, var(--shop-accent) 34%, transparent),
+    0 0 0 6px color-mix(in oklch, var(--shop-accent) 15%, transparent),
+    0 0 22px color-mix(in oklch, var(--shop-accent) 40%, transparent),
+    0 0 40px color-mix(in oklch, var(--shop-accent) 22%, transparent),
+    inset 0 0 0 1px color-mix(in oklch, white 20%, transparent) !important;
+}
+
+/* Inputs */
 .shop-input {
   width: 100%;
   height: 36px;
@@ -230,24 +566,186 @@
   color: var(--shop-text);
   padding: 0 10px;
   outline: none;
-  transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.15s ease;
 }
-.shop-input::placeholder { color: color-mix(in oklch, var(--shop-muted), transparent 20%); }
+
+.shop-input::placeholder {
+  color: color-mix(in oklch, var(--shop-muted), transparent 20%);
+}
+
 .shop-input:focus {
   border-color: color-mix(in oklch, var(--shop-accent) 60%, var(--shop-border));
   box-shadow: 0 0 0 3px color-mix(in oklch, var(--shop-accent) 28%, transparent);
 }
+
 .shop-input[type="number"]::-webkit-outer-spin-button,
-.shop-input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
-.shop-input[type="number"] { -moz-appearance: textfield; }
+.shop-input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.shop-input[type="number"] {
+  -moz-appearance: textfield;
+}
 
 /* Buttons consistency in modal */
-.btn { height: 34px; padding: 0 12px; }
+.btn {
+  height: 34px;
+  padding: 0 12px;
+}
 
-/* Hover accents */
-.btn:hover, .pill:hover { border-color: color-mix(in oklch, var(--shop-accent) 35%, var(--shop-border)); }
+.btn:hover,
+.pill:hover,
+.preset-pill:hover {
+  border-color: color-mix(in oklch, var(--shop-accent) 35%, var(--shop-border));
+}
 
-/* Wide screens — optionally allow a smidge more width */
-@media (min-width: 1400px){
-  .shop-modal__panel{ width: min(1240px, 96vw) !important; }
+.icon-btn {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 10px !important;
+  border: 1px solid var(--shop-border) !important;
+  background: var(--shop-elevated) !important;
+  color: var(--shop-text) !important;
+  cursor: pointer !important;
+  font-size: 1.15rem !important;
+  line-height: 1 !important;
+  display: inline-grid !important;
+  place-items: center !important;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.15s ease !important;
+}
+
+.icon-btn:hover {
+  border-color: var(--shop-accent) !important;
+  box-shadow:
+    0 0 0 2px var(--shop-accent-soft),
+    0 0 14px color-mix(in oklch, var(--shop-accent) 14%, transparent) !important;
+}
+
+/* Wide screens */
+@media (min-width: 1400px) {
+  .shop-modal__panel {
+    width: min(1380px, 97vw) !important;
+  }
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .shop-modal__panel {
+    width: min(96vw, 1100px) !important;
+    max-height: 92vh !important;
+  }
+
+  .shop-modal__header,
+  .shop-modal__footer {
+    padding: 16px !important;
+  }
+
+  .shop-modal__content {
+    padding: 18px !important;
+  }
+
+  .pillbox {
+    min-height: 160px !important;
+    max-height: 44vh !important;
+    gap: 12px !important;
+    padding: 14px !important;
+  }
+
+  .presetbox {
+    gap: 10px !important;
+    padding: 12px !important;
+  }
+
+  .pill,
+  .preset-pill {
+    min-height: 38px !important;
+    padding: 0 14px !important;
+    font-size: 0.96rem !important;
+  }
+}
+
+/* Phone */
+@media (max-width: 640px) {
+  .shop-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-btn {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .shop-header {
+    grid-template-columns: 1fr;
+  }
+
+  .shop-modal__panel {
+    width: 95vw !important;
+    max-height: 94vh !important;
+    border-radius: 16px !important;
+  }
+
+  .shop-modal__header h3 {
+    font-size: 1.25rem !important;
+  }
+
+  .field-head {
+    align-items: flex-start !important;
+  }
+
+  .mini-actions {
+    width: 100% !important;
+  }
+
+  .pillbox {
+    min-height: 140px !important;
+    max-height: 42vh !important;
+    gap: 10px !important;
+    padding: 12px !important;
+  }
+
+  .presetbox {
+    gap: 10px !important;
+    padding: 12px !important;
+  }
+
+  .pill,
+  .preset-pill {
+    min-height: 36px !important;
+    padding: 0 13px !important;
+    font-size: 0.92rem !important;
+  }
+
+  .results-header,
+  .rowline {
+    grid-template-columns: 1.2fr 1fr 1fr 0.8fr;
+    font-size: 0.92rem;
+  }
+}
+
+.name {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.item-name-text {
+  min-width: 0;
+}
+
+.sale-icon {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  flex: 0 0 auto;
+  border-radius: 3px;
 }

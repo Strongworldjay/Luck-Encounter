@@ -51,11 +51,11 @@ function MultiSelectDropdown({
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="dropdown">
+    <div className="spell-dropdown">
       <label>{label}</label>
 
       <div
-        className="pillbox"
+        className="spell-pillbox"
         onClick={() => setOpen((v) => !v)}
         role="button"
         tabIndex={0}
@@ -68,7 +68,7 @@ function MultiSelectDropdown({
       >
         {value.length ? (
           value.map((item) => (
-            <span className="pill" key={item}>
+            <span className="spell-pill" key={item}>
               {formatLabel(item)}
               <button
                 type="button"
@@ -83,22 +83,20 @@ function MultiSelectDropdown({
             </span>
           ))
         ) : (
-          <span style={{ opacity: 0.7 }}>{placeholder}</span>
+          <span className="spell-pillbox__placeholder">{placeholder}</span>
         )}
       </div>
 
       {open && (
-        <div className="dropdown__panel" onMouseLeave={() => setOpen(false)}>
+        <div
+          className="spell-dropdown__panel"
+          onMouseLeave={() => setOpen(false)}
+        >
           {options.length ? (
             options.map((item) => (
               <label
                 key={item}
-                style={{
-                  display: "flex",
-                  gap: 8,
-                  alignItems: "center",
-                  padding: "6px 4px",
-                }}
+                className="spell-dropdown__option"
               >
                 <input
                   type="checkbox"
@@ -109,7 +107,7 @@ function MultiSelectDropdown({
               </label>
             ))
           ) : (
-            <div style={{ padding: "6px 4px", opacity: 0.7 }}>No options</div>
+            <div className="spell-dropdown__empty">No options</div>
           )}
 
           <button
@@ -152,9 +150,7 @@ export default function SpellsFilters({
 
   return (
     <div className="spells-filters">
-      {/* ===== Primary row ===== */}
       <div className="spells-filters__row">
-        {/* Spell name */}
         <div>
           <label>SPELL NAME</label>
           <input
@@ -165,7 +161,6 @@ export default function SpellsFilters({
           />
         </div>
 
-        {/* Classes */}
         <MultiSelectDropdown
           label="CLASS"
           value={values.classes || []}
@@ -175,7 +170,6 @@ export default function SpellsFilters({
           onClear={() => clearKey("classes")}
         />
 
-        {/* Levels */}
         <MultiSelectDropdown
           label="SPELL LEVEL"
           value={values.levels || []}
@@ -186,7 +180,6 @@ export default function SpellsFilters({
           formatLabel={(l) => (l === 0 ? "Cantrip" : `${l}`)}
         />
 
-        {/* Schools */}
         <MultiSelectDropdown
           label="SPELL SCHOOL"
           value={values.schools || []}
@@ -196,13 +189,14 @@ export default function SpellsFilters({
           onClear={() => clearKey("schools")}
         />
 
-        {/* Casting time */}
         <div>
           <label>CASTING TIME</label>
           <select
             className="spell-select"
             value={values.castingTime || ""}
-            onChange={(e) => onChange({ ...values, castingTime: e.target.value })}
+            onChange={(e) =>
+              onChange({ ...values, castingTime: e.target.value })
+            }
           >
             <option value="">Any</option>
             {(options.castingTimes || []).map((t) => (
@@ -214,14 +208,12 @@ export default function SpellsFilters({
         </div>
       </div>
 
-      {/* ===== Action buttons ===== */}
       <div className="spells-filters__actions">
-       <button type="button" className="btn-link" onClick={onReset}>
-  RESET ALL FILTERS
-</button>
+        <button type="button" className="btn-link" onClick={onReset}>
+          RESET ALL FILTERS
+        </button>
       </div>
 
-      {/* ===== Advanced ===== */}
       <div className="advanced">
         <button
           type="button"
@@ -233,13 +225,14 @@ export default function SpellsFilters({
 
         {openAdvanced && (
           <div className="advanced__grid">
-            {/* Save */}
             <div>
               <label>SAVE</label>
               <select
                 className="spell-select"
                 value={values.saveRequired || ""}
-                onChange={(e) => onChange({ ...values, saveRequired: e.target.value })}
+                onChange={(e) =>
+                  onChange({ ...values, saveRequired: e.target.value })
+                }
               >
                 <option value="">Any</option>
                 {(options.saves || []).map((s) => (
@@ -250,13 +243,14 @@ export default function SpellsFilters({
               </select>
             </div>
 
-            {/* Attack type */}
             <div>
               <label>ATTACK TYPE</label>
               <select
                 className="spell-select"
                 value={values.attackType || ""}
-                onChange={(e) => onChange({ ...values, attackType: e.target.value })}
+                onChange={(e) =>
+                  onChange({ ...values, attackType: e.target.value })
+                }
               >
                 <option value="">Any</option>
                 {(options.attacks || []).map((a) => (
@@ -267,14 +261,16 @@ export default function SpellsFilters({
               </select>
             </div>
 
-            {/* Components */}
             <div>
               <label>COMPONENTS</label>
-              <div className="pillbox" style={{ cursor: "default" }}>
+              <div
+                className="spell-pillbox spell-pillbox--static"
+                style={{ cursor: "default" }}
+              >
                 {["V", "S", "M"].map((c) => (
                   <label
                     key={c}
-                    style={{ display: "flex", alignItems: "center", gap: 6 }}
+                    className="spell-components__option"
                   >
                     <input
                       type="checkbox"
@@ -293,7 +289,6 @@ export default function SpellsFilters({
               </div>
             </div>
 
-            {/* Concentration */}
             <div>
               <label>CONCENTRATION</label>
               <select
@@ -313,7 +308,6 @@ export default function SpellsFilters({
               </select>
             </div>
 
-            {/* Ritual */}
             <div>
               <label>RITUAL</label>
               <select
@@ -322,7 +316,8 @@ export default function SpellsFilters({
                 onChange={(e) =>
                   onChange({
                     ...values,
-                    ritual: e.target.value === "" ? "" : e.target.value === "true",
+                    ritual:
+                      e.target.value === "" ? "" : e.target.value === "true",
                   })
                 }
               >
@@ -332,7 +327,6 @@ export default function SpellsFilters({
               </select>
             </div>
 
-            {/* Damage types */}
             <MultiSelectDropdown
               label="DAMAGE TYPES"
               value={values.damageTypes || []}
@@ -342,7 +336,6 @@ export default function SpellsFilters({
               onClear={() => clearKey("damageTypes")}
             />
 
-            {/* Conditions */}
             <MultiSelectDropdown
               label="CONDITIONS"
               value={values.conditions || []}
@@ -352,7 +345,6 @@ export default function SpellsFilters({
               onClear={() => clearKey("conditions")}
             />
 
-            {/* Tags */}
             <MultiSelectDropdown
               label="TAGS"
               value={values.tags || []}
@@ -362,18 +354,18 @@ export default function SpellsFilters({
               onClear={() => clearKey("tags")}
             />
 
-            {/* Range contains */}
             <div>
               <label>RANGE CONTAINS</label>
               <input
                 className="spell-input"
                 placeholder="e.g. 60 feet"
                 value={values.rangeLike || ""}
-                onChange={(e) => onChange({ ...values, rangeLike: e.target.value })}
+                onChange={(e) =>
+                  onChange({ ...values, rangeLike: e.target.value })
+                }
               />
             </div>
 
-            {/* Duration contains */}
             <div>
               <label>DURATION CONTAINS</label>
               <input
@@ -386,14 +378,15 @@ export default function SpellsFilters({
               />
             </div>
 
-            {/* Area contains */}
             <div>
               <label>AREA CONTAINS</label>
               <input
                 className="spell-input"
                 placeholder="e.g. Cone"
                 value={values.areaLike || ""}
-                onChange={(e) => onChange({ ...values, areaLike: e.target.value })}
+                onChange={(e) =>
+                  onChange({ ...values, areaLike: e.target.value })
+                }
               />
             </div>
           </div>

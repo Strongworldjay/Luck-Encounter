@@ -20,7 +20,7 @@ html, body, .spells-page {
   box-shadow: var(--shadow);
   transition: border-color .15s ease, box-shadow .15s ease, transform .15s ease;
   overflow: hidden;
-  min-width: 0; /* allow grid tracks to shrink without overflow */
+  min-width: 0;
 }
 .spell-card:hover {
   border-color: color-mix(in oklch, var(--primary) 35%, var(--border));
@@ -99,10 +99,9 @@ html, body, .spells-page {
 }
 
 /* --- Poster card look --- */
-/* --- Poster card look (theme-aware) --- */
 .spell-card--poster {
-  background: var(--poster-bg);   /* ✅ follows theme */
-  color: var(--poster-text);      /* ✅ follows theme */
+  background: var(--poster-bg);
+  color: var(--poster-text);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg, 16px);
   box-shadow: var(--shadow);
@@ -144,7 +143,8 @@ html, body, .spells-page {
 .spell-poster__level { font-size: 1rem; opacity: 0.9; }
 
 /* --- Card/poster art: remove tile + cap size --- */
-.spell-poster__img, .spell-card__thumb {
+.spell-poster__img,
+.spell-card__thumb {
   background: transparent !important;
   border: 0 !important;
   box-shadow: none !important;
@@ -163,10 +163,13 @@ html, body, .spells-page {
 
 /* Mobile: smaller reserved box for tighter cards */
 @media (max-width: 560px) {
-  .spell-poster__img { max-width: var(--card-img-max-sm, 140px); max-height: var(--card-img-max-sm, 140px); }
+  .spell-poster__img {
+    max-width: var(--card-img-max-sm, 140px);
+    max-height: var(--card-img-max-sm, 140px);
+  }
 }
 
-/* === Poster image: reserve space with aspect-ratio wrapper === */
+/* Reserve image space */
 .spell-poster__imgbox {
   width: min(70%, 200px);
   aspect-ratio: 1 / 1;
@@ -185,7 +188,6 @@ html, body, .spells-page {
   box-shadow: none !important;
   border-radius: 0 !important;
 }
-/* Nuke any image tiles globally (poster + modal) */
 .spell-card--poster .spell-poster__img,
 .spell-poster .spell-poster__img,
 .spell-modal__art {
@@ -195,8 +197,6 @@ html, body, .spells-page {
   border-radius: 0 !important;
   outline: none !important;
 }
-
-/* The reserved aspect-ratio wrapper: transparent on ALL breakpoints */
 .spell-poster__imgbox {
   background: transparent !important;
   border: 0 !important;
@@ -204,42 +204,36 @@ html, body, .spells-page {
   border-radius: 0 !important;
 }
 
-
-
-/* ==== Themed hover borders for cards ==== */
+/* Hover borders */
 html:not(.theme-dark) .spell-card:hover {
-  border-color: #f8e8c9; /* gold */
+  border-color: #f8e8c9;
   box-shadow: 0 0 8px rgba(255, 239, 147, 0.45);
   transform: translateY(-2px);
 }
 .theme-dark .spell-card:hover {
-  border-color: #1f3adf; /* deep blue */
+  border-color: #1f3adf;
   box-shadow: 0 0 8px rgba(31, 58, 223, 0.55);
   transform: translateY(-2px);
 }
 
 /* ---------------------------------------
-   Grid: mobile-first (2-up) → desktop (4-up)
-   Uses clamp() so first paint never exceeds viewport width.
+   Grid: mobile-first
 --------------------------------------- */
 .spell-grid {
   display: grid;
   gap: var(--grid-gap, 16px);
-  /* 2 per row by default; each track can shrink but never get silly-small */
   grid-template-columns: repeat(2, minmax(clamp(140px, 45vw, 220px), 1fr));
   padding-bottom: 60px;
   margin-top: 16px;
   max-width: 100%;
 }
 
-/* 4 per row once there’s room */
 @media (min-width: 840px) {
   .spell-grid {
     grid-template-columns: repeat(4, minmax(220px, 1fr));
   }
 }
 
-/* Small-screen card footprint tweaks */
 @media (max-width: 560px) {
   .spell-card { --card-pad: 8px; border-radius: 10px; }
   .spell-card__summary { gap: 8px; padding: 10px; }
@@ -249,9 +243,9 @@ html:not(.theme-dark) .spell-card:hover {
 
   .spell-card__body { padding: 10px; }
   .spell-card__list { grid-template-columns: 1fr; gap: 6px 10px; font-size: .85rem; }
-  .spell-card__desc, .spell-card__sub { font-size: .9rem; }
+  .spell-card__desc,
+  .spell-card__sub { font-size: .9rem; }
 
-  /* square poster face on small phones */
   .spell-card--poster {
     aspect-ratio: 1 / 1;
     display: flex;
@@ -266,7 +260,6 @@ html:not(.theme-dark) .spell-card:hover {
   .spell-poster__level { display: none; }
 }
 
-/* Keep poster title + image balance on mobile & nudge image up a bit */
 @media (max-width: 560px) {
   .spell-poster {
     width: 100%;
@@ -276,7 +269,7 @@ html:not(.theme-dark) .spell-card:hover {
     align-items: center;
     justify-items: center;
     padding: 10px;
-    row-gap: 2px; /* tight for the upward nudge */
+    row-gap: 2px;
     text-align: center;
   }
   .spell-poster__title {
@@ -285,7 +278,6 @@ html:not(.theme-dark) .spell-card:hover {
     min-height: calc(2 * 1.1em);
     line-height: 1.1;
   }
-  /* center + raise art slightly */
   .spell-poster__imgbox,
   .spell-poster__img { transform: none !important; }
   .spell-poster__imgbox {
@@ -293,7 +285,7 @@ html:not(.theme-dark) .spell-card:hover {
     place-items: center;
     aspect-ratio: 1 / 1;
     width: clamp(120px, 82%, 200px);
-    margin: -14px auto 0; /* raise image */
+    margin: -14px auto 0;
   }
   .spell-poster__img {
     max-width: 100%;
@@ -304,7 +296,6 @@ html:not(.theme-dark) .spell-card:hover {
   }
 }
 
-/* Desktop/Tablet: nudge poster art slightly left for optical balance */
 @media (min-width: 561px) {
   .spell-card--poster .spell-poster__imgbox { transform: translateX(-6px); }
 }
@@ -325,16 +316,17 @@ html:not(.theme-dark) .spell-card:hover {
   overflow: auto;
   padding-bottom: 20px;
   scroll-behavior: smooth;
-
-  /* Hide scrollbars but keep scrolling */
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
 .spells-scroll::-webkit-scrollbar { width: 0; height: 0; }
 
-.spells-filters, .spells-filters * { box-sizing: border-box; }
+.spells-filters,
+.spells-filters * {
+  box-sizing: border-box;
+}
 
-/* Filters (non-sticky) */
+/* Filters */
 .spells-filters {
   position: static;
   top: auto;
@@ -347,7 +339,7 @@ html:not(.theme-dark) .spell-card:hover {
   margin-bottom: 16px;
 }
 
-/* Header row (title + basic controls) */
+/* Header row */
 .spells-filters__row {
   display: grid;
   grid-template-columns: 1.2fr 1fr 1fr 1fr 0.8fr;
@@ -366,13 +358,19 @@ html:not(.theme-dark) .spell-card:hover {
 }
 
 @media (max-width: 1100px) {
-  .spells-filters__row { grid-template-columns: repeat(3, minmax(220px, 1fr)); }
+  .spells-filters__row {
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+  }
 }
 @media (max-width: 720px) {
-  .spells-filters__row { grid-template-columns: 1fr 1fr; }
+  .spells-filters__row {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 @media (max-width: 520px) {
-  .spells-filters__row { grid-template-columns: 1fr; }
+  .spells-filters__row {
+    grid-template-columns: 1fr;
+  }
 }
 
 .spells-filters label {
@@ -385,9 +383,11 @@ html:not(.theme-dark) .spell-card:hover {
 }
 
 /* Inputs */
-.spell-input, .spell-select, .pillbox {
-  height: 36px;
-  min-height: 36px;
+.spell-input,
+.spell-select,
+.spell-pillbox {
+  height: 40px;
+  min-height: 40px;
   width: 100%;
   max-width: 100%;
   border-radius: 10px;
@@ -399,22 +399,40 @@ html:not(.theme-dark) .spell-card:hover {
   line-height: 1;
   transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
 }
-.spell-input::placeholder { opacity: .7; }
-.spell-input:focus, .spell-select:focus, .pillbox:focus {
+
+.spell-input::placeholder,
+.spell-pillbox__placeholder {
+  opacity: .7;
+}
+
+.spell-input:focus,
+.spell-select:focus,
+.spell-pillbox:focus {
   border-color: color-mix(in oklch, var(--accent-color) 60%, var(--border));
   box-shadow: 0 0 0 3px color-mix(in oklch, var(--accent-color) 25%, transparent);
 }
 
-/* Pillbox */
-.pillbox {
+/* Spell-specific pillbox */
+.spell-pillbox {
   display: flex;
   align-items: center;
   gap: 6px;
   flex-wrap: wrap;
   padding: 4px 8px;
   cursor: pointer;
+  overflow: hidden;
 }
-.pill {
+
+.spell-pillbox--static {
+  cursor: default;
+  overflow: auto;
+  height: auto;
+  min-height: 40px;
+  padding: 8px 10px;
+  align-items: flex-start;
+}
+
+.spell-pill {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -423,18 +441,31 @@ html:not(.theme-dark) .spell-card:hover {
   background: color-mix(in oklch, var(--accent-color) 20%, var(--elevated));
   border: 1px solid var(--border);
   font-size: .85rem;
+  max-width: 100%;
 }
-.pill button {
+
+.spell-pill button {
   background: transparent;
   border: 0;
   color: inherit;
   cursor: pointer;
   padding: 0;
+  font: inherit;
+}
+
+.spell-components__option {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  margin: 0 !important;
+  font-size: .9rem !important;
+  color: var(--app-text, #fff) !important;
 }
 
 /* Dropdown panel */
-.dropdown { position: relative; }
-.dropdown__panel {
+.spell-dropdown { position: relative; }
+
+.spell-dropdown__panel {
   position: absolute;
   top: calc(100% + 6px);
   left: 0;
@@ -448,11 +479,23 @@ html:not(.theme-dark) .spell-card:hover {
   box-shadow: var(--shadow, 0 10px 26px rgba(0,0,0,.35));
   padding: 8px;
   z-index: 30;
-
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
-.dropdown__panel::-webkit-scrollbar { width: 0; height: 0; }
+.spell-dropdown__panel::-webkit-scrollbar { width: 0; height: 0; }
+
+.spell-dropdown__option {
+  display: flex !important;
+  gap: 8px !important;
+  align-items: center !important;
+  padding: 6px 4px !important;
+  margin: 0 !important;
+}
+
+.spell-dropdown__empty {
+  padding: 6px 4px;
+  opacity: 0.7;
+}
 
 /* Buttons */
 .btn-primary {
@@ -490,16 +533,17 @@ html:not(.theme-dark) .spell-card:hover {
 
 /* ===== Modal ===== */
 .spell-modal__backdrop {
-  position: fixed; inset: 0;
+  position: fixed;
+  inset: 0;
   background: rgba(0,0,0,.55);
   backdrop-filter: blur(2px);
   z-index: 3000;
-  display: flex; align-items: flex-start; justify-content: center;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
   overflow: auto;
   padding: 32px 16px;
-
-  /* hide outer modal scrollbar, still scrollable */
-  scrollbar-width: none; 
+  scrollbar-width: none;
   -ms-overflow-style: none;
 }
 .spell-modal__backdrop::-webkit-scrollbar { width: 0; height: 0; }
@@ -514,7 +558,6 @@ html:not(.theme-dark) .spell-card:hover {
   overflow: hidden;
 }
 
-/* NEW: slimmer modal on phones so there’s tappable gutter */
 .spell-modal__panel--responsive { width: min(960px, 96vw); }
 @media (max-width: 560px) {
   .spell-modal__panel--responsive {
@@ -529,12 +572,17 @@ html:not(.theme-dark) .spell-card:hover {
 }
 
 .spell-modal__header {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 14px 16px; border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
   background: color-mix(in oklch, var(--surface) 80%, transparent);
 }
 .spell-modal__title { color: var(--app-text); }
-.spell-modal__subtitle { color: color-mix(in oklch, var(--app-text), transparent 30%); }
+.spell-modal__subtitle {
+  color: color-mix(in oklch, var(--app-text), transparent 30%);
+}
 .spell-modal__close {
   border: 1px solid var(--border);
   background: var(--elevated, #111);
@@ -551,9 +599,18 @@ html:not(.theme-dark) .spell-card:hover {
   gap: 10px 14px;
   padding: 12px 16px 6px;
 }
-.infocell .cap { font-size: .75rem; letter-spacing: .02em; color: var(--muted); font-weight: 700; }
+.infocell .cap {
+  font-size: .75rem;
+  letter-spacing: .02em;
+  color: var(--muted);
+  font-weight: 700;
+}
 
-.spell-modal__rule { border: 0; border-top: 2px solid var(--accent-color); margin: 6px 16px 0; }
+.spell-modal__rule {
+  border: 0;
+  border-top: 2px solid var(--accent-color);
+  margin: 6px 16px 0;
+}
 
 .spell-modal__body {
   display: grid;
@@ -561,9 +618,15 @@ html:not(.theme-dark) .spell-card:hover {
   gap: 16px;
   padding: 14px 16px 18px;
 }
-@media (max-width: 720px) { .spell-modal__body { grid-template-columns: 1fr; } }
+@media (max-width: 720px) {
+  .spell-modal__body { grid-template-columns: 1fr; }
+}
 
-.spell-modal__artwrap { display:flex; align-items:flex-start; justify-content:center; }
+.spell-modal__artwrap {
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+}
 .spell-modal__art {
   width: 100%;
   max-width: 220px;
@@ -573,11 +636,30 @@ html:not(.theme-dark) .spell-card:hover {
   border: 1px solid var(--border);
 }
 
-.spell-modal__desc, .spell-modal__sub { color: var(--app-text); }
-.spell-modal__desc { white-space: pre-line; line-height: 1.6; }
-.spell-modal__chips { margin-top: 14px; display: grid; gap: 8px; }
-.chiprow { display:flex; flex-wrap: wrap; gap: 6px; align-items: center; }
-.chipcap { font-weight: 700; color: var(--muted); margin-right: 2px; }
+.spell-modal__desc,
+.spell-modal__sub {
+  color: var(--app-text);
+}
+.spell-modal__desc {
+  white-space: pre-line;
+  line-height: 1.6;
+}
+.spell-modal__chips {
+  margin-top: 14px;
+  display: grid;
+  gap: 8px;
+}
+.chiprow {
+  display:flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+.chipcap {
+  font-weight: 700;
+  color: var(--muted);
+  margin-right: 2px;
+}
 .chip {
   padding: 4px 8px;
   border-radius: 999px;
@@ -643,6 +725,7 @@ html:not(.theme-dark) .spell-card:hover {
   overflow: hidden;
 }
 .spell-row > summary { list-style: none; }
+
 .spell-row__summary {
   display: grid;
   grid-template-columns: 140px 1.2fr 1fr 1fr 1fr 1fr 1fr 36px;
@@ -653,8 +736,16 @@ html:not(.theme-dark) .spell-card:hover {
 }
 .spell-row__summary::-webkit-details-marker { display: none; }
 
-.spell-row .cell { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
-.spell-row .cell.name { display: flex; align-items: center; gap: 10px; }
+.spell-row .cell {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.spell-row .cell.name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 .spell-row .cell.name .icon {
   width: 26px;
   height: 26px;
@@ -663,9 +754,16 @@ html:not(.theme-dark) .spell-card:hover {
   background: var(--elevated);
 }
 .spell-row .namewrap .title { font-weight: 700; }
-.spell-row .namewrap .sub { color: var(--muted); font-size: .9rem; }
+.spell-row .namewrap .sub {
+  color: var(--muted);
+  font-size: .9rem;
+}
 
-.spell-row .cell.chevron { text-align: center; color: var(--accent-color); font-weight: 800; }
+.spell-row .cell.chevron {
+  text-align: center;
+  color: var(--accent-color);
+  font-weight: 800;
+}
 
 .spell-row__details {
   border-top: 1px solid var(--border);
@@ -679,13 +777,30 @@ html:not(.theme-dark) .spell-card:hover {
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 8px 12px;
 }
-.detailgrid .cap { color: var(--muted); font-size: .8rem; font-weight: 700; display:block; }
+.detailgrid .cap {
+  color: var(--muted);
+  font-size: .8rem;
+  font-weight: 700;
+  display:block;
+}
 .detailgrid span:last-child { display:block; }
 
-.rowrule { border: 0; border-top: 2px solid var(--accent-color); margin: 10px 0; }
+.rowrule {
+  border: 0;
+  border-top: 2px solid var(--accent-color);
+  margin: 10px 0;
+}
 
-.rowdesc .desc, .rowdesc .sub { color: var(--app-text); line-height: 1.55; }
-.rowdesc .sub { border-top: 1px dashed var(--border); padding-top: 6px; margin-top: 6px; }
+.rowdesc .desc,
+.rowdesc .sub {
+  color: var(--app-text);
+  line-height: 1.55;
+}
+.rowdesc .sub {
+  border-top: 1px dashed var(--border);
+  padding-top: 6px;
+  margin-top: 6px;
+}
 
 /* Responsive columns for header/summary */
 @media (max-width: 1100px) {
@@ -726,7 +841,10 @@ html:not(.theme-dark) .spell-card:hover {
   justify-items: center;
   margin: 16px 0 8px;
 }
-.pagination__status { font-size: .9rem; color: var(--muted); }
+.pagination__status {
+  font-size: .9rem;
+  color: var(--muted);
+}
 .pagination__controls {
   display: inline-flex;
   gap: 6px;
@@ -742,40 +860,58 @@ html:not(.theme-dark) .spell-card:hover {
   color: var(--app-text, #fdfbf7);
   cursor: pointer;
 }
-.page-btn:hover { border-color: color-mix(in oklch, var(--accent-color) 60%, var(--border)); }
+.page-btn:hover {
+  border-color: color-mix(in oklch, var(--accent-color) 60%, var(--border));
+}
 .page-btn.active {
   border-color: var(--accent-color);
   box-shadow: 0 0 0 3px color-mix(in oklch, var(--accent-color) 25%, transparent);
   font-weight: 700;
 }
-.page-btn[disabled] { opacity: .5; cursor: not-allowed; }
-.page-ellipsis { padding: 0 6px; color: var(--muted); user-select: none; }
+.page-btn[disabled] {
+  opacity: .5;
+  cursor: not-allowed;
+}
+.page-ellipsis {
+  padding: 0 6px;
+  color: var(--muted);
+  user-select: none;
+}
 
-/* --- Prevent horizontal dragging/panning on touch --- */
-.spells-scroll, .spell-list, .spell-grid, .spell-row, .spell-row__summary, .spell-card, .spell-card__summary {
+/* Prevent horizontal dragging/panning on touch */
+.spells-scroll,
+.spell-list,
+.spell-grid,
+.spell-row,
+.spell-row__summary,
+.spell-card,
+.spell-card__summary {
   touch-action: pan-y;
   overflow-x: hidden;
 }
-html, body, .spells-page { overscroll-behavior-x: none; }
+html,
+body,
+.spells-page {
+  overscroll-behavior-x: none;
+}
 
-/* iOS focus-zoom fix: keep inputs >=16px on phones */
+/* iOS focus-zoom fix */
 @media (max-width: 560px) {
   .spell-input,
   .spell-select,
-  .dropdown__panel input,
-  .dropdown__panel select,
-  textarea { font-size: 16px !important; }
+  .spell-dropdown__panel input,
+  .spell-dropdown__panel select,
+  textarea {
+    font-size: 16px !important;
+  }
 }
 
 /* ================================
    Statblock (modal-only), theme-aware
 =============================== */
-
 .spell-modal__statblock { margin-top: 14px; }
 
-/* Base card */
 .statblock {
-  /* tokens (overridden per theme below) */
   --sb-bg: var(--surface);
   --sb-text: var(--app-text);
   --sb-border: var(--border);
@@ -791,25 +927,25 @@ html, body, .spells-page { overscroll-behavior-x: none; }
   border-radius: 12px;
   box-shadow: var(--sb-shadow);
   padding: 12px 14px;
-
-  max-height: min(62vh, 760px);   /* scroll inside modal if long */
+  max-height: min(62vh, 760px);
   overflow: auto;
-
-  /* hide inner scrollbar track while keeping scroll */
-  scrollbar-width: none;        /* Firefox */
-  -ms-overflow-style: none;     /* old Edge/IE */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 .statblock::-webkit-scrollbar { width: 0; height: 0; }
 
-/* Headings & rules inside pasted HTML */
-.statblock h1, .statblock h2, .statblock h3, .statblock h4 {
+.statblock h1,
+.statblock h2,
+.statblock h3,
+.statblock h4 {
   margin: 8px 0 6px;
   font-weight: 800;
   letter-spacing: .02em;
 }
 .statblock h1 { font-size: 1.1rem; }
 .statblock h2 { font-size: 1rem; }
-.statblock h3, .statblock h4 { font-size: .95rem; }
+.statblock h3,
+.statblock h4 { font-size: .95rem; }
 
 .statblock hr {
   border: 0;
@@ -817,14 +953,14 @@ html, body, .spells-page { overscroll-behavior-x: none; }
   margin: 8px 0;
 }
 
-/* Tables common in stat blocks */
 .statblock table {
   width: 100%;
   border-collapse: collapse;
   margin: 8px 0;
   font-size: .92rem;
 }
-.statblock th, .statblock td {
+.statblock th,
+.statblock td {
   border: 1px solid var(--sb-border);
   padding: 6px 8px;
   vertical-align: middle;
@@ -838,7 +974,9 @@ html, body, .spells-page { overscroll-behavior-x: none; }
   background: color-mix(in oklch, var(--sb-head-bg) 35%, transparent);
 }
 
-.statblock .muted, .statblock small, .statblock .note { color: var(--sb-muted); }
+.statblock .muted,
+.statblock small,
+.statblock .note { color: var(--sb-muted); }
 .statblock strong { font-weight: 800; }
 .statblock em { font-style: italic; }
 
@@ -856,11 +994,7 @@ html, body, .spells-page { overscroll-behavior-x: none; }
   border-radius: 6px;
 }
 
-/* ================================
-   Theme tokens
-=============================== */
-
-/* Night / dark mode */
+/* Theme tokens */
 .theme-dark .statblock {
   --sb-bg: color-mix(in oklch, var(--surface) 90%, black 10%);
   --sb-text: var(--app-text, #eaeaea);
@@ -872,7 +1006,6 @@ html, body, .spells-page { overscroll-behavior-x: none; }
   --sb-shadow: 0 16px 34px rgba(0,0,0,.45);
 }
 
-/* Day / light mode */
 html:not(.theme-dark) .statblock {
   --sb-bg: #fdfbf7;
   --sb-text: #111318;
@@ -883,61 +1016,51 @@ html:not(.theme-dark) .statblock {
   --sb-link: color-mix(in oklch, var(--accent-color) 85%, #0b63d8);
   --sb-shadow: 0 8px 20px rgba(16, 24, 40, .10);
 }
-/* =========================================
-   Uniform card art size (poster cards)
-   ========================================= */
 
-/* One knob to rule them all */
-:root { --card-art-size: 200px; }           /* desktop/tablet */
+/* Uniform card art size */
+:root { --card-art-size: 200px; }
 @media (max-width: 560px) {
-  :root { --card-art-size: 150px; }         /* phones */
+  :root { --card-art-size: 150px; }
 }
 
-/* Fixed square box for every card image */
 .spell-card--poster .spell-poster__imgbox {
   width: var(--card-art-size);
   height: var(--card-art-size);
-  aspect-ratio: 1 / 1;                      /* reserve space, prevent layout shift */
-  margin: 0 auto;                           /* center in card */
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
   display: grid;
   place-items: center;
-  background: transparent !important;       /* ensure no tiles/borders */
+  background: transparent !important;
   border: 0 !important;
   box-shadow: none !important;
-  transform: none !important;               /* remove previous nudges */
+  transform: none !important;
 }
 
-/* Image always fills the box, but keeps its aspect */
 .spell-card--poster .spell-poster__img {
   width: 100%;
   height: 100%;
-  object-fit: contain;                       /* letterbox if needed, no cropping */
+  object-fit: contain;
   object-position: center center;
   display: block;
   background: transparent !important;
   border: 0 !important;
   box-shadow: none !important;
 }
-/* =========================================
-   Make all poster cards the same height
-   by fixing the title area height
-   ========================================= */
 
-/* Tunables */
+/* Make all poster cards the same height */
 :root {
-  --poster-title-lines: 2;        /* how many lines to allow */
-  --poster-title-lh: 1.15;        /* line-height for title */
-  --poster-title-fs: 1.05rem;     /* desktop title font-size */
+  --poster-title-lines: 2;
+  --poster-title-lh: 1.15;
+  --poster-title-fs: 1.05rem;
 }
 @media (max-width: 560px) {
   :root {
     --poster-title-lines: 2;
     --poster-title-lh: 1.10;
-    --poster-title-fs: 0.95rem;   /* slightly smaller on phones */
+    --poster-title-fs: 0.95rem;
   }
 }
 
-/* The poster face uses two fixed rows: title (fixed height) + image (fills) */
 .spell-card--poster .spell-poster {
   display: grid;
   grid-template-rows:
@@ -947,50 +1070,33 @@ html:not(.theme-dark) .statblock {
   justify-items: center;
 }
 
-/* Title: clamp to N lines and *reserve* exactly that much height */
 .spell-card--poster .spell-poster__title {
-  margin: 6px 8px 0;                /* consistent spacing */
+  margin: 6px 8px 0;
   font-size: var(--poster-title-fs);
   line-height: var(--poster-title-lh);
-
-  /* reserve the space so heights don’t change with longer names */
   min-height: calc(var(--poster-title-lines) * var(--poster-title-lh) * 1em);
   max-height: calc(var(--poster-title-lines) * var(--poster-title-lh) * 1em);
-
-  /* clamp + ellipsis */
   display: -webkit-box;
   -webkit-line-clamp: var(--poster-title-lines);
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-
-  /* friendlier wrapping for very long words */
   word-break: break-word;
   hyphens: auto;
 }
 
-/* (Optional) If you want a very strict, identical outer height too,
-   you can set a fixed card height after the title/art are fixed.
-   Usually not needed, but here it is:
-
-:root { --poster-card-height: 340px; }
-.spell-card--poster { height: var(--poster-card-height); }
-@media (max-width:560px) { .spell-card--poster { --poster-card-height: 300px; } }
-
-*/
 @supports (-webkit-touch-callout: none) {
   input,
   select,
   textarea,
   .spell-input,
   .spell-select,
-  .dropdown__panel input,
-  .dropdown__panel select {
-    font-size: 16px !important;   /* iOS won’t zoom if >=16px */
-    line-height: 1.2;             /* avoid cramped caret line box */
+  .spell-dropdown__panel input,
+  .spell-dropdown__panel select {
+    font-size: 16px !important;
+    line-height: 1.2;
   }
 
-  /* Make sure placeholders inherit the 16px too */
   input::placeholder,
   textarea::placeholder {
     font-size: inherit;
@@ -1012,8 +1118,6 @@ html:not(.theme-dark) .statblock {
   margin-top: 12px;
   overflow: auto;
   max-height: min(50vh, 620px);
-
-  /* hide inner scrollbars but keep scrolling */
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -1025,13 +1129,13 @@ html:not(.theme-dark) .statblock {
   color: var(--rb-text);
 }
 
-/* Tables inside refblock — reuse statblock table look */
 .refblock table {
   width: 100%;
   border-collapse: collapse;
   font-size: .92rem;
 }
-.refblock th, .refblock td {
+.refblock th,
+.refblock td {
   border: 1px solid var(--rb-border);
   padding: 6px 8px;
   vertical-align: middle;
@@ -1045,24 +1149,19 @@ html:not(.theme-dark) .statblock {
   background: color-mix(in oklch, var(--accent-color) 6%, transparent);
 }
 
-/* Dark-mode subtle tweaks */
 .theme-dark .refblock {
   --rb-bg: color-mix(in oklch, var(--surface) 92%, black 8%);
   --rb-text: var(--app-text);
   --rb-border: color-mix(in oklch, var(--border) 80%, #000 20%);
 }
 
-/* ==========================
-   Light mode overrides: filters
-   ========================== */
+/* Light mode overrides: filters */
 html:not(.theme-dark) {
-  /* pick your daytime accent (gold/cream vibe) */
-  --filters-accent: #c9a227;          /* warm gold */
+  --filters-accent: #c9a227;
   --filters-accent-soft: rgba(201,162,39,.22);
-  --filters-link: #8a6a12;            /* darker gold/brown for readable links */
+  --filters-link: #8a6a12;
 }
 
-/* RESET ALL FILTERS (and any link-style buttons) */
 html:not(.theme-dark) .btn-link {
   color: var(--filters-link) !important;
 }
@@ -1070,7 +1169,6 @@ html:not(.theme-dark) .btn-link:hover {
   color: #5f470a !important;
 }
 
-/* "Show advanced filters" (if it's a <summary>) */
 html:not(.theme-dark) .advanced summary,
 html:not(.theme-dark) .advanced summary a {
   color: var(--filters-link) !important;
@@ -1079,7 +1177,6 @@ html:not(.theme-dark) .advanced summary:hover {
   color: #5f470a !important;
 }
 
-/* FILTER SPELLS button: stop the blue */
 html:not(.theme-dark) .btn-primary {
   border-color: color-mix(in oklch, var(--filters-accent) 60%, rgba(0,0,0,.18)) !important;
   background: color-mix(in oklch, var(--filters-accent) 40%, #fdfbf7) !important;

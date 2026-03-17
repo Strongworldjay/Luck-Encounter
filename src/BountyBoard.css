@@ -10,149 +10,138 @@
   filter: blur(5px) brightness(0.95);
 }
 
-/* BOARD (image, never cropped) */
+/* BOARD */
 .bountyboard-board {
   position: relative;
   width: min(900px, 86vw);
 }
+
 .board-img {
   display: block;
-  width: 100%;
+  width: 110%;
   height: auto;
-  filter: drop-shadow(0 18px 40px rgba(0,0,0,0.45));
+  filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.45));
 }
 
-/* SAFE AREA tuned for bountyboard.png */
+/* SAFE AREA */
 .bountyboard-safe {
   position: absolute;
   inset: 0;
-  padding-top: 15%;   /* below the curved header */
-  padding-right: 10%; /* inside right post  */
-  padding-bottom: 22%;/* above bottom shelf  */
-  padding-left: 10%;  /* inside left post    */
+  padding-top: 15%;
+  padding-right: 10%;
+  padding-bottom: 22%;
+  padding-left: 10%;
 }
 
-/* GRID (3×2 desktop) */
+/* GRID */
 .bountyboard-grid {
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);  /* left / middle / right */
-  grid-template-rows: repeat(2, 1fr);     /* top / bottom */
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   align-content: space-between;
   justify-content: space-between;
   place-items: center;
   gap: clamp(4px, 1.2vw, 12px);
 }
 
-/* POSTERS (desktop default: roomy) */
+/* POSTERS */
 .bountyboard-safe .bountyboard-grid .bounty-cell {
-  position: relative;                 /* anchors ::before/::after */
+  position: relative;
   background: transparent;
   border: 0;
   padding: 0;
   cursor: pointer;
   transform-origin: center;
-  /* base transform includes lift + subtle 3D warp + tiny rotation */
+  transition: transform 140ms ease, filter 140ms ease;
+  -webkit-tap-highlight-color: transparent;
   transform:
     translateY(var(--lift, 0))
-    perspective(800px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg))
-    rotate(var(--rot, 0deg));
-  transition: transform 120ms ease, filter 120ms ease;
-  -webkit-tap-highlight-color: transparent;
+    rotate(var(--rot, 0deg))
+    skewX(var(--skx, 0deg))
+    skewY(var(--sky, 0deg))
+    scale(var(--scale, 1));
 }
+
 .bountyboard-safe .bountyboard-grid .bounty-cell:hover {
   transform:
     translateY(var(--lift, 0))
-    perspective(800px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg))
     rotate(var(--rot, 0deg))
-    scale(1.04);
+    skewX(var(--skx, 0deg))
+    skewY(var(--sky, 0deg))
+    scale(calc(var(--scale, 1) * 1.04));
 }
 
 .bountyboard-safe .bountyboard-grid .bounty-cell > img {
+  display: block;
   width: clamp(90px, 15vw, 150px);
   height: auto;
-  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.45));
   pointer-events: none;
+  filter: drop-shadow(0 7px 14px rgba(0, 0, 0, 0.48));
 }
 
-/* Subtle per-poster tilt + warp */
-.cell-1 { --rot: -2deg; --rx:  1.5deg; --ry: -2deg; }
-.cell-2 { --rot:  1.5deg; --rx: -1deg;  --ry:  1.5deg; }
-.cell-3 { --rot: -1deg;  --rx:  0.5deg; --ry:  1deg; }
-.cell-4 { --rot:  2deg;  --rx: -1.5deg; --ry: -1deg; }
-.cell-5 { --rot: -2deg;  --rx:  1deg;   --ry: -1.5deg; }
-.cell-6 { --rot:  1deg;  --rx: -0.5deg; --ry:  1deg; }
+/* DIFFERENT SLANTS / WARP / PLACEMENT */
+.cell-1 { --rot: -5deg;  --skx: -1.2deg; --sky: 0.4deg;  --scale: 0.98; }
+.cell-2 { --rot: 2.8deg; --skx: 0.8deg;  --sky: -0.4deg; --scale: 1.02; }
+.cell-3 { --rot: -2deg;  --skx: 1.4deg;  --sky: 0.2deg;  --scale: 0.99; }
+.cell-4 { --rot: 4.8deg; --skx: -0.6deg; --sky: -0.5deg; --scale: 1.01; }
+.cell-5 { --rot: -4deg;  --skx: 1deg;    --sky: 0.6deg;  --scale: 0.97; }
+.cell-6 { --rot: 3.4deg; --skx: -1deg;   --sky: -0.3deg; --scale: 1.03; }
 
-/* Desktop-only: lift the bottom row upward slightly */
 @media (min-width: 901px) {
-  .cell-1, .cell-2, .cell-3 { --lift: 0%; }
-  .cell-4, .cell-5, .cell-6 { --lift: -6%; } /* raise ~6%; tweak -4%..-10% */
+  .cell-1,
+  .cell-2,
+  .cell-3 {
+    --lift: 0%;
+  }
+
+  .cell-4,
+  .cell-5,
+  .cell-6 {
+    --lift: -7%;
+  }
 }
 
-/* Paper grain + edge vignette */
-.bountyboard-safe .bountyboard-grid .bounty-cell::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  border-radius: 2px;
-  background:
-    radial-gradient(rgba(0,0,0,0.035) 1px, rgba(0,0,0,0) 1px) 0 0/3px 3px,
-    linear-gradient(to bottom, rgba(255,255,255,0.05), rgba(0,0,0,0.06));
-  mix-blend-mode: multiply;
-  opacity: 0.7;
-}
-
-/* Tiny curled corner (top-right) */
-.bountyboard-safe .bountyboard-grid .bounty-cell::after {
-  content: "";
-  position: absolute;
-  top: 4%;
-  right: 4%;
-  width: 18%;
-  height: 18%;
-  pointer-events: none;
-  clip-path: polygon(0 0, 100% 0, 0 100%);
-  background:
-    linear-gradient(135deg, rgba(255,255,255,0.55), rgba(255,255,255,0) 65%),
-    radial-gradient(90% 90% at 100% 0, rgba(0,0,0,0.35), rgba(0,0,0,0) 70%);
-  mix-blend-mode: soft-light;
-  opacity: 0.5;
-  transform: rotate(2deg);
-}
-
-/* ---------- RESPONSIVE TUNING ---------- */
-
-/* Large tablets down */
+/* RESPONSIVE BOARD */
 @media (max-width: 900px) {
-  .bountyboard-board { width: min(760px, 92vw); }
-  .bountyboard-safe { padding-top: 16%; padding-bottom: 24%; }
+  .bountyboard-board {
+    width: min(760px, 92vw);
+  }
+
+  .bountyboard-safe {
+    padding-top: 16%;
+    padding-bottom: 24%;
+  }
+
   .bountyboard-safe .bountyboard-grid .bounty-cell > img {
     width: clamp(76px, 14vw, 120px);
   }
 }
 
-/* Phones */
 @media (max-width: 640px) {
-  .bountyboard-board { width: min(520px, 92vw); }
+  .bountyboard-board {
+    width: min(520px, 92vw);
+  }
+
   .bountyboard-safe {
     padding-top: 18%;
     padding-left: 9%;
     padding-right: 9%;
     padding-bottom: 26%;
   }
+
   .bountyboard-safe .bountyboard-grid .bounty-cell > img {
     width: clamp(60px, 12vw, 96px);
   }
 }
 
-/* Small phones: 2×3 grid for breathing room */
 @media (max-width: 420px) {
   .bountyboard-grid {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
   }
+
   .bountyboard-safe .bountyboard-grid .bounty-cell > img {
     width: clamp(48px, 18vw, 72px);
   }
@@ -160,106 +149,185 @@
 
 /* Accessibility */
 @media (prefers-reduced-motion: reduce) {
-  .bountyboard-safe .bountyboard-grid .bounty-cell { transition: none; }
-  .bountyboard-safe .bountyboard-grid .bounty-cell:hover { transform: translateY(var(--lift, 0)) rotate(var(--rot, 0deg)); }
+  .bountyboard-safe .bountyboard-grid .bounty-cell {
+    transition: none;
+  }
+
+  .bountyboard-safe .bountyboard-grid .bounty-cell:hover {
+    transform:
+      translateY(var(--lift, 0))
+      rotate(var(--rot, 0deg))
+      skewX(var(--skx, 0deg))
+      skewY(var(--sky, 0deg))
+      scale(var(--scale, 1));
+  }
 }
 
-/* ---------- MODAL ---------- */
+/* MODAL BACKDROP */
 .bountyboard-modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(10,10,12,0.55);
+  background: rgba(10, 10, 12, 0.55);
   display: grid;
   place-items: center;
   z-index: 50;
   padding: 16px;
+  overflow-y: auto;
 }
 
-/* ======================================================
-   DAY MODE (default): cream panel + black text
-   ====================================================== */
+/* MODAL */
 .bountyboard-modal {
-  width: min(1100px, 96vw);
-  max-height: min(88vh, 1000px);
-  background: #fdfbf7;                 /* CHANGED */
-  color: #111;                          /* CHANGED */
-  backdrop-filter: blur(8px) saturate(105%);
-  border: 1px solid rgba(0,0,0,0.10);  /* CHANGED */
-  border-radius: 18px;
+  width: min(1180px, 96vw);
+  height: min(88vh, 920px);
+  background: rgba(15, 15, 18, 0.9);
+  color: #f3f4f6;
+  backdrop-filter: blur(10px) saturate(110%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
   overflow: hidden;
   display: grid;
-  grid-template-columns: 1.1fr 1.4fr;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.22); /* CHANGED */
+  grid-template-columns: minmax(280px, 0.95fr) minmax(420px, 1.35fr);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
 }
 
 .modal-left {
-  background: rgba(0,0,0,0.05);        /* CHANGED */
+  background: rgba(0, 0, 0, 0.28);
   display: grid;
   place-items: center;
-  padding: 16px;
+  padding: 18px;
+  min-height: 0;
 }
+
 .modal-image {
   width: 100%;
   height: auto;
-  max-height: 80vh;
+  max-height: calc(88vh - 36px);
   object-fit: contain;
-  filter: drop-shadow(0 12px 22px rgba(0,0,0,0.25)); /* CHANGED */
+  filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.55));
   border-radius: 10px;
 }
 
 .modal-right {
   display: grid;
-  grid-template-rows: auto auto auto 1fr auto;
-  padding: 20px 22px;
-  gap: 10px;
-  color: #111;                          /* CHANGED */
+  grid-template-rows: auto auto auto minmax(0, 1fr) auto;
+  padding: 24px 26px;
+  gap: 12px;
+  min-height: 0;
+  overflow: hidden;
 }
 
 .modal-header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 12px;
 }
+
 .modal-header h2 {
   margin: 0;
-  font-size: clamp(18px, 2.2vw, 28px);
-  line-height: 1.2;
+  font-size: clamp(22px, 2.2vw, 34px);
+  line-height: 1.1;
   font-weight: 700;
-  color: #111;                          /* CHANGED */
+  color: #f8fafc;
 }
 
 .modal-close {
   background: transparent;
   border: none;
-  color: #111;                          /* CHANGED */
-  font-size: 28px;
+  color: #f3f4f6;
+  font-size: 34px;
   line-height: 1;
   cursor: pointer;
-  padding: 4px 8px;
+  padding: 0 6px;
   border-radius: 8px;
 }
-.modal-close:hover { background: rgba(0,0,0,0.06); } /* CHANGED */
 
-.modal-meta { display: flex; gap: 8px; flex-wrap: wrap; }
-.pill {
-  display: inline-block;
-  font-size: 12px;
-  letter-spacing: 0.3px;
-  padding: 6px 10px;
-  border-radius: 999px;
-  background: rgba(0,0,0,0.06);         /* CHANGED */
-  border: 1px solid rgba(0,0,0,0.10);   /* CHANGED */
-  color: #111;                          /* CHANGED */
+.modal-close:hover {
+  background: rgba(255, 255, 255, 0.08);
 }
 
-.modal-blurb { margin: 0; color: rgba(0,0,0,0.75); font-size: 14px; } /* CHANGED */
-.modal-details {
-  overflow: auto;
-  padding-right: 4px;
-  color: rgba(0,0,0,0.82);              /* CHANGED */
-  line-height: 1.5;
+.modal-meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pill {
+  display: inline-block;
   font-size: 14px;
+  letter-spacing: 0.2px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #f8fafc;
+}
+
+.modal-blurb {
+  margin: 0;
+  color: #e5e7eb;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.modal-details {
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 8px;
+  color: #e5e7eb;
+  line-height: 1.55;
+  font-size: 14px;
+}
+
+.modal-details::-webkit-scrollbar {
+  width: 10px;
+}
+
+.modal-details::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 999px;
+}
+
+.modal-details::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+}
+
+.modal-details::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.modal-description {
+  margin: 0 0 18px;
+  color: #dbe2ea;
+}
+
+.bounty-facts {
+  display: grid;
+  gap: 14px;
+}
+
+.fact-row {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 14px;
+  align-items: start;
+  padding: 12px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.fact-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+.fact-value {
+  color: #f1f5f9;
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 .modal-actions {
@@ -270,115 +338,106 @@
 }
 
 .btn {
-  padding: 9px 14px;
-  border-radius: 10px;
-  border: 1px solid rgba(0,0,0,0.12);   /* CHANGED */
-  background: rgba(0,0,0,0.04);         /* CHANGED */
-  color: #111;                          /* CHANGED */
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  color: #f8fafc;
   cursor: pointer;
-}
-.btn:hover { background: rgba(0,0,0,0.08); } /* CHANGED */
-
-/* Keep your primary button color (optional: swap to gold if you want) */
-.btn-primary { background: #2563eb; border-color: #1d4ed8; color: #fff; }
-.btn-primary:hover { background: #1d4ed8; }
-
-.btn-ghost { background: transparent; }
-
-/* ======================================================
-   NIGHT MODE: restore your dark glass look
-   ====================================================== */
-@media (prefers-color-scheme: dark) {
-  .bountyboard-modal {
-    background: rgba(18,18,20,0.82);
-    color: #f3f4f6;
-    border: 1px solid rgba(255,255,255,0.08);
-    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
-  }
-
-  .modal-left { background: rgba(0,0,0,0.35); }
-
-  .modal-image {
-    filter: drop-shadow(0 12px 22px rgba(0,0,0,0.6));
-  }
-
-  .modal-right { color: #f3f4f6; }
-  .modal-header h2 { color: #f3f4f6; }
-
-  .modal-close { color: #e5e7eb; }
-  .modal-close:hover { background: rgba(255,255,255,0.08); }
-
-  .pill {
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.1);
-    color: #f3f4f6;
-  }
-
-  .modal-blurb { color: #d1d5db; }
-  .modal-details { color: #e5e7eb; }
-
-  .btn {
-    border: 1px solid rgba(255,255,255,0.12);
-    background: rgba(255,255,255,0.06);
-    color: #f3f4f6;
-  }
-  .btn:hover { background: rgba(255,255,255,0.12); }
-
-  .btn-primary { background: #2563eb; border-color: #1d4ed8; color: #fff; }
-  .btn-primary:hover { background: #1d4ed8; }
+  font-size: 14px;
 }
 
-/* Stack modal on phones */
-@media (max-width: 640px) {
+.btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.btn-primary {
+  background: #2563eb;
+  border-color: #1d4ed8;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+}
+
+.btn-ghost {
+  background: transparent;
+}
+
+/* PHONE / TABLET */
+@media (max-width: 900px) {
   .bountyboard-modal {
     grid-template-columns: 1fr;
+    width: min(720px, 95vw);
+    height: auto;
     max-height: 92vh;
-  }
-  .modal-left { padding: 10px; }
-  .modal-image { max-height: 42vh; }
-  .modal-right { padding: 14px; }
-}
-
-/* Allow scrolling behind the centered modal on small screens */
-.bountyboard-modal-backdrop {
-  overflow-y: auto;            /* <-- new */
-}
-
-/* Phones */
-@media (max-width: 640px) {
-  .bountyboard-modal {
-    grid-template-columns: 1fr;           /* stack image over text */
-    width: min(560px, 94vw);              /* a bit narrower = zoomed out */
-    max-height: none;                     /* let content define height */
-    margin: 24px 0;                       /* vertical breathing room for backdrop scroll */
+    margin: 24px 0;
   }
 
-  .modal-left { padding: 10px 12px; }
+  .modal-left {
+    padding: 12px;
+  }
 
-  /* Smaller poster so it fully fits on screen */
   .modal-image {
-    max-height: 38vh;                     /* was ~42vh; shows full poster more reliably */
-    width: 100%;
-    object-fit: contain;
+    max-height: 34vh;
   }
 
   .modal-right {
-    padding: 14px; 
-    /* Make the text area scroll independently only if it exceeds space */
-    max-height: none;
+    padding: 18px;
+    min-height: 0;
+    grid-template-rows: auto auto auto minmax(0, 1fr) auto;
   }
 
-  /* Slightly smaller type on phones for better fit */
-  .modal-header h2 { font-size: clamp(16px, 5.4vw, 22px); }
-  .modal-blurb, .modal-details { font-size: 13px; line-height: 1.5; }
-  .pill { font-size: 11px; padding: 5px 8px; }
+  .modal-details {
+    min-height: 0;
+    overflow-y: auto;
+  }
+
+  .fact-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 10px 0;
+  }
+
+  .fact-label {
+    font-size: 11px;
+  }
 }
 
-/* Small phones */
+@media (max-width: 640px) {
+  .modal-header h2 {
+    font-size: clamp(18px, 6vw, 26px);
+  }
+
+  .modal-blurb,
+  .modal-description,
+  .fact-value,
+  .modal-details {
+    font-size: 13px;
+  }
+
+  .pill {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  .modal-image {
+    max-height: 36vh;
+  }
+}
+
 @media (max-width: 420px) {
-  .bountyboard-modal { width: 94vw; margin: 18px 0; }
-  .modal-image { max-height: 32vh; }      /* shrink a bit more */
-  .modal-header h2 { font-size: clamp(15px, 5.6vw, 20px); }
-  .modal-blurb, .modal-details { font-size: 12.5px; }
-  .pill { font-size: 10.5px; }
+  .bountyboard-modal {
+    width: 94vw;
+    margin: 18px 0;
+  }
+
+  .modal-right {
+    padding: 14px;
+  }
+
+  .modal-image {
+    max-height: 30vh;
+  }
 }

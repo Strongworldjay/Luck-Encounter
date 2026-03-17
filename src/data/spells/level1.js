@@ -400,7 +400,7 @@ export const LEVEL1 = [
     duration: "Concentration, up to 1 hour",
     range: "60 feet",
     area: "1 undead creature",
-    tags: ["Crooked Moon", "Control", "Charm"],
+    tags: ["Crooked Moon", "Control"],
     saveRequired: "Charisma",
     attackType: "Spell",
     damageTypes: [],
