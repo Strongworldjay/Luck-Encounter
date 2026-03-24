@@ -6,6 +6,10 @@
   padding: 16px;
 }
 
+.bountyboard-root.modal-lock {
+  touch-action: none;
+}
+
 .is-open .bountyboard-board {
   filter: blur(5px) brightness(0.95);
 }
@@ -120,30 +124,8 @@
 }
 
 @media (max-width: 640px) {
-  .bountyboard-board {
-    width: min(520px, 92vw);
-  }
-
-  .bountyboard-safe {
-    padding-top: 18%;
-    padding-left: 9%;
-    padding-right: 9%;
-    padding-bottom: 26%;
-  }
-
-  .bountyboard-safe .bountyboard-grid .bounty-cell > img {
-    width: clamp(60px, 12vw, 96px);
-  }
-}
-
-@media (max-width: 420px) {
-  .bountyboard-grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-  }
-
-  .bountyboard-safe .bountyboard-grid .bounty-cell > img {
-    width: clamp(48px, 18vw, 72px);
+  .bountyboard-root {
+    display: none;
   }
 }
 
@@ -168,11 +150,13 @@
   position: fixed;
   inset: 0;
   background: rgba(10, 10, 12, 0.55);
-  display: grid;
-  place-items: center;
   z-index: 50;
   padding: 16px;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* MODAL */
@@ -196,6 +180,7 @@
   place-items: center;
   padding: 18px;
   min-height: 0;
+  overflow: hidden;
 }
 
 .modal-image {
@@ -273,6 +258,7 @@
 .modal-details {
   min-height: 0;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   padding-right: 8px;
   color: #e5e7eb;
   line-height: 1.55;
@@ -365,79 +351,111 @@
   background: transparent;
 }
 
-/* PHONE / TABLET */
-@media (max-width: 900px) {
-  .bountyboard-modal {
-    grid-template-columns: 1fr;
-    width: min(720px, 95vw);
-    height: auto;
-    max-height: 92vh;
-    margin: 24px 0;
-  }
-
-  .modal-left {
-    padding: 12px;
-  }
-
-  .modal-image {
-    max-height: 34vh;
-  }
-
-  .modal-right {
-    padding: 18px;
-    min-height: 0;
-    grid-template-rows: auto auto auto minmax(0, 1fr) auto;
-  }
-
-  .modal-details {
-    min-height: 0;
-    overflow-y: auto;
-  }
-
-  .fact-row {
-    grid-template-columns: 1fr;
-    gap: 6px;
-    padding: 10px 0;
-  }
-
-  .fact-label {
-    font-size: 11px;
-  }
+/* MOBILE PAGED LAYOUT */
+.bountyboard-mobile {
+  display: none;
 }
 
 @media (max-width: 640px) {
-  .modal-header h2 {
-    font-size: clamp(18px, 6vw, 26px);
+  .bountyboard-mobile {
+    display: block;
+    padding: 12px;
   }
 
-  .modal-blurb,
-  .modal-description,
-  .fact-value,
-  .modal-details {
+  .bounty-mobile-card {
+    background: rgba(15, 15, 18, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.35);
+  }
+
+  .bounty-mobile-image-wrap {
+    background: rgba(0, 0, 0, 0.28);
+    padding: 12px;
+    display: grid;
+    place-items: center;
+  }
+
+  .bounty-mobile-image {
+    width: 100%;
+    max-height: 44vh;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.45));
+  }
+
+  .bounty-mobile-content {
+    padding: 16px;
+  }
+
+  .bounty-mobile-title {
+    margin: 0 0 12px;
+    font-size: clamp(22px, 7vw, 34px);
+    line-height: 1.1;
+    color: #f8fafc;
+  }
+
+  .bounty-mobile-meta {
+    margin-bottom: 14px;
+  }
+
+  .bounty-mobile-blurb {
+    margin: 0 0 14px;
+    color: #e5e7eb;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .bounty-mobile-details {
+    margin: 0 0 18px;
+    color: #dbe2ea;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .bounty-mobile-facts {
+    display: grid;
+    gap: 12px;
+  }
+
+  .bounty-mobile-facts .fact-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 12px 0;
+  }
+
+  .bounty-mobile-nav {
+    display: grid;
+    grid-template-columns: 52px 1fr 52px;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 16px 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .bounty-nav-btn {
+    height: 44px;
+    width: 44px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.05);
+    color: #f8fafc;
+    font-size: 22px;
+    cursor: pointer;
+    justify-self: center;
+  }
+
+  .bounty-nav-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  .bounty-mobile-counter {
+    text-align: center;
+    color: #cbd5e1;
     font-size: 13px;
-  }
-
-  .pill {
-    font-size: 12px;
-    padding: 8px 12px;
-  }
-
-  .modal-image {
-    max-height: 36vh;
-  }
-}
-
-@media (max-width: 420px) {
-  .bountyboard-modal {
-    width: 94vw;
-    margin: 18px 0;
-  }
-
-  .modal-right {
-    padding: 14px;
-  }
-
-  .modal-image {
-    max-height: 30vh;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
 }

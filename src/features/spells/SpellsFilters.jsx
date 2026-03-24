@@ -16,9 +16,9 @@ import React, { useState } from "react";
  *    damageTypes: [],
  *    conditions: [],
  *    tags: [],
- *    rangeLike: "",
- *    durationLike: "",
- *    areaLike: "",
+ *    ranges: [],
+ *    durations: [],
+ *    areas: [],
  *   }
  *
  * - onChange(nextValues)
@@ -33,6 +33,9 @@ import React, { useState } from "react";
  *    damages: [],
  *    conditions: [],
  *    tags: [],
+ *    ranges: [],
+ *    durations: [],
+ *    areas: [],
  *   }
  *
  * - onApply() optional
@@ -88,16 +91,10 @@ function MultiSelectDropdown({
       </div>
 
       {open && (
-        <div
-          className="spell-dropdown__panel"
-          onMouseLeave={() => setOpen(false)}
-        >
+        <div className="spell-dropdown__panel" onMouseLeave={() => setOpen(false)}>
           {options.length ? (
             options.map((item) => (
-              <label
-                key={item}
-                className="spell-dropdown__option"
-              >
+              <label key={item} className="spell-dropdown__option">
                 <input
                   type="checkbox"
                   checked={value.includes(item)}
@@ -268,10 +265,7 @@ export default function SpellsFilters({
                 style={{ cursor: "default" }}
               >
                 {["V", "S", "M"].map((c) => (
-                  <label
-                    key={c}
-                    className="spell-components__option"
-                  >
+                  <label key={c} className="spell-components__option">
                     <input
                       type="checkbox"
                       checked={!!values.components?.[c]}
@@ -354,41 +348,32 @@ export default function SpellsFilters({
               onClear={() => clearKey("tags")}
             />
 
-            <div>
-              <label>RANGE CONTAINS</label>
-              <input
-                className="spell-input"
-                placeholder="e.g. 60 feet"
-                value={values.rangeLike || ""}
-                onChange={(e) =>
-                  onChange({ ...values, rangeLike: e.target.value })
-                }
-              />
-            </div>
+            <MultiSelectDropdown
+              label="RANGE"
+              value={values.ranges || []}
+              options={options.ranges || []}
+              placeholder="Select Ranges"
+              onToggle={(val) => toggle("ranges", val)}
+              onClear={() => clearKey("ranges")}
+            />
 
-            <div>
-              <label>DURATION CONTAINS</label>
-              <input
-                className="spell-input"
-                placeholder="e.g. 1 minute"
-                value={values.durationLike || ""}
-                onChange={(e) =>
-                  onChange({ ...values, durationLike: e.target.value })
-                }
-              />
-            </div>
+            <MultiSelectDropdown
+              label="DURATION"
+              value={values.durations || []}
+              options={options.durations || []}
+              placeholder="Select Durations"
+              onToggle={(val) => toggle("durations", val)}
+              onClear={() => clearKey("durations")}
+            />
 
-            <div>
-              <label>AREA CONTAINS</label>
-              <input
-                className="spell-input"
-                placeholder="e.g. Cone"
-                value={values.areaLike || ""}
-                onChange={(e) =>
-                  onChange({ ...values, areaLike: e.target.value })
-                }
-              />
-            </div>
+            <MultiSelectDropdown
+              label="AREA"
+              value={values.areas || []}
+              options={options.areas || []}
+              placeholder="Select Areas"
+              onToggle={(val) => toggle("areas", val)}
+              onClear={() => clearKey("areas")}
+            />
           </div>
         )}
       </div>

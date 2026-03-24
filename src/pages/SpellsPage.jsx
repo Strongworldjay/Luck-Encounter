@@ -1,4 +1,3 @@
-// SpellsPage.jsx
 import React, { useEffect, useMemo, useState } from "react";
 import { ALL_SPELLS } from "../data/spells";
 import SpellsFilters from "../features/spells/SpellsFilters";
@@ -24,22 +23,29 @@ const INITIAL_FILTERS = {
   damageTypes: [],
   conditions: [],
   tags: [],
-  rangeLike: "",
-  durationLike: "",
-  areaLike: "",
+  ranges: [],
+  durations: [],
+  areas: [],
 };
 
 export default function SpellsPage() {
   const options = useMemo(() => {
     const classes = uniq(ALL_SPELLS.flatMap((s) => s.classes || []));
-    const levels = uniq(ALL_SPELLS.map((s) => Number(s.spellLevel))).sort((a, b) => a - b);
-    const schools = uniq(ALL_SPELLS.map((s) => s.school));
-    const castingTimes = uniq(ALL_SPELLS.map((s) => s.castingTime));
+    const levels = uniq(ALL_SPELLS.map((s) => Number(s.spellLevel))).sort(
+      (a, b) => a - b
+    );
+    const schools = uniq(ALL_SPELLS.map((s) => s.school).filter(Boolean));
+    const castingTimes = uniq(
+      ALL_SPELLS.map((s) => s.castingTime).filter(Boolean)
+    );
     const saves = uniq(ALL_SPELLS.map((s) => s.saveRequired).filter(Boolean));
     const attacks = uniq(ALL_SPELLS.map((s) => s.attackType).filter(Boolean));
     const damages = uniq(ALL_SPELLS.flatMap((s) => s.damageTypes || []));
     const conditions = uniq(ALL_SPELLS.flatMap((s) => s.conditions || []));
     const tags = uniq(ALL_SPELLS.flatMap((s) => s.tags || []));
+    const ranges = uniq(ALL_SPELLS.map((s) => s.range).filter(Boolean));
+    const durations = uniq(ALL_SPELLS.map((s) => s.duration).filter(Boolean));
+    const areas = uniq(ALL_SPELLS.map((s) => s.area).filter(Boolean));
 
     return {
       classes,
@@ -51,6 +57,9 @@ export default function SpellsPage() {
       damages,
       conditions,
       tags,
+      ranges,
+      durations,
+      areas,
     };
   }, []);
 
@@ -58,8 +67,6 @@ export default function SpellsPage() {
   const resetFilters = () => setFilters(INITIAL_FILTERS);
 
   const compMap = { V: "verbal", S: "somatic", M: "material" };
-  const matchText = (needle, hay) =>
-    !needle || (hay || "").toLowerCase().includes(String(needle).toLowerCase());
 
   const fullList = useMemo(() => {
     const f = filters;
@@ -68,7 +75,9 @@ export default function SpellsPage() {
 
     return ALL_SPELLS
       .filter((s) => !f.name || s.name.toLowerCase().includes(f.name.toLowerCase()))
-      .filter((s) => !f.classes.length || f.classes.some((c) => (s.classes || []).includes(c)))
+      .filter(
+        (s) => !f.classes.length || f.classes.some((c) => (s.classes || []).includes(c))
+      )
       .filter((s) => !f.levels.length || f.levels.includes(Number(s.spellLevel)))
       .filter((s) => !f.schools.length || f.schools.includes(s.school))
       .filter((s) => !f.castingTime || s.castingTime === f.castingTime)
@@ -88,13 +97,11 @@ export default function SpellsPage() {
           f.conditions.some((condition) => (s.conditions || []).includes(condition))
       )
       .filter(
-        (s) =>
-          !f.tags.length ||
-          f.tags.some((tag) => (s.tags || []).includes(tag))
+        (s) => !f.tags.length || f.tags.some((tag) => (s.tags || []).includes(tag))
       )
-      .filter((s) => matchText(f.rangeLike, s.range))
-      .filter((s) => matchText(f.durationLike, s.duration))
-      .filter((s) => matchText(f.areaLike, s.area))
+      .filter((s) => !f.ranges.length || f.ranges.includes(s.range))
+      .filter((s) => !f.durations.length || f.durations.includes(s.duration))
+      .filter((s) => !f.areas.length || f.areas.includes(s.area))
       .sort((a, b) => a.spellLevel - b.spellLevel || a.name.localeCompare(b.name));
   }, [filters]);
 
@@ -114,9 +121,20 @@ export default function SpellsPage() {
   }, [filters, viewMode]);
 
   const pagesToShow = useMemo(() => {
-    if (totalPages <= 7) return Array.from({ length: totalPages }, (_, i) => i + 1);
+    if (totalPages <= 7) {
+      return Array.from({ length: totalPages }, (_, i) => i + 1);
+    }
 
-    const set = new Set([1, 2, totalPages - 1, totalPages, safePage - 1, safePage, safePage + 1]);
+    const set = new Set([
+      1,
+      2,
+      totalPages - 1,
+      totalPages,
+      safePage - 1,
+      safePage,
+      safePage + 1,
+    ]);
+
     return Array.from(set)
       .filter((n) => n >= 1 && n <= totalPages)
       .sort((a, b) => a - b);
@@ -187,7 +205,9 @@ export default function SpellsPage() {
         />
       </div>
 
-      {activeSpell && <SpellModal spell={activeSpell} onClose={() => setActiveSpell(null)} />}
+      {activeSpell && (
+        <SpellModal spell={activeSpell} onClose={() => setActiveSpell(null)} />
+      )}
     </div>
   );
 }
@@ -209,6 +229,7 @@ function Pagination({ page, total, totalPages, pages, onPage }) {
         {n}
       </button>
     );
+
     if (i < pages.length - 1 && pages[i + 1] !== n + 1) {
       items.push(
         <span key={`dots-${n}`} className="page-ellipsis">
@@ -223,6 +244,7 @@ function Pagination({ page, total, totalPages, pages, onPage }) {
       <div className="pagination__status">
         Showing <strong>{start}-{end}</strong> of <strong>{total}</strong>
       </div>
+
       <div className="pagination__controls" role="navigation" aria-label="Pagination">
         <button
           className="page-btn"
@@ -231,7 +253,9 @@ function Pagination({ page, total, totalPages, pages, onPage }) {
         >
           ‹ Prev
         </button>
+
         {items}
+
         <button
           className="page-btn"
           onClick={() => onPage(Math.min(totalPages, page + 1))}
