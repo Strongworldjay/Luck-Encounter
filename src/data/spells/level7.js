@@ -126,7 +126,7 @@ export const LEVEL7 = [
         castingTime: "1 action",
         duration: "1 hour",
         range: "Touch",
-        area: "1 willing creature",
+        area: "1 creature",
         tags: ["Homebrew", "Buff"],
         saveRequired: "None",
         attackType: "None",
@@ -427,10 +427,10 @@ export const LEVEL7 = [
         school: "Conjuration",
         castingTime: "1 action",
         duration: "1 minute",
-        range: "60 feet",
-        area: "Up to 3 creatures",
-        tags: ["Homebrew"],
-        saveRequired: "DEX Save",
+        range: "Self",
+        area: "60-foot radius",
+        tags: ["Homebrew", "Damage"],
+        saveRequired: "Dexterity",
         attackType: "None",
         damageTypes: ["Bludgeoning"],
         conditions: [],
@@ -450,9 +450,9 @@ export const LEVEL7 = [
         castingTime: "1 action",
         duration: "10 minutes",
         range: "90 feet",
-        area: "10-foot-radius, 40-foot-high cylinder",
+        area: "10-foot-radius",
         tags: ["Player's Handbook", "Healing", "Damage"],
-        saveRequired: "DEX Save (for Searing Light)",
+        saveRequired: "Dexterity",
         attackType: "None",
         damageTypes: ["Radiant"],
         conditions: [],
@@ -460,8 +460,8 @@ export const LEVEL7 = [
         concentration: true,
         ritual: false,
         descriptionMd: "You conjure a spirit from the Upper Planes, which manifests as a pillar of light in a 10-foot-radius, 40-foot-high Cylinder centered on a point within range. For each creature you can see in the Cylinder, choose which of these lights shines on it:\n\n" +
-            "Healing Light. The target regains Hit Points equal to 4d12 plus your spellcasting ability modifier.\n\n" +
-            "Searing Light. The target makes a Dexterity saving throw, taking 6d12 Radiant damage on a failed save or half as much damage on a successful one.\n\n" +
+            "**Healing Light.** The target regains Hit Points equal to 4d12 plus your spellcasting ability modifier.\n\n" +
+            "**Searing Light.** The target makes a Dexterity saving throw, taking 6d12 Radiant damage on a failed save or half as much damage on a successful one.\n\n" +
             "Until the spell ends, Bright Light fills the Cylinder, and when you move on your turn, you can also move the Cylinder up to 30 feet.\n\n" +
             "Whenever the Cylinder moves into the space of a creature you can see and whenever a creature you can see enters the Cylinder or ends its turn there, you can bathe it in one of the lights. A creature can be affected by this spell only once per turn.",
         scalingMd: "**Using a Higher-Level Spell Slot.** Healing and damage each increase by 1d12 per slot level above 7.",
@@ -478,7 +478,7 @@ export const LEVEL7 = [
         range: "150 feet",
         area: "20-foot-radius sphere",
         tags: ["Player's Handbook","Damage"],
-        saveRequired: "DEX Save",
+        saveRequired: "Dexterity",
         attackType: "None",
         damageTypes: ["Fire"],
         conditions: [],
@@ -503,7 +503,7 @@ export const LEVEL7 = [
         range: "30 feet",
         area: "Creatures of your choice in range",
         tags: ["Player's Handbook", "Control", "Debuff", "Banishment"],
-        saveRequired: "CHA Save",
+        saveRequired: "Charisma",
         attackType: "None",
         damageTypes: [],
         conditions: ["Deafened", "Blinded", "Stunned"],
@@ -577,9 +577,9 @@ export const LEVEL7 = [
         castingTime: "1 action",
         duration: "Instantaneous",
         range: "150 feet",
-        area: "Up to ten contiguous 10-foot cubes",
+        area: "10-foot cube",
         tags: ["Player's Handbook", "Damage"],
-        saveRequired: "DEX Save",
+        saveRequired: "Dexterity",
         attackType: "None",
         damageTypes: ["Fire"],
         conditions: [],
@@ -600,9 +600,9 @@ export const LEVEL7 = [
         castingTime: "1 action",
         duration: "1 hour",
         range: "100 feet",
-        area: "Up to 20-ft cage or 10-ft solid box",
+        area: "20-foot cube",
         tags: ["Player's Handbook", "Control", "Warding"],
-        saveRequired: "CHA Save (to teleport/plane shift out)",
+        saveRequired: "Charisma",
         attackType: "None",
         damageTypes: [],
         conditions: [],
@@ -626,7 +626,7 @@ export const LEVEL7 = [
         castingTime: "10 minutes",
         duration: "10 days",
         range: "Sight",
-        area: "Up to a 1-mile square",
+        area: "1 mile",
         tags: ["Player's Handbook", "Control"],
         saveRequired: "None",
         attackType: "None",
@@ -676,7 +676,7 @@ export const LEVEL7 = [
         castingTime: "1 action",
         duration: "Instantaneous",
         range: "Touch",
-        area: "Up to 9 willing creatures (linked hands)",
+        area: "Special",
         tags: ["Player's Handbook", "Teleportation", "Banishment"],
         saveRequired: "None",
         attackType: "None",
@@ -698,8 +698,8 @@ export const LEVEL7 = [
         school: "Enchantment",
         castingTime: "1 action",
         duration: "Instantaneous",
-        range: "60 feet",
-        area: "Up to six creatures",
+        range: "Self",
+        area: "60-foot radius",
         tags: ["Player's Handbook", "Buff"],
         saveRequired: "None",
         attackType: "None",
@@ -724,7 +724,7 @@ export const LEVEL7 = [
         range: "Self",
         area: "60-foot cone",
         tags: ["Player's Handbook", "Damage", "Control"],
-        saveRequired: "DEX Save (varies by ray)",
+        saveRequired: "Dexterity",
         attackType: "None",
         damageTypes: ["Fire", "Acid", "Lightning", "Poison", "Cold"],
         conditions: ["Restrained", "Petrified", "Blinded"],
@@ -826,7 +826,7 @@ export const LEVEL7 = [
         range: "100 feet",
         area: "50-foot-radius, 100-foot-high cylinder",
         tags: ["Player's Handbook", "Control"],
-        saveRequired: "DEX Save (to grab a fixed object)",
+        saveRequired: "Dexterity",
         attackType: "None",
         damageTypes: [],
         conditions: [],
@@ -847,7 +847,7 @@ export const LEVEL7 = [
         castingTime: "1 action",
         duration: "Until dispelled",
         range: "Touch",
-        area: "1 willing creature or object",
+        area: "1 creature or object",
         tags: ["Player's Handbook", "Deception"],
         saveRequired: "None",
         attackType: "None",
@@ -963,8 +963,8 @@ export const LEVEL7 = [
         school: "Conjuration",
         castingTime: "1 action",
         duration: "Instantaneous",
-        range: "10 feet",
-        area: "Up to 9 willing creatures you can see, or 1 Large-or-smaller object",
+        range: "Self",
+        area: "10-foot radius",
         tags: ["Player's Handbook", "Teleportation"],
         saveRequired: "None",
         attackType: "None",
@@ -975,17 +975,17 @@ export const LEVEL7 = [
         ritual: false,
         descriptionMd: "This spell instantly transports you and up to eight willing creatures that you can see within range, or a single object that you can see within range, to a destination you select. If you target an object, it must be Large or smaller, and it can’t be held or carried by an unwilling creature.\n\n" +
             "The destination you choose must be known to you, and it must be on the same plane of existence as you. Your familiarity with the destination determines whether you arrive there successfully. The DM rolls 1d100 and consults the Teleportation Outcome table and the explanations after it.\n\n" +
-            "Familiarity. Here are the meanings of the terms in the table’s Familiarity column:\n\n" +
+            "**Familiarity.** Here are the meanings of the terms in the table’s Familiarity column:\n\n" +
             "“Permanent circle” means a permanent teleportation circle whose sigil sequence you know.\n" +
             "“Linked object” means you possess an object taken from the desired destination within the last six months, such as a book from a wizard’s library.\n" +
             "“Very familiar” is a place you have visited often, a place you have carefully studied, or a place you can see when you cast the spell.\n" +
             "“Seen casually” is a place you have seen more than once but with which you aren’t very familiar.\n" +
             "“Viewed once or described” is a place you have seen once, possibly using magic, or a place you know through someone else’s description, perhaps from a map.\n" +
             "“False destination” is a place that doesn’t exist. Perhaps you tried to scry an enemy’s sanctum but instead viewed an illusion, or you are attempting to teleport to a location that no longer exists.\n\n" +
-            "Mishap. The spell’s unpredictable magic results in a difficult journey. Each teleporting creature (or the target object) takes 3d10 Force damage, and the DM rerolls on the table to see where you wind up (multiple mishaps can occur, dealing damage each time).\n\n" +
-            "Similar Area. You and your group (or the target object) appear in a different area that’s visually or thematically similar to the target area. You appear in the closest similar place. If you are heading for your home laboratory, for example, you might appear in another person’s laboratory in the same city.\n\n" +
-            "Off Target. You and your group (or the target object) appear 2d12 miles away from the destination in a random direction. Roll 1d8 for the direction: 1, east; 2, southeast; 3, south; 4, southwest; 5, west; 6, northwest; 7, north; or 8, northeast.\n\n" +
-            "On Target. You and your group (or the target object) appear where you intended.",
+            "**Mishap.** The spell’s unpredictable magic results in a difficult journey. Each teleporting creature (or the target object) takes 3d10 Force damage, and the DM rerolls on the table to see where you wind up (multiple mishaps can occur, dealing damage each time).\n\n" +
+            "**Similar Area.** You and your group (or the target object) appear in a different area that’s visually or thematically similar to the target area. You appear in the closest similar place. If you are heading for your home laboratory, for example, you might appear in another person’s laboratory in the same city.\n\n" +
+            "**Off Target.** You and your group (or the target object) appear 2d12 miles away from the destination in a random direction. Roll 1d8 for the direction: 1, east; 2, southeast; 3, south; 4, southwest; 5, west; 6, northwest; 7, north; or 8, northeast.\n\n" +
+            "**On Target.** You and your group (or the target object) appear where you intended.",
         tableHtml: `
   <div class="rules-table">
     <table>
@@ -1056,7 +1056,7 @@ export const LEVEL7 = [
   castingTime: "1 action",
   duration: "1 minute",
   range: "30 feet",
-  area: "1 willing Undead",
+  area: "1 Undead",
   tags: ["Homebrew", "Creation", "Control", ],
   saveRequired: "None",
   attackType: "Spell",
@@ -1159,8 +1159,8 @@ export const LEVEL7 = [
     school: "Enchantment",
     castingTime: "1 action",
     duration: "1 minute",
-    range: "60 feet",
-    area: "Up to six Humanoids within 60 feet",
+    range: "Self",
+    area: "60-foot radius",
     tags: ["Homebrew", "Control", ],
     saveRequired: "Wisdom",
     attackType: "Spell",
@@ -1277,7 +1277,7 @@ export const LEVEL7 = [
     castingTime: "1 action",
     duration: "Instantaneous",
     range: "60 feet",
-    area: "30-foot-radius Sphere (detonates at start of your next turn)",
+    area: "30-foot sphere",
     tags: ["Homebrew", "Damage", ],
     saveRequired: "Dexterity",
     attackType: "Spell",
@@ -1307,7 +1307,7 @@ export const LEVEL7 = [
     castingTime: "1 action",
     duration: "Instantaneous",
     range: "60 feet",
-    area: "30-foot-radius Sphere (detonates at start of your next turn)",
+    area: "30-foot sphere",
     tags: ["Homebrew", "Damage", ],
     saveRequired: "Constitution",
     attackType: "Spell",
@@ -1337,7 +1337,7 @@ export const LEVEL7 = [
     castingTime: "1 action",
     duration: "Instantaneous",
     range: "60 feet",
-    area: "30-foot-radius Sphere (detonates at start of your next turn)",
+    area: "30-foot sphere",
     tags: ["Homebrew", "Damage", ],
     saveRequired: "Dexterity",
     attackType: "Spell",
