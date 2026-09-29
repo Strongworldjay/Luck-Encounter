@@ -342,7 +342,7 @@ html:not(.theme-dark) .spell-card:hover {
 /* Header row */
 .spells-filters__row {
   display: grid;
-  grid-template-columns: 1.2fr 1fr 1fr 1fr 0.8fr;
+  grid-template-columns: 1.2fr repeat(4, minmax(150px, 1fr)) .8fr;
   gap: 10px 12px;
   align-items: end;
 }
@@ -498,7 +498,7 @@ html:not(.theme-dark) .spell-card:hover {
 }
 
 /* Buttons */
-.btn-primary {
+.spells-page .btn-primary {
   height: 36px;
   padding: 0 14px;
   border-radius: 10px;
@@ -649,18 +649,18 @@ html:not(.theme-dark) .spell-card:hover {
   display: grid;
   gap: 8px;
 }
-.chiprow {
+.spells-page .chiprow {
   display:flex;
   flex-wrap: wrap;
   gap: 6px;
   align-items: center;
 }
-.chipcap {
+.spells-page .chipcap {
   font-weight: 700;
   color: var(--muted);
   margin-right: 2px;
 }
-.chip {
+.spells-page .chip {
   padding: 4px 8px;
   border-radius: 999px;
   font-size: .85rem;
@@ -668,7 +668,7 @@ html:not(.theme-dark) .spell-card:hover {
   border: 1px solid var(--border);
   color: var(--text);
 }
-.chip--hollow {
+.spells-page .chip--hollow {
   background: transparent;
   border: 1px solid color-mix(in oklch, var(--accent-color) 55%, var(--border));
   color: var(--text);
@@ -772,20 +772,20 @@ html:not(.theme-dark) .spell-card:hover {
 }
 .spell-row .icon--clickable { cursor: zoom-in; }
 
-.detailgrid {
+.spells-page .detailgrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 8px 12px;
 }
-.detailgrid .cap {
+.spells-page .detailgrid .cap {
   color: var(--muted);
   font-size: .8rem;
   font-weight: 700;
   display:block;
 }
-.detailgrid span:last-child { display:block; }
+.spells-page .detailgrid span:last-child { display:block; }
 
-.rowrule {
+.spells-page .rowrule {
   border: 0;
   border-top: 2px solid var(--accent-color);
   margin: 10px 0;
@@ -1185,4 +1185,9 @@ html:not(.theme-dark) .btn-primary {
 html:not(.theme-dark) .btn-primary:hover {
   background: color-mix(in oklch, var(--filters-accent) 52%, #fdfbf7) !important;
   box-shadow: 0 0 0 3px var(--filters-accent-soft) !important;
+}
+/* Source chips are intentionally distinct from functional spell tags. */
+.spells-page .chip--source {
+  background: color-mix(in oklch, var(--accent-warm) 18%, var(--elevated));
+  border-color: color-mix(in oklch, var(--accent-warm) 46%, var(--border));
 }

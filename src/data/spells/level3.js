@@ -1,4 +1,4 @@
-import { spellImgUrl, slugify } from "../../features/spells/utils";
+import { spellImgUrl, slugify } from "../../features/spells/utils.js";
 
 export const LEVEL3 = [
     
@@ -3575,30 +3575,6 @@ export const LEVEL3 = [
   scalingMd:
     "**Using a Higher-Level Spell Slot.** When you cast this spell using a spell slot of 4th level or higher, the initial damage and the recurring damage each increase by 1d8 for each slot level above 3.",
   imagePath: spellImgUrl("soulbomb")
-},
-{
-  slug: slugify("Storm of Souls"),
-  name: "Storm of Souls",
-  classes: ["Cleric", "Paladin", "Sorcerer", "Warlock", "Wizard"],
-  spellLevel: 4,
-  school: "Necromancy",
-  castingTime: "1 action",
-  duration: "1 minute",
-  range: "Self",
-  area: "10-foot emanation",
-  tags: ["Homebrew", "Damage", "Debuff", "Movement", "New"],
-  saveRequired: "Constitution",
-  attackType: "None",
-  damageTypes: ["Necrotic"],
-  conditions: ["Speed Halved", "Frightened Immunity"],
-  components: { verbal: true, somatic: false, material: false, materialText: "" },
-  concentration: true,
-  ritual: false,
-  descriptionMd:
-    "You summon a storm of spectral skeletons that surrounds you in a 10-foot Emanation for the duration. When a creature enters the emanation for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, the creature takes 4d8 Necrotic damage, and its Speed is halved until the end of its next turn. On a successful save, the creature takes half as much damage only.\n\n" +
-    "While inside the storm, you have Resistance to Radiant damage, your attacks against creatures in the storm ignore Resistance to Necrotic damage, and you can’t have the [condition]Frightened[/condition] condition.",
-  scalingMd: "",
-  imagePath: spellImgUrl("stormofsouls")
 },
 {
     slug: slugify("Missile Salvo"),

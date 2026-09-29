@@ -1,7 +1,7 @@
-import React, { useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { slugify, spellImgUrl, schoolImgUrl, genericSpellImgUrl } from "./utils";
 
-const levelLabel = (lvl) => (lvl === 0 ? "Cantrip" : `${lvl}${[,"st","nd","rd"][lvl]||"th"}-level`);
+const levelLabel = (lvl) => (lvl === 0 ? "Cantrip" : `${lvl}${[null,"st","nd","rd"][lvl]||"th"}-level`);
 
 const mdInlineToHtml = (md) =>
   String(md ?? "")
@@ -92,6 +92,8 @@ export default function SpellRow({ spell, onOpen }) {
           <div><span className="cap">School</span><span>{spell.school || "—"}</span></div>
           <div><span className="cap">Attack/Save</span><span>{spell.attackType || "—"}{spell.saveRequired ? ` / ${spell.saveRequired}` : ""}</span></div>
           <div><span className="cap">Damage/Effect</span><span>{(spell.damageTypes || []).join(", ") || "—"}</span></div>
+          <div><span className="cap">Sources</span><span>{(spell.sources || []).join(", ") || "—"}</span></div>
+          <div><span className="cap">Tags</span><span>{(spell.tags || []).join(", ") || "—"}</span></div>
         </div>
 
         <hr className="rowrule" />

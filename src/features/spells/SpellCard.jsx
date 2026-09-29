@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useRef } from "react";
+import { useMemo, useState, useRef } from "react";
 import { slugify, spellImgUrl, schoolImgUrl, genericSpellImgUrl } from "./utils";
 
 const levelLabel = (lvl) => {

@@ -1,0 +1,169 @@
+/* Spin duration kept in sync with SPIN_MS in JSX (4200ms) */
+.wheel-rotor {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  border: 8px solid rgba(255,255,255,0.15);
+  transition: transform 4.2s cubic-bezier(0.19, 1, 0.22, 1);
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.35));
+  overflow: hidden;
+  background: radial-gradient(transparent 60%, rgba(0,0,0,0.1) 100%);
+}
+
+/* --- keep the rest of your previous RandomWheel.css as-is --- */
+
+.wheel-root {
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  gap: 16px;
+}
+
+.wheel-panel {
+  width: min(720px, 92vw);
+  background: rgba(15, 18, 22, 0.6);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.35);
+  backdrop-filter: blur(6px);
+  color: #e8e8e8;
+}
+
+.luck-readout {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.luck-readout strong { font-size: 1.25rem; }
+.luck-readout small { opacity: 0.7; }
+
+.inline-luck {
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.04);
+  border-radius: 12px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.inline-luck .switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+.inline-luck input[type="number"] {
+  width: 110px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(0,0,0,0.25);
+  color: #fff;
+}
+
+.luck-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
+.total-luck-inline { display: inline-flex; align-items: baseline; gap: 8px; }
+
+.wheel-dungeon-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.wheel-dungeon-buttons button {
+  padding: 6px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+  cursor: pointer;
+}
+.wheel-dungeon-buttons button.selected {
+  background: rgba(255,215,64,0.18);
+  border-color: rgba(255,215,64,0.6);
+}
+.using-app-luck { opacity: 0.9; }
+
+.wheel-stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  margin: 10px auto 14px;
+  width: 420px;
+  height: 420px;
+}
+
+.wheel-pointer {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0; height: 0;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-bottom: 24px solid #ffd54f;
+  z-index: 5;
+  filter: drop-shadow(0 2px 0 rgba(0,0,0,0.35));
+}
+
+.wheel-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+.wheel-ring { stroke: rgba(255,255,255,0.18); stroke-width: 6; }
+.divider-line { stroke: rgba(255,255,255,0.35); stroke-width: 2; shape-rendering: geometricPrecision; }
+
+.label-text {
+  fill: #ffffff;
+  paint-order: stroke;
+  stroke: rgba(0,0,0,0.8);
+  stroke-width: 3px;
+  letter-spacing: 0.2px;
+  font-weight: 800;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.35);
+}
+
+.wheel-btn {
+  margin: 0 auto 8px;
+  display: block;
+  padding: 10px 18px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.08s ease, background 0.2s ease, opacity 0.2s ease;
+}
+.wheel-btn:hover { transform: translateY(-1px); }
+.wheel-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.wheel-result {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.wheel-legend summary { cursor: pointer; opacity: 0.9; margin-top: 8px; }
+.wheel-legend ul {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 6px 12px;
+  margin-top: 8px;
+}
+.legend-swatch {
+  display: inline-block;
+  width: 10px; height: 10px;
+  border-radius: 3px;
+  margin-right: 6px;
+  border: 1px solid rgba(0,0,0,0.4);
+  vertical-align: middle;
+}

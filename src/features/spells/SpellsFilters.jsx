@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 /**
  * props:
@@ -7,6 +7,7 @@ import React, { useState } from "react";
  *    classes: [],
  *    levels: [],
  *    schools: [],
+ *    sources: [],
  *    castingTime: "",
  *    saveRequired: "",
  *    attackType: "",
@@ -27,6 +28,7 @@ import React, { useState } from "react";
  *    classes: [],
  *    levels: [],
  *    schools: [],
+ *    sources: [],
  *    castingTimes: [],
  *    saves: [],
  *    attacks: [],
@@ -184,6 +186,15 @@ export default function SpellsFilters({
           placeholder="Select Schools"
           onToggle={(val) => toggle("schools", val)}
           onClear={() => clearKey("schools")}
+        />
+
+        <MultiSelectDropdown
+          label="SOURCE"
+          value={values.sources || []}
+          options={options.sources || []}
+          placeholder="Select Sources"
+          onToggle={(val) => toggle("sources", val)}
+          onClear={() => clearKey("sources")}
         />
 
         <div>

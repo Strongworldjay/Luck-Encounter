@@ -150,7 +150,7 @@ export const racialFeats = [
             {
                 title: "Raging Inferno",
                 text:
-                    "You learn the Control Flames cantrip and the [spells]burning hands[/spells] spell. You may cast this spell a number of times equal to your Constitution modifier, regaining the ability to cast this spell after completing a long rest. Constitution is your spellcasting modifier for these spells.",
+                    "You learn the Control Flames cantrip and the burning hands spell. You may cast this spell a number of times equal to your Constitution modifier, regaining the ability to cast this spell after completing a long rest. Constitution is your spellcasting modifier for these spells.",
             },
             {
                 title: "Fire Within",
@@ -220,7 +220,7 @@ export const racialFeats = [
             {
                 title: "One with Animals",
                 text:
-                    "You learn the [spells]speak with animals[/spells] spell and can cast it at will, without expending a spell slot. You also learn [spells]animal friendship[/spells] and [spells]beast sense[/spells], each of which you can cast once without expending a spell slot. You regain the ability to cast these two spells in this way when you finish a long rest.",
+                    "You learn the speak with animals spell and can cast it at will, without expending a spell slot. You also learn animal friendship and beast sense, each of which you can cast once without expending a spell slot. You regain the ability to cast these two spells in this way when you finish a long rest.",
             },
         ],
     },
@@ -456,7 +456,7 @@ export const racialFeats = [
             {
                 title: "Twilight Magics",
                 text:
-                    "You learn the [spells]detect magic[/spells] spell and can cast it at will, without expending a spell slot. You also learn [spells]levitate[/spells] (self only) and [spells]dispel magic[/spells], each of which you can cast once without expending a spell slot. You regain the ability to cast those two spells in this way when you finish a long rest.",
+                    "You learn the detect magic spell and can cast it at will, without expending a spell slot. You also learn levitate (self only) and dispel magic, each of which you can cast once without expending a spell slot. You regain the ability to cast those two spells in this way when you finish a long rest.",
             },
         ],
     },
@@ -499,7 +499,7 @@ export const racialFeats = [
             {
                 title: "Psionic Mobility",
                 text:
-                    "You can cast [spells]jump[/spells] and [spells]levitate[/spells] (self only) without a spell slot or material components once per long rest.",
+                    "You can cast jump and levitate (self only) without a spell slot or material components once per long rest.",
             },
         ],
     },
@@ -703,7 +703,7 @@ export const racialFeats = [
             {
                 title: "Herdspeaker",
                 text:
-                    "You gain proficiency in Animal Handling. If you already have proficiency in Animal Handling, you gain expertise in it. You can also cast [spells]animal friendship[/spells] once per long rest.",
+                    "You gain proficiency in Animal Handling. If you already have proficiency in Animal Handling, you gain expertise in it. You can also cast animal friendship once per long rest.",
             },
         ],
     },

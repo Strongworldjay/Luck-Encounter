@@ -1,46 +1,50 @@
-# Luck Encounter Project
-## Overview
-Luck Encounter Project is a fantasy-themed web application that provides a structured item database organized by type and rarity. It’s built with React and leverages modern libraries like react-router-dom for client-side routing and axios for API requests. The project includes an itemdata.js file that holds detailed lists of various items (e.g., Robe, Breastplate, Half Plate) organized by rarity, making it easy to manage and extend.
+# Luck Encounter — Refined Project
 
-## Features
-- Item Database: Maintain and manage items grouped by type and rarity.
-- Client-Side Routing: Navigate seamlessly through different sections of the app with react-router-dom.
-- HTTP Requests: Handle API calls and data fetching with axios.
-- Modular Structure: Easily extendable codebase with clear separation of concerns.
-## Prerequisites
-Node.js and npm: Make sure you have Node.js installed. You can download it from nodejs.org.
-Installation
-Clone the Repository:
+A cleaned, structured, production-buildable version of the Luck Encounter React application.
 
-```
-Copy code git clone https://github.com/yourusername/luck-encounter-project.git
-cd luck-encounter-project
-```
-### Install Dependencies:
+## Run locally
 
-Run the following commands to install the necessary packages:
-
-```
-Copy code
+```bash
 npm install
-npm install react-router-dom
-npm install axios
-```
-Note: If your package.json already lists these dependencies, a single npm install should suffice.
-
-### Running the Application
-To start the development server, run:
-
-```
-Copy code
+npm run check
 npm run dev
 ```
-This command launches the application in development mode. Open http://localhost:5173 in your browser to view the project.
 
-## License
-This project is open-source and available under the MIT License.
+`npm run check` runs linting and a production build. `npm run audit:data` reviews the item catalog for repeated weighted entries and malformed pools.
 
-## Acknowledgements
-- react-router-dom
-- axios
-- Special thanks to the open-source community for their contributions and support.
+## Artwork
+
+The uploaded source did not include the original artwork folders. Tiny placeholders are included so the project builds immediately. Replace them with the original artwork while preserving filenames. See [`docs/ASSETS_REQUIRED.md`](docs/ASSETS_REQUIRED.md).
+
+## Project layout
+
+```text
+src/
+  components/       Shared interface pieces
+  config/           Navigation and reward configuration
+  data/             Large item, feat, and spell catalogs
+  features/         Self-contained application tools
+  hooks/            Shared browser behavior
+  legacy/           Archived code not mounted by the live app
+  styles/           Global tokens and root layout only
+  utils/            Shared item helpers
+```
+
+## Important design choices
+
+- Feature tools are lazy-loaded so the homepage is not forced to download every spell, feat, and item catalog immediately.
+- Spell catalogs are split into cacheable level chunks at build time.
+- Feature CSS is scoped to prevent unrelated pages from restyling each other.
+- Duplicate entries inside the item catalog are preserved because several appear to be intentional probability weighting. Run `npm run audit:data` before removing them.
+- `src/legacy/BoostArts.jsx` is archived rather than mounted because it was not connected to the active application and depended on a missing stylesheet.
+
+## Scripts
+
+```bash
+npm run dev          # Start Vite development server
+npm run lint         # Run ESLint
+npm run build        # Create production build
+npm run check        # Lint, then build
+npm run audit:data   # Review item pool duplicates and malformed entries
+npm run preview      # Serve the production build locally
+```

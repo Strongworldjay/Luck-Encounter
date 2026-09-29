@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { slugify, spellImgUrl, schoolImgUrl, genericSpellImgUrl } from "./utils";
 
 const levelLabel = (lvl) =>
-  lvl === 0 ? "Cantrip" : `${lvl}${[, "st", "nd", "rd"][lvl] || "th"}-level`;
+  lvl === 0 ? "Cantrip" : `${lvl}${[null, "st", "nd", "rd"][lvl] || "th"}-level`;
 
 // Tiny inline md (**bold**, __bold__, and newlines)
 const mdInlineToHtml = (md) =>
@@ -174,9 +174,19 @@ export default function SpellModal({ spell, onClose }) {
               />
             )}
 
-            {/* Tags & availability */}
-            {(spell.tags?.length || spell.classes?.length) && (
+            {/* Sources, tags, and availability */}
+            {(spell.sources?.length || spell.tags?.length || spell.classes?.length) && (
               <div className="spell-modal__chips">
+                {spell.sources?.length ? (
+                  <div className="chiprow">
+                    <span className="chipcap">Sources:</span>
+                    {spell.sources.map((source) => (
+                      <span key={source} className="chip chip--source">
+                        {source}
+                      </span>
+                    ))}
+                  </div>
+                ) : null}
                 {spell.tags?.length ? (
                   <div className="chiprow">
                     <span className="chipcap">Tags:</span>

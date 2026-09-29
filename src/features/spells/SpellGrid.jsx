@@ -1,8 +1,8 @@
-import React, { useMemo, useState } from "react";
-import SpellCard from "./SpellCard";
-import SpellModal from "./SpellModal";
-import SpellsFilters from "./SpellsFilters";
-import { ALL_SPELLS } from "../../data/spells";
+import { useMemo, useState } from "react";
+import SpellCard from "./SpellCard.jsx";
+import SpellModal from "./SpellModal.jsx";
+import SpellsFilters from "./SpellsFilters.jsx";
+import { ALL_SPELLS } from "../../data/spells/index.js";
 import "./spells.css";
 
 const INITIAL_FILTERS = {

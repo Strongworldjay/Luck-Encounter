@@ -1,0 +1,56 @@
+
+> luck-encounter@0.0.0 audit:data
+> node scripts/audit-data.mjs
+
+Item categories: 46
+Rarity/subtype pools: 271
+Usable weighted entries: 5581
+Repeated weighted entries: 204
+Review notes: 45
+
+Review notes:
+- MediumArmor > Uncommon repeats “Mariner's Breastplate” 2 times. Confirm whether this is intentional weighting.
+- MediumArmor > Uncommon repeats “Fey-Touched Half Plate” 2 times. Confirm whether this is intentional weighting.
+- Staff > VeryRare repeats “Phantom Fire Staff” 2 times. Confirm whether this is intentional weighting.
+- Grimoire > Legendary repeats “[Redacted]” 4 times. Confirm whether this is intentional weighting.
+- Grimoire > Unique repeats “[Redacted]” 4 times. Confirm whether this is intentional weighting.
+- Gems > Rare repeats “Oathstone of the Halberd” 2 times. Confirm whether this is intentional weighting.
+- Gems > Legendary repeats “Shard Solitaire (Black Sapphire)” 2 times. Confirm whether this is intentional weighting.
+- Shield > VeryRare repeats “Infernal Aegis Shield” 2 times. Confirm whether this is intentional weighting.
+- WeaponArt > Uncommon repeats “Folkvangr D” 3 times. Confirm whether this is intentional weighting.
+- WeaponArt > Rare repeats “Folkvangr C” 3 times. Confirm whether this is intentional weighting.
+- WeaponArt > VeryRare repeats “Folkvangr B” 3 times. Confirm whether this is intentional weighting.
+- WeaponArt > Legendary repeats “Folkvangr A” 3 times. Confirm whether this is intentional weighting.
+- WeaponArt > Unique repeats “Folkvangr S” 3 times. Confirm whether this is intentional weighting.
+- PassiveArt > Rare repeats “Poison Resistance” 2 times. Confirm whether this is intentional weighting.
+- PassiveArt > VeryRare repeats “Fleetfoot B” 2 times. Confirm whether this is intentional weighting.
+- PassiveArt > VeryRare repeats “Folkvangr B” 2 times. Confirm whether this is intentional weighting.
+- PassiveArt > Legendary repeats “Fleetfoot A” 2 times. Confirm whether this is intentional weighting.
+- PassiveArt > Legendary repeats “Folkvangr A” 2 times. Confirm whether this is intentional weighting.
+- PassiveArt > Unique repeats “Fleetfoot S” 2 times. Confirm whether this is intentional weighting.
+- PassiveArt > Unique repeats “Folkvangr S” 2 times. Confirm whether this is intentional weighting.
+- BoostArt > Common repeats “Primal Saurian Transfiguration: Raptor F” 8 times. Confirm whether this is intentional weighting.
+- BoostArt > Common repeats “Primal Saurian Transfiguration: Tyrant F” 11 times. Confirm whether this is intentional weighting.
+- BoostArt > Common repeats “Primal Saurian Transfiguration: Triceratops F” 12 times. Confirm whether this is intentional weighting.
+- BoostArt > Uncommon repeats “Weight of Burden D” 2 times. Confirm whether this is intentional weighting.
+- BoostArt > Uncommon repeats “Trade-Off D” 2 times. Confirm whether this is intentional weighting.
+- BoostArt > Uncommon repeats “Primal Saurian Transfiguration: Raptor D” 9 times. Confirm whether this is intentional weighting.
+- BoostArt > Uncommon repeats “Primal Saurian Transfiguration: Tyrant D” 10 times. Confirm whether this is intentional weighting.
+- BoostArt > Uncommon repeats “Primal Saurian Transfiguration: Triceratops D” 11 times. Confirm whether this is intentional weighting.
+- BoostArt > Rare repeats “Folkvangr C” 2 times. Confirm whether this is intentional weighting.
+- BoostArt > Rare repeats “Primal Saurian Transfiguration: Raptor C” 9 times. Confirm whether this is intentional weighting.
+- BoostArt > Rare repeats “Primal Saurian Transfiguration: Tyrant C” 11 times. Confirm whether this is intentional weighting.
+- BoostArt > Rare repeats “Primal Saurian Transfiguration: Triceratops C” 11 times. Confirm whether this is intentional weighting.
+- BoostArt > VeryRare repeats “Trade-Off B” 2 times. Confirm whether this is intentional weighting.
+- BoostArt > VeryRare repeats “Folkvangr B” 2 times. Confirm whether this is intentional weighting.
+- BoostArt > VeryRare repeats “Primal Saurian Transfiguration: Raptor B” 10 times. Confirm whether this is intentional weighting.
+- BoostArt > VeryRare repeats “Primal Saurian Transfiguration: Tyrant B” 12 times. Confirm whether this is intentional weighting.
+- BoostArt > VeryRare repeats “Primal Saurian Transfiguration: Triceratops B” 11 times. Confirm whether this is intentional weighting.
+- BoostArt > Legendary repeats “Trade-Off A” 2 times. Confirm whether this is intentional weighting.
+- BoostArt > Legendary repeats “Primal Saurian Transfiguration: Raptor A” 10 times. Confirm whether this is intentional weighting.
+- BoostArt > Legendary repeats “Primal Saurian Transfiguration: Tyrant A” 12 times. Confirm whether this is intentional weighting.
+- BoostArt > Legendary repeats “Primal Saurian Transfiguration: Triceratops A” 10 times. Confirm whether this is intentional weighting.
+- BoostArt > Unique repeats “Trade-Off S” 2 times. Confirm whether this is intentional weighting.
+- BoostArt > Unique repeats “Primal Saurian Transfiguration: Raptor S” 8 times. Confirm whether this is intentional weighting.
+- BoostArt > Unique repeats “Primal Saurian Transfiguration: Tyrant S” 10 times. Confirm whether this is intentional weighting.
+- BoostArt > Unique repeats “Primal Saurian Transfiguration: Triceratops S” 11 times. Confirm whether this is intentional weighting.

@@ -1,0 +1,85 @@
+SPELL METADATA AUDIT
+====================
+Spells: 987
+Normalized sources: 22
+Functional tags: 49
+Spells without tags: 0
+Spells without sources: 0
+Source labels leaking into tags: 0
+
+SOURCES
+-------
+   2  Acquisitions Incorporated
+  36  Crooked Moon
+   1  Dungeons of Drakkenheim
+  21  Elemental Evil Player's Companion
+   3  Explorer's Guide to Wildemount
+   4  Fizban's Treasury of Dragons
+  15  Forgotten Realms
+  67  Grim Hollow
+  21  Heliana's Guide to Monster Hunting
+ 330  Homebrew
+   2  Icewind Dale
+   5  Illrigger Revised
+   1  Lost Laboratory of Kwalish
+  17  Obojima
+ 406  Player's Handbook
+   1  Spelljammer
+   4  Strixhaven
+   2  Sword Coast Adventurer's Guide
+   5  Tasha's Cauldron of Everything
+   3  The Book of Many Things
+   6  Valda's Spire of Secrets
+  35  Xanathar's Guide to Everything
+
+TOP FUNCTIONAL TAGS
+-------------------
+ 867  Area of Effect
+ 514  Damage
+ 467  Control
+ 462  Saving Throw
+ 428  Concentration
+ 416  Attack Roll
+ 249  Buff
+ 190  Creation
+ 144  Illumination
+ 142  Debuff
+ 133  Defense
+  84  Movement
+  80  Reaction
+  74  Deception
+  71  Healing
+  70  Utility
+  68  New
+  62  Summoning
+  56  Warding
+  49  Teleportation
+  47  Ritual
+  45  Detection
+  35  Shapechanging
+  29  Sangromancy
+  24  Social
+  24  Communication
+  16  Banishment
+  14  Anti-Magic
+   8  Foreknowledge
+   8  Mobility
+   7  Exploration
+   7  Restoration
+   5  Sustain
+   5  Trap
+   5  Negation
+   4  Biomancy
+   3  Dunamancy
+   2  Chronomancy
+   2  Support
+   2  Rest
+   1  Flavor
+   1  Foresight
+   1  Knowledge
+   1  Stealth
+   1  Healing (Constructs/Undead)
+   1  Scrying
+   1  Information
+   1  Protection
+   1  Invisible

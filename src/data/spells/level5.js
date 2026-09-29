@@ -1,4 +1,4 @@
-import { spellImgUrl, slugify } from "../../features/spells/utils";
+import { spellImgUrl, slugify } from "../../features/spells/utils.js";
 
 export const LEVEL5 = [
     {

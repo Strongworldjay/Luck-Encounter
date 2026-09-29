@@ -1,4 +1,4 @@
-import { spellImgUrl, slugify } from "../../features/spells/utils";
+import { spellImgUrl, slugify } from "../../features/spells/utils.js";
 
 export const LEVEL2 = [
     {
@@ -4444,7 +4444,7 @@ export const LEVEL2 = [
         duration: "1 minute",
         range: "Self",
         area: "10-foot cone",
-        tags: ["Damage", ],
+        tags: ["Damage", "Homebrew"],
         saveRequired: "Dexterity",
         attackType: "Spell",
         damageTypes: ["Lightning"],

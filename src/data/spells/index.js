@@ -1,15 +1,16 @@
-import { CANTRIPS } from "./cantrips";
-import { LEVEL1 } from "./level1";
-import { LEVEL2 } from "./level2";
-import { LEVEL3 } from "./level3";
-import { LEVEL4 } from "./level4";
-import { LEVEL5 } from "./level5";
-import { LEVEL6 } from "./level6";
-import { LEVEL7 } from "./level7";
-import { LEVEL8 } from "./level8";
-import { LEVEL9 } from "./level9";
+import { CANTRIPS } from './cantrips.js';
+import { LEVEL1 } from './level1.js';
+import { LEVEL2 } from './level2.js';
+import { LEVEL3 } from './level3.js';
+import { LEVEL4 } from './level4.js';
+import { LEVEL5 } from './level5.js';
+import { LEVEL6 } from './level6.js';
+import { LEVEL7 } from './level7.js';
+import { LEVEL8 } from './level8.js';
+import { LEVEL9 } from './level9.js';
+import { normalizeSpellMetadata } from './metadata.js';
 
-export const SPELLS_BY_LEVEL = {
+const RAW_SPELLS_BY_LEVEL = {
   0: CANTRIPS,
   1: LEVEL1,
   2: LEVEL2,
@@ -21,5 +22,12 @@ export const SPELLS_BY_LEVEL = {
   8: LEVEL8,
   9: LEVEL9,
 };
+
+export const SPELLS_BY_LEVEL = Object.fromEntries(
+  Object.entries(RAW_SPELLS_BY_LEVEL).map(([level, spells]) => [
+    level,
+    spells.map(normalizeSpellMetadata),
+  ])
+);
 
 export const ALL_SPELLS = Object.values(SPELLS_BY_LEVEL).flat();

@@ -1,4 +1,4 @@
-import { spellImgUrl, slugify } from "../../features/spells/utils";
+import { spellImgUrl, slugify } from "../../features/spells/utils.js";
 
 export const LEVEL1 = [
 
@@ -2248,7 +2248,7 @@ export const LEVEL1 = [
     duration: "Instantaneous",
     range: "Self",
     area: "5-foot emanation",
-    tags: ["Damage"],
+    tags: ["Damage", "Homebrew"],
     saveRequired: "CON",
     attackType: "Spell",
     damageTypes: ["Force"],
@@ -3154,7 +3154,7 @@ export const LEVEL1 = [
   {
     slug: slugify("Shield"),
     name: "Shield",
-    classes: ["Sorcerer", "Wizard", , "Illrigger"],
+    classes: ["Sorcerer", "Wizard", "Illrigger"],
     spellLevel: 1,
     school: "Abjuration",
     castingTime: "1 reaction",
