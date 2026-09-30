@@ -1,0 +1,11 @@
+.tag-select { min-width:0; padding:0; margin:20px 0 0; border:0; }
+.tag-select legend { font-weight:750; margin-bottom:10px; }.tag-select small { color:var(--muted); font-weight:400; }
+.tag-select > input { width:100%; margin-bottom:10px; }
+.tag-select__options { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:6px; max-height:220px; overflow:auto; overscroll-behavior:contain; }
+.tag-select__options label { display:flex; align-items:center; gap:8px; padding:9px; background:var(--elevated); border:1px solid var(--border); border-radius:8px; cursor:pointer; font-size:.86rem; }
+.tag-select__options input { width:17px; height:17px; flex-shrink:0; accent-color:var(--accent-color); }
+.tag-select__options label:has(:checked) { border-color:var(--accent-color); color:var(--primary); }
+.tag-select__chosen { display:flex; flex-wrap:wrap; gap:5px; margin-bottom:10px; }
+.tag-select__chosen button { border:1px solid var(--border); border-radius:6px; padding:5px 8px; background:var(--elevated); color:var(--primary); cursor:pointer; }
+.filter-help { margin:0; color:var(--muted); font-size:.86rem; line-height:1.6; }
+.filter-summary { display:flex; align-items:center; justify-content:space-between; gap:12px; font-size:.8rem; line-height:1.5; padding:8px 0; color:var(--muted); }.filter-summary span { overflow-wrap:anywhere; }

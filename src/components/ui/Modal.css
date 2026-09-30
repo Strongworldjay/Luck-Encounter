@@ -1,0 +1,8 @@
+.ui-dialog { width:min(540px,calc(100% - 24px)); max-height:calc(100dvh - 32px); margin:auto; padding:0; border:1px solid var(--border); border-radius:18px; color:var(--text); background:var(--surface); box-shadow:var(--shadow); overflow:hidden; }
+.ui-dialog--wide { width:min(820px,calc(100% - 24px)); }
+.ui-dialog::backdrop { background:rgb(0 14 20 / .65); backdrop-filter:blur(4px); }
+.ui-dialog__panel { max-height:calc(100dvh - 34px); display:flex; flex-direction:column; }
+.ui-dialog header,.ui-dialog footer { flex-shrink:0; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; padding:16px 20px; background:var(--surface); }
+.ui-dialog header { border-bottom:1px solid var(--border); }.ui-dialog h2 { margin:0; font-size:1.2rem; }
+.ui-dialog__body { min-height:0; overflow:auto; overscroll-behavior:contain; padding:20px; }
+.ui-dialog footer { border-top:1px solid var(--border); padding-bottom:max(16px,env(safe-area-inset-bottom)); }

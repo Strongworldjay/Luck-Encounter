@@ -1,0 +1,24 @@
+/* Shared reference layout, restricted to the spell and feat pages. */
+:where(.spells-page,.feats-page) { max-width:1240px; margin:0 auto; padding:24px clamp(16px,4vw,36px) calc(28px + var(--bottom-safe)); }
+:where(.spells-page,.feats-page) :is(.sub,.cap,.chipcap) { color:var(--muted); font-size:.85rem; }
+:where(.spells-page,.feats-page) :is(.title,.namewrap .title) { font-weight:700; }
+:where(.spells-page,.feats-page) .cell { min-width:0; overflow-wrap:anywhere; }
+:where(.spells-page,.feats-page) :is(.detailgrid,.spell-modal__infobar,.feat-modal__infobar) { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:16px; padding:16px 0; }
+:where(.spells-page,.feats-page) .detailgrid>div { display:grid; gap:4px; }
+:where(.spells-page,.feats-page) :is(.desc,.rowdesc,.spell-modal__desc,.feat-modal__desc,.spell-modal__sub,.feat-modal__benefit,.feat-modal__sub) { line-height:1.75; overflow-wrap:anywhere; }
+:where(.spells-page,.feats-page) :is(.rowrule,.spell-modal__rule,.feat-modal__rule) { border:0; border-top:1px solid var(--border); margin:16px 0; }
+:where(.spells-page,.feats-page) :is(.icon,.thumb) { width:44px; height:44px; object-fit:contain; flex:none; border-radius:8px; }
+:where(.spells-page,.feats-page) .icon { padding:2px; border:1px solid var(--border); background:var(--elevated); cursor:pointer; }
+:where(.spells-page,.feats-page) .icon img { width:100%; height:100%; object-fit:contain; }
+:where(.spells-page,.feats-page) .chiprow { display:flex; align-items:center; flex-wrap:wrap; gap:6px; margin-top:12px; }
+:where(.spells-page,.feats-page) .chip { padding:4px 8px; background:var(--elevated); border:1px solid var(--border); border-radius:20px; font-size:.8rem; }
+:where(.spells-page,.feats-page) :is(.spell-modal__body,.feat-modal__body) { display:grid; grid-template-columns:minmax(100px,200px) minmax(0,1fr); gap:24px; }
+:where(.spells-page,.feats-page) :is(.spell-modal__art,.feat-modal__art) { width:100%; height:auto; object-fit:contain; border-radius:16px; }
+.feats-page .feat-modal__artwrap:empty { display:none; }
+.feats-page .feat-modal__body:has(.feat-modal__artwrap:empty) { display:block; }
+:where(.spells-page,.feats-page) :is(.spell-modal__subtitle,.feat-modal__subtitle) { color:var(--muted); margin-top:0; }
+:where(.spells-page,.feats-page) :is(.refblock,.statblock) { margin:16px 0; padding:16px; border:1px solid var(--border); border-radius:12px; background:var(--elevated); max-width:100%; overflow:auto; }
+:where(.spells-page,.feats-page) :is(.refblock,.statblock) table { width:100%; border-collapse:collapse; }
+:where(.spells-page,.feats-page) :is(.refblock,.statblock) :is(td,th) { padding:8px; border:1px solid var(--border); text-align:left; }
+:where(.spells-page,.feats-page) :is(.refblock__title,.statblock h3) { font-weight:700; }
+@media(max-width:620px) { :where(.spells-page,.feats-page) :is(.spell-modal__body,.feat-modal__body) { grid-template-columns:1fr; } :where(.spells-page,.feats-page) :is(.spell-modal__artwrap,.feat-modal__artwrap) { max-width:140px; margin:auto; } }

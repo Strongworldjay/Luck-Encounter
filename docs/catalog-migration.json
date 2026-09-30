@@ -1,0 +1,168 @@
+{
+  "sourceEntries": 5581,
+  "invalid": 0,
+  "duplicates": 204,
+  "explicitWeightOccurrences": 175,
+  "removedDuplicates": [
+    {
+      "name": "Mariner's Breastplate",
+      "category": "MediumArmor",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Fey-Touched Half Plate",
+      "category": "MediumArmor",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Phantom Fire Staff",
+      "category": "Staff",
+      "rarity": "VeryRare"
+    },
+    {
+      "name": "[Redacted]",
+      "category": "Grimoire",
+      "rarity": "Legendary"
+    },
+    {
+      "name": "[Redacted]",
+      "category": "Grimoire",
+      "rarity": "Legendary"
+    },
+    {
+      "name": "[Redacted]",
+      "category": "Grimoire",
+      "rarity": "Legendary"
+    },
+    {
+      "name": "[Redacted]",
+      "category": "Grimoire",
+      "rarity": "Unique"
+    },
+    {
+      "name": "[Redacted]",
+      "category": "Grimoire",
+      "rarity": "Unique"
+    },
+    {
+      "name": "[Redacted]",
+      "category": "Grimoire",
+      "rarity": "Unique"
+    },
+    {
+      "name": "Oathstone of the Halberd",
+      "category": "Gems",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Shard Solitaire (Black Sapphire)",
+      "category": "Gems",
+      "rarity": "Legendary"
+    },
+    {
+      "name": "Infernal Aegis Shield",
+      "category": "Shield",
+      "rarity": "VeryRare"
+    },
+    {
+      "name": "Folkvangr D",
+      "category": "WeaponArt",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Folkvangr D",
+      "category": "WeaponArt",
+      "rarity": "Uncommon"
+    },
+    {
+      "name": "Folkvangr C",
+      "category": "WeaponArt",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Folkvangr C",
+      "category": "WeaponArt",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Folkvangr B",
+      "category": "WeaponArt",
+      "rarity": "VeryRare"
+    },
+    {
+      "name": "Folkvangr B",
+      "category": "WeaponArt",
+      "rarity": "VeryRare"
+    },
+    {
+      "name": "Folkvangr A",
+      "category": "WeaponArt",
+      "rarity": "Legendary"
+    },
+    {
+      "name": "Folkvangr A",
+      "category": "WeaponArt",
+      "rarity": "Legendary"
+    },
+    {
+      "name": "Folkvangr S",
+      "category": "WeaponArt",
+      "rarity": "Unique"
+    },
+    {
+      "name": "Folkvangr S",
+      "category": "WeaponArt",
+      "rarity": "Unique"
+    },
+    {
+      "name": "Poison Resistance",
+      "category": "PassiveArt",
+      "rarity": "Rare"
+    },
+    {
+      "name": "Fleetfoot B",
+      "category": "PassiveArt",
+      "rarity": "VeryRare"
+    },
+    {
+      "name": "Folkvangr B",
+      "category": "PassiveArt",
+      "rarity": "VeryRare"
+    },
+    {
+      "name": "Fleetfoot A",
+      "category": "PassiveArt",
+      "rarity": "Legendary"
+    },
+    {
+      "name": "Folkvangr A",
+      "category": "PassiveArt",
+      "rarity": "Legendary"
+    },
+    {
+      "name": "Fleetfoot S",
+      "category": "PassiveArt",
+      "rarity": "Unique"
+    },
+    {
+      "name": "Folkvangr S",
+      "category": "PassiveArt",
+      "rarity": "Unique"
+    }
+  ],
+  "uniqueItems": 5295,
+  "variants": 5377,
+  "tagBasis": {
+    "curated": 8,
+    "name": 3315,
+    "category": 1972
+  },
+  "themeCount": 116,
+  "typeCount": 15,
+  "sourceConservation": {
+    "distinctVariants": 5377,
+    "missing": 0,
+    "unexpected": 0,
+    "sourceSha256": "15e10782cdb7f5b865ebe00a1759a185e732585b5f7da663a0bdd87a6c5e06fd"
+  }
+}

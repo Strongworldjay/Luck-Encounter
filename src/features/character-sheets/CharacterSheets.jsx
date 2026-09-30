@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import './CharacterSheets.css';
-import solaraImage from '../../assets/Ryun.png';
-import kaneImage from '../../assets/Lucky.png';
-import wingImage from '../../assets/Blu.png';
-import clovisImage from '../../assets/Braknir.png';
+import { artwork } from '../../utils/artwork.js';
+const solaraImage = artwork('Ryun.png');
+const kaneImage = artwork('Lucky.png');
+const wingImage = artwork('Blu.png');
+const clovisImage = artwork('Braknir.png');
 
 const characters = [
   {
@@ -126,7 +127,7 @@ export default function CharacterSheets() {
   const focusedCharacter = characters.find((c) => c.id === focusedCard);
 
   return (
-    <div className="character-sheets-container">
+    <section className="character-sheets-page tool-page"><header className="tool-heading"><div><span className="eyebrow">THE PARTY</span><h1>Character sheets</h1><p>Select a character to read their story.</p></div></header><div className="character-sheets-container">
       <div className="cards-container">
         {characters.map((character) => (
           <div
@@ -137,9 +138,10 @@ export default function CharacterSheets() {
               focusedCard && focusedCard !== character.id ? 'hidden' : ''
             }`}
             onClick={() => handleCardClick(character.id)}
-            onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && handleCardClick(character.id)}
+            aria-expanded={focusedCard === character.id}
+            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleCardClick(character.id); } }}
           >
-            <img src={character.image} alt={character.name} className="character-image" />
+            {character.image ? <img src={character.image} alt={character.name} className="character-image" /> : <span className="character-avatar" aria-hidden>{character.name.split(" ").map((word) => word[0]).slice(0, 2).join("")}</span>}
             <h2>{character.name}</h2>
             <p><strong>Level:</strong> {character.level}</p>
             <p><strong>Race:</strong> {character.race}</p>
@@ -164,10 +166,10 @@ export default function CharacterSheets() {
 
       {focusedCharacter && (
         <div className="backstory-container">
-          <h3>Backstory</h3>
+          <button className="app-btn" onClick={() => setFocusedCard(null)}>All characters</button><h2>{focusedCharacter.name}’s story</h2>
           <p>{focusedCharacter.backstory}</p>
         </div>
       )}
-    </div>
+    </div></section>
   );
 }

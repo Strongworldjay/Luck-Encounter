@@ -1,3 +1,4 @@
+import { publicArtwork } from '../../utils/publicArtwork.js';
 // src/features/spells/utils.js
 
 export const slugify = (s) =>
@@ -21,20 +22,20 @@ export const normalizeSchool = (s="") =>
   SCHOOL_ALIASES[s.toLowerCase().replace(/[^a-z]/g,"")] || "spell";
 
 export const spellImgUrl = (slugOrName) =>
-  `${BASE}assets/spells/${slugify(slugOrName)}.png`;
+  publicArtwork(`assets/spells/${slugify(slugOrName)}.png`);
 
 export const schoolImgUrl = (school) =>
-  `${BASE}assets/spells/schools/${normalizeSchool(school)}.png`;
+  publicArtwork(`assets/spells/schools/${normalizeSchool(school)}.png`, genericSpellImgUrl());
 
 export const genericSpellImgUrl = () =>
-  `${BASE}assets/spells/schools/spell.png`;
+  publicArtwork("assets/spells/schools/spell.png", `${BASE}assets/spell-placeholder.svg`);
 
 // Optional legacy alias if your data files still import { img }
 export const img = (x) => spellImgUrl(x);
 
 // Dev validator without touching process.*
 export const devValidate = (spells=[]) => {
-  if (import.meta?.env?.PROD) return; // skip in prod
+  if (import.meta?.env?.PROD || typeof Image === "undefined") return; // skip in prod
   const ABILS = new Set(["None","STR","DEX","CON","INT","WIS","CHA"]);
   const ATKS  = new Set(["None","Melee","Ranged","Spell"]);
   const errs = [];

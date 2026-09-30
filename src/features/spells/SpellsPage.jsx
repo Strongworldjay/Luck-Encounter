@@ -147,7 +147,7 @@ export default function SpellsPage() {
 
   return (
     <div className="spells-page">
-      <div className="spells-scroll">
+      <header className="tool-heading"><div><span className="eyebrow">REFERENCE</span><h1>Spells</h1><p>Find the right magic for your next adventure.</p></div></header><div className="spells-scroll">
         <SpellsFilters
           values={filters}
           onChange={setFilters}

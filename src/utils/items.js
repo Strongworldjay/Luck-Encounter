@@ -1,60 +1,29 @@
-import { itemNames } from '../data/itemsData.js';
-
-export function normalizeRarityKey(value = 'Common') {
-  const normalized = String(value).trim().replace(/[\s_-]+/g, '').toLowerCase();
-  const aliases = {
-    common: 'Common',
-    uncommon: 'Uncommon',
-    rare: 'Rare',
-    veryrare: 'VeryRare',
-    legendary: 'Legendary',
-    unique: 'Unique',
-  };
-  return aliases[normalized] ?? value;
-}
-
-export function cleanWeightedPool(values = []) {
-  // Preserve duplicate entries because some data tables intentionally use them as weighting.
-  return values.filter((value) => value !== null && value !== undefined && value !== '');
-}
-
-export function randomFrom(values = [], fallback = 'Unknown Item') {
-  const pool = cleanWeightedPool(values);
-  return pool.length ? pool[Math.floor(Math.random() * pool.length)] : fallback;
-}
-
-export function getRandomItem(type, subtype, rarity) {
-  const category = itemNames[type];
-  if (!category) {
-    console.warn(`[items] Unknown category: ${type}`);
-    return 'Unknown Item';
+import { normalizeRarity, RARITIES } from '../data/items/index.js';
+import { weightedChoice } from './random.js';
+// Select a populated rarity, then a populated category. Never fabricate an item.
+// An empty requested rarity uses the nearest real rarity, preferring the lower tie.
+export function drawItem(entries, { rarity, excluded = new Set(), random = Math.random } = {}) {
+  let candidates = entries.filter((entry) => !excluded.has(entry.itemId));
+  if (!candidates.length) return null;
+  const requested = normalizeRarity(rarity);
+  if (requested) {
+    const target = RARITIES.indexOf(requested);
+    const available = [...new Set(candidates.map((entry) => entry.rarity))];
+    available.sort((a, b) => Math.abs(RARITIES.indexOf(a) - target) - Math.abs(RARITIES.indexOf(b) - target)
+      || RARITIES.indexOf(a) - RARITIES.indexOf(b));
+    candidates = candidates.filter((entry) => entry.rarity === available[0]);
   }
-
-  const source = subtype && category[subtype] ? category[subtype] : category;
-  const rarityKey = normalizeRarityKey(rarity);
-  const pool = source?.[rarityKey];
-
-  if (!Array.isArray(pool) || cleanWeightedPool(pool).length === 0) {
-    console.warn(`[items] Empty pool for ${type}${subtype ? `/${subtype}` : ''} at ${rarityKey}`);
-    return 'Unknown Item';
-  }
-
-  return randomFrom(pool);
+  const categories = [...new Set(candidates.map((entry) => entry.category))];
+  const category = categories[Math.min(categories.length - 1, Math.floor(random() * categories.length))];
+  const item = weightedChoice(candidates.filter((entry) => entry.category === category), (entry) => entry.weight ?? 1, random);
+  return item ? { ...item, requestedRarity: requested, rarityAdjusted: Boolean(requested && item.rarity !== requested) } : null;
 }
-
-export function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-export function weightedPick(weights = {}) {
-  const entries = Object.entries(weights).filter(([, weight]) => Number(weight) > 0);
-  const total = entries.reduce((sum, [, weight]) => sum + Number(weight), 0);
-  if (!entries.length || total <= 0) return undefined;
-
-  let roll = Math.random() * total;
-  for (const [value, weight] of entries) {
-    roll -= Number(weight);
-    if (roll < 0) return value;
+export function drawItems(entries, count, { rarity, random = Math.random, allowDuplicates = false } = {}) {
+  const drawn = []; const excluded = new Set();
+  for (let index = 0; index < count; index += 1) {
+    const item = drawItem(entries, { rarity: typeof rarity === 'function' ? rarity() : rarity, excluded, random });
+    if (!item) break;
+    drawn.push(item); if (!allowDuplicates) excluded.add(item.itemId);
   }
-  return entries.at(-1)?.[0];
+  return drawn;
 }

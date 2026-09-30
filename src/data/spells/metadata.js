@@ -74,10 +74,11 @@ function inferFunctionalTags(spell) {
 }
 
 export function normalizeSpellMetadata(spell) {
+  const authored = /strongworldjay/i.test([...(spell.tags || []), ...(spell.sources || []), spell.source, spell.sourceBook, spell.url].join(' '));
   const sourceTags = (spell.tags || []).filter((tag) => SOURCE_KEYS.has(tag));
-  const retainedTags = (spell.tags || []).filter((tag) => !SOURCE_KEYS.has(tag));
-  const sources = uniq([...(spell.sources || []), ...sourceTags.map((tag) => SOURCE_ALIASES.get(tag))]);
-  const tags = uniq([...retainedTags, ...inferFunctionalTags(spell)]).sort();
+  const retainedTags = (spell.tags || []).filter((tag) => !SOURCE_KEYS.has(tag) && !/strongworldjay/i.test(tag));
+  const sources = uniq([...(spell.sources || []).map((source) => /strongworldjay/i.test(source) ? 'Homebrew' : source), ...(authored ? ['Homebrew'] : []), ...sourceTags.map((tag) => SOURCE_ALIASES.get(tag))]);
+  const tags = uniq([...retainedTags, ...(authored ? ['New'] : []), ...inferFunctionalTags(spell)]).sort();
 
   return {
     ...spell,

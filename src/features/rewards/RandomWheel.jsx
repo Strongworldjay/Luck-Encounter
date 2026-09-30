@@ -1,6 +1,12 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import "./RandomWheel.css";
-import { getRandomItem } from "../../utils/items.js";
+import { drawItem } from "../../utils/items.js";
+import { useItemCatalog } from "../../hooks/useItemCatalog.js";
+import { useMediaQuery } from "../../hooks/useMediaQuery.js";
+import { DUNGEON_DIFFICULTIES } from "../../config/rewards.js";
+import { EMPTY_FILTERS, filterEntries, rarityLabel, categoryLabel } from "../../data/items/index.js";
+import ItemTags from "../../components/items/ItemTags.jsx";
+import ItemFilters from "../../components/items/ItemFilters.jsx";
 
 /**
  * RandomWheel (all-SVG, with inline luck controls)
@@ -102,8 +108,8 @@ function sectorPath(cx, cy, r, startDeg, endDeg) {
 }
 
 export default function RandomWheel({
-  totalLuck = 0,          // from App (optional)
-  itemTypes = [],
+  state,
+  totalLuck = state ? Number(state.luck || 0) + (DUNGEON_DIFFICULTIES.find((d) => d.id === state.dungeon)?.luck ?? 0) : 0,          // from App (optional)
   onReward,
   inlineLuckControls = true,
 }) {
@@ -111,9 +117,15 @@ export default function RandomWheel({
   const [isSpinning, setIsSpinning] = useState(false);
   const [result, setResult] = useState(null);
   const rotorRef = useRef(null);
+  const timerRef = useRef(null);
+  const reduceMotion = useMediaQuery('(prefers-reduced-motion: reduce)');
+  const { entries } = useItemCatalog();
+  const [filters, setFilters] = useState({ ...EMPTY_FILTERS });
+  const [filtersOpen, setFiltersOpen] = useState(false);
+  const pool = useMemo(() => filterEntries(entries, filters), [entries, filters]);
 
   // Inline luck controls
-  const [useCustomLuck, setUseCustomLuck] = useState(true);
+  const [useCustomLuck, setUseCustomLuck] = useState(false);
   const [charLuck, setCharLuck] = useState(0);
   const [dunLuck, setDunLuck] = useState(0);
   const [selectedDungeon, setSelectedDungeon] = useState(null);
@@ -151,16 +163,10 @@ export default function RandomWheel({
     });
   }, [options]);
 
-  useEffect(() => {
-    const el = rotorRef.current;
-    if (!el) return;
-    const onEnd = () => setIsSpinning(false);
-    el.addEventListener("transitionend", onEnd);
-    return () => el.removeEventListener("transitionend", onEnd);
-  }, []);
+  useEffect(() => () => clearTimeout(timerRef.current), []);
 
   function spin() {
-    if (isSpinning || segments.length === 0) return;
+    if (isSpinning || segments.length === 0 || pool.length === 0) return;
     setIsSpinning(true);
     setResult(null);
 
@@ -172,29 +178,24 @@ export default function RandomWheel({
     const segSize = winner.angleDeg;
     const jitter = (secureRandom() - 0.5) * (segSize / 3);
     const spins = 6 + Math.floor(secureRandom() * 4); // 6–9 spins for drama
-    const final = rotation + spins * 360 + (360 - (mid + jitter));
+    const final = rotation + spins * 360 + ((360 - (rotation % 360) - (mid + jitter) + 360) % 360);
 
     setRotation(final);
 
-    setTimeout(() => {
-      const reward = resolveReward(winner);
+    const reward = resolveReward(winner);
+    timerRef.current = setTimeout(() => {
+      setIsSpinning(false);
       setResult(reward);
       if (typeof onReward === "function") onReward(reward);
-    }, SPIN_MS + 200); // little buffer past CSS duration
+    }, reduceMotion ? 10 : SPIN_MS + 100); // little buffer past CSS duration
   }
 
   function resolveReward(winner) {
     const base = { label: winner.key, type: winner.type };
     if (winner.type === "item") {
-      const safe = itemTypes.length ? itemTypes : [
-        "Helmet","HeavyArmor","Gauntlet","Boots","Necklace","Cloak",
-        "Sword","Axe","Hammer","Dagger","Staff","Wand","Ring","Shield"
-      ];
-      const randType = safe[Math.floor(secureRandom() * safe.length)];
-      const rarityArg = winner.rarity.replace(" ", "");
-      const itemName = getRandomItem(randType, null, rarityArg);
-      return { ...base, rarity: winner.rarity, itemType: randType, itemName,
-        message: `Won ${winner.rarity} ${randType}: ${itemName}` };
+      const item = drawItem(pool, { rarity: winner.rarity });
+      return { ...base, item, message: item ? `Won ${rarityLabel(item.rarity)} ${categoryLabel(item.category)}: ${item.name}` : 'No matching item is available.' };
+
     }
     if (winner.type === "sp") {
       const sp = 1 + Math.floor(clamp(Math.round(t * 3), 1, 3));
@@ -215,7 +216,8 @@ export default function RandomWheel({
   const R_LABEL = 420;
 
   return (
-    <div className="wheel-root">
+    <div className="wheel-root tool-page">
+      <header className="tool-heading"><div><span className="eyebrow">DM TOOLS</span><h1>Wheel of fortune</h1><p>Spin for a reward, skill points, or a curse.</p></div><button className="app-btn" disabled={isSpinning} onClick={() => setFiltersOpen(true)}>Item filters</button></header>
       <div className="wheel-panel">
         <div className="luck-readout">
           <span>Total Luck:</span>
@@ -224,7 +226,7 @@ export default function RandomWheel({
         </div>
 
         {inlineLuckControls && (
-          <div className="inline-luck">
+          <fieldset className="inline-luck" disabled={isSpinning || !pool.length}>
             <label className="switch">
               <input
                 type="checkbox"
@@ -254,18 +256,13 @@ export default function RandomWheel({
                 </div>
 
                 <div className="wheel-dungeon-buttons">
-                  <button onClick={() => { setDunLuck(-50); setSelectedDungeon("F"); }} className={selectedDungeon === "F" ? "selected" : ""}>F (-50)</button>
-                  <button onClick={() => { setDunLuck(-25); setSelectedDungeon("D"); }} className={selectedDungeon === "D" ? "selected" : ""}>D (-25)</button>
-                  <button onClick={() => { setDunLuck(0); setSelectedDungeon("C"); }}  className={selectedDungeon === "C" ? "selected" : ""}>C (0)</button>
-                  <button onClick={() => { setDunLuck(20); setSelectedDungeon("B"); }} className={selectedDungeon === "B" ? "selected" : ""}>B (+20)</button>
-                  <button onClick={() => { setDunLuck(35); setSelectedDungeon("A"); }} className={selectedDungeon === "A" ? "selected" : ""}>A (+35)</button>
-                  <button onClick={() => { setDunLuck(60); setSelectedDungeon("S"); }} className={selectedDungeon === "S" ? "selected" : ""}>S (+60)</button>
+                  {DUNGEON_DIFFICULTIES.map(({id, luck}) => <button key={id} onClick={() => { setDunLuck(luck); setSelectedDungeon(id); }} className={selectedDungeon === id ? 'selected' : ''} aria-pressed={selectedDungeon === id}>{id} ({luck >= 0 ? '+' : ''}{luck})</button>)}
                 </div>
               </>
             ) : (
               <div className="using-app-luck">Using App luck: <b>{totalLuck}</b></div>
             )}
-          </div>
+          </fieldset>
         )}
 
         <div className="wheel-stage">
@@ -317,7 +314,7 @@ export default function RandomWheel({
           </div>
         </div>
 
-        <button className="wheel-btn" onClick={spin} disabled={isSpinning}>
+        <button className="wheel-btn" onClick={spin} disabled={isSpinning || !pool.length}>
           {isSpinning ? "Spinning..." : "Spin the Wheel"}
         </button>
 
@@ -326,9 +323,11 @@ export default function RandomWheel({
             <>
               <h3>Result</h3>
               <p>{result.message}</p>
+              {result.item && <ItemTags item={result.item} />}
+              {result.item?.rarityAdjusted && <small>Nearest available rarity for these filters.</small>}
             </>
           ) : (
-            <p>Spin to test your fate.</p>
+            <p>{pool.length ? 'Spin to test your fate.' : 'No items match. Reset or change the filters to spin.'}</p>
           )}
         </div>
 
@@ -344,6 +343,7 @@ export default function RandomWheel({
           </ul>
         </details>
       </div>
+      {filtersOpen && <ItemFilters filters={filters} onChange={setFilters} onClose={() => setFiltersOpen(false)} count={new Set(pool.map((item) => item.itemId)).size} />}
     </div>
   );
 }

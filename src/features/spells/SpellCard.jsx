@@ -11,7 +11,7 @@ export default function SpellCard({ spell, onOpen }) {
   // Initial image (per spell) → fallback to school → generic
   const initial = useMemo(() => {
     const slug = spell.slug || slugify(spell.name || "");
-    return spell.imagePath || spellImgUrl(slug);
+    return spell.imagePath || spellImgUrl(slug) || schoolImgUrl(spell.school);
   }, [spell.slug, spell.name, spell.imagePath]);
 
   const [src, setSrc] = useState(initial);

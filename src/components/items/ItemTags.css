@@ -1,0 +1,5 @@
+.item-tags { display:grid; gap:5px; text-align:left; }
+.item-tags > div { display:flex; flex-wrap:wrap; gap:5px; }
+.item-tag { display:inline-block; font-size:.72rem; font-weight:600; line-height:1.45; padding:3px 8px; border-radius:6px; color:var(--muted); background:var(--elevated); border:1px solid var(--border); }
+.item-tag--type { color:var(--primary); background:color-mix(in srgb,var(--accent-color) 12%,var(--surface)); }
+.item-tags--compact .item-tag { font-size:.66rem; padding:2px 6px; }

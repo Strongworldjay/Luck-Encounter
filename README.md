@@ -1,50 +1,114 @@
-# Luck Encounter — Refined Project
+# The Remarkable Hoard — Luck Encounter
 
-A cleaned, structured, production-buildable version of the Luck Encounter React application.
+A consolidated React/Vite project with 17 tools, one item catalog, shared multi-tag filters, and responsive coastal light/dark themes.
 
-## Run locally
+## Start here
 
-```bash
-npm install
-npm run check
+Extract this ZIP into a **new folder**. Do not merge it into the old `src` tree: that would bring the duplicate implementations back. Keep your old project as a backup until you have reviewed this version.
+
+Use Node.js **22.12 or later**:
+
+```sh
+npm ci
 npm run dev
 ```
 
-`npm run check` runs linting and a production build. `npm run audit:data` reviews the item catalog for repeated weighted entries and malformed pools.
+Open the local URL printed by Vite. No environment variables, API keys, database, or backend are required.
 
-## Artwork
+```sh
+npm run check      # reward tests, complete data audit, production build
+npm run preview    # serves the production build after npm run build
+```
 
-The uploaded source did not include the original artwork folders. Tiny placeholders are included so the project builds immediately. Replace them with the original artwork while preserving filenames. See [`docs/ASSETS_REQUIRED.md`](docs/ASSETS_REQUIRED.md).
+For the included browser checks:
+
+```sh
+npx playwright install chromium --only-shell
+npm run test:ui
+```
+
+`npm run test:ui` starts its own local server on port 5174. It verifies 17 sections at 320, 390, and 1366 pixels in both themes, then exercises the main workflows. Optional: set `QA_SCREENSHOTS` to a directory to save screenshots.
+
+## Using the project
+
+- **Dungeon Completion:** enter character luck, choose a dungeon class, set optional filters, draw up to three different rewards, and reveal one. The bottom controls remain in the page flow and reserve safe-area space.
+- **Item Catalog:** search every item, filter by category/type/theme/rarity, edit tags, and export the full catalog. "Review broad suggestions" shows entries that only had enough information for category-based tags.
+- **Shop Inventory:** select a shop preset and size; filter by type/theme; generate, copy, or export stock. Duplicate items are disabled by default.
+- **Chests:** select a tier and chest type. All generated item drops, including extras, respect active item filters. Currency remains separate.
+- **Random Wheel:** uses your dungeon luck by default, with optional custom luck. Its item rewards use the same catalog and filters.
+- **Reference and player tools:** 986 spells, 158 feats across six groups, character sheets/backstories, skill-point planning, jump calculations, Bingo, and the Insamont bounty board.
+
+Selections within one filter group are OR conditions; different groups are combined with AND. An empty group places no restriction. A theme filter with no matching items produces an empty state, not unrelated loot.
+
+## Maintaining items and tags
+
+The only stored item source is `src/data/items/catalog.json`. A record has one stable ID, one name, arrays of `types` and `themes`, and a `variants` array for category/rarity membership. A repeated item's variants are preserved together. Keep IDs unchanged when updating names or tags.
+
+`src/data/items/taxonomy.js` contains all **116 themes** and **15 creature types** supplied for this project. Theme labels have no numbering. `Neutral` means no specific creature association, not moral alignment. Equipment categories such as Sword remain separate from creature types such as Dragon.
+
+Every record has at least one type and one theme; both support multiple values. Tags are best-effort suggestions from names and categories because the uploaded item lists do not include descriptions. They are not verified rules classifications. Eight familiar named items received specific suggestions, 3,315 use name-based suggestions, and 1,972 use broad category-based suggestions. The editor identifies the latter two bases.
+
+Tag edits save in this browser on this device and immediately affect subsequent draws in the other tools. They are **not** automatically synchronized between players. To publish reviewed tags:
+
+1. Choose **Export catalog** in Item Catalog.
+2. Replace `src/data/items/catalog.json` with the exported JSON.
+3. Run `npm run check`, then deploy your reviewed source.
+
+The catalog includes 5,295 records: 5,294 available entries plus one preserved, unavailable `[Redacted]` placeholder. All 5,377 distinct name/category/rarity combinations from the chosen source were retained. Duplicate rows no longer store duplicate items; repeated Boost Art occurrences become explicit selection weights.
+
+When a filtered pool lacks the rolled rarity, the generator uses the nearest available rarity within that pool, preferring the lower rarity on a tie. The result says "Nearest available rarity". A small pool returns fewer unique rewards instead of repeating an item.
 
 ## Project layout
 
-```text
-src/
-  components/       Shared interface pieces
-  config/           Navigation and reward configuration
-  data/             Large item, feat, and spell catalogs
-  features/         Self-contained application tools
-  hooks/            Shared browser behavior
-  legacy/           Archived code not mounted by the live app
-  styles/           Global tokens and root layout only
-  utils/            Shared item helpers
+| Path | Responsibility |
+| --- | --- |
+| `src/App.jsx` | Navigation, shared dungeon state, lazy-loaded tools |
+| `src/config/` | Navigation, dungeon classes, shop/chest rules and category groups |
+| `src/data/items/` | Canonical item records, taxonomy, filtering |
+| `src/data/spells/`, `src/data/feats/` | Preserved reference content |
+| `src/components/` | Navigation, dialogs, tags, filters, reward display |
+| `src/features/` | One implementation per tool |
+| `src/hooks/` | Theme, media queries, shared item edits |
+| `src/utils/` | Sampling, storage, exports, text, optional artwork |
+| `src/styles/` | Global theme and application layout only |
+| `public/`, `src/assets/` | Referenced artwork and favicon |
+| `scripts/`, `tests/` | Data integrity and behavioral checks |
+| `docs/` | Exact changes, migration details, and verification results |
+
+## Artwork
+
+The package includes the recovered card back, bounty board/posters, favicon, eight school images, and a generic spell placeholder. Chest, portrait, individual spell, and feat images were not included in the source uploads. Their absence is handled gracefully: code-drawn chests, character initials, school artwork, and clickable feat symbols.
+
+Original individual spell and feat images are available at some paths on the existing live site. To recover that larger collection **before replacing the old deployment**, run:
+
+```sh
+npm run assets:restore -- --all
+npm run build
 ```
 
-## Important design choices
+This can be a large download. The recovery script keeps existing files, downloads original PNGs with four concurrent requests, records unavailable paths in `docs/artwork-recovery.json`, and can be rerun. Without `--all`, it only checks the eight school images. Missing source images continue to use fallbacks. Portrait and chest files can be added manually using the paths below.
 
-- Feature tools are lazy-loaded so the homepage is not forced to download every spell, feat, and item catalog immediately.
-- Spell catalogs are split into cacheable level chunks at build time.
-- Feature CSS is scoped to prevent unrelated pages from restyling each other.
-- Duplicate entries inside the item catalog are preserved because several appear to be intentional probability weighting. Run `npm run audit:data` before removing them.
-- `src/legacy/BoostArts.jsx` is archived rather than mounted because it was not connected to the active application and depended on a missing stylesheet.
+To add original artwork later:
 
-## Scripts
+| Artwork | Location |
+| --- | --- |
+| Character portraits | `src/assets/Ryun.png`, `Lucky.png`, `Blu.png`, `Braknir.png` |
+| Chest closed/open | `src/assets/wooden.jpg`, `wooden2.jpg`; same pattern for steel, bronze, silver, gold, platinum, emerald |
+| Spell artwork | `public/assets/spells/<slug>.png` — lowercase letters/numbers, no spaces/punctuation |
+| School fallback | `public/assets/spells/schools/<school>.png` |
+| Generic spell art | `public/assets/spells/schools/spell.png` |
+| Feat artwork | `public/assets/feats/<slug>.png` — lowercase, apostrophes removed, words joined by hyphens |
 
-```bash
-npm run dev          # Start Vite development server
-npm run lint         # Run ESLint
-npm run build        # Create production build
-npm run check        # Lint, then build
-npm run audit:data   # Review item pool duplicates and malformed entries
-npm run preview      # Serve the production build locally
-```
+Restart Vite or rebuild after adding files so its artwork manifest refreshes. These paths preserve the original project's naming conventions. No external image service is required.
+
+## Mobile behavior
+
+The application paints the entire viewport in the selected theme, uses dynamic viewport sizing, and respects iOS safe-area insets. The reward controls reserve their own space instead of covering content. Inputs remain at least 16px to avoid unwanted iOS input zoom. Long pages scroll normally.
+
+Safari's own address/navigation toolbar is controlled by iOS. This project addresses page gaps, background mismatches, and covered controls; it cannot remove browser chrome. Browser verification used Chromium mobile emulation, not physical iPhone hardware.
+
+## Vercel
+
+This package is ready for your existing Vercel workflow: build command `npm run build`, output directory `dist`. `vercel.json` is included. Replace the old source tree with this reviewed project in your repository, keeping your existing repository/Vercel project linkage. No deployment has been performed by this deliverable.
+
+Read `docs/CHANGES.md` for every added, modified, and removed source file, and `docs/VERIFICATION.md` for the checks completed.

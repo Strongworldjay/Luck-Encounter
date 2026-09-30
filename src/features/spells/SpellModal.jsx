@@ -1,15 +1,12 @@
-import { useEffect, useRef } from "react";
+import Modal from '../../components/ui/Modal.jsx';
+import { mdInlineToHtml } from '../../utils/text.js';
+import { useRef } from "react";
 import { slugify, spellImgUrl, schoolImgUrl, genericSpellImgUrl } from "./utils";
 
 const levelLabel = (lvl) =>
   lvl === 0 ? "Cantrip" : `${lvl}${[null, "st", "nd", "rd"][lvl] || "th"}-level`;
 
 // Tiny inline md (**bold**, __bold__, and newlines)
-const mdInlineToHtml = (md) =>
-  String(md ?? "")
-    .replace(/\*\*([\s\S]*?)\*\*/g, "<strong>$1</strong>")
-    .replace(/__([\s\S]*?)__/g, "<strong>$1</strong>")
-    .replace(/\r\n|\r|\n/g, "<br/>");
 
 // JSON-driven reference table (theme-aware via CSS)
 function RefTable({ title, columns = [], rows = [] }) {
@@ -35,20 +32,9 @@ function RefTable({ title, columns = [], rows = [] }) {
 }
 
 export default function SpellModal({ spell, onClose }) {
-  const panelRef = useRef(null);
-
-  // Close on Esc
-  useEffect(() => {
-    const onKey = (e) => e.key === "Escape" && onClose();
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [onClose]);
-
-  const stop = (e) => e.stopPropagation(); // prevent backdrop close when clicking inside
-
   // Image with fallbacks
   const slug = spell.slug || slugify(spell.name || "");
-  const initialSrc = spell.imagePath || spellImgUrl(slug);
+  const initialSrc = spell.imagePath || spellImgUrl(slug) || schoolImgUrl(spell.school);
   const imgRef = useRef(null);
   const tried = useRef({ school: false, generic: false });
   const onImgError = () => {
@@ -71,30 +57,9 @@ export default function SpellModal({ spell, onClose }) {
   })();
 
   return (
-    <div className="spell-modal__backdrop" onClick={onClose} role="presentation">
-      <div
-        className="spell-modal__panel spell-modal__panel--responsive"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="spell-modal-title"
-        onClick={stop}
-        ref={panelRef}
-      >
-        {/* Header */}
-        <header className="spell-modal__header">
-          <div className="spell-modal__titlewrap">
-            <h2 id="spell-modal-title" className="spell-modal__title">
-              {spell.name}
-            </h2>
-            <div className="spell-modal__subtitle">
-              {levelLabel(spell.spellLevel)} · {spell.school} · {spell.classes?.join(", ")}
-            </div>
-          </div>
-          <button className="spell-modal__close" onClick={onClose} aria-label="Close">
-            ✕
-          </button>
-        </header>
-
+    <Modal title={spell.name} onClose={onClose} wide>
+      <div className="spell-modal__content">
+        <p className="spell-modal__subtitle">{levelLabel(spell.spellLevel)} · {spell.school} · {spell.classes?.join(', ')}</p>
         {/* Info bar */}
         <section className="spell-modal__infobar">
           <div className="infocell">
@@ -246,6 +211,6 @@ export default function SpellModal({ spell, onClose }) {
           </div>
         </section>
       </div>
-    </div>
+    </Modal>
   );
 }

@@ -1,23 +1,14 @@
+import { featSlug as slugify } from '../../utils/text.js';
+import { publicArtwork } from '../../utils/publicArtwork.js';
+import { mdInlineToHtml } from '../../utils/text.js';
 // FeatRow.jsx
 import { useMemo, useRef, useState } from "react";
 
-const mdInlineToHtml = (md) =>
-  String(md ?? "")
-    .replace(/\*\*([\s\S]*?)\*\*/g, "<strong>$1</strong>")
-    .replace(/__([\s\S]*?)__/g, "<strong>$1</strong>")
-    .replace(/\r\n|\r|\n/g, "<br/>");
 
 // Helpers for display
 const listToText = (arr) => (Array.isArray(arr) && arr.length ? arr.join(", ") : "—");
 
 // ✅ slug helper for auto image paths
-const slugify = (s) =>
-  String(s ?? "")
-    .toLowerCase()
-    .trim()
-    .replace(/['’]/g, "")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)/g, "");
 
 export default function FeatRow({ feat, onOpenModal }) {
   const [open, setOpen] = useState(false);
@@ -26,7 +17,7 @@ export default function FeatRow({ feat, onOpenModal }) {
   // Put images in: public/assets/feats/<slug>.png
   const autoImagePath = useMemo(() => {
     const s = slugify(feat?.name);
-    return s ? `/assets/feats/${s}.png` : "";
+    return s ? publicArtwork(`assets/feats/${s}.png`) : "";
   }, [feat?.name]);
 
   const [src, setSrc] = useState(autoImagePath);
@@ -65,23 +56,9 @@ export default function FeatRow({ feat, onOpenModal }) {
         <div className="cell type">{type}</div>
 
         <div className="cell name">
-          {src ? (
-            <img
-              className="icon icon--clickable"
-              src={src}
-              onError={onImgError}
-              alt=""
-              width={26}
-              height={26}
-              loading="lazy"
-              decoding="async"
-              onClick={openModalFromIcon}
-              onMouseDown={(e) => e.stopPropagation()}
-              onPointerDown={(e) => e.stopPropagation()}
-            />
-          ) : (
-            <span className="icon icon--blank" aria-hidden />
-          )}
+          <button type="button" className="icon icon--clickable" onClick={openModalFromIcon} aria-label={`Open ${feat.name} details`}>
+            {src ? <img src={src} alt="" loading="lazy" decoding="async" onError={onImgError} /> : <span aria-hidden>✧</span>}
+          </button>
 
           <div className="namewrap">
             <div className="title">{feat.name}</div>

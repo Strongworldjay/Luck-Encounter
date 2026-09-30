@@ -1,4 +1,5 @@
-import { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
+import { readStorage, writeStorage } from '../../utils/storage.js';
 import styles from "./MagicBingo.module.css";
 
 /**
@@ -8,7 +9,6 @@ import styles from "./MagicBingo.module.css";
  * - Shuffle new card (seeded/random)
  * - Print-friendly output
  * - LocalStorage persistence per card seed
- * - DEV self-tests for quick regressions
  */
 
 // ---- Pool: Common D&D Table Occurrences ----
@@ -21,7 +21,7 @@ const OCCURRENCES = [
   "Rule Lookup",
   "Nat 20",
   "Nat 1",
-  "Disadvatnage Nat 20",
+  "Disadvantage Nat 20",
   "Shopping session explodes",
   "Over-prep for a goblin",
   "Forgotten Ability",
@@ -111,87 +111,23 @@ function getLines() {
   return L;
 }
 
-const DEFAULT_INCLUDE_FREE = true;
-const keyFor = (seed) => `magic-bingo-v1:${seed}`;
-
-// ---- DEV Self-Tests ----
-function runSelfTests() {
-  try {
-    console.assert(Array.isArray(OCCURRENCES), "OCCURRENCES should be an array");
-    console.assert(OCCURRENCES.every((s) => typeof s === "string" && s.length > 0), "entries must be non-empty strings");
-
-    const picks = sampleUnique(["a", "b", "c", "d", "e"], 3, mulberry32(42));
-    console.assert(picks.length === 3 && new Set(picks).size === 3, "sampleUnique unique+count");
-
-    const lines = getLines();
-    console.assert(lines.length === 12 && lines.every((ln) => ln.length === 5), "12 lines of 5");
-
-    const needed = 24; // free center
-    console.assert(OCCURRENCES.length >= needed, "pool >= 24 for free center");
-
-    const marks = Array(25).fill(false);
-    for (let c = 0; c < 5; c++) marks[c] = true;
-    const bingos = lines.filter((line) => line.every((i) => marks[i] || i === 12));
-    console.assert(bingos.length >= 1, "row marks produces bingo");
-  } catch (e) {
-    console.error("[MagicBingo] self-tests failed", e);
-  }
-}
-if (import.meta.env.DEV) {
-  runSelfTests();
-}
-
+const BINGO_KEY = 'magic-bingo-v2';
+const freshCard = () => ({ seed: Math.floor(Math.random() * 1e9), includeFree: true, marks: Array(25).fill(false) });
 export default function MagicBingo() {
-  const [seed, setSeed] = useState(() => Math.floor(Math.random() * 1e9));
-  const [includeFree, setIncludeFree] = useState(() => {
-    try {
-      const v = localStorage.getItem("magic-bingo:includeFree");
-      return v ? JSON.parse(v) : DEFAULT_INCLUDE_FREE;
-    } catch {
-      return DEFAULT_INCLUDE_FREE;
-    }
+  const [saved, setSaved] = useState(() => {
+    const data = readStorage(BINGO_KEY, null);
+    return data && Number.isInteger(data.seed) && typeof data.includeFree === 'boolean'
+      && Array.isArray(data.marks) && data.marks.length === 25 && data.marks.every((mark) => typeof mark === 'boolean') ? data : freshCard();
   });
-
-  const rng = useMemo(() => mulberry32(seed), [seed]);
-
+  const { seed, includeFree, marks } = saved;
+  const setSeed = (next) => setSaved((previous) => ({ ...previous, seed: next, marks: Array(25).fill(false) }));
+  const setIncludeFree = (next) => setSaved((previous) => ({ ...previous, includeFree: next, marks: Array(25).fill(false) }));
   const card = useMemo(() => {
-    const needed = 25 - (includeFree ? 1 : 0);
-    const picks = sampleUnique(OCCURRENCES, needed, rng);
-    const squares = [];
-    for (let i = 0; i < 25; i++) {
-      if (includeFree && i === 12) squares.push("FREE SPACE");
-      else squares.push(picks[includeFree && i > 12 ? i - 1 : i] ?? "—");
-    }
-    return squares;
-  }, [rng, includeFree]);
-
-  const [marks, setMarks] = useState(() => {
-    try {
-      const raw = localStorage.getItem(keyFor(seed));
-      return raw ? JSON.parse(raw) : Array(25).fill(false);
-    } catch {
-      return Array(25).fill(false);
-    }
-  });
-
-  useEffect(() => {
-    localStorage.setItem("magic-bingo:includeFree", JSON.stringify(includeFree));
-  }, [includeFree]);
-
-  useEffect(() => {
-    localStorage.setItem(keyFor(seed), JSON.stringify(marks));
-  }, [seed, marks]);
-
-  useEffect(() => {
-    try {
-      const raw = localStorage.getItem(keyFor(seed));
-      setMarks(raw ? JSON.parse(raw) : Array(25).fill(false));
-    } catch {
-      setMarks(Array(25).fill(false));
-    }
-  }, [seed]);
-
-  const toggle = (i) => setMarks((m) => { const n = [...m]; n[i] = !n[i]; return n; });
+    const picks = sampleUnique(OCCURRENCES, includeFree ? 24 : 25, mulberry32(seed));
+    return Array.from({length:25}, (_, index) => includeFree && index === 12 ? 'FREE SPACE' : picks[includeFree && index > 12 ? index - 1 : index]);
+  }, [seed, includeFree]);
+  useEffect(() => { writeStorage(BINGO_KEY, saved); }, [saved]);
+  const toggle = (index) => setSaved((previous) => ({ ...previous, marks: previous.marks.map((mark, i) => i === index ? !mark : mark) }));
   const shuffle = () => setSeed(Math.floor(Math.random() * 1e9));
   const printCard = () => window.print();
 

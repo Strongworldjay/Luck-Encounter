@@ -1,19 +1,11 @@
+import Modal from '../../components/ui/Modal.jsx';
+import { featSlug as slugify } from '../../utils/text.js';
+import { publicArtwork } from '../../utils/publicArtwork.js';
+import { mdInlineToHtml } from '../../utils/text.js';
 import { useEffect, useMemo, useRef, useState } from "react";
 
-const mdInlineToHtml = (md) =>
-  String(md ?? "")
-    .replace(/\*\*([\s\S]*?)\*\*/g, "<strong>$1</strong>")
-    .replace(/__([\s\S]*?)__/g, "<strong>$1</strong>")
-    .replace(/\r\n|\r|\n/g, "<br/>");
 
 // ✅ slug helper for auto image paths (same as yours)
-const slugify = (s) =>
-  String(s ?? "")
-    .toLowerCase()
-    .trim()
-    .replace(/['’]/g, "")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)/g, "");
 
 const listToText = (arr) => (Array.isArray(arr) && arr.length ? arr.join(", ") : "—");
 
@@ -24,27 +16,13 @@ export default function FeatModal({ feat, onClose }) {
   // Auto image path: public/assets/feats/<slug>.png
   const autoImagePath = useMemo(() => {
     const s = slugify(feat?.name);
-    return s ? `/assets/feats/${s}.png` : "";
+    return s ? publicArtwork(`assets/feats/${s}.png`) : "";
   }, [feat?.name]);
 
   useEffect(() => {
     setImgSrc(autoImagePath);
     tried.current = false;
   }, [autoImagePath]);
-
-  // ESC + body scroll lock (matches “modal like spells” behavior)
-  useEffect(() => {
-    const onKey = (e) => e.key === "Escape" && onClose?.();
-    document.addEventListener("keydown", onKey);
-
-    const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-
-    return () => {
-      document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = prevOverflow;
-    };
-  }, [onClose]);
 
   if (!feat) return null;
 
@@ -67,24 +45,9 @@ export default function FeatModal({ feat, onClose }) {
   };
 
   return (
-    <div className="feat-modal__backdrop" onMouseDown={onClose} role="dialog" aria-modal="true">
-      <div
-        className="feat-modal__panel feat-modal__panel--responsive"
-        onMouseDown={(e) => e.stopPropagation()}
-      >
-        <div className="feat-modal__header">
-          <div>
-            <h2 className="feat-modal__title">{feat.name}</h2>
-            <div className="feat-modal__subtitle">
-              {type} • {source}
-            </div>
-          </div>
-
-          <button className="feat-modal__close" onClick={onClose} aria-label="Close">
-            ×
-          </button>
-        </div>
-
+    <Modal title={feat.name} onClose={onClose} wide>
+      <div className="feat-modal__content">
+        <p className="feat-modal__subtitle">{type} · {source}</p>
         <div className="feat-modal__infobar">
           <div className="infocell">
             <div className="cap">Type</div>
@@ -165,6 +128,6 @@ export default function FeatModal({ feat, onClose }) {
           </div>
         </div>
       </div>
-    </div>
+    </Modal>
   );
 }

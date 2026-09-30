@@ -1,13 +1,20 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#eef3f0" />
+  <meta name="description" content="The Remarkable Hoard: dungeon rewards, an item catalog, and tools for your tabletop adventures." />
+  <link rel="icon" href="/d20favicon.png" />
   <title>The Remarkable Hoard</title>
-  <link rel="icon" href="/d20favicon.png" type="image/png" /> 
+  <script>
+    try {
+      const preference = localStorage.getItem('luck-encounter-theme-preference') || localStorage.getItem('luck-encounter-theme') || 'system';
+      const dark = preference === 'dark' || (preference === 'system' && matchMedia('(prefers-color-scheme: dark)').matches);
+      document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+      document.querySelector('meta[name="theme-color"]').content = dark ? '#07171d' : '#eef3f0';
+    } catch {}
+  </script>
 </head>
-<body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
-</body>
+<body><div id="root"></div><script type="module" src="/src/main.jsx"></script></body>
 </html>

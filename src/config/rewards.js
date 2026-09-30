@@ -24,10 +24,10 @@ export const REWARD_ITEM_TYPES = [
   'Wand', 'Grimoire', 'WeaponArt', 'Scythe', 'PassiveArt', 'BoostArt',
   'SkillPoints', 'Robe', 'Ring', 'LightArmor', 'MediumArmor',
   'WondrousItem', 'Shield', 'Crossbow', 'Spear', 'Halberd', 'Club',
-  'Whip', 'Mace', 'Warpick', 'Lance', 'Pike', 'Mana', 'Stamina', 'MagicArt',
+  'Whip', 'Mace', 'Warpick', 'Lance', 'Pike', 'Mana', 'Stamina',
 ];
 
 export function getRewardRarity(totalRoll) {
   return REWARD_RARITIES.find(({ range: [min, max] }) => totalRoll >= min && totalRoll <= max)
-    ?? REWARD_RARITIES[0];
+    ?? (totalRoll > 200 ? REWARD_RARITIES.at(-1) : REWARD_RARITIES[0]);
 }

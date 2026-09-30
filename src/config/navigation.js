@@ -6,6 +6,7 @@ export const NAV_GROUPS = [
       { id: 'DungeonCompletion', label: 'Dungeon Completion' },
       { id: 'SPPlanner', label: 'SP Planner' },
       { id: 'Spells', label: 'Spells' },
+      { id: 'ItemCatalog', label: 'Item Catalog' },
       { id: 'MagicBingo', label: 'Magic Bingo' },
       { id: 'CharacterSheets', label: 'Character Sheets' },
     ],

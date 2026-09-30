@@ -10,10 +10,11 @@ function getSystemTheme() {
 }
 
 function getInitialPreference() {
-  const stored = localStorage.getItem(STORAGE_KEY);
+  let stored, legacy;
+  try { stored = localStorage.getItem(STORAGE_KEY); legacy = localStorage.getItem(LEGACY_STORAGE_KEY); } catch {}
   if (VALID_PREFERENCES.has(stored)) return stored;
 
-  const legacy = localStorage.getItem(LEGACY_STORAGE_KEY);
+
   if (legacy === 'light' || legacy === 'dark') return legacy;
 
   return 'system';
@@ -42,8 +43,9 @@ export function useTheme() {
     root.classList.toggle('theme-light', theme === 'light');
     root.dataset.theme = theme;
     root.dataset.themePreference = preference;
-    localStorage.setItem(STORAGE_KEY, preference);
-    localStorage.removeItem(LEGACY_STORAGE_KEY);
+    try { localStorage.setItem(STORAGE_KEY, preference); localStorage.removeItem(LEGACY_STORAGE_KEY); } catch {}
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.content = theme === 'dark' ? '#07171d' : '#eef3f0';
   }, [preference, theme]);
 
   const setThemePreference = (nextPreference) => {

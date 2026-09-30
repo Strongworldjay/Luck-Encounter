@@ -1,256 +1,46 @@
-// Chests.jsx
-import { useEffect, useState } from "react";
-import { getRandomItem, getRandomInt, weightedPick } from "../../utils/items.js";
-import { itemNames } from "../../data/itemsData.js";
-
-import treasureChestIcon from "../../assets/wooden.jpg";
-
-import woodenChestIcon from "../../assets/wooden.jpg";
-import woodenChestOpenIcon from "../../assets/wooden2.jpg";
-
-import steelChestIcon from "../../assets/steel.jpg";
-import steelChestOpenIcon from "../../assets/steel2.jpg";
-
-import bronzeChestIcon from "../../assets/bronze.jpg";
-import bronzeChestOpenIcon from "../../assets/bronze2.jpg";
-
-import silverChestIcon from "../../assets/silver.jpg";
-import silverChestOpenIcon from "../../assets/silver2.jpg";
-
-import goldChestIcon from "../../assets/gold.jpg";
-import goldChestOpenIcon from "../../assets/gold2.jpg";
-
-import platinumChestIcon from "../../assets/platinum.jpg";
-import platinumChestOpenIcon from "../../assets/platinum2.jpg";
-
-import emeraldChestIcon from "../../assets/emerald.jpg";
-import emeraldChestOpenIcon from "../../assets/emerald2.jpg";
-
-import "./Chests.css";
-
-/** Closed/open art per rarity */
-const chestIcons = {
-  wooden:   { closed: woodenChestIcon,   open: woodenChestOpenIcon },
-  steel:    { closed: steelChestIcon,    open: steelChestOpenIcon },
-  bronze:   { closed: bronzeChestIcon,   open: bronzeChestOpenIcon },
-  silver:   { closed: silverChestIcon,   open: silverChestOpenIcon },
-  gold:     { closed: goldChestIcon,     open: goldChestOpenIcon },
-  platinum: { closed: platinumChestIcon, open: platinumChestOpenIcon },
-  emerald:  { closed: emeraldChestIcon,  open: emeraldChestOpenIcon },
-};
-
-const chestSettings = {
-  wooden:   { goldRange: [10, 20],  rarityWeights: { Common: 0.95, Uncommon: 0.05 },                                      dcRange: [6, 9] },
-  steel:    { goldRange: [20, 40],  rarityWeights: { Common: 0.75, Uncommon: 0.25 },                                      dcRange: [10, 13] },
-  bronze:   { goldRange: [30, 60],  rarityWeights: { Common: 0.20, Uncommon: 0.65, Rare: 0.15 },                           dcRange: [14, 18] },
-  silver:   { goldRange: [40, 80],  rarityWeights: { Uncommon: 0.6, Rare: 0.35, VeryRare: 0.05 },                          dcRange: [19, 24] },
-  gold:     { goldRange: [50, 100], rarityWeights: { Uncommon: 0.25, Rare: 0.55, VeryRare: 0.15, Legendary: 0.05 },        dcRange: [25, 30] },
-  platinum: { goldRange: [80, 150], rarityWeights: { Rare: 0.1, VeryRare: 0.35, Legendary: 0.45, Unique: 0.1 },            dcRange: [31, 35] },
-  emerald:  { goldRange: [100, 200],rarityWeights: { Legendary: 0.7, Unique: 0.3 },                                        dcRange: [36, 40] }
-};
-
-
-
-const chestTypes = {
-  Random: [
-    "Helmet","HeavyArmor","Gauntlet","Boots","Necklace","Cloak","Potion",
-    "Sword","Bow","Axe","Hammer","Glaive","Dagger","Staff","Rod","Wand",
-    "Grimoire","Gems","Scrolls","Keys","TreasureMap","Ammunition",
-    "Robe","Ring","LightArmor","MediumArmor","WondrousItem","Shield",
-    "Crossbow","Spear","Halberd","Club","Whip","Mace","Warpick","Lance","Pike"
-  ],
-  "Melee Weapon": ["Sword","Axe","Hammer","Glaive","Dagger","Mace","Warpick","Lance","Pike","Whip"],
-  "Ranged Weapon": ["Bow","Crossbow"],
-  "Light Armor":   ["LightArmor"],
-  "Medium Armor":  ["MediumArmor"],
-  "Heavy Armor":   ["HeavyArmor","Shield"],
-  "Wondrous Item": ["WondrousItem","Grimoire","Gems"],
-  "Magic Focus":   ["Staff","Rod","Wand"],
-  Jewelry:         ["Necklace","Ring","Gems"],
-  Accessories:     ["Helmet","Boots","Cloak","Gauntlet"],
-  Supplies:        ["Potion","Ammunition"]
-};
-
-const specialDropConfig = {
-  enabledForChestType: "Random",
-  chances: { Potion: 0.05, Ammunition: 0.05, Scrolls: 0.05, Gems: 0.04 },
-  rarityWeights: {
-    Potion:     { Common: 0.60, Uncommon: 0.25, Rare: 0.10, VeryRare: 0.04, Legendary: 0.009, Unique: 0.001 },
-    Ammunition: { Common: 0.60, Uncommon: 0.25, Rare: 0.10, VeryRare: 0.04, Legendary: 0.009, Unique: 0.001 },
-    Scrolls:    { Common: 0.50, Uncommon: 0.30, Rare: 0.15, VeryRare: 0.04, Legendary: 0.009, Unique: 0.001 },
-    Gems:       { Common: 0.40, Uncommon: 0.35, Rare: 0.20, VeryRare: 0.04, Legendary: 0.009, Unique: 0.001 }
-  }
-};
-
-function maybePickSpecialCategory(chestType) {
-  if (chestType !== specialDropConfig.enabledForChestType) return null;
-  const entries = Object.entries(specialDropConfig.chances);
-  const total   = entries.reduce((s, [, c]) => s + c, 0);
-  const roll    = Math.random();
-  if (roll >= total) return null;
-  let acc = 0;
-  for (const [cat, chance] of entries) {
-    acc += chance;
-    if (roll < acc) return cat;
-  }
-  return null;
-}
-
+import { useMemo, useState } from 'react';
+import { useItemCatalog } from '../../hooks/useItemCatalog.js';
+import { EMPTY_FILTERS, filterEntries, rarityLabel, categoryLabel } from '../../data/items/index.js';
+import { drawItem, drawItems } from '../../utils/items.js';
+import { randomInt, weightedKey } from '../../utils/random.js';
+import { artwork } from '../../utils/artwork.js';
+import { CHEST_SETTINGS, SPECIAL_DROPS } from '../../config/chests.js';
+import { CHEST_GROUPS } from '../../config/itemGroups.js';
+import ChestIcon from '../../components/rewards/ChestIcon.jsx';
+import ItemTags from '../../components/items/ItemTags.jsx';
+import ItemFilters, { FilterSummary } from '../../components/items/ItemFilters.jsx';
+import './Chests.css';
 export default function Chests() {
-  const [selectedRarity, setSelectedRarity]       = useState("");
-  const [selectedChestType, setSelectedChestType] = useState("");
-  const [loot, setLoot]                           = useState(null);
-
-  // NEW: chest open animation state
-  const [isOpen, setIsOpen] = useState(false);
-
-  // When you change rarity, snap back to closed (feels natural)
-  useEffect(() => {
-    setIsOpen(false);
-  }, [selectedRarity]);
-
-  function openChest(rarity, chestType) {
-    const { goldRange, rarityWeights, dcRange } = chestSettings[rarity];
-
-    // Misc loot
-    const miscCount = getRandomInt(1, 3);
-    const miscArr   = itemNames.Misc?.Common || [];
-    const miscLoot  = Array.from({ length: miscCount }, () => ({
-      name: miscArr[getRandomInt(0, miscArr.length - 1)],
-      rarity: "Common",
-      category: "Misc"
-    }));
-
-    // Base item
-    const pool       = chestTypes[chestType] || Object.keys(itemNames);
-    const baseType   = pool[getRandomInt(0, pool.length - 1)];
-    const baseRarity = weightedPick(rarityWeights);
-    const baseName   = getRandomItem(baseType, null, baseRarity);
-    const baseExtra  = { name: baseName, rarity: baseRarity, itemType: baseType };
-
-    const items = [...miscLoot, baseExtra];
-
-    // Optional special drop for Random
-    if (chestType === "Random") {
-      const specialCat = maybePickSpecialCategory(chestType);
-      if (specialCat) {
-        const specWeights = specialDropConfig.rarityWeights[specialCat];
-        const specRarity  = weightedPick(specWeights);
-        const specName    = getRandomItem(specialCat, null, specRarity);
-        items.push({ name: specName, rarity: specRarity, category: specialCat });
+  const { entries } = useItemCatalog(); const [tier, setTier] = useState('wooden'); const [chestType, setChestType] = useState('Random');
+  const [filters, setFilters] = useState({ ...EMPTY_FILTERS }); const [filtersOpen, setFiltersOpen] = useState(false); const [loot, setLoot] = useState(null);
+  const matching = useMemo(() => filterEntries(entries, filters), [entries, filters]);
+  const pool = useMemo(() => matching.filter((item) => CHEST_GROUPS[chestType].includes(item.category)), [matching, chestType]);
+  const count = new Set(pool.map((item) => item.itemId)).size;
+  const openChest = () => {
+    const config = CHEST_SETTINGS[tier]; const used = new Set(); const items = [];
+    const add = (item) => { if (item) { items.push(item); used.add(item.itemId); } };
+    add(drawItem(pool, { rarity: weightedKey(config.rarityWeights) }));
+    if (chestType === 'Random') {
+      let roll = Math.random();
+      for (const [category, chance] of Object.entries(SPECIAL_DROPS.chances)) {
+        roll -= chance;
+        if (roll < 0) { add(drawItem(matching.filter((item) => item.category === category), { rarity: weightedKey(SPECIAL_DROPS.rarityWeights[category]), excluded: used })); break; }
       }
     }
-
-    // Gold only for Random type
-    const gold   = chestType === "Random" ? getRandomInt(goldRange[0], goldRange[1]) : null;
-    // Lockpicking DC based on rarity
-    const lockDC = getRandomInt(dcRange[0], dcRange[1]);
-
-    setLoot({ items, gold, lockDC });
-  }
-
-  function handleOpen() {
-    if (!selectedRarity || !selectedChestType) {
-      alert("Please select both a rarity and a chest type first.");
-      return;
-    }
-
-    // NEW: animate closed -> open
-    setIsOpen(false);
-    // small delay so the transition can play even if it was already open
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => setIsOpen(true));
-    });
-
-    openChest(selectedRarity, selectedChestType);
-  }
-
-  const rarityKey = selectedRarity ? selectedRarity.toLowerCase() : "";
-  const currentIcons = chestIcons[rarityKey] || { closed: treasureChestIcon, open: treasureChestIcon };
-
-  const closedSrc = currentIcons.closed;
-  const openSrc   = currentIcons.open;
-
-  // If you want fallback safety when open art doesn't exist:
-  const openSafeSrc = openSrc || closedSrc;
-
-  return (
-    <div className="chests-container">
-      <h1 className="chest-title">Chest Loot</h1>
-
-      {/* NEW: Cross-fade between closed/open chest art */}
-      <div className={`chest-art ${isOpen ? "open" : "closed"}`}>
-        <img
-          src={closedSrc}
-          className={`chest-icon chest-icon--closed ${rarityKey}`}
-          alt={`${selectedRarity ? `${selectedRarity} chest` : "Chest"} (closed)`}
-          draggable={false}
-        />
-        <img
-          src={openSafeSrc}
-          className={`chest-icon chest-icon--open ${rarityKey}`}
-          alt={`${selectedRarity ? `${selectedRarity} chest` : "Chest"} (open)`}
-          draggable={false}
-        />
-      </div>
-
-      <div className="chest-buttons">
-        {Object.keys(chestSettings).map((r) => {
-          const key = r.toLowerCase();
-          return (
-            <button
-              key={r}
-              className={`rarity-button ${key} ${r === selectedRarity ? "selected" : ""}`}
-              onClick={() => setSelectedRarity(r)}
-              aria-pressed={r === selectedRarity}
-            >
-              {r.charAt(0).toUpperCase() + r.slice(1)}
-            </button>
-          );
-        })}
-      </div>
-
-      <div className="chest-buttons">
-        {Object.keys(chestTypes).map((type) => (
-          <button
-            key={type}
-            className={type === selectedChestType ? "selected" : ""}
-            onClick={() => setSelectedChestType(type)}
-            aria-pressed={type === selectedChestType}
-          >
-            {type}
-          </button>
-        ))}
-      </div>
-
-      <div className="chests-actions">
-        <button className="open-chest-btn" onClick={handleOpen}>
-          Open Chest
-        </button>
-      </div>
-
-      {loot && (
-        <div className="loot-section">
-          <h2>
-            Loot from {selectedRarity.charAt(0).toUpperCase() + selectedRarity.slice(1)} – {selectedChestType} Chest
-          </h2>
-
-          {loot.lockDC != null && (
-            <p className="loot-lockdc">
-              Lockpicking DC: <strong>{loot.lockDC}</strong>
-            </p>
-          )}
-
-          <ul className="loot-list">
-            {loot.items.map((it, i) => (
-              <li key={i} className={`loot-item ${(it.rarity || "").toLowerCase()}`}>
-                {it.name}
-              </li>
-            ))}
-          </ul>
-          {loot.gold != null && <p className="loot-gold">Gold: {loot.gold}</p>}
-        </div>
-      )}
-    </div>
-  );
+    drawItems(matching.filter((item) => item.category === 'Misc' && !used.has(item.itemId)), randomInt(1, 3), { rarity: 'Common' }).forEach(add);
+    setLoot({ tier, chestType, items, gold: chestType === 'Random' ? randomInt(...config.goldRange) : null, lockDC: randomInt(...config.dcRange) });
+  };
+  const art = artwork(`${tier}${loot?.tier === tier ? '2' : ''}.jpg`);
+  return <section className="chests-page tool-page">
+    <header className="tool-heading"><div><span className="eyebrow">DM TOOLS</span><h1>Chest loot</h1><p>Choose a chest and discover what lies inside.</p></div><button className="app-btn" onClick={() => setFiltersOpen(true)}>Item filters</button></header>
+    <div className="chest-layout"><div className="chest-setup">
+      <div className="chest-art">{art ? <img src={art} alt={`${tier} chest`} /> : <ChestIcon tier={tier} open={loot?.tier === tier} />}</div>
+      <div className="chest-options" role="group" aria-label="Chest tier">{Object.keys(CHEST_SETTINGS).map((value) => <button className="app-btn" key={value} aria-pressed={tier === value} onClick={() => { setTier(value); setLoot(null); }}>{value[0].toUpperCase() + value.slice(1)}</button>)}</div>
+      <label className="chest-type">Chest type<select value={chestType} onChange={(event) => { setChestType(event.target.value); setLoot(null); }}>{Object.keys(CHEST_GROUPS).map((value) => <option key={value}>{value}</option>)}</select></label>
+      <FilterSummary filters={filters} onClear={() => setFilters({ ...EMPTY_FILTERS })} />
+      <button className="app-btn app-btn--primary" onClick={openChest} disabled={!count}>Open chest</button>
+      <p className="muted">{count ? `${count.toLocaleString()} possible main rewards` : 'No items match. Clear a filter or change chest type.'}</p>
+    </div><div className="chest-loot" aria-live="polite">{loot ? <><div className="chest-loot__heading"><h2>{loot.tier[0].toUpperCase() + loot.tier.slice(1)} · {loot.chestType}</h2><p>Lockpicking DC <strong>{loot.lockDC}</strong>{loot.gold !== null && <> · <strong>{loot.gold} gp</strong></>}</p></div>{loot.items.map((item) => <article className="chest-loot__item" key={item.itemId}><h3>{item.name}</h3><p>{categoryLabel(item.category)} · {rarityLabel(item.rarity)}{item.rarityAdjusted && ' · Nearest available rarity'}</p><ItemTags item={item} /></article>)}</> : <div className="empty-state"><h2>Ready when you are</h2><p>Your treasure appears here.</p></div>}</div></div>
+    {filtersOpen && <ItemFilters filters={filters} onChange={setFilters} onClose={() => setFiltersOpen(false)} count={count} />}
+  </section>;
 }

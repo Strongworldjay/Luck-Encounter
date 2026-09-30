@@ -1,7 +1,7 @@
 /* MagicBingo.module.css — light/dark via data-theme */
 
 /* ---------- Light theme (default) ---------- */
-:root {
+.root {
   --mb-bg-top: #ffffff;
   --mb-bg-mid: #ffffff;
   --mb-bg-bot: #ffffff;
@@ -22,10 +22,10 @@
 }
 
 .root {
-  min-height: 100vh;
+  min-height: calc(100dvh - var(--nav-h));
   color: var(--mb-text);
   background: linear-gradient(to bottom, var(--mb-bg-top), var(--mb-bg-mid), var(--mb-bg-bot));
-  padding: 1.5rem;
+  padding: 1.5rem 1rem calc(1.5rem + var(--bottom-safe));
 }
 
 .container { max-width: 80rem; margin: 0 auto; }
@@ -183,3 +183,5 @@
   .card { background: #ffffff !important; border: 2px solid #000 !important; box-shadow: none !important; }
   :global(body) { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 }
+
+@media(max-width:480px) { .root { padding:16px 8px calc(16px + var(--bottom-safe)); } .square { padding:4px; min-height:85px; } .squareText { font-size:11px; overflow-wrap:anywhere; } .grid { gap:4px; } }

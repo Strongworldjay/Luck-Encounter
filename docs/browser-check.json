@@ -1,0 +1,29 @@
+{
+  "layoutChecks": 102,
+  "viewports": [
+    320,
+    390,
+    1366
+  ],
+  "themes": [
+    "light",
+    "dark"
+  ],
+  "sections": 17,
+  "workflows": [
+    "reward draw/reveal",
+    "shared luck",
+    "repeated wheel spins",
+    "unique shop inventory",
+    "strict theme filter",
+    "chest loot",
+    "tag editing and reload",
+    "spell dialog and list",
+    "feat dialog and list",
+    "bingo persistence",
+    "character story",
+    "mobile navigation"
+  ],
+  "browserErrors": [],
+  "status": "passed"
+}

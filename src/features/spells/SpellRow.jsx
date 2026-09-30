@@ -1,13 +1,9 @@
+import { mdInlineToHtml } from '../../utils/text.js';
 import { useMemo, useRef, useState } from "react";
 import { slugify, spellImgUrl, schoolImgUrl, genericSpellImgUrl } from "./utils";
 
 const levelLabel = (lvl) => (lvl === 0 ? "Cantrip" : `${lvl}${[null,"st","nd","rd"][lvl]||"th"}-level`);
 
-const mdInlineToHtml = (md) =>
-  String(md ?? "")
-    .replace(/\*\*([\s\S]*?)\*\*/g, "<strong>$1</strong>")
-    .replace(/__([\s\S]*?)__/g, "<strong>$1</strong>")
-    .replace(/\r\n|\r|\n/g, "<br/>");
 
 export default function SpellRow({ spell, onOpen }) {
   const [open, setOpen] = useState(false);
@@ -15,7 +11,7 @@ export default function SpellRow({ spell, onOpen }) {
   // image + fallbacks (small icon)
   const initial = useMemo(() => {
     const slug = spell.slug || slugify(spell.name || "");
-    return spell.imagePath || spellImgUrl(slug);
+    return spell.imagePath || spellImgUrl(slug) || schoolImgUrl(spell.school);
   }, [spell.slug, spell.name, spell.imagePath]);
 
   const [src, setSrc] = useState(initial);
