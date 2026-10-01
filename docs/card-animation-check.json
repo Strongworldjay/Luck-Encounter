@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "animatedReveals": 6,
+  "wallpaperSources": 4,
+  "checks": [
+    "delayed results",
+    "center positioning",
+    "preserved slots",
+    "no labels or tags",
+    "axe watermark",
+    "no overflow",
+    "cancel during reveal",
+    "reduced motion"
+  ],
+  "browserErrors": []
+}

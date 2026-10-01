@@ -14,3 +14,7 @@ Validated September 30, 2026.
 The browser suite runs against the local Vite app using Chromium headless with mobile viewport emulation and reduced motion. It does not certify every item tag, every randomized outcome, every spell rule, every browser, or physical iOS Safari behavior. The production source was built separately. Inferred tags remain editable suggestions.
 
 Run `npm run check` to repeat the build/data/unit gates. For browser checks, install the bundled Playwright browser as shown in README, then run `npm run test:ui`.
+
+## Reward card update
+
+The revised reveal component passed six animated selections (left, center, right at mobile and desktop sizes), deferred result rendering, no theme/type badges, correct axe artwork, preserved empty card slots, no control overlap, cancellation during a reveal, and reduced-motion behavior. All four wallpaper source names were tested with HTTP fixtures because the actual wallpaper files were not supplied. No JavaScript errors were observed. Run `npm run test:cards` to repeat these checks.

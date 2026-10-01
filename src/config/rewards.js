@@ -1,10 +1,10 @@
 export const REWARD_RARITIES = [
-  { name: 'Common', color: 'white', range: [-100, 5] },
-  { name: 'Uncommon', color: 'green', range: [6, 49] },
-  { name: 'Rare', color: 'blue', range: [50, 89] },
-  { name: 'Very Rare', color: 'purple', range: [90, 109] },
-  { name: 'Legendary', color: 'orange', range: [110, 140] },
-  { name: 'Unique', color: 'red', range: [141, 200] },
+  { name: 'Common', color: 'white', cardColor: '#ecf1f5', range: [-100, 5] },
+  { name: 'Uncommon', color: 'green', cardColor: '#69d68b', range: [6, 49] },
+  { name: 'Rare', color: 'blue', cardColor: '#70b3ff', range: [50, 89] },
+  { name: 'Very Rare', color: 'purple', cardColor: '#ca98ff', range: [90, 109] },
+  { name: 'Legendary', color: 'orange', cardColor: '#ffba64', range: [110, 140] },
+  { name: 'Unique', color: 'red', cardColor: '#ff7e89', range: [141, 200] },
 ];
 
 export const DUNGEON_DIFFICULTIES = [

@@ -17,3 +17,7 @@
 @media(max-width:720px) { .tool-page { padding:22px 16px calc(20px + env(safe-area-inset-bottom,0px)); }.tool-heading { align-items:flex-start; flex-wrap:wrap; gap:12px; } }
 
 @media print { .navbar,.skip-link { display:none!important; } .app-content { min-height:0; } }
+
+.app-wallpaper { position:fixed; inset:0; z-index:-1; pointer-events:none; }
+.app-wallpaper img { display:block; width:100%; height:100%; object-fit:cover; object-position:center; }
+@media print { .app-wallpaper { display:none; } }

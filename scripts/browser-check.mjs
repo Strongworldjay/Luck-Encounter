@@ -34,7 +34,7 @@ try {
  await page.getByRole('group',{name:'Dungeon class'}).getByRole('button',{name:'S +75 Luck',exact:true}).click();
  assert.equal(await page.locator('.rewards-total strong').innerText(),'+97');
  await page.getByRole('button',{name:'Draw reward cards'}).click();assert.equal(await page.locator('.reward-card').count(),3);
- await page.getByRole('button',{name:'Reveal reward card 2'}).click();assert.equal(await page.locator('.reward-card').count(),1);assert.equal(await page.locator('.reward-card .item-tags').count(),1);
+ await page.getByRole('button',{name:'Reveal reward card 2'}).click();await page.locator('.reward-card.is-revealed').waitFor();assert.equal(await page.locator('.reward-card:not(.is-dismissed)').count(),1);assert.equal(await page.locator('.reward-card .item-tags').count(),0);
  await screenshot('reward-revealed-mobile');
  await goto('RandomWheel');assert.match(await page.locator('.using-app-luck').innerText(),/97/);
  for(let i=0;i<2;i++){await page.getByRole('button',{name:'Spin the Wheel',exact:true}).click();await page.waitForFunction(()=>!document.querySelector('.wheel-btn').disabled);assert.match(await page.locator('.wheel-result').innerText(),/Won|Curse/);}

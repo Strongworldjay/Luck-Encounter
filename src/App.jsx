@@ -1,4 +1,5 @@
 import { Component, lazy, Suspense, useEffect, useState } from 'react';
+import Wallpaper from './components/layout/Wallpaper.jsx';
 import Navbar from './components/layout/Navbar.jsx';
 import { NAV_GROUPS } from './config/navigation.js';
 import { useTheme } from './hooks/useTheme.js';
@@ -29,12 +30,13 @@ class PageErrorBoundary extends Component {
 export default function App() {
   const [section, setSection] = useState(sectionFromHash);
   const [rewardState, setRewardState] = useState(() => ({ luck: readStorage('hoard-luck', 0), dungeon: readStorage('hoard-dungeon', 'C'), cards: [], selected: null }));
-  const { preference, setThemePreference } = useTheme();
+  const { preference, setThemePreference, isDark } = useTheme();
   useEffect(() => { const sync = () => { setSection(sectionFromHash()); window.scrollTo(0, 0); }; window.addEventListener('hashchange', sync); return () => window.removeEventListener('hashchange', sync); }, []);
   useEffect(() => { writeStorage('hoard-luck', rewardState.luck); writeStorage('hoard-dungeon', rewardState.dungeon); }, [rewardState.luck, rewardState.dungeon]);
   useEffect(() => { document.title = `${NAV_GROUPS.flatMap((g) => g.items).find((item) => item.id === section)?.label ?? 'Dungeon Rewards'} · The Remarkable Hoard`; }, [section]);
   const Page = pages[section];
   return <div className="app-shell">
+    <Wallpaper dark={isDark} />
     <a className="skip-link" href="#main-content" onClick={(event) => { event.preventDefault(); document.getElementById("main-content").focus(); }}>Skip to content</a>
     <Navbar currentSection={section} onNavigate={(next) => { window.location.hash = next; setSection(next); window.scrollTo(0, 0); }} themePreference={preference} onThemePreferenceChange={setThemePreference} />
     <main id="main-content" tabIndex={-1} className="app-content">

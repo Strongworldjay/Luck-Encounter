@@ -4,7 +4,7 @@ import { useItemCatalog } from '../../hooks/useItemCatalog.js';
 import { filterEntries, EMPTY_FILTERS } from '../../data/items/index.js';
 import { drawItems } from '../../utils/items.js';
 import { readStorage, writeStorage } from '../../utils/storage.js';
-import Card from '../../components/rewards/Card.jsx';
+import RewardCards from '../../components/rewards/RewardCards.jsx';
 import ItemFilters, { FilterSummary } from '../../components/items/ItemFilters.jsx';
 import './DungeonRewards.css';
 const initialFilters = () => {
@@ -35,8 +35,8 @@ export default function DungeonRewards({ state, onStateChange }) {
       <FilterSummary filters={filters} onClear={() => updateFilters({ ...EMPTY_FILTERS })} />
     </header>
     <div className={`reward-stage ${state.selected !== null ? 'has-selection' : ''}`}>
-      {state.cards.length ? <div className="reward-cards">{state.cards.map((item, index) => <Card key={`${item.itemId}-${index}`} item={item} index={index} revealed={state.selected === index} dismissed={state.selected !== null && state.selected !== index} onReveal={() => { if (state.selected === null) update({ selected: index }); }} />)}</div> : <div className="reward-intro"><div className="reward-intro__mark" aria-hidden>✧</div><h2>Your next discovery awaits</h2><p>Draw three cards. Choose one to reveal your reward.</p></div>}
-      <p className="rewards-status" aria-live="polite">{!count ? 'No rewards match these filters. Clear a filter to draw again.' : state.cards.length && state.selected === null ? 'Choose a card.' : state.selected !== null ? 'Your reward is revealed.' : `${count.toLocaleString()} possible rewards`}</p>
+      {state.cards.length ? <RewardCards cards={state.cards} selected={state.selected} onSelect={(index) => update({ selected: index })} /> : <div className="reward-intro"><div className="reward-intro__mark" aria-hidden>✧</div><h2>Your next discovery awaits</h2><p>Draw three cards. Choose one to reveal your reward.</p></div>}
+      {!state.cards.length && <p className="rewards-status" aria-live="polite">{!count ? 'No rewards match these filters. Clear a filter to draw again.' : `${count.toLocaleString()} possible rewards`}</p>}
     </div>
     <footer className="rewards-dock"><button className="app-btn app-btn--primary" disabled={!count} onClick={draw}>✦ Draw reward cards</button><button className="app-btn" disabled={!state.cards.length} onClick={() => update({ cards: [], selected: null })}>Clear cards</button></footer>
     {open && <ItemFilters filters={filters} onChange={updateFilters} onClose={() => setOpen(false)} count={count} categories={REWARD_ITEM_TYPES} />}
