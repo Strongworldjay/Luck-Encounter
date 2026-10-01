@@ -1,5 +1,5 @@
 {
-  "layoutChecks": 102,
+  "layoutChecks": 108,
   "viewports": [
     320,
     390,
@@ -9,7 +9,7 @@
     "light",
     "dark"
   ],
-  "sections": 17,
+  "sections": 18,
   "workflows": [
     "reward draw/reveal",
     "shared luck",

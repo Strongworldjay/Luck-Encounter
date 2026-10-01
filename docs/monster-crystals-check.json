@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "layoutChecks": 12,
+  "viewports": [
+    320,
+    390,
+    1366
+  ],
+  "themes": [
+    "light",
+    "dark"
+  ],
+  "workflows": [
+    "Player Tools navigation",
+    "mixed five-crystal queue",
+    "individual destruction and reward",
+    "Neutral and Dragon matching",
+    "reload and navigation persistence",
+    "no repeat opening",
+    "clear opened preserves pending",
+    "remove pending",
+    "optional Ice theme"
+  ],
+  "browserErrors": []
+}

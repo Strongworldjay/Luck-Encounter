@@ -1,0 +1,33 @@
+.monster-crystals-page .mc-builder { display:grid; grid-template-columns:1.1fr 1fr 1.1fr 90px auto; gap:14px; align-items:end; padding:22px; background:var(--surface); border:1px solid var(--border); border-radius:16px; }
+.monster-crystals-page .mc-builder label { display:grid; gap:7px; min-width:0; font-size:.8rem; font-weight:700; }
+.monster-crystals-page .mc-builder :is(select,input) { width:100%; }
+.monster-crystals-page .mc-builder-note { grid-column:1/-1; margin:0; color:var(--muted); font-size:.83rem; }
+.monster-crystals-page .mc-odds { padding:16px 0; color:var(--muted); line-height:1.65; font-size:.87rem; }
+.monster-crystals-page .mc-odds summary { color:var(--primary); cursor:pointer; min-height:44px; padding:10px 0; }
+.monster-crystals-page .mc-odds-scroll { overflow:auto; max-width:100%; border:1px solid var(--border); border-radius:10px; }
+.monster-crystals-page table { border-collapse:collapse; width:100%; min-width:650px; background:var(--surface); }
+.monster-crystals-page caption { text-align:left; padding:12px; }
+.monster-crystals-page :is(td,th) { text-align:left; border-bottom:1px solid var(--border); padding:10px; font-size:.8rem; white-space:nowrap; }
+.monster-crystals-page .mc-queue-heading { display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; }
+.monster-crystals-page .mc-queue-heading h2 { font-size:1.25rem; margin:0; }
+.monster-crystals-page .mc-queue-heading span { display:block; color:var(--muted); font-size:.8rem; font-weight:400; margin-top:6px; }
+.monster-crystals-page .mc-message { color:var(--muted); font-size:.86rem; min-height:1.5em; }
+.monster-crystals-page .mc-queue { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr)); gap:16px; align-items:start; }
+.monster-crystals-page .mc-entry { padding:20px; background:var(--surface); border:1px solid var(--border); border-radius:16px; min-width:0; }
+.monster-crystals-page .mc-entry-header { display:flex; align-items:center; gap:16px; }
+.monster-crystals-page .mc-crystal { width:54px; height:70px; flex:none; color:var(--crystal-color); filter:drop-shadow(0 0 5px color-mix(in srgb,var(--crystal-color) 20%,transparent)); background:#102a33; border-radius:12px; padding:6px; }
+.monster-crystals-page .mc-number { font-size:.63rem; letter-spacing:.12em; color:var(--muted); }
+.monster-crystals-page .mc-entry h3 { margin:5px 0; font-size:1.08rem; }
+.monster-crystals-page .mc-entry-header p,.monster-crystals-page .mc-risk { margin:6px 0; color:var(--muted); font-size:.8rem; }
+.monster-crystals-page .mc-risk { margin-top:18px; }
+.monster-crystals-page .mc-entry-actions { display:flex; gap:12px; margin-top:16px; }
+.monster-crystals-page .mc-result { position:relative; overflow:hidden; margin-top:18px; padding:22px 18px; border:1px solid var(--border); border-radius:12px; background:var(--elevated); animation:mc-result-in .35s ease both; }
+.monster-crystals-page .mc-result h4 { position:relative; margin:8px 0; font-size:1.2rem; line-height:1.4; overflow-wrap:anywhere; }
+.monster-crystals-page .mc-result p { position:relative; margin:8px 0; font-size:.85rem; }
+.monster-crystals-page .mc-result--item { background:#10232c; color:var(--item-color); border-color:color-mix(in srgb,var(--item-color) 35%,transparent); }
+.monster-crystals-page .mc-item-rarity { position:relative; font-size:.7rem; text-transform:uppercase; letter-spacing:.12em; font-weight:800; }
+.monster-crystals-page .mc-result small { position:relative; display:block; color:#bfd0d4; margin-top:18px; font-size:.73rem; }
+.monster-crystals-page .mc-item-art { position:absolute; width:140px; height:140px; right:0; bottom:0; object-fit:contain; opacity:.1; }
+@keyframes mc-result-in { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
+@media(max-width:900px) { .monster-crystals-page .mc-builder { grid-template-columns:repeat(2,minmax(0,1fr)); }.monster-crystals-page .mc-builder>.app-btn { grid-column:1/-1; } }
+@media(max-width:420px) { .monster-crystals-page .mc-builder { padding:16px; gap:12px; }.monster-crystals-page .mc-entry { padding:16px; } }

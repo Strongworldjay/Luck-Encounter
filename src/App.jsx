@@ -5,6 +5,7 @@ import { NAV_GROUPS } from './config/navigation.js';
 import { useTheme } from './hooks/useTheme.js';
 import { readStorage, writeStorage } from './utils/storage.js';
 const pages = {
+  MonsterCrystals: lazy(() => import('./features/monster-crystals/MonsterCrystals.jsx')),
   DungeonCompletion: lazy(() => import('./features/rewards/DungeonRewards.jsx')),
   BountyBoard: lazy(() => import('./features/bounty/BountyBoard.jsx')),
   MagicBingo: lazy(() => import('./features/bingo/MagicBingo.jsx')),

@@ -11,7 +11,9 @@
     "audit:data": "node scripts/audit-data.mjs",
     "check": "npm run test && npm run audit:data && npm run build",
     "test:ui": "node scripts/browser-check.mjs",
-    "assets:restore": "node scripts/restore-artwork.mjs"
+    "assets:restore": "node scripts/restore-artwork.mjs",
+    "test:cards": "node scripts/card-animation-check.mjs",
+    "test:crystals": "node scripts/monster-crystals-check.mjs"
   },
   "dependencies": {
     "react": "^19.2.0",

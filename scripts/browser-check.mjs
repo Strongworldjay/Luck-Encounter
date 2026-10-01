@@ -11,7 +11,7 @@ try {
  const context=await browser.newContext({viewport:{width:390,height:844},isMobile:true,deviceScaleFactor:1,reducedMotion:'reduce'});
  const page=await context.newPage();
  page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});
- const routes=['DungeonCompletion','ItemCatalog','ShopInventory','Chests','RandomWheel','Spells','OriginFeats','GeneralFeats','EpicBoons','MasteryFeats','RacialFeats','MavenArms','CharacterSheets','MagicBingo','SPPlanner','JumpCalc','BountyBoard'];
+ const routes=['DungeonCompletion','MonsterCrystals','ItemCatalog','ShopInventory','Chests','RandomWheel','Spells','OriginFeats','GeneralFeats','EpicBoons','MasteryFeats','RacialFeats','MavenArms','CharacterSheets','MagicBingo','SPPlanner','JumpCalc','BountyBoard'];
  await page.goto('http://127.0.0.1:5174');await page.locator('.rewards-page').waitFor();
  async function goto(route){await page.evaluate(x=>location.hash=x,route);await page.waitForFunction(()=>!document.querySelector('.section-loading'));await page.waitForTimeout(100);assert.equal(await page.getByText('This tool could not load.').count(),0);}
  async function screenshot(name){if(screenshots)await page.screenshot({path:`${screenshots}/${name}.png`,fullPage:true});}

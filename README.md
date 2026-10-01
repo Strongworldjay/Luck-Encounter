@@ -1,6 +1,6 @@
 # The Remarkable Hoard — Luck Encounter
 
-A consolidated React/Vite project with 17 tools, one item catalog, shared multi-tag filters, and responsive coastal light/dark themes.
+A consolidated React/Vite project with 18 tools, one item catalog, shared multi-tag filters, and responsive coastal light/dark themes.
 
 ## Start here
 
@@ -27,11 +27,12 @@ npx playwright install chromium --only-shell
 npm run test:ui
 ```
 
-`npm run test:ui` starts its own local server on port 5174. It verifies 17 sections at 320, 390, and 1366 pixels in both themes, then exercises the main workflows. Optional: set `QA_SCREENSHOTS` to a directory to save screenshots.
+`npm run test:ui` starts its own local server on port 5174. It verifies 18 sections at 320, 390, and 1366 pixels in both themes, then exercises the main workflows. Optional: set `QA_SCREENSHOTS` to a directory to save screenshots.
 
 ## Using the project
 
-- **Dungeon Completion:** enter character luck, choose a dungeon class, set optional filters, draw up to three different rewards, and reveal one. The bottom controls remain in the page flow and reserve safe-area space.
+- **Dungeon Completion:** enter character luck, choose a dungeon class, set optional filters, draw up to three different rewards, and reveal one. The chosen card slides into the center, the others fade away, and a smooth flip reveals rarity-colored text and an equipment watermark. Bottom controls remain in normal page flow and reserve safe-area space.
+- **Monster Crystals:** queue any mix of 14 monster types and six rarities, optionally choose a theme, and open each crystal separately. Your exact destruction chances are applied; successful openings yield only eligible dungeon items with matching types or Neutral fallback. Results persist locally. See `docs/MONSTER-CRYSTALS.md` for odds and this update’s exact file list. Run `npm run test:crystals` for the focused browser checks.
 - **Item Catalog:** search every item, filter by category/type/theme/rarity, edit tags, and export the full catalog. "Review broad suggestions" shows entries that only had enough information for category-based tags.
 - **Shop Inventory:** select a shop preset and size; filter by type/theme; generate, copy, or export stock. Duplicate items are disabled by default.
 - **Chests:** select a tier and chest type. All generated item drops, including extras, respect active item filters. Currency remains separate.
@@ -112,3 +113,20 @@ Safari's own address/navigation toolbar is controlled by iOS. This project addre
 This package is ready for your existing Vercel workflow: build command `npm run build`, output directory `dist`. `vercel.json` is included. Replace the old source tree with this reviewed project in your repository, keeping your existing repository/Vercel project linkage. No deployment has been performed by this deliverable.
 
 Read `docs/CHANGES.md` for every added, modified, and removed source file, and `docs/VERIFICATION.md` for the checks completed.
+
+## Card presentation update
+
+See `docs/CARD-UPDATE.md` for this revision’s exact changed files. Reward card fronts show the rarity, item name, and equipment category. Creature-type/theme tags remain available to filters and the catalog but are hidden on reward cards.
+
+Add your wallpaper files to **`public/assets/`** (or `src/assets/`):
+
+- `wallpaperday.png` — light theme, desktop
+- `wallpaperdaymobile.png` — light theme, mobile up to 720px
+- `wallpapernight.png` — dark theme, desktop
+- `wallpapernightmobile.png` — dark theme, mobile up to 720px
+
+These four wallpapers were not included in the uploads, so they are not invented or substituted in this package. Until supplied, the coastal theme remains visible. Restart Vite or rebuild after adding artwork. Mobile uses the desktop wallpaper if only that version is present.
+
+For equipment watermarks, the preferred filename is the lowercase equipment category plus `.png`: `axe.png`, `sword.png`, `heavyarmor.png`, `wondrousitem.png`, etc. The old project’s names such as `armor-symbol.png`, `ring-symbol.png`, and `light-armor.png` are also supported. Put these in `src/assets/` or `public/assets/`. Eleven usable original equipment icons are included; missing icons are simply omitted.
+
+`npm run test:cards` checks the actual animation timing, delayed result text, left/middle/right centering, unchanged empty slots, non-overlapping controls, cancellation, reduced motion, and all four wallpaper source selections. Wallpaper routing uses temporary HTTP fixtures; it does not claim to preview your missing wallpapers.
