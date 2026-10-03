@@ -1,4 +1,4 @@
-.monster-crystals-page .mc-builder { display:grid; grid-template-columns:1.1fr 1fr 1.1fr 90px auto; gap:14px; align-items:end; padding:22px; background:var(--surface); border:1px solid var(--border); border-radius:16px; }
+.monster-crystals-page .mc-builder { display:grid; grid-template-columns:1.2fr 1fr 90px auto; gap:14px; align-items:end; padding:22px; background:var(--surface); border:1px solid var(--border); border-radius:16px; }
 .monster-crystals-page .mc-builder label { display:grid; gap:7px; min-width:0; font-size:.8rem; font-weight:700; }
 .monster-crystals-page .mc-builder :is(select,input) { width:100%; }
 .monster-crystals-page .mc-builder-note { grid-column:1/-1; margin:0; color:var(--muted); font-size:.83rem; }
@@ -16,6 +16,7 @@
 .monster-crystals-page .mc-entry { padding:20px; background:var(--surface); border:1px solid var(--border); border-radius:16px; min-width:0; }
 .monster-crystals-page .mc-entry-header { display:flex; align-items:center; gap:16px; }
 .monster-crystals-page .mc-crystal { width:54px; height:70px; flex:none; color:var(--crystal-color); filter:drop-shadow(0 0 5px color-mix(in srgb,var(--crystal-color) 20%,transparent)); background:#102a33; border-radius:12px; padding:6px; }
+.monster-crystals-page .mc-crystal--image { width:86px; height:86px; object-fit:contain; padding:0; background:transparent; }
 .monster-crystals-page .mc-number { font-size:.63rem; letter-spacing:.12em; color:var(--muted); }
 .monster-crystals-page .mc-entry h3 { margin:5px 0; font-size:1.08rem; }
 .monster-crystals-page .mc-entry-header p,.monster-crystals-page .mc-risk { margin:6px 0; color:var(--muted); font-size:.8rem; }

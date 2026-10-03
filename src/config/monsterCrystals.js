@@ -1,7 +1,10 @@
 import { CREATURE_TYPES } from '../data/items/taxonomy.js';
 import { REWARD_ITEM_TYPES } from './rewards.js';
 // Neutral is an item fallback, not a monster crystal species.
-export const MONSTER_CRYSTAL_TYPES = CREATURE_TYPES.filter((type) => type !== 'Neutral');
+export const MONSTER_CRYSTAL_TYPES = CREATURE_TYPES.filter((type) => type !== 'Neutral' && type !== 'Humanoid');
+// Previously queued Humanoid crystals remain usable, but no new ones can be added.
+export const isExistingCrystalType = (type) => MONSTER_CRYSTAL_TYPES.includes(type) || type === 'Humanoid';
+export const crystalImageName = (type, broken = false) => `${type.toLowerCase()}crystal${broken ? 'broken' : ''}.png`;
 const excluded = new Set(['WeaponArt', 'BoostArt', 'PassiveArt', 'SkillPoints', 'Experience', 'EXP', 'Mana', 'Stamina']);
 export const CRYSTAL_ITEM_CATEGORIES = REWARD_ITEM_TYPES.filter((category) => !excluded.has(category));
 export const TYPE_MATCH_CHANCE = 0.85;

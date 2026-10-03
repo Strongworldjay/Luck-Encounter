@@ -27,11 +27,6 @@
   font-weight: 800;
   color: var(--app-text);
 }
-.jump-page .preset-row {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-}
 
 .jump-page .btn {
   background: var(--elevated, #111);
@@ -47,7 +42,6 @@
   border-color: var(--accent-color, #ffd700);
   box-shadow: 0 0 0 3px color-mix(in oklch, var(--accent-color, #ffd700) 25%, transparent);
 }
-.jump-page .btn-chip { min-height: 44px; padding: 0 10px; }
 
 :where(.jump-page) .jump-grid {
   margin-top: 12px;

@@ -1,5 +1,5 @@
 {
-  "layoutChecks": 108,
+  "layoutChecks": 90,
   "viewports": [
     320,
     390,
@@ -9,19 +9,16 @@
     "light",
     "dark"
   ],
-  "sections": 18,
+  "sections": 15,
   "workflows": [
     "reward draw/reveal",
-    "shared luck",
-    "repeated wheel spins",
     "unique shop inventory",
     "strict theme filter",
     "chest loot",
+    "filtered sword plus potion/scroll/gem bonus",
     "tag editing and reload",
     "spell dialog and list",
     "feat dialog and list",
-    "bingo persistence",
-    "character story",
     "mobile navigation"
   ],
   "browserErrors": [],

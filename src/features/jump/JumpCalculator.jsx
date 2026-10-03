@@ -1,14 +1,6 @@
 import { useMemo, useState } from "react";
 import "./jump.css";
 
-// Presets
-const PRESETS = {
-  Braknir: { str: 20, feet: 5, inches: 9 },
-  Blu:     { str: 20, feet: 5, inches: 10 },
-  Tom:     { str: 11, feet: 5, inches: 5 },
-  Lucky:   { str: 10, feet: 4, inches: 7 },
-};
-
 const clampInt = (v, min, max) => {
   const n = Number.parseInt(v ?? "", 10);
   if (Number.isNaN(n)) return min;
@@ -52,31 +44,11 @@ export default function JumpCalculator() {
   const reachFeet = useMemo(() => baseHigh + toFeetFloat(feet, inches) + 3, [baseHigh, feet, inches]);
   const reachFtIn = feetToFtIn(reachFeet);
 
-  const setPreset = (name) => {
-    const p = PRESETS[name];
-    if (!p) return;
-    setStr(p.str);
-    setFeet(p.feet);
-    setInches(p.inches);
-  };
-
   return (
     <div className="jump-page">
       <div className="jump-card">
         <header className="jump-header">
           <h2>Jump Calculator</h2>
-          <div className="preset-row" role="group" aria-label="Presets">
-            {Object.keys(PRESETS).map((k) => (
-              <button
-                key={k}
-                className="btn btn-chip"
-                onClick={() => setPreset(k)}
-                title={`Set ${k}'s stats`}
-              >
-                {k}
-              </button>
-            ))}
-          </div>
         </header>
 
         <div className="jump-grid">

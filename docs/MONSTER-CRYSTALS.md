@@ -1,6 +1,6 @@
 # Monster Crystals
 
-Player Tools → Monster Crystals supports all 14 creature types and six crystal rarities (84 combinations). Neutral is reserved for item fallback. Add mixed quantities, optionally choose a theme, then open each crystal individually. Each opening consumes one crystal and produces either one eligible item or nothing.
+Player Tools → Monster Crystals offers 13 creature types and six crystal rarities (78 combinations). Humanoid is not offered for new crystals; previously queued Humanoid crystals remain usable. Neutral is reserved for item fallback. Add mixed quantities, then open each crystal individually. Each opening consumes one crystal and produces either one eligible item or nothing.
 
 ## Destruction and item odds
 
@@ -23,7 +23,7 @@ Edit `src/config/monsterCrystals.js` to adjust these defaults. The page's expand
 - Excludes Weapon Art, Boost Art, Passive Art, skill points, experience, mana, stamina, currency, and filler. No shop-only categories enter the pool.
 - On success, matching creature-type items receive 85% of selections and Neutral items 15% when both pools exist. With just one pool, that pool gets all successful selections.
 - Neutral fallback means items tagged **only** Neutral. Items tagged for unrelated creatures do not qualify as fallback.
-- Optional themes restrict the matching-type pool. Neutral fallback prefers the selected theme when available, otherwise any Neutral item may appear.
+- There is no crystal theme selector. Older saved crystal themes are ignored when a queue loads.
 - Item rarity weights are redistributed across the rarities actually available in the chosen pool, without changing destruction chances or exceeding the crystal tier.
 - If no eligible item exists, the crystal remains unopened; it is not silently consumed.
 - Uses browser tag edits immediately. Matching is only as accurate as the shared catalog's editable, inferred tags.
@@ -33,7 +33,11 @@ Edit `src/config/monsterCrystals.js` to adjust these defaults. The page's expand
 
 Add 1–50 crystals at once, up to 100 total queued/opened entries. Remove unopened crystals individually, or use Clear opened to remove resolved entries. Queue and results persist in this browser on this device, including after reload or navigation. They are not synchronized between devices. This is a local game tool, not a server-enforced inventory.
 
-## Files in this revision
+## Type-specific artwork
+
+Place images in `public/assets/` or `src/assets/`. Use the lowercase creature type followed by `crystal.png` for the unopened crystal and `crystalbroken.png` after it is opened, whether it yielded an item or nothing. For example, Beast uses `beastcrystal.png` and `beastcrystalbroken.png`; Dragon uses `dragoncrystal.png` and `dragoncrystalbroken.png`. The same convention applies to all 13 types. Missing images use the built-in icon until artwork is supplied. Restart Vite or rebuild after adding images.
+
+## Files in the initial Monster Crystals revision
 
 Updated:
 - `README.md`

@@ -1,6 +1,6 @@
 # The Remarkable Hoard — Luck Encounter
 
-A consolidated React/Vite project with 18 tools, one item catalog, shared multi-tag filters, and responsive coastal light/dark themes.
+A consolidated React/Vite project with 15 tools, one item catalog, shared multi-tag filters, and responsive coastal light/dark themes.
 
 ## Start here
 
@@ -27,19 +27,18 @@ npx playwright install chromium --only-shell
 npm run test:ui
 ```
 
-`npm run test:ui` starts its own local server on port 5174. It verifies 18 sections at 320, 390, and 1366 pixels in both themes, then exercises the main workflows. Optional: set `QA_SCREENSHOTS` to a directory to save screenshots.
+`npm run test:ui` starts its own local server on port 5174. It verifies 15 sections at 320, 390, and 1366 pixels in both themes, then exercises the main workflows. Optional: set `QA_SCREENSHOTS` to a directory to save screenshots.
 
 ## Using the project
 
 - **Dungeon Completion:** enter character luck, choose a dungeon class, set optional filters, draw up to three different rewards, and reveal one. The chosen card slides into the center, the others fade away, and a smooth flip reveals rarity-colored text and an equipment watermark. Bottom controls remain in normal page flow and reserve safe-area space.
-- **Monster Crystals:** queue any mix of 14 monster types and six rarities, optionally choose a theme, and open each crystal separately. Your exact destruction chances are applied; successful openings yield only eligible dungeon items with matching types or Neutral fallback. Results persist locally. See `docs/MONSTER-CRYSTALS.md` for odds and this update’s exact file list. Run `npm run test:crystals` for the focused browser checks.
+- **Monster Crystals:** queue any mix of 13 monster types and six rarities, then open each crystal separately. Humanoid is not offered. Your exact destruction chances are applied; successful openings yield eligible dungeon items with matching types or Neutral fallback. Each type accepts `public/assets/<type>crystal.png` and `<type>crystalbroken.png` images (lowercase type, e.g. `beastcrystal.png` and `beastcrystalbroken.png`). The image switches to the broken version after opening, whether an item appears or not. Missing images use the built-in crystal icon. Results persist locally. See `docs/MONSTER-CRYSTALS.md` for odds. Run `npm run test:crystals` for the focused browser checks.
 - **Item Catalog:** search every item, filter by category/type/theme/rarity, edit tags, and export the full catalog. "Review broad suggestions" shows entries that only had enough information for category-based tags.
 - **Shop Inventory:** select a shop preset and size; filter by type/theme; generate, copy, or export stock. Duplicate items are disabled by default.
-- **Chests:** select a tier and chest type. All generated item drops, including extras, respect active item filters. Currency remains separate.
-- **Random Wheel:** uses your dungeon luck by default, with optional custom luck. Its item rewards use the same catalog and filters.
-- **Reference and player tools:** 986 spells, 158 feats across six groups, character sheets/backstories, skill-point planning, jump calculations, Bingo, and the Insamont bounty board.
+- **Chests:** select a tier and chest type. Equipment main rewards follow selected categories, creature types, and themes. Potions, scrolls, and gems (including runestones in Gems) remain possible bonus drops for every chest, regardless of those filters. Bonus probabilities and item rarity rolls remain independent of the chest tier. Currency remains separate.
+- **Reference and player tools:** 986 spells, 158 feats across six groups, skill-point planning, a jump calculator with manual inputs, and the Insamont bounty board.
 
-Selections within one filter group are OR conditions; different groups are combined with AND. An empty group places no restriction. A theme filter with no matching items produces an empty state, not unrelated loot.
+Selections within one filter group are OR conditions; different groups are combined with AND. An empty group places no restriction. A theme filter with no matching equipment can leave a chest without a main reward while the independent potion/scroll/gem bonuses remain possible. In the other item tools, a theme filter with no matching items produces an empty state.
 
 ## Maintaining items and tags
 

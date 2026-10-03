@@ -3,6 +3,9 @@ import fs from 'node:fs';
 import { chromium } from 'playwright';
 import { createServer } from 'vite';
 import { CRYSTAL_ITEM_CATEGORIES } from '../src/config/monsterCrystals.js';
+// Temporary valid images verify the intact/broken filename swap without shipping placeholder art.
+const fixtures = ['aberrationcrystal.png', 'aberrationcrystalbroken.png', 'dragoncrystal.png', 'dragoncrystalbroken.png'].map(name => `public/assets/${name}`).filter(path => !fs.existsSync(path));
+for (const path of fixtures) fs.copyFileSync('public/assets/bounty1.png', path);
 const server = await createServer({server:{host:'127.0.0.1',port:5176,strictPort:true}});
 await server.listen();
 const browser = await chromium.launch({headless:true,args:['--no-sandbox']});
@@ -19,7 +22,9 @@ try {
   await page.getByRole('button',{name:'Monster Crystals',exact:true}).click();
   await page.locator('.monster-crystals-page').waitFor();
   assert.equal(await page.getByRole('button',{name:'Toggle navigation'}).getAttribute('aria-expanded'),'false');
-  assert.equal(await page.getByLabel('Monster type').locator('option').count(),14);
+  assert.equal(await page.getByLabel('Monster type').locator('option').count(),13);
+  assert.equal(await page.getByLabel('Monster type').locator('option').filter({hasText:'Humanoid'}).count(),0);
+  assert.equal(await page.getByLabel('Theme (optional)').count(),0);
   assert.equal(await page.getByLabel('Crystal rarity').locator('option').count(),6);
   await page.getByLabel('Quantity',{exact:true}).fill('3');
   await page.getByRole('button',{name:'Add to queue'}).click();
@@ -28,14 +33,17 @@ try {
   await page.getByLabel('Quantity',{exact:true}).fill('2');
   await page.getByRole('button',{name:'Add to queue'}).click();
   assert.equal(await page.locator('.mc-entry--pending').count(),5);
+  assert.match(await page.locator('.mc-entry').first().locator('img.mc-crystal--image').getAttribute('src'), /aberrationcrystal\.png$/);
   await page.evaluate(()=>Math.random=()=>0);
   await page.getByRole('button',{name:'Open crystal 1',exact:true}).click();
   assert.equal(await page.locator('.mc-entry--destroyed').count(),1);
+  assert.match(await page.locator('.mc-entry').first().locator('img.mc-crystal--image').getAttribute('src'), /aberrationcrystalbroken\.png$/);
   await page.evaluate(()=>Math.random=()=>0.99999);
   await page.getByRole('button',{name:'Open crystal 2',exact:true}).click();
   await page.evaluate(()=>Math.random=()=>0.5);
   await page.getByRole('button',{name:'Open crystal 4',exact:true}).click();
   assert.equal(await page.locator('.mc-entry--reward').count(),2);
+  assert.match(await page.locator('.mc-entry').nth(3).locator('img.mc-crystal--image').getAttribute('src'), /dragoncrystalbroken\.png$/);
   assert.equal(await page.locator('.mc-entry--pending').count(),2);
   const saved = await page.evaluate(()=>localStorage.getItem('hoard-monster-crystals-v1'));
   const queue = JSON.parse(saved);
@@ -70,16 +78,15 @@ try {
   assert.equal(await page.locator('.mc-entry').count(),1);
   await page.getByLabel('Monster type').selectOption('Dragon');
   await page.getByLabel('Crystal rarity').selectOption('Legendary');
-  await page.getByLabel('Theme (optional)').selectOption('Ice');
   await page.getByLabel('Quantity',{exact:true}).fill('1');
   await page.getByRole('button',{name:'Add to queue'}).click();
   await page.evaluate(()=>Math.random=()=>0.5);
   await page.getByRole('button',{name:'Open crystal 2',exact:true}).click();
-  const themed = await page.evaluate(()=>JSON.parse(localStorage.getItem('hoard-monster-crystals-v1')).at(-1));
-  assert.equal(themed.status,'reward');
-  assert(themed.affinity==='neutral'||(themed.item.types.includes('Dragon')&&themed.item.themes.includes('Ice')));
+  const opened = await page.evaluate(()=>JSON.parse(localStorage.getItem('hoard-monster-crystals-v1')).at(-1));
+  assert.equal(opened.status,'reward');
+  assert(opened.affinity==='neutral'||opened.item.types.includes('Dragon'));
   assert.deepEqual(errors,[]);
-  const report={status:'passed',layoutChecks:12,viewports:[320,390,1366],themes:['light','dark'],workflows:['Player Tools navigation','mixed five-crystal queue','individual destruction and reward','Neutral and Dragon matching','reload and navigation persistence','no repeat opening','clear opened preserves pending','remove pending','optional Ice theme'],browserErrors:errors};
+  const report={status:'passed',layoutChecks:12,viewports:[320,390,1366],themes:['light','dark'],workflows:['Player Tools navigation','mixed five-crystal queue','individual destruction and reward','Neutral and Dragon matching','reload and navigation persistence','no repeat opening','clear opened preserves pending','remove pending','13 types with no theme or Humanoid','intact and broken type artwork swap'],browserErrors:errors};
   fs.writeFileSync('docs/monster-crystals-check.json',JSON.stringify(report,null,2)+'\n');
   console.log(JSON.stringify(report,null,2));
-} finally {await browser.close();await server.close();}
+} finally {await browser.close();await server.close();for (const path of fixtures) fs.rmSync(path);}

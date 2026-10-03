@@ -8,15 +8,12 @@ export const NAV_GROUPS = [
       { id: 'SPPlanner', label: 'SP Planner' },
       { id: 'Spells', label: 'Spells' },
       { id: 'ItemCatalog', label: 'Item Catalog' },
-      { id: 'MagicBingo', label: 'Magic Bingo' },
-      { id: 'CharacterSheets', label: 'Character Sheets' },
     ],
   },
   {
     id: 'dm-tools',
     label: 'DM Tools',
     items: [
-      { id: 'RandomWheel', label: 'Random Wheel' },
       { id: 'JumpCalc', label: 'Jump Calculator' },
       { id: 'ShopInventory', label: 'Shop Inventory' },
       { id: 'Chests', label: 'Chests' },

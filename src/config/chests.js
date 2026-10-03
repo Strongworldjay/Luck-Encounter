@@ -9,7 +9,6 @@ export const CHEST_SETTINGS = {
 };
 
 export const SPECIAL_DROPS = {
-  enabledForChestType: "Random",
   chances: { Potion: 0.05, Ammunition: 0.05, Scrolls: 0.05, Gems: 0.04 },
   rarityWeights: {
     Potion:     { Common: 0.60, Uncommon: 0.25, Rare: 0.10, VeryRare: 0.04, Legendary: 0.009, Unique: 0.001 },
