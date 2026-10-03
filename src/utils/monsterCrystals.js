@@ -4,9 +4,9 @@ import { weightedKey } from './random.js';
 import { drawItem } from './items.js';
 export function crystalPools(entries, crystal) {
   if (!isExistingCrystalType(crystal.type) || !MONSTER_CRYSTAL_RULES[crystal.rarity]) return { matching: [], neutral: [] };
-  const ceiling = RARITIES.indexOf(crystal.rarity);
+  const allowedRarities = new Set(Object.keys(MONSTER_CRYSTAL_RULES[crystal.rarity].itemWeights));
   const eligible = entries.filter((item) => item.available !== false && CRYSTAL_ITEM_CATEGORIES.includes(item.category)
-    && RARITIES.indexOf(item.rarity) >= 0 && RARITIES.indexOf(item.rarity) <= ceiling);
+    && RARITIES.includes(item.rarity) && allowedRarities.has(item.rarity));
   const matching = eligible.filter((item) => item.types.includes(crystal.type));
   const neutral = eligible.filter((item) => item.types.length === 1 && item.types[0] === 'Neutral');
   return { matching, neutral };
