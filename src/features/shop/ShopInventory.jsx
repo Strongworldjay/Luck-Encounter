@@ -4,7 +4,7 @@ import { EMPTY_FILTERS, filterEntries, rarityLabel, categoryLabel, RARITIES } fr
 import { drawItems } from '../../utils/items.js';
 import { weightedKey } from '../../utils/random.js';
 import { downloadJson } from '../../utils/files.js';
-import { SHOP_PRESETS } from '../../config/itemGroups.js';
+import { SHOP_PRESETS, SHOP_ITEM_CATEGORIES } from '../../config/itemGroups.js';
 import { STORE_SIZES, SHOP_RARITY_WEIGHTS, rollPriceFromCategoryAndRarity } from '../../config/shop.js';
 import ItemFilters, { FilterSummary } from '../../components/items/ItemFilters.jsx';
 import ItemTags from '../../components/items/ItemTags.jsx';
@@ -14,7 +14,7 @@ export default function ShopInventory() {
   const [filters, setFilters] = useState({ ...EMPTY_FILTERS });
   const [storeSize, setStoreSize] = useState('Small'); const [allowDuplicates, setAllowDuplicates] = useState(false);
   const [open, setOpen] = useState(false); const [items, setItems] = useState([]); const [message, setMessage] = useState('');
-  const pool = useMemo(() => filterEntries(entries, filters), [entries, filters]);
+  const pool = useMemo(() => filterEntries(entries.filter((entry) => SHOP_ITEM_CATEGORIES.includes(entry.category)), filters), [entries, filters]);
   const count = new Set(pool.map((item) => item.itemId)).size;
   const preset = !filters.categories.length ? 'All Items' : Object.keys(SHOP_PRESETS).find((name) => SHOP_PRESETS[name].length === filters.categories.length && SHOP_PRESETS[name].every((category) => filters.categories.includes(category))) || 'Custom';
   const generate = () => {
@@ -34,6 +34,6 @@ export default function ShopInventory() {
     {message && <p role="status" className="muted">{message}</p>}
     <div className="shop-results">{items.map((item) => <article className="shop-item" key={item.rowId}><div><h2>{item.name}</h2><p>{categoryLabel(item.category)} · {rarityLabel(item.rarity)}</p><ItemTags item={item} /></div><div className="shop-price"><strong>{item.price.toLocaleString()} gp</strong>{item.isSale && <span>Sale</span>}{item.rarityAdjusted && <small>Nearest available rarity</small>}</div></article>)}</div>
     {!items.length && <p className="empty-state">{count ? 'Generate an inventory to begin.' : 'No items match these filters. Clear a filter to continue.'}</p>}
-    {open && <ItemFilters filters={filters} onChange={setFilters} onClose={() => setOpen(false)} count={count} />}
+    {open && <ItemFilters filters={filters} onChange={setFilters} onClose={() => setOpen(false)} count={count} categories={SHOP_ITEM_CATEGORIES} />}
   </section>;
 }

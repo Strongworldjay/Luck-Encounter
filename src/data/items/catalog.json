@@ -1100,10 +1100,6 @@
     "name": "A Thousand Cuts A",
     "variants": [
       {
-        "category": "WeaponArt",
-        "rarity": "Legendary"
-      },
-      {
         "category": "PassiveArt",
         "rarity": "Legendary"
       }
@@ -1121,10 +1117,6 @@
     "id": "item-2b3ba8651cab",
     "name": "A Thousand Cuts B",
     "variants": [
-      {
-        "category": "WeaponArt",
-        "rarity": "VeryRare"
-      },
       {
         "category": "PassiveArt",
         "rarity": "VeryRare"
@@ -1144,10 +1136,6 @@
     "name": "A Thousand Cuts C",
     "variants": [
       {
-        "category": "WeaponArt",
-        "rarity": "Rare"
-      },
-      {
         "category": "PassiveArt",
         "rarity": "Rare"
       }
@@ -1165,10 +1153,6 @@
     "id": "item-66fa2601c834",
     "name": "A Thousand Cuts D",
     "variants": [
-      {
-        "category": "WeaponArt",
-        "rarity": "Uncommon"
-      },
       {
         "category": "PassiveArt",
         "rarity": "Uncommon"
@@ -1205,10 +1189,6 @@
     "id": "item-b812156383d7",
     "name": "A Thousand Cuts S",
     "variants": [
-      {
-        "category": "WeaponArt",
-        "rarity": "Unique"
-      },
       {
         "category": "PassiveArt",
         "rarity": "Unique"
@@ -31443,14 +31423,6 @@
       {
         "category": "WeaponArt",
         "rarity": "Legendary"
-      },
-      {
-        "category": "PassiveArt",
-        "rarity": "Legendary"
-      },
-      {
-        "category": "BoostArt",
-        "rarity": "Legendary"
       }
     ],
     "types": [
@@ -31468,15 +31440,6 @@
       {
         "category": "WeaponArt",
         "rarity": "VeryRare"
-      },
-      {
-        "category": "PassiveArt",
-        "rarity": "VeryRare"
-      },
-      {
-        "category": "BoostArt",
-        "rarity": "VeryRare",
-        "weight": 2
       }
     ],
     "types": [
@@ -31494,15 +31457,6 @@
       {
         "category": "WeaponArt",
         "rarity": "Rare"
-      },
-      {
-        "category": "PassiveArt",
-        "rarity": "Rare"
-      },
-      {
-        "category": "BoostArt",
-        "rarity": "Rare",
-        "weight": 2
       }
     ],
     "types": [
@@ -31519,14 +31473,6 @@
     "variants": [
       {
         "category": "WeaponArt",
-        "rarity": "Uncommon"
-      },
-      {
-        "category": "PassiveArt",
-        "rarity": "Uncommon"
-      },
-      {
-        "category": "BoostArt",
         "rarity": "Uncommon"
       }
     ],
@@ -31561,14 +31507,6 @@
     "variants": [
       {
         "category": "WeaponArt",
-        "rarity": "Unique"
-      },
-      {
-        "category": "PassiveArt",
-        "rarity": "Unique"
-      },
-      {
-        "category": "BoostArt",
         "rarity": "Unique"
       }
     ],
@@ -74883,7 +74821,7 @@
   },
   {
     "id": "item-66940a105744",
-    "name": "Skate FootA",
+    "name": "Skate Foot A",
     "variants": [
       {
         "category": "BoostArt",
@@ -94892,5 +94830,221 @@
       "Paper"
     ],
     "tagBasis": "name"
+  },
+  {
+    "id": "item-c8d7d51b5cf8",
+    "name": "Flash F",
+    "variants": [
+      {
+        "category": "MagicArt",
+        "rarity": "Common"
+      }
+    ],
+    "types": [
+      "Neutral"
+    ],
+    "themes": [
+      "Light",
+      "Radiant"
+    ],
+    "tagBasis": "reviewed"
+  },
+  {
+    "id": "item-b64a0baea12b",
+    "name": "Flash D",
+    "variants": [
+      {
+        "category": "MagicArt",
+        "rarity": "Uncommon"
+      }
+    ],
+    "types": [
+      "Neutral"
+    ],
+    "themes": [
+      "Light",
+      "Radiant"
+    ],
+    "tagBasis": "reviewed"
+  },
+  {
+    "id": "item-c8f4ed4ccc51",
+    "name": "Flash C",
+    "variants": [
+      {
+        "category": "MagicArt",
+        "rarity": "Rare"
+      }
+    ],
+    "types": [
+      "Neutral"
+    ],
+    "themes": [
+      "Light",
+      "Radiant"
+    ],
+    "tagBasis": "reviewed"
+  },
+  {
+    "id": "item-f4becce50fb3",
+    "name": "Flash B",
+    "variants": [
+      {
+        "category": "MagicArt",
+        "rarity": "VeryRare"
+      }
+    ],
+    "types": [
+      "Neutral"
+    ],
+    "themes": [
+      "Light",
+      "Radiant"
+    ],
+    "tagBasis": "reviewed"
+  },
+  {
+    "id": "item-eb27ed444624",
+    "name": "Flash A",
+    "variants": [
+      {
+        "category": "MagicArt",
+        "rarity": "Legendary"
+      }
+    ],
+    "types": [
+      "Neutral"
+    ],
+    "themes": [
+      "Light",
+      "Radiant"
+    ],
+    "tagBasis": "reviewed"
+  },
+  {
+    "id": "item-018eb8ece0fb",
+    "name": "Flash S",
+    "variants": [
+      {
+        "category": "MagicArt",
+        "rarity": "Unique"
+      }
+    ],
+    "types": [
+      "Neutral"
+    ],
+    "themes": [
+      "Light",
+      "Radiant"
+    ],
+    "tagBasis": "reviewed"
+  },
+  {
+    "id": "item-b740ac29f2e5",
+    "name": "Smash F",
+    "variants": [
+      {
+        "category": "WeaponArt",
+        "rarity": "Common"
+      }
+    ],
+    "types": [
+      "Neutral"
+    ],
+    "themes": [
+      "Stone",
+      "Primal"
+    ],
+    "tagBasis": "reviewed"
+  },
+  {
+    "id": "item-96dc05036ca4",
+    "name": "Smash D",
+    "variants": [
+      {
+        "category": "WeaponArt",
+        "rarity": "Uncommon"
+      }
+    ],
+    "types": [
+      "Neutral"
+    ],
+    "themes": [
+      "Stone",
+      "Primal"
+    ],
+    "tagBasis": "reviewed"
+  },
+  {
+    "id": "item-8821863bf663",
+    "name": "Smash C",
+    "variants": [
+      {
+        "category": "WeaponArt",
+        "rarity": "Rare"
+      }
+    ],
+    "types": [
+      "Neutral"
+    ],
+    "themes": [
+      "Stone",
+      "Primal"
+    ],
+    "tagBasis": "reviewed"
+  },
+  {
+    "id": "item-4e46c514292d",
+    "name": "Smash B",
+    "variants": [
+      {
+        "category": "WeaponArt",
+        "rarity": "VeryRare"
+      }
+    ],
+    "types": [
+      "Neutral"
+    ],
+    "themes": [
+      "Stone",
+      "Primal"
+    ],
+    "tagBasis": "reviewed"
+  },
+  {
+    "id": "item-68b897876784",
+    "name": "Smash A",
+    "variants": [
+      {
+        "category": "WeaponArt",
+        "rarity": "Legendary"
+      }
+    ],
+    "types": [
+      "Neutral"
+    ],
+    "themes": [
+      "Stone",
+      "Primal"
+    ],
+    "tagBasis": "reviewed"
+  },
+  {
+    "id": "item-d6a9a864a69b",
+    "name": "Smash S",
+    "variants": [
+      {
+        "category": "WeaponArt",
+        "rarity": "Unique"
+      }
+    ],
+    "types": [
+      "Neutral"
+    ],
+    "themes": [
+      "Stone",
+      "Primal"
+    ],
+    "tagBasis": "reviewed"
   }
 ]

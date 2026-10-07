@@ -23,14 +23,9 @@ const CATEGORY_PRICE_GROUPS = {
 
   utilityArtsMagic: [
     "TreasureMap",
-    "SkillPoints",
-    "PassiveArt",
-    "Mana",
-    "Stamina",
+    "SkillBook",
     "Misc",
     "Keys",
-    "BoostArt",
-    "WeaponArt",
     "Rod",
     "Grimoire",
     "Wand",

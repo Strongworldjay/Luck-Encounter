@@ -5,8 +5,8 @@ export const MONSTER_CRYSTAL_TYPES = CREATURE_TYPES.filter((type) => type !== 'N
 // Previously queued Humanoid crystals remain usable, but no new ones can be added.
 export const isExistingCrystalType = (type) => MONSTER_CRYSTAL_TYPES.includes(type) || type === 'Humanoid';
 export const crystalImageName = (type, broken = false) => `${type.toLowerCase()}crystal${broken ? 'broken' : ''}.png`;
-const excluded = new Set(['WeaponArt', 'BoostArt', 'PassiveArt', 'SkillPoints', 'Experience', 'EXP', 'Mana', 'Stamina']);
-export const CRYSTAL_ITEM_CATEGORIES = REWARD_ITEM_TYPES.filter((category) => !excluded.has(category));
+const excluded = new Set(['WeaponArt', 'MagicArt', 'BoostArt', 'PassiveArt', 'SkillPoints', 'Experience', 'EXP', 'Mana', 'Stamina']);
+export const CRYSTAL_ITEM_CATEGORIES = [...REWARD_ITEM_TYPES.filter((category) => !excluded.has(category)), 'SkillBook'];
 export const TYPE_MATCH_CHANCE = 0.85;
 export const MAX_CRYSTALS = 100;
 // Item rarity weights are conditional on a crystal surviving its destruction check.

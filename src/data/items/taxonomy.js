@@ -158,6 +158,7 @@ export const ITEM_CATEGORIES = [
   "LightArmor",
   "Mace",
   "Mana",
+  "MagicArt",
   "MediumArmor",
   "Misc",
   "Necklace",
@@ -170,6 +171,7 @@ export const ITEM_CATEGORIES = [
   "Scrolls",
   "Scythe",
   "Shield",
+  "SkillBook",
   "SkillPoints",
   "Spear",
   "Staff",
@@ -182,3 +184,5 @@ export const ITEM_CATEGORIES = [
   "Whip",
   "WondrousItem"
 ];
+export const ATTACK_ART_CATEGORIES = ['WeaponArt', 'MagicArt'];
+export const WORLD_ART_CATEGORIES = [...ATTACK_ART_CATEGORIES, 'BoostArt', 'PassiveArt'];

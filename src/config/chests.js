@@ -9,11 +9,12 @@ export const CHEST_SETTINGS = {
 };
 
 export const SPECIAL_DROPS = {
-  chances: { Potion: 0.05, Ammunition: 0.05, Scrolls: 0.05, Gems: 0.04 },
+  chances: { Potion: 0.05, Ammunition: 0.05, Scrolls: 0.05, Gems: 0.04, SkillBook: 0.05 },
   rarityWeights: {
     Potion:     { Common: 0.60, Uncommon: 0.25, Rare: 0.10, VeryRare: 0.04, Legendary: 0.009, Unique: 0.001 },
     Ammunition: { Common: 0.60, Uncommon: 0.25, Rare: 0.10, VeryRare: 0.04, Legendary: 0.009, Unique: 0.001 },
     Scrolls:    { Common: 0.50, Uncommon: 0.30, Rare: 0.15, VeryRare: 0.04, Legendary: 0.009, Unique: 0.001 },
-    Gems:       { Common: 0.40, Uncommon: 0.35, Rare: 0.20, VeryRare: 0.04, Legendary: 0.009, Unique: 0.001 }
+    Gems:       { Common: 0.40, Uncommon: 0.35, Rare: 0.20, VeryRare: 0.04, Legendary: 0.009, Unique: 0.001 },
+    SkillBook:  { Uncommon: 0.95, Rare: 0.05 }
   }
 };

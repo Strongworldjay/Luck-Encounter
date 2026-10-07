@@ -1,10 +1,12 @@
 import catalog from './catalog.json' with { type: 'json' };
 import { CREATURE_TYPES, ITEM_THEMES } from './taxonomy.js';
-export const ITEMS = catalog;
+import { createSkillBooks } from './skillBooks.js';
+export const ITEMS = [...catalog, ...createSkillBooks(catalog)];
 export const ITEM_BY_ID = new Map(ITEMS.map((item) => [item.id, item]));
 export const RARITIES = ['Common', 'Uncommon', 'Rare', 'VeryRare', 'Legendary', 'Unique'];
 export const rarityLabel = (rarity) => rarity === 'VeryRare' ? 'Very Rare' : rarity;
-export const categoryLabel = (category) => category.replace(/([a-z])([A-Z])/g, '$1 $2');
+export const categoryLabel = (category) => ({ WeaponArt: 'Attack Art · Weapon', MagicArt: 'Attack Art · Magic', SkillBook: 'Skill Book' })[category]
+  ?? category.replace(/([a-z])([A-Z])/g, '$1 $2');
 export const normalizeRarity = (value) => RARITIES.find((rarity) => rarity.toLowerCase() === String(value).replace(/[\s_-]/g, '').toLowerCase()) ?? null;
 export function applyTagOverrides(overrides = {}) {
   return ITEMS.map((item) => {

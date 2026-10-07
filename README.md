@@ -33,16 +33,17 @@ npm run test:ui
 
 - **Dungeon Completion:** enter character luck, choose a dungeon class, set optional filters, draw up to three different rewards, and reveal one. The chosen card slides into the center, the others fade away, and a smooth flip reveals rarity-colored text and an equipment watermark. Bottom controls remain in normal page flow and reserve safe-area space.
 - **Monster Crystals:** queue any mix of 13 monster types and six rarities, then open each crystal separately. Humanoid is not offered. Your exact destruction chances are applied; successful openings yield eligible dungeon items with matching types or Neutral fallback. Each type accepts `public/assets/<type>crystal.png` and `<type>crystalbroken.png` images (lowercase type, e.g. `beastcrystal.png` and `beastcrystalbroken.png`). The image switches to the broken version after opening, whether an item appears or not. Missing images use the built-in crystal icon. Results persist locally. See `docs/MONSTER-CRYSTALS.md` for odds. Run `npm run test:crystals` for the focused browser checks.
+- **World Arts and Skill Books:** Attack Arts split into Weapon and Magic Arts; Boost and Passive Arts remain separate. Each Art family has one category. One Skill Book is generated per family, not per rank. Books can appear in shops, chest bonus rewards, and Monster Crystals, but not dungeon completion cards. See `docs/ARTS-SKILL-BOOKS.md`.
 - **Item Catalog:** search every item, filter by category/type/theme/rarity, edit tags, and export the full catalog. "Review broad suggestions" shows entries that only had enough information for category-based tags.
 - **Shop Inventory:** select a shop preset and size; filter by type/theme; generate, copy, or export stock. Duplicate items are disabled by default.
-- **Chests:** select a tier and chest type. Equipment main rewards follow selected categories, creature types, and themes. Potions, scrolls, and gems (including runestones in Gems) remain possible bonus drops for every chest, regardless of those filters. Bonus probabilities and item rarity rolls remain independent of the chest tier. Currency remains separate.
+- **Chests:** select a tier and chest type. Equipment main rewards follow selected categories, creature types, and themes. Potions, scrolls, gems (including runestones in Gems), and Skill Books remain possible bonus drops for every chest, regardless of those filters. Bonus probabilities and item rarity rolls remain independent of the chest tier. Currency remains separate.
 - **Reference and player tools:** 986 spells, 158 feats across six groups, skill-point planning, a jump calculator with manual inputs, and the Insamont bounty board.
 
-Selections within one filter group are OR conditions; different groups are combined with AND. An empty group places no restriction. A theme filter with no matching equipment can leave a chest without a main reward while the independent potion/scroll/gem bonuses remain possible. In the other item tools, a theme filter with no matching items produces an empty state.
+Selections within one filter group are OR conditions; different groups are combined with AND. An empty group places no restriction. A theme filter with no matching equipment can leave a chest without a main reward while the independent potion, scroll, gem, and Skill Book bonuses remain possible. In the other item tools, a theme filter with no matching items produces an empty state.
 
 ## Maintaining items and tags
 
-The only stored item source is `src/data/items/catalog.json`. A record has one stable ID, one name, arrays of `types` and `themes`, and a `variants` array for category/rarity membership. A repeated item's variants are preserved together. Keep IDs unchanged when updating names or tags.
+The stored item source is `src/data/items/catalog.json`; `src/data/items/skillBooks.js` derives one Skill Book per World Art family at runtime. A record has one stable ID, one name, arrays of `types` and `themes`, and a `variants` array for category/rarity membership. A repeated item's variants are preserved together. Keep IDs unchanged when updating names or tags.
 
 `src/data/items/taxonomy.js` contains all **116 themes** and **15 creature types** supplied for this project. Theme labels have no numbering. `Neutral` means no specific creature association, not moral alignment. Equipment categories such as Sword remain separate from creature types such as Dragon.
 
@@ -54,7 +55,7 @@ Tag edits save in this browser on this device and immediately affect subsequent 
 2. Replace `src/data/items/catalog.json` with the exported JSON.
 3. Run `npm run check`, then deploy your reviewed source.
 
-The catalog includes 5,295 records: 5,294 available entries plus one preserved, unavailable `[Redacted]` placeholder. All 5,377 distinct name/category/rarity combinations from the chosen source were retained. Duplicate rows no longer store duplicate items; repeated Boost Art occurrences become explicit selection weights.
+The app currently exposes 5,420 records: 5,307 source records (including one unavailable `[Redacted]` placeholder) and 113 generated Skill Books. Art families no longer carry duplicate Art categories, and rank variants remain separate source records. Repeated Boost Art occurrences retain their explicit selection weights.
 
 When a filtered pool lacks the rolled rarity, the generator uses the nearest available rarity within that pool, preferring the lower rarity on a tie. The result says "Nearest available rarity". A small pool returns fewer unique rewards instead of repeating an item.
 

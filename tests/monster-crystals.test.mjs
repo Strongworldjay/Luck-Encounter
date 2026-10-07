@@ -23,10 +23,15 @@ test('78 crystal combinations only produce listed dungeon gear of matching type 
  }
 });
 test('forbidden arts, resource rewards, filler, gold-equivalents and unrelated monster items never qualify',()=>{
- const categories=['WeaponArt','BoostArt','PassiveArt','SkillPoints','Experience','EXP','Mana','Stamina','Misc','Gems','Scrolls','Potion','Ammunition','TreasureMap'];
+ const categories=['WeaponArt','MagicArt','BoostArt','PassiveArt','SkillPoints','Experience','EXP','Mana','Stamina','Misc','Gems','Scrolls','Potion','Ammunition','TreasureMap'];
  const entries=categories.map(category=>item(category,'Dragon','Common',category));entries.push(item('wrong','Fiend'),item('too-rare','Dragon','Unique'),{...item('redacted'),available:false});
  const crystal={type:'Dragon',rarity:'Common'};assert.deepEqual(crystalPools(entries,crystal),{matching:[],neutral:[]});
  assert.equal(openMonsterCrystal(entries,crystal,()=>0).status,'unavailable');
+});
+test('a crystal can yield a Skill Book but never a direct Art',()=>{
+ const pool=[item('book','Dragon','Uncommon','SkillBook'),item('art','Dragon','Uncommon','MagicArt')];
+ const result=openMonsterCrystal(pool,{type:'Dragon',rarity:'Common'},sequence(.9,0,0,0));
+ assert.equal(result.item.category,'SkillBook');
 });
 test('matching type has an 85/15 preference; sole available branch still gives a reward',()=>{
  const pool=[item('typed'),item('neutral','Neutral')];const crystal={type:'Dragon',rarity:'Common'};

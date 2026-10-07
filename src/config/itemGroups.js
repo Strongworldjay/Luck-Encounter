@@ -3,9 +3,11 @@ export const WEAPONS = ['Axe','Bow','Club','Crossbow','Dagger','Firearms','Glaiv
 export const ARMOR = ['LightArmor','MediumArmor','HeavyArmor','Helmet','Shield','Gauntlet'];
 export const ACCESSORIES = ['Helmet','Boots','Cloak','Gauntlet'];
 export const JEWELRY = ['Necklace','Ring','Gems'];
+const SHOP_EXCLUDED = new Set(['WeaponArt','MagicArt','BoostArt','PassiveArt','Mana','Stamina','SkillPoints','Experience','EXP']);
+export const SHOP_ITEM_CATEGORIES = ITEM_CATEGORIES.filter((category) => !SHOP_EXCLUDED.has(category));
 export const SHOP_PRESETS = {
-  'All Items': ITEM_CATEGORIES,
-  'Magic Shop': ['Grimoire','WondrousItem','Wand','Rod','Staff','Robe','Cloak','BoostArt','WeaponArt','PassiveArt','Scrolls','Potion','Mana'],
+  'All Items': SHOP_ITEM_CATEGORIES,
+  'Magic Shop': ['Grimoire','WondrousItem','Wand','Rod','Staff','Robe','Cloak','Scrolls','Potion','SkillBook'],
   'Jewelry Shop': ['Ring','Helmet','Gauntlet','Gems','Necklace'],
   'Weapon Store': WEAPONS,
   'Armor Shop': ARMOR,
@@ -13,7 +15,7 @@ export const SHOP_PRESETS = {
   'Hunter Shop': ['Dagger','Ammunition','Bow','Crossbow','LightArmor','Boots'],
 };
 export const CHEST_GROUPS = {
-  Random: ITEM_CATEGORIES.filter((category) => !['BoostArt','WeaponArt','PassiveArt','SkillPoints','Mana','Stamina','Misc'].includes(category)),
+  Random: SHOP_ITEM_CATEGORIES.filter((category) => !['Misc','SkillBook'].includes(category)),
   'Melee Weapon': WEAPONS.filter((category) => !['Bow','Crossbow','Firearms'].includes(category)),
   'Ranged Weapon': ['Bow','Crossbow','Firearms'],
   'Light Armor': ['LightArmor'], 'Medium Armor': ['MediumArmor'], 'Heavy Armor': ['HeavyArmor','Shield'],

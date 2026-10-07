@@ -2,7 +2,7 @@ import { filterEntries } from '../data/items/index.js';
 import { CHEST_GROUPS } from '../config/itemGroups.js';
 
 // Runestones are Gems in the shared catalog.
-export const UNFILTERED_CHEST_CATEGORIES = ['Potion', 'Scrolls', 'Gems'];
+export const UNFILTERED_CHEST_CATEGORIES = ['Potion', 'Scrolls', 'Gems', 'SkillBook'];
 
 export function chestPools(entries, filters, chestType) {
   const filtered = filterEntries(entries, filters);
@@ -15,7 +15,7 @@ export function chestPools(entries, filters, chestType) {
 
   // Supplies use the complete catalog, including edited tags. Other bonuses
   // still respect the ordinary filters. Bonuses are independent of chest type.
-  const bonus = Object.fromEntries(['Potion', 'Ammunition', 'Scrolls', 'Gems'].map((category) => [category,
+  const bonus = Object.fromEntries(['Potion', 'Ammunition', 'Scrolls', 'Gems', 'SkillBook'].map((category) => [category,
     (UNFILTERED_CHEST_CATEGORIES.includes(category) ? entries : filtered)
       .filter((item) => item.category === category)]));
   const misc = filtered.filter((item) => item.category === 'Misc');

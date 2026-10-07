@@ -5,7 +5,7 @@ export const artwork = (name) => sources[`../assets/${name}`] ?? (publicArtwork(
 const LEGACY_CATEGORY_ART = {
   LightArmor:'light-armor.png', MediumArmor:'medium-armor.png', HeavyArmor:'armor-symbol.png',
   Ring:'ring-symbol.png', WondrousItem:'wondrous.png', Helmet:'helmet-symbol.png',
-  WeaponArt:'swordart.png', Boots:'boots-symbol.png', Bow:'bow-symbol.png', Keys:'key-symbol.png',
+  WeaponArt:'swordart.png', MagicArt:'fantasy-skill.png', SkillBook:'skillbook.png', Boots:'boots-symbol.png', Bow:'bow-symbol.png', Keys:'key-symbol.png',
   Dagger:'dagger-symbol.png', Gauntlet:'gauntlets-symbol.png', Cloak:'cloak-symbol.png',
   Scrolls:'scroll-symbol.png', Grimoire:'grimoire-symbol.png', Rod:'rod-symbol.png', Wand:'wand-symbol.png',
   Hammer:'hammer-symbol.png', BoostArt:'fantasy-skill.png', PassiveArt:'skill-symbol.png',

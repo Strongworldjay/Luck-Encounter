@@ -12,10 +12,10 @@
   "sections": 15,
   "workflows": [
     "reward draw/reveal",
-    "unique shop inventory",
+    "unique shop inventory and Skill Book picker",
     "strict theme filter",
     "chest loot",
-    "filtered sword plus potion/scroll/gem bonus",
+    "filtered sword plus potion/scroll/gem/Skill Book bonus",
     "tag editing and reload",
     "spell dialog and list",
     "feat dialog and list",

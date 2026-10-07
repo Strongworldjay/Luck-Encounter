@@ -24,7 +24,7 @@ export default function ItemCatalog() {
     <div className="catalog-pagination"><span>{matching.length.toLocaleString()} unique items</span><div><button className="app-btn" disabled={safePage === 1} onClick={() => setPage(safePage - 1)}>Previous</button><span>{safePage} / {pages}</span><button className="app-btn" disabled={safePage === pages} onClick={() => setPage(safePage + 1)}>Next</button></div></div>
     {message && <p role="status">{message}</p>}
     <div className="catalog-list">{matching.slice((safePage - 1) * PAGE_SIZE, safePage * PAGE_SIZE).map((item) => <article className="catalog-item" key={item.id}>
-      <div><h2>{item.name}</h2><p>{[...new Set(item.variants.map((variant) => categoryLabel(variant.category)))].join(' · ')}</p><div className="catalog-rarities">{[...new Set(item.variants.map((variant) => variant.rarity))].map((rarity) => <span key={rarity} data-rarity={rarity}>{rarityLabel(rarity)}</span>)}</div>{item.available === false && <p>Unavailable: original entry is redacted.</p>}</div>
+      <div><h2>{item.name}</h2><p>{[...new Set(item.variants.map((variant) => categoryLabel(variant.category)))].join(' · ')}</p><div className="catalog-rarities">{[...new Set(item.variants.map((variant) => variant.rarity))].map((rarity) => <span key={rarity} data-rarity={rarity}>{rarityLabel(rarity)}</span>)}</div>{item.description && <p>{item.description}</p>}{item.available === false && <p>Unavailable: original entry is redacted.</p>}</div>
       <ItemTags item={item} /><button className="app-btn" onClick={() => setActive(item)} aria-label={`Edit tags for ${item.name}`}>Edit tags</button>
     </article>)}</div>
     {!matching.length && <p className="empty-state">No items match these filters. Try clearing a tag or category.</p>}

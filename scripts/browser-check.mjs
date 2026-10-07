@@ -38,7 +38,12 @@ try {
  await screenshot('reward-revealed-mobile');
  await goto('ShopInventory');await page.getByRole('button',{name:'Generate inventory'}).click();assert.equal(await page.locator('.shop-item').count(),10);
  const names=await page.locator('.shop-item h2').allTextContents();assert.equal(new Set(names).size,10);
- await page.getByRole('button',{name:'Filters',exact:true}).click();await page.getByRole('dialog').getByLabel('Find themes').fill('Obsidian');await page.getByRole('dialog').getByLabel('Obsidian',{exact:true}).check();await page.getByRole('button',{name:'Done',exact:true}).click();
+ await page.getByRole('button',{name:'Filters',exact:true}).click();
+ const shopFilters=page.getByRole('dialog');
+ await shopFilters.getByLabel('Find categories').fill('Skill Book');assert.equal(await shopFilters.getByLabel('Skill Book',{exact:true}).count(),1);
+ await shopFilters.getByLabel('Find categories').fill('Attack Art');assert.equal(await shopFilters.getByLabel('Attack Art · Weapon',{exact:true}).count(),0);
+ await shopFilters.getByLabel('Find categories').fill('');
+ await shopFilters.getByLabel('Find themes').fill('Obsidian');await shopFilters.getByLabel('Obsidian',{exact:true}).check();await page.getByRole('button',{name:'Done',exact:true}).click();
  await page.getByRole('button',{name:'Generate inventory'}).click();for(const tags of await page.locator('.shop-item .item-tags').allTextContents())assert(tags.includes('Obsidian'));
  await goto('Chests');await page.getByRole('button',{name:'Open chest',exact:true}).click();assert(await page.locator('.chest-loot__item').count()>=2);await screenshot('chest-open-mobile');
  await page.getByRole('button',{name:'Item filters'}).click();
@@ -50,7 +55,7 @@ try {
  await chestFilters.getByRole('button',{name:'Done'}).click();
  await page.getByLabel('Chest type').selectOption('Melee Weapon');
  await page.evaluate(()=>{window.originalChestRandom=Math.random;});
- for(const [roll,category] of [[0,'Potion'],[.12,'Scrolls'],[.16,'Gems']]){
+ for(const [roll,category] of [[0,'Potion'],[.12,'Scrolls'],[.16,'Gems'],[.21,'Skill Book']]){
   await page.evaluate(value=>{Math.random=()=>value;},roll);
   await page.getByRole('button',{name:'Open chest',exact:true}).click();
   const categories=await page.locator('.chest-loot__item p').allTextContents();
@@ -67,7 +72,7 @@ try {
  await goto('JumpCalc');assert.equal(await page.getByRole('group',{name:'Presets'}).count(),0);
  await goto('DungeonCompletion');await page.getByRole('button',{name:'Toggle navigation'}).click();await page.getByRole('button',{name:'Player Tools'}).click();await page.getByRole('button',{name:'Item Catalog',exact:true}).click();await page.locator('.catalog-page').waitFor();assert.equal(await page.getByRole('button',{name:'Toggle navigation'}).getAttribute('aria-expanded'),'false');
  assert.deepEqual(errors,[],'browser errors'); assert.deepEqual(layoutErrors,[],'layout overflow');
- const report={layoutChecks:checks.length,viewports:[320,390,1366],themes:['light','dark'],sections:routes.length,workflows:['reward draw/reveal','unique shop inventory','strict theme filter','chest loot','filtered sword plus potion/scroll/gem bonus','tag editing and reload','spell dialog and list','feat dialog and list','mobile navigation'],browserErrors:errors,status:'passed'};
+ const report={layoutChecks:checks.length,viewports:[320,390,1366],themes:['light','dark'],sections:routes.length,workflows:['reward draw/reveal','unique shop inventory and Skill Book picker','strict theme filter','chest loot','filtered sword plus potion/scroll/gem/Skill Book bonus','tag editing and reload','spell dialog and list','feat dialog and list','mobile navigation'],browserErrors:errors,status:'passed'};
  console.log(JSON.stringify(report,null,2));fs.writeFileSync('docs/browser-check.json',JSON.stringify(report,null,2)+'\n');
  await context.close();
 } finally { await browser.close();await server.close(); }

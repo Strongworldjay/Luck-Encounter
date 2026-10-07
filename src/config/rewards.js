@@ -21,7 +21,7 @@ export const DUNGEON_DIFFICULTIES = [
 export const REWARD_ITEM_TYPES = [
   'Helmet', 'HeavyArmor', 'Gauntlet', 'Boots', 'Necklace', 'Cloak',
   'Sword', 'Bow', 'Axe', 'Hammer', 'Glaive', 'Dagger', 'Staff', 'Rod',
-  'Wand', 'Grimoire', 'WeaponArt', 'Scythe', 'PassiveArt', 'BoostArt',
+  'Wand', 'Grimoire', 'WeaponArt', 'MagicArt', 'Scythe', 'PassiveArt', 'BoostArt',
   'SkillPoints', 'Robe', 'Ring', 'LightArmor', 'MediumArmor',
   'WondrousItem', 'Shield', 'Crossbow', 'Spear', 'Halberd', 'Club',
   'Whip', 'Mace', 'Warpick', 'Lance', 'Pike', 'Mana', 'Stamina',

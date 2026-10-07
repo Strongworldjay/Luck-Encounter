@@ -8,10 +8,10 @@ import { chestPools, UNFILTERED_CHEST_CATEGORIES } from '../src/utils/chestPools
 const entries = toEntries();
 const filters = { ...EMPTY_FILTERS, categories: ['Sword'], types: ['Dragon'], themes: ['Obsidian'] };
 
-test('potions, scrolls, and gems including runestones stay eligible in every chest', () => {
+test('potions, scrolls, gems, and skill books stay eligible in every chest', () => {
   const all = Object.fromEntries(UNFILTERED_CHEST_CATEGORIES.map((category) => [category,
     entries.filter((item) => item.category === category).map((item) => item.entryId)]));
-  assert(all.Gems.length && all.Potion.length && all.Scrolls.length);
+  assert(all.Gems.length && all.Potion.length && all.Scrolls.length && all.SkillBook.length);
   assert(entries.some((item) => item.category === 'Gems' && /runestone/i.test(item.name)));
   for (const chestType of Object.keys(CHEST_GROUPS)) {
     const pools = chestPools(entries, filters, chestType);
@@ -22,20 +22,22 @@ test('potions, scrolls, and gems including runestones stay eligible in every che
   }
 });
 
-test('unfiltered supplies remain in the Random main pool under type and theme filters', () => {
+test('unfiltered supplies remain in the Random main pool under type and theme filters; skill books are bonus only', () => {
   const pools = chestPools(entries, { ...EMPTY_FILTERS, types: ['Dragon'], themes: ['Obsidian'] }, 'Random');
-  for (const category of UNFILTERED_CHEST_CATEGORIES) {
+  for (const category of UNFILTERED_CHEST_CATEGORIES.filter((entry) => entry !== 'SkillBook')) {
     assert(pools.main.some((item) => item.category === category));
     assert.equal(pools.main.filter((item) => item.category === category).length, pools.bonus[category].length);
   }
+  assert(!pools.main.some((item) => item.category === 'SkillBook'));
+  assert(pools.bonus.SkillBook.length);
   assert(pools.main.filter((item) => item.category === 'Sword').every((item) => item.types.includes('Dragon') && item.themes.includes('Obsidian')));
 });
 
 test('specific equipment selection filters main reward, while bonus odds remain unchanged', () => {
-  assert.deepEqual(SPECIAL_DROPS.chances, { Potion: 0.05, Ammunition: 0.05, Scrolls: 0.05, Gems: 0.04 });
+  assert.deepEqual(SPECIAL_DROPS.chances, { Potion: 0.05, Ammunition: 0.05, Scrolls: 0.05, Gems: 0.04, SkillBook: 0.05 });
   const pools = chestPools(entries, { ...EMPTY_FILTERS, categories: ['Bow'], types: ['Dragon'], themes: ['Obsidian'] }, 'Ranged Weapon');
   assert(pools.main.every((item) => item.category === 'Bow'));
   assert(pools.main.every((item) => item.types.includes('Dragon') && item.themes.includes('Obsidian')));
   assert.equal(pools.bonus.Ammunition.length, 0);
-  assert(pools.bonus.Potion.length && pools.bonus.Scrolls.length && pools.bonus.Gems.length);
+  assert(pools.bonus.Potion.length && pools.bonus.Scrolls.length && pools.bonus.Gems.length && pools.bonus.SkillBook.length);
 });
