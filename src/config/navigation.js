@@ -5,6 +5,7 @@ export const NAV_GROUPS = [
     items: [
       { id: 'DungeonCompletion', label: 'Dungeon Completion' },
       { id: 'MonsterCrystals', label: 'Monster Crystals' },
+      { id: 'LootBox', label: 'Loot Box' },
       { id: 'SPPlanner', label: 'SP Planner' },
       { id: 'Spells', label: 'Spells' },
       { id: 'ItemCatalog', label: 'Item Catalog' },

@@ -1,5 +1,5 @@
 {
-  "layoutChecks": 90,
+  "layoutChecks": 96,
   "viewports": [
     320,
     390,
@@ -9,13 +9,14 @@
     "light",
     "dark"
   ],
-  "sections": 15,
+  "sections": 16,
   "workflows": [
     "reward draw/reveal",
     "unique shop inventory and Skill Book picker",
     "strict theme filter",
     "chest loot",
     "filtered sword plus potion/scroll/gem/Skill Book bonus",
+    "loot box open with rarity/type",
     "tag editing and reload",
     "spell dialog and list",
     "feat dialog and list",

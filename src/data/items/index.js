@@ -1,7 +1,9 @@
 import catalog from './catalog.json' with { type: 'json' };
 import { CREATURE_TYPES, ITEM_THEMES } from './taxonomy.js';
 import { createSkillBooks } from './skillBooks.js';
-export const ITEMS = [...catalog, ...createSkillBooks(catalog)];
+import { NEW_ART_ITEMS } from './newArts.js';
+const sourceItems = [...catalog, ...NEW_ART_ITEMS];
+export const ITEMS = [...sourceItems, ...createSkillBooks(sourceItems)];
 export const ITEM_BY_ID = new Map(ITEMS.map((item) => [item.id, item]));
 export const RARITIES = ['Common', 'Uncommon', 'Rare', 'VeryRare', 'Legendary', 'Unique'];
 export const rarityLabel = (rarity) => rarity === 'VeryRare' ? 'Very Rare' : rarity;

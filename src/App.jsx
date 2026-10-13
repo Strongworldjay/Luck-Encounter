@@ -6,6 +6,7 @@ import { useTheme } from './hooks/useTheme.js';
 import { readStorage, writeStorage } from './utils/storage.js';
 const pages = {
   MonsterCrystals: lazy(() => import('./features/monster-crystals/MonsterCrystals.jsx')),
+  LootBox: lazy(() => import('./features/loot-box/LootBox.jsx')),
   DungeonCompletion: lazy(() => import('./features/rewards/DungeonRewards.jsx')),
   BountyBoard: lazy(() => import('./features/bounty/BountyBoard.jsx')),
   JumpCalc: lazy(() => import('./features/jump/JumpCalculator.jsx')),

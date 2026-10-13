@@ -40,3 +40,15 @@ The existing full browser suite now includes Monster Crystals and passes all 108
 # World Arts and Skill Books update (October 7, 2026)
 
 The shared catalog exposes 5,420 records including 113 generated Skill Books, one per Art family. A Thousand Cuts is Passive only; Folkvangr is Weapon only. Flash (Magic Attack Art) and Smash (Weapon Attack Art) now have F through S rank entries. The new Art checks verify category uniqueness, rank coverage, book count and rarity, and shop/crystal/card eligibility. Existing chest checks now cover Skill Book bonus pools for every chest type. `npm run check` passes the unit tests, full catalog audit, and production build. `npm run test:ui` passes all 90 section/theme/viewport layouts, the shop category picker, and a forced Skill Book bonus in a Sword-filtered chest, with no browser JavaScript errors.
+# Art families and transformation books update (October 13, 2026)
+
+69 newly specified Art families generate 328 rank records and 69 Skill Books. The rank-floor tests verify F through S for ordinary and Beast Arts, D through S for Ancient, C through S for Draconic, B through S for Mythical, and A through S for Primordial. Corresponding Skill Books are Uncommon, Uncommon, Rare, Very Rare, and Legendary respectively. The chest's existing 5% Skill Book bonus chance now includes Very Rare and Legendary book rarities. The shared catalog audit reports 5,817 records, and `npm run check` passes all tests and the production build. `npm run test:ui` passes 90 layout checks across 15 tools and the representative shop/chest flows with no browser errors.
+
+## Mana and Stamina equipment update (October 13, 2026)
+
+Both resources now have all 39 standard weapon forms and 13 armor/shield forms in Common, +1 Uncommon, +2 Rare, and +3 Very Rare versions: 416 new records. Tests confirm each form/tier has one record and that variants enter catalog filters, chest main rewards, and Neutral monster crystal pools. The shared audit reports 6,233 items, 6,300 variants, and no duplicate names/IDs; `npm run check` passes all tests, the data audit, and the production build. This revision did not repeat the browser UI suite.
+
+## Loot Box player tool update (October 13, 2026)
+
+Six box tiers from Common to Unique select the weighted rarity for one main reward. Box types use the established chest category groups; creature, theme, and category filters still apply to the main item. The existing chest bonus probabilities supply at most one optional potion, ammunition, scroll, gem, or Skill Book. There is no miscellaneous draw, gold, or lock DC. `npm run check` passes seven test files, the full data audit, and the production build. `npm run test:ui` passes 96 layout combinations across 16 tools at 320, 390, and 1366 pixels in both themes, including a Loot Box opening, with no browser errors.
+

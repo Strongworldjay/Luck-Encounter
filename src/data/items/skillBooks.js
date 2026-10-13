@@ -10,15 +10,19 @@ export function artFamilyName(name) {
 }
 
 // A family is one Art regardless of how many ranks the catalog lists.
-// The source catalog owns Art membership; newly added families gain a book automatically.
+// Art source records own membership; newly added families gain a book automatically.
 export function createSkillBooks(items) {
   const families = new Map();
   for (const item of items) {
     for (const variant of item.variants) {
       if (!WORLD_ART_CATEGORIES.includes(variant.category)) continue;
       const art = artFamilyName(item.name);
-      const family = families.get(art) ?? { art, category: variant.category, types: new Set(), themes: new Set(), rarities: new Set(), ranks: new Set() };
+      const family = families.get(art) ?? { art, category: variant.category, types: new Set(), themes: new Set(), rarities: new Set(), ranks: new Set(), bookRarity: null };
       if (family.category !== variant.category) throw new Error(`${art} appears in multiple Art categories`);
+      if (item.bookRarity) {
+        if (family.bookRarity && family.bookRarity !== item.bookRarity) throw new Error(`${art} has conflicting Skill Book rarities`);
+        family.bookRarity = item.bookRarity;
+      }
       item.types.forEach((type) => family.types.add(type));
       item.themes.forEach((theme) => family.themes.add(theme));
       family.rarities.add(variant.rarity);
@@ -26,9 +30,9 @@ export function createSkillBooks(items) {
       families.set(art, family);
     }
   }
-  return [...families.values()].map(({ art, category, types, themes, rarities, ranks }) => {
+  return [...families.values()].map(({ art, category, types, themes, rarities, ranks, bookRarity }) => {
     // The catalog's rankless Rare Art entries are C-only Arts, e.g. Resistances.
-    const rarity = ranks.size === 1 && (ranks.has('C') || (ranks.has(null) && rarities.has('Rare'))) ? 'Rare' : 'Uncommon';
+    const rarity = bookRarity ?? (ranks.size === 1 && (ranks.has('C') || (ranks.has(null) && rarities.has('Rare'))) ? 'Rare' : 'Uncommon');
     return {
       id: `skillbook:${category}:${art.toLowerCase()}`,
       name: `${bookPrefix[category]} Skill Book: ${art}`,

@@ -29,7 +29,7 @@ test('every family has exactly one Skill Book regardless of ranks', () => {
   const families = new Set(arts.map((art) => artFamilyName(art.name)));
   assert.equal(books.length, families.size);
   assert.equal(new Set(books.map((book) => book.teachesArt.name)).size, books.length);
-  assert(books.every((book) => book.variants.length === 1 && ['Uncommon','Rare'].includes(book.variants[0].rarity)));
+  assert(books.every((book) => book.variants.length === 1 && RARITIES.includes(book.variants[0].rarity)));
   assert(books.every((book) => book.themes.includes('Paper')));
   const named = (name) => books.find((book) => book.name === name);
   assert.equal(named('Passive Art Skill Book: A Thousand Cuts').variants[0].rarity, 'Uncommon');
