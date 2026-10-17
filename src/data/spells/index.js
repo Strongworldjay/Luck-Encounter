@@ -9,6 +9,7 @@ import { LEVEL7 } from './level7.js';
 import { LEVEL8 } from './level8.js';
 import { LEVEL9 } from './level9.js';
 import { normalizeSpellMetadata } from './metadata.js';
+import { ARCANA_UNLEASHED_SPELLS } from './arcanaUnleashed.js';
 
 const RAW_SPELLS_BY_LEVEL = {
   0: CANTRIPS,
@@ -23,11 +24,18 @@ const RAW_SPELLS_BY_LEVEL = {
   9: LEVEL9,
 };
 
+const replacementNames = new Set(ARCANA_UNLEASHED_SPELLS.map((spell) => spell.name.normalize('NFKC').replace(/[’‘]/g, "'").toLowerCase()));
+const spellKey = (spell) => spell.name.normalize('NFKC').replace(/[’‘]/g, "'").toLowerCase();
+const existingSpells = new Map(Object.values(RAW_SPELLS_BY_LEVEL).flat().map((spell) => [spellKey(spell), spell]));
+const spellsByLevel = Object.fromEntries(Object.entries(RAW_SPELLS_BY_LEVEL).map(([level, spells]) => [
+  level, spells.filter((spell) => !replacementNames.has(spellKey(spell))),
+]));
+for (const spell of ARCANA_UNLEASHED_SPELLS) {
+  const old = existingSpells.get(spellKey(spell));
+  spellsByLevel[spell.spellLevel].push(old?.imagePath ? { ...spell, imagePath: old.imagePath } : spell);
+}
 export const SPELLS_BY_LEVEL = Object.fromEntries(
-  Object.entries(RAW_SPELLS_BY_LEVEL).map(([level, spells]) => [
-    level,
-    spells.map(normalizeSpellMetadata),
-  ])
+  Object.entries(spellsByLevel).map(([level, spells]) => [level, spells.map(normalizeSpellMetadata)])
 );
 
 export const ALL_SPELLS = Object.values(SPELLS_BY_LEVEL).flat();

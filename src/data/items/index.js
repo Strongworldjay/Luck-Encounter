@@ -2,7 +2,13 @@ import catalog from './catalog.json' with { type: 'json' };
 import { CREATURE_TYPES, ITEM_THEMES } from './taxonomy.js';
 import { createSkillBooks } from './skillBooks.js';
 import { NEW_ART_ITEMS } from './newArts.js';
-const sourceItems = [...catalog, ...NEW_ART_ITEMS];
+import { RESOURCE_EQUIPMENT } from './resourceEquipment.js';
+import { ARCANA_UNLEASHED_ITEMS } from './arcanaUnleashed.js';
+const itemKey = (name) => name.normalize('NFKC').replace(/[’‘]/g, "'").trim().toLowerCase();
+const arcanaItemNames = new Set(ARCANA_UNLEASHED_ITEMS.map((item) => itemKey(item.name)));
+const sourceItems = [...catalog, ...NEW_ART_ITEMS, ...RESOURCE_EQUIPMENT]
+  .filter((item) => !arcanaItemNames.has(itemKey(item.name)))
+  .concat(ARCANA_UNLEASHED_ITEMS);
 export const ITEMS = [...sourceItems, ...createSkillBooks(sourceItems)];
 export const ITEM_BY_ID = new Map(ITEMS.map((item) => [item.id, item]));
 export const RARITIES = ['Common', 'Uncommon', 'Rare', 'VeryRare', 'Legendary', 'Unique'];

@@ -1,6 +1,7 @@
 const SOURCE_ALIASES = new Map([
   ["Player's Handbook", "Player's Handbook"],
   ["Homebrew", "Homebrew"],
+  ["Arcana Unleashed", "Arcana Unleashed"],
   ["Grim Hollow", "Grim Hollow"],
   ["Crooked Moon", "Crooked Moon"],
   ["Xanathar's Guide to Everything", "Xanathar's Guide to Everything"],
